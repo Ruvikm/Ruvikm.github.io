@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://ruvikm.github.io/2020/10/18/Steam%E7%BD%91%E9%A1%B5%E7%89%88-%E6%89%8B%E6%9C%BA%E7%AB%AF%E6%98%BE%E7%A4%BA%E7%9F%AD%E6%9C%9F%E5%86%85%E6%9D%A5%E8%87%AA%E6%82%A8%E7%BD%91%E7%BB%9C%E7%9A%84%E5%A4%B1%E8%B4%A5%E7%99%BB%E9%99%86%E8%BF%87%E5%A4%9A%EF%BC%8C%E8%AF%B7%E7%A8%8D%E5%90%8E%E5%86%8D%E8%AF%95/</loc>
+    
+    <lastmod>2020-10-18</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://ruvikm.github.io/2020/10/18/%E4%BD%BF%E7%94%A8Xpath%E5%92%8CRequests%E5%AE%9E%E7%8E%B0%E7%88%AC%E8%99%AB%E5%B9%B6%E5%AD%98%E5%82%A8%E5%9C%A8Excel%E8%A1%A8%E9%87%8C-%E7%88%AC%E5%8F%96%E9%93%BE%E5%AE%B6%E4%B8%8A%E6%9D%AD%E5%B7%9E%E8%BF%91%E6%9C%9F%E4%BA%8C%E6%89%8B%E6%88%BF%E4%BB%B7/</loc>
     
     <lastmod>2020-10-18</lastmod>
@@ -88,13 +95,6 @@
 
   
   <url>
-    <loc>https://ruvikm.github.io/tags/java%E7%95%8C%E9%9D%A2%E8%AE%BE%E8%AE%A1/</loc>
-    <lastmod>2020-10-18</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://ruvikm.github.io/tags/JFormDesigner/</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
@@ -102,7 +102,21 @@
   </url>
   
   <url>
+    <loc>https://ruvikm.github.io/tags/java%E7%95%8C%E9%9D%A2%E8%AE%BE%E8%AE%A1/</loc>
+    <lastmod>2020-10-18</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://ruvikm.github.io/tags/Python/</loc>
+    <lastmod>2020-10-18</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ruvikm.github.io/tags/Steam/</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
