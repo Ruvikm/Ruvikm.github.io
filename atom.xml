@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Ruvikm</title>
+  <icon>https://www.gravatar.com/avatar/710ecfc7f4f0bd22cb3d5ec44d498105</icon>
+  <subtitle>Nia~</subtitle>
+  <link href="https://ruvikm.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://ruvikm.github.io/"/>
+  <updated>2020-10-18T11:48:06.415Z</updated>
+  <id>https://ruvikm.github.io/</id>
+  
+  <author>
+    <name>Ruvikm</name>
+    <email>ruvikm@126.com</email>
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用Xpath和Requests实现爬虫并存储在Excel表里---爬取链家上杭州近期二手房价</title>
+    <link href="https://ruvikm.github.io/2020/10/18/%E4%BD%BF%E7%94%A8Xpath%E5%92%8CRequests%E5%AE%9E%E7%8E%B0%E7%88%AC%E8%99%AB%E5%B9%B6%E5%AD%98%E5%82%A8%E5%9C%A8Excel%E8%A1%A8%E9%87%8C-%E7%88%AC%E5%8F%96%E9%93%BE%E5%AE%B6%E4%B8%8A%E6%9D%AD%E5%B7%9E%E8%BF%91%E6%9C%9F%E4%BA%8C%E6%89%8B%E6%88%BF%E4%BB%B7/"/>
+    <id>https://ruvikm.github.io/2020/10/18/%E4%BD%BF%E7%94%A8Xpath%E5%92%8CRequests%E5%AE%9E%E7%8E%B0%E7%88%AC%E8%99%AB%E5%B9%B6%E5%AD%98%E5%82%A8%E5%9C%A8Excel%E8%A1%A8%E9%87%8C-%E7%88%AC%E5%8F%96%E9%93%BE%E5%AE%B6%E4%B8%8A%E6%9D%AD%E5%B7%9E%E8%BF%91%E6%9C%9F%E4%BA%8C%E6%89%8B%E6%88%BF%E4%BB%B7/</id>
+    <published>2020-10-18T11:44:09.000Z</published>
+    <updated>2020-10-18T11:48:06.415Z</updated>
+    
+    <content type="html"><![CDATA[<p>爬的是杭州近期的的新房价</p><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># encoding: utf-8</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">@author: Ruvik</span></span><br><span class="line"><span class="string">@software: PyCharm</span></span><br><span class="line"><span class="string">@file: Spider_House.py</span></span><br><span class="line"><span class="string">@time: 2020/7/9 20:12</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 爬一下链家网上杭州新房的价格</span></span><br><span class="line"><span class="keyword">import</span> requests                 <span class="comment"># 进行网络请求</span></span><br><span class="line"><span class="keyword">import</span> xlwt                     <span class="comment"># 与excel相关的操作</span></span><br><span class="line"><span class="keyword">from</span> lxml <span class="keyword">import</span> etree          <span class="comment"># 引入xpath库，方便定位元素</span></span><br><span class="line"><span class="keyword">import</span> time                     <span class="comment"># 进行访问频率控制</span></span><br><span class="line"><span class="keyword">import</span> random                   <span class="comment"># 随机数生成</span></span><br><span class="line"><span class="keyword">import</span> re                       <span class="comment"># 正则表达式</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 主程序</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line"></span><br><span class="line">    base_url = <span class="string">"https://hz.fang.lianjia.com/loupan/pg"</span>     <span class="comment"># 最基本的网址，后续会根据这个进行翻页操作</span></span><br><span class="line">    Savepath = <span class="string">".\\杭州新房价.xls"</span>                           <span class="comment"># 存储路径</span></span><br><span class="line">    datalist = getdata(base_url)</span><br><span class="line">    savedata(datalist, Savepath)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取html源码</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">ask_url</span><span class="params">(url)</span>:</span></span><br><span class="line">    html=<span class="string">""</span></span><br><span class="line">    headers=&#123;          <span class="comment"># 进行伪装，防止416错误，模拟浏览器头部信息，向豆瓣服务器发送消息</span></span><br><span class="line">        <span class="string">"User-Agent"</span>: <span class="string">"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36"</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        response = requests.get(url,headers=headers,timeout=<span class="number">10</span>)  <span class="comment"># 用户代理，表示告诉豆瓣服务器，我们是什么类型的机器、浏览器（本质上是告诉浏览器，我们可以接收什么水平的文件内容）</span></span><br><span class="line">        time.sleep(random.randint(<span class="number">3</span>, <span class="number">6</span>))                        <span class="comment"># 每隔3-6s执行一次请求</span></span><br><span class="line">        <span class="comment"># print(response.status_code)</span></span><br><span class="line">        html = response.content                                     <span class="comment"># 获取网页的html源代码</span></span><br><span class="line">        <span class="comment"># print(html)</span></span><br><span class="line">        print(<span class="string">"请求访问成功"</span>)</span><br><span class="line">    <span class="keyword">except</span> requests.exceptions.RequestException <span class="keyword">as</span> e:</span><br><span class="line">        print(<span class="string">"超时"</span>)</span><br><span class="line">        print(e)</span><br><span class="line">    <span class="keyword">return</span> html</span><br><span class="line"></span><br><span class="line"><span class="comment"># 从html源码中获取信息</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getdata</span><span class="params">(baseurl)</span>:</span></span><br><span class="line">    Datalist = []                                 <span class="comment"># 用来存储已经经过处理的信息</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, <span class="number">100</span>):                     <span class="comment"># 在1-100页内爬取房价的信息</span></span><br><span class="line">        url = baseurl+str(i)                    <span class="comment"># 拼接url网址，进行换页</span></span><br><span class="line">        <span class="comment"># print(url)</span></span><br><span class="line">        data = ask_url(url)                     <span class="comment"># 获取到源代码</span></span><br><span class="line">        <span class="comment"># 从源代码中提取信息</span></span><br><span class="line">        <span class="keyword">if</span> data != <span class="string">""</span>:</span><br><span class="line">            html_data = etree.HTML(data)</span><br><span class="line">            div_list = html_data.xpath(<span class="string">'//div[@class="resblock-desc-wrapper"]'</span>)</span><br><span class="line">            <span class="comment"># print(len(div_list))</span></span><br><span class="line">            <span class="keyword">for</span> item <span class="keyword">in</span> div_list:</span><br><span class="line">                data_item = []</span><br><span class="line">                <span class="comment"># 提取详情链接</span></span><br><span class="line">                link = <span class="string">"https://hz.fang.lianjia.com"</span></span><br><span class="line">                link += item.xpath(<span class="string">'./div/a/@href'</span>)[<span class="number">0</span>]</span><br><span class="line">                data_item.append(link)</span><br><span class="line">                <span class="comment"># print(link)</span></span><br><span class="line"></span><br><span class="line">                <span class="comment"># 提取名字</span></span><br><span class="line">                name = item.xpath(<span class="string">"./div/a/text()"</span>)[<span class="number">0</span>]</span><br><span class="line">                data_item.append(name)</span><br><span class="line">                <span class="comment"># print(name)</span></span><br><span class="line"></span><br><span class="line">                <span class="comment"># 提取地址</span></span><br><span class="line">                loc = item.xpath(<span class="string">'./div[@class="resblock-location"]/span/text()'</span>)</span><br><span class="line">                location = loc[<span class="number">0</span>] +<span class="string">"|"</span>+ loc[<span class="number">1</span>] +<span class="string">"|"</span>+ item.xpath(<span class="string">'./div[@class="resblock-location"]/a/text()'</span>)[<span class="number">0</span>]</span><br><span class="line">                data_item.append(location)</span><br><span class="line">                <span class="comment"># print(location)</span></span><br><span class="line"></span><br><span class="line">                <span class="comment"># 提取户型</span></span><br><span class="line">                room = item.xpath(<span class="string">'./a[@class="resblock-room"]/span/text()'</span>)</span><br><span class="line">                rooms = <span class="string">""</span></span><br><span class="line">                <span class="keyword">for</span> k <span class="keyword">in</span> range(len(room)):</span><br><span class="line">                    <span class="keyword">if</span> k &lt; len(room) - <span class="number">1</span>:</span><br><span class="line">                        rooms += str(room[k]) + <span class="string">"|"</span></span><br><span class="line">                    <span class="keyword">else</span>:</span><br><span class="line">                        rooms += str(room[k])</span><br><span class="line">                <span class="comment"># print(rooms)</span></span><br><span class="line">                data_item.append(rooms)</span><br><span class="line"></span><br><span class="line">                <span class="comment"># 提取大小</span></span><br><span class="line">                size = item.xpath(<span class="string">'./div[@class="resblock-area"]/span/text()'</span>)</span><br><span class="line">                <span class="keyword">if</span> len(size) != <span class="number">0</span>:</span><br><span class="line">                    data_item.append(size[<span class="number">0</span>])</span><br><span class="line">                    <span class="comment"># print(size[0])</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    data_item.append(<span class="string">" "</span>)</span><br><span class="line"></span><br><span class="line">                <span class="comment"># 提取标签</span></span><br><span class="line">                tag = item.xpath(<span class="string">'./div[@class="resblock-tag"]/span/text()'</span>)</span><br><span class="line">                tags = <span class="string">""</span></span><br><span class="line">                <span class="keyword">for</span> k <span class="keyword">in</span> range(len(tag)):</span><br><span class="line">                    <span class="keyword">if</span> k &lt; len(tag)<span class="number">-1</span>:</span><br><span class="line">                        tags += str(tag[k]) + <span class="string">"|"</span></span><br><span class="line">                    <span class="keyword">else</span>:</span><br><span class="line">                        tags += str(tag[k])</span><br><span class="line">                <span class="comment"># print(tags)</span></span><br><span class="line">                data_item.append(tags)</span><br><span class="line"></span><br><span class="line">                <span class="comment"># 提取价格</span></span><br><span class="line">                Price = <span class="string">""</span></span><br><span class="line">                price = item.xpath(<span class="string">'./div[@class="resblock-price"]/div/span/text()'</span>)</span><br><span class="line">                <span class="keyword">for</span> k <span class="keyword">in</span> range(len(price)):</span><br><span class="line">                    Price += price[k]</span><br><span class="line">                Price = re.sub(<span class="string">'\xa0'</span>, <span class="string">""</span>, Price)     <span class="comment"># 去掉“\xa0”字符</span></span><br><span class="line">                <span class="comment"># print(Price)</span></span><br><span class="line">                data_item.append(Price)</span><br><span class="line">                Datalist.append(data_item)</span><br><span class="line"></span><br><span class="line">    print(len(Datalist))</span><br><span class="line">    <span class="keyword">return</span> Datalist</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将html获取的信息存入Excel表格中</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">savedata</span><span class="params">(Datalist,Savapath)</span>:</span></span><br><span class="line">    col = (<span class="string">"链接"</span>, <span class="string">"名字"</span>, <span class="string">"地址"</span>, <span class="string">"户型"</span>, <span class="string">"大小"</span>, <span class="string">"标签"</span>, <span class="string">"价格"</span>)                <span class="comment"># Excel的表头</span></span><br><span class="line">    house_list = xlwt.Workbook(encoding=<span class="string">"utf-8"</span>, style_compression=<span class="number">0</span>)       <span class="comment"># 创建workbook对象</span></span><br><span class="line">    worksheet = house_list.add_sheet(<span class="string">"HouseList"</span>, cell_overwrite_ok=<span class="literal">True</span>)   <span class="comment"># 新建工作区，设为可覆盖</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>, <span class="number">7</span>):                                                   <span class="comment"># 写入表头</span></span><br><span class="line">        worksheet.write(<span class="number">0</span>, i, col[i])</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>, <span class="number">990</span>):                                                 <span class="comment"># 写入数据</span></span><br><span class="line">        print(<span class="string">"正在写入第%d条数据"</span> % (i + <span class="number">1</span>))</span><br><span class="line">        item = Datalist[i]</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">0</span>, <span class="number">7</span>):</span><br><span class="line">            worksheet.write(i + <span class="number">1</span>, j, item[j])</span><br><span class="line">    house_list.save(Savapath)                                               <span class="comment"># 存储</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 程序从这里开始执行</span></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    main()</span><br><span class="line"></span><br><span class="line">    print(<span class="string">"爬取完毕!"</span>)</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;爬的是杭州近期的的新房价&lt;/p&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# encoding: u</summary>
+      
+    
+    
+    
+    
+    <category term="Python" scheme="https://ruvikm.github.io/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>解决AndroidStudio连不上网</title>
+    <link href="https://ruvikm.github.io/2020/10/18/%E8%A7%A3%E5%86%B3AndroidStudio%E8%BF%9E%E4%B8%8D%E4%B8%8A%E7%BD%91/"/>
+    <id>https://ruvikm.github.io/2020/10/18/%E8%A7%A3%E5%86%B3AndroidStudio%E8%BF%9E%E4%B8%8D%E4%B8%8A%E7%BD%91/</id>
+    <published>2020-10-18T11:42:00.000Z</published>
+    <updated>2020-10-18T11:48:05.114Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/" class="lazyload" data-src="https://img-blog.csdnimg.cn/20200811222043646.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70"  alt="在这里插入图片描述"><br><img src="/" class="lazyload" data-src="https://img-blog.csdnimg.cn/20200811222051995.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70"  alt="在这里插入图片描述"><br>127.0.0.1——本机做代理<br>7890端口号<br>Port—HTTP<br><img src="/" class="lazyload" data-src="https://img-blog.csdnimg.cn/20200811222454379.png"  alt="在这里插入图片描述"></p><p>以下为成功测试示例：<br><img src="/" class="lazyload" data-src="https://img-blog.csdnimg.cn/20200811222740782.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70"  alt="在这里插入图片描述"><br><img src="/" class="lazyload" data-src="https://img-blog.csdnimg.cn/20200811222748225.png"  alt="在这里插入图片描述"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;/&quot; class=&quot;lazyload&quot; data-src=&quot;https://img-blog.csdnimg.cn/20200811222043646.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5n</summary>
+      
+    
+    
+    
+    
+    <category term="Android 开发" scheme="https://ruvikm.github.io/tags/Android-%E5%BC%80%E5%8F%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JLabel动态实现图片切换和自适应组件大小</title>
+    <link href="https://ruvikm.github.io/2020/05/24/JLabel%E5%8A%A8%E6%80%81%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E5%88%87%E6%8D%A2%E5%92%8C%E8%87%AA%E9%80%82%E5%BA%94%E7%BB%84%E4%BB%B6%E5%A4%A7%E5%B0%8F/"/>
+    <id>https://ruvikm.github.io/2020/05/24/JLabel%E5%8A%A8%E6%80%81%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E5%88%87%E6%8D%A2%E5%92%8C%E8%87%AA%E9%80%82%E5%BA%94%E7%BB%84%E4%BB%B6%E5%A4%A7%E5%B0%8F/</id>
+    <published>2020-05-24T06:38:04.000Z</published>
+    <updated>2020-06-08T08:51:42.108Z</updated>
+    
+    <content type="html"><![CDATA[<p>结合了一下网上的方法</p><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">ImageIcon image = <span class="keyword">null</span>;</span><br><span class="line">       <span class="keyword">try</span> &#123;</span><br><span class="line">           <span class="comment">//图片自适应大小填充</span></span><br><span class="line">           image = <span class="keyword">new</span> ImageIcon(ImageIO.read(<span class="keyword">new</span> File(<span class="string">"E:\\college\\code\\Java\\src\\FlowerStore\\img\\flowers\\"</span>+flower.getFlower_name()+<span class="string">".png"</span>)));<span class="comment">//图片地址</span></span><br><span class="line">           <span class="comment">//eg:E:\college\code\Java\src\FlowerStore\img\flowers\薰衣草.png</span></span><br><span class="line">           image.setImage(image.getImage().getScaledInstance(<span class="number">280</span>, <span class="number">280</span>,Image.SCALE_DEFAULT ));<span class="comment">//280，280为组件JLabel的宽和高</span></span><br><span class="line">           picturelabel .setIcon(image);</span><br><span class="line">       &#125; <span class="keyword">catch</span> (IOException ioException) &#123;</span><br><span class="line">           ioException.printStackTrace();</span><br><span class="line">       &#125;</span><br></pre></td></tr></table></figure><p>参考文章：</p><p><a href="https://blog.csdn.net/bobo1356/article/details/52917304?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase" target="_blank" rel="noopener">文章1</a></p><p><a href="https://blog.csdn.net/halfsuccess/article/details/8705699?utm_medium=distribute.pc_relevant.none-task-blog-baidujs-1" target="_blank" rel="noopener">文章2</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;结合了一下网上的方法&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;ImageIcon image = &lt;span class=&quot;keyword&quot;</summary>
+      
+    
+    
+    
+    
+    <category term="java界面设计" scheme="https://ruvikm.github.io/tags/java%E7%95%8C%E9%9D%A2%E8%AE%BE%E8%AE%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JComboBox默认不选择</title>
+    <link href="https://ruvikm.github.io/2020/05/22/JComboBox%E9%BB%98%E8%AE%A4%E4%B8%8D%E9%80%89%E6%8B%A9/"/>
+    <id>https://ruvikm.github.io/2020/05/22/JComboBox%E9%BB%98%E8%AE%A4%E4%B8%8D%E9%80%89%E6%8B%A9/</id>
+    <published>2020-05-21T16:17:30.000Z</published>
+    <updated>2020-06-08T08:51:42.074Z</updated>
+    
+    <content type="html"><![CDATA[<p>SelectedIndex属性为选择的项，从0开始为第一项，所以在一开始设置为-1就可以了。</p><p>在JFormDesigner设计面板里可以这样设置（静态下拉菜单）<br><img src="/" class="lazyload" data-src="https://img-blog.csdnimg.cn/20200522001223491.png"  alt="静态下拉菜单"></p><p>如果是动态从数据库获取，可以在数据获取完成后再后面加一句<code>comboBox1.setSelectedIndex(-1);</code> （comboBox1为组件名称）</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;SelectedIndex属性为选择的项，从0开始为第一项，所以在一开始设置为-1就可以了。&lt;/p&gt;
+&lt;p&gt;在JFormDesigner设计面板里可以这样设置（静态下拉菜单）&lt;br&gt;&lt;img src=&quot;/&quot; class=&quot;lazyload&quot; data-src=&quot;https:</summary>
+      
+    
+    
+    
+    
+    <category term="java界面设计" scheme="https://ruvikm.github.io/tags/java%E7%95%8C%E9%9D%A2%E8%AE%BE%E8%AE%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>IDEA 2020.1启动慢</title>
+    <link href="https://ruvikm.github.io/2020/05/21/%E5%90%AF%E5%8A%A8%E6%85%A2/"/>
+    <id>https://ruvikm.github.io/2020/05/21/%E5%90%AF%E5%8A%A8%E6%85%A2/</id>
+    <published>2020-05-21T14:27:25.000Z</published>
+    <updated>2020-06-08T08:51:42.144Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>2020版的直接可以在软件内部修改</strong></p><h4 id="1-在“帮助”里找到“编辑自定义VM选项”"><a href="#1-在“帮助”里找到“编辑自定义VM选项”" class="headerlink" title="1.在“帮助”里找到“编辑自定义VM选项”"></a>1.在“帮助”里找到“编辑自定义VM选项”</h4><p><img src="/" class="lazyload" data-src="https://img-blog.csdnimg.cn/20200521221812668.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70"  alt="VM"></p><h4 id="2-设置Xms和Xmx参数"><a href="#2-设置Xms和Xmx参数" class="headerlink" title="2.设置Xms和Xmx参数"></a>2.设置Xms和Xmx参数</h4><p><img src="/" class="lazyload" data-src="https://img-blog.csdnimg.cn/20200521222509546.png"  alt="在这里插入图片描述"><br>Xms——分配最小内存<br>Xmx——分配最大内存<br>建议两个设置成一样，根据自身电脑内存情况适当调大</p><p><a href="https://blog.csdn.net/iCopper_/article/details/81142384" target="_blank" rel="noopener">参考文章</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;strong&gt;2020版的直接可以在软件内部修改&lt;/strong&gt;&lt;/p&gt;
+&lt;h4 id=&quot;1-在“帮助”里找到“编辑自定义VM选项”&quot;&gt;&lt;a href=&quot;#1-在“帮助”里找到“编辑自定义VM选项”&quot; class=&quot;headerlink&quot; title=&quot;1.在“帮助”里</summary>
+      
+    
+    
+    
+    
+    <category term="IDEA" scheme="https://ruvikm.github.io/tags/IDEA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用JFormDesigner出现java.lang.NullPointException报错</title>
+    <link href="https://ruvikm.github.io/2020/05/19/%E4%BD%BF%E7%94%A8JFormDesigner%E5%87%BA%E7%8E%B0java-lang-NullPointException%E6%8A%A5%E9%94%99/"/>
+    <id>https://ruvikm.github.io/2020/05/19/%E4%BD%BF%E7%94%A8JFormDesigner%E5%87%BA%E7%8E%B0java-lang-NullPointException%E6%8A%A5%E9%94%99/</id>
+    <published>2020-05-19T10:45:46.000Z</published>
+    <updated>2020-06-08T08:51:42.133Z</updated>
+    
+    <content type="html"><![CDATA[<p>这是java空指针报错，也就是引用了为空的方法或属性。<br>而initComponents()函数就是专门初始化对象的，但是在某些情况下类的构造方法里就没有调用那个函数（可能是我用git提交的时候选择了自动整理代码吧）。<br>报错时：<br><img src="/" class="lazyload" data-src="https://img-blog.csdnimg.cn/20200519184117794.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70"  alt="报错时"></p><p>改正后：<br><img src="/" class="lazyload" data-src="https://img-blog.csdnimg.cn/20200521220239978.png"  alt="改正后"><br>PS：这个最好最好写在外面，否则可能设计完界面这个函数又没了~</p><p>initComponents函数：<br><img src="/" class="lazyload" data-src="https://img-blog.csdnimg.cn/20200519184204262.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70"  alt="initComponents函数"><br>查了一下空指针的原因，我居然被这个问题困扰了好几小时…</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;这是java空指针报错，也就是引用了为空的方法或属性。&lt;br&gt;而initComponents()函数就是专门初始化对象的，但是在某些情况下类的构造方法里就没有调用那个函数（可能是我用git提交的时候选择了自动整理代码吧）。&lt;br&gt;报错时：&lt;br&gt;&lt;img src=&quot;/&quot; c</summary>
+      
+    
+    
+    
+    
+    <category term="JFormDesigner" scheme="https://ruvikm.github.io/tags/JFormDesigner/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JFormDesigner设计界面大小与实际大小不符</title>
+    <link href="https://ruvikm.github.io/2020/05/19/JFormDesigner%E8%AE%BE%E8%AE%A1%E7%95%8C%E9%9D%A2%E5%A4%A7%E5%B0%8F%E4%B8%8E%E5%AE%9E%E9%99%85%E5%A4%A7%E5%B0%8F%E4%B8%8D%E7%AC%A6/"/>
+    <id>https://ruvikm.github.io/2020/05/19/JFormDesigner%E8%AE%BE%E8%AE%A1%E7%95%8C%E9%9D%A2%E5%A4%A7%E5%B0%8F%E4%B8%8E%E5%AE%9E%E9%99%85%E5%A4%A7%E5%B0%8F%E4%B8%8D%E7%AC%A6/</id>
+    <published>2020-05-19T10:09:35.000Z</published>
+    <updated>2020-06-08T08:51:42.089Z</updated>
+    
+    <content type="html"><![CDATA[<p>每次设计完界面预览的都比实际的界面大好几圈，后面发现原来是显示缩放的问题，可能这个插件还没有做到适配。</p><p>150%下运行是这样的<img src="/" class="lazyload" data-src="https://img-blog.csdnimg.cn/20200519175515888.png"  alt="150%"><br><img src="/" class="lazyload" data-src="https://img-blog.csdnimg.cn/20200519175540228.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70"  alt="对比图1"></p><p>100%是这样的<img src="/" class="lazyload" data-src="https://img-blog.csdnimg.cn/20200519175646829.png"  alt="100%"><br><img src="/" class="lazyload" data-src="https://img-blog.csdnimg.cn/20200519175656657.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70"  alt="对比图2"><br>在设置里还没有找到把预览改为100%的地方（emm也许是我没有找见），总之设计界面的时候把显示的比例调为100%也是个解决的办法。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;每次设计完界面预览的都比实际的界面大好几圈，后面发现原来是显示缩放的问题，可能这个插件还没有做到适配。&lt;/p&gt;
+&lt;p&gt;150%下运行是这样的&lt;img src=&quot;/&quot; class=&quot;lazyload&quot; data-src=&quot;https://img-blog.csdnimg.cn</summary>
+      
+    
+    
+    
+    
+    <category term="JFormDesigner" scheme="https://ruvikm.github.io/tags/JFormDesigner/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何使用微信小程序IDE在github上实现团队合作</title>
+    <link href="https://ruvikm.github.io/2020/04/16/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8FIDE%E5%9C%A8github%E4%B8%8A%E5%AE%9E%E7%8E%B0%E5%9B%A2%E9%98%9F%E5%90%88%E4%BD%9C/"/>
+    <id>https://ruvikm.github.io/2020/04/16/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8FIDE%E5%9C%A8github%E4%B8%8A%E5%AE%9E%E7%8E%B0%E5%9B%A2%E9%98%9F%E5%90%88%E4%BD%9C/</id>
+    <published>2020-04-16T07:35:50.000Z</published>
+    <updated>2020-06-08T08:51:42.155Z</updated>
+    
+    <content type="html"><![CDATA[<p>—–原文—–(2020/4/16)</p><p>@<a href="如何使用微信开发者工具在github上实现团队合作">TOC</a><br>一.发起者要做的一些步骤</p><ol><li>首先用IDE初始化本地的git仓库<br><img src="/" class="lazyload" data-src="https://img-blog.csdnimg.cn/20200130111131527.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70"  alt="a."><br><img src="/" class="lazyload" data-src="https://img-blog.csdnimg.cn/20200130111301249.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70"  alt="b."></li><li>使用github-desktop客户端添加这个新建的本地git库并同时上传到新建的远程仓库中<br><img src="/" class="lazyload" data-src="https://img-blog.csdnimg.cn/2020013011214879.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70"  alt="添加本地仓库"><br><img src="/" class="lazyload" data-src="https://img-blog.csdnimg.cn/20200130112202771.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70"  alt="新建远程仓库"><br><img src="/" class="lazyload" data-src="https://img-blog.csdnimg.cn/2020013011231537.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70"  alt="在这里插入图片描述"><br><img src="/" class="lazyload" data-src="https://img-blog.csdnimg.cn/2020013011291517.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70"  alt="看一下成果嘿嘿嘿"></li><li>添加参与者<br><img src="/" class="lazyload" data-src="https://img-blog.csdnimg.cn/20200130113301950.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70"  alt="最好添加的时候写参与者的名字"></li></ol><p><strong>PS:被邀请者的必须要接受邀请才可以</strong></p><p>二.参与者需要做的步骤</p><ol><li>在微信小程序开发者工具里添加远程仓库<br><img src="/" class="lazyload" data-src="https://img-blog.csdnimg.cn/20200130114342510.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70"  alt="添加远程仓库_1">)<img src="/" class="lazyload" data-src="https://img-blog.csdnimg.cn/20200130114356569.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70"  alt="添加远程仓库_2"><br><img src="/" class="lazyload" data-src="https://img-blog.csdnimg.cn/20200130114448885.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70"  alt="如何查看仓库的地址"></li><li>绑定自己的github账号<br><img src="/" class="lazyload" data-src="https://img-blog.csdnimg.cn/20200130115015761.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70"  alt="绑定账号"></li></ol><p>三.如何线上合作</p><ol><li>参与者在调试好了一些功能以后，提交到远程仓库的分支<br><img src="/" class="lazyload" data-src="https://img-blog.csdnimg.cn/20200130120245999.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70"  alt="提交分支"></li><li>参与者请求合并分支<br><img src="/" class="lazyload" data-src="https://img-blog.csdnimg.cn/20200130120523380.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70"  alt="请求合并_1"><br><img src="/" class="lazyload" data-src="https://img-blog.csdnimg.cn/20200130120921309.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70"  alt="请求合并_2"><br><img src="/" class="lazyload" data-src="https://img-blog.csdnimg.cn/20200130120955937.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70"  alt="发起合并请求"></li><li>在发起者经过了沉思熟虑，通计熟筹，仰观俯察后，同意合并分支的请求(＠￣ー￣＠)<br><img src="/" class="lazyload" data-src="https://img-blog.csdnimg.cn/20200130121516212.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70"  alt="找到请求_1"><br>从这里可以对比的看到分支和master的不同<br><img src="/" class="lazyload" data-src="https://img-blog.csdnimg.cn/2020013012161487.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70"  alt="找不同"><br>同意合并请求：<br><img src="/" class="lazyload" data-src="https://img-blog.csdnimg.cn/20200130121829976.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70"  alt="同意合并_2"><br><img src="/" class="lazyload" data-src="https://img-blog.csdnimg.cn/20200130121938158.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70"  alt="同意合并_3"><br>这样就分支就合并进去了<br><img src="/" class="lazyload" data-src="https://img-blog.csdnimg.cn/20200130122111630.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70"  alt="嘻嘻嘻"><br>当然如果参与者想要同步最新的代码，只要pull一下就好了<br><img src="/" class="lazyload" data-src="https://img-blog.csdnimg.cn/20200130191852824.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70"  alt="同步"><br>第一次接触github，如有一些错误，还请多多指教<br>(๑•̀ㅂ•́)و</li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;—–原文—–(2020/4/16)&lt;/p&gt;
+&lt;p&gt;@&lt;a href=&quot;如何使用微信开发者工具在github上实现团队合作&quot;&gt;TOC&lt;/a&gt;&lt;br&gt;一.发起者要做的一些步骤&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;首先用IDE初始化本地的git仓库&lt;br&gt;&lt;img src=&quot;/&quot; clas</summary>
+      
+    
+    
+    
+    
+    <category term="微信小程序" scheme="https://ruvikm.github.io/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+  </entry>
+  
+</feed>
