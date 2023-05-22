@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Ruvikm</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Today&#39;s accomplishments were yesterday&#39;s impossibilities">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Ruvikm">
+<meta property="og:url" content="https://ruvikm.github.io/index.html">
+<meta property="og:site_name" content="Ruvikm">
+<meta property="og:description" content="Today&#39;s accomplishments were yesterday&#39;s impossibilities">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="Ruvikm">
+<meta property="article:tag" content="Ruvikm">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Ruvikm" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 7.0.0-rc1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Ruvikm</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://ruvikm.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-hexo-本地显示部署后博客页面未更新（Github已更新）" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/01/10/hexo-%E6%9C%AC%E5%9C%B0%E6%98%BE%E7%A4%BA%E9%83%A8%E7%BD%B2%E5%90%8E%E5%8D%9A%E5%AE%A2%E9%A1%B5%E9%9D%A2%E6%9C%AA%E6%9B%B4%E6%96%B0%EF%BC%88Github%E5%B7%B2%E6%9B%B4%E6%96%B0%EF%BC%89/" class="article-date">
+  <time datetime="2022-01-10T13:20:31.000Z" itemprop="datePublished">2022-01-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/01/10/hexo-%E6%9C%AC%E5%9C%B0%E6%98%BE%E7%A4%BA%E9%83%A8%E7%BD%B2%E5%90%8E%E5%8D%9A%E5%AE%A2%E9%A1%B5%E9%9D%A2%E6%9C%AA%E6%9B%B4%E6%96%B0%EF%BC%88Github%E5%B7%B2%E6%9B%B4%E6%96%B0%EF%BC%89/">hexo 本地显示部署后博客页面未更新（Github已更新）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>已经尝试过但失败的方法：</p>
+<ol>
+<li>清除页面缓存&#x2F;强制刷新（Ctrl+F5）</li>
+<li>删除.deploy_git文件夹，然后hexo g -d</li>
+<li>hexo clean<br>hexo g -d</li>
+</ol>
+<p>hexo部署后截图如下：<br><img src="https://img-blog.csdnimg.cn/adbbd3c5a894442f9b3e8e67ed6101ba.png#pic_center" alt="截图"><br>然后突然发现在github博客仓库的“Actions”里有这么一堆错误，点进去重跑了一遍就居然更新了。<br><img src="https://img-blog.csdnimg.cn/84a2d8d065814de3b09b9cd4993e0a86.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAUnV2aWtf,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/460f2572ab874c208432356c92dd5971.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAUnV2aWtf,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center" alt="在这里插入图片描述"><br>（之前的全是失败，也不知道为什么突然就可以成功了）<br><img src="https://img-blog.csdnimg.cn/3b84d0b4f0cb43609b33ad81a92256b8.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAUnV2aWtf,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center" alt="在这里插入图片描述"></p>
+<p>从这里看出好像是代码的问题，但是cmd中也没有显示出来…<br><img src="https://img-blog.csdnimg.cn/ea7d39f48f784187a5103d4bf7d2faad.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAUnV2aWtf,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center" alt="在这里插入图片描述"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://ruvikm.github.io/2022/01/10/hexo-%E6%9C%AC%E5%9C%B0%E6%98%BE%E7%A4%BA%E9%83%A8%E7%BD%B2%E5%90%8E%E5%8D%9A%E5%AE%A2%E9%A1%B5%E9%9D%A2%E6%9C%AA%E6%9B%B4%E6%96%B0%EF%BC%88Github%E5%B7%B2%E6%9B%B4%E6%96%B0%EF%BC%89/" data-id="clhyqpa1j000rhovg7chc6048" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-王道数据结构 线性表 链式存储小结" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/01/10/%E7%8E%8B%E9%81%93%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%20%E7%BA%BF%E6%80%A7%E8%A1%A8%20%E9%93%BE%E5%BC%8F%E5%AD%98%E5%82%A8%E5%B0%8F%E7%BB%93/" class="article-date">
+  <time datetime="2022-01-10T11:58:00.000Z" itemprop="datePublished">2022-01-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/01/10/%E7%8E%8B%E9%81%93%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%20%E7%BA%BF%E6%80%A7%E8%A1%A8%20%E9%93%BE%E5%BC%8F%E5%AD%98%E5%82%A8%E5%B0%8F%E7%BB%93/">王道数据结构 线性表 链式存储小结</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1-单链表"><a href="#1-单链表" class="headerlink" title="1.单链表"></a>1.单链表</h1><p><img src="https://img-blog.csdnimg.cn/20210116122507504.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="单链表"></p>
+<h2 id="头插法"><a href="#头插法" class="headerlink" title="头插法"></a>头插法</h2><p>图解：<br><img src="https://img-blog.csdnimg.cn/20210116125651161.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="1"></p>
+<ol>
+<li>待插入的next指向头结点原本指向的结点</li>
+<li>修改头结点的next指向待插入结点<br><img src="https://img-blog.csdnimg.cn/20210116125826814.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="如何插入"></li>
+</ol>
+<p>插入完毕<img src="https://img-blog.csdnimg.cn/20210116130021844.png#pic_center" alt="插入完毕"><br>代码实现</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//设带插入结点为S</span></span><br><span class="line">S-&gt;next=head-&gt;next;</span><br><span class="line">head-&gt;next=S;</span><br></pre></td></tr></table></figure>
+
+<h2 id="尾插法"><a href="#尾插法" class="headerlink" title="尾插法"></a>尾插法</h2><p>图解<br><img src="https://img-blog.csdnimg.cn/20210116130729224.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="待插入状态"></p>
+<ol>
+<li>将待插入结点的next域设为NULL</li>
+<li>将最后一个结点的next域指向带插入结点<br> <img src="https://img-blog.csdnimg.cn/20210116130930320.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="插入方法"></li>
+</ol>
+<p> 插入完毕<br> <img src="https://img-blog.csdnimg.cn/20210116131032237.png#pic_center" alt="插入完毕"><br>代码实现</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//设插入结点为S</span></span><br><span class="line">head-&gt;next=S;</span><br><span class="line">head=S;</span><br></pre></td></tr></table></figure>
+
+<h2 id="在中间插入"><a href="#在中间插入" class="headerlink" title="在中间插入"></a>在中间插入</h2><p>图解<br><img src="https://img-blog.csdnimg.cn/20210116202306782.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="插入前状态"></p>
+<ol>
+<li>将待插入结点的next域指向插入结点位置的前驱结点指向的后一个结点</li>
+<li>将原本位置上之前的结点指向待插入结点</li>
+</ol>
+<p><img src="https://img-blog.csdnimg.cn/20210116202359651.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>插入完成<br><img src="https://img-blog.csdnimg.cn/20210116202638177.png#pic_center" alt="插入完成"></p>
+<p>代码实现</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//设待插入结点为S</span></span><br><span class="line"><span class="comment">//待插入位置的前驱结点为pre</span></span><br><span class="line">S-&gt;next=pre-&gt;next;</span><br><span class="line">pre-&gt;next=S;</span><br></pre></td></tr></table></figure>
+
+<h2 id="在中间删除"><a href="#在中间删除" class="headerlink" title="在中间删除"></a>在中间删除</h2><p>图解<br><img src="https://img-blog.csdnimg.cn/20210116204400671.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="删除前状态"></p>
+<ol>
+<li>将待删除结点的前一个结点的next指向待删除结点next的结点</li>
+<li>删除待删除结点</li>
+</ol>
+<p><img src="https://img-blog.csdnimg.cn/20210116204421686.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="步骤"><br>删除完成<br><img src="https://img-blog.csdnimg.cn/20210116204628265.png#pic_center" alt="删除完成"></p>
+<p>代码实现 </p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//设待删除前驱结点为pre</span></span><br><span class="line"><span class="comment">//待删除结点为S</span></span><br><span class="line">pre-&gt;next=S-&gt;next;</span><br><span class="line"><span class="keyword">delete</span> S;</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="原地逆置链表"><a href="#原地逆置链表" class="headerlink" title="原地逆置链表"></a>原地逆置链表</h2><ol>
+<li>将头结点与后面的结点断开，然后重新用头插法插入</li>
+<li>使用三个指针逆置<br> 图解<br> 1.<img src="https://img-blog.csdnimg.cn/20210116213023974.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="1"><br> 2.<img src="https://img-blog.csdnimg.cn/20210116213042409.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="2"><br> 3.<img src="https://img-blog.csdnimg.cn/20210116213051310.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="3"><br> 4.<img src="https://img-blog.csdnimg.cn/20210116213109935.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="4"><br>5.逆置完毕（最后将头结点指向p）<img src="https://img-blog.csdnimg.cn/20210116213123148.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="5"></li>
+</ol>
+<p>代码实现</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">ReverseList</span><span class="params">(LinkList&amp; head)</span> </span>&#123;</span><br><span class="line">	LNode* pre, * p = head-&gt;next, * r = p-&gt;next;</span><br><span class="line">	p-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">	<span class="keyword">while</span> (r != <span class="literal">NULL</span>) &#123;</span><br><span class="line">		pre = p;</span><br><span class="line">		p = r;</span><br><span class="line">		r = r-&gt;next;</span><br><span class="line">		p-&gt;next = pre;</span><br><span class="line">	&#125;</span><br><span class="line">	head-&gt;next = p;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://ruvikm.github.io/2022/01/10/%E7%8E%8B%E9%81%93%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%20%E7%BA%BF%E6%80%A7%E8%A1%A8%20%E9%93%BE%E5%BC%8F%E5%AD%98%E5%82%A8%E5%B0%8F%E7%BB%93/" data-id="clhyqpa1o001khovgffkp5op8" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-斐波那契数列 C_C++" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/01/10/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97%20C_C++/" class="article-date">
+  <time datetime="2022-01-10T11:54:28.000Z" itemprop="datePublished">2022-01-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/01/10/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97%20C_C++/">斐波那契数列 C_C++</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>用三种方法实现:</p>
+<ol>
+<li>带备忘录的递归</li>
+<li>dp迭代</li>
+<li>迭代优化，空间复杂度为O(1)</li>
+</ol>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> _for(i,a,b) for(int i=(a);i&lt;=(b);i++)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//备忘录</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">helper</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; memo, <span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">	<span class="comment">//base case</span></span><br><span class="line">	<span class="keyword">if</span> (n == <span class="number">2</span> || n == <span class="number">3</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (memo[n] != <span class="number">0</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> memo[n];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		memo[n] = <span class="built_in">helper</span>(memo, n - <span class="number">1</span>) + <span class="built_in">helper</span>(memo, n - <span class="number">2</span>);</span><br><span class="line">		<span class="keyword">return</span> memo[n];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//带备忘录法</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">fib_1</span><span class="params">(<span class="type">int</span> N)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (N &lt;= <span class="number">1</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">memo</span><span class="params">(N + <span class="number">1</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">helper</span>(memo, N);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//dp数组迭代法</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">fib_2</span><span class="params">(<span class="type">int</span> N)</span> </span>&#123;</span><br><span class="line">	<span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">dp</span><span class="params">(N + <span class="number">1</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line">	dp[<span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">	dp[<span class="number">2</span>] = dp[<span class="number">3</span>] = <span class="number">1</span>;</span><br><span class="line">	_for(i, <span class="number">4</span>, N) &#123;</span><br><span class="line">		dp[i] = dp[i - <span class="number">1</span>] + dp[i - <span class="number">2</span>];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> dp[N];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//迭代优化</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">fib_3</span><span class="params">(<span class="type">int</span> N)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (N == <span class="number">1</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (N == <span class="number">2</span> || N == <span class="number">3</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">int</span> pre = <span class="number">1</span>, ppre = <span class="number">1</span>;</span><br><span class="line">	_for(i, <span class="number">4</span>, N) &#123;</span><br><span class="line">		<span class="type">int</span> sum = pre + ppre;</span><br><span class="line">		ppre = pre;</span><br><span class="line">		pre = sum;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> pre;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, <span class="built_in">fib_3</span>(<span class="number">10</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://ruvikm.github.io/2022/01/10/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97%20C_C++/" data-id="clhyqpa1n001ehovgfigf9bvq" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-算法期末复习" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/01/10/%E7%AE%97%E6%B3%95%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/" class="article-date">
+  <time datetime="2022-01-10T11:52:28.000Z" itemprop="datePublished">2022-01-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/01/10/%E7%AE%97%E6%B3%95%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/">算法期末复习</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="用思维导图整理了一下算法的基本知识"><a href="#用思维导图整理了一下算法的基本知识" class="headerlink" title="用思维导图整理了一下算法的基本知识"></a>用思维导图整理了一下算法的基本知识</h2><p>&amp;emsp;<br>&amp;emsp;</p>
+<ol>
+<li>算法概述<br> &amp;emsp;<img src="https://img-blog.csdnimg.cn/20201219173740232.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="算法概述"><br> &amp;emsp;</li>
+<li>递归与分治策略<br>&amp;emsp;<br> <img src="https://img-blog.csdnimg.cn/20201219190206679.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="递归与分治策略"></li>
+</ol>
+<p> &amp;emsp;</p>
+<ol start="3">
+<li><p>动态规划<br>&amp;emsp;<br><img src="https://img-blog.csdnimg.cn/20201219173858421.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="动态规划"><br>&amp;emsp;</p>
+</li>
+<li><p>贪心算法<br> &amp;emsp;<img src="https://img-blog.csdnimg.cn/20201219173922373.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="贪心算法"><br> &amp;emsp;</p>
+</li>
+<li><p>回溯法<br>&amp;emsp;<br><img src="https://img-blog.csdnimg.cn/20201219173946942.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="回溯法"><br>&amp;emsp;</p>
+</li>
+<li><p>分支限界法<br>&amp;emsp;<br><img src="https://img-blog.csdnimg.cn/20201219174007775.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="分支限界法"></p>
+</li>
+</ol>
+<p><a target="_blank" rel="noopener" href="https://ruvikm.lanzous.com/i9b5ajim3kh">PDF文件（内有超链接）</a></p>
+<p>参考资料：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/databatman/article/details/49304295">算法中的P问题、NP问题、NP完全问题和NP难问题</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_45904930/article/details/110748764">分治法之棋盘覆盖问题</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/yjt13/article/details/82085537">排序之归并排序</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/baidu_28312631/article/details/47418773">教你彻底学会动态规划——入门篇</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/listen132/article/details/111242757">矩阵连乘</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/a2392008643/article/details/81781766">最小生成树的两种方法（Kruskal算法和Prim算法）</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/daoshen1314/article/details/101294101">循环赛日程表（分治法）</a></li>
+</ul>
+<p>最后推荐一个算法可视化的网站<br><a target="_blank" rel="noopener" href="https://visualgo.net/">VisuAlgo</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://ruvikm.github.io/2022/01/10/%E7%AE%97%E6%B3%95%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/" data-id="clhyqpa1o001ghovg9vdcaq3i" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-软件体系结构基本知识——期末复习" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/01/10/%E8%BD%AF%E4%BB%B6%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86%E2%80%94%E2%80%94%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/" class="article-date">
+  <time datetime="2022-01-10T11:52:28.000Z" itemprop="datePublished">2022-01-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/01/10/%E8%BD%AF%E4%BB%B6%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86%E2%80%94%E2%80%94%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/">软件体系结构基本知识——期末复习</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>根据老师画的重点做了一些思维导图，希望可以帮到需要的人</p>
+<h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><p><img src="https://img-blog.csdnimg.cn/20201214181436726.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="第一章"></p>
+<h2 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h2><p><img src="https://img-blog.csdnimg.cn/20201214181451777.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="第二章"></p>
+<h2 id="第三章"><a href="#第三章" class="headerlink" title="第三章"></a>第三章</h2><p><img src="https://img-blog.csdnimg.cn/20201214230846302.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="第三章"></p>
+<h2 id="第四章"><a href="#第四章" class="headerlink" title="第四章"></a>第四章</h2><p><img src="https://img-blog.csdnimg.cn/20201214181617762.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="第四章"></p>
+<h2 id="第六章"><a href="#第六章" class="headerlink" title="第六章"></a>第六章</h2><p><img src="https://img-blog.csdnimg.cn/20201214181632906.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="第六章"></p>
+<h2 id="第七章"><a href="#第七章" class="headerlink" title="第七章"></a>第七章</h2><p><img src="https://img-blog.csdnimg.cn/20201214181647481.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="第七章"></p>
+<h2 id="第八-九章"><a href="#第八-九章" class="headerlink" title="第八-九章"></a>第八-九章</h2><p><img src="https://img-blog.csdnimg.cn/20201214205838338.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="第八-九章"></p>
+<p><a target="_blank" rel="noopener" href="https://ruvikm.lanzous.com/isUckjdbc0f">PDF文件</a></p>
+<p>做得如有不足，敬请谅解~</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://ruvikm.github.io/2022/01/10/%E8%BD%AF%E4%BB%B6%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86%E2%80%94%E2%80%94%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/" data-id="clhyqpa1p001nhovg179y7lxc" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%85%B6%E4%BB%96/" rel="tag">其他</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-操作系统先进先出置换算法（FIFO）实现" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/01/10/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%85%88%E8%BF%9B%E5%85%88%E5%87%BA%E7%BD%AE%E6%8D%A2%E7%AE%97%E6%B3%95%EF%BC%88FIFO%EF%BC%89%E5%AE%9E%E7%8E%B0/" class="article-date">
+  <time datetime="2022-01-10T11:36:28.000Z" itemprop="datePublished">2022-01-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/01/10/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%85%88%E8%BF%9B%E5%85%88%E5%87%BA%E7%BD%AE%E6%8D%A2%E7%AE%97%E6%B3%95%EF%BC%88FIFO%EF%BC%89%E5%AE%9E%E7%8E%B0/">操作系统先进先出置换算法（FIFO）实现</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>先进先出置换算法(FIFO):每次选择淘汰的页面是最早进入内存的页面<br>实现方法:把调入内存的页面根据调入的先后顺序排成一个队列,需要换出页面时选择队头页面即可。<br>队列的最大长度取决于系统为进程分配了多少个内存块</strong></p>
+<p>代码如下：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="comment">//#include&lt;conio.h&gt;</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> size 4</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> <span class="title class_">BLOCK</span><span class="comment">//声明一种新类型——物理块类型</span></span><br><span class="line">&#123;</span><br><span class="line">       <span class="type">int</span> pagenum;<span class="comment">//页号</span></span><br><span class="line">       <span class="type">int</span> accessed;<span class="comment">//访问字段，其值表示多久未被访问</span></span><br><span class="line"></span><br><span class="line">&#125;BLOCK;</span><br><span class="line"><span class="type">int</span> count;<span class="comment">//程序计数器，用来记录指令的序号</span></span><br><span class="line"><span class="type">int</span> n;<span class="comment">//缺页计数器，用来记录缺页的次数</span></span><br><span class="line"><span class="type">static</span> <span class="type">int</span> temp[<span class="number">320</span>];<span class="comment">//用来存储320条随机数</span></span><br><span class="line">BLOCK block[size]; <span class="comment">//定义一大小为4的物理块数组</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">init</span><span class="params">( )</span></span>;     <span class="comment">//程序初始化函数</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">findExist</span><span class="params">(<span class="type">int</span> curpage)</span></span>;<span class="comment">//查找物理块中是否有该页面</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">findSpace</span><span class="params">( )</span></span>;<span class="comment">//查找是否有空闲物理块</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">findReplace</span><span class="params">( )</span></span>;<span class="comment">//查找应予置换的页面</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">display</span> <span class="params">( )</span></span>;<span class="comment">//显示</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Random</span><span class="params">( )</span></span>;<span class="comment">//产生320条随机数,显示并存储到temp[320]</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">pagestring</span><span class="params">( )</span></span>;<span class="comment">//显示调用的页面队列</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">FIFO</span><span class="params">( )</span></span>;<span class="comment">//FIFO算法</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">init</span><span class="params">( )</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    block[<span class="number">0</span>].pagenum = <span class="number">0</span>;</span><br><span class="line">    block[<span class="number">1</span>].pagenum = <span class="number">1</span>;</span><br><span class="line">    block[<span class="number">2</span>].pagenum = <span class="number">2</span>;</span><br><span class="line">    block[<span class="number">3</span>].pagenum = <span class="number">3</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;size;i++)</span><br><span class="line">    &#123;</span><br><span class="line">	    <span class="comment">//block[i].pagenum=-1;</span></span><br><span class="line">        block[i].accessed=<span class="number">0</span>;</span><br><span class="line">        count=n=<span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">findExist</span><span class="params">(<span class="type">int</span> curpage)</span>        <span class="comment">//查找物理块中是否有该页面</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>; i&lt;size; i++)</span><br><span class="line">    &#123;</span><br><span class="line">		<span class="keyword">if</span>(block[i].pagenum == curpage )</span><br><span class="line">        <span class="keyword">return</span> i;     <span class="comment">//检测到内存中有该页面，返回block中的位置</span></span><br><span class="line">	&#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">findSpace</span><span class="params">( )</span>   <span class="comment">//查找是否有空闲物理块</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>; i&lt;size; i++)</span><br><span class="line">    &#123;</span><br><span class="line">		<span class="keyword">if</span>(block[i].pagenum == <span class="number">-1</span>)</span><br><span class="line">        <span class="keyword">return</span> i;      <span class="comment">//找到空闲的block，返回block中的位置</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">findReplace</span><span class="params">( )</span>      <span class="comment">//查找应予置换的页面</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="type">int</span> pos = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>; i&lt;size; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(block[i].accessed &gt;block[pos].accessed)</span><br><span class="line">        pos = i;<span class="comment">//找到应予置换页面，返回BLOCK中位置</span></span><br><span class="line">	&#125;</span><br><span class="line">    <span class="keyword">return</span> pos;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">display</span><span class="params">( )</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">   <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>; i&lt;size; i++)</span><br><span class="line">   &#123;</span><br><span class="line">          <span class="keyword">if</span>(block[i].pagenum != <span class="number">-1</span>)      <span class="comment">//物理块不空</span></span><br><span class="line">          &#123;</span><br><span class="line">			  <span class="built_in">printf</span>(<span class="string">&quot; %02d&quot;</span>,block[i].pagenum);</span><br><span class="line">		  &#125;</span><br><span class="line">   &#125;</span><br><span class="line">   cout&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Random</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> flag=<span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">		temp[<span class="number">0</span>]=<span class="number">0</span>;</span><br><span class="line">    	temp[<span class="number">1</span>]=<span class="number">40</span>;</span><br><span class="line">        temp[<span class="number">2</span>]=<span class="number">10</span>;</span><br><span class="line">        temp[<span class="number">3</span>]=<span class="number">50</span>;</span><br><span class="line">        temp[<span class="number">4</span>]=<span class="number">20</span>;</span><br><span class="line">        temp[<span class="number">5</span>]=<span class="number">10</span>;</span><br><span class="line">        temp[<span class="number">6</span>]=<span class="number">30</span>;</span><br><span class="line">        temp[<span class="number">7</span>]=<span class="number">20</span>;</span><br><span class="line">        temp[<span class="number">8</span>]=<span class="number">0</span>;</span><br><span class="line">        temp[<span class="number">9</span>]=<span class="number">40</span>;</span><br><span class="line">        temp[<span class="number">10</span>]=<span class="number">60</span>;</span><br><span class="line">        temp[<span class="number">11</span>]=<span class="number">60</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">pagestring</span><span class="params">( )</span>  <span class="comment">//显示调用的页面队列</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;<span class="number">12</span>;i++)</span><br><span class="line">    &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot; %02d&quot;</span>,temp[i]/<span class="number">10</span>);</span><br><span class="line">        <span class="keyword">if</span>((i+<span class="number">1</span>)%<span class="number">10</span>==<span class="number">0</span>) cout&lt;&lt;endl;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//--------------- 先进先出算法</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">FIFO</span><span class="params">( )</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> exist,space,position ;</span><br><span class="line">    <span class="type">int</span> curpage;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;<span class="number">12</span>;i++)</span><br><span class="line">    &#123;</span><br><span class="line">		<span class="comment">//if(i%100==0) getch( );                //getch直接从键盘获取键值</span></span><br><span class="line">        count=temp[i];</span><br><span class="line">        curpage=count/<span class="number">10</span>;</span><br><span class="line">        exist = <span class="built_in">findExist</span>(curpage);            <span class="comment">//查找物理块中是否有该页面</span></span><br><span class="line">        <span class="keyword">if</span>(exist==<span class="number">-1</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			space = <span class="built_in">findSpace</span>( );              <span class="comment">//查找是否有空闲物理块</span></span><br><span class="line">            <span class="keyword">if</span>(space != <span class="number">-1</span>)                 <span class="comment">//有空闲物理块</span></span><br><span class="line">            &#123;</span><br><span class="line">				block[space].pagenum = curpage;</span><br><span class="line">                <span class="built_in">display</span>( );</span><br><span class="line">                n=n+<span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>           <span class="comment">//无空闲物理块，则寻找置换页面</span></span><br><span class="line">			&#123;</span><br><span class="line">                position = <span class="built_in">findReplace</span>( );          <span class="comment">//查找应予置换的页面</span></span><br><span class="line">                block[position].pagenum = curpage;</span><br><span class="line">                <span class="built_in">display</span>( );</span><br><span class="line">                n++;</span><br><span class="line">                block[position].accessed--;          <span class="comment">//置换页面所在的物理块中访问标记设为-1</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">		<span class="keyword">else</span><span class="comment">//若存在该页</span></span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>; i&lt;size; i++)</span><br><span class="line">			&#123;  <span class="keyword">if</span>(block[i].pagenum != <span class="number">-1</span>)         <span class="comment">//物理块不空</span></span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot; %02d &quot;</span>,block[i].pagenum);</span><br><span class="line">			&#125;</span><br><span class="line">			cout&lt;&lt;<span class="string">&quot;The instruction already exists! Its physical block address is:&quot;</span>&lt;&lt;&amp;block[exist]&lt;&lt;endl;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">0</span>; j&lt;size; j++)</span><br><span class="line">		block[j].accessed++;</span><br><span class="line">	&#125;</span><br><span class="line">    cout&lt;&lt;<span class="string">&quot;Page faults:&quot;</span>&lt;&lt;n&lt;&lt;endl;</span><br><span class="line">    cout&lt;&lt;<span class="string">&quot;Page fault rate:&quot;</span>&lt;&lt;(n/<span class="number">12.0</span>)*<span class="number">100</span>&lt;&lt;<span class="string">&quot;%&quot;</span>&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">( )</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">Random</span>( );</span><br><span class="line">    <span class="built_in">init</span>();</span><br><span class="line">    cout&lt;&lt;<span class="string">&quot;Call page queue&quot;</span>&lt;&lt;endl;</span><br><span class="line">    <span class="built_in">pagestring</span>( );</span><br><span class="line">    cout&lt;&lt;endl&lt;&lt;<span class="string">&quot;    Begin execution&quot;</span>&lt;&lt;endl;</span><br><span class="line">    <span class="built_in">FIFO</span>();</span><br><span class="line">    <span class="built_in">getchar</span>();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>运行截图：</p>
+<p><img src="https://img-blog.csdnimg.cn/20201119144010243.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://ruvikm.github.io/2022/01/10/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%85%88%E8%BF%9B%E5%85%88%E5%87%BA%E7%BD%AE%E6%8D%A2%E7%AE%97%E6%B3%95%EF%BC%88FIFO%EF%BC%89%E5%AE%9E%E7%8E%B0/" data-id="clhyqpa1n001bhovg2f0gbkea" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-图的邻接表表示转换成邻接矩阵" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/01/10/%E5%9B%BE%E7%9A%84%E9%82%BB%E6%8E%A5%E8%A1%A8%E8%A1%A8%E7%A4%BA%E8%BD%AC%E6%8D%A2%E6%88%90%E9%82%BB%E6%8E%A5%E7%9F%A9%E9%98%B5/" class="article-date">
+  <time datetime="2022-01-10T11:35:22.000Z" itemprop="datePublished">2022-01-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/01/10/%E5%9B%BE%E7%9A%84%E9%82%BB%E6%8E%A5%E8%A1%A8%E8%A1%A8%E7%A4%BA%E8%BD%AC%E6%8D%A2%E6%88%90%E9%82%BB%E6%8E%A5%E7%9F%A9%E9%98%B5/">图的邻接表表示转换成邻接矩阵</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>算法思想：<br>先初始化邻接矩阵。依次遍历各个顶点的边表，根据边表中记录的“改弧所指向的顶点的位置”修改邻接矩阵arc[i][j]的值。例如遍历第 i 行的时候（当前的顶点所在行数为 i ），依次遍历该顶点的边表结点，若当前顶点的弧顶点的位置为j，则<code>arc[i][j] = 1</code> </p>
+<p>创建如下的图：<br><img src="https://img-blog.csdnimg.cn/20210218215606727.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<p>全部代码如下：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> region 创建邻接表存储的无向图</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> MaxVertexNum 100    <span class="comment">//图中顶点数目最大值</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> VertexType char</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> _for(i,a,b) for(int i=(a);i&lt;(b);i++)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> <span class="title class_">ArcNode</span> &#123;    <span class="comment">//边表结点</span></span><br><span class="line">    <span class="type">int</span> adjvex;             <span class="comment">//该弧所指向的顶点的位置</span></span><br><span class="line">    ArcNode* next;          <span class="comment">//指向下一条弧的指针</span></span><br><span class="line">&#125;ArcNode;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> <span class="title class_">VNode</span> &#123;      <span class="comment">//顶点表结点</span></span><br><span class="line">    VertexType data;        <span class="comment">//顶点信息</span></span><br><span class="line">    ArcNode* first;         <span class="comment">//指向第一条依附该顶点的弧的指针</span></span><br><span class="line">&#125;VNode,AdjList[MaxVertexNum];</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> &#123;            </span><br><span class="line">    AdjList vertices;       <span class="comment">//领接表</span></span><br><span class="line">    <span class="type">int</span> vexnum, arcnum;     <span class="comment">//图的顶点数和弧数</span></span><br><span class="line">&#125;ALGraph;                   <span class="comment">//ALGraph是以邻接表存储的图类型</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">LocateVex</span><span class="params">(ALGraph&amp; G, VertexType x)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    _for(i, <span class="number">0</span>, G.vexnum) &#123;</span><br><span class="line">        <span class="keyword">if</span> (G.vertices[i].data == x)</span><br><span class="line">            <span class="keyword">return</span> i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">CreateALGraph</span><span class="params">(ALGraph&amp; G)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;输入顶点数和边数&quot;</span>&lt;&lt;endl;</span><br><span class="line">    cin &gt;&gt; G.vexnum &gt;&gt; G.arcnum;</span><br><span class="line">    _for(i, <span class="number">0</span>, G.vexnum) &#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;输入第&quot;</span> &lt;&lt; i + <span class="number">1</span> &lt;&lt; <span class="string">&quot;个顶点的信息&quot;</span> &lt;&lt; endl;</span><br><span class="line">        cin &gt;&gt; G.vertices[i].data;</span><br><span class="line">        G.vertices[i].first = <span class="literal">NULL</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    _for(k, <span class="number">0</span>, G.arcnum) &#123;</span><br><span class="line">        VertexType e1, e2;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;输入第&quot;</span> &lt;&lt; k + <span class="number">1</span> &lt;&lt; <span class="string">&quot;条边的顶点：&quot;</span> &lt;&lt; endl;</span><br><span class="line">        cin &gt;&gt; e1 &gt;&gt; e2;</span><br><span class="line">        ArcNode* e = <span class="keyword">new</span> ArcNode;</span><br><span class="line">        <span class="keyword">if</span> (!e) &#123;</span><br><span class="line">            cout &lt;&lt; <span class="string">&quot;内存申请失败！&quot;</span> &lt;&lt; endl;</span><br><span class="line">            <span class="built_in">exit</span>(<span class="number">0</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="type">int</span> vi = <span class="built_in">LocateVex</span>(G, e1);</span><br><span class="line">        <span class="type">int</span> vj = <span class="built_in">LocateVex</span>(G, e2);</span><br><span class="line"></span><br><span class="line">        e-&gt;adjvex = vj;									<span class="comment">//这三步，类似于单链表的头插法</span></span><br><span class="line">        e-&gt;next = G.vertices[vi].first;</span><br><span class="line">        G.vertices[vi].first = e;</span><br><span class="line"></span><br><span class="line">        e = <span class="keyword">new</span> ArcNode;</span><br><span class="line">        <span class="keyword">if</span> (!e) &#123;</span><br><span class="line">            cout &lt;&lt; <span class="string">&quot;内存申请失败！&quot;</span> &lt;&lt; endl;</span><br><span class="line">            <span class="built_in">exit</span>(<span class="number">0</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        e-&gt;adjvex = vi;									</span><br><span class="line">        e-&gt;next = G.vertices[vj].first;</span><br><span class="line">        G.vertices[vj].first = e;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">bool</span> visited[MaxVertexNum];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">DFS</span><span class="params">(ALGraph G, <span class="type">int</span> i)</span>          <span class="comment">//邻接表的深度优先递归</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ArcNode* p;</span><br><span class="line">    visited[i] = <span class="literal">true</span>;         		<span class="comment">//访问过了该顶点，标记为TRUE </span></span><br><span class="line">    cout &lt;&lt; G.vertices[i].data &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    p = G.vertices[i].first;        <span class="comment">//让p指向边表第一个结点 </span></span><br><span class="line">    <span class="keyword">while</span> (p) &#123;                     <span class="comment">//在边表内遍历 </span></span><br><span class="line">        <span class="keyword">if</span> (!visited[p-&gt;adjvex])    <span class="comment">//对未访问的邻接顶点递归调用 </span></span><br><span class="line">            <span class="built_in">DFS</span>(G, p-&gt;adjvex);</span><br><span class="line">        p = p-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">DFSTraverse</span><span class="params">(ALGraph G)</span> </span>&#123;        <span class="comment">//邻接表的深度遍历操作</span></span><br><span class="line">    _for(i, <span class="number">0</span>, G.vexnum)</span><br><span class="line">        visited[i] = <span class="literal">false</span>;         <span class="comment">//初始设置为未访问 </span></span><br><span class="line">    _for(i, <span class="number">0</span>, G.vexnum)</span><br><span class="line">        <span class="keyword">if</span> (!visited[i])</span><br><span class="line">            <span class="built_in">DFS</span>(G, i);	            <span class="comment">//对未访问的顶点调用DFS，若是连通图只会执行一次 			</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> endregion</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//P223.4</span></span><br><span class="line"><span class="comment">//写出从图的邻接表表示转换成邻接矩阵表示的算法。</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Convert</span><span class="params">(ALGraph&amp; G, <span class="type">int</span> arcs[MaxVertexNum][MaxVertexNum])</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    _for(i, <span class="number">0</span>, G.vexnum) &#123;</span><br><span class="line">        ArcNode *p = G.vertices[i].first;</span><br><span class="line">        <span class="keyword">while</span> (p) &#123;</span><br><span class="line">            arcs[i][p-&gt;adjvex] = <span class="number">1</span>;</span><br><span class="line">            p = p-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> arcs[MaxVertexNum][MaxVertexNum];</span><br><span class="line">    <span class="built_in">memset</span>(arcs, <span class="number">0</span>, <span class="built_in">sizeof</span>(arcs));</span><br><span class="line">    ALGraph G;</span><br><span class="line">    <span class="built_in">CreateALGraph</span>(G);</span><br><span class="line">    cout &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;DFS:&quot;</span> &lt;&lt; endl;</span><br><span class="line">    <span class="built_in">DFSTraverse</span>(G);</span><br><span class="line">    cout &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt;<span class="string">&quot;转换后的邻接矩阵:&quot;</span>&lt;&lt; endl;</span><br><span class="line">    <span class="built_in">Convert</span>(G, arcs);</span><br><span class="line">    _for(i, <span class="number">0</span>, G.vexnum) &#123;</span><br><span class="line">        _for(j, <span class="number">0</span>, G.vexnum)</span><br><span class="line">            cout &lt;&lt; arcs[i][j] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">        cout &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">   </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输入：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="number">5</span> <span class="number">7</span></span><br><span class="line">a b c d e</span><br><span class="line">a b</span><br><span class="line">a e</span><br><span class="line">b c</span><br><span class="line">b d</span><br><span class="line">b e</span><br><span class="line">c d</span><br><span class="line">d e</span><br></pre></td></tr></table></figure>
+<p>运行结果如下：<br><img src="https://img-blog.csdnimg.cn/20210218215732477.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://ruvikm.github.io/2022/01/10/%E5%9B%BE%E7%9A%84%E9%82%BB%E6%8E%A5%E8%A1%A8%E8%A1%A8%E7%A4%BA%E8%BD%AC%E6%8D%A2%E6%88%90%E9%82%BB%E6%8E%A5%E7%9F%A9%E9%98%B5/" data-id="clhyqpa1m0017hovg6r3t2vw7" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Mybatis连接mysql的基本操作demo" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/01/10/Mybatis%E8%BF%9E%E6%8E%A5mysql%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9Cdemo/" class="article-date">
+  <time datetime="2022-01-10T11:34:12.000Z" itemprop="datePublished">2022-01-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/01/10/Mybatis%E8%BF%9E%E6%8E%A5mysql%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9Cdemo/">Mybatis连接mysql的基本操作demo</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>记录一下Mybatis的基础操作<br>个人理解相较于用java传统访问数据库而言，使用mybatis框架可以大大简化操作（只要严格的按照Mybatis的标准，一开始配置有点麻烦，配置好了真的舒服），把和数据库交互的操作扔给框架，这样就可以几乎只需要关注sql语句。<br>Demo采用Maven管理，配置框架的demo为<code>SQL_Manager.xml</code>文件,配置连接mysql数据库的信息在<code>jdbcConfig.properties</code>文件里，测试代码在<code>MybatisTest</code>里，代码里都有详细的注释。</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/Ruvikm/Mybatis_Demo">Demo地址</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://ruvikm.github.io/2022/01/10/Mybatis%E8%BF%9E%E6%8E%A5mysql%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9Cdemo/" data-id="clhyqpa1i000phovg51jc5jct" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/" rel="tag">java</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-LeetCode 131. Palindrome Partitioning" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/01/10/LeetCode%20131.%20Palindrome%20Partitioning/" class="article-date">
+  <time datetime="2022-01-10T11:33:12.000Z" itemprop="datePublished">2022-01-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/01/10/LeetCode%20131.%20Palindrome%20Partitioning/">LeetCode 131. Palindrome Partitioning</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Given a string s, partition s such that every substring of the partition is a palindrome.</p>
+<p>Return all possible palindrome partitioning of s.</p>
+<p>Example:</p>
+<p>Input: “aab”<br>Output:<br>[<br>  [“aa”,”b”],<br>  [“a”,”a”,”b”]<br>]</p>
+<p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/palindrome-partitioning/">题目链接</a></p>
+<p>可以回溯法切割出来字串，然后判断是否为回文串</p>
+<p>由于要找出来全部的字串，所有回溯的范围应该是全部遍历一遍。使用for循环进行横向的遍历，for循环结束的条件就是本层集合的个数（也就是树中孩子的数量），cur代表当前要切割的位置</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=cur;i&lt;s.<span class="built_in">length</span>();i++)</span><br></pre></td></tr></table></figure>
+<p>然后进行纵向的遍历，每当切割出来一个回文串，就把其放入tmp中，然后进行回溯。否则跳过。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="built_in">Ispalindrome</span>(s,cur,i))&#123;</span><br><span class="line">                string item=s.<span class="built_in">substr</span>(cur,i-cur+<span class="number">1</span>);</span><br><span class="line">                tmp.<span class="built_in">push_back</span>(item);</span><br><span class="line">                <span class="built_in">dfs</span>(s,i+<span class="number">1</span>);</span><br><span class="line">                tmp.<span class="built_in">pop_back</span>();</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br></pre></td></tr></table></figure>
+<p>回溯结束的条件就是当切割点cur的大小已经大于或者等于s的大小</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>(cur&gt;=s.<span class="built_in">length</span>())</span><br></pre></td></tr></table></figure>
+<p>判断回文串较为简单，用两个指针分别指向字符串的头和尾，如果两个指针所指向的字母一直相等到中间，就是回文串。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">bool</span> <span class="title">Ispalindrome</span><span class="params">(string s,<span class="type">int</span> start,<span class="type">int</span> end)</span></span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=start,j=end;i&lt;j;i++,j--)&#123;</span><br><span class="line">            <span class="keyword">if</span>(s[i]!=s[j])&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>全部代码如下：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    vector&lt;vector&lt;string&gt;&gt; res;</span><br><span class="line">    vector&lt;string&gt; tmp;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">dfs</span><span class="params">(<span class="type">const</span> string &amp;s,<span class="type">int</span> cur)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(cur&gt;=s.<span class="built_in">length</span>())&#123;</span><br><span class="line">            res.<span class="built_in">push_back</span>(tmp);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=cur;i&lt;s.<span class="built_in">length</span>();i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(<span class="built_in">Ispalindrome</span>(s,cur,i))&#123;</span><br><span class="line">                string item=s.<span class="built_in">substr</span>(cur,i-cur+<span class="number">1</span>);</span><br><span class="line">                tmp.<span class="built_in">push_back</span>(item);</span><br><span class="line">                <span class="built_in">dfs</span>(s,i+<span class="number">1</span>);</span><br><span class="line">                tmp.<span class="built_in">pop_back</span>();</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">           </span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">Ispalindrome</span><span class="params">(string s,<span class="type">int</span> start,<span class="type">int</span> end)</span></span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=start,j=end;i&lt;j;i++,j--)&#123;</span><br><span class="line">            <span class="keyword">if</span>(s[i]!=s[j])&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    vector&lt;vector&lt;string&gt;&gt; <span class="built_in">partition</span>(string s) &#123;</span><br><span class="line">        tmp.<span class="built_in">clear</span>();</span><br><span class="line">        res.<span class="built_in">clear</span>();</span><br><span class="line">        <span class="built_in">dfs</span>(s,<span class="number">0</span>);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://ruvikm.github.io/2022/01/10/LeetCode%20131.%20Palindrome%20Partitioning/" data-id="clhyqpa1f000dhovg175ue7kp" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-LeetCode 47 Permutations II" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/01/10/LeetCode%2047%20Permutations%20II/" class="article-date">
+  <time datetime="2022-01-10T11:31:12.000Z" itemprop="datePublished">2022-01-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/01/10/LeetCode%2047%20Permutations%20II/">LeetCode 47 Permutations II</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Given-a-collection-of-numbers-nums-that-might-contain-duplicates-return-all-possible-unique-permutations-in-any-order"><a href="#Given-a-collection-of-numbers-nums-that-might-contain-duplicates-return-all-possible-unique-permutations-in-any-order" class="headerlink" title="Given a collection of numbers, nums, that might contain duplicates, return all possible unique permutations in any order."></a>Given a collection of numbers, nums, that might contain duplicates, return all possible unique permutations in any order.</h2><p>Example 1:</p>
+<p>Input: nums &#x3D; [1,1,2]<br>Output:<br>[[1,1,2],<br> [1,2,1],<br> [2,1,1]]<br>Example 2:</p>
+<p>Input: nums &#x3D; [1,2,3]<br>Output: [[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]</p>
+<p>Constraints:</p>
+<p>1 &lt;&#x3D; nums.length &lt;&#x3D; 8<br>-10 &lt;&#x3D; nums[i] &lt;&#x3D; 10</p>
+<p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/permutations-ii/">题目链接</a></p>
+<p>这道题在<a target="_blank" rel="noopener" href="https://blog.csdn.net/ruvikm/article/details/109636529">全排列1</a>上添加了重复的元素，所以剪枝的情况要多考虑一种。比如1，2，2’<br>2，2’与2’，2其实是一种情况，所以要舍去。<br>而对于重复的元素，一开始先排序是一个不错的选择。再排序完之后，如果当前元素和上一个元素相等并且上一个元素还没有被用过（但是后面一定会被用到造成重复)，这样的时候就要考虑剪枝</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>(i&gt;<span class="number">0</span> &amp;&amp; nums[i]==nums[i<span class="number">-1</span>]&amp;&amp;!check[i<span class="number">-1</span>])&#123;</span><br><span class="line">               <span class="keyword">continue</span>;</span><br><span class="line">           &#125;</span><br></pre></td></tr></table></figure>
+<p>全部代码如下：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; res;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">dfs</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums,vector&lt;<span class="type">int</span>&gt;&amp; temp,vector&lt;<span class="type">int</span>&gt;&amp; check)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(temp.<span class="built_in">size</span>()==nums.<span class="built_in">size</span>())&#123;</span><br><span class="line">            res.<span class="built_in">push_back</span>(temp);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;nums.<span class="built_in">size</span>();i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(check[i])&#123;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125; </span><br><span class="line">            <span class="keyword">if</span>(i&gt;<span class="number">0</span> &amp;&amp; nums[i]==nums[i<span class="number">-1</span>]&amp;&amp;!check[i<span class="number">-1</span>])&#123;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            check[i]=<span class="number">1</span>;</span><br><span class="line">            temp.<span class="built_in">push_back</span>(nums[i]);</span><br><span class="line">            <span class="built_in">dfs</span>(nums,temp,check);</span><br><span class="line">            temp.<span class="built_in">pop_back</span>();</span><br><span class="line">            check[i]=<span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">permuteUnique</span>(vector&lt;<span class="type">int</span>&gt;&amp; nums) &#123;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; temp;</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">check</span><span class="params">(nums.size(),<span class="number">0</span>)</span></span>;</span><br><span class="line">        <span class="built_in">sort</span>(nums.<span class="built_in">begin</span>(),nums.<span class="built_in">end</span>());</span><br><span class="line">        <span class="built_in">dfs</span>(nums,temp,check);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://ruvikm.github.io/2022/01/10/LeetCode%2047%20Permutations%20II/" data-id="clhyqpa1h000mhovg1g42ciri" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">下一页 &amp;raquo;</a>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/" rel="tag">Android</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%B6%E4%BB%96/" rel="tag">其他</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" rel="tag">微信小程序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Android/" style="font-size: 10px;">Android</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/java/" style="font-size: 16.67px;">java</a> <a href="/tags/%E5%85%B6%E4%BB%96/" style="font-size: 13.33px;">其他</a> <a href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" style="font-size: 10px;">微信小程序</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 20px;">算法</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">一月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">十月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/01/10/hexo-%E6%9C%AC%E5%9C%B0%E6%98%BE%E7%A4%BA%E9%83%A8%E7%BD%B2%E5%90%8E%E5%8D%9A%E5%AE%A2%E9%A1%B5%E9%9D%A2%E6%9C%AA%E6%9B%B4%E6%96%B0%EF%BC%88Github%E5%B7%B2%E6%9B%B4%E6%96%B0%EF%BC%89/">hexo 本地显示部署后博客页面未更新（Github已更新）</a>
+          </li>
+        
+          <li>
+            <a href="/2022/01/10/%E7%8E%8B%E9%81%93%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%20%E7%BA%BF%E6%80%A7%E8%A1%A8%20%E9%93%BE%E5%BC%8F%E5%AD%98%E5%82%A8%E5%B0%8F%E7%BB%93/">王道数据结构 线性表 链式存储小结</a>
+          </li>
+        
+          <li>
+            <a href="/2022/01/10/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97%20C_C++/">斐波那契数列 C_C++</a>
+          </li>
+        
+          <li>
+            <a href="/2022/01/10/%E7%AE%97%E6%B3%95%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/">算法期末复习</a>
+          </li>
+        
+          <li>
+            <a href="/2022/01/10/%E8%BD%AF%E4%BB%B6%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86%E2%80%94%E2%80%94%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/">软件体系结构基本知识——期末复习</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2023 Ruvikm<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

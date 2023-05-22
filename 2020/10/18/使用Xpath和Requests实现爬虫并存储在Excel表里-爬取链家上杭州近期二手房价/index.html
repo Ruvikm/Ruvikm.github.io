@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>使用Xpath和Requests实现爬虫并存储在Excel表里---爬取链家上杭州近期二手房价 | Ruvikm</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="爬的是杭州近期的的新房价 # encoding: utf-8&quot;&quot;&quot;@author: Ruvik@software: PyCharm@file: Spider_House.py@time: 2020&#x2F;7&#x2F;9 20:12&quot;&quot;&quot;# 爬一下链家网上杭州新房的价格import requests                 # 进行网络请求imp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用Xpath和Requests实现爬虫并存储在Excel表里---爬取链家上杭州近期二手房价">
+<meta property="og:url" content="https://ruvikm.github.io/2020/10/18/%E4%BD%BF%E7%94%A8Xpath%E5%92%8CRequests%E5%AE%9E%E7%8E%B0%E7%88%AC%E8%99%AB%E5%B9%B6%E5%AD%98%E5%82%A8%E5%9C%A8Excel%E8%A1%A8%E9%87%8C-%E7%88%AC%E5%8F%96%E9%93%BE%E5%AE%B6%E4%B8%8A%E6%9D%AD%E5%B7%9E%E8%BF%91%E6%9C%9F%E4%BA%8C%E6%89%8B%E6%88%BF%E4%BB%B7/index.html">
+<meta property="og:site_name" content="Ruvikm">
+<meta property="og:description" content="爬的是杭州近期的的新房价 # encoding: utf-8&quot;&quot;&quot;@author: Ruvik@software: PyCharm@file: Spider_House.py@time: 2020&#x2F;7&#x2F;9 20:12&quot;&quot;&quot;# 爬一下链家网上杭州新房的价格import requests                 # 进行网络请求imp">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-10-18T11:44:09.000Z">
+<meta property="article:modified_time" content="2022-01-10T11:32:26.420Z">
+<meta property="article:author" content="Ruvikm">
+<meta property="article:tag" content="Python">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Ruvikm" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 7.0.0-rc1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Ruvikm</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://ruvikm.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-使用Xpath和Requests实现爬虫并存储在Excel表里-爬取链家上杭州近期二手房价" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/10/18/%E4%BD%BF%E7%94%A8Xpath%E5%92%8CRequests%E5%AE%9E%E7%8E%B0%E7%88%AC%E8%99%AB%E5%B9%B6%E5%AD%98%E5%82%A8%E5%9C%A8Excel%E8%A1%A8%E9%87%8C-%E7%88%AC%E5%8F%96%E9%93%BE%E5%AE%B6%E4%B8%8A%E6%9D%AD%E5%B7%9E%E8%BF%91%E6%9C%9F%E4%BA%8C%E6%89%8B%E6%88%BF%E4%BB%B7/" class="article-date">
+  <time datetime="2020-10-18T11:44:09.000Z" itemprop="datePublished">2020-10-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      使用Xpath和Requests实现爬虫并存储在Excel表里---爬取链家上杭州近期二手房价
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>爬的是杭州近期的的新房价</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># encoding: utf-8</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">@author: Ruvik</span></span><br><span class="line"><span class="string">@software: PyCharm</span></span><br><span class="line"><span class="string">@file: Spider_House.py</span></span><br><span class="line"><span class="string">@time: 2020/7/9 20:12</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 爬一下链家网上杭州新房的价格</span></span><br><span class="line"><span class="keyword">import</span> requests                 <span class="comment"># 进行网络请求</span></span><br><span class="line"><span class="keyword">import</span> xlwt                     <span class="comment"># 与excel相关的操作</span></span><br><span class="line"><span class="keyword">from</span> lxml <span class="keyword">import</span> etree          <span class="comment"># 引入xpath库，方便定位元素</span></span><br><span class="line"><span class="keyword">import</span> time                     <span class="comment"># 进行访问频率控制</span></span><br><span class="line"><span class="keyword">import</span> random                   <span class="comment"># 随机数生成</span></span><br><span class="line"><span class="keyword">import</span> re                       <span class="comment"># 正则表达式</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 主程序</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">main</span>():</span><br><span class="line"></span><br><span class="line">    base_url = <span class="string">&quot;https://hz.fang.lianjia.com/loupan/pg&quot;</span>     <span class="comment"># 最基本的网址，后续会根据这个进行翻页操作</span></span><br><span class="line">    Savepath = <span class="string">&quot;.\\杭州新房价.xls&quot;</span>                           <span class="comment"># 存储路径</span></span><br><span class="line">    datalist = getdata(base_url)</span><br><span class="line">    savedata(datalist, Savepath)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取html源码</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">ask_url</span>(<span class="params">url</span>):</span><br><span class="line">    html=<span class="string">&quot;&quot;</span></span><br><span class="line">    headers=&#123;          <span class="comment"># 进行伪装，防止416错误，模拟浏览器头部信息，向豆瓣服务器发送消息</span></span><br><span class="line">        <span class="string">&quot;User-Agent&quot;</span>: <span class="string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        response = requests.get(url,headers=headers,timeout=<span class="number">10</span>)  <span class="comment"># 用户代理，表示告诉豆瓣服务器，我们是什么类型的机器、浏览器（本质上是告诉浏览器，我们可以接收什么水平的文件内容）</span></span><br><span class="line">        time.sleep(random.randint(<span class="number">3</span>, <span class="number">6</span>))                        <span class="comment"># 每隔3-6s执行一次请求</span></span><br><span class="line">        <span class="comment"># print(response.status_code)</span></span><br><span class="line">        html = response.content                                     <span class="comment"># 获取网页的html源代码</span></span><br><span class="line">        <span class="comment"># print(html)</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;请求访问成功&quot;</span>)</span><br><span class="line">    <span class="keyword">except</span> requests.exceptions.RequestException <span class="keyword">as</span> e:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;超时&quot;</span>)</span><br><span class="line">        <span class="built_in">print</span>(e)</span><br><span class="line">    <span class="keyword">return</span> html</span><br><span class="line"></span><br><span class="line"><span class="comment"># 从html源码中获取信息</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">getdata</span>(<span class="params">baseurl</span>):</span><br><span class="line">    Datalist = []                                 <span class="comment"># 用来存储已经经过处理的信息</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="number">100</span>):                     <span class="comment"># 在1-100页内爬取房价的信息</span></span><br><span class="line">        url = baseurl+<span class="built_in">str</span>(i)                    <span class="comment"># 拼接url网址，进行换页</span></span><br><span class="line">        <span class="comment"># print(url)</span></span><br><span class="line">        data = ask_url(url)                     <span class="comment"># 获取到源代码</span></span><br><span class="line">        <span class="comment"># 从源代码中提取信息</span></span><br><span class="line">        <span class="keyword">if</span> data != <span class="string">&quot;&quot;</span>:</span><br><span class="line">            html_data = etree.HTML(data)</span><br><span class="line">            div_list = html_data.xpath(<span class="string">&#x27;//div[@class=&quot;resblock-desc-wrapper&quot;]&#x27;</span>)</span><br><span class="line">            <span class="comment"># print(len(div_list))</span></span><br><span class="line">            <span class="keyword">for</span> item <span class="keyword">in</span> div_list:</span><br><span class="line">                data_item = []</span><br><span class="line">                <span class="comment"># 提取详情链接</span></span><br><span class="line">                link = <span class="string">&quot;https://hz.fang.lianjia.com&quot;</span></span><br><span class="line">                link += item.xpath(<span class="string">&#x27;./div/a/@href&#x27;</span>)[<span class="number">0</span>]</span><br><span class="line">                data_item.append(link)</span><br><span class="line">                <span class="comment"># print(link)</span></span><br><span class="line"></span><br><span class="line">                <span class="comment"># 提取名字</span></span><br><span class="line">                name = item.xpath(<span class="string">&quot;./div/a/text()&quot;</span>)[<span class="number">0</span>]</span><br><span class="line">                data_item.append(name)</span><br><span class="line">                <span class="comment"># print(name)</span></span><br><span class="line"></span><br><span class="line">                <span class="comment"># 提取地址</span></span><br><span class="line">                loc = item.xpath(<span class="string">&#x27;./div[@class=&quot;resblock-location&quot;]/span/text()&#x27;</span>)</span><br><span class="line">                location = loc[<span class="number">0</span>] +<span class="string">&quot;|&quot;</span>+ loc[<span class="number">1</span>] +<span class="string">&quot;|&quot;</span>+ item.xpath(<span class="string">&#x27;./div[@class=&quot;resblock-location&quot;]/a/text()&#x27;</span>)[<span class="number">0</span>]</span><br><span class="line">                data_item.append(location)</span><br><span class="line">                <span class="comment"># print(location)</span></span><br><span class="line"></span><br><span class="line">                <span class="comment"># 提取户型</span></span><br><span class="line">                room = item.xpath(<span class="string">&#x27;./a[@class=&quot;resblock-room&quot;]/span/text()&#x27;</span>)</span><br><span class="line">                rooms = <span class="string">&quot;&quot;</span></span><br><span class="line">                <span class="keyword">for</span> k <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(room)):</span><br><span class="line">                    <span class="keyword">if</span> k &lt; <span class="built_in">len</span>(room) - <span class="number">1</span>:</span><br><span class="line">                        rooms += <span class="built_in">str</span>(room[k]) + <span class="string">&quot;|&quot;</span></span><br><span class="line">                    <span class="keyword">else</span>:</span><br><span class="line">                        rooms += <span class="built_in">str</span>(room[k])</span><br><span class="line">                <span class="comment"># print(rooms)</span></span><br><span class="line">                data_item.append(rooms)</span><br><span class="line"></span><br><span class="line">                <span class="comment"># 提取大小</span></span><br><span class="line">                size = item.xpath(<span class="string">&#x27;./div[@class=&quot;resblock-area&quot;]/span/text()&#x27;</span>)</span><br><span class="line">                <span class="keyword">if</span> <span class="built_in">len</span>(size) != <span class="number">0</span>:</span><br><span class="line">                    data_item.append(size[<span class="number">0</span>])</span><br><span class="line">                    <span class="comment"># print(size[0])</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    data_item.append(<span class="string">&quot; &quot;</span>)</span><br><span class="line"></span><br><span class="line">                <span class="comment"># 提取标签</span></span><br><span class="line">                tag = item.xpath(<span class="string">&#x27;./div[@class=&quot;resblock-tag&quot;]/span/text()&#x27;</span>)</span><br><span class="line">                tags = <span class="string">&quot;&quot;</span></span><br><span class="line">                <span class="keyword">for</span> k <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(tag)):</span><br><span class="line">                    <span class="keyword">if</span> k &lt; <span class="built_in">len</span>(tag)-<span class="number">1</span>:</span><br><span class="line">                        tags += <span class="built_in">str</span>(tag[k]) + <span class="string">&quot;|&quot;</span></span><br><span class="line">                    <span class="keyword">else</span>:</span><br><span class="line">                        tags += <span class="built_in">str</span>(tag[k])</span><br><span class="line">                <span class="comment"># print(tags)</span></span><br><span class="line">                data_item.append(tags)</span><br><span class="line"></span><br><span class="line">                <span class="comment"># 提取价格</span></span><br><span class="line">                Price = <span class="string">&quot;&quot;</span></span><br><span class="line">                price = item.xpath(<span class="string">&#x27;./div[@class=&quot;resblock-price&quot;]/div/span/text()&#x27;</span>)</span><br><span class="line">                <span class="keyword">for</span> k <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(price)):</span><br><span class="line">                    Price += price[k]</span><br><span class="line">                Price = re.sub(<span class="string">&#x27;\xa0&#x27;</span>, <span class="string">&quot;&quot;</span>, Price)     <span class="comment"># 去掉“\xa0”字符</span></span><br><span class="line">                <span class="comment"># print(Price)</span></span><br><span class="line">                data_item.append(Price)</span><br><span class="line">                Datalist.append(data_item)</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="built_in">len</span>(Datalist))</span><br><span class="line">    <span class="keyword">return</span> Datalist</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将html获取的信息存入Excel表格中</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">savedata</span>(<span class="params">Datalist,Savapath</span>):</span><br><span class="line">    col = (<span class="string">&quot;链接&quot;</span>, <span class="string">&quot;名字&quot;</span>, <span class="string">&quot;地址&quot;</span>, <span class="string">&quot;户型&quot;</span>, <span class="string">&quot;大小&quot;</span>, <span class="string">&quot;标签&quot;</span>, <span class="string">&quot;价格&quot;</span>)                <span class="comment"># Excel的表头</span></span><br><span class="line">    house_list = xlwt.Workbook(encoding=<span class="string">&quot;utf-8&quot;</span>, style_compression=<span class="number">0</span>)       <span class="comment"># 创建workbook对象</span></span><br><span class="line">    worksheet = house_list.add_sheet(<span class="string">&quot;HouseList&quot;</span>, cell_overwrite_ok=<span class="literal">True</span>)   <span class="comment"># 新建工作区，设为可覆盖</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="number">7</span>):                                                   <span class="comment"># 写入表头</span></span><br><span class="line">        worksheet.write(<span class="number">0</span>, i, col[i])</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="number">990</span>):                                                 <span class="comment"># 写入数据</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;正在写入第%d条数据&quot;</span> % (i + <span class="number">1</span>))</span><br><span class="line">        item = Datalist[i]</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="number">7</span>):</span><br><span class="line">            worksheet.write(i + <span class="number">1</span>, j, item[j])</span><br><span class="line">    house_list.save(Savapath)                                               <span class="comment"># 存储</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 程序从这里开始执行</span></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    main()</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;爬取完毕!&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://ruvikm.github.io/2020/10/18/%E4%BD%BF%E7%94%A8Xpath%E5%92%8CRequests%E5%AE%9E%E7%8E%B0%E7%88%AC%E8%99%AB%E5%B9%B6%E5%AD%98%E5%82%A8%E5%9C%A8Excel%E8%A1%A8%E9%87%8C-%E7%88%AC%E5%8F%96%E9%93%BE%E5%AE%B6%E4%B8%8A%E6%9D%AD%E5%B7%9E%E8%BF%91%E6%9C%9F%E4%BA%8C%E6%89%8B%E6%88%BF%E4%BB%B7/" data-id="clhyqpa1l0012hovghye6274r" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/" rel="tag">Python</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/10/18/Steam%E7%BD%91%E9%A1%B5%E7%89%88-%E6%89%8B%E6%9C%BA%E7%AB%AF%E6%98%BE%E7%A4%BA%E7%9F%AD%E6%9C%9F%E5%86%85%E6%9D%A5%E8%87%AA%E6%82%A8%E7%BD%91%E7%BB%9C%E7%9A%84%E5%A4%B1%E8%B4%A5%E7%99%BB%E9%99%86%E8%BF%87%E5%A4%9A%EF%BC%8C%E8%AF%B7%E7%A8%8D%E5%90%8E%E5%86%8D%E8%AF%95/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Steam网页版/手机端显示短期内来自您网络的失败登陆过多，请稍后再试
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/10/18/%E8%A7%A3%E5%86%B3AndroidStudio%E8%BF%9E%E4%B8%8D%E4%B8%8A%E7%BD%91/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">解决AndroidStudio连不上网</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/" rel="tag">Android</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%B6%E4%BB%96/" rel="tag">其他</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" rel="tag">微信小程序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Android/" style="font-size: 10px;">Android</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/java/" style="font-size: 16.67px;">java</a> <a href="/tags/%E5%85%B6%E4%BB%96/" style="font-size: 13.33px;">其他</a> <a href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" style="font-size: 10px;">微信小程序</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 20px;">算法</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">一月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">十月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/01/10/hexo-%E6%9C%AC%E5%9C%B0%E6%98%BE%E7%A4%BA%E9%83%A8%E7%BD%B2%E5%90%8E%E5%8D%9A%E5%AE%A2%E9%A1%B5%E9%9D%A2%E6%9C%AA%E6%9B%B4%E6%96%B0%EF%BC%88Github%E5%B7%B2%E6%9B%B4%E6%96%B0%EF%BC%89/">hexo 本地显示部署后博客页面未更新（Github已更新）</a>
+          </li>
+        
+          <li>
+            <a href="/2022/01/10/%E7%8E%8B%E9%81%93%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%20%E7%BA%BF%E6%80%A7%E8%A1%A8%20%E9%93%BE%E5%BC%8F%E5%AD%98%E5%82%A8%E5%B0%8F%E7%BB%93/">王道数据结构 线性表 链式存储小结</a>
+          </li>
+        
+          <li>
+            <a href="/2022/01/10/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97%20C_C++/">斐波那契数列 C_C++</a>
+          </li>
+        
+          <li>
+            <a href="/2022/01/10/%E7%AE%97%E6%B3%95%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/">算法期末复习</a>
+          </li>
+        
+          <li>
+            <a href="/2022/01/10/%E8%BD%AF%E4%BB%B6%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86%E2%80%94%E2%80%94%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/">软件体系结构基本知识——期末复习</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2023 Ruvikm<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
