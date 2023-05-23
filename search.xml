@@ -140,6 +140,55 @@
       </tags>
   </entry>
   <entry>
+    <title>WSL命令行操作笔记</title>
+    <url>/2023/05/23/WSL%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%93%8D%E4%BD%9C%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<p>记录一下这段时间学习conda以及ubuntu的命令行指令，<del>以便以后直接粘贴复制</del></p>
+<h2 id="1-为wsl下ubuntu系统添加用户"><a href="#1-为wsl下ubuntu系统添加用户" class="headerlink" title="1.为wsl下ubuntu系统添加用户"></a>1.为wsl下ubuntu系统添加用户</h2><p>创建用户username</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">useradd username</span><br></pre></td></tr></table></figure>
+<p>给已创建的用户username设置密码</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">passwd username</span><br></pre></td></tr></table></figure>
+<p>修改用户这个命令的相关参数</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">usermod --help</span><br></pre></td></tr></table></figure>
+<p>删除用户username</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">userdel username</span><br></pre></td></tr></table></figure>
+<p>删除用户username所在目录</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">rm -rf username</span><br></pre></td></tr></table></figure>
+<h2 id="2-用户切换"><a href="#2-用户切换" class="headerlink" title="2.用户切换"></a>2.用户切换</h2><p>切换到root</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo -s	</span><br></pre></td></tr></table></figure>
+<p>切换到用户username</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">su username</span><br><span class="line"></span><br><span class="line">eg:su ubuntu22</span><br></pre></td></tr></table></figure>
+<h2 id="3-切换环境名"><a href="#3-切换环境名" class="headerlink" title="3.切换环境名"></a>3.切换环境名</h2><p>使用cu118py310环境(pytorch)</p>
+<ul>
+<li>python : 3.10</li>
+<li>tensorflow : 2.12.0</li>
+<li>torch : 2.0.1+cu118</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">conda activate cu118py310</span><br></pre></td></tr></table></figure>
+<p>使用tensorflow环境</p>
+<ul>
+<li><p>python : 3.7</p>
+</li>
+<li><p>tensorflow-gpu : 1.15.0</p>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">conda activate tensorflow</span><br></pre></td></tr></table></figure>
+<h2 id="4-查看并删除环境"><a href="#4-查看并删除环境" class="headerlink" title="4.查看并删除环境"></a>4.查看并删除环境</h2><p>查看环境列表</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">conda info --env</span><br></pre></td></tr></table></figure>
+<p>删除环境</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">conda remove -n 环境名 --all</span><br><span class="line"></span><br><span class="line">eg:conda remove -n tensorflow --all</span><br></pre></td></tr></table></figure>
+<h2 id="5-创建环境"><a href="#5-创建环境" class="headerlink" title="5.创建环境"></a>5.创建环境</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">conda create -n 环境名 python=版本号</span><br><span class="line"></span><br><span class="line">eg:conda create -n torch python=3.7</span><br></pre></td></tr></table></figure>
+<h2 id="6-退出当前环境"><a href="#6-退出当前环境" class="headerlink" title="6.退出当前环境"></a>6.退出当前环境</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">conda activate base</span><br></pre></td></tr></table></figure>
+<h2 id="7-查看当前环境已安装的包"><a href="#7-查看当前环境已安装的包" class="headerlink" title="7.查看当前环境已安装的包"></a>7.查看当前环境已安装的包</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pip list</span><br></pre></td></tr></table></figure>
+<h2 id="8-查看WSL2可用内存空间"><a href="#8-查看WSL2可用内存空间" class="headerlink" title="8.查看WSL2可用内存空间"></a>8.查看WSL2可用内存空间</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cat /proc/meminfo</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>个人笔记</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>使用Xpath和Requests实现爬虫并存储在Excel表里---爬取链家上杭州近期二手房价</title>
     <url>/2020/10/18/%E4%BD%BF%E7%94%A8Xpath%E5%92%8CRequests%E5%AE%9E%E7%8E%B0%E7%88%AC%E8%99%AB%E5%B9%B6%E5%AD%98%E5%82%A8%E5%9C%A8Excel%E8%A1%A8%E9%87%8C-%E7%88%AC%E5%8F%96%E9%93%BE%E5%AE%B6%E4%B8%8A%E6%9D%AD%E5%B7%9E%E8%BF%91%E6%9C%9F%E4%BA%8C%E6%89%8B%E6%88%BF%E4%BB%B7/</url>
     <content><![CDATA[<p>爬的是杭州近期的的新房价</p>
