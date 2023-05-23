@@ -96,6 +96,30 @@
   </entry>
   
   <entry>
+    <title>算法期末复习</title>
+    <link href="https://ruvikm.github.io/2022/01/10/%E7%AE%97%E6%B3%95%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/"/>
+    <id>https://ruvikm.github.io/2022/01/10/%E7%AE%97%E6%B3%95%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/</id>
+    <published>2022-01-10T11:52:28.000Z</published>
+    <updated>2023-05-23T01:22:00.097Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="用思维导图整理了一下算法的基本知识"><a href="#用思维导图整理了一下算法的基本知识" class="headerlink" title="用思维导图整理了一下算法的基本知识"></a>用思维导图整理了一下算法的基本知识</h2><p>&emsp;<br>&emsp;</p><ol><li>算法概述<br>&emsp;<img src="https://img-blog.csdnimg.cn/20201219173740232.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="算法概述"><br>&emsp;</li><li><p>递归与分治策略<br>&emsp;<br><img src="https://img-blog.csdnimg.cn/20201219190206679.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="递归与分治策略"></p><p>&emsp;</p></li><li><p>动态规划<br>&emsp;<br><img src="https://img-blog.csdnimg.cn/20201219173858421.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="动态规划"><br>&emsp;</p></li><li><p>贪心算法<br>&emsp;<img src="https://img-blog.csdnimg.cn/20201219173922373.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="贪心算法"><br>&emsp;</p></li><li><p>回溯法<br>&emsp;<br><img src="https://img-blog.csdnimg.cn/20201219173946942.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="回溯法"><br>&emsp;</p></li><li>分支限界法<br>&emsp;<br><img src="https://img-blog.csdnimg.cn/20201219174007775.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="分支限界法"></li></ol><p><a href="https://ruvikm.lanzous.com/i9b5ajim3kh">PDF文件（内有超链接）</a></p><p>参考资料：</p><ul><li><a href="https://blog.csdn.net/databatman/article/details/49304295">算法中的P问题、NP问题、NP完全问题和NP难问题</a></li><li><a href="https://blog.csdn.net/qq_45904930/article/details/110748764">分治法之棋盘覆盖问题</a></li><li><a href="https://blog.csdn.net/yjt13/article/details/82085537">排序之归并排序</a></li><li><a href="https://blog.csdn.net/baidu_28312631/article/details/47418773">教你彻底学会动态规划——入门篇</a></li><li><a href="https://blog.csdn.net/listen132/article/details/111242757">矩阵连乘</a></li><li><a href="https://blog.csdn.net/a2392008643/article/details/81781766">最小生成树的两种方法（Kruskal算法和Prim算法）</a></li><li><a href="https://blog.csdn.net/daoshen1314/article/details/101294101">循环赛日程表（分治法）</a></li></ul><p>最后推荐一个算法可视化的网站<br><a href="https://visualgo.net/">VisuAlgo</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;用思维导图整理了一下算法的基本知识&quot;&gt;&lt;a href=&quot;#用思维导图整理了一下算法的基本知识&quot; class=&quot;headerlink&quot; title=&quot;用思维导图整理了一下算法的基本知识&quot;&gt;&lt;/a&gt;用思维导图整理了一下算法的基本知识&lt;/h2&gt;&lt;p&gt;&amp;emsp;&lt;br&gt;</summary>
+      
+    
+    
+    
+    <category term="学习笔记" scheme="https://ruvikm.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="算法" scheme="https://ruvikm.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
     <title>软件体系结构基本知识——期末复习</title>
     <link href="https://ruvikm.github.io/2022/01/10/%E8%BD%AF%E4%BB%B6%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86%E2%80%94%E2%80%94%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/"/>
     <id>https://ruvikm.github.io/2022/01/10/%E8%BD%AF%E4%BB%B6%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86%E2%80%94%E2%80%94%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/</id>
@@ -117,30 +141,6 @@
     
     
     <category term="其他" scheme="https://ruvikm.github.io/tags/%E5%85%B6%E4%BB%96/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>算法期末复习</title>
-    <link href="https://ruvikm.github.io/2022/01/10/%E7%AE%97%E6%B3%95%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/"/>
-    <id>https://ruvikm.github.io/2022/01/10/%E7%AE%97%E6%B3%95%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/</id>
-    <published>2022-01-10T11:52:28.000Z</published>
-    <updated>2023-05-23T01:22:00.097Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="用思维导图整理了一下算法的基本知识"><a href="#用思维导图整理了一下算法的基本知识" class="headerlink" title="用思维导图整理了一下算法的基本知识"></a>用思维导图整理了一下算法的基本知识</h2><p>&emsp;<br>&emsp;</p><ol><li>算法概述<br>&emsp;<img src="https://img-blog.csdnimg.cn/20201219173740232.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="算法概述"><br>&emsp;</li><li><p>递归与分治策略<br>&emsp;<br><img src="https://img-blog.csdnimg.cn/20201219190206679.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="递归与分治策略"></p><p>&emsp;</p></li><li><p>动态规划<br>&emsp;<br><img src="https://img-blog.csdnimg.cn/20201219173858421.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="动态规划"><br>&emsp;</p></li><li><p>贪心算法<br>&emsp;<img src="https://img-blog.csdnimg.cn/20201219173922373.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="贪心算法"><br>&emsp;</p></li><li><p>回溯法<br>&emsp;<br><img src="https://img-blog.csdnimg.cn/20201219173946942.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="回溯法"><br>&emsp;</p></li><li>分支限界法<br>&emsp;<br><img src="https://img-blog.csdnimg.cn/20201219174007775.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="分支限界法"></li></ol><p><a href="https://ruvikm.lanzous.com/i9b5ajim3kh">PDF文件（内有超链接）</a></p><p>参考资料：</p><ul><li><a href="https://blog.csdn.net/databatman/article/details/49304295">算法中的P问题、NP问题、NP完全问题和NP难问题</a></li><li><a href="https://blog.csdn.net/qq_45904930/article/details/110748764">分治法之棋盘覆盖问题</a></li><li><a href="https://blog.csdn.net/yjt13/article/details/82085537">排序之归并排序</a></li><li><a href="https://blog.csdn.net/baidu_28312631/article/details/47418773">教你彻底学会动态规划——入门篇</a></li><li><a href="https://blog.csdn.net/listen132/article/details/111242757">矩阵连乘</a></li><li><a href="https://blog.csdn.net/a2392008643/article/details/81781766">最小生成树的两种方法（Kruskal算法和Prim算法）</a></li><li><a href="https://blog.csdn.net/daoshen1314/article/details/101294101">循环赛日程表（分治法）</a></li></ul><p>最后推荐一个算法可视化的网站<br><a href="https://visualgo.net/">VisuAlgo</a></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;用思维导图整理了一下算法的基本知识&quot;&gt;&lt;a href=&quot;#用思维导图整理了一下算法的基本知识&quot; class=&quot;headerlink&quot; title=&quot;用思维导图整理了一下算法的基本知识&quot;&gt;&lt;/a&gt;用思维导图整理了一下算法的基本知识&lt;/h2&gt;&lt;p&gt;&amp;emsp;&lt;br&gt;</summary>
-      
-    
-    
-    
-    <category term="学习笔记" scheme="https://ruvikm.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    
-    <category term="算法" scheme="https://ruvikm.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
