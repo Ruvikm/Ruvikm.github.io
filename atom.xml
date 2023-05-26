@@ -6,7 +6,7 @@
   <link href="https://ruvikm.gitee.io/atom.xml" rel="self"/>
   
   <link href="https://ruvikm.gitee.io/"/>
-  <updated>2023-05-26T08:59:35.745Z</updated>
+  <updated>2023-05-26T09:02:36.987Z</updated>
   <id>https://ruvikm.gitee.io/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://ruvikm.gitee.io/2023/05/26/hexo%E9%83%A8%E7%BD%B2%E5%88%B0Gitee%E5%90%8E%E6%98%BE%E7%A4%BA404/"/>
     <id>https://ruvikm.gitee.io/2023/05/26/hexo%E9%83%A8%E7%BD%B2%E5%88%B0Gitee%E5%90%8E%E6%98%BE%E7%A4%BA404/</id>
     <published>2023-05-26T08:40:55.000Z</published>
-    <updated>2023-05-26T08:59:35.745Z</updated>
+    <updated>2023-05-26T09:02:36.987Z</updated>
     
-    <content type="html"><![CDATA[<p>在Gitee开启了Gitee Pages，并且本地完成了</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g -d</span><br></pre></td></tr></table></figure><p>然后发现已经上传到了Gitee仓库里，但是访问博客的网址却显示404</p><p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-05-26%20163430-1685090681023-7.png" alt="屏幕截图 2023-05-26 163430"></p><p>有以下两种可能的原因：</p><p><strong>1.hexo根目录下的_config.yml文件里，url没有配置对</strong></p><p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-05-26%20164633.png" alt="屏幕截图 2023-05-26 164633"></p><p>如果仓库名和Gitee的用户名不一致时，root属性也需要修改。</p><p>比如用户名为xxx新建的仓库地址为</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">https://gitee.com/xxx/myblog </span><br></pre></td></tr></table></figure><p>则以上内容需要修改为</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">url: https://xxx.gitee.io/</span><br><span class="line">root: /myblog</span><br></pre></td></tr></table></figure><p><strong>2.没有手动再部署一遍！！！</strong></p><p>是的你没有听错，这个居然上传成功后还需要手动再更新一下！</p><p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-05-26%20164839.png" alt="屏幕截图 2023-05-26 164839"></p>]]></content>
+    <content type="html"><![CDATA[<p>在Gitee开启了Gitee Pages，并且本地完成了</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g -d</span><br></pre></td></tr></table></figure><p>然后发现已经上传到了Gitee仓库里，但是访问博客的网址却显示404</p><p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-05-26%20163430-1685090681023-7.png" alt="屏幕截图 2023-05-26 163430"></p><p>有以下两种可能的原因：</p><h3 id="hexo根目录下的-config-yml文件里，url没有配置对"><a href="#hexo根目录下的-config-yml文件里，url没有配置对" class="headerlink" title="hexo根目录下的_config.yml文件里，url没有配置对"></a>hexo根目录下的_config.yml文件里，url没有配置对</h3><p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-05-26%20164633.png" alt="屏幕截图 2023-05-26 164633"></p><p>如果仓库名和Gitee的用户名不一致时，root属性也需要修改。</p><p>比如用户名为xxx新建的仓库地址为</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">https://gitee.com/xxx/myblog </span><br></pre></td></tr></table></figure><p>则以上内容需要修改为</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">url: https://xxx.gitee.io/</span><br><span class="line">root: /myblog</span><br></pre></td></tr></table></figure><h3 id="没有手动再部署一遍！！！"><a href="#没有手动再部署一遍！！！" class="headerlink" title="没有手动再部署一遍！！！"></a>没有手动再部署一遍！！！</h3><p>是的你没有听错，这个居然上传成功后还需要手动再更新一下！</p><p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-05-26%20164839.png" alt="屏幕截图 2023-05-26 164839"></p>]]></content>
     
     
       
@@ -119,30 +119,6 @@
   </entry>
   
   <entry>
-    <title>算法期末复习</title>
-    <link href="https://ruvikm.gitee.io/2022/01/10/%E7%AE%97%E6%B3%95%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/"/>
-    <id>https://ruvikm.gitee.io/2022/01/10/%E7%AE%97%E6%B3%95%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/</id>
-    <published>2022-01-10T11:52:28.000Z</published>
-    <updated>2023-05-23T01:22:00.097Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="用思维导图整理了一下算法的基本知识"><a href="#用思维导图整理了一下算法的基本知识" class="headerlink" title="用思维导图整理了一下算法的基本知识"></a>用思维导图整理了一下算法的基本知识</h2><p>&emsp;<br>&emsp;</p><ol><li>算法概述<br>&emsp;<img src="https://img-blog.csdnimg.cn/20201219173740232.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="算法概述"><br>&emsp;</li><li><p>递归与分治策略<br>&emsp;<br><img src="https://img-blog.csdnimg.cn/20201219190206679.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="递归与分治策略"></p><p>&emsp;</p></li><li><p>动态规划<br>&emsp;<br><img src="https://img-blog.csdnimg.cn/20201219173858421.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="动态规划"><br>&emsp;</p></li><li><p>贪心算法<br>&emsp;<img src="https://img-blog.csdnimg.cn/20201219173922373.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="贪心算法"><br>&emsp;</p></li><li><p>回溯法<br>&emsp;<br><img src="https://img-blog.csdnimg.cn/20201219173946942.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="回溯法"><br>&emsp;</p></li><li>分支限界法<br>&emsp;<br><img src="https://img-blog.csdnimg.cn/20201219174007775.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="分支限界法"></li></ol><p><a href="https://ruvikm.lanzous.com/i9b5ajim3kh">PDF文件（内有超链接）</a></p><p>参考资料：</p><ul><li><a href="https://blog.csdn.net/databatman/article/details/49304295">算法中的P问题、NP问题、NP完全问题和NP难问题</a></li><li><a href="https://blog.csdn.net/qq_45904930/article/details/110748764">分治法之棋盘覆盖问题</a></li><li><a href="https://blog.csdn.net/yjt13/article/details/82085537">排序之归并排序</a></li><li><a href="https://blog.csdn.net/baidu_28312631/article/details/47418773">教你彻底学会动态规划——入门篇</a></li><li><a href="https://blog.csdn.net/listen132/article/details/111242757">矩阵连乘</a></li><li><a href="https://blog.csdn.net/a2392008643/article/details/81781766">最小生成树的两种方法（Kruskal算法和Prim算法）</a></li><li><a href="https://blog.csdn.net/daoshen1314/article/details/101294101">循环赛日程表（分治法）</a></li></ul><p>最后推荐一个算法可视化的网站<br><a href="https://visualgo.net/">VisuAlgo</a></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;用思维导图整理了一下算法的基本知识&quot;&gt;&lt;a href=&quot;#用思维导图整理了一下算法的基本知识&quot; class=&quot;headerlink&quot; title=&quot;用思维导图整理了一下算法的基本知识&quot;&gt;&lt;/a&gt;用思维导图整理了一下算法的基本知识&lt;/h2&gt;&lt;p&gt;&amp;emsp;&lt;br&gt;</summary>
-      
-    
-    
-    
-    <category term="学习笔记" scheme="https://ruvikm.gitee.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    
-    <category term="算法" scheme="https://ruvikm.gitee.io/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
     <title>软件体系结构基本知识——期末复习</title>
     <link href="https://ruvikm.gitee.io/2022/01/10/%E8%BD%AF%E4%BB%B6%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86%E2%80%94%E2%80%94%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/"/>
     <id>https://ruvikm.gitee.io/2022/01/10/%E8%BD%AF%E4%BB%B6%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86%E2%80%94%E2%80%94%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/</id>
@@ -164,6 +140,30 @@
     
     
     <category term="其他" scheme="https://ruvikm.gitee.io/tags/%E5%85%B6%E4%BB%96/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>算法期末复习</title>
+    <link href="https://ruvikm.gitee.io/2022/01/10/%E7%AE%97%E6%B3%95%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/"/>
+    <id>https://ruvikm.gitee.io/2022/01/10/%E7%AE%97%E6%B3%95%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/</id>
+    <published>2022-01-10T11:52:28.000Z</published>
+    <updated>2023-05-23T01:22:00.097Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="用思维导图整理了一下算法的基本知识"><a href="#用思维导图整理了一下算法的基本知识" class="headerlink" title="用思维导图整理了一下算法的基本知识"></a>用思维导图整理了一下算法的基本知识</h2><p>&emsp;<br>&emsp;</p><ol><li>算法概述<br>&emsp;<img src="https://img-blog.csdnimg.cn/20201219173740232.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="算法概述"><br>&emsp;</li><li><p>递归与分治策略<br>&emsp;<br><img src="https://img-blog.csdnimg.cn/20201219190206679.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="递归与分治策略"></p><p>&emsp;</p></li><li><p>动态规划<br>&emsp;<br><img src="https://img-blog.csdnimg.cn/20201219173858421.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="动态规划"><br>&emsp;</p></li><li><p>贪心算法<br>&emsp;<img src="https://img-blog.csdnimg.cn/20201219173922373.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="贪心算法"><br>&emsp;</p></li><li><p>回溯法<br>&emsp;<br><img src="https://img-blog.csdnimg.cn/20201219173946942.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="回溯法"><br>&emsp;</p></li><li>分支限界法<br>&emsp;<br><img src="https://img-blog.csdnimg.cn/20201219174007775.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="分支限界法"></li></ol><p><a href="https://ruvikm.lanzous.com/i9b5ajim3kh">PDF文件（内有超链接）</a></p><p>参考资料：</p><ul><li><a href="https://blog.csdn.net/databatman/article/details/49304295">算法中的P问题、NP问题、NP完全问题和NP难问题</a></li><li><a href="https://blog.csdn.net/qq_45904930/article/details/110748764">分治法之棋盘覆盖问题</a></li><li><a href="https://blog.csdn.net/yjt13/article/details/82085537">排序之归并排序</a></li><li><a href="https://blog.csdn.net/baidu_28312631/article/details/47418773">教你彻底学会动态规划——入门篇</a></li><li><a href="https://blog.csdn.net/listen132/article/details/111242757">矩阵连乘</a></li><li><a href="https://blog.csdn.net/a2392008643/article/details/81781766">最小生成树的两种方法（Kruskal算法和Prim算法）</a></li><li><a href="https://blog.csdn.net/daoshen1314/article/details/101294101">循环赛日程表（分治法）</a></li></ul><p>最后推荐一个算法可视化的网站<br><a href="https://visualgo.net/">VisuAlgo</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;用思维导图整理了一下算法的基本知识&quot;&gt;&lt;a href=&quot;#用思维导图整理了一下算法的基本知识&quot; class=&quot;headerlink&quot; title=&quot;用思维导图整理了一下算法的基本知识&quot;&gt;&lt;/a&gt;用思维导图整理了一下算法的基本知识&lt;/h2&gt;&lt;p&gt;&amp;emsp;&lt;br&gt;</summary>
+      
+    
+    
+    
+    <category term="学习笔记" scheme="https://ruvikm.gitee.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="算法" scheme="https://ruvikm.gitee.io/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
