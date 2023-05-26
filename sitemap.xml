@@ -171,6 +171,13 @@
   </url>
   
   <url>
+    <loc>https://ruvikm.github.io/tags/java/</loc>
+    <lastmod>2023-05-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://ruvikm.github.io/tags/Linux/</loc>
     <lastmod>2023-05-26</lastmod>
     <changefreq>weekly</changefreq>
@@ -178,7 +185,7 @@
   </url>
   
   <url>
-    <loc>https://ruvikm.github.io/tags/java/</loc>
+    <loc>https://ruvikm.github.io/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/</loc>
     <lastmod>2023-05-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -198,13 +205,6 @@
     <priority>0.2</priority>
   </url>
   
-  <url>
-    <loc>https://ruvikm.github.io/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/</loc>
-    <lastmod>2023-05-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
 
   
   <url>
@@ -215,14 +215,14 @@
   </url>
   
   <url>
-    <loc>https://ruvikm.github.io/categories/%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/</loc>
+    <loc>https://ruvikm.github.io/categories/%E4%B8%AA%E4%BA%BA%E9%A1%B9%E7%9B%AE/</loc>
     <lastmod>2023-05-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://ruvikm.github.io/categories/%E4%B8%AA%E4%BA%BA%E9%A1%B9%E7%9B%AE/</loc>
+    <loc>https://ruvikm.github.io/categories/%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2023-05-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
