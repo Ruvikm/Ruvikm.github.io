@@ -3,11 +3,11 @@
   <title>Ruvikm</title>
   <icon>https://www.gravatar.com/avatar/710ecfc7f4f0bd22cb3d5ec44d498105</icon>
   <subtitle>Nia~</subtitle>
-  <link href="https://ruvikm.github.io/atom.xml" rel="self"/>
+  <link href="https://ruvikm.gitee.io/atom.xml" rel="self"/>
   
-  <link href="https://ruvikm.github.io/"/>
+  <link href="https://ruvikm.gitee.io/"/>
   <updated>2023-05-25T02:04:51.855Z</updated>
-  <id>https://ruvikm.github.io/</id>
+  <id>https://ruvikm.gitee.io/</id>
   
   <author>
     <name>Ruvikm</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>WSL命令行操作笔记</title>
-    <link href="https://ruvikm.github.io/2023/05/23/WSL%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%93%8D%E4%BD%9C%E7%AC%94%E8%AE%B0/"/>
-    <id>https://ruvikm.github.io/2023/05/23/WSL%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%93%8D%E4%BD%9C%E7%AC%94%E8%AE%B0/</id>
+    <link href="https://ruvikm.gitee.io/2023/05/23/WSL%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%93%8D%E4%BD%9C%E7%AC%94%E8%AE%B0/"/>
+    <id>https://ruvikm.gitee.io/2023/05/23/WSL%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%93%8D%E4%BD%9C%E7%AC%94%E8%AE%B0/</id>
     <published>2023-05-23T10:12:47.000Z</published>
     <updated>2023-05-25T02:04:51.855Z</updated>
     
@@ -34,17 +34,17 @@
     
     
     
-    <category term="个人笔记" scheme="https://ruvikm.github.io/categories/%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/"/>
+    <category term="个人笔记" scheme="https://ruvikm.gitee.io/categories/%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="Linux" scheme="https://ruvikm.github.io/tags/Linux/"/>
+    <category term="Linux" scheme="https://ruvikm.gitee.io/tags/Linux/"/>
     
   </entry>
   
   <entry>
     <title>王道数据结构 线性表 链式存储小结</title>
-    <link href="https://ruvikm.github.io/2022/01/10/%E7%8E%8B%E9%81%93%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%20%E7%BA%BF%E6%80%A7%E8%A1%A8%20%E9%93%BE%E5%BC%8F%E5%AD%98%E5%82%A8%E5%B0%8F%E7%BB%93/"/>
-    <id>https://ruvikm.github.io/2022/01/10/%E7%8E%8B%E9%81%93%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%20%E7%BA%BF%E6%80%A7%E8%A1%A8%20%E9%93%BE%E5%BC%8F%E5%AD%98%E5%82%A8%E5%B0%8F%E7%BB%93/</id>
+    <link href="https://ruvikm.gitee.io/2022/01/10/%E7%8E%8B%E9%81%93%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%20%E7%BA%BF%E6%80%A7%E8%A1%A8%20%E9%93%BE%E5%BC%8F%E5%AD%98%E5%82%A8%E5%B0%8F%E7%BB%93/"/>
+    <id>https://ruvikm.gitee.io/2022/01/10/%E7%8E%8B%E9%81%93%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%20%E7%BA%BF%E6%80%A7%E8%A1%A8%20%E9%93%BE%E5%BC%8F%E5%AD%98%E5%82%A8%E5%B0%8F%E7%BB%93/</id>
     <published>2022-01-10T11:58:00.000Z</published>
     <updated>2023-05-23T01:23:11.048Z</updated>
     
@@ -58,17 +58,17 @@
     
     
     
-    <category term="学习笔记" scheme="https://ruvikm.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <category term="学习笔记" scheme="https://ruvikm.gitee.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="算法" scheme="https://ruvikm.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    <category term="算法" scheme="https://ruvikm.gitee.io/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
   <entry>
     <title>斐波那契数列 C_C++</title>
-    <link href="https://ruvikm.github.io/2022/01/10/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97%20C_C++/"/>
-    <id>https://ruvikm.github.io/2022/01/10/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97%20C_C++/</id>
+    <link href="https://ruvikm.gitee.io/2022/01/10/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97%20C_C++/"/>
+    <id>https://ruvikm.gitee.io/2022/01/10/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97%20C_C++/</id>
     <published>2022-01-10T11:54:28.000Z</published>
     <updated>2023-05-23T01:21:37.791Z</updated>
     
@@ -88,17 +88,17 @@
     
     
     
-    <category term="刷题笔记" scheme="https://ruvikm.github.io/categories/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/"/>
+    <category term="刷题笔记" scheme="https://ruvikm.gitee.io/categories/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="算法" scheme="https://ruvikm.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    <category term="算法" scheme="https://ruvikm.gitee.io/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
   <entry>
     <title>算法期末复习</title>
-    <link href="https://ruvikm.github.io/2022/01/10/%E7%AE%97%E6%B3%95%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/"/>
-    <id>https://ruvikm.github.io/2022/01/10/%E7%AE%97%E6%B3%95%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/</id>
+    <link href="https://ruvikm.gitee.io/2022/01/10/%E7%AE%97%E6%B3%95%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/"/>
+    <id>https://ruvikm.gitee.io/2022/01/10/%E7%AE%97%E6%B3%95%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/</id>
     <published>2022-01-10T11:52:28.000Z</published>
     <updated>2023-05-23T01:22:00.097Z</updated>
     
@@ -112,17 +112,17 @@
     
     
     
-    <category term="学习笔记" scheme="https://ruvikm.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <category term="学习笔记" scheme="https://ruvikm.gitee.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="算法" scheme="https://ruvikm.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    <category term="算法" scheme="https://ruvikm.gitee.io/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
   <entry>
     <title>软件体系结构基本知识——期末复习</title>
-    <link href="https://ruvikm.github.io/2022/01/10/%E8%BD%AF%E4%BB%B6%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86%E2%80%94%E2%80%94%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/"/>
-    <id>https://ruvikm.github.io/2022/01/10/%E8%BD%AF%E4%BB%B6%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86%E2%80%94%E2%80%94%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/</id>
+    <link href="https://ruvikm.gitee.io/2022/01/10/%E8%BD%AF%E4%BB%B6%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86%E2%80%94%E2%80%94%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/"/>
+    <id>https://ruvikm.gitee.io/2022/01/10/%E8%BD%AF%E4%BB%B6%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86%E2%80%94%E2%80%94%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/</id>
     <published>2022-01-10T11:52:28.000Z</published>
     <updated>2023-05-23T01:22:17.684Z</updated>
     
@@ -137,17 +137,17 @@
     
     
     
-    <category term="学习笔记" scheme="https://ruvikm.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <category term="学习笔记" scheme="https://ruvikm.gitee.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="其他" scheme="https://ruvikm.github.io/tags/%E5%85%B6%E4%BB%96/"/>
+    <category term="其他" scheme="https://ruvikm.gitee.io/tags/%E5%85%B6%E4%BB%96/"/>
     
   </entry>
   
   <entry>
     <title>图的邻接表表示转换成邻接矩阵</title>
-    <link href="https://ruvikm.github.io/2022/01/10/%E5%9B%BE%E7%9A%84%E9%82%BB%E6%8E%A5%E8%A1%A8%E8%A1%A8%E7%A4%BA%E8%BD%AC%E6%8D%A2%E6%88%90%E9%82%BB%E6%8E%A5%E7%9F%A9%E9%98%B5/"/>
-    <id>https://ruvikm.github.io/2022/01/10/%E5%9B%BE%E7%9A%84%E9%82%BB%E6%8E%A5%E8%A1%A8%E8%A1%A8%E7%A4%BA%E8%BD%AC%E6%8D%A2%E6%88%90%E9%82%BB%E6%8E%A5%E7%9F%A9%E9%98%B5/</id>
+    <link href="https://ruvikm.gitee.io/2022/01/10/%E5%9B%BE%E7%9A%84%E9%82%BB%E6%8E%A5%E8%A1%A8%E8%A1%A8%E7%A4%BA%E8%BD%AC%E6%8D%A2%E6%88%90%E9%82%BB%E6%8E%A5%E7%9F%A9%E9%98%B5/"/>
+    <id>https://ruvikm.gitee.io/2022/01/10/%E5%9B%BE%E7%9A%84%E9%82%BB%E6%8E%A5%E8%A1%A8%E8%A1%A8%E7%A4%BA%E8%BD%AC%E6%8D%A2%E6%88%90%E9%82%BB%E6%8E%A5%E7%9F%A9%E9%98%B5/</id>
     <published>2022-01-10T11:35:22.000Z</published>
     <updated>2023-05-23T01:20:18.774Z</updated>
     
@@ -161,17 +161,17 @@
     
     
     
-    <category term="刷题笔记" scheme="https://ruvikm.github.io/categories/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/"/>
+    <category term="刷题笔记" scheme="https://ruvikm.gitee.io/categories/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="算法" scheme="https://ruvikm.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    <category term="算法" scheme="https://ruvikm.gitee.io/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
   <entry>
     <title>LeetCode 131. Palindrome Partitioning</title>
-    <link href="https://ruvikm.github.io/2022/01/10/LeetCode%20131.%20Palindrome%20Partitioning/"/>
-    <id>https://ruvikm.github.io/2022/01/10/LeetCode%20131.%20Palindrome%20Partitioning/</id>
+    <link href="https://ruvikm.gitee.io/2022/01/10/LeetCode%20131.%20Palindrome%20Partitioning/"/>
+    <id>https://ruvikm.gitee.io/2022/01/10/LeetCode%20131.%20Palindrome%20Partitioning/</id>
     <published>2022-01-10T11:33:12.000Z</published>
     <updated>2023-05-23T01:20:51.349Z</updated>
     
@@ -186,17 +186,17 @@
     
     
     
-    <category term="刷题笔记" scheme="https://ruvikm.github.io/categories/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/"/>
+    <category term="刷题笔记" scheme="https://ruvikm.gitee.io/categories/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="算法" scheme="https://ruvikm.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    <category term="算法" scheme="https://ruvikm.gitee.io/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
   <entry>
     <title>LeetCode 47 Permutations II</title>
-    <link href="https://ruvikm.github.io/2022/01/10/LeetCode%2047%20Permutations%20II/"/>
-    <id>https://ruvikm.github.io/2022/01/10/LeetCode%2047%20Permutations%20II/</id>
+    <link href="https://ruvikm.gitee.io/2022/01/10/LeetCode%2047%20Permutations%20II/"/>
+    <id>https://ruvikm.gitee.io/2022/01/10/LeetCode%2047%20Permutations%20II/</id>
     <published>2022-01-10T11:31:12.000Z</published>
     <updated>2023-05-23T01:20:49.386Z</updated>
     
@@ -210,17 +210,17 @@
     
     
     
-    <category term="刷题笔记" scheme="https://ruvikm.github.io/categories/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/"/>
+    <category term="刷题笔记" scheme="https://ruvikm.gitee.io/categories/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="算法" scheme="https://ruvikm.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    <category term="算法" scheme="https://ruvikm.gitee.io/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
   <entry>
     <title>LeetCode 46. Permutations</title>
-    <link href="https://ruvikm.github.io/2022/01/10/LeetCode%2046.%20Permutations/"/>
-    <id>https://ruvikm.github.io/2022/01/10/LeetCode%2046.%20Permutations/</id>
+    <link href="https://ruvikm.gitee.io/2022/01/10/LeetCode%2046.%20Permutations/"/>
+    <id>https://ruvikm.gitee.io/2022/01/10/LeetCode%2046.%20Permutations/</id>
     <published>2022-01-10T11:30:27.000Z</published>
     <updated>2023-05-23T01:24:07.782Z</updated>
     
@@ -234,17 +234,17 @@
     
     
     
-    <category term="刷题笔记" scheme="https://ruvikm.github.io/categories/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/"/>
+    <category term="刷题笔记" scheme="https://ruvikm.gitee.io/categories/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="算法" scheme="https://ruvikm.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    <category term="算法" scheme="https://ruvikm.gitee.io/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
   <entry>
     <title>Java实现鲜花销售系统</title>
-    <link href="https://ruvikm.github.io/2022/01/10/Java%E5%AE%9E%E7%8E%B0%E9%B2%9C%E8%8A%B1%E9%94%80%E5%94%AE%E7%B3%BB%E7%BB%9F/"/>
-    <id>https://ruvikm.github.io/2022/01/10/Java%E5%AE%9E%E7%8E%B0%E9%B2%9C%E8%8A%B1%E9%94%80%E5%94%AE%E7%B3%BB%E7%BB%9F/</id>
+    <link href="https://ruvikm.gitee.io/2022/01/10/Java%E5%AE%9E%E7%8E%B0%E9%B2%9C%E8%8A%B1%E9%94%80%E5%94%AE%E7%B3%BB%E7%BB%9F/"/>
+    <id>https://ruvikm.gitee.io/2022/01/10/Java%E5%AE%9E%E7%8E%B0%E9%B2%9C%E8%8A%B1%E9%94%80%E5%94%AE%E7%B3%BB%E7%BB%9F/</id>
     <published>2022-01-10T11:27:54.000Z</published>
     <updated>2023-05-23T01:18:17.971Z</updated>
     
@@ -261,17 +261,17 @@
     
     
     
-    <category term="个人项目" scheme="https://ruvikm.github.io/categories/%E4%B8%AA%E4%BA%BA%E9%A1%B9%E7%9B%AE/"/>
+    <category term="个人项目" scheme="https://ruvikm.gitee.io/categories/%E4%B8%AA%E4%BA%BA%E9%A1%B9%E7%9B%AE/"/>
     
     
-    <category term="java" scheme="https://ruvikm.github.io/tags/java/"/>
+    <category term="java" scheme="https://ruvikm.gitee.io/tags/java/"/>
     
   </entry>
   
   <entry>
     <title>C_C++用宏定义简化for循环</title>
-    <link href="https://ruvikm.github.io/2022/01/10/C_C++%E7%94%A8%E5%AE%8F%E5%AE%9A%E4%B9%89%E7%AE%80%E5%8C%96for%E5%BE%AA%E7%8E%AF/"/>
-    <id>https://ruvikm.github.io/2022/01/10/C_C++%E7%94%A8%E5%AE%8F%E5%AE%9A%E4%B9%89%E7%AE%80%E5%8C%96for%E5%BE%AA%E7%8E%AF/</id>
+    <link href="https://ruvikm.gitee.io/2022/01/10/C_C++%E7%94%A8%E5%AE%8F%E5%AE%9A%E4%B9%89%E7%AE%80%E5%8C%96for%E5%BE%AA%E7%8E%AF/"/>
+    <id>https://ruvikm.gitee.io/2022/01/10/C_C++%E7%94%A8%E5%AE%8F%E5%AE%9A%E4%B9%89%E7%AE%80%E5%8C%96for%E5%BE%AA%E7%8E%AF/</id>
     <published>2022-01-10T11:24:21.000Z</published>
     <updated>2023-05-23T01:14:22.285Z</updated>
     
@@ -285,17 +285,17 @@
     
     
     
-    <category term="个人笔记" scheme="https://ruvikm.github.io/categories/%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/"/>
+    <category term="个人笔记" scheme="https://ruvikm.gitee.io/categories/%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="算法" scheme="https://ruvikm.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    <category term="算法" scheme="https://ruvikm.gitee.io/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
   <entry>
     <title>2021版王道数据结构课后代码题全部实现</title>
-    <link href="https://ruvikm.github.io/2022/01/10/2021%E7%89%88%E7%8E%8B%E9%81%93%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E8%AF%BE%E5%90%8E%E4%BB%A3%E7%A0%81%E9%A2%98%E5%85%A8%E9%83%A8%E5%AE%9E%E7%8E%B0/"/>
-    <id>https://ruvikm.github.io/2022/01/10/2021%E7%89%88%E7%8E%8B%E9%81%93%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E8%AF%BE%E5%90%8E%E4%BB%A3%E7%A0%81%E9%A2%98%E5%85%A8%E9%83%A8%E5%AE%9E%E7%8E%B0/</id>
+    <link href="https://ruvikm.gitee.io/2022/01/10/2021%E7%89%88%E7%8E%8B%E9%81%93%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E8%AF%BE%E5%90%8E%E4%BB%A3%E7%A0%81%E9%A2%98%E5%85%A8%E9%83%A8%E5%AE%9E%E7%8E%B0/"/>
+    <id>https://ruvikm.gitee.io/2022/01/10/2021%E7%89%88%E7%8E%8B%E9%81%93%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E8%AF%BE%E5%90%8E%E4%BB%A3%E7%A0%81%E9%A2%98%E5%85%A8%E9%83%A8%E5%AE%9E%E7%8E%B0/</id>
     <published>2022-01-09T16:17:30.000Z</published>
     <updated>2023-05-23T03:40:54.503Z</updated>
     
@@ -311,17 +311,17 @@
     
     
     
-    <category term="刷题笔记" scheme="https://ruvikm.github.io/categories/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/"/>
+    <category term="刷题笔记" scheme="https://ruvikm.gitee.io/categories/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="算法" scheme="https://ruvikm.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    <category term="算法" scheme="https://ruvikm.gitee.io/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
   <entry>
     <title>使用Xpath和Requests实现爬虫并存储在Excel表里---爬取链家上杭州近期二手房价</title>
-    <link href="https://ruvikm.github.io/2020/10/18/%E4%BD%BF%E7%94%A8Xpath%E5%92%8CRequests%E5%AE%9E%E7%8E%B0%E7%88%AC%E8%99%AB%E5%B9%B6%E5%AD%98%E5%82%A8%E5%9C%A8Excel%E8%A1%A8%E9%87%8C-%E7%88%AC%E5%8F%96%E9%93%BE%E5%AE%B6%E4%B8%8A%E6%9D%AD%E5%B7%9E%E8%BF%91%E6%9C%9F%E4%BA%8C%E6%89%8B%E6%88%BF%E4%BB%B7/"/>
-    <id>https://ruvikm.github.io/2020/10/18/%E4%BD%BF%E7%94%A8Xpath%E5%92%8CRequests%E5%AE%9E%E7%8E%B0%E7%88%AC%E8%99%AB%E5%B9%B6%E5%AD%98%E5%82%A8%E5%9C%A8Excel%E8%A1%A8%E9%87%8C-%E7%88%AC%E5%8F%96%E9%93%BE%E5%AE%B6%E4%B8%8A%E6%9D%AD%E5%B7%9E%E8%BF%91%E6%9C%9F%E4%BA%8C%E6%89%8B%E6%88%BF%E4%BB%B7/</id>
+    <link href="https://ruvikm.gitee.io/2020/10/18/%E4%BD%BF%E7%94%A8Xpath%E5%92%8CRequests%E5%AE%9E%E7%8E%B0%E7%88%AC%E8%99%AB%E5%B9%B6%E5%AD%98%E5%82%A8%E5%9C%A8Excel%E8%A1%A8%E9%87%8C-%E7%88%AC%E5%8F%96%E9%93%BE%E5%AE%B6%E4%B8%8A%E6%9D%AD%E5%B7%9E%E8%BF%91%E6%9C%9F%E4%BA%8C%E6%89%8B%E6%88%BF%E4%BB%B7/"/>
+    <id>https://ruvikm.gitee.io/2020/10/18/%E4%BD%BF%E7%94%A8Xpath%E5%92%8CRequests%E5%AE%9E%E7%8E%B0%E7%88%AC%E8%99%AB%E5%B9%B6%E5%AD%98%E5%82%A8%E5%9C%A8Excel%E8%A1%A8%E9%87%8C-%E7%88%AC%E5%8F%96%E9%93%BE%E5%AE%B6%E4%B8%8A%E6%9D%AD%E5%B7%9E%E8%BF%91%E6%9C%9F%E4%BA%8C%E6%89%8B%E6%88%BF%E4%BB%B7/</id>
     <published>2020-10-18T11:44:09.000Z</published>
     <updated>2023-05-23T01:20:00.667Z</updated>
     
@@ -336,17 +336,17 @@
     
     
     
-    <category term="个人项目" scheme="https://ruvikm.github.io/categories/%E4%B8%AA%E4%BA%BA%E9%A1%B9%E7%9B%AE/"/>
+    <category term="个人项目" scheme="https://ruvikm.gitee.io/categories/%E4%B8%AA%E4%BA%BA%E9%A1%B9%E7%9B%AE/"/>
     
     
-    <category term="Python" scheme="https://ruvikm.github.io/tags/Python/"/>
+    <category term="Python" scheme="https://ruvikm.gitee.io/tags/Python/"/>
     
   </entry>
   
   <entry>
     <title>如何使用微信小程序IDE在github上实现团队合作</title>
-    <link href="https://ruvikm.github.io/2020/04/16/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8FIDE%E5%9C%A8github%E4%B8%8A%E5%AE%9E%E7%8E%B0%E5%9B%A2%E9%98%9F%E5%90%88%E4%BD%9C/"/>
-    <id>https://ruvikm.github.io/2020/04/16/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8FIDE%E5%9C%A8github%E4%B8%8A%E5%AE%9E%E7%8E%B0%E5%9B%A2%E9%98%9F%E5%90%88%E4%BD%9C/</id>
+    <link href="https://ruvikm.gitee.io/2020/04/16/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8FIDE%E5%9C%A8github%E4%B8%8A%E5%AE%9E%E7%8E%B0%E5%9B%A2%E9%98%9F%E5%90%88%E4%BD%9C/"/>
+    <id>https://ruvikm.gitee.io/2020/04/16/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8FIDE%E5%9C%A8github%E4%B8%8A%E5%AE%9E%E7%8E%B0%E5%9B%A2%E9%98%9F%E5%90%88%E4%BD%9C/</id>
     <published>2020-04-16T07:35:50.000Z</published>
     <updated>2023-05-23T01:21:19.642Z</updated>
     
@@ -363,10 +363,10 @@
     
     
     
-    <category term="学习笔记" scheme="https://ruvikm.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <category term="学习笔记" scheme="https://ruvikm.gitee.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="微信小程序" scheme="https://ruvikm.github.io/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    <category term="微信小程序" scheme="https://ruvikm.gitee.io/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
     
   </entry>
   
