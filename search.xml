@@ -69,6 +69,29 @@
       </tags>
   </entry>
   <entry>
+    <title>LeetCode 46. Permutations</title>
+    <url>/2022/01/10/LeetCode%2046.%20Permutations/</url>
+    <content><![CDATA[<h2 id="Given-a-collection-of-distinct-integers-return-all-possible-permutations"><a href="#Given-a-collection-of-distinct-integers-return-all-possible-permutations" class="headerlink" title="Given a collection of distinct integers, return all possible permutations."></a>Given a collection of distinct integers, return all possible permutations.</h2><p>Example:</p>
+<p>Input: [1,2,3]<br>Output:<br>[<br>  [1,2,3],<br>  [1,3,2],<br>  [2,1,3],<br>  [2,3,1],<br>  [3,1,2],<br>  [3,2,1]<br>]</p>
+<p><a href="https://leetcode-cn.com/problems/permutations/">题目链接</a></p>
+<p>看了看大佬们的讲解，终于自己做出来一道回溯的题。<br>回溯大致分为三步：</p>
+<ol>
+<li>终止条件：回溯到什么情况就可以加入答案列表</li>
+<li>剪枝条件：什么情况下就可以停止回溯直接continue</li>
+<li>回溯范围：如何将当前层和下一层联系起来继续递归下去</li>
+</ol>
+<p>对于这道全排列的题，我们需要一个res保存答案，一个temp参与回溯，当达到终于条件也就是temp的大小与nums的相等时便把temp加入res中;<br>然后需要一个check数组来标记使用过的元素，当一个数已经被使用过便把对应的位置的值设为1，这样避免了一个数重复使用多次。<br>由于这道题是要列出所有的排列结果，所以需要全部遍历</p>
+<p>代码如下：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; res;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">dfs</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums,vector&lt;<span class="type">int</span>&gt;&amp; temp,vector&lt;<span class="type">int</span>&gt;&amp; check)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(temp.<span class="built_in">size</span>()==nums.<span class="built_in">size</span>())&#123;</span><br><span class="line">            res.<span class="built_in">push_back</span>(temp);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;nums.<span class="built_in">size</span>();i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(check[i])</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            check[i]=<span class="number">1</span>;</span><br><span class="line">            temp.<span class="built_in">push_back</span>(nums[i]);</span><br><span class="line">            <span class="built_in">dfs</span>(nums,temp,check);</span><br><span class="line">            temp.<span class="built_in">pop_back</span>();</span><br><span class="line">            check[i]=<span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">permute</span>(vector&lt;<span class="type">int</span>&gt;&amp; nums) &#123;</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">check</span><span class="params">(nums.size(),<span class="number">0</span>)</span></span>;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; temp;</span><br><span class="line">        <span class="built_in">dfs</span>(nums,temp,check);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>刷题笔记</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>LeetCode 131. Palindrome Partitioning</title>
     <url>/2022/01/10/LeetCode%20131.%20Palindrome%20Partitioning/</url>
     <content><![CDATA[<p>Given a string s, partition s such that every substring of the partition is a palindrome.</p>
@@ -117,29 +140,6 @@
       </tags>
   </entry>
   <entry>
-    <title>LeetCode 46. Permutations</title>
-    <url>/2022/01/10/LeetCode%2046.%20Permutations/</url>
-    <content><![CDATA[<h2 id="Given-a-collection-of-distinct-integers-return-all-possible-permutations"><a href="#Given-a-collection-of-distinct-integers-return-all-possible-permutations" class="headerlink" title="Given a collection of distinct integers, return all possible permutations."></a>Given a collection of distinct integers, return all possible permutations.</h2><p>Example:</p>
-<p>Input: [1,2,3]<br>Output:<br>[<br>  [1,2,3],<br>  [1,3,2],<br>  [2,1,3],<br>  [2,3,1],<br>  [3,1,2],<br>  [3,2,1]<br>]</p>
-<p><a href="https://leetcode-cn.com/problems/permutations/">题目链接</a></p>
-<p>看了看大佬们的讲解，终于自己做出来一道回溯的题。<br>回溯大致分为三步：</p>
-<ol>
-<li>终止条件：回溯到什么情况就可以加入答案列表</li>
-<li>剪枝条件：什么情况下就可以停止回溯直接continue</li>
-<li>回溯范围：如何将当前层和下一层联系起来继续递归下去</li>
-</ol>
-<p>对于这道全排列的题，我们需要一个res保存答案，一个temp参与回溯，当达到终于条件也就是temp的大小与nums的相等时便把temp加入res中;<br>然后需要一个check数组来标记使用过的元素，当一个数已经被使用过便把对应的位置的值设为1，这样避免了一个数重复使用多次。<br>由于这道题是要列出所有的排列结果，所以需要全部遍历</p>
-<p>代码如下：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; res;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">dfs</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums,vector&lt;<span class="type">int</span>&gt;&amp; temp,vector&lt;<span class="type">int</span>&gt;&amp; check)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(temp.<span class="built_in">size</span>()==nums.<span class="built_in">size</span>())&#123;</span><br><span class="line">            res.<span class="built_in">push_back</span>(temp);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;nums.<span class="built_in">size</span>();i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(check[i])</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            check[i]=<span class="number">1</span>;</span><br><span class="line">            temp.<span class="built_in">push_back</span>(nums[i]);</span><br><span class="line">            <span class="built_in">dfs</span>(nums,temp,check);</span><br><span class="line">            temp.<span class="built_in">pop_back</span>();</span><br><span class="line">            check[i]=<span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">permute</span>(vector&lt;<span class="type">int</span>&gt;&amp; nums) &#123;</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">check</span><span class="params">(nums.size(),<span class="number">0</span>)</span></span>;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; temp;</span><br><span class="line">        <span class="built_in">dfs</span>(nums,temp,check);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>刷题笔记</category>
-      </categories>
-      <tags>
-        <tag>算法</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>WSL命令行操作笔记</title>
     <url>/2023/05/23/WSL%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%93%8D%E4%BD%9C%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<p>记录一下这段时间在WSL2上学习conda以及ubuntu的命令行指令，<del>以便以后直接粘贴复制</del></p>
@@ -172,27 +172,6 @@
       <tags>
         <tag>Linux</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>hexo部署到Gitee后显示404||没有更新</title>
-    <url>/2023/05/26/hexo%E9%83%A8%E7%BD%B2%E5%88%B0Gitee%E5%90%8E%E6%98%BE%E7%A4%BA404/</url>
-    <content><![CDATA[<p>在Gitee开启了Gitee Pages，并且本地完成了</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g -d</span><br></pre></td></tr></table></figure>
-<p>然后发现已经上传到了Gitee仓库里，但是访问博客的网址却显示404</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-05-26%20163430-1685090681023-7.png" alt="屏幕截图 2023-05-26 163430"></p>
-<p>有以下两种可能的原因：</p>
-<h3 id="hexo根目录下的-config-yml文件里，url没有配置对"><a href="#hexo根目录下的-config-yml文件里，url没有配置对" class="headerlink" title="hexo根目录下的_config.yml文件里，url没有配置对"></a>hexo根目录下的_config.yml文件里，url没有配置对</h3><p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-05-26%20164633.png" alt="屏幕截图 2023-05-26 164633"></p>
-<p>如果仓库名和Gitee的用户名不一致时，root属性也需要修改。</p>
-<p>比如用户名为xxx新建的仓库地址为</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">https://gitee.com/xxx/myblog </span><br></pre></td></tr></table></figure>
-<p>则以上内容需要修改为</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">url: https://xxx.gitee.io/</span><br><span class="line">root: /myblog</span><br></pre></td></tr></table></figure>
-<h3 id="没有手动再部署一遍！！！"><a href="#没有手动再部署一遍！！！" class="headerlink" title="没有手动再部署一遍！！！"></a>没有手动再部署一遍！！！</h3><p>是的你没有听错，这个居然上传成功后还需要手动再更新一下！</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-05-26%20164839.png" alt="屏幕截图 2023-05-26 164839"></p>
-]]></content>
-      <categories>
-        <category>个人笔记</category>
-      </categories>
   </entry>
   <entry>
     <title>Win11+3060Ti配置Anaconda+Cuda+Pytorch+Tenserflow环境</title>
@@ -567,6 +546,27 @@
       </tags>
   </entry>
   <entry>
+    <title>hexo部署到Gitee后显示404||没有更新</title>
+    <url>/2023/05/26/hexo%E9%83%A8%E7%BD%B2%E5%88%B0Gitee%E5%90%8E%E6%98%BE%E7%A4%BA404/</url>
+    <content><![CDATA[<p>在Gitee开启了Gitee Pages，并且本地完成了</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g -d</span><br></pre></td></tr></table></figure>
+<p>然后发现已经上传到了Gitee仓库里，但是访问博客的网址却显示404</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-05-26%20163430-1685090681023-7.png" alt="屏幕截图 2023-05-26 163430"></p>
+<p>有以下两种可能的原因：</p>
+<h3 id="hexo根目录下的-config-yml文件里，url没有配置对"><a href="#hexo根目录下的-config-yml文件里，url没有配置对" class="headerlink" title="hexo根目录下的_config.yml文件里，url没有配置对"></a>hexo根目录下的_config.yml文件里，url没有配置对</h3><p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-05-26%20164633.png" alt="屏幕截图 2023-05-26 164633"></p>
+<p>如果仓库名和Gitee的用户名不一致时，root属性也需要修改。</p>
+<p>比如用户名为xxx新建的仓库地址为</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">https://gitee.com/xxx/myblog </span><br></pre></td></tr></table></figure>
+<p>则以上内容需要修改为</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">url: https://xxx.gitee.io/</span><br><span class="line">root: /myblog</span><br></pre></td></tr></table></figure>
+<h3 id="没有手动再部署一遍！！！"><a href="#没有手动再部署一遍！！！" class="headerlink" title="没有手动再部署一遍！！！"></a>没有手动再部署一遍！！！</h3><p>是的你没有听错，这个居然上传成功后还需要手动再更新一下！</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-05-26%20164839.png" alt="屏幕截图 2023-05-26 164839"></p>
+]]></content>
+      <categories>
+        <category>个人笔记</category>
+      </categories>
+  </entry>
+  <entry>
     <title>图的邻接表表示转换成邻接矩阵</title>
     <url>/2022/01/10/%E5%9B%BE%E7%9A%84%E9%82%BB%E6%8E%A5%E8%A1%A8%E8%A1%A8%E7%A4%BA%E8%BD%AC%E6%8D%A2%E6%88%90%E9%82%BB%E6%8E%A5%E7%9F%A9%E9%98%B5/</url>
     <content><![CDATA[<p>算法思想：<br>先初始化邻接矩阵。依次遍历各个顶点的边表，根据边表中记录的“改弧所指向的顶点的位置”修改邻接矩阵arc[i][j]的值。例如遍历第 i 行的时候（当前的顶点所在行数为 i ），依次遍历该顶点的边表结点，若当前顶点的弧顶点的位置为j，则<code>arc[i][j] = 1</code> </p>
@@ -918,9 +918,9 @@
       </categories>
   </entry>
   <entry>
-    <title>复现项目《GAT-BiLSTM-CRF》（未跑通中）</title>
+    <title>跑通项目《GAT-BiLSTM-CRF》</title>
     <url>/2023/06/24/%E5%A4%8D%E7%8E%B0%E9%A1%B9%E7%9B%AE%E3%80%8AGAT-BiLSTM-CRF%E3%80%8B/</url>
-    <content><![CDATA[<p>记录一下自己复现一个<a href="https://github.com/yx100/GAT-BiLSTM-CRF">GitHub项目</a>《GAT-BiLSTM-CRF》的过程</p>
+    <content><![CDATA[<p>记录一下自己跑通一个<a href="https://github.com/yx100/GAT-BiLSTM-CRF">GitHub项目</a>《GAT-BiLSTM-CRF》的过程</p>
 <p>自己电脑环境如下：</p>
 <ul>
 <li>显卡：3060TI</li>
@@ -1067,9 +1067,37 @@
 <p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20001114.png" alt="屏幕截图 2023-06-26 001114"></p>
 <p>走起试试！</p>
 <p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20001202.png" alt="屏幕截图 2023-06-26 001202"></p>
-<p>这次数据只有800行左右试试</p>
+<p>突然又发现了一个参数，可能是不是没改全的原因，改完跑一下试试</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20220112.png" alt="屏幕截图 2023-06-26 220112"></p>
+<p>走起</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20220233.png" alt="屏幕截图 2023-06-26 220233"></p>
+<p>emmmm好神秘啊！换成只有800行左右试试</p>
 <p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20002211.png" alt="屏幕截图 2023-06-26 002211"></p>
-<p>睡觉！</p>
+<p>这又是什么诡异的错误…网上查了一下</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20220622.png" alt="屏幕截图 2023-06-26 220622"></p>
+<p>好像比较好改，直接看报错信息，找到最后一个代码里的报错</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20002211-1687788699344-4.png" alt="屏幕截图 2023-06-26 002211"></p>
+<p>点进去，会自动跳到报错那一行，然后用网上的方法修改一下</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">embeds_pack = pack_padded_sequence(embeds, batch_len.to(<span class="string">&#x27;cpu&#x27;</span>), batch_first=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20221334.png" alt="屏幕截图 2023-06-26 221334"></p>
+<p>再跑试试！</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/image-20230626221422520.png" alt="image-20230626221422520"></p>
+<p>跑了但没完全跑起来，是哪除0的情况没有考虑到应该，点进去代码里加一个判断条件试试</p>
+<p>把原本这段代码</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">epoch_cost = epoch_finish - epoch_start</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Epoch: %s training finished. Time: %.2fs, speed: %.2fst/s,  total loss: %s&quot;</span> % (</span><br><span class="line">idx, epoch_cost, train_num / epoch_cost, total_loss))</span><br></pre></td></tr></table></figure>
+<p>修改为这段</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">epoch_cost = epoch_finish - epoch_start</span><br><span class="line">train_speed = null</span><br><span class="line"><span class="keyword">if</span> epoch_cost != <span class="number">0</span>:</span><br><span class="line">    train_speed = train_num / epoch_cost</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Epoch: %s training finished. Time: %.2fs, speed: %.2fst/s,  total loss: %s&quot;</span> % (</span><br><span class="line">    idx, epoch_cost, train_speed, total_loss))</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20222314.png" alt="屏幕截图 2023-06-26 222314"></p>
+<p>在试试吧</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20222500.png" alt="屏幕截图 2023-06-26 222500"></p>
+<p>emmm这样吗，网上一查</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20222529.png" alt="屏幕截图 2023-06-26 222529"></p>
+<p>那就把<code>null</code>改成<code>none</code>试试</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/image-20230626222633707.png" alt="image-20230626222633707"></p>
+<p>emmm行吧，那就直接改一个数字算了（114514<code>/doge</code>）</p>
+<p>woc跑起来！？</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/image-20230626222825231.png" alt="image-20230626222825231"></p>
+<p>所以这是成功了？！但是为什么好多0，总感觉不太对的样子</p>
 ]]></content>
       <categories>
         <category>论文复现</category>
@@ -1102,6 +1130,24 @@
       </categories>
       <tags>
         <tag>微信小程序</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>斐波那契数列 C_C++</title>
+    <url>/2022/01/10/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97%20C_C++/</url>
+    <content><![CDATA[<p>用三种方法实现:</p>
+<ol>
+<li>带备忘录的递归</li>
+<li>dp迭代</li>
+<li>迭代优化，空间复杂度为O(1)</li>
+</ol>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> _for(i,a,b) for(int i=(a);i&lt;=(b);i++)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//备忘录</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">helper</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; memo, <span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">	<span class="comment">//base case</span></span><br><span class="line">	<span class="keyword">if</span> (n == <span class="number">2</span> || n == <span class="number">3</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (memo[n] != <span class="number">0</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> memo[n];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		memo[n] = <span class="built_in">helper</span>(memo, n - <span class="number">1</span>) + <span class="built_in">helper</span>(memo, n - <span class="number">2</span>);</span><br><span class="line">		<span class="keyword">return</span> memo[n];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//带备忘录法</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">fib_1</span><span class="params">(<span class="type">int</span> N)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (N &lt;= <span class="number">1</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">memo</span><span class="params">(N + <span class="number">1</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">helper</span>(memo, N);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//dp数组迭代法</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">fib_2</span><span class="params">(<span class="type">int</span> N)</span> </span>&#123;</span><br><span class="line">	<span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">dp</span><span class="params">(N + <span class="number">1</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line">	dp[<span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">	dp[<span class="number">2</span>] = dp[<span class="number">3</span>] = <span class="number">1</span>;</span><br><span class="line">	_for(i, <span class="number">4</span>, N) &#123;</span><br><span class="line">		dp[i] = dp[i - <span class="number">1</span>] + dp[i - <span class="number">2</span>];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> dp[N];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//迭代优化</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">fib_3</span><span class="params">(<span class="type">int</span> N)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (N == <span class="number">1</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (N == <span class="number">2</span> || N == <span class="number">3</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">int</span> pre = <span class="number">1</span>, ppre = <span class="number">1</span>;</span><br><span class="line">	_for(i, <span class="number">4</span>, N) &#123;</span><br><span class="line">		<span class="type">int</span> sum = pre + ppre;</span><br><span class="line">		ppre = pre;</span><br><span class="line">		pre = sum;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> pre;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, <span class="built_in">fib_3</span>(<span class="number">10</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>刷题笔记</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
@@ -1147,24 +1193,6 @@
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">ReverseList</span><span class="params">(LinkList&amp; head)</span> </span>&#123;</span><br><span class="line">	LNode* pre, * p = head-&gt;next, * r = p-&gt;next;</span><br><span class="line">	p-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">	<span class="keyword">while</span> (r != <span class="literal">NULL</span>) &#123;</span><br><span class="line">		pre = p;</span><br><span class="line">		p = r;</span><br><span class="line">		r = r-&gt;next;</span><br><span class="line">		p-&gt;next = pre;</span><br><span class="line">	&#125;</span><br><span class="line">	head-&gt;next = p;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>学习笔记</category>
-      </categories>
-      <tags>
-        <tag>算法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>斐波那契数列 C_C++</title>
-    <url>/2022/01/10/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97%20C_C++/</url>
-    <content><![CDATA[<p>用三种方法实现:</p>
-<ol>
-<li>带备忘录的递归</li>
-<li>dp迭代</li>
-<li>迭代优化，空间复杂度为O(1)</li>
-</ol>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> _for(i,a,b) for(int i=(a);i&lt;=(b);i++)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//备忘录</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">helper</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; memo, <span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">	<span class="comment">//base case</span></span><br><span class="line">	<span class="keyword">if</span> (n == <span class="number">2</span> || n == <span class="number">3</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (memo[n] != <span class="number">0</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> memo[n];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		memo[n] = <span class="built_in">helper</span>(memo, n - <span class="number">1</span>) + <span class="built_in">helper</span>(memo, n - <span class="number">2</span>);</span><br><span class="line">		<span class="keyword">return</span> memo[n];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//带备忘录法</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">fib_1</span><span class="params">(<span class="type">int</span> N)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (N &lt;= <span class="number">1</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">memo</span><span class="params">(N + <span class="number">1</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">helper</span>(memo, N);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//dp数组迭代法</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">fib_2</span><span class="params">(<span class="type">int</span> N)</span> </span>&#123;</span><br><span class="line">	<span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">dp</span><span class="params">(N + <span class="number">1</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line">	dp[<span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">	dp[<span class="number">2</span>] = dp[<span class="number">3</span>] = <span class="number">1</span>;</span><br><span class="line">	_for(i, <span class="number">4</span>, N) &#123;</span><br><span class="line">		dp[i] = dp[i - <span class="number">1</span>] + dp[i - <span class="number">2</span>];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> dp[N];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//迭代优化</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">fib_3</span><span class="params">(<span class="type">int</span> N)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (N == <span class="number">1</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (N == <span class="number">2</span> || N == <span class="number">3</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">int</span> pre = <span class="number">1</span>, ppre = <span class="number">1</span>;</span><br><span class="line">	_for(i, <span class="number">4</span>, N) &#123;</span><br><span class="line">		<span class="type">int</span> sum = pre + ppre;</span><br><span class="line">		ppre = pre;</span><br><span class="line">		pre = sum;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> pre;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, <span class="built_in">fib_3</span>(<span class="number">10</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>刷题笔记</category>
       </categories>
       <tags>
         <tag>算法</tag>
