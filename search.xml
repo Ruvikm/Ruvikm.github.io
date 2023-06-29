@@ -174,54 +174,21 @@
       </tags>
   </entry>
   <entry>
-    <title>Win11转移conda环境——从C盘转移到D盘</title>
-    <url>/2023/06/28/Win11%E8%BD%AC%E7%A7%BBconda%E7%8E%AF%E5%A2%83%E2%80%94%E2%80%94%E4%BB%8EC%E7%9B%98%E8%BD%AC%E7%A7%BB%E5%88%B0D%E7%9B%98/</url>
-    <content><![CDATA[<p>原本就是将<code>Anaconda</code>安装到了C盘，结果发现环境他还是默认安装到了C盘，就打算再转移一下</p>
-<p>conda版本为</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-28%20095709.png" alt="屏幕截图 2023-06-28 095709"></p>
-<p>首先找到Win11下面的环境位置</p>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">C:<span class="keyword">\Users</span><span class="keyword">\用</span>户名<span class="keyword">\.</span>conda<span class="keyword">\envs</span></span><br></pre></td></tr></table></figure>
-<p>比如我的就是</p>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">C:<span class="keyword">\Users</span><span class="keyword">\Arona</span><span class="keyword">\.</span>conda<span class="keyword">\envs</span></span><br></pre></td></tr></table></figure>
-<p>找到D盘安装<code>Anaconda</code>的位置</p>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">D:<span class="keyword">\ProgramData</span><span class="keyword">\anaconda</span>3<span class="keyword">\envs</span></span><br></pre></td></tr></table></figure>
-<p>C盘的将<code>envs</code>文件夹剪切过去，环境迁移一半就完成了</p>
-<p>测试了一下，如果新建一个环境，默认还会装在C盘</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-28%20101113.png" alt="屏幕截图 2023-06-28 101113"></p>
-<p>于是要修改一下环境的默认安装位置</p>
-<p>找到用户目录下的<code>.condarc</code>文件</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">explorer %USERPROFILE%</span><br></pre></td></tr></table></figure>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-28%20101811.png" alt="屏幕截图 2023-06-28 101811"></p>
-<p>用<code>Visual Studio Code</code>打开</p>
-<p>加入这段话</p>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">envs<span class="built_in">_</span>dirs:</span><br><span class="line">  - D:<span class="keyword">\ProgramData</span><span class="keyword">\anaconda</span>3<span class="keyword">\envs</span></span><br></pre></td></tr></table></figure>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-28%20102057.png" alt="屏幕截图 2023-06-28 102057"></p>
-<p>这样默认就会安装到D盘了</p>
-<p>测试一下，新建一个名为<code>test1</code>的环境</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-28%20102249.png" alt="屏幕截图 2023-06-28 102249"></p>
-<p>如果发现地址还没变的话，可以继续以下操作</p>
-<p>找到<code>Anaconda</code>的文件夹，右键属性—安全，把users下面的权限全部打钩就行</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-28%20102811.png" alt="屏幕截图 2023-06-28 102811"></p>
-<p>应用过程中可能还会出现这种错误</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/image-20230628103929133.png" alt="image-20230628103929133"></p>
-<p>可以按照这个<a href="https://blog.csdn.net/qq_37653414/article/details/103462173">博客</a>的方法来解决，那个图比较清楚</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/image-20230628104526618.png" alt="image-20230628104526618"></p>
-<p>等待一段时间</p>
-<p>然后再回到上述操作，把users下面的权限全部打钩，再等待亿段时间</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/image-20230628104915818.png" alt="image-20230628104915818"></p>
-<p>完成后最后测试一下，新建一个名为test2的环境</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-28%20105049.png" alt="屏幕截图 2023-06-28 105049"></p>
-<p>成功！</p>
-<p>补充一下：</p>
-<p>发现刚刚上述只是把环境迁移了，下载的缓存还是留在C盘</p>
-<p>找到刚刚用户目录的.<code>condarc</code>文件，再加入几句话</p>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">pkgs<span class="built_in">_</span>dirs:</span><br><span class="line">  - D:<span class="keyword">\ProgramData</span><span class="keyword">\pkgs</span></span><br></pre></td></tr></table></figure>
-<p>保存查看一下，输入</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda info</span><br></pre></td></tr></table></figure>
-<p><img src="https://s1.ax1x.com/2023/06/28/pCdNtKI.png" alt="image-20230628115703963"></p>
-<p>说明配置成功，接下来把C盘的<code>pkgs</code>文件夹剪切到D盘刚刚的目录下就行了</p>
-<p><img src="https://s1.ax1x.com/2023/06/28/pCdNqqx.png" alt="image-20230628115948908"></p>
-<p>完事！</p>
+    <title>hexo部署到Gitee后显示404||没有更新</title>
+    <url>/2023/05/26/hexo%E9%83%A8%E7%BD%B2%E5%88%B0Gitee%E5%90%8E%E6%98%BE%E7%A4%BA404/</url>
+    <content><![CDATA[<p>在Gitee开启了Gitee Pages，并且本地完成了</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g -d</span><br></pre></td></tr></table></figure>
+<p>然后发现已经上传到了Gitee仓库里，但是访问博客的网址却显示404</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-05-26%20163430-1685090681023-7.png" alt="屏幕截图 2023-05-26 163430"></p>
+<p>有以下两种可能的原因：</p>
+<h3 id="hexo根目录下的-config-yml文件里，url没有配置对"><a href="#hexo根目录下的-config-yml文件里，url没有配置对" class="headerlink" title="hexo根目录下的_config.yml文件里，url没有配置对"></a>hexo根目录下的_config.yml文件里，url没有配置对</h3><p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-05-26%20164633.png" alt="屏幕截图 2023-05-26 164633"></p>
+<p>如果仓库名和Gitee的用户名不一致时，root属性也需要修改。</p>
+<p>比如用户名为xxx新建的仓库地址为</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">https://gitee.com/xxx/myblog </span><br></pre></td></tr></table></figure>
+<p>则以上内容需要修改为</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">url: https://xxx.gitee.io/</span><br><span class="line">root: /myblog</span><br></pre></td></tr></table></figure>
+<h3 id="没有手动再部署一遍！！！"><a href="#没有手动再部署一遍！！！" class="headerlink" title="没有手动再部署一遍！！！"></a>没有手动再部署一遍！！！</h3><p>是的你没有听错，这个居然上传成功后还需要手动再更新一下！</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-05-26%20164839.png" alt="屏幕截图 2023-05-26 164839"></p>
 ]]></content>
       <categories>
         <category>个人笔记</category>
@@ -587,27 +554,6 @@
       </tags>
   </entry>
   <entry>
-    <title>hexo部署到Gitee后显示404||没有更新</title>
-    <url>/2023/05/26/hexo%E9%83%A8%E7%BD%B2%E5%88%B0Gitee%E5%90%8E%E6%98%BE%E7%A4%BA404/</url>
-    <content><![CDATA[<p>在Gitee开启了Gitee Pages，并且本地完成了</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g -d</span><br></pre></td></tr></table></figure>
-<p>然后发现已经上传到了Gitee仓库里，但是访问博客的网址却显示404</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-05-26%20163430-1685090681023-7.png" alt="屏幕截图 2023-05-26 163430"></p>
-<p>有以下两种可能的原因：</p>
-<h3 id="hexo根目录下的-config-yml文件里，url没有配置对"><a href="#hexo根目录下的-config-yml文件里，url没有配置对" class="headerlink" title="hexo根目录下的_config.yml文件里，url没有配置对"></a>hexo根目录下的_config.yml文件里，url没有配置对</h3><p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-05-26%20164633.png" alt="屏幕截图 2023-05-26 164633"></p>
-<p>如果仓库名和Gitee的用户名不一致时，root属性也需要修改。</p>
-<p>比如用户名为xxx新建的仓库地址为</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">https://gitee.com/xxx/myblog </span><br></pre></td></tr></table></figure>
-<p>则以上内容需要修改为</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">url: https://xxx.gitee.io/</span><br><span class="line">root: /myblog</span><br></pre></td></tr></table></figure>
-<h3 id="没有手动再部署一遍！！！"><a href="#没有手动再部署一遍！！！" class="headerlink" title="没有手动再部署一遍！！！"></a>没有手动再部署一遍！！！</h3><p>是的你没有听错，这个居然上传成功后还需要手动再更新一下！</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-05-26%20164839.png" alt="屏幕截图 2023-05-26 164839"></p>
-]]></content>
-      <categories>
-        <category>个人笔记</category>
-      </categories>
-  </entry>
-  <entry>
     <title>使用Xpath和Requests实现爬虫并存储在Excel表里---爬取链家上杭州近期二手房价</title>
     <url>/2020/10/18/%E4%BD%BF%E7%94%A8Xpath%E5%92%8CRequests%E5%AE%9E%E7%8E%B0%E7%88%AC%E8%99%AB%E5%B9%B6%E5%AD%98%E5%82%A8%E5%9C%A8Excel%E8%A1%A8%E9%87%8C-%E7%88%AC%E5%8F%96%E9%93%BE%E5%AE%B6%E4%B8%8A%E6%9D%AD%E5%B7%9E%E8%BF%91%E6%9C%9F%E4%BA%8C%E6%89%8B%E6%88%BF%E4%BB%B7/</url>
     <content><![CDATA[<p>爬的是杭州近期的的新房价</p>
@@ -619,6 +565,60 @@
       <tags>
         <tag>Python</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Win11转移conda环境——从C盘转移到D盘</title>
+    <url>/2023/06/28/Win11%E8%BD%AC%E7%A7%BBconda%E7%8E%AF%E5%A2%83%E2%80%94%E2%80%94%E4%BB%8EC%E7%9B%98%E8%BD%AC%E7%A7%BB%E5%88%B0D%E7%9B%98/</url>
+    <content><![CDATA[<p>原本就是将<code>Anaconda</code>安装到了C盘，结果发现环境他还是默认安装到了C盘，就打算再转移一下</p>
+<p>conda版本为</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-28%20095709.png" alt="屏幕截图 2023-06-28 095709"></p>
+<p>首先找到Win11下面的环境位置</p>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">C:<span class="keyword">\Users</span><span class="keyword">\用</span>户名<span class="keyword">\.</span>conda<span class="keyword">\envs</span></span><br></pre></td></tr></table></figure>
+<p>比如我的就是</p>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">C:<span class="keyword">\Users</span><span class="keyword">\Arona</span><span class="keyword">\.</span>conda<span class="keyword">\envs</span></span><br></pre></td></tr></table></figure>
+<p>找到D盘安装<code>Anaconda</code>的位置</p>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">D:<span class="keyword">\ProgramData</span><span class="keyword">\anaconda</span>3<span class="keyword">\envs</span></span><br></pre></td></tr></table></figure>
+<p>C盘的将<code>envs</code>文件夹剪切过去，环境迁移一半就完成了</p>
+<p>测试了一下，如果新建一个环境，默认还会装在C盘</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-28%20101113.png" alt="屏幕截图 2023-06-28 101113"></p>
+<p>于是要修改一下环境的默认安装位置</p>
+<p>找到用户目录下的<code>.condarc</code>文件</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">explorer %USERPROFILE%</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-28%20101811.png" alt="屏幕截图 2023-06-28 101811"></p>
+<p>用<code>Visual Studio Code</code>打开</p>
+<p>加入这段话</p>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">envs<span class="built_in">_</span>dirs:</span><br><span class="line">  - D:<span class="keyword">\ProgramData</span><span class="keyword">\anaconda</span>3<span class="keyword">\envs</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-28%20102057.png" alt="屏幕截图 2023-06-28 102057"></p>
+<p>这样默认就会安装到D盘了</p>
+<p>测试一下，新建一个名为<code>test1</code>的环境</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-28%20102249.png" alt="屏幕截图 2023-06-28 102249"></p>
+<p>如果发现地址还没变的话，可以继续以下操作</p>
+<p>找到<code>Anaconda</code>的文件夹，右键属性—安全，把users下面的权限全部打钩就行</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-28%20102811.png" alt="屏幕截图 2023-06-28 102811"></p>
+<p>应用过程中可能还会出现这种错误</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/image-20230628103929133.png" alt="image-20230628103929133"></p>
+<p>可以按照这个<a href="https://blog.csdn.net/qq_37653414/article/details/103462173">博客</a>的方法来解决，那个图比较清楚</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/image-20230628104526618.png" alt="image-20230628104526618"></p>
+<p>等待一段时间</p>
+<p>然后再回到上述操作，把users下面的权限全部打钩，再等待亿段时间</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/image-20230628104915818.png" alt="image-20230628104915818"></p>
+<p>完成后最后测试一下，新建一个名为test2的环境</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-28%20105049.png" alt="屏幕截图 2023-06-28 105049"></p>
+<p>成功！</p>
+<p>补充一下：</p>
+<p>发现刚刚上述只是把环境迁移了，下载的缓存还是留在C盘</p>
+<p>找到刚刚用户目录的.<code>condarc</code>文件，再加入几句话</p>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">pkgs<span class="built_in">_</span>dirs:</span><br><span class="line">  - D:<span class="keyword">\ProgramData</span><span class="keyword">\pkgs</span></span><br></pre></td></tr></table></figure>
+<p>保存查看一下，输入</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda info</span><br></pre></td></tr></table></figure>
+<p><img src="https://s1.ax1x.com/2023/06/28/pCdNtKI.png" alt="image-20230628115703963"></p>
+<p>说明配置成功，接下来把C盘的<code>pkgs</code>文件夹剪切到D盘刚刚的目录下就行了</p>
+<p><img src="https://s1.ax1x.com/2023/06/28/pCdNqqx.png" alt="image-20230628115948908"></p>
+<p>完事！</p>
+]]></content>
+      <categories>
+        <category>个人笔记</category>
+      </categories>
   </entry>
   <entry>
     <title>图的邻接表表示转换成邻接矩阵</title>
@@ -1118,12 +1118,41 @@
 <p>啊好吧，可能是路径没改完，这样吧，直接在<code>main</code>文件里把传过来的地址改一下，把之前改的注销了</p>
 <p><img src="https://s1.ax1x.com/2023/06/29/pCww0bR.png" alt="image-20230629103651187"></p>
 <p>再跑一下试试</p>
-<p><img src="/2023/06/23/%E5%A4%8D%E7%8E%B0%E8%AE%BA%E6%96%87%E3%80%8ASPIKING%20CONVOLUTIONAL%20NEURAL%20NETWORKS%20FOR%20TEXT%20CLASSIFICATION%E3%80%8B/Users/Arona/AppData/Roaming/Typora/typora-user-images/image-20230629103825433.png" alt="image-20230629103825433"></p>
+<p><img src="https://s1.ax1x.com/2023/06/29/pC0SLUe.png" alt="image-20230629103825433"></p>
 <p>阿哲，还可以下溢的吗</p>
 ]]></content>
       <categories>
         <category>论文复现</category>
       </categories>
+  </entry>
+  <entry>
+    <title>如何使用微信小程序IDE在github上实现团队合作</title>
+    <url>/2020/04/16/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8FIDE%E5%9C%A8github%E4%B8%8A%E5%AE%9E%E7%8E%B0%E5%9B%A2%E9%98%9F%E5%90%88%E4%BD%9C/</url>
+    <content><![CDATA[<p>——-原文——-(2020/4/16)</p>
+<p>@<a href="如何使用微信开发者工具在github上实现团队合作">TOC</a><br>一.发起者要做的一些步骤</p>
+<ol>
+<li>首先用IDE初始化本地的git仓库<br><img src="https://img-blog.csdnimg.cn/20200130111131527.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="a."><br><img src="https://img-blog.csdnimg.cn/20200130111301249.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="b."></li>
+<li>使用github-desktop客户端添加这个新建的本地git库并同时上传到新建的远程仓库中<br><img src="https://img-blog.csdnimg.cn/2020013011214879.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="添加本地仓库"><br><img src="https://img-blog.csdnimg.cn/20200130112202771.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="新建远程仓库"><br><img src="https://img-blog.csdnimg.cn/2020013011231537.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/2020013011291517.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="看一下成果嘿嘿嘿"></li>
+<li>添加参与者<br><img src="https://img-blog.csdnimg.cn/20200130113301950.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="最好添加的时候写参与者的名字"><br><strong>PS:被邀请者的必须要接受邀请才可以</strong></li>
+</ol>
+<p>二.参与者需要做的步骤</p>
+<ol>
+<li>在微信小程序开发者工具里添加远程仓库<br><img src="https://img-blog.csdnimg.cn/20200130114342510.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="添加远程仓库_1"><img src="https://img-blog.csdnimg.cn/20200130114356569.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="添加远程仓库_2"><br><img src="https://img-blog.csdnimg.cn/20200130114448885.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="如何查看仓库的地址"></li>
+<li>绑定自己的github账号<br><img src="https://img-blog.csdnimg.cn/20200130115015761.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="绑定账号"></li>
+</ol>
+<p>三.如何线上合作</p>
+<ol>
+<li>参与者在调试好了一些功能以后，提交到远程仓库的分支<br><img src="https://img-blog.csdnimg.cn/20200130120245999.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="提交分支"></li>
+<li>参与者请求合并分支<br><img src="https://img-blog.csdnimg.cn/20200130120523380.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="请求合并_1"><br><img src="https://img-blog.csdnimg.cn/20200130120921309.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="请求合并_2"><br><img src="https://img-blog.csdnimg.cn/20200130120955937.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="发起合并请求"></li>
+<li>在发起者经过了沉思熟虑，通计熟筹，仰观俯察后，同意合并分支的请求(＠￣ー￣＠)<br><img src="https://img-blog.csdnimg.cn/20200130121516212.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="找到请求_1"><br>从这里可以对比的看到分支和master的不同<br><img src="https://img-blog.csdnimg.cn/2020013012161487.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="找不同"><br>同意合并请求：<br><img src="https://img-blog.csdnimg.cn/20200130121829976.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="同意合并_2"><br><img src="https://img-blog.csdnimg.cn/20200130121938158.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="同意合并_3"><br>这样就分支就合并进去了<br><img src="https://img-blog.csdnimg.cn/20200130122111630.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="嘻嘻嘻"><br>当然如果参与者想要同步最新的代码，只要pull一下就好了<br><img src="https://img-blog.csdnimg.cn/20200130191852824.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="同步"><br>第一次接触github，如有一些错误，还请多多指教<br>(๑•̀ㅂ•́)و</li>
+</ol>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>微信小程序</tag>
+      </tags>
   </entry>
   <entry>
     <title>跑通项目《GAT-BiLSTM-CRF》</title>
@@ -1310,35 +1339,6 @@
       <categories>
         <category>论文复现</category>
       </categories>
-  </entry>
-  <entry>
-    <title>如何使用微信小程序IDE在github上实现团队合作</title>
-    <url>/2020/04/16/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8FIDE%E5%9C%A8github%E4%B8%8A%E5%AE%9E%E7%8E%B0%E5%9B%A2%E9%98%9F%E5%90%88%E4%BD%9C/</url>
-    <content><![CDATA[<p>——-原文——-(2020/4/16)</p>
-<p>@<a href="如何使用微信开发者工具在github上实现团队合作">TOC</a><br>一.发起者要做的一些步骤</p>
-<ol>
-<li>首先用IDE初始化本地的git仓库<br><img src="https://img-blog.csdnimg.cn/20200130111131527.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="a."><br><img src="https://img-blog.csdnimg.cn/20200130111301249.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="b."></li>
-<li>使用github-desktop客户端添加这个新建的本地git库并同时上传到新建的远程仓库中<br><img src="https://img-blog.csdnimg.cn/2020013011214879.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="添加本地仓库"><br><img src="https://img-blog.csdnimg.cn/20200130112202771.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="新建远程仓库"><br><img src="https://img-blog.csdnimg.cn/2020013011231537.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/2020013011291517.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="看一下成果嘿嘿嘿"></li>
-<li>添加参与者<br><img src="https://img-blog.csdnimg.cn/20200130113301950.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="最好添加的时候写参与者的名字"><br><strong>PS:被邀请者的必须要接受邀请才可以</strong></li>
-</ol>
-<p>二.参与者需要做的步骤</p>
-<ol>
-<li>在微信小程序开发者工具里添加远程仓库<br><img src="https://img-blog.csdnimg.cn/20200130114342510.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="添加远程仓库_1"><img src="https://img-blog.csdnimg.cn/20200130114356569.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="添加远程仓库_2"><br><img src="https://img-blog.csdnimg.cn/20200130114448885.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="如何查看仓库的地址"></li>
-<li>绑定自己的github账号<br><img src="https://img-blog.csdnimg.cn/20200130115015761.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="绑定账号"></li>
-</ol>
-<p>三.如何线上合作</p>
-<ol>
-<li>参与者在调试好了一些功能以后，提交到远程仓库的分支<br><img src="https://img-blog.csdnimg.cn/20200130120245999.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="提交分支"></li>
-<li>参与者请求合并分支<br><img src="https://img-blog.csdnimg.cn/20200130120523380.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="请求合并_1"><br><img src="https://img-blog.csdnimg.cn/20200130120921309.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="请求合并_2"><br><img src="https://img-blog.csdnimg.cn/20200130120955937.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="发起合并请求"></li>
-<li>在发起者经过了沉思熟虑，通计熟筹，仰观俯察后，同意合并分支的请求(＠￣ー￣＠)<br><img src="https://img-blog.csdnimg.cn/20200130121516212.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="找到请求_1"><br>从这里可以对比的看到分支和master的不同<br><img src="https://img-blog.csdnimg.cn/2020013012161487.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="找不同"><br>同意合并请求：<br><img src="https://img-blog.csdnimg.cn/20200130121829976.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="同意合并_2"><br><img src="https://img-blog.csdnimg.cn/20200130121938158.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="同意合并_3"><br>这样就分支就合并进去了<br><img src="https://img-blog.csdnimg.cn/20200130122111630.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="嘻嘻嘻"><br>当然如果参与者想要同步最新的代码，只要pull一下就好了<br><img src="https://img-blog.csdnimg.cn/20200130191852824.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="同步"><br>第一次接触github，如有一些错误，还请多多指教<br>(๑•̀ㅂ•́)و</li>
-</ol>
-]]></content>
-      <categories>
-        <category>学习笔记</category>
-      </categories>
-      <tags>
-        <tag>微信小程序</tag>
-      </tags>
   </entry>
   <entry>
     <title>斐波那契数列 C_C++</title>
