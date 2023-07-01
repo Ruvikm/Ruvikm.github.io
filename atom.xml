@@ -6,7 +6,7 @@
   <link href="https://ruvikm.gitee.io/atom.xml" rel="self"/>
   
   <link href="https://ruvikm.gitee.io/"/>
-  <updated>2023-06-28T04:00:03.617Z</updated>
+  <updated>2023-07-01T15:01:00.814Z</updated>
   <id>https://ruvikm.gitee.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>安装Word2Vec</title>
+    <link href="https://ruvikm.gitee.io/2023/07/01/%E5%AE%89%E8%A3%85Word2Vec/"/>
+    <id>https://ruvikm.gitee.io/2023/07/01/%E5%AE%89%E8%A3%85Word2Vec/</id>
+    <published>2023-07-01T08:21:49.000Z</published>
+    <updated>2023-07-01T15:01:00.814Z</updated>
+    
+    <content type="html"><![CDATA[<p>由于最近需要用到一个预处理的数据集，方法在<a href="https://arxiv.org/abs/1301.3781">这篇论文</a>《Efficient Estimation of Word Representations in Vector Space》里，于是打算尝试能不能复现一下，论文提供了<a href="https://code.google.com/archive/p/word2vec/">代码地址</a>，但是当我打开下载的时候，却发现是404</p><p><img src="https://s1.ax1x.com/2023/07/01/pCB5ZT0.png" alt="image-20230701163100641"></p><p>于是经过一番搜索，找到了最新的<a href="https://pypi.org/project/word2vec/">地址</a>（应该是吧</p><p>先创建一下新的虚拟环境</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">conda create -n word2vec python=3.8</span><br><span class="line">conda activate word2vec</span><br></pre></td></tr></table></figure><p>然后安装<code>numpy</code>、<code>scipy</code></p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pip install numpy</span><br><span class="line">pip install scipy</span><br></pre></td></tr></table></figure><p>安装<a href="https://visualstudio.microsoft.com/zh-hans/vs/">Microsoft Visual C++ 14.0</a></p><p>下载下来是一个安装器，然后进行如下操作</p><p><img src="https://s1.ax1x.com/2023/07/01/pCBoUQe.png" alt="屏幕截图 2023-07-01 165446"></p><p>然后</p><p><img src="https://s1.ax1x.com/2023/07/01/pCBodLd.png" alt="屏幕截图 2023-07-01 165358"></p><p>最后安装有点麻烦的<code>gcc</code>，首先使用清华镜像下载<a href="http://files.1f0.de/mingw/mingw-w64-gcc-12.2-stable-r38.7z">mingw-w64-gcc</a>，然后解压的位置选一个自己能记住的位置，比如我的就是</p><figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">G:<span class="keyword">\Program</span> Files<span class="keyword">\MinGW</span>-w64</span><br></pre></td></tr></table></figure><p>然后把<code>bin</code>目录添加到系统变量里</p><p>例如我的路径就是</p><figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">G:<span class="keyword">\Program</span> Files<span class="keyword">\MinGW</span>-w64<span class="keyword">\mingw</span>-w64-gcc-12.2-stable-r38<span class="keyword">\bin</span></span><br></pre></td></tr></table></figure><p><img src="https://s1.ax1x.com/2023/07/01/pCBTy7R.png" alt="屏幕截图 2023-07-01 172554"></p><p>最后测试一下时候配置成功</p><p>在<code>D盘</code>根目录先新建一个<code>helloword.c</code>的文件</p><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;hello world\n&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>然后用<code>cmd</code>到<code>D盘</code>根目录</p><figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">cd/d D:</span><br></pre></td></tr></table></figure><p>用gcc编译</p><figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">gcc helloword.c</span><br></pre></td></tr></table></figure><p><strong>如果没报错说明其实已经配置好了，想看文件运行结果的可以继续输入</strong></p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">a.exe</span><br></pre></td></tr></table></figure><p><img src="https://s1.ax1x.com/2023/07/01/pCB7EgU.png" alt="image-20230701173710147"></p><p>这样，<code>word2vec</code>所需的组件就算全部安装完了，下面正式开始安装<code>word2vec</code>（在conda那个命令窗口哦，希望不要报错！）</p><figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">pip install word2vec</span><br></pre></td></tr></table></figure><p><img src="https://s1.ax1x.com/2023/07/01/pCB7w5t.png" alt="image-20230701174216784"></p><p>如果出现这个问题，重启一下试试。本人就是重启完莫名安装成功了，可能是刚刚有的组件需要重启吧</p><p><img src="https://s1.ax1x.com/2023/07/01/pCDCOPS.png" alt="image-20230701225337075"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;由于最近需要用到一个预处理的数据集，方法在&lt;a href=&quot;https://arxiv.org/abs/1301.3781&quot;&gt;这篇论文&lt;/a&gt;《Efficient Estimation of Word Representations in Vector Space》里，于是</summary>
+      
+    
+    
+    
+    <category term="论文复现" scheme="https://ruvikm.gitee.io/categories/%E8%AE%BA%E6%96%87%E5%A4%8D%E7%8E%B0/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Win11转移conda环境——从C盘转移到D盘</title>
@@ -482,33 +504,6 @@
     
     
     <category term="Python" scheme="https://ruvikm.gitee.io/tags/Python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>如何使用微信小程序IDE在github上实现团队合作</title>
-    <link href="https://ruvikm.gitee.io/2020/04/16/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8FIDE%E5%9C%A8github%E4%B8%8A%E5%AE%9E%E7%8E%B0%E5%9B%A2%E9%98%9F%E5%90%88%E4%BD%9C/"/>
-    <id>https://ruvikm.gitee.io/2020/04/16/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8FIDE%E5%9C%A8github%E4%B8%8A%E5%AE%9E%E7%8E%B0%E5%9B%A2%E9%98%9F%E5%90%88%E4%BD%9C/</id>
-    <published>2020-04-16T07:35:50.000Z</published>
-    <updated>2023-05-23T01:21:19.642Z</updated>
-    
-    <content type="html"><![CDATA[<p>——-原文——-(2020/4/16)</p><p>@<a href="如何使用微信开发者工具在github上实现团队合作">TOC</a><br>一.发起者要做的一些步骤</p><ol><li>首先用IDE初始化本地的git仓库<br><img src="https://img-blog.csdnimg.cn/20200130111131527.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="a."><br><img src="https://img-blog.csdnimg.cn/20200130111301249.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="b."></li><li>使用github-desktop客户端添加这个新建的本地git库并同时上传到新建的远程仓库中<br><img src="https://img-blog.csdnimg.cn/2020013011214879.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="添加本地仓库"><br><img src="https://img-blog.csdnimg.cn/20200130112202771.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="新建远程仓库"><br><img src="https://img-blog.csdnimg.cn/2020013011231537.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/2020013011291517.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="看一下成果嘿嘿嘿"></li><li>添加参与者<br><img src="https://img-blog.csdnimg.cn/20200130113301950.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="最好添加的时候写参与者的名字"><br><strong>PS:被邀请者的必须要接受邀请才可以</strong></li></ol><p>二.参与者需要做的步骤</p><ol><li>在微信小程序开发者工具里添加远程仓库<br><img src="https://img-blog.csdnimg.cn/20200130114342510.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="添加远程仓库_1"><img src="https://img-blog.csdnimg.cn/20200130114356569.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="添加远程仓库_2"><br><img src="https://img-blog.csdnimg.cn/20200130114448885.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="如何查看仓库的地址"></li><li>绑定自己的github账号<br><img src="https://img-blog.csdnimg.cn/20200130115015761.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="绑定账号"></li></ol><p>三.如何线上合作</p><ol><li>参与者在调试好了一些功能以后，提交到远程仓库的分支<br><img src="https://img-blog.csdnimg.cn/20200130120245999.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="提交分支"></li><li>参与者请求合并分支<br><img src="https://img-blog.csdnimg.cn/20200130120523380.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="请求合并_1"><br><img src="https://img-blog.csdnimg.cn/20200130120921309.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="请求合并_2"><br><img src="https://img-blog.csdnimg.cn/20200130120955937.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="发起合并请求"></li><li>在发起者经过了沉思熟虑，通计熟筹，仰观俯察后，同意合并分支的请求(＠￣ー￣＠)<br><img src="https://img-blog.csdnimg.cn/20200130121516212.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="找到请求_1"><br>从这里可以对比的看到分支和master的不同<br><img src="https://img-blog.csdnimg.cn/2020013012161487.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="找不同"><br>同意合并请求：<br><img src="https://img-blog.csdnimg.cn/20200130121829976.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="同意合并_2"><br><img src="https://img-blog.csdnimg.cn/20200130121938158.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="同意合并_3"><br>这样就分支就合并进去了<br><img src="https://img-blog.csdnimg.cn/20200130122111630.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="嘻嘻嘻"><br>当然如果参与者想要同步最新的代码，只要pull一下就好了<br><img src="https://img-blog.csdnimg.cn/20200130191852824.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="同步"><br>第一次接触github，如有一些错误，还请多多指教<br>(๑•̀ㅂ•́)و</li></ol>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;——-原文——-(2020/4/16)&lt;/p&gt;
-&lt;p&gt;@&lt;a href=&quot;如何使用微信开发者工具在github上实现团队合作&quot;&gt;TOC&lt;/a&gt;&lt;br&gt;一.发起者要做的一些步骤&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;首先用IDE初始化本地的git仓库&lt;br&gt;&lt;img src=&quot;https</summary>
-      
-    
-    
-    
-    <category term="学习笔记" scheme="https://ruvikm.gitee.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    
-    <category term="微信小程序" scheme="https://ruvikm.gitee.io/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
     
   </entry>
   
