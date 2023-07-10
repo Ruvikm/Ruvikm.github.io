@@ -47,15 +47,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Host文件备份</title>
-    <url>/2023/07/03/Host%E6%96%87%E4%BB%B6%E5%A4%87%E4%BB%BD/</url>
-    <content><![CDATA[<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="params">#</span> Copyright (c) 1993-2009 Microsoft Corp.</span><br><span class="line"><span class="params">#</span></span><br><span class="line"><span class="params">#</span> This is a sample HOSTS file used by Microsoft TCP/IP for Windows.</span><br><span class="line"><span class="params">#</span></span><br><span class="line"><span class="params">#</span> This file contains the mappings of IP addresses to host names. Each</span><br><span class="line"><span class="params">#</span> entry should be kept on an individual line. The IP address should</span><br><span class="line"><span class="params">#</span> be placed in the first column followed by the corresponding host name.</span><br><span class="line"><span class="params">#</span> The IP address and the host name should be separated by at least one</span><br><span class="line"><span class="params">#</span> space.</span><br><span class="line"><span class="params">#</span></span><br><span class="line"><span class="params">#</span> Additionally, comments (such as these) may be inserted on individual</span><br><span class="line"><span class="params">#</span> lines or following the machine name denoted by a &#x27;<span class="params">#</span>&#x27; symbol.</span><br><span class="line"><span class="params">#</span></span><br><span class="line"><span class="params">#</span> For example:</span><br><span class="line"><span class="params">#</span></span><br><span class="line"><span class="params">#</span> 102.54.94.97 rhino.acme.com <span class="params">#</span> source server</span><br><span class="line"><span class="params">#</span> 38.25.63.10 x.acme.com <span class="params">#</span> x client host</span><br><span class="line"><span class="params">#</span> localhost name resolution is handled within DNS itself.</span><br><span class="line"><span class="params">#</span> 127.0.0.1 localhost</span><br><span class="line"><span class="params">#</span> ::1 localhost</span><br><span class="line"></span><br><span class="line"><span class="params">#</span> Github</span><br><span class="line">140.82.114.4 github.com</span><br><span class="line">199.232.69.194 github.global.ssl.fastly.net</span><br><span class="line">185.199.108.153 assets-cdn.github.com</span><br><span class="line">185.199.110.153 assets-cdn.github.com</span><br><span class="line">185.199.111.153 assets-cdn.github.com</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>个人笔记</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Java实现鲜花销售系统</title>
     <url>/2022/01/10/Java%E5%AE%9E%E7%8E%B0%E9%B2%9C%E8%8A%B1%E9%94%80%E5%94%AE%E7%B3%BB%E7%BB%9F/</url>
     <content><![CDATA[<h2 id="项目环境"><a href="#项目环境" class="headerlink" title="项目环境"></a>项目环境</h2><ol>
@@ -96,6 +87,38 @@
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">bool</span> <span class="title">Ispalindrome</span><span class="params">(string s,<span class="type">int</span> start,<span class="type">int</span> end)</span></span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=start,j=end;i&lt;j;i++,j--)&#123;</span><br><span class="line">            <span class="keyword">if</span>(s[i]!=s[j])&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 <p>全部代码如下：</p>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    vector&lt;vector&lt;string&gt;&gt; res;</span><br><span class="line">    vector&lt;string&gt; tmp;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">dfs</span><span class="params">(<span class="type">const</span> string &amp;s,<span class="type">int</span> cur)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(cur&gt;=s.<span class="built_in">length</span>())&#123;</span><br><span class="line">            res.<span class="built_in">push_back</span>(tmp);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=cur;i&lt;s.<span class="built_in">length</span>();i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(<span class="built_in">Ispalindrome</span>(s,cur,i))&#123;</span><br><span class="line">                string item=s.<span class="built_in">substr</span>(cur,i-cur+<span class="number">1</span>);</span><br><span class="line">                tmp.<span class="built_in">push_back</span>(item);</span><br><span class="line">                <span class="built_in">dfs</span>(s,i+<span class="number">1</span>);</span><br><span class="line">                tmp.<span class="built_in">pop_back</span>();</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">           </span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">Ispalindrome</span><span class="params">(string s,<span class="type">int</span> start,<span class="type">int</span> end)</span></span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=start,j=end;i&lt;j;i++,j--)&#123;</span><br><span class="line">            <span class="keyword">if</span>(s[i]!=s[j])&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    vector&lt;vector&lt;string&gt;&gt; <span class="built_in">partition</span>(string s) &#123;</span><br><span class="line">        tmp.<span class="built_in">clear</span>();</span><br><span class="line">        res.<span class="built_in">clear</span>();</span><br><span class="line">        <span class="built_in">dfs</span>(s,<span class="number">0</span>);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>刷题笔记</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Host文件备份</title>
+    <url>/2023/07/03/Host%E6%96%87%E4%BB%B6%E5%A4%87%E4%BB%BD/</url>
+    <content><![CDATA[<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="params">#</span> Copyright (c) 1993-2009 Microsoft Corp.</span><br><span class="line"><span class="params">#</span></span><br><span class="line"><span class="params">#</span> This is a sample HOSTS file used by Microsoft TCP/IP for Windows.</span><br><span class="line"><span class="params">#</span></span><br><span class="line"><span class="params">#</span> This file contains the mappings of IP addresses to host names. Each</span><br><span class="line"><span class="params">#</span> entry should be kept on an individual line. The IP address should</span><br><span class="line"><span class="params">#</span> be placed in the first column followed by the corresponding host name.</span><br><span class="line"><span class="params">#</span> The IP address and the host name should be separated by at least one</span><br><span class="line"><span class="params">#</span> space.</span><br><span class="line"><span class="params">#</span></span><br><span class="line"><span class="params">#</span> Additionally, comments (such as these) may be inserted on individual</span><br><span class="line"><span class="params">#</span> lines or following the machine name denoted by a &#x27;<span class="params">#</span>&#x27; symbol.</span><br><span class="line"><span class="params">#</span></span><br><span class="line"><span class="params">#</span> For example:</span><br><span class="line"><span class="params">#</span></span><br><span class="line"><span class="params">#</span> 102.54.94.97 rhino.acme.com <span class="params">#</span> source server</span><br><span class="line"><span class="params">#</span> 38.25.63.10 x.acme.com <span class="params">#</span> x client host</span><br><span class="line"><span class="params">#</span> localhost name resolution is handled within DNS itself.</span><br><span class="line"><span class="params">#</span> 127.0.0.1 localhost</span><br><span class="line"><span class="params">#</span> ::1 localhost</span><br><span class="line"></span><br><span class="line"><span class="params">#</span> Github</span><br><span class="line">140.82.114.4 github.com</span><br><span class="line">199.232.69.194 github.global.ssl.fastly.net</span><br><span class="line">185.199.108.153 assets-cdn.github.com</span><br><span class="line">185.199.110.153 assets-cdn.github.com</span><br><span class="line">185.199.111.153 assets-cdn.github.com</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>个人笔记</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>LeetCode 46. Permutations</title>
+    <url>/2022/01/10/LeetCode%2046.%20Permutations/</url>
+    <content><![CDATA[<h2 id="Given-a-collection-of-distinct-integers-return-all-possible-permutations"><a href="#Given-a-collection-of-distinct-integers-return-all-possible-permutations" class="headerlink" title="Given a collection of distinct integers, return all possible permutations."></a>Given a collection of distinct integers, return all possible permutations.</h2><p>Example:</p>
+<p>Input: [1,2,3]<br>Output:<br>[<br>  [1,2,3],<br>  [1,3,2],<br>  [2,1,3],<br>  [2,3,1],<br>  [3,1,2],<br>  [3,2,1]<br>]</p>
+<p><a href="https://leetcode-cn.com/problems/permutations/">题目链接</a></p>
+<p>看了看大佬们的讲解，终于自己做出来一道回溯的题。<br>回溯大致分为三步：</p>
+<ol>
+<li>终止条件：回溯到什么情况就可以加入答案列表</li>
+<li>剪枝条件：什么情况下就可以停止回溯直接continue</li>
+<li>回溯范围：如何将当前层和下一层联系起来继续递归下去</li>
+</ol>
+<p>对于这道全排列的题，我们需要一个res保存答案，一个temp参与回溯，当达到终于条件也就是temp的大小与nums的相等时便把temp加入res中;<br>然后需要一个check数组来标记使用过的元素，当一个数已经被使用过便把对应的位置的值设为1，这样避免了一个数重复使用多次。<br>由于这道题是要列出所有的排列结果，所以需要全部遍历</p>
+<p>代码如下：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; res;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">dfs</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums,vector&lt;<span class="type">int</span>&gt;&amp; temp,vector&lt;<span class="type">int</span>&gt;&amp; check)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(temp.<span class="built_in">size</span>()==nums.<span class="built_in">size</span>())&#123;</span><br><span class="line">            res.<span class="built_in">push_back</span>(temp);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;nums.<span class="built_in">size</span>();i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(check[i])</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            check[i]=<span class="number">1</span>;</span><br><span class="line">            temp.<span class="built_in">push_back</span>(nums[i]);</span><br><span class="line">            <span class="built_in">dfs</span>(nums,temp,check);</span><br><span class="line">            temp.<span class="built_in">pop_back</span>();</span><br><span class="line">            check[i]=<span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">permute</span>(vector&lt;<span class="type">int</span>&gt;&amp; nums) &#123;</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">check</span><span class="params">(nums.size(),<span class="number">0</span>)</span></span>;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; temp;</span><br><span class="line">        <span class="built_in">dfs</span>(nums,temp,check);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>刷题笔记</category>
@@ -208,6 +231,27 @@
 <p>说明配置成功，接下来把C盘的<code>pkgs</code>文件夹剪切到D盘刚刚的目录下就行了</p>
 <p><img src="https://s1.ax1x.com/2023/06/28/pCdNqqx.png" alt="image-20230628115948908"></p>
 <p>完事！</p>
+]]></content>
+      <categories>
+        <category>个人笔记</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>hexo部署到Gitee后显示404||没有更新</title>
+    <url>/2023/05/26/hexo%E9%83%A8%E7%BD%B2%E5%88%B0Gitee%E5%90%8E%E6%98%BE%E7%A4%BA404/</url>
+    <content><![CDATA[<p>在Gitee开启了Gitee Pages，并且本地完成了</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g -d</span><br></pre></td></tr></table></figure>
+<p>然后发现已经上传到了Gitee仓库里，但是访问博客的网址却显示404</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-05-26%20163430-1685090681023-7.png" alt="屏幕截图 2023-05-26 163430"></p>
+<p>有以下两种可能的原因：</p>
+<h3 id="hexo根目录下的-config-yml文件里，url没有配置对"><a href="#hexo根目录下的-config-yml文件里，url没有配置对" class="headerlink" title="hexo根目录下的_config.yml文件里，url没有配置对"></a>hexo根目录下的_config.yml文件里，url没有配置对</h3><p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-05-26%20164633.png" alt="屏幕截图 2023-05-26 164633"></p>
+<p>如果仓库名和Gitee的用户名不一致时，root属性也需要修改。</p>
+<p>比如用户名为xxx新建的仓库地址为</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">https://gitee.com/xxx/myblog </span><br></pre></td></tr></table></figure>
+<p>则以上内容需要修改为</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">url: https://xxx.gitee.io/</span><br><span class="line">root: /myblog</span><br></pre></td></tr></table></figure>
+<h3 id="没有手动再部署一遍！！！"><a href="#没有手动再部署一遍！！！" class="headerlink" title="没有手动再部署一遍！！！"></a>没有手动再部署一遍！！！</h3><p>是的你没有听错，这个居然上传成功后还需要手动再更新一下！</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-05-26%20164839.png" alt="屏幕截图 2023-05-26 164839"></p>
 ]]></content>
       <categories>
         <category>个人笔记</category>
@@ -573,50 +617,6 @@
       </tags>
   </entry>
   <entry>
-    <title>hexo部署到Gitee后显示404||没有更新</title>
-    <url>/2023/05/26/hexo%E9%83%A8%E7%BD%B2%E5%88%B0Gitee%E5%90%8E%E6%98%BE%E7%A4%BA404/</url>
-    <content><![CDATA[<p>在Gitee开启了Gitee Pages，并且本地完成了</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g -d</span><br></pre></td></tr></table></figure>
-<p>然后发现已经上传到了Gitee仓库里，但是访问博客的网址却显示404</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-05-26%20163430-1685090681023-7.png" alt="屏幕截图 2023-05-26 163430"></p>
-<p>有以下两种可能的原因：</p>
-<h3 id="hexo根目录下的-config-yml文件里，url没有配置对"><a href="#hexo根目录下的-config-yml文件里，url没有配置对" class="headerlink" title="hexo根目录下的_config.yml文件里，url没有配置对"></a>hexo根目录下的_config.yml文件里，url没有配置对</h3><p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-05-26%20164633.png" alt="屏幕截图 2023-05-26 164633"></p>
-<p>如果仓库名和Gitee的用户名不一致时，root属性也需要修改。</p>
-<p>比如用户名为xxx新建的仓库地址为</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">https://gitee.com/xxx/myblog </span><br></pre></td></tr></table></figure>
-<p>则以上内容需要修改为</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">url: https://xxx.gitee.io/</span><br><span class="line">root: /myblog</span><br></pre></td></tr></table></figure>
-<h3 id="没有手动再部署一遍！！！"><a href="#没有手动再部署一遍！！！" class="headerlink" title="没有手动再部署一遍！！！"></a>没有手动再部署一遍！！！</h3><p>是的你没有听错，这个居然上传成功后还需要手动再更新一下！</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-05-26%20164839.png" alt="屏幕截图 2023-05-26 164839"></p>
-]]></content>
-      <categories>
-        <category>个人笔记</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>LeetCode 46. Permutations</title>
-    <url>/2022/01/10/LeetCode%2046.%20Permutations/</url>
-    <content><![CDATA[<h2 id="Given-a-collection-of-distinct-integers-return-all-possible-permutations"><a href="#Given-a-collection-of-distinct-integers-return-all-possible-permutations" class="headerlink" title="Given a collection of distinct integers, return all possible permutations."></a>Given a collection of distinct integers, return all possible permutations.</h2><p>Example:</p>
-<p>Input: [1,2,3]<br>Output:<br>[<br>  [1,2,3],<br>  [1,3,2],<br>  [2,1,3],<br>  [2,3,1],<br>  [3,1,2],<br>  [3,2,1]<br>]</p>
-<p><a href="https://leetcode-cn.com/problems/permutations/">题目链接</a></p>
-<p>看了看大佬们的讲解，终于自己做出来一道回溯的题。<br>回溯大致分为三步：</p>
-<ol>
-<li>终止条件：回溯到什么情况就可以加入答案列表</li>
-<li>剪枝条件：什么情况下就可以停止回溯直接continue</li>
-<li>回溯范围：如何将当前层和下一层联系起来继续递归下去</li>
-</ol>
-<p>对于这道全排列的题，我们需要一个res保存答案，一个temp参与回溯，当达到终于条件也就是temp的大小与nums的相等时便把temp加入res中;<br>然后需要一个check数组来标记使用过的元素，当一个数已经被使用过便把对应的位置的值设为1，这样避免了一个数重复使用多次。<br>由于这道题是要列出所有的排列结果，所以需要全部遍历</p>
-<p>代码如下：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; res;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">dfs</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums,vector&lt;<span class="type">int</span>&gt;&amp; temp,vector&lt;<span class="type">int</span>&gt;&amp; check)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(temp.<span class="built_in">size</span>()==nums.<span class="built_in">size</span>())&#123;</span><br><span class="line">            res.<span class="built_in">push_back</span>(temp);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;nums.<span class="built_in">size</span>();i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(check[i])</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            check[i]=<span class="number">1</span>;</span><br><span class="line">            temp.<span class="built_in">push_back</span>(nums[i]);</span><br><span class="line">            <span class="built_in">dfs</span>(nums,temp,check);</span><br><span class="line">            temp.<span class="built_in">pop_back</span>();</span><br><span class="line">            check[i]=<span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">permute</span>(vector&lt;<span class="type">int</span>&gt;&amp; nums) &#123;</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">check</span><span class="params">(nums.size(),<span class="number">0</span>)</span></span>;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; temp;</span><br><span class="line">        <span class="built_in">dfs</span>(nums,temp,check);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>刷题笔记</category>
-      </categories>
-      <tags>
-        <tag>算法</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>word2vec工具实战</title>
     <url>/2023/07/04/word2vec%E5%B7%A5%E5%85%B7%E5%AE%9E%E6%88%98/</url>
     <content><![CDATA[<p>最开始需要新建一个conda环境</p>
@@ -684,19 +684,6 @@
       <categories>
         <category>个人笔记</category>
       </categories>
-  </entry>
-  <entry>
-    <title>使用Xpath和Requests实现爬虫并存储在Excel表里---爬取链家上杭州近期二手房价</title>
-    <url>/2020/10/18/%E4%BD%BF%E7%94%A8Xpath%E5%92%8CRequests%E5%AE%9E%E7%8E%B0%E7%88%AC%E8%99%AB%E5%B9%B6%E5%AD%98%E5%82%A8%E5%9C%A8Excel%E8%A1%A8%E9%87%8C-%E7%88%AC%E5%8F%96%E9%93%BE%E5%AE%B6%E4%B8%8A%E6%9D%AD%E5%B7%9E%E8%BF%91%E6%9C%9F%E4%BA%8C%E6%89%8B%E6%88%BF%E4%BB%B7/</url>
-    <content><![CDATA[<p>爬的是杭州近期的的新房价</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># encoding: utf-8</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">@author: Ruvik</span></span><br><span class="line"><span class="string">@software: PyCharm</span></span><br><span class="line"><span class="string">@file: Spider_House.py</span></span><br><span class="line"><span class="string">@time: 2020/7/9 20:12</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 爬一下链家网上杭州新房的价格</span></span><br><span class="line"><span class="keyword">import</span> requests                 <span class="comment"># 进行网络请求</span></span><br><span class="line"><span class="keyword">import</span> xlwt                     <span class="comment"># 与excel相关的操作</span></span><br><span class="line"><span class="keyword">from</span> lxml <span class="keyword">import</span> etree          <span class="comment"># 引入xpath库，方便定位元素</span></span><br><span class="line"><span class="keyword">import</span> time                     <span class="comment"># 进行访问频率控制</span></span><br><span class="line"><span class="keyword">import</span> random                   <span class="comment"># 随机数生成</span></span><br><span class="line"><span class="keyword">import</span> re                       <span class="comment"># 正则表达式</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 主程序</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">main</span>():</span><br><span class="line"></span><br><span class="line">    base_url = <span class="string">&quot;https://hz.fang.lianjia.com/loupan/pg&quot;</span>     <span class="comment"># 最基本的网址，后续会根据这个进行翻页操作</span></span><br><span class="line">    Savepath = <span class="string">&quot;.\\杭州新房价.xls&quot;</span>                           <span class="comment"># 存储路径</span></span><br><span class="line">    datalist = getdata(base_url)</span><br><span class="line">    savedata(datalist, Savepath)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取html源码</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">ask_url</span>(<span class="params">url</span>):</span><br><span class="line">    html=<span class="string">&quot;&quot;</span></span><br><span class="line">    headers=&#123;          <span class="comment"># 进行伪装，防止416错误，模拟浏览器头部信息，向豆瓣服务器发送消息</span></span><br><span class="line">        <span class="string">&quot;User-Agent&quot;</span>: <span class="string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        response = requests.get(url,headers=headers,timeout=<span class="number">10</span>)  <span class="comment"># 用户代理，表示告诉豆瓣服务器，我们是什么类型的机器、浏览器（本质上是告诉浏览器，我们可以接收什么水平的文件内容）</span></span><br><span class="line">        time.sleep(random.randint(<span class="number">3</span>, <span class="number">6</span>))                        <span class="comment"># 每隔3-6s执行一次请求</span></span><br><span class="line">        <span class="comment"># print(response.status_code)</span></span><br><span class="line">        html = response.content                                     <span class="comment"># 获取网页的html源代码</span></span><br><span class="line">        <span class="comment"># print(html)</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;请求访问成功&quot;</span>)</span><br><span class="line">    <span class="keyword">except</span> requests.exceptions.RequestException <span class="keyword">as</span> e:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;超时&quot;</span>)</span><br><span class="line">        <span class="built_in">print</span>(e)</span><br><span class="line">    <span class="keyword">return</span> html</span><br><span class="line"></span><br><span class="line"><span class="comment"># 从html源码中获取信息</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">getdata</span>(<span class="params">baseurl</span>):</span><br><span class="line">    Datalist = []                                 <span class="comment"># 用来存储已经经过处理的信息</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="number">100</span>):                     <span class="comment"># 在1-100页内爬取房价的信息</span></span><br><span class="line">        url = baseurl+<span class="built_in">str</span>(i)                    <span class="comment"># 拼接url网址，进行换页</span></span><br><span class="line">        <span class="comment"># print(url)</span></span><br><span class="line">        data = ask_url(url)                     <span class="comment"># 获取到源代码</span></span><br><span class="line">        <span class="comment"># 从源代码中提取信息</span></span><br><span class="line">        <span class="keyword">if</span> data != <span class="string">&quot;&quot;</span>:</span><br><span class="line">            html_data = etree.HTML(data)</span><br><span class="line">            div_list = html_data.xpath(<span class="string">&#x27;//div[@class=&quot;resblock-desc-wrapper&quot;]&#x27;</span>)</span><br><span class="line">            <span class="comment"># print(len(div_list))</span></span><br><span class="line">            <span class="keyword">for</span> item <span class="keyword">in</span> div_list:</span><br><span class="line">                data_item = []</span><br><span class="line">                <span class="comment"># 提取详情链接</span></span><br><span class="line">                link = <span class="string">&quot;https://hz.fang.lianjia.com&quot;</span></span><br><span class="line">                link += item.xpath(<span class="string">&#x27;./div/a/@href&#x27;</span>)[<span class="number">0</span>]</span><br><span class="line">                data_item.append(link)</span><br><span class="line">                <span class="comment"># print(link)</span></span><br><span class="line"></span><br><span class="line">                <span class="comment"># 提取名字</span></span><br><span class="line">                name = item.xpath(<span class="string">&quot;./div/a/text()&quot;</span>)[<span class="number">0</span>]</span><br><span class="line">                data_item.append(name)</span><br><span class="line">                <span class="comment"># print(name)</span></span><br><span class="line"></span><br><span class="line">                <span class="comment"># 提取地址</span></span><br><span class="line">                loc = item.xpath(<span class="string">&#x27;./div[@class=&quot;resblock-location&quot;]/span/text()&#x27;</span>)</span><br><span class="line">                location = loc[<span class="number">0</span>] +<span class="string">&quot;|&quot;</span>+ loc[<span class="number">1</span>] +<span class="string">&quot;|&quot;</span>+ item.xpath(<span class="string">&#x27;./div[@class=&quot;resblock-location&quot;]/a/text()&#x27;</span>)[<span class="number">0</span>]</span><br><span class="line">                data_item.append(location)</span><br><span class="line">                <span class="comment"># print(location)</span></span><br><span class="line"></span><br><span class="line">                <span class="comment"># 提取户型</span></span><br><span class="line">                room = item.xpath(<span class="string">&#x27;./a[@class=&quot;resblock-room&quot;]/span/text()&#x27;</span>)</span><br><span class="line">                rooms = <span class="string">&quot;&quot;</span></span><br><span class="line">                <span class="keyword">for</span> k <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(room)):</span><br><span class="line">                    <span class="keyword">if</span> k &lt; <span class="built_in">len</span>(room) - <span class="number">1</span>:</span><br><span class="line">                        rooms += <span class="built_in">str</span>(room[k]) + <span class="string">&quot;|&quot;</span></span><br><span class="line">                    <span class="keyword">else</span>:</span><br><span class="line">                        rooms += <span class="built_in">str</span>(room[k])</span><br><span class="line">                <span class="comment"># print(rooms)</span></span><br><span class="line">                data_item.append(rooms)</span><br><span class="line"></span><br><span class="line">                <span class="comment"># 提取大小</span></span><br><span class="line">                size = item.xpath(<span class="string">&#x27;./div[@class=&quot;resblock-area&quot;]/span/text()&#x27;</span>)</span><br><span class="line">                <span class="keyword">if</span> <span class="built_in">len</span>(size) != <span class="number">0</span>:</span><br><span class="line">                    data_item.append(size[<span class="number">0</span>])</span><br><span class="line">                    <span class="comment"># print(size[0])</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    data_item.append(<span class="string">&quot; &quot;</span>)</span><br><span class="line"></span><br><span class="line">                <span class="comment"># 提取标签</span></span><br><span class="line">                tag = item.xpath(<span class="string">&#x27;./div[@class=&quot;resblock-tag&quot;]/span/text()&#x27;</span>)</span><br><span class="line">                tags = <span class="string">&quot;&quot;</span></span><br><span class="line">                <span class="keyword">for</span> k <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(tag)):</span><br><span class="line">                    <span class="keyword">if</span> k &lt; <span class="built_in">len</span>(tag)-<span class="number">1</span>:</span><br><span class="line">                        tags += <span class="built_in">str</span>(tag[k]) + <span class="string">&quot;|&quot;</span></span><br><span class="line">                    <span class="keyword">else</span>:</span><br><span class="line">                        tags += <span class="built_in">str</span>(tag[k])</span><br><span class="line">                <span class="comment"># print(tags)</span></span><br><span class="line">                data_item.append(tags)</span><br><span class="line"></span><br><span class="line">                <span class="comment"># 提取价格</span></span><br><span class="line">                Price = <span class="string">&quot;&quot;</span></span><br><span class="line">                price = item.xpath(<span class="string">&#x27;./div[@class=&quot;resblock-price&quot;]/div/span/text()&#x27;</span>)</span><br><span class="line">                <span class="keyword">for</span> k <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(price)):</span><br><span class="line">                    Price += price[k]</span><br><span class="line">                Price = re.sub(<span class="string">&#x27;\xa0&#x27;</span>, <span class="string">&quot;&quot;</span>, Price)     <span class="comment"># 去掉“\xa0”字符</span></span><br><span class="line">                <span class="comment"># print(Price)</span></span><br><span class="line">                data_item.append(Price)</span><br><span class="line">                Datalist.append(data_item)</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="built_in">len</span>(Datalist))</span><br><span class="line">    <span class="keyword">return</span> Datalist</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将html获取的信息存入Excel表格中</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">savedata</span>(<span class="params">Datalist,Savapath</span>):</span><br><span class="line">    col = (<span class="string">&quot;链接&quot;</span>, <span class="string">&quot;名字&quot;</span>, <span class="string">&quot;地址&quot;</span>, <span class="string">&quot;户型&quot;</span>, <span class="string">&quot;大小&quot;</span>, <span class="string">&quot;标签&quot;</span>, <span class="string">&quot;价格&quot;</span>)                <span class="comment"># Excel的表头</span></span><br><span class="line">    house_list = xlwt.Workbook(encoding=<span class="string">&quot;utf-8&quot;</span>, style_compression=<span class="number">0</span>)       <span class="comment"># 创建workbook对象</span></span><br><span class="line">    worksheet = house_list.add_sheet(<span class="string">&quot;HouseList&quot;</span>, cell_overwrite_ok=<span class="literal">True</span>)   <span class="comment"># 新建工作区，设为可覆盖</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="number">7</span>):                                                   <span class="comment"># 写入表头</span></span><br><span class="line">        worksheet.write(<span class="number">0</span>, i, col[i])</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="number">990</span>):                                                 <span class="comment"># 写入数据</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;正在写入第%d条数据&quot;</span> % (i + <span class="number">1</span>))</span><br><span class="line">        item = Datalist[i]</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="number">7</span>):</span><br><span class="line">            worksheet.write(i + <span class="number">1</span>, j, item[j])</span><br><span class="line">    house_list.save(Savapath)                                               <span class="comment"># 存储</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 程序从这里开始执行</span></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    main()</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;爬取完毕!&quot;</span>)</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>个人项目</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-      </tags>
   </entry>
   <entry>
     <title>图的邻接表表示转换成邻接矩阵</title>
@@ -869,6 +856,19 @@
       </categories>
   </entry>
   <entry>
+    <title>使用Xpath和Requests实现爬虫并存储在Excel表里---爬取链家上杭州近期二手房价</title>
+    <url>/2020/10/18/%E4%BD%BF%E7%94%A8Xpath%E5%92%8CRequests%E5%AE%9E%E7%8E%B0%E7%88%AC%E8%99%AB%E5%B9%B6%E5%AD%98%E5%82%A8%E5%9C%A8Excel%E8%A1%A8%E9%87%8C-%E7%88%AC%E5%8F%96%E9%93%BE%E5%AE%B6%E4%B8%8A%E6%9D%AD%E5%B7%9E%E8%BF%91%E6%9C%9F%E4%BA%8C%E6%89%8B%E6%88%BF%E4%BB%B7/</url>
+    <content><![CDATA[<p>爬的是杭州近期的的新房价</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># encoding: utf-8</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">@author: Ruvik</span></span><br><span class="line"><span class="string">@software: PyCharm</span></span><br><span class="line"><span class="string">@file: Spider_House.py</span></span><br><span class="line"><span class="string">@time: 2020/7/9 20:12</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 爬一下链家网上杭州新房的价格</span></span><br><span class="line"><span class="keyword">import</span> requests                 <span class="comment"># 进行网络请求</span></span><br><span class="line"><span class="keyword">import</span> xlwt                     <span class="comment"># 与excel相关的操作</span></span><br><span class="line"><span class="keyword">from</span> lxml <span class="keyword">import</span> etree          <span class="comment"># 引入xpath库，方便定位元素</span></span><br><span class="line"><span class="keyword">import</span> time                     <span class="comment"># 进行访问频率控制</span></span><br><span class="line"><span class="keyword">import</span> random                   <span class="comment"># 随机数生成</span></span><br><span class="line"><span class="keyword">import</span> re                       <span class="comment"># 正则表达式</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 主程序</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">main</span>():</span><br><span class="line"></span><br><span class="line">    base_url = <span class="string">&quot;https://hz.fang.lianjia.com/loupan/pg&quot;</span>     <span class="comment"># 最基本的网址，后续会根据这个进行翻页操作</span></span><br><span class="line">    Savepath = <span class="string">&quot;.\\杭州新房价.xls&quot;</span>                           <span class="comment"># 存储路径</span></span><br><span class="line">    datalist = getdata(base_url)</span><br><span class="line">    savedata(datalist, Savepath)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取html源码</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">ask_url</span>(<span class="params">url</span>):</span><br><span class="line">    html=<span class="string">&quot;&quot;</span></span><br><span class="line">    headers=&#123;          <span class="comment"># 进行伪装，防止416错误，模拟浏览器头部信息，向豆瓣服务器发送消息</span></span><br><span class="line">        <span class="string">&quot;User-Agent&quot;</span>: <span class="string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        response = requests.get(url,headers=headers,timeout=<span class="number">10</span>)  <span class="comment"># 用户代理，表示告诉豆瓣服务器，我们是什么类型的机器、浏览器（本质上是告诉浏览器，我们可以接收什么水平的文件内容）</span></span><br><span class="line">        time.sleep(random.randint(<span class="number">3</span>, <span class="number">6</span>))                        <span class="comment"># 每隔3-6s执行一次请求</span></span><br><span class="line">        <span class="comment"># print(response.status_code)</span></span><br><span class="line">        html = response.content                                     <span class="comment"># 获取网页的html源代码</span></span><br><span class="line">        <span class="comment"># print(html)</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;请求访问成功&quot;</span>)</span><br><span class="line">    <span class="keyword">except</span> requests.exceptions.RequestException <span class="keyword">as</span> e:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;超时&quot;</span>)</span><br><span class="line">        <span class="built_in">print</span>(e)</span><br><span class="line">    <span class="keyword">return</span> html</span><br><span class="line"></span><br><span class="line"><span class="comment"># 从html源码中获取信息</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">getdata</span>(<span class="params">baseurl</span>):</span><br><span class="line">    Datalist = []                                 <span class="comment"># 用来存储已经经过处理的信息</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="number">100</span>):                     <span class="comment"># 在1-100页内爬取房价的信息</span></span><br><span class="line">        url = baseurl+<span class="built_in">str</span>(i)                    <span class="comment"># 拼接url网址，进行换页</span></span><br><span class="line">        <span class="comment"># print(url)</span></span><br><span class="line">        data = ask_url(url)                     <span class="comment"># 获取到源代码</span></span><br><span class="line">        <span class="comment"># 从源代码中提取信息</span></span><br><span class="line">        <span class="keyword">if</span> data != <span class="string">&quot;&quot;</span>:</span><br><span class="line">            html_data = etree.HTML(data)</span><br><span class="line">            div_list = html_data.xpath(<span class="string">&#x27;//div[@class=&quot;resblock-desc-wrapper&quot;]&#x27;</span>)</span><br><span class="line">            <span class="comment"># print(len(div_list))</span></span><br><span class="line">            <span class="keyword">for</span> item <span class="keyword">in</span> div_list:</span><br><span class="line">                data_item = []</span><br><span class="line">                <span class="comment"># 提取详情链接</span></span><br><span class="line">                link = <span class="string">&quot;https://hz.fang.lianjia.com&quot;</span></span><br><span class="line">                link += item.xpath(<span class="string">&#x27;./div/a/@href&#x27;</span>)[<span class="number">0</span>]</span><br><span class="line">                data_item.append(link)</span><br><span class="line">                <span class="comment"># print(link)</span></span><br><span class="line"></span><br><span class="line">                <span class="comment"># 提取名字</span></span><br><span class="line">                name = item.xpath(<span class="string">&quot;./div/a/text()&quot;</span>)[<span class="number">0</span>]</span><br><span class="line">                data_item.append(name)</span><br><span class="line">                <span class="comment"># print(name)</span></span><br><span class="line"></span><br><span class="line">                <span class="comment"># 提取地址</span></span><br><span class="line">                loc = item.xpath(<span class="string">&#x27;./div[@class=&quot;resblock-location&quot;]/span/text()&#x27;</span>)</span><br><span class="line">                location = loc[<span class="number">0</span>] +<span class="string">&quot;|&quot;</span>+ loc[<span class="number">1</span>] +<span class="string">&quot;|&quot;</span>+ item.xpath(<span class="string">&#x27;./div[@class=&quot;resblock-location&quot;]/a/text()&#x27;</span>)[<span class="number">0</span>]</span><br><span class="line">                data_item.append(location)</span><br><span class="line">                <span class="comment"># print(location)</span></span><br><span class="line"></span><br><span class="line">                <span class="comment"># 提取户型</span></span><br><span class="line">                room = item.xpath(<span class="string">&#x27;./a[@class=&quot;resblock-room&quot;]/span/text()&#x27;</span>)</span><br><span class="line">                rooms = <span class="string">&quot;&quot;</span></span><br><span class="line">                <span class="keyword">for</span> k <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(room)):</span><br><span class="line">                    <span class="keyword">if</span> k &lt; <span class="built_in">len</span>(room) - <span class="number">1</span>:</span><br><span class="line">                        rooms += <span class="built_in">str</span>(room[k]) + <span class="string">&quot;|&quot;</span></span><br><span class="line">                    <span class="keyword">else</span>:</span><br><span class="line">                        rooms += <span class="built_in">str</span>(room[k])</span><br><span class="line">                <span class="comment"># print(rooms)</span></span><br><span class="line">                data_item.append(rooms)</span><br><span class="line"></span><br><span class="line">                <span class="comment"># 提取大小</span></span><br><span class="line">                size = item.xpath(<span class="string">&#x27;./div[@class=&quot;resblock-area&quot;]/span/text()&#x27;</span>)</span><br><span class="line">                <span class="keyword">if</span> <span class="built_in">len</span>(size) != <span class="number">0</span>:</span><br><span class="line">                    data_item.append(size[<span class="number">0</span>])</span><br><span class="line">                    <span class="comment"># print(size[0])</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    data_item.append(<span class="string">&quot; &quot;</span>)</span><br><span class="line"></span><br><span class="line">                <span class="comment"># 提取标签</span></span><br><span class="line">                tag = item.xpath(<span class="string">&#x27;./div[@class=&quot;resblock-tag&quot;]/span/text()&#x27;</span>)</span><br><span class="line">                tags = <span class="string">&quot;&quot;</span></span><br><span class="line">                <span class="keyword">for</span> k <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(tag)):</span><br><span class="line">                    <span class="keyword">if</span> k &lt; <span class="built_in">len</span>(tag)-<span class="number">1</span>:</span><br><span class="line">                        tags += <span class="built_in">str</span>(tag[k]) + <span class="string">&quot;|&quot;</span></span><br><span class="line">                    <span class="keyword">else</span>:</span><br><span class="line">                        tags += <span class="built_in">str</span>(tag[k])</span><br><span class="line">                <span class="comment"># print(tags)</span></span><br><span class="line">                data_item.append(tags)</span><br><span class="line"></span><br><span class="line">                <span class="comment"># 提取价格</span></span><br><span class="line">                Price = <span class="string">&quot;&quot;</span></span><br><span class="line">                price = item.xpath(<span class="string">&#x27;./div[@class=&quot;resblock-price&quot;]/div/span/text()&#x27;</span>)</span><br><span class="line">                <span class="keyword">for</span> k <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(price)):</span><br><span class="line">                    Price += price[k]</span><br><span class="line">                Price = re.sub(<span class="string">&#x27;\xa0&#x27;</span>, <span class="string">&quot;&quot;</span>, Price)     <span class="comment"># 去掉“\xa0”字符</span></span><br><span class="line">                <span class="comment"># print(Price)</span></span><br><span class="line">                data_item.append(Price)</span><br><span class="line">                Datalist.append(data_item)</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="built_in">len</span>(Datalist))</span><br><span class="line">    <span class="keyword">return</span> Datalist</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将html获取的信息存入Excel表格中</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">savedata</span>(<span class="params">Datalist,Savapath</span>):</span><br><span class="line">    col = (<span class="string">&quot;链接&quot;</span>, <span class="string">&quot;名字&quot;</span>, <span class="string">&quot;地址&quot;</span>, <span class="string">&quot;户型&quot;</span>, <span class="string">&quot;大小&quot;</span>, <span class="string">&quot;标签&quot;</span>, <span class="string">&quot;价格&quot;</span>)                <span class="comment"># Excel的表头</span></span><br><span class="line">    house_list = xlwt.Workbook(encoding=<span class="string">&quot;utf-8&quot;</span>, style_compression=<span class="number">0</span>)       <span class="comment"># 创建workbook对象</span></span><br><span class="line">    worksheet = house_list.add_sheet(<span class="string">&quot;HouseList&quot;</span>, cell_overwrite_ok=<span class="literal">True</span>)   <span class="comment"># 新建工作区，设为可覆盖</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="number">7</span>):                                                   <span class="comment"># 写入表头</span></span><br><span class="line">        worksheet.write(<span class="number">0</span>, i, col[i])</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="number">990</span>):                                                 <span class="comment"># 写入数据</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;正在写入第%d条数据&quot;</span> % (i + <span class="number">1</span>))</span><br><span class="line">        item = Datalist[i]</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="number">7</span>):</span><br><span class="line">            worksheet.write(i + <span class="number">1</span>, j, item[j])</span><br><span class="line">    house_list.save(Savapath)                                               <span class="comment"># 存储</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 程序从这里开始执行</span></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    main()</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;爬取完毕!&quot;</span>)</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>个人项目</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>复现论文《Efficient Estimation of Word Representations in Vector Space》（未跑通中）</title>
     <url>/2023/07/03/%E5%A4%8D%E7%8E%B0%E8%AE%BA%E6%96%87%E3%80%8AEfficient%20Estimation%20of%20Word%20Representations%20in%20Vector%20Space%E3%80%8B/</url>
     <content><![CDATA[<p>Word2Vec工具的出处在一篇<a href="https://arxiv.org/abs/1301.3781">论文</a>《Efficient Estimation of Word Representations in Vector Space》中</p>
@@ -928,192 +928,6 @@
 <p>ps：如果显示找不到启动项可以试试<a href="https://blog.csdn.net/qq_46070108/article/details/128761974">这个方法</a></p>
 <p><img src="https://s1.ax1x.com/2023/07/03/pCrysRs.png" alt="image-20230703152429717"></p>
 <p>打扰了…找一个视频吧，我记得哔哩哔哩大学有使用这个工具的教程</p>
-]]></content>
-      <categories>
-        <category>论文复现</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>跑通项目《GAT-BiLSTM-CRF》</title>
-    <url>/2023/06/24/%E5%A4%8D%E7%8E%B0%E9%A1%B9%E7%9B%AE%E3%80%8AGAT-BiLSTM-CRF%E3%80%8B/</url>
-    <content><![CDATA[<p>记录一下自己跑通一个<a href="https://github.com/yx100/GAT-BiLSTM-CRF">GitHub项目</a>《GAT-BiLSTM-CRF》的过程</p>
-<p>自己电脑环境如下：</p>
-<ul>
-<li>显卡：3060TI</li>
-<li>CUDA : 11.0</li>
-<li>CUDAToolkit : 8.0.2</li>
-</ul>
-<p>首先新建一个conda环境</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda create -n GBC python=3.7</span><br><span class="line">conda activate GBC</span><br></pre></td></tr></table></figure>
-<p>然后用Pycharm打开其项目，并把Pycharm的环境也切换到<code>GBC</code></p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-24%20093507.png" alt="屏幕截图 2023-06-24 093507"></p>
-<p>下面就是安装环境了，根据作者的md文件，需要装一个Pytorch1.1版本</p>
-<p>从官网找见下载链接，并把<code>-c pytorch</code>去掉，以便使用清华源</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda install pytorch==1.1.0 torchvision==0.3.0 cudatoolkit=10.0</span><br></pre></td></tr></table></figure>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-24%20095053.png" alt="屏幕截图 2023-06-24 095053"></p>
-<p>看来这种方法不太行，换一种方法！</p>
-<p>打开Pytorch官网的<a href="https://download.pytorch.org/whl/torch_stable.html">下载源</a>，搜索<code>cu100/torch-1.1.0</code>，下载如下的包</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-24%20095456-1687571797951-11.png" alt="屏幕截图 2023-06-24 095456"></p>
-<p>ちょっと待って，我好像已经发现了问题，我的<code>CUDA11.0</code>肯定和这个不匹配，装了也没用，那就用<code>CPU</code>版本的<code>torch</code>跑一跑试试吧</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">CPU Only</span></span><br><span class="line">conda install pytorch-cpu==1.1.0 torchvision-cpu==0.3.0 cpuonly</span><br></pre></td></tr></table></figure>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20124226.png" alt="屏幕截图 2023-06-25 124226"></p>
-<p>应该是<code>numpy</code>版本不对？重装一下试试</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pip install numpy -U</span><br></pre></td></tr></table></figure>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20130608.png" alt="屏幕截图 2023-06-25 130608"></p>
-<p>那就卸载了重装一下吧</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip uninstall numpy</span><br><span class="line">pip install numpy</span><br></pre></td></tr></table></figure>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20130928.png" alt="屏幕截图 2023-06-25 130928"></p>
-<p>咦？我不是卸载了吗？根据之前的经验，可以试试强制升级<code>numpy</code>版本</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install numpy --ignore-installed numpy</span><br></pre></td></tr></table></figure>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20131310.png" alt="屏幕截图 2023-06-25 131310"></p>
-<p>再跑一次试试</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20131408.png" alt="屏幕截图 2023-06-25 131408"></p>
-<p>刚刚那个错解决了！这个应该是没有装<code>nltk</code>的包，装一下试试</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install nltk</span><br></pre></td></tr></table></figure>
-<p>再跑一次</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20131544.png" alt="屏幕截图 2023-06-25 131544"></p>
-<p>能跑起来一点点了，这应该是我还没有改地址的问题，改一下去，先全局搜索一下这个地址哪用到了（第52行）</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/image-20230625131832793.png" alt="image-20230625131832793"></p>
-<p>出现大问题了，作者并没有提供数据集，但是他提供了数据集的格式</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">Input is in CoNLL format (We use BIO tag scheme), where each character and its label are in one line. Sentences are split with a null line.</span><br></pre></td></tr></table></figure>
-<p>翻译一下</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">输入是CoNLL格式（我们使用BIO标签方案），其中每个字符和它的标签都在一行。句子用空行分割。</span><br></pre></td></tr></table></figure>
-<p>那就先自己找一个数据集康康能不能跑吧，数据集就用我<a href="https://raw.githubusercontent.com/SophonPlus/ChineseNlpCorpus/master/datasets/ChnSentiCorp_htl_all/ChnSentiCorp_htl_all.csv">之前的找的</a>试试</p>
-<p>按照作者的地址和文件夹创建一下</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20133501.png" alt="屏幕截图 2023-06-25 133501"></p>
-<p>先跑一下试试吧</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20133550.png" alt="屏幕截图 2023-06-25 133550"></p>
-<p>可恶啊，可能就是数据集的格式不对了。但是感觉有戏</p>
-<p>换一个有一个标注的数据集试试，经过一番搜索，找到了一个<a href="https://bj.bcebos.com/paddlehub-dataset/msra_ner.tar.gz">数据集</a></p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20135200.png" alt="屏幕截图 2023-06-25 135200"></p>
-<p>复制到项目中并修改一下路径试试</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20140111.png" alt="屏幕截图 2023-06-25 140111"></p>
-<p>跑一下试试</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20140224.png" alt="屏幕截图 2023-06-25 140224"></p>
-<p>可恶啊，还是数据集读的方式不对</p>
-<p>找师兄<del>borrow</del>了一个数据集，这个配置后的样子</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20142415.png" alt="屏幕截图 2023-06-25 142415"></p>
-<p>运行走起！</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20142455.png" alt="屏幕截图 2023-06-25 142455"></p>
-<p>又报错了，搜了一下，试试在最前面导入一个包</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> tqdm <span class="keyword">import</span> tqdm_notebook <span class="keyword">as</span> tqdm</span><br></pre></td></tr></table></figure>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/image-20230625142708124.png" alt="image-20230625142708124"></p>
-<p>emmmm再换一个别的包试试？</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> tqdm <span class="keyword">import</span> tqdm</span><br></pre></td></tr></table></figure>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20142851.png" alt="屏幕截图 2023-06-25 142851"></p>
-<p>又回到了格式问题,一直说是gdk编码不能识别，但我看了一下自己的数据集是<code>utf-8</code>编码的</p>
-<p>要不试试把打开文件的编码改一下？找到打开文件的编码，加上<code>encoding</code>属性（19行）</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20190447.png" alt="屏幕截图 2023-06-25 190447"></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">in_lines = <span class="built_in">open</span>(input_file, <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>).readlines()</span><br></pre></td></tr></table></figure>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20191202.png" alt="屏幕截图 2023-06-25 191202"></p>
-<p>啊？越界了！调试一下康康</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20191742.png" alt="屏幕截图 2023-06-25 191742"></p>
-<p>我猜，这个label应该就是标注，可能他的数据集中，标签在<code>pairs[-5]</code>的这个位置。但我的理论上貌似应该大概也许在<code>pairs[1]</code>的位置吧。改一下试试</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">label = pairs[<span class="number">1</span>]</span><br></pre></td></tr></table></figure>
-<p>再跑一次！</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20192031.png" alt="屏幕截图 2023-06-25 192031"></p>
-<p>emmmmmm为什么————</p>
-<p>我肯定的一点是，我应该是改对了，难道是数据太大了吗</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20192521.png" alt="屏幕截图 2023-06-25 192521"></p>
-<p>查了一下网上的方法，试试加入一个判断条件防止越界</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20192811.png" alt="屏幕截图 2023-06-25 192811"></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> idx <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(in_lines)):</span><br><span class="line">    <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20193334.png" alt="屏幕截图 2023-06-25 193334"></p>
-<p>跑一下试试</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20193411.png" alt="屏幕截图 2023-06-25 193411"></p>
-<p>纳尼？还可以越界的吗</p>
-<p>最后一招！我试试把数据集弄小一点</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20193916.png" alt="屏幕截图 2023-06-25 193916"></p>
-<p>其他的数据集也差不多这么大，就一句话！我不信这也可以越界了，把地址改完重跑一次</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20194043.png" alt="屏幕截图 2023-06-25 194043"></p>
-<p>emm确实不越界了，这个错误可能是之前没注释干净，继续注释试试</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/image-20230625194305060.png" alt="image-20230625194305060"></p>
-<p>再跑一次</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20194334.png" alt="屏幕截图 2023-06-25 194334"></p>
-<p>我猜想，我是安装的是<code>CPU</code>版本的<code>torch</code>，而他程序里要求的是带<code>GPU</code>的<code>torch</code>。我康康能不能把程序改一下吧</p>
-<p>网上搜索了一下，试试这么改</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20194942.png" alt="屏幕截图 2023-06-25 194942"></p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20195143.png" alt="屏幕截图 2023-06-25 195143"></p>
-<p>感觉这是一条不归路啊，要不先试试<code>torch1.7</code>版本（电脑这个版本可以调用GPU）能不能跑，如果不行再用cpu吧。</p>
-<p>从<a href="https://pytorch.org/get-started/previous-versions/">官网</a>找的链接</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda install pytorch==1.7.0 torchvision==0.8.0 torchaudio==0.7.0 cudatoolkit=11.0</span><br></pre></td></tr></table></figure>
-<p>安装完了</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20195937.png" alt="屏幕截图 2023-06-25 195937"></p>
-<p>跑跑试试（希望兼容希望兼容！）</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/image-20230625200042482.png" alt="image-20230625200042482"></p>
-<p>NO————————————！！！！！！！</p>
-<p>看了一下好像是自己的torch安装乱了，果然还得是先卸载再安装啊，不会自动卸载的</p>
-<p>先卸载</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip uninstall torch</span><br><span class="line">pip uninstall torchvision</span><br></pre></td></tr></table></figure>
-<p>然后看一下有没有卸载干净</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip list</span><br></pre></td></tr></table></figure>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20232346.png" alt="屏幕截图 2023-06-25 232346"></p>
-<p>像这样就可以了，再重装一下吧</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda install pytorch==1.7.0 torchvision==0.8.0 torchaudio==0.7.0 cudatoolkit=11.0</span><br></pre></td></tr></table></figure>
-<p>安装完再检查一下</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20232540.png" alt="屏幕截图 2023-06-25 232540"></p>
-<p>好的，现在就可以跑一下试试了！</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20232647.png" alt="屏幕截图 2023-06-25 232647"></p>
-<p>啊嘞？！我用<code>python</code>命令行试试能不能调用GPU</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">python</span><br><span class="line"><span class="keyword">import</span> torch</span><br><span class="line">torch.cuda.is_available()</span><br><span class="line">torch.cuda.get_device_name(<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20232835.png" alt="屏幕截图 2023-06-25 232835"></p>
-<p>emmm好吧，看来确实不能，再卸载了重装一下吧</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip uninstall torch</span><br><span class="line">pip uninstall torchvision</span><br></pre></td></tr></table></figure>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install torch==1.7.0+cu110 torchvision==0.8.0+cu110 torchaudio==0.7.0 -f https://download.pytorch.org/whl/torch_stable.html</span><br></pre></td></tr></table></figure>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20235355.png" alt="屏幕截图 2023-06-25 235355"></p>
-<p>又是什么情况？！那还是用<code>conda</code>装吧</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda install pytorch==1.7.0 torchvision==0.8.0 torchaudio==0.7.0 cudatoolkit=11.0</span><br></pre></td></tr></table></figure>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20235505-1687708623463-21.png" alt="屏幕截图 2023-06-25 235505"></p>
-<p>为什么是CPU版本的啊，换<code>torch1.7.1</code>试试？</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install torch==1.7.1+cu110 torchvision==0.8.2+cu110 torchaudio==0.7.2 -f https://download.pytorch.org/whl/torch_stable.html</span><br></pre></td></tr></table></figure>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20235744.png" alt="屏幕截图 2023-06-25 235744"></p>
-<p>这也太艰难了吧，网上查了一下</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20000009.png" alt="屏幕截图 2023-06-26 000009"></p>
-<p>按照他说的找到文件夹并且删除</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20000302.png" alt="屏幕截图 2023-06-26 000302"></p>
-<p>再重装一下</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install numpy</span><br></pre></td></tr></table></figure>
-<p>然后再装一下<code>torch</code>试试</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install torch==1.7.1+cu110 torchvision==0.8.2+cu110 torchaudio==0.7.2 -f https://download.pytorch.org/whl/torch_stable.html</span><br></pre></td></tr></table></figure>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20000557.png" alt="屏幕截图 2023-06-26 000557"></p>
-<p>感天动地，终于装好了。跑一下试试！</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20000741.png" alt="屏幕截图 2023-06-26 000741"></p>
-<p>是不是我数据量太少的原因，先改回原来的数据集</p>
-<p>然后我发现了设定数据集大小的位置，修改成比自己数据集大的大小</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20001114.png" alt="屏幕截图 2023-06-26 001114"></p>
-<p>走起试试！</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20001202.png" alt="屏幕截图 2023-06-26 001202"></p>
-<p>突然又发现了一个参数，可能是不是没改全的原因，改完跑一下试试</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20220112.png" alt="屏幕截图 2023-06-26 220112"></p>
-<p>走起</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20220233.png" alt="屏幕截图 2023-06-26 220233"></p>
-<p>emmmm好神秘啊！换成只有800行左右试试</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20002211.png" alt="屏幕截图 2023-06-26 002211"></p>
-<p>这又是什么诡异的错误…网上查了一下</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20220622.png" alt="屏幕截图 2023-06-26 220622"></p>
-<p>好像比较好改，直接看报错信息，找到最后一个代码里的报错</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20002211-1687788699344-4.png" alt="屏幕截图 2023-06-26 002211"></p>
-<p>点进去，会自动跳到报错那一行，然后用网上的方法修改一下</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">embeds_pack = pack_padded_sequence(embeds, batch_len.to(<span class="string">&#x27;cpu&#x27;</span>), batch_first=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20221334.png" alt="屏幕截图 2023-06-26 221334"></p>
-<p>再跑试试！</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/image-20230626221422520.png" alt="image-20230626221422520"></p>
-<p>跑了但没完全跑起来，是哪除0的情况没有考虑到应该，点进去代码里加一个判断条件试试</p>
-<p>把原本这段代码</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">epoch_cost = epoch_finish - epoch_start</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Epoch: %s training finished. Time: %.2fs, speed: %.2fst/s,  total loss: %s&quot;</span> % (</span><br><span class="line">idx, epoch_cost, train_num / epoch_cost, total_loss))</span><br></pre></td></tr></table></figure>
-<p>修改为这段</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">epoch_cost = epoch_finish - epoch_start</span><br><span class="line">train_speed = null</span><br><span class="line"><span class="keyword">if</span> epoch_cost != <span class="number">0</span>:</span><br><span class="line">    train_speed = train_num / epoch_cost</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Epoch: %s training finished. Time: %.2fs, speed: %.2fst/s,  total loss: %s&quot;</span> % (</span><br><span class="line">    idx, epoch_cost, train_speed, total_loss))</span><br></pre></td></tr></table></figure>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20222314.png" alt="屏幕截图 2023-06-26 222314"></p>
-<p>在试试吧</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20222500.png" alt="屏幕截图 2023-06-26 222500"></p>
-<p>emmm这样吗，网上一查</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20222529.png" alt="屏幕截图 2023-06-26 222529"></p>
-<p>那就把<code>null</code>改成<code>none</code>试试</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/image-20230626222633707.png" alt="image-20230626222633707"></p>
-<p>emmm行吧，那就直接改一个数字算了（114514<code>/doge</code>）</p>
-<p>woc跑起来！？</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/image-20230626222825231.png" alt="image-20230626222825231"></p>
-<p>所以这是成功了？！但是为什么好多0，总感觉不太对的样子</p>
 ]]></content>
       <categories>
         <category>论文复现</category>
@@ -1449,6 +1263,268 @@
 <p>再跑一下试试</p>
 <p><img src="https://s1.ax1x.com/2023/06/29/pC0SLUe.png" alt="image-20230629103825433"></p>
 <p>阿哲，还可以下溢的吗</p>
+<hr>
+<p>隔了好多天，网上看<a href="https://ruvikm.gitee.io/2023/07/04/word2vec%E5%B7%A5%E5%85%B7%E5%AE%9E%E6%88%98/">博客</a>用word2vec工具把预训练集弄出来了，这次试试吧</p>
+<p>这次跑完生成了如下几个文件</p>
+<p><img src="https://s1.ax1x.com/2023/07/05/pCydeAJ.png" alt="image-20230705154808654"></p>
+<p>试试把预训练的代码改一下</p>
+<p><img src="https://s1.ax1x.com/2023/07/05/pCyd0jf.png" alt="image-20230705155238466"></p>
+<p>跑一下<code>data_preprocess/chinese_tensor_encoder.py</code>试试吧</p>
+<p><img src="https://s1.ax1x.com/2023/07/05/pCydrDS.png" alt="image-20230705155346084"></p>
+<p>有毒，那把第一个文件改成<code>wiki.zh.text.model.syn1neg</code>试试</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">vocab_path=<span class="string">&quot;../word2vec/wiki.zh.text.model.syn1neg&quot;</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://s1.ax1x.com/2023/07/05/pCydfg0.png" alt="image-20230705155536477"></p>
+<p>看来没有这个文件还是不太行啊</p>
+<hr>
+<p>又过了一段时间，联系到了原作者，热心的作者给我发了这个文件！！！！</p>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">链接：https://pan.baidu.com/s/1eHcj8bvbQPAg76v7D<span class="built_in">_</span>Xs8A </span><br><span class="line">提取码：tvr8</span><br></pre></td></tr></table></figure>
+<p><img src="https://s1.ax1x.com/2023/07/10/pC2Tnnx.png" alt="image-20230710124846593"></p>
+<p>跑一跑试试吧</p>
+<p><img src="https://s1.ax1x.com/2023/07/10/pC2TJgA.png" alt="image-20230710125324489"></p>
+<p>好像是编码的问题？</p>
+<p><img src="https://s1.ax1x.com/2023/07/10/pC2TwE8.png" alt="image-20230710125505872"></p>
+<p>把里面的代码改改试试</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(self.vocab_path, <span class="string">&quot;r&quot;</span>) //旧</span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(self.vocab_path, <span class="string">&quot;r&quot;</span>,encoding=<span class="string">&#x27;utf8&#x27;</span>) //新</span><br></pre></td></tr></table></figure>
+<p>再跑试试？</p>
+<p><img src="https://s1.ax1x.com/2023/07/10/pC2TLb6.png" alt="image-20230710130032731"></p>
+<p>这是在跑吗好像，先等会康康吧</p>
+<p><img src="https://s1.ax1x.com/2023/07/10/pC27uxs.png" alt="image-20230710131123106"></p>
+<p>看来可以跑，应该是刚刚没改干净，看来和<code>open</code>有关的都需要改</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(datafile_path, <span class="string">&quot;r&quot;</span>) <span class="keyword">as</span> f:   //旧</span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(datafile_path, <span class="string">&quot;r&quot;</span>,encoding=<span class="string">&#x27;utf8&#x27;</span>) <span class="keyword">as</span> f: //新</span><br></pre></td></tr></table></figure>
+<p>再跑试试</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">python chinese_tensor_encoder.py</span><br></pre></td></tr></table></figure>
+<p><img src="https://s1.ax1x.com/2023/07/10/pC2jY0s.png" alt="image-20230710144910295"></p>
+<p>还有错？！继续查查怎么改</p>
+<p><img src="https://s1.ax1x.com/2023/07/10/pC2jIje.png" alt="image-20230710145152994"></p>
+<p>试试直接<code>ignore</code>了，不对，可能是我的数据集的问题</p>
+<p><img src="https://s1.ax1x.com/2023/07/10/pC2xpRK.png" alt="image-20230710150619368"></p>
+<p>把<code>ChnSentiCorp_htl_all.csv</code>的内容直接复制到<code>chnsenti_test.txt</code>中，用<code>utf-8</code>就不会出现乱码了</p>
+<p>再跑跑试试</p>
+<p><img src="https://s1.ax1x.com/2023/07/10/pCRp7k9.png" alt="image-20230710151333555"></p>
+<p>6！把数据集直接改成<code>ChnSentiCorp_htl_all.csv</code>这个文件试试</p>
+<p>emmm还是这个错，有仔细观察了一下，好像是<code>label</code>在第一个，句子在第二个，那感觉和代码里的就反过来了</p>
+<p>之前的代码：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">sentence = temp[<span class="number">0</span>].strip()</span><br><span class="line">label = <span class="built_in">int</span>(temp[<span class="number">1</span>])</span><br></pre></td></tr></table></figure>
+<p>改后:</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">sentence = temp[<span class="number">1</span>].strip()</span><br><span class="line">label = <span class="built_in">int</span>(temp[<span class="number">0</span>])</span><br></pre></td></tr></table></figure>
+<p>再跑试试吧</p>
+<p><img src="https://s1.ax1x.com/2023/07/10/pCRKo7R.png" alt="image-20230710161042621"></p>
+<p>emmm用<code>Pycharm</code>还不能直接运行，只能在命令行里运行</p>
+<p>等等我知道我为什么pycharm运行不了了</p>
+<p>之前迁移过一次环境从C盘到D盘，试了试这个<a href="https://blog.csdn.net/qq_44832009/article/details/129621060">博客的方法</a>，把这个问题解决了</p>
+<p>调试了一下，发现要把数据集最开始的一行删了，感觉是那个导致的报错</p>
+<p>再跑试试，发现还是那个错</p>
+<p>我感觉可能是数据集变了处理数据的内容需要修改一下</p>
+<p>康康chatGPT是怎么处理的吧：</p>
+<p>可以使用Python中的字符串操作来提取这个句子并将它分别存放在label和sentence字段中。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">text = &#x27;1,&quot;距离川沙公路较近,但是公交指示不对,如果是&quot;&quot;蔡陆线&quot;&quot;的话,会非常麻烦.建议用别的路线.房间较为简单.&quot;\n&#x27;</span><br><span class="line"></span><br><span class="line"># 提取label</span><br><span class="line">label = text.split(&#x27;,&#x27;)[0]</span><br><span class="line"></span><br><span class="line"># 提取sentence</span><br><span class="line">sentence = text.split(&#x27;,&#x27;)[1].strip()[1:-2]</span><br><span class="line"></span><br><span class="line">print(label)</span><br><span class="line">print(sentence)</span><br></pre></td></tr></table></figure>
+<p>输出结果为：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">1</span><br><span class="line">距离川沙公路较近,但是公交指示不对,如果是&quot;蔡陆线&quot;的话,会非常麻烦.建议用别的路线.房间较为简单.</span><br></pre></td></tr></table></figure>
+<p>按照这个把代码改一改，原代码</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(datafile_path, <span class="string">&quot;r&quot;</span>, encoding=<span class="string">&#x27;utf8&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> f.readlines():</span><br><span class="line">        temp = line.split(<span class="string">&#x27;\t&#x27;</span>)</span><br><span class="line">        sentence = temp[<span class="number">0</span>].strip()</span><br><span class="line">        label = <span class="built_in">int</span>(temp[<span class="number">0</span>])</span><br><span class="line">        <span class="comment"># sentence = temp[1].strip()</span></span><br><span class="line">        <span class="comment"># label = int(temp[0])</span></span><br><span class="line">        sample_list.append((sentence, label))</span><br></pre></td></tr></table></figure>
+<p>改完</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(datafile_path, <span class="string">&quot;r&quot;</span>, encoding=<span class="string">&#x27;utf8&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">       <span class="keyword">for</span> line <span class="keyword">in</span> f.readlines():</span><br><span class="line">           temp = line.split(<span class="string">&#x27;\t&#x27;</span>)</span><br><span class="line">           <span class="comment"># sentence = temp[0].strip()</span></span><br><span class="line">           <span class="comment"># label = int(temp[1])</span></span><br><span class="line">           sentence = temp[<span class="number">0</span>].split(<span class="string">&#x27;,&#x27;</span>)[<span class="number">1</span>].strip()[<span class="number">1</span>:-<span class="number">2</span>]</span><br><span class="line">           label = temp[<span class="number">0</span>].split(<span class="string">&#x27;,&#x27;</span>)[<span class="number">0</span>]</span><br><span class="line">           sample_list.append((sentence, label))</span><br></pre></td></tr></table></figure>
+<p>跑跑试试</p>
+<p><img src="https://s1.ax1x.com/2023/07/10/pCRdGYF.png" alt="image-20230710184632963"></p>
+<p>感觉有希望了耶，试试把报错那句的<code>utf8</code>去掉试试。再跑试试</p>
+<p><img src="https://s1.ax1x.com/2023/07/10/pCRdHpQ.png" alt="image-20230710185614613"></p>
+<p>别报错别报错×114514</p>
+<p><img src="https://s1.ax1x.com/2023/07/10/pCRwAn1.png" alt="image-20230710190309371"></p>
+<p>居然说我找不到文件，建个叫<code>senti</code>的文件夹试试</p>
+<p><img src="https://s1.ax1x.com/2023/07/10/pCRBsYT.png" alt="08f46c72ca112d14c2102a5e17a7406">Ohhhhhhhh第一步应该是终于完成了</p>
+<p>继续第二步康康吧</p>
+<p><img src="https://s1.ax1x.com/2023/07/10/pCRDd3D.png" alt="image-20230710194725452"></p>
+<p>好像又是少文件，试试把刚刚跑出来的文件重命名为<code>train_u_3v_sst2_glove300d_sent_len25.tensor_dataset</code>试试</p>
+<p><img src="https://s1.ax1x.com/2023/07/10/pCRDrDA.png" alt="image-20230710195102925"></p>
+<p>啊这，再把上面跑出来的文件复制一份改个名过去康康</p>
+<p><img src="https://s1.ax1x.com/2023/07/10/pCRDRC8.png" alt="image-20230710195304235"></p>
+<p>我怎么没看懂哪错了</p>
+]]></content>
+      <categories>
+        <category>论文复现</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>跑通项目《GAT-BiLSTM-CRF》</title>
+    <url>/2023/06/24/%E5%A4%8D%E7%8E%B0%E9%A1%B9%E7%9B%AE%E3%80%8AGAT-BiLSTM-CRF%E3%80%8B/</url>
+    <content><![CDATA[<p>记录一下自己跑通一个<a href="https://github.com/yx100/GAT-BiLSTM-CRF">GitHub项目</a>《GAT-BiLSTM-CRF》的过程</p>
+<p>自己电脑环境如下：</p>
+<ul>
+<li>显卡：3060TI</li>
+<li>CUDA : 11.0</li>
+<li>CUDAToolkit : 8.0.2</li>
+</ul>
+<p>首先新建一个conda环境</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda create -n GBC python=3.7</span><br><span class="line">conda activate GBC</span><br></pre></td></tr></table></figure>
+<p>然后用Pycharm打开其项目，并把Pycharm的环境也切换到<code>GBC</code></p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-24%20093507.png" alt="屏幕截图 2023-06-24 093507"></p>
+<p>下面就是安装环境了，根据作者的md文件，需要装一个Pytorch1.1版本</p>
+<p>从官网找见下载链接，并把<code>-c pytorch</code>去掉，以便使用清华源</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda install pytorch==1.1.0 torchvision==0.3.0 cudatoolkit=10.0</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-24%20095053.png" alt="屏幕截图 2023-06-24 095053"></p>
+<p>看来这种方法不太行，换一种方法！</p>
+<p>打开Pytorch官网的<a href="https://download.pytorch.org/whl/torch_stable.html">下载源</a>，搜索<code>cu100/torch-1.1.0</code>，下载如下的包</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-24%20095456-1687571797951-11.png" alt="屏幕截图 2023-06-24 095456"></p>
+<p>ちょっと待って，我好像已经发现了问题，我的<code>CUDA11.0</code>肯定和这个不匹配，装了也没用，那就用<code>CPU</code>版本的<code>torch</code>跑一跑试试吧</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">CPU Only</span></span><br><span class="line">conda install pytorch-cpu==1.1.0 torchvision-cpu==0.3.0 cpuonly</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20124226.png" alt="屏幕截图 2023-06-25 124226"></p>
+<p>应该是<code>numpy</code>版本不对？重装一下试试</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pip install numpy -U</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20130608.png" alt="屏幕截图 2023-06-25 130608"></p>
+<p>那就卸载了重装一下吧</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip uninstall numpy</span><br><span class="line">pip install numpy</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20130928.png" alt="屏幕截图 2023-06-25 130928"></p>
+<p>咦？我不是卸载了吗？根据之前的经验，可以试试强制升级<code>numpy</code>版本</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install numpy --ignore-installed numpy</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20131310.png" alt="屏幕截图 2023-06-25 131310"></p>
+<p>再跑一次试试</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20131408.png" alt="屏幕截图 2023-06-25 131408"></p>
+<p>刚刚那个错解决了！这个应该是没有装<code>nltk</code>的包，装一下试试</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install nltk</span><br></pre></td></tr></table></figure>
+<p>再跑一次</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20131544.png" alt="屏幕截图 2023-06-25 131544"></p>
+<p>能跑起来一点点了，这应该是我还没有改地址的问题，改一下去，先全局搜索一下这个地址哪用到了（第52行）</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/image-20230625131832793.png" alt="image-20230625131832793"></p>
+<p>出现大问题了，作者并没有提供数据集，但是他提供了数据集的格式</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">Input is in CoNLL format (We use BIO tag scheme), where each character and its label are in one line. Sentences are split with a null line.</span><br></pre></td></tr></table></figure>
+<p>翻译一下</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">输入是CoNLL格式（我们使用BIO标签方案），其中每个字符和它的标签都在一行。句子用空行分割。</span><br></pre></td></tr></table></figure>
+<p>那就先自己找一个数据集康康能不能跑吧，数据集就用我<a href="https://raw.githubusercontent.com/SophonPlus/ChineseNlpCorpus/master/datasets/ChnSentiCorp_htl_all/ChnSentiCorp_htl_all.csv">之前的找的</a>试试</p>
+<p>按照作者的地址和文件夹创建一下</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20133501.png" alt="屏幕截图 2023-06-25 133501"></p>
+<p>先跑一下试试吧</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20133550.png" alt="屏幕截图 2023-06-25 133550"></p>
+<p>可恶啊，可能就是数据集的格式不对了。但是感觉有戏</p>
+<p>换一个有一个标注的数据集试试，经过一番搜索，找到了一个<a href="https://bj.bcebos.com/paddlehub-dataset/msra_ner.tar.gz">数据集</a></p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20135200.png" alt="屏幕截图 2023-06-25 135200"></p>
+<p>复制到项目中并修改一下路径试试</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20140111.png" alt="屏幕截图 2023-06-25 140111"></p>
+<p>跑一下试试</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20140224.png" alt="屏幕截图 2023-06-25 140224"></p>
+<p>可恶啊，还是数据集读的方式不对</p>
+<p>找师兄<del>borrow</del>了一个数据集，这个配置后的样子</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20142415.png" alt="屏幕截图 2023-06-25 142415"></p>
+<p>运行走起！</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20142455.png" alt="屏幕截图 2023-06-25 142455"></p>
+<p>又报错了，搜了一下，试试在最前面导入一个包</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> tqdm <span class="keyword">import</span> tqdm_notebook <span class="keyword">as</span> tqdm</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/image-20230625142708124.png" alt="image-20230625142708124"></p>
+<p>emmmm再换一个别的包试试？</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> tqdm <span class="keyword">import</span> tqdm</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20142851.png" alt="屏幕截图 2023-06-25 142851"></p>
+<p>又回到了格式问题,一直说是gdk编码不能识别，但我看了一下自己的数据集是<code>utf-8</code>编码的</p>
+<p>要不试试把打开文件的编码改一下？找到打开文件的编码，加上<code>encoding</code>属性（19行）</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20190447.png" alt="屏幕截图 2023-06-25 190447"></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">in_lines = <span class="built_in">open</span>(input_file, <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>).readlines()</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20191202.png" alt="屏幕截图 2023-06-25 191202"></p>
+<p>啊？越界了！调试一下康康</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20191742.png" alt="屏幕截图 2023-06-25 191742"></p>
+<p>我猜，这个label应该就是标注，可能他的数据集中，标签在<code>pairs[-5]</code>的这个位置。但我的理论上貌似应该大概也许在<code>pairs[1]</code>的位置吧。改一下试试</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">label = pairs[<span class="number">1</span>]</span><br></pre></td></tr></table></figure>
+<p>再跑一次！</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20192031.png" alt="屏幕截图 2023-06-25 192031"></p>
+<p>emmmmmm为什么————</p>
+<p>我肯定的一点是，我应该是改对了，难道是数据太大了吗</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20192521.png" alt="屏幕截图 2023-06-25 192521"></p>
+<p>查了一下网上的方法，试试加入一个判断条件防止越界</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20192811.png" alt="屏幕截图 2023-06-25 192811"></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> idx <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(in_lines)):</span><br><span class="line">    <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20193334.png" alt="屏幕截图 2023-06-25 193334"></p>
+<p>跑一下试试</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20193411.png" alt="屏幕截图 2023-06-25 193411"></p>
+<p>纳尼？还可以越界的吗</p>
+<p>最后一招！我试试把数据集弄小一点</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20193916.png" alt="屏幕截图 2023-06-25 193916"></p>
+<p>其他的数据集也差不多这么大，就一句话！我不信这也可以越界了，把地址改完重跑一次</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20194043.png" alt="屏幕截图 2023-06-25 194043"></p>
+<p>emm确实不越界了，这个错误可能是之前没注释干净，继续注释试试</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/image-20230625194305060.png" alt="image-20230625194305060"></p>
+<p>再跑一次</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20194334.png" alt="屏幕截图 2023-06-25 194334"></p>
+<p>我猜想，我是安装的是<code>CPU</code>版本的<code>torch</code>，而他程序里要求的是带<code>GPU</code>的<code>torch</code>。我康康能不能把程序改一下吧</p>
+<p>网上搜索了一下，试试这么改</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20194942.png" alt="屏幕截图 2023-06-25 194942"></p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20195143.png" alt="屏幕截图 2023-06-25 195143"></p>
+<p>感觉这是一条不归路啊，要不先试试<code>torch1.7</code>版本（电脑这个版本可以调用GPU）能不能跑，如果不行再用cpu吧。</p>
+<p>从<a href="https://pytorch.org/get-started/previous-versions/">官网</a>找的链接</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda install pytorch==1.7.0 torchvision==0.8.0 torchaudio==0.7.0 cudatoolkit=11.0</span><br></pre></td></tr></table></figure>
+<p>安装完了</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20195937.png" alt="屏幕截图 2023-06-25 195937"></p>
+<p>跑跑试试（希望兼容希望兼容！）</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/image-20230625200042482.png" alt="image-20230625200042482"></p>
+<p>NO————————————！！！！！！！</p>
+<p>看了一下好像是自己的torch安装乱了，果然还得是先卸载再安装啊，不会自动卸载的</p>
+<p>先卸载</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip uninstall torch</span><br><span class="line">pip uninstall torchvision</span><br></pre></td></tr></table></figure>
+<p>然后看一下有没有卸载干净</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip list</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20232346.png" alt="屏幕截图 2023-06-25 232346"></p>
+<p>像这样就可以了，再重装一下吧</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda install pytorch==1.7.0 torchvision==0.8.0 torchaudio==0.7.0 cudatoolkit=11.0</span><br></pre></td></tr></table></figure>
+<p>安装完再检查一下</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20232540.png" alt="屏幕截图 2023-06-25 232540"></p>
+<p>好的，现在就可以跑一下试试了！</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20232647.png" alt="屏幕截图 2023-06-25 232647"></p>
+<p>啊嘞？！我用<code>python</code>命令行试试能不能调用GPU</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">python</span><br><span class="line"><span class="keyword">import</span> torch</span><br><span class="line">torch.cuda.is_available()</span><br><span class="line">torch.cuda.get_device_name(<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20232835.png" alt="屏幕截图 2023-06-25 232835"></p>
+<p>emmm好吧，看来确实不能，再卸载了重装一下吧</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip uninstall torch</span><br><span class="line">pip uninstall torchvision</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install torch==1.7.0+cu110 torchvision==0.8.0+cu110 torchaudio==0.7.0 -f https://download.pytorch.org/whl/torch_stable.html</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20235355.png" alt="屏幕截图 2023-06-25 235355"></p>
+<p>又是什么情况？！那还是用<code>conda</code>装吧</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda install pytorch==1.7.0 torchvision==0.8.0 torchaudio==0.7.0 cudatoolkit=11.0</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20235505-1687708623463-21.png" alt="屏幕截图 2023-06-25 235505"></p>
+<p>为什么是CPU版本的啊，换<code>torch1.7.1</code>试试？</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install torch==1.7.1+cu110 torchvision==0.8.2+cu110 torchaudio==0.7.2 -f https://download.pytorch.org/whl/torch_stable.html</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20235744.png" alt="屏幕截图 2023-06-25 235744"></p>
+<p>这也太艰难了吧，网上查了一下</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20000009.png" alt="屏幕截图 2023-06-26 000009"></p>
+<p>按照他说的找到文件夹并且删除</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20000302.png" alt="屏幕截图 2023-06-26 000302"></p>
+<p>再重装一下</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install numpy</span><br></pre></td></tr></table></figure>
+<p>然后再装一下<code>torch</code>试试</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install torch==1.7.1+cu110 torchvision==0.8.2+cu110 torchaudio==0.7.2 -f https://download.pytorch.org/whl/torch_stable.html</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20000557.png" alt="屏幕截图 2023-06-26 000557"></p>
+<p>感天动地，终于装好了。跑一下试试！</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20000741.png" alt="屏幕截图 2023-06-26 000741"></p>
+<p>是不是我数据量太少的原因，先改回原来的数据集</p>
+<p>然后我发现了设定数据集大小的位置，修改成比自己数据集大的大小</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20001114.png" alt="屏幕截图 2023-06-26 001114"></p>
+<p>走起试试！</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20001202.png" alt="屏幕截图 2023-06-26 001202"></p>
+<p>突然又发现了一个参数，可能是不是没改全的原因，改完跑一下试试</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20220112.png" alt="屏幕截图 2023-06-26 220112"></p>
+<p>走起</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20220233.png" alt="屏幕截图 2023-06-26 220233"></p>
+<p>emmmm好神秘啊！换成只有800行左右试试</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20002211.png" alt="屏幕截图 2023-06-26 002211"></p>
+<p>这又是什么诡异的错误…网上查了一下</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20220622.png" alt="屏幕截图 2023-06-26 220622"></p>
+<p>好像比较好改，直接看报错信息，找到最后一个代码里的报错</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20002211-1687788699344-4.png" alt="屏幕截图 2023-06-26 002211"></p>
+<p>点进去，会自动跳到报错那一行，然后用网上的方法修改一下</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">embeds_pack = pack_padded_sequence(embeds, batch_len.to(<span class="string">&#x27;cpu&#x27;</span>), batch_first=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20221334.png" alt="屏幕截图 2023-06-26 221334"></p>
+<p>再跑试试！</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/image-20230626221422520.png" alt="image-20230626221422520"></p>
+<p>跑了但没完全跑起来，是哪除0的情况没有考虑到应该，点进去代码里加一个判断条件试试</p>
+<p>把原本这段代码</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">epoch_cost = epoch_finish - epoch_start</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Epoch: %s training finished. Time: %.2fs, speed: %.2fst/s,  total loss: %s&quot;</span> % (</span><br><span class="line">idx, epoch_cost, train_num / epoch_cost, total_loss))</span><br></pre></td></tr></table></figure>
+<p>修改为这段</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">epoch_cost = epoch_finish - epoch_start</span><br><span class="line">train_speed = null</span><br><span class="line"><span class="keyword">if</span> epoch_cost != <span class="number">0</span>:</span><br><span class="line">    train_speed = train_num / epoch_cost</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Epoch: %s training finished. Time: %.2fs, speed: %.2fst/s,  total loss: %s&quot;</span> % (</span><br><span class="line">    idx, epoch_cost, train_speed, total_loss))</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20222314.png" alt="屏幕截图 2023-06-26 222314"></p>
+<p>在试试吧</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20222500.png" alt="屏幕截图 2023-06-26 222500"></p>
+<p>emmm这样吗，网上一查</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20222529.png" alt="屏幕截图 2023-06-26 222529"></p>
+<p>那就把<code>null</code>改成<code>none</code>试试</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/image-20230626222633707.png" alt="image-20230626222633707"></p>
+<p>emmm行吧，那就直接改一个数字算了（114514<code>/doge</code>）</p>
+<p>woc跑起来！？</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/image-20230626222825231.png" alt="image-20230626222825231"></p>
+<p>所以这是成功了？！但是为什么好多0，总感觉不太对的样子</p>
 ]]></content>
       <categories>
         <category>论文复现</category>
@@ -1591,6 +1667,27 @@
       </tags>
   </entry>
   <entry>
+    <title>软件体系结构基本知识——期末复习</title>
+    <url>/2022/01/10/%E8%BD%AF%E4%BB%B6%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86%E2%80%94%E2%80%94%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/</url>
+    <content><![CDATA[<p>根据老师画的重点做了一些思维导图，希望可以帮到需要的人</p>
+<h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><p><img src="https://img-blog.csdnimg.cn/20201214181436726.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="第一章"></p>
+<h2 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h2><p><img src="https://img-blog.csdnimg.cn/20201214181451777.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="第二章"></p>
+<h2 id="第三章"><a href="#第三章" class="headerlink" title="第三章"></a>第三章</h2><p><img src="https://img-blog.csdnimg.cn/20201214230846302.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="第三章"></p>
+<h2 id="第四章"><a href="#第四章" class="headerlink" title="第四章"></a>第四章</h2><p><img src="https://img-blog.csdnimg.cn/20201214181617762.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="第四章"></p>
+<h2 id="第六章"><a href="#第六章" class="headerlink" title="第六章"></a>第六章</h2><p><img src="https://img-blog.csdnimg.cn/20201214181632906.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="第六章"></p>
+<h2 id="第七章"><a href="#第七章" class="headerlink" title="第七章"></a>第七章</h2><p><img src="https://img-blog.csdnimg.cn/20201214181647481.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="第七章"></p>
+<h2 id="第八-九章"><a href="#第八-九章" class="headerlink" title="第八-九章"></a>第八-九章</h2><p><img src="https://img-blog.csdnimg.cn/20201214205838338.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="第八-九章"></p>
+<p><a href="https://ruvikm.lanzous.com/isUckjdbc0f">PDF文件</a></p>
+<p>做得如有不足，敬请谅解~</p>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>其他</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>算法期末复习</title>
     <url>/2022/01/10/%E7%AE%97%E6%B3%95%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/</url>
     <content><![CDATA[<h2 id="用思维导图整理了一下算法的基本知识"><a href="#用思维导图整理了一下算法的基本知识" class="headerlink" title="用思维导图整理了一下算法的基本知识"></a>用思维导图整理了一下算法的基本知识</h2><p>&emsp;<br>&emsp;</p>
@@ -1625,27 +1722,6 @@
       </categories>
       <tags>
         <tag>算法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>软件体系结构基本知识——期末复习</title>
-    <url>/2022/01/10/%E8%BD%AF%E4%BB%B6%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86%E2%80%94%E2%80%94%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/</url>
-    <content><![CDATA[<p>根据老师画的重点做了一些思维导图，希望可以帮到需要的人</p>
-<h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><p><img src="https://img-blog.csdnimg.cn/20201214181436726.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="第一章"></p>
-<h2 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h2><p><img src="https://img-blog.csdnimg.cn/20201214181451777.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="第二章"></p>
-<h2 id="第三章"><a href="#第三章" class="headerlink" title="第三章"></a>第三章</h2><p><img src="https://img-blog.csdnimg.cn/20201214230846302.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="第三章"></p>
-<h2 id="第四章"><a href="#第四章" class="headerlink" title="第四章"></a>第四章</h2><p><img src="https://img-blog.csdnimg.cn/20201214181617762.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="第四章"></p>
-<h2 id="第六章"><a href="#第六章" class="headerlink" title="第六章"></a>第六章</h2><p><img src="https://img-blog.csdnimg.cn/20201214181632906.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="第六章"></p>
-<h2 id="第七章"><a href="#第七章" class="headerlink" title="第七章"></a>第七章</h2><p><img src="https://img-blog.csdnimg.cn/20201214181647481.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="第七章"></p>
-<h2 id="第八-九章"><a href="#第八-九章" class="headerlink" title="第八-九章"></a>第八-九章</h2><p><img src="https://img-blog.csdnimg.cn/20201214205838338.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="第八-九章"></p>
-<p><a href="https://ruvikm.lanzous.com/isUckjdbc0f">PDF文件</a></p>
-<p>做得如有不足，敬请谅解~</p>
-]]></content>
-      <categories>
-        <category>学习笔记</category>
-      </categories>
-      <tags>
-        <tag>其他</tag>
       </tags>
   </entry>
 </search>
