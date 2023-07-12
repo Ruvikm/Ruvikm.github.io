@@ -6,7 +6,7 @@
   <link href="https://ruvikm.gitee.io/atom.xml" rel="self"/>
   
   <link href="https://ruvikm.gitee.io/"/>
-  <updated>2023-07-05T02:31:10.859Z</updated>
+  <updated>2023-07-12T14:42:34.626Z</updated>
   <id>https://ruvikm.gitee.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>OSError [Errno 22] Invalid argument(已解决)</title>
+    <link href="https://ruvikm.gitee.io/2023/07/12/%E8%A7%A3%E5%86%B3%E9%97%AE%E9%A2%98OSError%20[Errno%2022]%20Invalid%20argument/"/>
+    <id>https://ruvikm.gitee.io/2023/07/12/%E8%A7%A3%E5%86%B3%E9%97%AE%E9%A2%98OSError%20[Errno%2022]%20Invalid%20argument/</id>
+    <published>2023-07-12T14:31:56.000Z</published>
+    <updated>2023-07-12T14:42:34.626Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近跑别人的项目遇到一个这样的问题</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">OSError: [Errno 22] Invalid argument xxxxxxxxxxxxxxxxxx</span><br></pre></td></tr></table></figure><p><img src="https://s1.ax1x.com/2023/07/12/pCh9Ni4.png" alt="屏幕截图 2023-07-12 203923"></p><p>一开始以为是没有用管理员的权限运行，导致创建不了日志文件</p><p>后来发现是和windows的命名规则冲突了（以下来源<a href="https://learn.microsoft.com/zh-cn/windows/win32/fileio/naming-a-file">官网地址</a>）</p><h3 id="命名约定"><a href="#命名约定" class="headerlink" title="命名约定"></a>命名约定</h3><p>以下基本规则使应用程序能够创建和处理文件和目录的有效名称，而不考虑文件系统：</p><ul><li><p>使用句点将基文件名与目录或文件名称中的扩展名分隔开。</p></li><li><p>使用反斜杠 () 分隔<em>路径</em>的<em>组件</em>。 反斜杠将文件名从路径中除以，将一个目录名与路径中的另一个目录名称分开。 不能在实际文件或目录的名称中使用反斜杠，因为它是将名称分隔成组件的保留字符。</p></li><li><p>根据需要使用反斜杠作为 <a href="https://learn.microsoft.com/zh-cn/windows/win32/fileio/naming-a-volume">卷名称</a>的一部分，例如“C：\”在“C：\path\file”或“\server\share\path\file”中为通用命名约定的“\server\share” (UNC) 名称。 有关 UNC 名称的详细信息，请参阅 <a href="https://learn.microsoft.com/zh-cn/windows/win32/fileio/naming-a-file#maximum-path-length-limitation">最大路径长度限制</a> 部分。</p></li><li><p>不要假定区分大小写。 例如，将 OSCAR、Oscar 和 oscar 的名称视为相同，即使某些文件系统 (（如符合 POSIX 的文件系统) 可能认为它们不同）。 请注意，NTFS 支持 POSIX 语义区分大小写，但这不是默认行为。 有关详细信息，请参阅 <a href="https://learn.microsoft.com/zh-cn/windows/desktop/api/FileAPI/nf-fileapi-createfilea"><strong>CreateFile</strong></a>。</p></li><li><p>(驱动器号) 的卷指定符同样不区分大小写。 例如，“D：\”和“d：\”引用同一卷。</p></li><li><p>使用当前代码页中的任何字符作为名称，包括 Unicode 字符和扩展字符集中 (128-255) 字符，但以下各项除外：</p><ul><li>以下保留字符：<ul><li>&lt;（小于）</li><li>>（大于）</li><li>:（冒号）</li><li>“（双引号）</li><li>/（正斜杠）</li><li>\（反斜杠）</li><li>| (竖线或竖线)</li><li>? （问号）</li><li>*（星号）</li></ul></li><li>整数值零，有时称为 ASCII <em>NUL</em> 字符。</li><li>整数表示形式的字符介于 1 到 31 之间，但允许这些字符的备用数据流除外。 有关文件流的详细信息，请参阅 <a href="https://learn.microsoft.com/zh-cn/windows/win32/fileio/file-streams">文件流</a>。</li><li>目标文件系统不允许的任何其他字符。</li></ul></li><li><p>使用句点作为路径中的目录 <em>组件</em> 来表示当前目录，例如“.\temp.txt”。 有关详细信息，请参阅 <a href="https://learn.microsoft.com/zh-cn/windows/win32/fileio/naming-a-file#fully-qualified-vs-relative-paths">路径</a>。</p></li><li><p>使用两个连续的句点 (。) 作为路径中的目录 <em>组件</em> 来表示当前目录的父目录，例如“.”。\temp.txt”。 有关详细信息，请参阅 <a href="https://learn.microsoft.com/zh-cn/windows/win32/fileio/naming-a-file#fully-qualified-vs-relative-paths">路径</a>。</p></li><li><p>不要将以下保留名称用于文件的名称：</p><p>CON、PRN、AUX、NUL、COM0、COM1、COM2、COM3、COM4、COM5、COM6、COM7、COM8、COM9、LPT0、LPT1、LPT2、LPT3、LPT4、LPT5、LPT6、LPT7、LPT8 和 LPT9。 另请避免这些名称紧跟扩展名;例如，NUL.txt 和 NUL.tar.gz 都等效于 NUL。 有关详细信息，请参阅<a href="https://learn.microsoft.com/zh-cn/windows/win32/fileio/naming-a-file#win32-file-namespaces">命名空间</a>。</p></li><li><p>不要用空格或句点结束文件或目录名称。 尽管基础文件系统可能支持此类名称，但 Windows shell 和用户界面不支持。 但是，可以接受指定句点作为名称的第一个字符。 例如“.temp”。</p></li></ul><h3 id="划重点：下列符号是不能用的"><a href="#划重点：下列符号是不能用的" class="headerlink" title="划重点：下列符号是不能用的"></a><strong>划重点：下列符号是不能用的</strong></h3><ul><li>&lt;（小于）</li><li>>（大于）</li><li>:（冒号）</li><li>“（双引号）</li><li>/（正斜杠）</li><li>\（反斜杠）</li><li>| (竖线或竖线)</li><li>? （问号）</li><li>*（星号）</li></ul><p>然后我细心的观察到了这一点</p><p><img src="https://s1.ax1x.com/2023/07/12/pChpwb8.png" alt="屏幕截图 2023-07-12 222221"></p><p>很显然，<code>:</code>是不能存在的</p><p>把他换成<code>-</code>后，程序就跑起来了</p><p><img src="https://s1.ax1x.com/2023/07/12/pCh96oD.png" alt="屏幕截图 2023-07-12 222822"></p><p>类似的问题可以参考一下下</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;最近跑别人的项目遇到一个这样的问题&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;OSError: [Errno 22] Invalid</summary>
+      
+    
+    
+    
+    <category term="个人笔记" scheme="https://ruvikm.gitee.io/categories/%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>word2vec工具实战</title>
@@ -470,33 +493,6 @@
     
     
     <category term="算法" scheme="https://ruvikm.gitee.io/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java实现鲜花销售系统</title>
-    <link href="https://ruvikm.gitee.io/2022/01/10/Java%E5%AE%9E%E7%8E%B0%E9%B2%9C%E8%8A%B1%E9%94%80%E5%94%AE%E7%B3%BB%E7%BB%9F/"/>
-    <id>https://ruvikm.gitee.io/2022/01/10/Java%E5%AE%9E%E7%8E%B0%E9%B2%9C%E8%8A%B1%E9%94%80%E5%94%AE%E7%B3%BB%E7%BB%9F/</id>
-    <published>2022-01-10T11:27:54.000Z</published>
-    <updated>2023-05-23T01:18:17.971Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="项目环境"><a href="#项目环境" class="headerlink" title="项目环境"></a>项目环境</h2><ol><li>IDE：IDEA</li><li>数据库：Mysql 8.0.22</li><li>JDK:1.8</li><li><p>界面设计插件：JFormDesigner</p><p><strong>登录界面</strong><br><img src="https://img-blog.csdnimg.cn/20210107222234507.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="登录"><br><strong>顾客界面</strong><br><img src="https://img-blog.csdnimg.cn/20210107222308547.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20210107222308532.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20210107222308539.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20210107222308538.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20210107222308489.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p></li></ol><p><strong>后代管理界面</strong><br><img src="https://img-blog.csdnimg.cn/20210107222348530.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20210107222348518.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20210107222348524.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20210107222348521.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p><p><strong>代码结构</strong><br><img src="https://img-blog.csdnimg.cn/20210107222558431.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p><p><strong><a href="https://github.com/Ruvikm/Flower">源码链接</a></strong></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;项目环境&quot;&gt;&lt;a href=&quot;#项目环境&quot; class=&quot;headerlink&quot; title=&quot;项目环境&quot;&gt;&lt;/a&gt;项目环境&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;IDE：IDEA&lt;/li&gt;
-&lt;li&gt;数据库：Mysql 8.0.22&lt;/li&gt;
-&lt;li&gt;JDK:1.8&lt;/li&gt;</summary>
-      
-    
-    
-    
-    <category term="个人项目" scheme="https://ruvikm.gitee.io/categories/%E4%B8%AA%E4%BA%BA%E9%A1%B9%E7%9B%AE/"/>
-    
-    
-    <category term="java" scheme="https://ruvikm.gitee.io/tags/java/"/>
     
   </entry>
   
