@@ -6,7 +6,7 @@
   <link href="https://ruvikm.gitee.io/atom.xml" rel="self"/>
   
   <link href="https://ruvikm.gitee.io/"/>
-  <updated>2023-07-12T14:42:34.626Z</updated>
+  <updated>2023-07-15T01:55:46.121Z</updated>
   <id>https://ruvikm.gitee.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>本地部署chatGPT</title>
+    <link href="https://ruvikm.gitee.io/2023/07/15/%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2chatGPT/"/>
+    <id>https://ruvikm.gitee.io/2023/07/15/%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2chatGPT/</id>
+    <published>2023-07-15T01:13:30.000Z</published>
+    <updated>2023-07-15T01:55:46.121Z</updated>
+    
+    <content type="html"><![CDATA[<p>首先打开<a href="https://github.com/ramonvc/freegpt-webui#cloning-the-repository-inbox_tray">项目网址</a>，把代码下载下来，按照其要求安装<a href="https://www.python.org/downloads/"><code>python</code></a>，<a href="https://git-scm.com/download/win"><code>git</code></a></p><p>安装完成后，检查一下自己是否安装成功，<code>Win+R</code>后输入<code>cmd</code>，在弹出来的窗口内输入<code>python</code></p><p><img src="https://s1.ax1x.com/2023/07/15/pC5VexS.png" alt="image-20230715091723681"></p><p>若和下图类似，则说明安装成功</p><p>输入<code>exit()</code>退出<code>python</code>的编辑模式。继续输入<code>git --version</code></p><p><img src="https://s1.ax1x.com/2023/07/15/pC5VQVs.png" alt="image-20230715091956265"></p><p>说明<code>git</code>也安装成功。</p><p>将下载下来的压缩包解压，并用<code>cmd</code>进入其项目文件夹，输入</p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install -r requirements.txt</span><br></pre></td></tr></table></figure><p><img src="https://s1.ax1x.com/2023/07/15/pC5VoJP.png" alt="image-20230715093344938"></p><p><strong>安装完毕后然后开启海外全局<code>magic</code></strong>，运行</p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">python run.py</span><br></pre></td></tr></table></figure><p>如果遇到这个问题</p><p><img src="https://s1.ax1x.com/2023/07/15/pC5ZnW6.png" alt="image-20230715094624768"></p><p>找到项目中的<code>config.json</code>文件</p><p>把<code>port</code>改成<code>8088</code></p><p><img src="https://s1.ax1x.com/2023/07/15/pC5ZMQO.png" alt="image-20230715094711628"></p><p>若出现以下界面</p><p><img src="https://s1.ax1x.com/2023/07/15/pC5ZlOe.png" alt="image-20230715094750540"></p><p>则可以打开</p><figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">http://localhost:1338</span><br></pre></td></tr></table></figure><p><img src="https://s1.ax1x.com/2023/07/15/pC5ZlOe.png" alt="image-20230715094750540"></p><p>成功部署chatGPT！</p><p><img src="https://s1.ax1x.com/2023/07/15/pC5ZI0J.png" alt="屏幕截图 2023-07-15 095407"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;首先打开&lt;a href=&quot;https://github.com/ramonvc/freegpt-webui#cloning-the-repository-inbox_tray&quot;&gt;项目网址&lt;/a&gt;，把代码下载下来，按照其要求安装&lt;a href=&quot;https://www.pyt</summary>
+      
+    
+    
+    
+    <category term="个人笔记" scheme="https://ruvikm.gitee.io/categories/%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>OSError [Errno 22] Invalid argument(已解决)</title>
@@ -461,30 +483,6 @@
       
       
     <summary type="html">&lt;h2 id=&quot;Given-a-collection-of-numbers-nums-that-might-contain-duplicates-return-all-possible-unique-permutations-in-any-order&quot;&gt;&lt;a href=&quot;#Giv</summary>
-      
-    
-    
-    
-    <category term="刷题笔记" scheme="https://ruvikm.gitee.io/categories/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/"/>
-    
-    
-    <category term="算法" scheme="https://ruvikm.gitee.io/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode 46. Permutations</title>
-    <link href="https://ruvikm.gitee.io/2022/01/10/LeetCode%2046.%20Permutations/"/>
-    <id>https://ruvikm.gitee.io/2022/01/10/LeetCode%2046.%20Permutations/</id>
-    <published>2022-01-10T11:30:27.000Z</published>
-    <updated>2023-05-23T01:24:07.782Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Given-a-collection-of-distinct-integers-return-all-possible-permutations"><a href="#Given-a-collection-of-distinct-integers-return-all-possible-permutations" class="headerlink" title="Given a collection of distinct integers, return all possible permutations."></a>Given a collection of distinct integers, return all possible permutations.</h2><p>Example:</p><p>Input: [1,2,3]<br>Output:<br>[<br>  [1,2,3],<br>  [1,3,2],<br>  [2,1,3],<br>  [2,3,1],<br>  [3,1,2],<br>  [3,2,1]<br>]</p><p><a href="https://leetcode-cn.com/problems/permutations/">题目链接</a></p><p>看了看大佬们的讲解，终于自己做出来一道回溯的题。<br>回溯大致分为三步：</p><ol><li>终止条件：回溯到什么情况就可以加入答案列表</li><li>剪枝条件：什么情况下就可以停止回溯直接continue</li><li>回溯范围：如何将当前层和下一层联系起来继续递归下去</li></ol><p>对于这道全排列的题，我们需要一个res保存答案，一个temp参与回溯，当达到终于条件也就是temp的大小与nums的相等时便把temp加入res中;<br>然后需要一个check数组来标记使用过的元素，当一个数已经被使用过便把对应的位置的值设为1，这样避免了一个数重复使用多次。<br>由于这道题是要列出所有的排列结果，所以需要全部遍历</p><p>代码如下：</p><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; res;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">dfs</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums,vector&lt;<span class="type">int</span>&gt;&amp; temp,vector&lt;<span class="type">int</span>&gt;&amp; check)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(temp.<span class="built_in">size</span>()==nums.<span class="built_in">size</span>())&#123;</span><br><span class="line">            res.<span class="built_in">push_back</span>(temp);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;nums.<span class="built_in">size</span>();i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(check[i])</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            check[i]=<span class="number">1</span>;</span><br><span class="line">            temp.<span class="built_in">push_back</span>(nums[i]);</span><br><span class="line">            <span class="built_in">dfs</span>(nums,temp,check);</span><br><span class="line">            temp.<span class="built_in">pop_back</span>();</span><br><span class="line">            check[i]=<span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">permute</span>(vector&lt;<span class="type">int</span>&gt;&amp; nums) &#123;</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">check</span><span class="params">(nums.size(),<span class="number">0</span>)</span></span>;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; temp;</span><br><span class="line">        <span class="built_in">dfs</span>(nums,temp,check);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;Given-a-collection-of-distinct-integers-return-all-possible-permutations&quot;&gt;&lt;a href=&quot;#Given-a-collection-of-distinct-integers-return-a</summary>
       
     
     
