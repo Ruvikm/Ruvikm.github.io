@@ -939,6 +939,238 @@
       </categories>
   </entry>
   <entry>
+    <title>跑通项目《GAT-BiLSTM-CRF》</title>
+    <url>/2023/06/24/%E5%A4%8D%E7%8E%B0%E9%A1%B9%E7%9B%AE%E3%80%8AGAT-BiLSTM-CRF%E3%80%8B/</url>
+    <content><![CDATA[<p>记录一下自己跑通一个<a href="https://github.com/yx100/GAT-BiLSTM-CRF">GitHub项目</a>《GAT-BiLSTM-CRF》的过程</p>
+<p>自己电脑环境如下：</p>
+<ul>
+<li>显卡：3060TI</li>
+<li>CUDA : 11.0</li>
+<li>CUDAToolkit : 8.0.2</li>
+</ul>
+<p>首先新建一个conda环境</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda create -n GBC python=3.7</span><br><span class="line">conda activate GBC</span><br></pre></td></tr></table></figure>
+<p>然后用Pycharm打开其项目，并把Pycharm的环境也切换到<code>GBC</code></p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-24%20093507.png" alt="屏幕截图 2023-06-24 093507"></p>
+<p>下面就是安装环境了，根据作者的md文件，需要装一个Pytorch1.1版本</p>
+<p>从官网找见下载链接，并把<code>-c pytorch</code>去掉，以便使用清华源</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda install pytorch==1.1.0 torchvision==0.3.0 cudatoolkit=10.0</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-24%20095053.png" alt="屏幕截图 2023-06-24 095053"></p>
+<p>看来这种方法不太行，换一种方法！</p>
+<p>打开Pytorch官网的<a href="https://download.pytorch.org/whl/torch_stable.html">下载源</a>，搜索<code>cu100/torch-1.1.0</code>，下载如下的包</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-24%20095456-1687571797951-11.png" alt="屏幕截图 2023-06-24 095456"></p>
+<p>ちょっと待って，我好像已经发现了问题，我的<code>CUDA11.0</code>肯定和这个不匹配，装了也没用，那就用<code>CPU</code>版本的<code>torch</code>跑一跑试试吧</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">CPU Only</span></span><br><span class="line">conda install pytorch-cpu==1.1.0 torchvision-cpu==0.3.0 cpuonly</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20124226.png" alt="屏幕截图 2023-06-25 124226"></p>
+<p>应该是<code>numpy</code>版本不对？重装一下试试</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pip install numpy -U</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20130608.png" alt="屏幕截图 2023-06-25 130608"></p>
+<p>那就卸载了重装一下吧</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip uninstall numpy</span><br><span class="line">pip install numpy</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20130928.png" alt="屏幕截图 2023-06-25 130928"></p>
+<p>咦？我不是卸载了吗？根据之前的经验，可以试试强制升级<code>numpy</code>版本</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install numpy --ignore-installed numpy</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20131310.png" alt="屏幕截图 2023-06-25 131310"></p>
+<p>再跑一次试试</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20131408.png" alt="屏幕截图 2023-06-25 131408"></p>
+<p>刚刚那个错解决了！这个应该是没有装<code>nltk</code>的包，装一下试试</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install nltk</span><br></pre></td></tr></table></figure>
+<p>再跑一次</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20131544.png" alt="屏幕截图 2023-06-25 131544"></p>
+<p>能跑起来一点点了，这应该是我还没有改地址的问题，改一下去，先全局搜索一下这个地址哪用到了（第52行）</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/image-20230625131832793.png" alt="image-20230625131832793"></p>
+<p>出现大问题了，作者并没有提供数据集，但是他提供了数据集的格式</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">Input is in CoNLL format (We use BIO tag scheme), where each character and its label are in one line. Sentences are split with a null line.</span><br></pre></td></tr></table></figure>
+<p>翻译一下</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">输入是CoNLL格式（我们使用BIO标签方案），其中每个字符和它的标签都在一行。句子用空行分割。</span><br></pre></td></tr></table></figure>
+<p>那就先自己找一个数据集康康能不能跑吧，数据集就用我<a href="https://raw.githubusercontent.com/SophonPlus/ChineseNlpCorpus/master/datasets/ChnSentiCorp_htl_all/ChnSentiCorp_htl_all.csv">之前的找的</a>试试</p>
+<p>按照作者的地址和文件夹创建一下</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20133501.png" alt="屏幕截图 2023-06-25 133501"></p>
+<p>先跑一下试试吧</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20133550.png" alt="屏幕截图 2023-06-25 133550"></p>
+<p>可恶啊，可能就是数据集的格式不对了。但是感觉有戏</p>
+<p>换一个有一个标注的数据集试试，经过一番搜索，找到了一个<a href="https://bj.bcebos.com/paddlehub-dataset/msra_ner.tar.gz">数据集</a></p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20135200.png" alt="屏幕截图 2023-06-25 135200"></p>
+<p>复制到项目中并修改一下路径试试</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20140111.png" alt="屏幕截图 2023-06-25 140111"></p>
+<p>跑一下试试</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20140224.png" alt="屏幕截图 2023-06-25 140224"></p>
+<p>可恶啊，还是数据集读的方式不对</p>
+<p>找师兄<del>borrow</del>了一个数据集，这个配置后的样子</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20142415.png" alt="屏幕截图 2023-06-25 142415"></p>
+<p>运行走起！</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20142455.png" alt="屏幕截图 2023-06-25 142455"></p>
+<p>又报错了，搜了一下，试试在最前面导入一个包</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> tqdm <span class="keyword">import</span> tqdm_notebook <span class="keyword">as</span> tqdm</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/image-20230625142708124.png" alt="image-20230625142708124"></p>
+<p>emmmm再换一个别的包试试？</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> tqdm <span class="keyword">import</span> tqdm</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20142851.png" alt="屏幕截图 2023-06-25 142851"></p>
+<p>又回到了格式问题,一直说是gdk编码不能识别，但我看了一下自己的数据集是<code>utf-8</code>编码的</p>
+<p>要不试试把打开文件的编码改一下？找到打开文件的编码，加上<code>encoding</code>属性（19行）</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20190447.png" alt="屏幕截图 2023-06-25 190447"></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">in_lines = <span class="built_in">open</span>(input_file, <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>).readlines()</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20191202.png" alt="屏幕截图 2023-06-25 191202"></p>
+<p>啊？越界了！调试一下康康</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20191742.png" alt="屏幕截图 2023-06-25 191742"></p>
+<p>我猜，这个label应该就是标注，可能他的数据集中，标签在<code>pairs[-5]</code>的这个位置。但我的理论上貌似应该大概也许在<code>pairs[1]</code>的位置吧。改一下试试</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">label = pairs[<span class="number">1</span>]</span><br></pre></td></tr></table></figure>
+<p>再跑一次！</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20192031.png" alt="屏幕截图 2023-06-25 192031"></p>
+<p>emmmmmm为什么————</p>
+<p>我肯定的一点是，我应该是改对了，难道是数据太大了吗</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20192521.png" alt="屏幕截图 2023-06-25 192521"></p>
+<p>查了一下网上的方法，试试加入一个判断条件防止越界</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20192811.png" alt="屏幕截图 2023-06-25 192811"></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> idx <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(in_lines)):</span><br><span class="line">    <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20193334.png" alt="屏幕截图 2023-06-25 193334"></p>
+<p>跑一下试试</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20193411.png" alt="屏幕截图 2023-06-25 193411"></p>
+<p>纳尼？还可以越界的吗</p>
+<p>最后一招！我试试把数据集弄小一点</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20193916.png" alt="屏幕截图 2023-06-25 193916"></p>
+<p>其他的数据集也差不多这么大，就一句话！我不信这也可以越界了，把地址改完重跑一次</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20194043.png" alt="屏幕截图 2023-06-25 194043"></p>
+<p>emm确实不越界了，这个错误可能是之前没注释干净，继续注释试试</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/image-20230625194305060.png" alt="image-20230625194305060"></p>
+<p>再跑一次</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20194334.png" alt="屏幕截图 2023-06-25 194334"></p>
+<p>我猜想，我是安装的是<code>CPU</code>版本的<code>torch</code>，而他程序里要求的是带<code>GPU</code>的<code>torch</code>。我康康能不能把程序改一下吧</p>
+<p>网上搜索了一下，试试这么改</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20194942.png" alt="屏幕截图 2023-06-25 194942"></p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20195143.png" alt="屏幕截图 2023-06-25 195143"></p>
+<p>感觉这是一条不归路啊，要不先试试<code>torch1.7</code>版本（电脑这个版本可以调用GPU）能不能跑，如果不行再用cpu吧。</p>
+<p>从<a href="https://pytorch.org/get-started/previous-versions/">官网</a>找的链接</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda install pytorch==1.7.0 torchvision==0.8.0 torchaudio==0.7.0 cudatoolkit=11.0</span><br></pre></td></tr></table></figure>
+<p>安装完了</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20195937.png" alt="屏幕截图 2023-06-25 195937"></p>
+<p>跑跑试试（希望兼容希望兼容！）</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/image-20230625200042482.png" alt="image-20230625200042482"></p>
+<p>NO————————————！！！！！！！</p>
+<p>看了一下好像是自己的torch安装乱了，果然还得是先卸载再安装啊，不会自动卸载的</p>
+<p>先卸载</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip uninstall torch</span><br><span class="line">pip uninstall torchvision</span><br></pre></td></tr></table></figure>
+<p>然后看一下有没有卸载干净</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip list</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20232346.png" alt="屏幕截图 2023-06-25 232346"></p>
+<p>像这样就可以了，再重装一下吧</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda install pytorch==1.7.0 torchvision==0.8.0 torchaudio==0.7.0 cudatoolkit=11.0</span><br></pre></td></tr></table></figure>
+<p>安装完再检查一下</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20232540.png" alt="屏幕截图 2023-06-25 232540"></p>
+<p>好的，现在就可以跑一下试试了！</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20232647.png" alt="屏幕截图 2023-06-25 232647"></p>
+<p>啊嘞？！我用<code>python</code>命令行试试能不能调用GPU</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">python</span><br><span class="line"><span class="keyword">import</span> torch</span><br><span class="line">torch.cuda.is_available()</span><br><span class="line">torch.cuda.get_device_name(<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20232835.png" alt="屏幕截图 2023-06-25 232835"></p>
+<p>emmm好吧，看来确实不能，再卸载了重装一下吧</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip uninstall torch</span><br><span class="line">pip uninstall torchvision</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install torch==1.7.0+cu110 torchvision==0.8.0+cu110 torchaudio==0.7.0 -f https://download.pytorch.org/whl/torch_stable.html</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20235355.png" alt="屏幕截图 2023-06-25 235355"></p>
+<p>又是什么情况？！那还是用<code>conda</code>装吧</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda install pytorch==1.7.0 torchvision==0.8.0 torchaudio==0.7.0 cudatoolkit=11.0</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20235505-1687708623463-21.png" alt="屏幕截图 2023-06-25 235505"></p>
+<p>为什么是CPU版本的啊，换<code>torch1.7.1</code>试试？</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install torch==1.7.1+cu110 torchvision==0.8.2+cu110 torchaudio==0.7.2 -f https://download.pytorch.org/whl/torch_stable.html</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20235744.png" alt="屏幕截图 2023-06-25 235744"></p>
+<p>这也太艰难了吧，网上查了一下</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20000009.png" alt="屏幕截图 2023-06-26 000009"></p>
+<p>按照他说的找到文件夹并且删除</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20000302.png" alt="屏幕截图 2023-06-26 000302"></p>
+<p>再重装一下</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install numpy</span><br></pre></td></tr></table></figure>
+<p>然后再装一下<code>torch</code>试试</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install torch==1.7.1+cu110 torchvision==0.8.2+cu110 torchaudio==0.7.2 -f https://download.pytorch.org/whl/torch_stable.html</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20000557.png" alt="屏幕截图 2023-06-26 000557"></p>
+<p>感天动地，终于装好了。跑一下试试！</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20000741.png" alt="屏幕截图 2023-06-26 000741"></p>
+<p>是不是我数据量太少的原因，先改回原来的数据集</p>
+<p>然后我发现了设定数据集大小的位置，修改成比自己数据集大的大小</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20001114.png" alt="屏幕截图 2023-06-26 001114"></p>
+<p>走起试试！</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20001202.png" alt="屏幕截图 2023-06-26 001202"></p>
+<p>突然又发现了一个参数，可能是不是没改全的原因，改完跑一下试试</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20220112.png" alt="屏幕截图 2023-06-26 220112"></p>
+<p>走起</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20220233.png" alt="屏幕截图 2023-06-26 220233"></p>
+<p>emmmm好神秘啊！换成只有800行左右试试</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20002211.png" alt="屏幕截图 2023-06-26 002211"></p>
+<p>这又是什么诡异的错误…网上查了一下</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20220622.png" alt="屏幕截图 2023-06-26 220622"></p>
+<p>好像比较好改，直接看报错信息，找到最后一个代码里的报错</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20002211-1687788699344-4.png" alt="屏幕截图 2023-06-26 002211"></p>
+<p>点进去，会自动跳到报错那一行，然后用网上的方法修改一下</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">embeds_pack = pack_padded_sequence(embeds, batch_len.to(<span class="string">&#x27;cpu&#x27;</span>), batch_first=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20221334.png" alt="屏幕截图 2023-06-26 221334"></p>
+<p>再跑试试！</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/image-20230626221422520.png" alt="image-20230626221422520"></p>
+<p>跑了但没完全跑起来，是哪除0的情况没有考虑到应该，点进去代码里加一个判断条件试试</p>
+<p>把原本这段代码</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">epoch_cost = epoch_finish - epoch_start</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Epoch: %s training finished. Time: %.2fs, speed: %.2fst/s,  total loss: %s&quot;</span> % (</span><br><span class="line">idx, epoch_cost, train_num / epoch_cost, total_loss))</span><br></pre></td></tr></table></figure>
+<p>修改为这段</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">epoch_cost = epoch_finish - epoch_start</span><br><span class="line">train_speed = null</span><br><span class="line"><span class="keyword">if</span> epoch_cost != <span class="number">0</span>:</span><br><span class="line">    train_speed = train_num / epoch_cost</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Epoch: %s training finished. Time: %.2fs, speed: %.2fst/s,  total loss: %s&quot;</span> % (</span><br><span class="line">    idx, epoch_cost, train_speed, total_loss))</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20222314.png" alt="屏幕截图 2023-06-26 222314"></p>
+<p>在试试吧</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20222500.png" alt="屏幕截图 2023-06-26 222500"></p>
+<p>emmm这样吗，网上一查</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20222529.png" alt="屏幕截图 2023-06-26 222529"></p>
+<p>那就把<code>null</code>改成<code>none</code>试试</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/image-20230626222633707.png" alt="image-20230626222633707"></p>
+<p>emmm行吧，那就直接改一个数字算了（114514<code>/doge</code>）</p>
+<p>woc跑起来！？</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/image-20230626222825231.png" alt="image-20230626222825231"></p>
+<p>所以这是成功了？！但是为什么好多0，总感觉不太对的样子</p>
+]]></content>
+      <categories>
+        <category>论文复现</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>如何使用微信小程序IDE在github上实现团队合作</title>
+    <url>/2020/04/16/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8FIDE%E5%9C%A8github%E4%B8%8A%E5%AE%9E%E7%8E%B0%E5%9B%A2%E9%98%9F%E5%90%88%E4%BD%9C/</url>
+    <content><![CDATA[<p>——-原文——-(2020/4/16)</p>
+<p>@<a href="如何使用微信开发者工具在github上实现团队合作">TOC</a><br>一.发起者要做的一些步骤</p>
+<ol>
+<li>首先用IDE初始化本地的git仓库<br><img src="https://img-blog.csdnimg.cn/20200130111131527.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="a."><br><img src="https://img-blog.csdnimg.cn/20200130111301249.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="b."></li>
+<li>使用github-desktop客户端添加这个新建的本地git库并同时上传到新建的远程仓库中<br><img src="https://img-blog.csdnimg.cn/2020013011214879.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="添加本地仓库"><br><img src="https://img-blog.csdnimg.cn/20200130112202771.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="新建远程仓库"><br><img src="https://img-blog.csdnimg.cn/2020013011231537.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/2020013011291517.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="看一下成果嘿嘿嘿"></li>
+<li>添加参与者<br><img src="https://img-blog.csdnimg.cn/20200130113301950.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="最好添加的时候写参与者的名字"><br><strong>PS:被邀请者的必须要接受邀请才可以</strong></li>
+</ol>
+<p>二.参与者需要做的步骤</p>
+<ol>
+<li>在微信小程序开发者工具里添加远程仓库<br><img src="https://img-blog.csdnimg.cn/20200130114342510.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="添加远程仓库_1"><img src="https://img-blog.csdnimg.cn/20200130114356569.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="添加远程仓库_2"><br><img src="https://img-blog.csdnimg.cn/20200130114448885.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="如何查看仓库的地址"></li>
+<li>绑定自己的github账号<br><img src="https://img-blog.csdnimg.cn/20200130115015761.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="绑定账号"></li>
+</ol>
+<p>三.如何线上合作</p>
+<ol>
+<li>参与者在调试好了一些功能以后，提交到远程仓库的分支<br><img src="https://img-blog.csdnimg.cn/20200130120245999.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="提交分支"></li>
+<li>参与者请求合并分支<br><img src="https://img-blog.csdnimg.cn/20200130120523380.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="请求合并_1"><br><img src="https://img-blog.csdnimg.cn/20200130120921309.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="请求合并_2"><br><img src="https://img-blog.csdnimg.cn/20200130120955937.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="发起合并请求"></li>
+<li>在发起者经过了沉思熟虑，通计熟筹，仰观俯察后，同意合并分支的请求(＠￣ー￣＠)<br><img src="https://img-blog.csdnimg.cn/20200130121516212.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="找到请求_1"><br>从这里可以对比的看到分支和master的不同<br><img src="https://img-blog.csdnimg.cn/2020013012161487.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="找不同"><br>同意合并请求：<br><img src="https://img-blog.csdnimg.cn/20200130121829976.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="同意合并_2"><br><img src="https://img-blog.csdnimg.cn/20200130121938158.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="同意合并_3"><br>这样就分支就合并进去了<br><img src="https://img-blog.csdnimg.cn/20200130122111630.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="嘻嘻嘻"><br>当然如果参与者想要同步最新的代码，只要pull一下就好了<br><img src="https://img-blog.csdnimg.cn/20200130191852824.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="同步"><br>第一次接触github，如有一些错误，还请多多指教<br>(๑•̀ㅂ•́)و</li>
+</ol>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>微信小程序</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>安装PaddlePaddle</title>
+    <url>/2023/07/21/%E5%AE%89%E8%A3%85PaddlePaddle/</url>
+    <content><![CDATA[<p>记录一下安装的过程，官方文档如下</p>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">https://www.paddlepaddle.org.cn/documentation/docs/zh/install/conda/windows-conda.html</span><br></pre></td></tr></table></figure>
+<h2 id="创建虚拟环境"><a href="#创建虚拟环境" class="headerlink" title="创建虚拟环境"></a>创建虚拟环境</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda create -n paddle python=3.8</span><br><span class="line">conda activate paddle</span><br></pre></td></tr></table></figure>
+<h2 id="查看自己安装的CUDA版本"><a href="#查看自己安装的CUDA版本" class="headerlink" title="查看自己安装的CUDA版本"></a>查看自己安装的CUDA版本</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">nvcc -V</span><br></pre></td></tr></table></figure>
+<p><img src="https://s1.ax1x.com/2023/07/21/pCHjtOA.png" alt="image-20230721102917138"></p>
+<p>选择适合自己的版本，我安装的是CUDA11.2的</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda install paddlepaddle-gpu==2.5.0 cudatoolkit=11.2 -c https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/Paddle/ -c conda-forge</span><br></pre></td></tr></table></figure>
+<h2 id="验证安装"><a href="#验证安装" class="headerlink" title="验证安装"></a>验证安装</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">python</span><br><span class="line"><span class="keyword">import</span> paddle</span><br><span class="line">paddle.utils.run_check()</span><br></pre></td></tr></table></figure>
+<p><img src="https://s1.ax1x.com/2023/07/21/pCHvsN6.png" alt="image-20230721105441359"></p>
+]]></content>
+      <categories>
+        <category>个人笔记</category>
+      </categories>
+  </entry>
+  <entry>
     <title>复现论文《SPIKING CONVOLUTIONAL NEURAL NETWORKS FOR TEXT CLASSIFICATION》</title>
     <url>/2023/06/23/%E5%A4%8D%E7%8E%B0%E8%AE%BA%E6%96%87%E3%80%8ASPIKING%20CONVOLUTIONAL%20NEURAL%20NETWORKS%20FOR%20TEXT%20CLASSIFICATION%E3%80%8B/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>记录一下复现论文<a href="https://openreview.net/pdf?id=pgU3k7QXuz0">《SPIKING CONVOLUTIONAL NEURAL NETWORKS FOR TEXT CLASSIFICATION》</a>的过程，<del>以免就调包感觉自己什么也没干</del>。<strong>不建议一步一步跟着我的步骤做，这个是实况，建议跳着看看再参考着做</strong></p>
@@ -1403,192 +1635,6 @@
       </categories>
   </entry>
   <entry>
-    <title>跑通项目《GAT-BiLSTM-CRF》</title>
-    <url>/2023/06/24/%E5%A4%8D%E7%8E%B0%E9%A1%B9%E7%9B%AE%E3%80%8AGAT-BiLSTM-CRF%E3%80%8B/</url>
-    <content><![CDATA[<p>记录一下自己跑通一个<a href="https://github.com/yx100/GAT-BiLSTM-CRF">GitHub项目</a>《GAT-BiLSTM-CRF》的过程</p>
-<p>自己电脑环境如下：</p>
-<ul>
-<li>显卡：3060TI</li>
-<li>CUDA : 11.0</li>
-<li>CUDAToolkit : 8.0.2</li>
-</ul>
-<p>首先新建一个conda环境</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda create -n GBC python=3.7</span><br><span class="line">conda activate GBC</span><br></pre></td></tr></table></figure>
-<p>然后用Pycharm打开其项目，并把Pycharm的环境也切换到<code>GBC</code></p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-24%20093507.png" alt="屏幕截图 2023-06-24 093507"></p>
-<p>下面就是安装环境了，根据作者的md文件，需要装一个Pytorch1.1版本</p>
-<p>从官网找见下载链接，并把<code>-c pytorch</code>去掉，以便使用清华源</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda install pytorch==1.1.0 torchvision==0.3.0 cudatoolkit=10.0</span><br></pre></td></tr></table></figure>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-24%20095053.png" alt="屏幕截图 2023-06-24 095053"></p>
-<p>看来这种方法不太行，换一种方法！</p>
-<p>打开Pytorch官网的<a href="https://download.pytorch.org/whl/torch_stable.html">下载源</a>，搜索<code>cu100/torch-1.1.0</code>，下载如下的包</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-24%20095456-1687571797951-11.png" alt="屏幕截图 2023-06-24 095456"></p>
-<p>ちょっと待って，我好像已经发现了问题，我的<code>CUDA11.0</code>肯定和这个不匹配，装了也没用，那就用<code>CPU</code>版本的<code>torch</code>跑一跑试试吧</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">CPU Only</span></span><br><span class="line">conda install pytorch-cpu==1.1.0 torchvision-cpu==0.3.0 cpuonly</span><br></pre></td></tr></table></figure>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20124226.png" alt="屏幕截图 2023-06-25 124226"></p>
-<p>应该是<code>numpy</code>版本不对？重装一下试试</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pip install numpy -U</span><br></pre></td></tr></table></figure>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20130608.png" alt="屏幕截图 2023-06-25 130608"></p>
-<p>那就卸载了重装一下吧</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip uninstall numpy</span><br><span class="line">pip install numpy</span><br></pre></td></tr></table></figure>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20130928.png" alt="屏幕截图 2023-06-25 130928"></p>
-<p>咦？我不是卸载了吗？根据之前的经验，可以试试强制升级<code>numpy</code>版本</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install numpy --ignore-installed numpy</span><br></pre></td></tr></table></figure>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20131310.png" alt="屏幕截图 2023-06-25 131310"></p>
-<p>再跑一次试试</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20131408.png" alt="屏幕截图 2023-06-25 131408"></p>
-<p>刚刚那个错解决了！这个应该是没有装<code>nltk</code>的包，装一下试试</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install nltk</span><br></pre></td></tr></table></figure>
-<p>再跑一次</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20131544.png" alt="屏幕截图 2023-06-25 131544"></p>
-<p>能跑起来一点点了，这应该是我还没有改地址的问题，改一下去，先全局搜索一下这个地址哪用到了（第52行）</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/image-20230625131832793.png" alt="image-20230625131832793"></p>
-<p>出现大问题了，作者并没有提供数据集，但是他提供了数据集的格式</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">Input is in CoNLL format (We use BIO tag scheme), where each character and its label are in one line. Sentences are split with a null line.</span><br></pre></td></tr></table></figure>
-<p>翻译一下</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">输入是CoNLL格式（我们使用BIO标签方案），其中每个字符和它的标签都在一行。句子用空行分割。</span><br></pre></td></tr></table></figure>
-<p>那就先自己找一个数据集康康能不能跑吧，数据集就用我<a href="https://raw.githubusercontent.com/SophonPlus/ChineseNlpCorpus/master/datasets/ChnSentiCorp_htl_all/ChnSentiCorp_htl_all.csv">之前的找的</a>试试</p>
-<p>按照作者的地址和文件夹创建一下</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20133501.png" alt="屏幕截图 2023-06-25 133501"></p>
-<p>先跑一下试试吧</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20133550.png" alt="屏幕截图 2023-06-25 133550"></p>
-<p>可恶啊，可能就是数据集的格式不对了。但是感觉有戏</p>
-<p>换一个有一个标注的数据集试试，经过一番搜索，找到了一个<a href="https://bj.bcebos.com/paddlehub-dataset/msra_ner.tar.gz">数据集</a></p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20135200.png" alt="屏幕截图 2023-06-25 135200"></p>
-<p>复制到项目中并修改一下路径试试</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20140111.png" alt="屏幕截图 2023-06-25 140111"></p>
-<p>跑一下试试</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20140224.png" alt="屏幕截图 2023-06-25 140224"></p>
-<p>可恶啊，还是数据集读的方式不对</p>
-<p>找师兄<del>borrow</del>了一个数据集，这个配置后的样子</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20142415.png" alt="屏幕截图 2023-06-25 142415"></p>
-<p>运行走起！</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20142455.png" alt="屏幕截图 2023-06-25 142455"></p>
-<p>又报错了，搜了一下，试试在最前面导入一个包</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> tqdm <span class="keyword">import</span> tqdm_notebook <span class="keyword">as</span> tqdm</span><br></pre></td></tr></table></figure>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/image-20230625142708124.png" alt="image-20230625142708124"></p>
-<p>emmmm再换一个别的包试试？</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> tqdm <span class="keyword">import</span> tqdm</span><br></pre></td></tr></table></figure>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20142851.png" alt="屏幕截图 2023-06-25 142851"></p>
-<p>又回到了格式问题,一直说是gdk编码不能识别，但我看了一下自己的数据集是<code>utf-8</code>编码的</p>
-<p>要不试试把打开文件的编码改一下？找到打开文件的编码，加上<code>encoding</code>属性（19行）</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20190447.png" alt="屏幕截图 2023-06-25 190447"></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">in_lines = <span class="built_in">open</span>(input_file, <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>).readlines()</span><br></pre></td></tr></table></figure>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20191202.png" alt="屏幕截图 2023-06-25 191202"></p>
-<p>啊？越界了！调试一下康康</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20191742.png" alt="屏幕截图 2023-06-25 191742"></p>
-<p>我猜，这个label应该就是标注，可能他的数据集中，标签在<code>pairs[-5]</code>的这个位置。但我的理论上貌似应该大概也许在<code>pairs[1]</code>的位置吧。改一下试试</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">label = pairs[<span class="number">1</span>]</span><br></pre></td></tr></table></figure>
-<p>再跑一次！</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20192031.png" alt="屏幕截图 2023-06-25 192031"></p>
-<p>emmmmmm为什么————</p>
-<p>我肯定的一点是，我应该是改对了，难道是数据太大了吗</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20192521.png" alt="屏幕截图 2023-06-25 192521"></p>
-<p>查了一下网上的方法，试试加入一个判断条件防止越界</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20192811.png" alt="屏幕截图 2023-06-25 192811"></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> idx <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(in_lines)):</span><br><span class="line">    <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20193334.png" alt="屏幕截图 2023-06-25 193334"></p>
-<p>跑一下试试</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20193411.png" alt="屏幕截图 2023-06-25 193411"></p>
-<p>纳尼？还可以越界的吗</p>
-<p>最后一招！我试试把数据集弄小一点</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20193916.png" alt="屏幕截图 2023-06-25 193916"></p>
-<p>其他的数据集也差不多这么大，就一句话！我不信这也可以越界了，把地址改完重跑一次</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20194043.png" alt="屏幕截图 2023-06-25 194043"></p>
-<p>emm确实不越界了，这个错误可能是之前没注释干净，继续注释试试</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/image-20230625194305060.png" alt="image-20230625194305060"></p>
-<p>再跑一次</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20194334.png" alt="屏幕截图 2023-06-25 194334"></p>
-<p>我猜想，我是安装的是<code>CPU</code>版本的<code>torch</code>，而他程序里要求的是带<code>GPU</code>的<code>torch</code>。我康康能不能把程序改一下吧</p>
-<p>网上搜索了一下，试试这么改</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20194942.png" alt="屏幕截图 2023-06-25 194942"></p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20195143.png" alt="屏幕截图 2023-06-25 195143"></p>
-<p>感觉这是一条不归路啊，要不先试试<code>torch1.7</code>版本（电脑这个版本可以调用GPU）能不能跑，如果不行再用cpu吧。</p>
-<p>从<a href="https://pytorch.org/get-started/previous-versions/">官网</a>找的链接</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda install pytorch==1.7.0 torchvision==0.8.0 torchaudio==0.7.0 cudatoolkit=11.0</span><br></pre></td></tr></table></figure>
-<p>安装完了</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20195937.png" alt="屏幕截图 2023-06-25 195937"></p>
-<p>跑跑试试（希望兼容希望兼容！）</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/image-20230625200042482.png" alt="image-20230625200042482"></p>
-<p>NO————————————！！！！！！！</p>
-<p>看了一下好像是自己的torch安装乱了，果然还得是先卸载再安装啊，不会自动卸载的</p>
-<p>先卸载</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip uninstall torch</span><br><span class="line">pip uninstall torchvision</span><br></pre></td></tr></table></figure>
-<p>然后看一下有没有卸载干净</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip list</span><br></pre></td></tr></table></figure>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20232346.png" alt="屏幕截图 2023-06-25 232346"></p>
-<p>像这样就可以了，再重装一下吧</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda install pytorch==1.7.0 torchvision==0.8.0 torchaudio==0.7.0 cudatoolkit=11.0</span><br></pre></td></tr></table></figure>
-<p>安装完再检查一下</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20232540.png" alt="屏幕截图 2023-06-25 232540"></p>
-<p>好的，现在就可以跑一下试试了！</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20232647.png" alt="屏幕截图 2023-06-25 232647"></p>
-<p>啊嘞？！我用<code>python</code>命令行试试能不能调用GPU</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">python</span><br><span class="line"><span class="keyword">import</span> torch</span><br><span class="line">torch.cuda.is_available()</span><br><span class="line">torch.cuda.get_device_name(<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20232835.png" alt="屏幕截图 2023-06-25 232835"></p>
-<p>emmm好吧，看来确实不能，再卸载了重装一下吧</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip uninstall torch</span><br><span class="line">pip uninstall torchvision</span><br></pre></td></tr></table></figure>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install torch==1.7.0+cu110 torchvision==0.8.0+cu110 torchaudio==0.7.0 -f https://download.pytorch.org/whl/torch_stable.html</span><br></pre></td></tr></table></figure>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20235355.png" alt="屏幕截图 2023-06-25 235355"></p>
-<p>又是什么情况？！那还是用<code>conda</code>装吧</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda install pytorch==1.7.0 torchvision==0.8.0 torchaudio==0.7.0 cudatoolkit=11.0</span><br></pre></td></tr></table></figure>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20235505-1687708623463-21.png" alt="屏幕截图 2023-06-25 235505"></p>
-<p>为什么是CPU版本的啊，换<code>torch1.7.1</code>试试？</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install torch==1.7.1+cu110 torchvision==0.8.2+cu110 torchaudio==0.7.2 -f https://download.pytorch.org/whl/torch_stable.html</span><br></pre></td></tr></table></figure>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20235744.png" alt="屏幕截图 2023-06-25 235744"></p>
-<p>这也太艰难了吧，网上查了一下</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20000009.png" alt="屏幕截图 2023-06-26 000009"></p>
-<p>按照他说的找到文件夹并且删除</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20000302.png" alt="屏幕截图 2023-06-26 000302"></p>
-<p>再重装一下</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install numpy</span><br></pre></td></tr></table></figure>
-<p>然后再装一下<code>torch</code>试试</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install torch==1.7.1+cu110 torchvision==0.8.2+cu110 torchaudio==0.7.2 -f https://download.pytorch.org/whl/torch_stable.html</span><br></pre></td></tr></table></figure>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20000557.png" alt="屏幕截图 2023-06-26 000557"></p>
-<p>感天动地，终于装好了。跑一下试试！</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20000741.png" alt="屏幕截图 2023-06-26 000741"></p>
-<p>是不是我数据量太少的原因，先改回原来的数据集</p>
-<p>然后我发现了设定数据集大小的位置，修改成比自己数据集大的大小</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20001114.png" alt="屏幕截图 2023-06-26 001114"></p>
-<p>走起试试！</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20001202.png" alt="屏幕截图 2023-06-26 001202"></p>
-<p>突然又发现了一个参数，可能是不是没改全的原因，改完跑一下试试</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20220112.png" alt="屏幕截图 2023-06-26 220112"></p>
-<p>走起</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20220233.png" alt="屏幕截图 2023-06-26 220233"></p>
-<p>emmmm好神秘啊！换成只有800行左右试试</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20002211.png" alt="屏幕截图 2023-06-26 002211"></p>
-<p>这又是什么诡异的错误…网上查了一下</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20220622.png" alt="屏幕截图 2023-06-26 220622"></p>
-<p>好像比较好改，直接看报错信息，找到最后一个代码里的报错</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20002211-1687788699344-4.png" alt="屏幕截图 2023-06-26 002211"></p>
-<p>点进去，会自动跳到报错那一行，然后用网上的方法修改一下</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">embeds_pack = pack_padded_sequence(embeds, batch_len.to(<span class="string">&#x27;cpu&#x27;</span>), batch_first=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20221334.png" alt="屏幕截图 2023-06-26 221334"></p>
-<p>再跑试试！</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/image-20230626221422520.png" alt="image-20230626221422520"></p>
-<p>跑了但没完全跑起来，是哪除0的情况没有考虑到应该，点进去代码里加一个判断条件试试</p>
-<p>把原本这段代码</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">epoch_cost = epoch_finish - epoch_start</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Epoch: %s training finished. Time: %.2fs, speed: %.2fst/s,  total loss: %s&quot;</span> % (</span><br><span class="line">idx, epoch_cost, train_num / epoch_cost, total_loss))</span><br></pre></td></tr></table></figure>
-<p>修改为这段</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">epoch_cost = epoch_finish - epoch_start</span><br><span class="line">train_speed = null</span><br><span class="line"><span class="keyword">if</span> epoch_cost != <span class="number">0</span>:</span><br><span class="line">    train_speed = train_num / epoch_cost</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Epoch: %s training finished. Time: %.2fs, speed: %.2fst/s,  total loss: %s&quot;</span> % (</span><br><span class="line">    idx, epoch_cost, train_speed, total_loss))</span><br></pre></td></tr></table></figure>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20222314.png" alt="屏幕截图 2023-06-26 222314"></p>
-<p>在试试吧</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20222500.png" alt="屏幕截图 2023-06-26 222500"></p>
-<p>emmm这样吗，网上一查</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20222529.png" alt="屏幕截图 2023-06-26 222529"></p>
-<p>那就把<code>null</code>改成<code>none</code>试试</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/image-20230626222633707.png" alt="image-20230626222633707"></p>
-<p>emmm行吧，那就直接改一个数字算了（114514<code>/doge</code>）</p>
-<p>woc跑起来！？</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/image-20230626222825231.png" alt="image-20230626222825231"></p>
-<p>所以这是成功了？！但是为什么好多0，总感觉不太对的样子</p>
-]]></content>
-      <categories>
-        <category>论文复现</category>
-      </categories>
-  </entry>
-  <entry>
     <title>安装Word2Vec</title>
     <url>/2023/07/01/%E5%AE%89%E8%A3%85Word2Vec/</url>
     <content><![CDATA[<p>由于最近需要用到一个预处理的数据集，方法在<a href="https://arxiv.org/abs/1301.3781">这篇论文</a>《Efficient Estimation of Word Representations in Vector Space》里，于是打算尝试能不能复现一下，论文提供了<a href="https://code.google.com/archive/p/word2vec/">代码地址</a>，但是当我打开下载的时候，却发现是404</p>
@@ -1630,33 +1676,54 @@
       </categories>
   </entry>
   <entry>
-    <title>如何使用微信小程序IDE在github上实现团队合作</title>
-    <url>/2020/04/16/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8FIDE%E5%9C%A8github%E4%B8%8A%E5%AE%9E%E7%8E%B0%E5%9B%A2%E9%98%9F%E5%90%88%E4%BD%9C/</url>
-    <content><![CDATA[<p>——-原文——-(2020/4/16)</p>
-<p>@<a href="如何使用微信开发者工具在github上实现团队合作">TOC</a><br>一.发起者要做的一些步骤</p>
+    <title>斐波那契数列 C_C++</title>
+    <url>/2022/01/10/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97%20C_C++/</url>
+    <content><![CDATA[<p>用三种方法实现:</p>
 <ol>
-<li>首先用IDE初始化本地的git仓库<br><img src="https://img-blog.csdnimg.cn/20200130111131527.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="a."><br><img src="https://img-blog.csdnimg.cn/20200130111301249.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="b."></li>
-<li>使用github-desktop客户端添加这个新建的本地git库并同时上传到新建的远程仓库中<br><img src="https://img-blog.csdnimg.cn/2020013011214879.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="添加本地仓库"><br><img src="https://img-blog.csdnimg.cn/20200130112202771.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="新建远程仓库"><br><img src="https://img-blog.csdnimg.cn/2020013011231537.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/2020013011291517.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="看一下成果嘿嘿嘿"></li>
-<li>添加参与者<br><img src="https://img-blog.csdnimg.cn/20200130113301950.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="最好添加的时候写参与者的名字"><br><strong>PS:被邀请者的必须要接受邀请才可以</strong></li>
+<li>带备忘录的递归</li>
+<li>dp迭代</li>
+<li>迭代优化，空间复杂度为O(1)</li>
 </ol>
-<p>二.参与者需要做的步骤</p>
-<ol>
-<li>在微信小程序开发者工具里添加远程仓库<br><img src="https://img-blog.csdnimg.cn/20200130114342510.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="添加远程仓库_1"><img src="https://img-blog.csdnimg.cn/20200130114356569.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="添加远程仓库_2"><br><img src="https://img-blog.csdnimg.cn/20200130114448885.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="如何查看仓库的地址"></li>
-<li>绑定自己的github账号<br><img src="https://img-blog.csdnimg.cn/20200130115015761.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="绑定账号"></li>
-</ol>
-<p>三.如何线上合作</p>
-<ol>
-<li>参与者在调试好了一些功能以后，提交到远程仓库的分支<br><img src="https://img-blog.csdnimg.cn/20200130120245999.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="提交分支"></li>
-<li>参与者请求合并分支<br><img src="https://img-blog.csdnimg.cn/20200130120523380.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="请求合并_1"><br><img src="https://img-blog.csdnimg.cn/20200130120921309.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="请求合并_2"><br><img src="https://img-blog.csdnimg.cn/20200130120955937.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="发起合并请求"></li>
-<li>在发起者经过了沉思熟虑，通计熟筹，仰观俯察后，同意合并分支的请求(＠￣ー￣＠)<br><img src="https://img-blog.csdnimg.cn/20200130121516212.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="找到请求_1"><br>从这里可以对比的看到分支和master的不同<br><img src="https://img-blog.csdnimg.cn/2020013012161487.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="找不同"><br>同意合并请求：<br><img src="https://img-blog.csdnimg.cn/20200130121829976.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="同意合并_2"><br><img src="https://img-blog.csdnimg.cn/20200130121938158.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="同意合并_3"><br>这样就分支就合并进去了<br><img src="https://img-blog.csdnimg.cn/20200130122111630.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="嘻嘻嘻"><br>当然如果参与者想要同步最新的代码，只要pull一下就好了<br><img src="https://img-blog.csdnimg.cn/20200130191852824.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="同步"><br>第一次接触github，如有一些错误，还请多多指教<br>(๑•̀ㅂ•́)و</li>
-</ol>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> _for(i,a,b) for(int i=(a);i&lt;=(b);i++)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//备忘录</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">helper</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; memo, <span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">	<span class="comment">//base case</span></span><br><span class="line">	<span class="keyword">if</span> (n == <span class="number">2</span> || n == <span class="number">3</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (memo[n] != <span class="number">0</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> memo[n];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		memo[n] = <span class="built_in">helper</span>(memo, n - <span class="number">1</span>) + <span class="built_in">helper</span>(memo, n - <span class="number">2</span>);</span><br><span class="line">		<span class="keyword">return</span> memo[n];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//带备忘录法</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">fib_1</span><span class="params">(<span class="type">int</span> N)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (N &lt;= <span class="number">1</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">memo</span><span class="params">(N + <span class="number">1</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">helper</span>(memo, N);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//dp数组迭代法</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">fib_2</span><span class="params">(<span class="type">int</span> N)</span> </span>&#123;</span><br><span class="line">	<span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">dp</span><span class="params">(N + <span class="number">1</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line">	dp[<span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">	dp[<span class="number">2</span>] = dp[<span class="number">3</span>] = <span class="number">1</span>;</span><br><span class="line">	_for(i, <span class="number">4</span>, N) &#123;</span><br><span class="line">		dp[i] = dp[i - <span class="number">1</span>] + dp[i - <span class="number">2</span>];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> dp[N];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//迭代优化</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">fib_3</span><span class="params">(<span class="type">int</span> N)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (N == <span class="number">1</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (N == <span class="number">2</span> || N == <span class="number">3</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">int</span> pre = <span class="number">1</span>, ppre = <span class="number">1</span>;</span><br><span class="line">	_for(i, <span class="number">4</span>, N) &#123;</span><br><span class="line">		<span class="type">int</span> sum = pre + ppre;</span><br><span class="line">		ppre = pre;</span><br><span class="line">		pre = sum;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> pre;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, <span class="built_in">fib_3</span>(<span class="number">10</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
-        <category>学习笔记</category>
+        <category>刷题笔记</category>
       </categories>
       <tags>
-        <tag>微信小程序</tag>
+        <tag>算法</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>本地部署chatGPT</title>
+    <url>/2023/07/15/%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2chatGPT/</url>
+    <content><![CDATA[<p>首先打开<a href="https://github.com/ramonvc/freegpt-webui#cloning-the-repository-inbox_tray">项目网址</a>，把代码下载下来，按照其要求安装<a href="https://www.python.org/downloads/"><code>python</code></a>，<a href="https://git-scm.com/download/win"><code>git</code></a></p>
+<p>安装完成后，检查一下自己是否安装成功，<code>Win+R</code>后输入<code>cmd</code>，在弹出来的窗口内输入<code>python</code></p>
+<p><img src="https://s1.ax1x.com/2023/07/15/pC5VexS.png" alt="image-20230715091723681"></p>
+<p>若和下图类似，则说明安装成功</p>
+<p>输入<code>exit()</code>退出<code>python</code>的编辑模式。继续输入<code>git --version</code></p>
+<p><img src="https://s1.ax1x.com/2023/07/15/pC5VQVs.png" alt="image-20230715091956265"></p>
+<p>说明<code>git</code>也安装成功。</p>
+<p>将下载下来的压缩包解压，并用<code>cmd</code>进入其项目文件夹，输入</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install -r requirements.txt</span><br></pre></td></tr></table></figure>
+<p><img src="https://s1.ax1x.com/2023/07/15/pC5VoJP.png" alt="image-20230715093344938"></p>
+<p><strong>安装完毕后然后开启海外全局<code>magic</code></strong>，运行</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">python run.py</span><br></pre></td></tr></table></figure>
+<p>如果遇到这个问题</p>
+<p><img src="https://s1.ax1x.com/2023/07/15/pC5ZnW6.png" alt="image-20230715094624768"></p>
+<p>找到项目中的<code>config.json</code>文件</p>
+<p>把<code>port</code>改成<code>8088</code></p>
+<p><img src="https://s1.ax1x.com/2023/07/15/pC5ZMQO.png" alt="image-20230715094711628"></p>
+<p>若出现以下界面</p>
+<p><img src="https://s1.ax1x.com/2023/07/15/pC5ZlOe.png" alt="image-20230715094750540"></p>
+<p>则可以打开</p>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">http://localhost:1338</span><br></pre></td></tr></table></figure>
+<p><img src="https://s1.ax1x.com/2023/07/15/pC5ZlOe.png" alt="image-20230715094750540"></p>
+<p>成功部署chatGPT！</p>
+<p><img src="https://s1.ax1x.com/2023/07/15/pC5ZI0J.png" alt="屏幕截图 2023-07-15 095407"></p>
+]]></content>
+      <categories>
+        <category>个人笔记</category>
+      </categories>
   </entry>
   <entry>
     <title>王道数据结构 线性表 链式存储小结</title>
@@ -1738,24 +1805,6 @@
 ]]></content>
       <categories>
         <category>学习笔记</category>
-      </categories>
-      <tags>
-        <tag>算法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>斐波那契数列 C_C++</title>
-    <url>/2022/01/10/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97%20C_C++/</url>
-    <content><![CDATA[<p>用三种方法实现:</p>
-<ol>
-<li>带备忘录的递归</li>
-<li>dp迭代</li>
-<li>迭代优化，空间复杂度为O(1)</li>
-</ol>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> _for(i,a,b) for(int i=(a);i&lt;=(b);i++)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//备忘录</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">helper</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; memo, <span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">	<span class="comment">//base case</span></span><br><span class="line">	<span class="keyword">if</span> (n == <span class="number">2</span> || n == <span class="number">3</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (memo[n] != <span class="number">0</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> memo[n];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		memo[n] = <span class="built_in">helper</span>(memo, n - <span class="number">1</span>) + <span class="built_in">helper</span>(memo, n - <span class="number">2</span>);</span><br><span class="line">		<span class="keyword">return</span> memo[n];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//带备忘录法</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">fib_1</span><span class="params">(<span class="type">int</span> N)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (N &lt;= <span class="number">1</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">memo</span><span class="params">(N + <span class="number">1</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">helper</span>(memo, N);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//dp数组迭代法</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">fib_2</span><span class="params">(<span class="type">int</span> N)</span> </span>&#123;</span><br><span class="line">	<span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">dp</span><span class="params">(N + <span class="number">1</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line">	dp[<span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">	dp[<span class="number">2</span>] = dp[<span class="number">3</span>] = <span class="number">1</span>;</span><br><span class="line">	_for(i, <span class="number">4</span>, N) &#123;</span><br><span class="line">		dp[i] = dp[i - <span class="number">1</span>] + dp[i - <span class="number">2</span>];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> dp[N];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//迭代优化</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">fib_3</span><span class="params">(<span class="type">int</span> N)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (N == <span class="number">1</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (N == <span class="number">2</span> || N == <span class="number">3</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">int</span> pre = <span class="number">1</span>, ppre = <span class="number">1</span>;</span><br><span class="line">	_for(i, <span class="number">4</span>, N) &#123;</span><br><span class="line">		<span class="type">int</span> sum = pre + ppre;</span><br><span class="line">		ppre = pre;</span><br><span class="line">		pre = sum;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> pre;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, <span class="built_in">fib_3</span>(<span class="number">10</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>刷题笔记</category>
       </categories>
       <tags>
         <tag>算法</tag>
@@ -1852,37 +1901,5 @@
       <tags>
         <tag>其他</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>本地部署chatGPT</title>
-    <url>/2023/07/15/%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2chatGPT/</url>
-    <content><![CDATA[<p>首先打开<a href="https://github.com/ramonvc/freegpt-webui#cloning-the-repository-inbox_tray">项目网址</a>，把代码下载下来，按照其要求安装<a href="https://www.python.org/downloads/"><code>python</code></a>，<a href="https://git-scm.com/download/win"><code>git</code></a></p>
-<p>安装完成后，检查一下自己是否安装成功，<code>Win+R</code>后输入<code>cmd</code>，在弹出来的窗口内输入<code>python</code></p>
-<p><img src="https://s1.ax1x.com/2023/07/15/pC5VexS.png" alt="image-20230715091723681"></p>
-<p>若和下图类似，则说明安装成功</p>
-<p>输入<code>exit()</code>退出<code>python</code>的编辑模式。继续输入<code>git --version</code></p>
-<p><img src="https://s1.ax1x.com/2023/07/15/pC5VQVs.png" alt="image-20230715091956265"></p>
-<p>说明<code>git</code>也安装成功。</p>
-<p>将下载下来的压缩包解压，并用<code>cmd</code>进入其项目文件夹，输入</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install -r requirements.txt</span><br></pre></td></tr></table></figure>
-<p><img src="https://s1.ax1x.com/2023/07/15/pC5VoJP.png" alt="image-20230715093344938"></p>
-<p><strong>安装完毕后然后开启海外全局<code>magic</code></strong>，运行</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">python run.py</span><br></pre></td></tr></table></figure>
-<p>如果遇到这个问题</p>
-<p><img src="https://s1.ax1x.com/2023/07/15/pC5ZnW6.png" alt="image-20230715094624768"></p>
-<p>找到项目中的<code>config.json</code>文件</p>
-<p>把<code>port</code>改成<code>8088</code></p>
-<p><img src="https://s1.ax1x.com/2023/07/15/pC5ZMQO.png" alt="image-20230715094711628"></p>
-<p>若出现以下界面</p>
-<p><img src="https://s1.ax1x.com/2023/07/15/pC5ZlOe.png" alt="image-20230715094750540"></p>
-<p>则可以打开</p>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">http://localhost:1338</span><br></pre></td></tr></table></figure>
-<p><img src="https://s1.ax1x.com/2023/07/15/pC5ZlOe.png" alt="image-20230715094750540"></p>
-<p>成功部署chatGPT！</p>
-<p><img src="https://s1.ax1x.com/2023/07/15/pC5ZI0J.png" alt="屏幕截图 2023-07-15 095407"></p>
-]]></content>
-      <categories>
-        <category>个人笔记</category>
-      </categories>
   </entry>
 </search>

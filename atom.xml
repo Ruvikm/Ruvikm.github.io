@@ -6,7 +6,7 @@
   <link href="https://ruvikm.gitee.io/atom.xml" rel="self"/>
   
   <link href="https://ruvikm.gitee.io/"/>
-  <updated>2023-07-15T01:55:46.121Z</updated>
+  <updated>2023-07-21T02:54:49.046Z</updated>
   <id>https://ruvikm.gitee.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>安装PaddlePaddle</title>
+    <link href="https://ruvikm.gitee.io/2023/07/21/%E5%AE%89%E8%A3%85PaddlePaddle/"/>
+    <id>https://ruvikm.gitee.io/2023/07/21/%E5%AE%89%E8%A3%85PaddlePaddle/</id>
+    <published>2023-07-21T02:23:04.000Z</published>
+    <updated>2023-07-21T02:54:49.046Z</updated>
+    
+    <content type="html"><![CDATA[<p>记录一下安装的过程，官方文档如下</p><figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">https://www.paddlepaddle.org.cn/documentation/docs/zh/install/conda/windows-conda.html</span><br></pre></td></tr></table></figure><h2 id="创建虚拟环境"><a href="#创建虚拟环境" class="headerlink" title="创建虚拟环境"></a>创建虚拟环境</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda create -n paddle python=3.8</span><br><span class="line">conda activate paddle</span><br></pre></td></tr></table></figure><h2 id="查看自己安装的CUDA版本"><a href="#查看自己安装的CUDA版本" class="headerlink" title="查看自己安装的CUDA版本"></a>查看自己安装的CUDA版本</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">nvcc -V</span><br></pre></td></tr></table></figure><p><img src="https://s1.ax1x.com/2023/07/21/pCHjtOA.png" alt="image-20230721102917138"></p><p>选择适合自己的版本，我安装的是CUDA11.2的</p><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda install paddlepaddle-gpu==2.5.0 cudatoolkit=11.2 -c https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/Paddle/ -c conda-forge</span><br></pre></td></tr></table></figure><h2 id="验证安装"><a href="#验证安装" class="headerlink" title="验证安装"></a>验证安装</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">python</span><br><span class="line"><span class="keyword">import</span> paddle</span><br><span class="line">paddle.utils.run_check()</span><br></pre></td></tr></table></figure><p><img src="https://s1.ax1x.com/2023/07/21/pCHvsN6.png" alt="image-20230721105441359"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;记录一下安装的过程，官方文档如下&lt;/p&gt;
+&lt;figure class=&quot;highlight tex&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;https://www.paddlepaddle.org.cn/do</summary>
+      
+    
+    
+    
+    <category term="个人笔记" scheme="https://ruvikm.gitee.io/categories/%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>本地部署chatGPT</title>
@@ -459,30 +482,6 @@
       
     <summary type="html">&lt;p&gt;Given a string s, partition s such that every substring of the partition is a palindrome.&lt;/p&gt;
 &lt;p&gt;Return all possible palindrome partition</summary>
-      
-    
-    
-    
-    <category term="刷题笔记" scheme="https://ruvikm.gitee.io/categories/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/"/>
-    
-    
-    <category term="算法" scheme="https://ruvikm.gitee.io/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode 47 Permutations II</title>
-    <link href="https://ruvikm.gitee.io/2022/01/10/LeetCode%2047%20Permutations%20II/"/>
-    <id>https://ruvikm.gitee.io/2022/01/10/LeetCode%2047%20Permutations%20II/</id>
-    <published>2022-01-10T11:31:12.000Z</published>
-    <updated>2023-05-23T01:20:49.386Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Given-a-collection-of-numbers-nums-that-might-contain-duplicates-return-all-possible-unique-permutations-in-any-order"><a href="#Given-a-collection-of-numbers-nums-that-might-contain-duplicates-return-all-possible-unique-permutations-in-any-order" class="headerlink" title="Given a collection of numbers, nums, that might contain duplicates, return all possible unique permutations in any order."></a>Given a collection of numbers, nums, that might contain duplicates, return all possible unique permutations in any order.</h2><p>Example 1:</p><p>Input: nums = [1,1,2]<br>Output:<br>[[1,1,2],<br> [1,2,1],<br> [2,1,1]]<br>Example 2:</p><p>Input: nums = [1,2,3]<br>Output: [[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]</p><p>Constraints:</p><p>1 &lt;= nums.length &lt;= 8<br>-10 &lt;= nums[i] &lt;= 10</p><p><a href="https://leetcode-cn.com/problems/permutations-ii/">题目链接</a></p><p>这道题在<a href="https://blog.csdn.net/ruvikm/article/details/109636529">全排列1</a>上添加了重复的元素，所以剪枝的情况要多考虑一种。比如1，2，2’<br>2，2’与2’，2其实是一种情况，所以要舍去。<br>而对于重复的元素，一开始先排序是一个不错的选择。再排序完之后，如果当前元素和上一个元素相等并且上一个元素还没有被用过（但是后面一定会被用到造成重复)，这样的时候就要考虑剪枝</p><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>(i&gt;<span class="number">0</span> &amp;&amp; nums[i]==nums[i<span class="number">-1</span>]&amp;&amp;!check[i<span class="number">-1</span>])&#123;</span><br><span class="line">               <span class="keyword">continue</span>;</span><br><span class="line">           &#125;</span><br></pre></td></tr></table></figure><p>全部代码如下：</p><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; res;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">dfs</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums,vector&lt;<span class="type">int</span>&gt;&amp; temp,vector&lt;<span class="type">int</span>&gt;&amp; check)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(temp.<span class="built_in">size</span>()==nums.<span class="built_in">size</span>())&#123;</span><br><span class="line">            res.<span class="built_in">push_back</span>(temp);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;nums.<span class="built_in">size</span>();i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(check[i])&#123;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125; </span><br><span class="line">            <span class="keyword">if</span>(i&gt;<span class="number">0</span> &amp;&amp; nums[i]==nums[i<span class="number">-1</span>]&amp;&amp;!check[i<span class="number">-1</span>])&#123;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            check[i]=<span class="number">1</span>;</span><br><span class="line">            temp.<span class="built_in">push_back</span>(nums[i]);</span><br><span class="line">            <span class="built_in">dfs</span>(nums,temp,check);</span><br><span class="line">            temp.<span class="built_in">pop_back</span>();</span><br><span class="line">            check[i]=<span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">permuteUnique</span>(vector&lt;<span class="type">int</span>&gt;&amp; nums) &#123;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; temp;</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">check</span><span class="params">(nums.size(),<span class="number">0</span>)</span></span>;</span><br><span class="line">        <span class="built_in">sort</span>(nums.<span class="built_in">begin</span>(),nums.<span class="built_in">end</span>());</span><br><span class="line">        <span class="built_in">dfs</span>(nums,temp,check);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;Given-a-collection-of-numbers-nums-that-might-contain-duplicates-return-all-possible-unique-permutations-in-any-order&quot;&gt;&lt;a href=&quot;#Giv</summary>
       
     
     
