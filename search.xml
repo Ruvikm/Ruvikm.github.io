@@ -622,75 +622,6 @@
       </categories>
   </entry>
   <entry>
-    <title>word2vec工具实战</title>
-    <url>/2023/07/04/word2vec%E5%B7%A5%E5%85%B7%E5%AE%9E%E6%88%98/</url>
-    <content><![CDATA[<p>最开始需要新建一个conda环境</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda create -n word2vec python=3.8</span><br><span class="line">conda activate word2vec</span><br></pre></td></tr></table></figure>
-<p>然后安装一下所需要的库</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install numpy</span><br><span class="line">pip install scipy</span><br><span class="line">pip install gensim</span><br><span class="line">pip install jieba</span><br></pre></td></tr></table></figure>
-<p>首先下载一下数据集<a href="https://dumps.wikimedia.org/zhwiki/20230701/zhwiki-20230701-pages-articles.xml.bz2">zhwiki-20230701-pages-articles.xml.bz2</a>，为了方便后续操作，这里需要把他转成<code>txt</code>格式的</p>
-<p>以下是转化的文件<code>transform_to_txt.py</code></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="comment"># 修改后的代码如下：</span></span><br><span class="line"><span class="keyword">import</span> logging</span><br><span class="line"><span class="keyword">import</span> os.path</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> gensim.corpora <span class="keyword">import</span> WikiCorpus</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line"></span><br><span class="line">    program = os.path.basename(sys.argv[<span class="number">0</span>])</span><br><span class="line">    logger = logging.getLogger(program)</span><br><span class="line">    logging.basicConfig(<span class="built_in">format</span>=<span class="string">&#x27;%(asctime)s: %(levelname)s: %(message)s&#x27;</span>)</span><br><span class="line">    logging.root.setLevel(level=logging.INFO)</span><br><span class="line">    logger.info(<span class="string">&quot;running %s&quot;</span> % <span class="string">&#x27; &#x27;</span>.join(sys.argv))</span><br><span class="line">    <span class="comment"># check and process input arguments</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(sys.argv) &lt; <span class="number">3</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="built_in">globals</span>()[<span class="string">&#x27;__doc__&#x27;</span>] % <span class="built_in">locals</span>())</span><br><span class="line">        sys.exit(<span class="number">1</span>)</span><br><span class="line">    inp, outp = sys.argv[<span class="number">1</span>:<span class="number">3</span>]</span><br><span class="line">    space = <span class="string">&quot;&quot;</span></span><br><span class="line">    i = <span class="number">0</span></span><br><span class="line">    output = <span class="built_in">open</span>(outp, <span class="string">&#x27;w&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">    <span class="comment"># wiki = WikiCorpus(inp, lemmatize=False, dictionary=&#123;&#125;)</span></span><br><span class="line">    wiki = WikiCorpus(inp, dictionary=&#123;&#125;)</span><br><span class="line">    <span class="keyword">for</span> text <span class="keyword">in</span> wiki.get_texts():</span><br><span class="line">        s = space.join(text)</span><br><span class="line">        <span class="comment"># s = s.decode(&#x27;utf8&#x27;) + &quot;\n&quot;</span></span><br><span class="line">        s = s.encode(<span class="string">&#x27;utf8&#x27;</span>).decode(<span class="string">&#x27;utf8&#x27;</span>) + <span class="string">&quot;\n&quot;</span></span><br><span class="line">        output.write(s)</span><br><span class="line">        i = i + <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> (i % <span class="number">10000</span> == <span class="number">0</span>):</span><br><span class="line">            logger.info(<span class="string">&quot;Saved &quot;</span> + <span class="built_in">str</span>(i) + <span class="string">&quot; articles&quot;</span>)</span><br><span class="line">    output.close()</span><br><span class="line">    logger.info(<span class="string">&quot;Finished Saved &quot;</span> + <span class="built_in">str</span>(i) + <span class="string">&quot; articles&quot;</span>)</span><br></pre></td></tr></table></figure>
-<p>然后将刚刚下载的数据集和此<code>Python</code>文件放在同一个目录下，并且用命令行跳转到这个目录，然后执行</p>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">python transform<span class="built_in">_</span>to<span class="built_in">_</span>txt.py zhwiki-20230701-pages-articles.xml.bz2 wiki.zh.text</span><br></pre></td></tr></table></figure>
-<p>其中，第一个参数是<code>Python</code>的文件名，第二个是要处理的数据文件名，第三个是要输出的文件名</p>
-<p>转换完之后就生成了一个txt文件</p>
-<p><img src="https://s1.ax1x.com/2023/07/04/pCs7rX8.png" alt="image-20230704195428973"></p>
-<p>直接浏览，可以看出这里面全是繁体字，所以下面需要把繁体转换成简体</p>
-<p><img src="https://s1.ax1x.com/2023/07/04/pCs760g.png" alt="image-20230704195605355"></p>
-<p>首先需要下载这个<a href="https://github.com/BYVoid/OpenCC/wiki/Download">转换工具</a>，<strong>记住要下载预编译的</strong>。</p>
-<p>然后解压后放在一个能记住的位置，例如我是</p>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">G:<span class="keyword">\Lab</span><span class="keyword">\DeepLearning</span><span class="keyword">\OpenCC</span><span class="keyword">\share</span><span class="keyword">\opencc</span></span><br></pre></td></tr></table></figure>
-<p>然后把文件夹中的<code>bin</code>目录配置到系统环境<code>path</code>里</p>
-<p><img src="https://s1.ax1x.com/2023/07/04/pCsblqO.png" alt="屏幕截图 2023-07-04 202744"></p>
-<p>最后验证一下是否配置成功</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">opencc --<span class="built_in">help</span></span><br></pre></td></tr></table></figure>
-<p><img src="https://s1.ax1x.com/2023/07/04/pCsHFNd.png" alt="屏幕截图 2023-07-04 201226"></p>
-<p>然后就可以转换啦，用<code>cmd</code>跳转到<code>wiki.zh.text</code>文件所在的目录，在命令行输入</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">opencc -i wiki.zh.text -o test_zh.txt -c G:\Lab\DeepLearning\OpenCC\share\opencc\t2s.json</span><br></pre></td></tr></table></figure>
-<p><code>wiki.zh.text</code>是待转换的繁体文本，<code>test_zh.txt</code>是输出的简体文本，<code>t2s.json</code>表示繁体转简体，其中这个需要换成自己的地址（<strong>地址不要有空格</strong>）</p>
-<p><img src="https://s1.ax1x.com/2023/07/04/pCsbmGR.png" alt="image-20230704203004637"></p>
-<p>等一会就好了</p>
-<p><img src="https://s1.ax1x.com/2023/07/04/pCsbtJA.png" alt="image-20230704203155840"></p>
-<p>然后就全部成了简体了，使用word2vec工具需要做的最后一步是分词</p>
-<p>分词使用<code>jieba</code>这个库来解决，以下是分词的文件<code>participle.py</code></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> codecs</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> jieba</span><br><span class="line"><span class="keyword">import</span> jieba.analyse</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">cut_words</span>(<span class="params">sentence</span>):</span><br><span class="line">    <span class="comment"># print sentence</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot; &quot;</span>.join(jieba.cut(sentence)).encode(<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">f = codecs.<span class="built_in">open</span>(<span class="string">&#x27;test_zh.txt&#x27;</span>, <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&quot;utf8&quot;</span>)</span><br><span class="line">target = codecs.<span class="built_in">open</span>(<span class="string">&quot;zh.jian.wiki.seg_1.5G.txt&quot;</span>, <span class="string">&#x27;w&#x27;</span>, encoding=<span class="string">&quot;utf8&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;open files&#x27;</span>)</span><br><span class="line">line_num = <span class="number">1</span></span><br><span class="line">line = f.readline()</span><br><span class="line"><span class="keyword">while</span> line:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;---- processing &#x27;</span>, line_num, <span class="string">&#x27; article----------------&#x27;</span>)</span><br><span class="line">    line_seg = <span class="string">&quot; &quot;</span>.join(jieba.cut(line))</span><br><span class="line">    target.writelines(line_seg)</span><br><span class="line">    line_num = line_num + <span class="number">1</span></span><br><span class="line">    line = f.readline()</span><br><span class="line">f.close()</span><br><span class="line">target.close()</span><br><span class="line">exit()</span><br><span class="line"><span class="keyword">while</span> line:</span><br><span class="line">    curr = []</span><br><span class="line">    <span class="keyword">for</span> oneline <span class="keyword">in</span> line:</span><br><span class="line">        <span class="comment"># print(oneline)</span></span><br><span class="line">        curr.append(oneline)</span><br><span class="line">    after_cut = <span class="built_in">map</span>(cut_words, curr)</span><br><span class="line">    target.writelines(after_cut)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;saved&#x27;</span>, line_num, <span class="string">&#x27;articles&#x27;</span>)</span><br><span class="line">    exit()</span><br><span class="line">    line = f.readline1()</span><br><span class="line">f.close()</span><br><span class="line">target.close()</span><br></pre></td></tr></table></figure>
-<p>其中，这一句是配置需要分词的文件<code>test_zh.txt</code></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">f = codecs.<span class="built_in">open</span>(<span class="string">&#x27;test_zh.txt&#x27;</span>, <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&quot;utf8&quot;</span>)</span><br></pre></td></tr></table></figure>
-<p>这一句是配置需要输出的文件<code>zh.jian.wiki.seg_1.5G.txt</code></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">target = codecs.<span class="built_in">open</span>(<span class="string">&quot;zh.jian.wiki.seg_1.5G.txt&quot;</span>, <span class="string">&#x27;w&#x27;</span>, encoding=<span class="string">&quot;utf8&quot;</span>)</span><br></pre></td></tr></table></figure>
-<p>将<code>participle.py</code>文件和上面输出的简体文本<code>test_zh.txt</code>放在同一个目录，用<code>cmd</code>（跳转到对应目录后输入<code>python Testjieba.py</code>）或者<code>Pycharm</code>直接运行<code>participle.py</code>文件</p>
-<p><strong>PS：无论是<code>cmd</code>还是<code>Pycharm</code>，记得切换到<code>word2vec</code>环境</strong></p>
-<p>经过将近一个多小时的时间，终于跑完了</p>
-<p><img src="https://s1.ax1x.com/2023/07/04/pCsb6ij.png" alt="屏幕截图 2023-07-04 192329"></p>
-<p>接下来就是正式使用word2vec的时候了，以下是使用word2vec的文件<code>word2vec_model.py</code></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> logging</span><br><span class="line"><span class="keyword">import</span> multiprocessing</span><br><span class="line"><span class="keyword">import</span> os.path</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> gensim.models <span class="keyword">import</span> Word2Vec</span><br><span class="line"><span class="keyword">from</span> gensim.models.word2vec <span class="keyword">import</span> LineSentence</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line"></span><br><span class="line">    program = os.path.basename(sys.argv[<span class="number">0</span>])</span><br><span class="line">    logger = logging.getLogger(program)</span><br><span class="line">    logging.basicConfig(<span class="built_in">format</span>=<span class="string">&#x27;%(asctime)s: %(levelname)s: %(message)s&#x27;</span>)</span><br><span class="line">    logging.root.setLevel(level=logging.INFO)</span><br><span class="line">    logger.info(<span class="string">&quot;running %s&quot;</span> % <span class="string">&#x27; &#x27;</span>.join(sys.argv))</span><br><span class="line">    <span class="comment"># check and process input arguments</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(sys.argv) &lt; <span class="number">4</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="built_in">globals</span>()[<span class="string">&#x27;__doc__&#x27;</span>] % <span class="built_in">locals</span>())</span><br><span class="line">        sys.exit(<span class="number">1</span>)</span><br><span class="line">    inp, outp1, outp2 = sys.argv[<span class="number">1</span>:<span class="number">4</span>]</span><br><span class="line">    model = Word2Vec(LineSentence(inp), size=<span class="number">400</span>, window=<span class="number">5</span>, min_count=<span class="number">5</span>, workers=multiprocessing.cpu_count())</span><br><span class="line">    model.save(outp1)</span><br><span class="line">    model.wv.save_word2vec_format(outp2, binary=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
-<p>将上文分好词的文件<code>zh.jian.wiki.seg_1.5G.txt</code>与<code>word2vec_model.py</code>文件也是放到同一个目录下，然后在<code>cmd</code>中执行</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">python word2vec_model.py zh.jian.wiki.seg_1.5G.txt wiki.zh.text.model wiki.zh.text.vector</span><br></pre></td></tr></table></figure>
-<p>其中，<code>wiki.zh.text.model</code>是生成的模型（同样记得切换环境）</p>
-<p><img src="https://s1.ax1x.com/2023/07/04/pCsqmTg.png" alt="image-20230704205047579"></p>
-<p>可能会报这个错，原因可能是<code>gensim</code>的版本的差异。</p>
-<p>这样把下面这句的<code>size</code>改成<code>vector_size</code>即可</p>
-<p>源代码：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">model = Word2Vec(LineSentence(inp), size=<span class="number">400</span>, window=<span class="number">5</span>, min_count=<span class="number">5</span>, workers=multiprocessing.cpu_count())</span><br></pre></td></tr></table></figure>
-<p>新代码：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">model = Word2Vec(LineSentence(inp), vector_size=<span class="number">400</span>, window=<span class="number">5</span>, min_count=<span class="number">5</span>, workers=multiprocessing.cpu_count())</span><br></pre></td></tr></table></figure>
-<p>然后就可以漫长的等待了！</p>
-<p><img src="https://s1.ax1x.com/2023/07/04/pCsqB11.png" alt="image-20230704205435161"></p>
-<p> 经过一段时间后，模型保存成功了！</p>
-<p><img src="https://s1.ax1x.com/2023/07/04/pCsO3ZT.png" alt="屏幕截图 2023-07-04 212910"></p>
-<p>最后测试一下模型</p>
-<p>测试文件<code>testModel.py</code>如下</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> gensim.models <span class="keyword">import</span> Word2Vec</span><br><span class="line"></span><br><span class="line">en_wiki_word2vec_model = Word2Vec.load(<span class="string">&#x27;wiki.zh.text.model&#x27;</span>)</span><br><span class="line"></span><br><span class="line">testwords = [<span class="string">&#x27;苹果&#x27;</span>, <span class="string">&#x27;数学&#x27;</span>, <span class="string">&#x27;学术&#x27;</span>, <span class="string">&#x27;白痴&#x27;</span>, <span class="string">&#x27;篮球&#x27;</span>]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">5</span>):</span><br><span class="line">    res = en_wiki_word2vec_model.wv.most_similar(testwords[i])</span><br><span class="line">    <span class="built_in">print</span>(testwords[i])</span><br><span class="line">    <span class="built_in">print</span>(res)</span><br></pre></td></tr></table></figure>
-<p>继续在同一个目录执行<code>testModel.py</code>文件，得到如下结果</p>
-<p><img src="https://s1.ax1x.com/2023/07/05/pCyEdl6.png" alt="image-20230705101212390"></p>
-<p>最后附上<a href="https://github.com/Ruvikm/Gensim_word2vec">项目完整地址</a></p>
-]]></content>
-      <categories>
-        <category>个人笔记</category>
-      </categories>
-  </entry>
-  <entry>
     <title>使用Xpath和Requests实现爬虫并存储在Excel表里---爬取链家上杭州近期二手房价</title>
     <url>/2020/10/18/%E4%BD%BF%E7%94%A8Xpath%E5%92%8CRequests%E5%AE%9E%E7%8E%B0%E7%88%AC%E8%99%AB%E5%B9%B6%E5%AD%98%E5%82%A8%E5%9C%A8Excel%E8%A1%A8%E9%87%8C-%E7%88%AC%E5%8F%96%E9%93%BE%E5%AE%B6%E4%B8%8A%E6%9D%AD%E5%B7%9E%E8%BF%91%E6%9C%9F%E4%BA%8C%E6%89%8B%E6%88%BF%E4%BB%B7/</url>
     <content><![CDATA[<p>爬的是杭州近期的的新房价</p>
@@ -1122,52 +1053,6 @@
 ]]></content>
       <categories>
         <category>论文复现</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>如何使用微信小程序IDE在github上实现团队合作</title>
-    <url>/2020/04/16/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8FIDE%E5%9C%A8github%E4%B8%8A%E5%AE%9E%E7%8E%B0%E5%9B%A2%E9%98%9F%E5%90%88%E4%BD%9C/</url>
-    <content><![CDATA[<p>——-原文——-(2020/4/16)</p>
-<p>@<a href="如何使用微信开发者工具在github上实现团队合作">TOC</a><br>一.发起者要做的一些步骤</p>
-<ol>
-<li>首先用IDE初始化本地的git仓库<br><img src="https://img-blog.csdnimg.cn/20200130111131527.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="a."><br><img src="https://img-blog.csdnimg.cn/20200130111301249.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="b."></li>
-<li>使用github-desktop客户端添加这个新建的本地git库并同时上传到新建的远程仓库中<br><img src="https://img-blog.csdnimg.cn/2020013011214879.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="添加本地仓库"><br><img src="https://img-blog.csdnimg.cn/20200130112202771.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="新建远程仓库"><br><img src="https://img-blog.csdnimg.cn/2020013011231537.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/2020013011291517.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="看一下成果嘿嘿嘿"></li>
-<li>添加参与者<br><img src="https://img-blog.csdnimg.cn/20200130113301950.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="最好添加的时候写参与者的名字"><br><strong>PS:被邀请者的必须要接受邀请才可以</strong></li>
-</ol>
-<p>二.参与者需要做的步骤</p>
-<ol>
-<li>在微信小程序开发者工具里添加远程仓库<br><img src="https://img-blog.csdnimg.cn/20200130114342510.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="添加远程仓库_1"><img src="https://img-blog.csdnimg.cn/20200130114356569.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="添加远程仓库_2"><br><img src="https://img-blog.csdnimg.cn/20200130114448885.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="如何查看仓库的地址"></li>
-<li>绑定自己的github账号<br><img src="https://img-blog.csdnimg.cn/20200130115015761.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="绑定账号"></li>
-</ol>
-<p>三.如何线上合作</p>
-<ol>
-<li>参与者在调试好了一些功能以后，提交到远程仓库的分支<br><img src="https://img-blog.csdnimg.cn/20200130120245999.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="提交分支"></li>
-<li>参与者请求合并分支<br><img src="https://img-blog.csdnimg.cn/20200130120523380.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="请求合并_1"><br><img src="https://img-blog.csdnimg.cn/20200130120921309.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="请求合并_2"><br><img src="https://img-blog.csdnimg.cn/20200130120955937.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="发起合并请求"></li>
-<li>在发起者经过了沉思熟虑，通计熟筹，仰观俯察后，同意合并分支的请求(＠￣ー￣＠)<br><img src="https://img-blog.csdnimg.cn/20200130121516212.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="找到请求_1"><br>从这里可以对比的看到分支和master的不同<br><img src="https://img-blog.csdnimg.cn/2020013012161487.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="找不同"><br>同意合并请求：<br><img src="https://img-blog.csdnimg.cn/20200130121829976.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="同意合并_2"><br><img src="https://img-blog.csdnimg.cn/20200130121938158.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="同意合并_3"><br>这样就分支就合并进去了<br><img src="https://img-blog.csdnimg.cn/20200130122111630.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="嘻嘻嘻"><br>当然如果参与者想要同步最新的代码，只要pull一下就好了<br><img src="https://img-blog.csdnimg.cn/20200130191852824.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="同步"><br>第一次接触github，如有一些错误，还请多多指教<br>(๑•̀ㅂ•́)و</li>
-</ol>
-]]></content>
-      <categories>
-        <category>学习笔记</category>
-      </categories>
-      <tags>
-        <tag>微信小程序</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>安装PaddlePaddle</title>
-    <url>/2023/07/21/%E5%AE%89%E8%A3%85PaddlePaddle/</url>
-    <content><![CDATA[<p>记录一下安装的过程，官方文档如下</p>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">https://www.paddlepaddle.org.cn/documentation/docs/zh/install/conda/windows-conda.html</span><br></pre></td></tr></table></figure>
-<h2 id="创建虚拟环境"><a href="#创建虚拟环境" class="headerlink" title="创建虚拟环境"></a>创建虚拟环境</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda create -n paddle python=3.8</span><br><span class="line">conda activate paddle</span><br></pre></td></tr></table></figure>
-<h2 id="查看自己安装的CUDA版本"><a href="#查看自己安装的CUDA版本" class="headerlink" title="查看自己安装的CUDA版本"></a>查看自己安装的CUDA版本</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">nvcc -V</span><br></pre></td></tr></table></figure>
-<p><img src="https://s1.ax1x.com/2023/07/21/pCHjtOA.png" alt="image-20230721102917138"></p>
-<p>选择适合自己的版本，我安装的是CUDA11.2的</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda install paddlepaddle-gpu==2.5.0 cudatoolkit=11.2 -c https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/Paddle/ -c conda-forge</span><br></pre></td></tr></table></figure>
-<h2 id="验证安装"><a href="#验证安装" class="headerlink" title="验证安装"></a>验证安装</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">python</span><br><span class="line"><span class="keyword">import</span> paddle</span><br><span class="line">paddle.utils.run_check()</span><br></pre></td></tr></table></figure>
-<p><img src="https://s1.ax1x.com/2023/07/21/pCHvsN6.png" alt="image-20230721105441359"></p>
-]]></content>
-      <categories>
-        <category>个人笔记</category>
       </categories>
   </entry>
   <entry>
@@ -1635,6 +1520,52 @@
       </categories>
   </entry>
   <entry>
+    <title>如何使用微信小程序IDE在github上实现团队合作</title>
+    <url>/2020/04/16/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8FIDE%E5%9C%A8github%E4%B8%8A%E5%AE%9E%E7%8E%B0%E5%9B%A2%E9%98%9F%E5%90%88%E4%BD%9C/</url>
+    <content><![CDATA[<p>——-原文——-(2020/4/16)</p>
+<p>@<a href="如何使用微信开发者工具在github上实现团队合作">TOC</a><br>一.发起者要做的一些步骤</p>
+<ol>
+<li>首先用IDE初始化本地的git仓库<br><img src="https://img-blog.csdnimg.cn/20200130111131527.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="a."><br><img src="https://img-blog.csdnimg.cn/20200130111301249.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="b."></li>
+<li>使用github-desktop客户端添加这个新建的本地git库并同时上传到新建的远程仓库中<br><img src="https://img-blog.csdnimg.cn/2020013011214879.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="添加本地仓库"><br><img src="https://img-blog.csdnimg.cn/20200130112202771.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="新建远程仓库"><br><img src="https://img-blog.csdnimg.cn/2020013011231537.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/2020013011291517.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="看一下成果嘿嘿嘿"></li>
+<li>添加参与者<br><img src="https://img-blog.csdnimg.cn/20200130113301950.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="最好添加的时候写参与者的名字"><br><strong>PS:被邀请者的必须要接受邀请才可以</strong></li>
+</ol>
+<p>二.参与者需要做的步骤</p>
+<ol>
+<li>在微信小程序开发者工具里添加远程仓库<br><img src="https://img-blog.csdnimg.cn/20200130114342510.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="添加远程仓库_1"><img src="https://img-blog.csdnimg.cn/20200130114356569.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="添加远程仓库_2"><br><img src="https://img-blog.csdnimg.cn/20200130114448885.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="如何查看仓库的地址"></li>
+<li>绑定自己的github账号<br><img src="https://img-blog.csdnimg.cn/20200130115015761.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="绑定账号"></li>
+</ol>
+<p>三.如何线上合作</p>
+<ol>
+<li>参与者在调试好了一些功能以后，提交到远程仓库的分支<br><img src="https://img-blog.csdnimg.cn/20200130120245999.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="提交分支"></li>
+<li>参与者请求合并分支<br><img src="https://img-blog.csdnimg.cn/20200130120523380.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="请求合并_1"><br><img src="https://img-blog.csdnimg.cn/20200130120921309.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="请求合并_2"><br><img src="https://img-blog.csdnimg.cn/20200130120955937.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="发起合并请求"></li>
+<li>在发起者经过了沉思熟虑，通计熟筹，仰观俯察后，同意合并分支的请求(＠￣ー￣＠)<br><img src="https://img-blog.csdnimg.cn/20200130121516212.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="找到请求_1"><br>从这里可以对比的看到分支和master的不同<br><img src="https://img-blog.csdnimg.cn/2020013012161487.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="找不同"><br>同意合并请求：<br><img src="https://img-blog.csdnimg.cn/20200130121829976.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="同意合并_2"><br><img src="https://img-blog.csdnimg.cn/20200130121938158.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="同意合并_3"><br>这样就分支就合并进去了<br><img src="https://img-blog.csdnimg.cn/20200130122111630.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="嘻嘻嘻"><br>当然如果参与者想要同步最新的代码，只要pull一下就好了<br><img src="https://img-blog.csdnimg.cn/20200130191852824.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="同步"><br>第一次接触github，如有一些错误，还请多多指教<br>(๑•̀ㅂ•́)و</li>
+</ol>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>微信小程序</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>安装PaddlePaddle</title>
+    <url>/2023/07/21/%E5%AE%89%E8%A3%85PaddlePaddle/</url>
+    <content><![CDATA[<p>记录一下安装的过程，官方文档如下</p>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">https://www.paddlepaddle.org.cn/documentation/docs/zh/install/conda/windows-conda.html</span><br></pre></td></tr></table></figure>
+<h2 id="创建虚拟环境"><a href="#创建虚拟环境" class="headerlink" title="创建虚拟环境"></a>创建虚拟环境</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda create -n paddle python=3.8</span><br><span class="line">conda activate paddle</span><br></pre></td></tr></table></figure>
+<h2 id="查看自己安装的CUDA版本"><a href="#查看自己安装的CUDA版本" class="headerlink" title="查看自己安装的CUDA版本"></a>查看自己安装的CUDA版本</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">nvcc -V</span><br></pre></td></tr></table></figure>
+<p><img src="https://s1.ax1x.com/2023/07/21/pCHjtOA.png" alt="image-20230721102917138"></p>
+<p>选择适合自己的版本，我安装的是CUDA11.2的</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda install paddlepaddle-gpu==2.5.0 cudatoolkit=11.2 -c https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/Paddle/ -c conda-forge</span><br></pre></td></tr></table></figure>
+<h2 id="验证安装"><a href="#验证安装" class="headerlink" title="验证安装"></a>验证安装</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">python</span><br><span class="line"><span class="keyword">import</span> paddle</span><br><span class="line">paddle.utils.run_check()</span><br></pre></td></tr></table></figure>
+<p><img src="https://s1.ax1x.com/2023/07/21/pCHvsN6.png" alt="image-20230721105441359"></p>
+]]></content>
+      <categories>
+        <category>个人笔记</category>
+      </categories>
+  </entry>
+  <entry>
     <title>安装Word2Vec</title>
     <url>/2023/07/01/%E5%AE%89%E8%A3%85Word2Vec/</url>
     <content><![CDATA[<p>由于最近需要用到一个预处理的数据集，方法在<a href="https://arxiv.org/abs/1301.3781">这篇论文</a>《Efficient Estimation of Word Representations in Vector Space》里，于是打算尝试能不能复现一下，论文提供了<a href="https://code.google.com/archive/p/word2vec/">代码地址</a>，但是当我打开下载的时候，却发现是404</p>
@@ -1716,7 +1647,7 @@
 <p>若出现以下界面</p>
 <p><img src="https://s1.ax1x.com/2023/07/15/pC5ZlOe.png" alt="image-20230715094750540"></p>
 <p>则可以打开</p>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">http://localhost:1338</span><br></pre></td></tr></table></figure>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">http://localhost:8088</span><br></pre></td></tr></table></figure>
 <p><img src="https://s1.ax1x.com/2023/07/15/pC5ZlOe.png" alt="image-20230715094750540"></p>
 <p>成功部署chatGPT！</p>
 <p><img src="https://s1.ax1x.com/2023/07/15/pC5ZI0J.png" alt="屏幕截图 2023-07-15 095407"></p>
@@ -1901,5 +1832,74 @@
       <tags>
         <tag>其他</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>word2vec工具实战</title>
+    <url>/2023/07/04/word2vec%E5%B7%A5%E5%85%B7%E5%AE%9E%E6%88%98/</url>
+    <content><![CDATA[<p>最开始需要新建一个conda环境</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda create -n word2vec python=3.8</span><br><span class="line">conda activate word2vec</span><br></pre></td></tr></table></figure>
+<p>然后安装一下所需要的库</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install numpy</span><br><span class="line">pip install scipy</span><br><span class="line">pip install gensim</span><br><span class="line">pip install jieba</span><br></pre></td></tr></table></figure>
+<p>首先下载一下数据集<a href="https://dumps.wikimedia.org/zhwiki/20230701/zhwiki-20230701-pages-articles.xml.bz2">zhwiki-20230701-pages-articles.xml.bz2</a>，为了方便后续操作，这里需要把他转成<code>txt</code>格式的</p>
+<p>以下是转化的文件<code>transform_to_txt.py</code></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="comment"># 修改后的代码如下：</span></span><br><span class="line"><span class="keyword">import</span> logging</span><br><span class="line"><span class="keyword">import</span> os.path</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> gensim.corpora <span class="keyword">import</span> WikiCorpus</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line"></span><br><span class="line">    program = os.path.basename(sys.argv[<span class="number">0</span>])</span><br><span class="line">    logger = logging.getLogger(program)</span><br><span class="line">    logging.basicConfig(<span class="built_in">format</span>=<span class="string">&#x27;%(asctime)s: %(levelname)s: %(message)s&#x27;</span>)</span><br><span class="line">    logging.root.setLevel(level=logging.INFO)</span><br><span class="line">    logger.info(<span class="string">&quot;running %s&quot;</span> % <span class="string">&#x27; &#x27;</span>.join(sys.argv))</span><br><span class="line">    <span class="comment"># check and process input arguments</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(sys.argv) &lt; <span class="number">3</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="built_in">globals</span>()[<span class="string">&#x27;__doc__&#x27;</span>] % <span class="built_in">locals</span>())</span><br><span class="line">        sys.exit(<span class="number">1</span>)</span><br><span class="line">    inp, outp = sys.argv[<span class="number">1</span>:<span class="number">3</span>]</span><br><span class="line">    space = <span class="string">&quot;&quot;</span></span><br><span class="line">    i = <span class="number">0</span></span><br><span class="line">    output = <span class="built_in">open</span>(outp, <span class="string">&#x27;w&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">    <span class="comment"># wiki = WikiCorpus(inp, lemmatize=False, dictionary=&#123;&#125;)</span></span><br><span class="line">    wiki = WikiCorpus(inp, dictionary=&#123;&#125;)</span><br><span class="line">    <span class="keyword">for</span> text <span class="keyword">in</span> wiki.get_texts():</span><br><span class="line">        s = space.join(text)</span><br><span class="line">        <span class="comment"># s = s.decode(&#x27;utf8&#x27;) + &quot;\n&quot;</span></span><br><span class="line">        s = s.encode(<span class="string">&#x27;utf8&#x27;</span>).decode(<span class="string">&#x27;utf8&#x27;</span>) + <span class="string">&quot;\n&quot;</span></span><br><span class="line">        output.write(s)</span><br><span class="line">        i = i + <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> (i % <span class="number">10000</span> == <span class="number">0</span>):</span><br><span class="line">            logger.info(<span class="string">&quot;Saved &quot;</span> + <span class="built_in">str</span>(i) + <span class="string">&quot; articles&quot;</span>)</span><br><span class="line">    output.close()</span><br><span class="line">    logger.info(<span class="string">&quot;Finished Saved &quot;</span> + <span class="built_in">str</span>(i) + <span class="string">&quot; articles&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>然后将刚刚下载的数据集和此<code>Python</code>文件放在同一个目录下，并且用命令行跳转到这个目录，然后执行</p>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">python transform<span class="built_in">_</span>to<span class="built_in">_</span>txt.py zhwiki-20230701-pages-articles.xml.bz2 wiki.zh.text</span><br></pre></td></tr></table></figure>
+<p>其中，第一个参数是<code>Python</code>的文件名，第二个是要处理的数据文件名，第三个是要输出的文件名</p>
+<p>转换完之后就生成了一个txt文件</p>
+<p><img src="https://s1.ax1x.com/2023/07/04/pCs7rX8.png" alt="image-20230704195428973"></p>
+<p>直接浏览，可以看出这里面全是繁体字，所以下面需要把繁体转换成简体</p>
+<p><img src="https://s1.ax1x.com/2023/07/04/pCs760g.png" alt="image-20230704195605355"></p>
+<p>首先需要下载这个<a href="https://github.com/BYVoid/OpenCC/wiki/Download">转换工具</a>，<strong>记住要下载预编译的</strong>。</p>
+<p>然后解压后放在一个能记住的位置，例如我是</p>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">G:<span class="keyword">\Lab</span><span class="keyword">\DeepLearning</span><span class="keyword">\OpenCC</span><span class="keyword">\share</span><span class="keyword">\opencc</span></span><br></pre></td></tr></table></figure>
+<p>然后把文件夹中的<code>bin</code>目录配置到系统环境<code>path</code>里</p>
+<p><img src="https://s1.ax1x.com/2023/07/04/pCsblqO.png" alt="屏幕截图 2023-07-04 202744"></p>
+<p>最后验证一下是否配置成功</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">opencc --<span class="built_in">help</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://s1.ax1x.com/2023/07/04/pCsHFNd.png" alt="屏幕截图 2023-07-04 201226"></p>
+<p>然后就可以转换啦，用<code>cmd</code>跳转到<code>wiki.zh.text</code>文件所在的目录，在命令行输入</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">opencc -i wiki.zh.text -o test_zh.txt -c G:\Lab\DeepLearning\OpenCC\share\opencc\t2s.json</span><br></pre></td></tr></table></figure>
+<p><code>wiki.zh.text</code>是待转换的繁体文本，<code>test_zh.txt</code>是输出的简体文本，<code>t2s.json</code>表示繁体转简体，其中这个需要换成自己的地址（<strong>地址不要有空格</strong>）</p>
+<p><img src="https://s1.ax1x.com/2023/07/04/pCsbmGR.png" alt="image-20230704203004637"></p>
+<p>等一会就好了</p>
+<p><img src="https://s1.ax1x.com/2023/07/04/pCsbtJA.png" alt="image-20230704203155840"></p>
+<p>然后就全部成了简体了，使用word2vec工具需要做的最后一步是分词</p>
+<p>分词使用<code>jieba</code>这个库来解决，以下是分词的文件<code>participle.py</code></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> codecs</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> jieba</span><br><span class="line"><span class="keyword">import</span> jieba.analyse</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">cut_words</span>(<span class="params">sentence</span>):</span><br><span class="line">    <span class="comment"># print sentence</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot; &quot;</span>.join(jieba.cut(sentence)).encode(<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">f = codecs.<span class="built_in">open</span>(<span class="string">&#x27;test_zh.txt&#x27;</span>, <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&quot;utf8&quot;</span>)</span><br><span class="line">target = codecs.<span class="built_in">open</span>(<span class="string">&quot;zh.jian.wiki.seg_1.5G.txt&quot;</span>, <span class="string">&#x27;w&#x27;</span>, encoding=<span class="string">&quot;utf8&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;open files&#x27;</span>)</span><br><span class="line">line_num = <span class="number">1</span></span><br><span class="line">line = f.readline()</span><br><span class="line"><span class="keyword">while</span> line:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;---- processing &#x27;</span>, line_num, <span class="string">&#x27; article----------------&#x27;</span>)</span><br><span class="line">    line_seg = <span class="string">&quot; &quot;</span>.join(jieba.cut(line))</span><br><span class="line">    target.writelines(line_seg)</span><br><span class="line">    line_num = line_num + <span class="number">1</span></span><br><span class="line">    line = f.readline()</span><br><span class="line">f.close()</span><br><span class="line">target.close()</span><br><span class="line">exit()</span><br><span class="line"><span class="keyword">while</span> line:</span><br><span class="line">    curr = []</span><br><span class="line">    <span class="keyword">for</span> oneline <span class="keyword">in</span> line:</span><br><span class="line">        <span class="comment"># print(oneline)</span></span><br><span class="line">        curr.append(oneline)</span><br><span class="line">    after_cut = <span class="built_in">map</span>(cut_words, curr)</span><br><span class="line">    target.writelines(after_cut)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;saved&#x27;</span>, line_num, <span class="string">&#x27;articles&#x27;</span>)</span><br><span class="line">    exit()</span><br><span class="line">    line = f.readline1()</span><br><span class="line">f.close()</span><br><span class="line">target.close()</span><br></pre></td></tr></table></figure>
+<p>其中，这一句是配置需要分词的文件<code>test_zh.txt</code></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">f = codecs.<span class="built_in">open</span>(<span class="string">&#x27;test_zh.txt&#x27;</span>, <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&quot;utf8&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>这一句是配置需要输出的文件<code>zh.jian.wiki.seg_1.5G.txt</code></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">target = codecs.<span class="built_in">open</span>(<span class="string">&quot;zh.jian.wiki.seg_1.5G.txt&quot;</span>, <span class="string">&#x27;w&#x27;</span>, encoding=<span class="string">&quot;utf8&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>将<code>participle.py</code>文件和上面输出的简体文本<code>test_zh.txt</code>放在同一个目录，用<code>cmd</code>（跳转到对应目录后输入<code>python Testjieba.py</code>）或者<code>Pycharm</code>直接运行<code>participle.py</code>文件</p>
+<p><strong>PS：无论是<code>cmd</code>还是<code>Pycharm</code>，记得切换到<code>word2vec</code>环境</strong></p>
+<p>经过将近一个多小时的时间，终于跑完了</p>
+<p><img src="https://s1.ax1x.com/2023/07/04/pCsb6ij.png" alt="屏幕截图 2023-07-04 192329"></p>
+<p>接下来就是正式使用word2vec的时候了，以下是使用word2vec的文件<code>word2vec_model.py</code></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> logging</span><br><span class="line"><span class="keyword">import</span> multiprocessing</span><br><span class="line"><span class="keyword">import</span> os.path</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> gensim.models <span class="keyword">import</span> Word2Vec</span><br><span class="line"><span class="keyword">from</span> gensim.models.word2vec <span class="keyword">import</span> LineSentence</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line"></span><br><span class="line">    program = os.path.basename(sys.argv[<span class="number">0</span>])</span><br><span class="line">    logger = logging.getLogger(program)</span><br><span class="line">    logging.basicConfig(<span class="built_in">format</span>=<span class="string">&#x27;%(asctime)s: %(levelname)s: %(message)s&#x27;</span>)</span><br><span class="line">    logging.root.setLevel(level=logging.INFO)</span><br><span class="line">    logger.info(<span class="string">&quot;running %s&quot;</span> % <span class="string">&#x27; &#x27;</span>.join(sys.argv))</span><br><span class="line">    <span class="comment"># check and process input arguments</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(sys.argv) &lt; <span class="number">4</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="built_in">globals</span>()[<span class="string">&#x27;__doc__&#x27;</span>] % <span class="built_in">locals</span>())</span><br><span class="line">        sys.exit(<span class="number">1</span>)</span><br><span class="line">    inp, outp1, outp2 = sys.argv[<span class="number">1</span>:<span class="number">4</span>]</span><br><span class="line">    model = Word2Vec(LineSentence(inp), size=<span class="number">400</span>, window=<span class="number">5</span>, min_count=<span class="number">5</span>, workers=multiprocessing.cpu_count())</span><br><span class="line">    model.save(outp1)</span><br><span class="line">    model.wv.save_word2vec_format(outp2, binary=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+<p>将上文分好词的文件<code>zh.jian.wiki.seg_1.5G.txt</code>与<code>word2vec_model.py</code>文件也是放到同一个目录下，然后在<code>cmd</code>中执行</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">python word2vec_model.py zh.jian.wiki.seg_1.5G.txt wiki.zh.text.model wiki.zh.text.vector</span><br></pre></td></tr></table></figure>
+<p>其中，<code>wiki.zh.text.model</code>是生成的模型（同样记得切换环境）</p>
+<p><img src="https://s1.ax1x.com/2023/07/04/pCsqmTg.png" alt="image-20230704205047579"></p>
+<p>可能会报这个错，原因可能是<code>gensim</code>的版本的差异。</p>
+<p>这样把下面这句的<code>size</code>改成<code>vector_size</code>即可</p>
+<p>源代码：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">model = Word2Vec(LineSentence(inp), size=<span class="number">400</span>, window=<span class="number">5</span>, min_count=<span class="number">5</span>, workers=multiprocessing.cpu_count())</span><br></pre></td></tr></table></figure>
+<p>新代码：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">model = Word2Vec(LineSentence(inp), vector_size=<span class="number">400</span>, window=<span class="number">5</span>, min_count=<span class="number">5</span>, workers=multiprocessing.cpu_count())</span><br></pre></td></tr></table></figure>
+<p>然后就可以漫长的等待了！</p>
+<p><img src="https://s1.ax1x.com/2023/07/04/pCsqB11.png" alt="image-20230704205435161"></p>
+<p> 经过一段时间后，模型保存成功了！</p>
+<p><img src="https://s1.ax1x.com/2023/07/04/pCsO3ZT.png" alt="屏幕截图 2023-07-04 212910"></p>
+<p>最后测试一下模型</p>
+<p>测试文件<code>testModel.py</code>如下</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> gensim.models <span class="keyword">import</span> Word2Vec</span><br><span class="line"></span><br><span class="line">en_wiki_word2vec_model = Word2Vec.load(<span class="string">&#x27;wiki.zh.text.model&#x27;</span>)</span><br><span class="line"></span><br><span class="line">testwords = [<span class="string">&#x27;苹果&#x27;</span>, <span class="string">&#x27;数学&#x27;</span>, <span class="string">&#x27;学术&#x27;</span>, <span class="string">&#x27;白痴&#x27;</span>, <span class="string">&#x27;篮球&#x27;</span>]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">5</span>):</span><br><span class="line">    res = en_wiki_word2vec_model.wv.most_similar(testwords[i])</span><br><span class="line">    <span class="built_in">print</span>(testwords[i])</span><br><span class="line">    <span class="built_in">print</span>(res)</span><br></pre></td></tr></table></figure>
+<p>继续在同一个目录执行<code>testModel.py</code>文件，得到如下结果</p>
+<p><img src="https://s1.ax1x.com/2023/07/05/pCyEdl6.png" alt="image-20230705101212390"></p>
+<p>最后附上<a href="https://github.com/Ruvikm/Gensim_word2vec">项目完整地址</a></p>
+]]></content>
+      <categories>
+        <category>个人笔记</category>
+      </categories>
   </entry>
 </search>
