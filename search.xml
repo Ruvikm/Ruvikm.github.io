@@ -56,28 +56,6 @@
       </categories>
   </entry>
   <entry>
-    <title>Java实现鲜花销售系统</title>
-    <url>/2022/01/10/Java%E5%AE%9E%E7%8E%B0%E9%B2%9C%E8%8A%B1%E9%94%80%E5%94%AE%E7%B3%BB%E7%BB%9F/</url>
-    <content><![CDATA[<h2 id="项目环境"><a href="#项目环境" class="headerlink" title="项目环境"></a>项目环境</h2><ol>
-<li>IDE：IDEA</li>
-<li>数据库：Mysql 8.0.22</li>
-<li>JDK:1.8</li>
-<li><p>界面设计插件：JFormDesigner</p>
-<p><strong>登录界面</strong><br><img src="https://img-blog.csdnimg.cn/20210107222234507.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="登录"><br><strong>顾客界面</strong><br><img src="https://img-blog.csdnimg.cn/20210107222308547.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20210107222308532.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20210107222308539.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20210107222308538.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20210107222308489.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-</li>
-</ol>
-<p><strong>后代管理界面</strong><br><img src="https://img-blog.csdnimg.cn/20210107222348530.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20210107222348518.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20210107222348524.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20210107222348521.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<p><strong>代码结构</strong><br><img src="https://img-blog.csdnimg.cn/20210107222558431.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
-<p><strong><a href="https://github.com/Ruvikm/Flower">源码链接</a></strong></p>
-]]></content>
-      <categories>
-        <category>个人项目</category>
-      </categories>
-      <tags>
-        <tag>java</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>LeetCode 131. Palindrome Partitioning</title>
     <url>/2022/01/10/LeetCode%20131.%20Palindrome%20Partitioning/</url>
     <content><![CDATA[<p>Given a string s, partition s such that every substring of the partition is a palindrome.</p>
@@ -102,6 +80,28 @@
       </categories>
       <tags>
         <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java实现鲜花销售系统</title>
+    <url>/2022/01/10/Java%E5%AE%9E%E7%8E%B0%E9%B2%9C%E8%8A%B1%E9%94%80%E5%94%AE%E7%B3%BB%E7%BB%9F/</url>
+    <content><![CDATA[<h2 id="项目环境"><a href="#项目环境" class="headerlink" title="项目环境"></a>项目环境</h2><ol>
+<li>IDE：IDEA</li>
+<li>数据库：Mysql 8.0.22</li>
+<li>JDK:1.8</li>
+<li><p>界面设计插件：JFormDesigner</p>
+<p><strong>登录界面</strong><br><img src="https://img-blog.csdnimg.cn/20210107222234507.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="登录"><br><strong>顾客界面</strong><br><img src="https://img-blog.csdnimg.cn/20210107222308547.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20210107222308532.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20210107222308539.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20210107222308538.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20210107222308489.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+</li>
+</ol>
+<p><strong>后代管理界面</strong><br><img src="https://img-blog.csdnimg.cn/20210107222348530.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20210107222348518.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20210107222348524.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20210107222348521.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><strong>代码结构</strong><br><img src="https://img-blog.csdnimg.cn/20210107222558431.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<p><strong><a href="https://github.com/Ruvikm/Flower">源码链接</a></strong></p>
+]]></content>
+      <categories>
+        <category>个人项目</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
       </tags>
   </entry>
   <entry>
@@ -566,10 +566,10 @@
 <p>激活环境</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">conda activate Pytorch</span><br></pre></td></tr></table></figure>
 <h3 id="下载Pytorch"><a href="#下载Pytorch" class="headerlink" title="下载Pytorch"></a>下载Pytorch</h3><p>首先进入<a href="https://pytorch.org/get-started/previous-versions/#installing-previous-versions-of-pytorch">Pytorch官网</a>，找到适合自己的版本进行下载，我选择的如下</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-06%20131856.png" alt="屏幕截图 2023-06-06 131856"></p>
+<p><img src="https://s1.ax1x.com/2023/07/22/pCbXIns.png" alt="image-20230722100054418"></p>
 <p>将这个代码复制到<strong>Anaconda Prompt</strong>中即可安装（紧接着上述代码，确保自己在刚刚新建的环境中运行）</p>
 <p>主要这里一定要去掉代码中的<strong>-c pytorch</strong>，安装的时候才会默认从镜像源下载相应的包。处理完我要运行的代码如下</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda install pytorch==1.7.0 torchvision==0.8.0 torchaudio==0.7.0 cudatoolkit=11.0</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda install pytorch==1.7.1 torchvision==0.8.2 torchaudio==0.7.2 cudatoolkit=11.0</span><br></pre></td></tr></table></figure>
 <p>如果下载过慢或者下载不了，可以找到如下文件。（用户是你自己的用户名）</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">C:\Users\用户\.condarc</span><br></pre></td></tr></table></figure>
 <p>用编辑器打开，把最后一行<strong>defaults</strong>注销了</p>
@@ -622,6 +622,75 @@
       </categories>
   </entry>
   <entry>
+    <title>word2vec工具实战</title>
+    <url>/2023/07/04/word2vec%E5%B7%A5%E5%85%B7%E5%AE%9E%E6%88%98/</url>
+    <content><![CDATA[<p>最开始需要新建一个conda环境</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda create -n word2vec python=3.8</span><br><span class="line">conda activate word2vec</span><br></pre></td></tr></table></figure>
+<p>然后安装一下所需要的库</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install numpy</span><br><span class="line">pip install scipy</span><br><span class="line">pip install gensim</span><br><span class="line">pip install jieba</span><br></pre></td></tr></table></figure>
+<p>首先下载一下数据集<a href="https://dumps.wikimedia.org/zhwiki/20230701/zhwiki-20230701-pages-articles.xml.bz2">zhwiki-20230701-pages-articles.xml.bz2</a>，为了方便后续操作，这里需要把他转成<code>txt</code>格式的</p>
+<p>以下是转化的文件<code>transform_to_txt.py</code></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="comment"># 修改后的代码如下：</span></span><br><span class="line"><span class="keyword">import</span> logging</span><br><span class="line"><span class="keyword">import</span> os.path</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> gensim.corpora <span class="keyword">import</span> WikiCorpus</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line"></span><br><span class="line">    program = os.path.basename(sys.argv[<span class="number">0</span>])</span><br><span class="line">    logger = logging.getLogger(program)</span><br><span class="line">    logging.basicConfig(<span class="built_in">format</span>=<span class="string">&#x27;%(asctime)s: %(levelname)s: %(message)s&#x27;</span>)</span><br><span class="line">    logging.root.setLevel(level=logging.INFO)</span><br><span class="line">    logger.info(<span class="string">&quot;running %s&quot;</span> % <span class="string">&#x27; &#x27;</span>.join(sys.argv))</span><br><span class="line">    <span class="comment"># check and process input arguments</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(sys.argv) &lt; <span class="number">3</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="built_in">globals</span>()[<span class="string">&#x27;__doc__&#x27;</span>] % <span class="built_in">locals</span>())</span><br><span class="line">        sys.exit(<span class="number">1</span>)</span><br><span class="line">    inp, outp = sys.argv[<span class="number">1</span>:<span class="number">3</span>]</span><br><span class="line">    space = <span class="string">&quot;&quot;</span></span><br><span class="line">    i = <span class="number">0</span></span><br><span class="line">    output = <span class="built_in">open</span>(outp, <span class="string">&#x27;w&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">    <span class="comment"># wiki = WikiCorpus(inp, lemmatize=False, dictionary=&#123;&#125;)</span></span><br><span class="line">    wiki = WikiCorpus(inp, dictionary=&#123;&#125;)</span><br><span class="line">    <span class="keyword">for</span> text <span class="keyword">in</span> wiki.get_texts():</span><br><span class="line">        s = space.join(text)</span><br><span class="line">        <span class="comment"># s = s.decode(&#x27;utf8&#x27;) + &quot;\n&quot;</span></span><br><span class="line">        s = s.encode(<span class="string">&#x27;utf8&#x27;</span>).decode(<span class="string">&#x27;utf8&#x27;</span>) + <span class="string">&quot;\n&quot;</span></span><br><span class="line">        output.write(s)</span><br><span class="line">        i = i + <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> (i % <span class="number">10000</span> == <span class="number">0</span>):</span><br><span class="line">            logger.info(<span class="string">&quot;Saved &quot;</span> + <span class="built_in">str</span>(i) + <span class="string">&quot; articles&quot;</span>)</span><br><span class="line">    output.close()</span><br><span class="line">    logger.info(<span class="string">&quot;Finished Saved &quot;</span> + <span class="built_in">str</span>(i) + <span class="string">&quot; articles&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>然后将刚刚下载的数据集和此<code>Python</code>文件放在同一个目录下，并且用命令行跳转到这个目录，然后执行</p>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">python transform<span class="built_in">_</span>to<span class="built_in">_</span>txt.py zhwiki-20230701-pages-articles.xml.bz2 wiki.zh.text</span><br></pre></td></tr></table></figure>
+<p>其中，第一个参数是<code>Python</code>的文件名，第二个是要处理的数据文件名，第三个是要输出的文件名</p>
+<p>转换完之后就生成了一个txt文件</p>
+<p><img src="https://s1.ax1x.com/2023/07/04/pCs7rX8.png" alt="image-20230704195428973"></p>
+<p>直接浏览，可以看出这里面全是繁体字，所以下面需要把繁体转换成简体</p>
+<p><img src="https://s1.ax1x.com/2023/07/04/pCs760g.png" alt="image-20230704195605355"></p>
+<p>首先需要下载这个<a href="https://github.com/BYVoid/OpenCC/wiki/Download">转换工具</a>，<strong>记住要下载预编译的</strong>。</p>
+<p>然后解压后放在一个能记住的位置，例如我是</p>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">G:<span class="keyword">\Lab</span><span class="keyword">\DeepLearning</span><span class="keyword">\OpenCC</span><span class="keyword">\share</span><span class="keyword">\opencc</span></span><br></pre></td></tr></table></figure>
+<p>然后把文件夹中的<code>bin</code>目录配置到系统环境<code>path</code>里</p>
+<p><img src="https://s1.ax1x.com/2023/07/04/pCsblqO.png" alt="屏幕截图 2023-07-04 202744"></p>
+<p>最后验证一下是否配置成功</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">opencc --<span class="built_in">help</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://s1.ax1x.com/2023/07/04/pCsHFNd.png" alt="屏幕截图 2023-07-04 201226"></p>
+<p>然后就可以转换啦，用<code>cmd</code>跳转到<code>wiki.zh.text</code>文件所在的目录，在命令行输入</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">opencc -i wiki.zh.text -o test_zh.txt -c G:\Lab\DeepLearning\OpenCC\share\opencc\t2s.json</span><br></pre></td></tr></table></figure>
+<p><code>wiki.zh.text</code>是待转换的繁体文本，<code>test_zh.txt</code>是输出的简体文本，<code>t2s.json</code>表示繁体转简体，其中这个需要换成自己的地址（<strong>地址不要有空格</strong>）</p>
+<p><img src="https://s1.ax1x.com/2023/07/04/pCsbmGR.png" alt="image-20230704203004637"></p>
+<p>等一会就好了</p>
+<p><img src="https://s1.ax1x.com/2023/07/04/pCsbtJA.png" alt="image-20230704203155840"></p>
+<p>然后就全部成了简体了，使用word2vec工具需要做的最后一步是分词</p>
+<p>分词使用<code>jieba</code>这个库来解决，以下是分词的文件<code>participle.py</code></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> codecs</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> jieba</span><br><span class="line"><span class="keyword">import</span> jieba.analyse</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">cut_words</span>(<span class="params">sentence</span>):</span><br><span class="line">    <span class="comment"># print sentence</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot; &quot;</span>.join(jieba.cut(sentence)).encode(<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">f = codecs.<span class="built_in">open</span>(<span class="string">&#x27;test_zh.txt&#x27;</span>, <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&quot;utf8&quot;</span>)</span><br><span class="line">target = codecs.<span class="built_in">open</span>(<span class="string">&quot;zh.jian.wiki.seg_1.5G.txt&quot;</span>, <span class="string">&#x27;w&#x27;</span>, encoding=<span class="string">&quot;utf8&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;open files&#x27;</span>)</span><br><span class="line">line_num = <span class="number">1</span></span><br><span class="line">line = f.readline()</span><br><span class="line"><span class="keyword">while</span> line:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;---- processing &#x27;</span>, line_num, <span class="string">&#x27; article----------------&#x27;</span>)</span><br><span class="line">    line_seg = <span class="string">&quot; &quot;</span>.join(jieba.cut(line))</span><br><span class="line">    target.writelines(line_seg)</span><br><span class="line">    line_num = line_num + <span class="number">1</span></span><br><span class="line">    line = f.readline()</span><br><span class="line">f.close()</span><br><span class="line">target.close()</span><br><span class="line">exit()</span><br><span class="line"><span class="keyword">while</span> line:</span><br><span class="line">    curr = []</span><br><span class="line">    <span class="keyword">for</span> oneline <span class="keyword">in</span> line:</span><br><span class="line">        <span class="comment"># print(oneline)</span></span><br><span class="line">        curr.append(oneline)</span><br><span class="line">    after_cut = <span class="built_in">map</span>(cut_words, curr)</span><br><span class="line">    target.writelines(after_cut)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;saved&#x27;</span>, line_num, <span class="string">&#x27;articles&#x27;</span>)</span><br><span class="line">    exit()</span><br><span class="line">    line = f.readline1()</span><br><span class="line">f.close()</span><br><span class="line">target.close()</span><br></pre></td></tr></table></figure>
+<p>其中，这一句是配置需要分词的文件<code>test_zh.txt</code></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">f = codecs.<span class="built_in">open</span>(<span class="string">&#x27;test_zh.txt&#x27;</span>, <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&quot;utf8&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>这一句是配置需要输出的文件<code>zh.jian.wiki.seg_1.5G.txt</code></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">target = codecs.<span class="built_in">open</span>(<span class="string">&quot;zh.jian.wiki.seg_1.5G.txt&quot;</span>, <span class="string">&#x27;w&#x27;</span>, encoding=<span class="string">&quot;utf8&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>将<code>participle.py</code>文件和上面输出的简体文本<code>test_zh.txt</code>放在同一个目录，用<code>cmd</code>（跳转到对应目录后输入<code>python Testjieba.py</code>）或者<code>Pycharm</code>直接运行<code>participle.py</code>文件</p>
+<p><strong>PS：无论是<code>cmd</code>还是<code>Pycharm</code>，记得切换到<code>word2vec</code>环境</strong></p>
+<p>经过将近一个多小时的时间，终于跑完了</p>
+<p><img src="https://s1.ax1x.com/2023/07/04/pCsb6ij.png" alt="屏幕截图 2023-07-04 192329"></p>
+<p>接下来就是正式使用word2vec的时候了，以下是使用word2vec的文件<code>word2vec_model.py</code></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> logging</span><br><span class="line"><span class="keyword">import</span> multiprocessing</span><br><span class="line"><span class="keyword">import</span> os.path</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> gensim.models <span class="keyword">import</span> Word2Vec</span><br><span class="line"><span class="keyword">from</span> gensim.models.word2vec <span class="keyword">import</span> LineSentence</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line"></span><br><span class="line">    program = os.path.basename(sys.argv[<span class="number">0</span>])</span><br><span class="line">    logger = logging.getLogger(program)</span><br><span class="line">    logging.basicConfig(<span class="built_in">format</span>=<span class="string">&#x27;%(asctime)s: %(levelname)s: %(message)s&#x27;</span>)</span><br><span class="line">    logging.root.setLevel(level=logging.INFO)</span><br><span class="line">    logger.info(<span class="string">&quot;running %s&quot;</span> % <span class="string">&#x27; &#x27;</span>.join(sys.argv))</span><br><span class="line">    <span class="comment"># check and process input arguments</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(sys.argv) &lt; <span class="number">4</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="built_in">globals</span>()[<span class="string">&#x27;__doc__&#x27;</span>] % <span class="built_in">locals</span>())</span><br><span class="line">        sys.exit(<span class="number">1</span>)</span><br><span class="line">    inp, outp1, outp2 = sys.argv[<span class="number">1</span>:<span class="number">4</span>]</span><br><span class="line">    model = Word2Vec(LineSentence(inp), size=<span class="number">400</span>, window=<span class="number">5</span>, min_count=<span class="number">5</span>, workers=multiprocessing.cpu_count())</span><br><span class="line">    model.save(outp1)</span><br><span class="line">    model.wv.save_word2vec_format(outp2, binary=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+<p>将上文分好词的文件<code>zh.jian.wiki.seg_1.5G.txt</code>与<code>word2vec_model.py</code>文件也是放到同一个目录下，然后在<code>cmd</code>中执行</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">python word2vec_model.py zh.jian.wiki.seg_1.5G.txt wiki.zh.text.model wiki.zh.text.vector</span><br></pre></td></tr></table></figure>
+<p>其中，<code>wiki.zh.text.model</code>是生成的模型（同样记得切换环境）</p>
+<p><img src="https://s1.ax1x.com/2023/07/04/pCsqmTg.png" alt="image-20230704205047579"></p>
+<p>可能会报这个错，原因可能是<code>gensim</code>的版本的差异。</p>
+<p>这样把下面这句的<code>size</code>改成<code>vector_size</code>即可</p>
+<p>源代码：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">model = Word2Vec(LineSentence(inp), size=<span class="number">400</span>, window=<span class="number">5</span>, min_count=<span class="number">5</span>, workers=multiprocessing.cpu_count())</span><br></pre></td></tr></table></figure>
+<p>新代码：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">model = Word2Vec(LineSentence(inp), vector_size=<span class="number">400</span>, window=<span class="number">5</span>, min_count=<span class="number">5</span>, workers=multiprocessing.cpu_count())</span><br></pre></td></tr></table></figure>
+<p>然后就可以漫长的等待了！</p>
+<p><img src="https://s1.ax1x.com/2023/07/04/pCsqB11.png" alt="image-20230704205435161"></p>
+<p> 经过一段时间后，模型保存成功了！</p>
+<p><img src="https://s1.ax1x.com/2023/07/04/pCsO3ZT.png" alt="屏幕截图 2023-07-04 212910"></p>
+<p>最后测试一下模型</p>
+<p>测试文件<code>testModel.py</code>如下</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> gensim.models <span class="keyword">import</span> Word2Vec</span><br><span class="line"></span><br><span class="line">en_wiki_word2vec_model = Word2Vec.load(<span class="string">&#x27;wiki.zh.text.model&#x27;</span>)</span><br><span class="line"></span><br><span class="line">testwords = [<span class="string">&#x27;苹果&#x27;</span>, <span class="string">&#x27;数学&#x27;</span>, <span class="string">&#x27;学术&#x27;</span>, <span class="string">&#x27;白痴&#x27;</span>, <span class="string">&#x27;篮球&#x27;</span>]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">5</span>):</span><br><span class="line">    res = en_wiki_word2vec_model.wv.most_similar(testwords[i])</span><br><span class="line">    <span class="built_in">print</span>(testwords[i])</span><br><span class="line">    <span class="built_in">print</span>(res)</span><br></pre></td></tr></table></figure>
+<p>继续在同一个目录执行<code>testModel.py</code>文件，得到如下结果</p>
+<p><img src="https://s1.ax1x.com/2023/07/05/pCyEdl6.png" alt="image-20230705101212390"></p>
+<p>最后附上<a href="https://github.com/Ruvikm/Gensim_word2vec">项目完整地址</a></p>
+]]></content>
+      <categories>
+        <category>个人笔记</category>
+      </categories>
+  </entry>
+  <entry>
     <title>使用Xpath和Requests实现爬虫并存储在Excel表里---爬取链家上杭州近期二手房价</title>
     <url>/2020/10/18/%E4%BD%BF%E7%94%A8Xpath%E5%92%8CRequests%E5%AE%9E%E7%8E%B0%E7%88%AC%E8%99%AB%E5%B9%B6%E5%AD%98%E5%82%A8%E5%9C%A8Excel%E8%A1%A8%E9%87%8C-%E7%88%AC%E5%8F%96%E9%93%BE%E5%AE%B6%E4%B8%8A%E6%9D%AD%E5%B7%9E%E8%BF%91%E6%9C%9F%E4%BA%8C%E6%89%8B%E6%88%BF%E4%BB%B7/</url>
     <content><![CDATA[<p>爬的是杭州近期的的新房价</p>
@@ -633,6 +702,32 @@
       <tags>
         <tag>Python</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>使用蓝牙外设却不小心把台式机电脑蓝牙关了</title>
+    <url>/2023/08/12/%E4%BD%BF%E7%94%A8%E8%93%9D%E7%89%99%E5%A4%96%E8%AE%BE%E5%8D%B4%E4%B8%8D%E5%B0%8F%E5%BF%83%E6%8A%8A%E5%8F%B0%E5%BC%8F%E6%9C%BA%E7%94%B5%E8%84%91%E8%93%9D%E7%89%99%E5%85%B3%E4%BA%86/</url>
+    <content><![CDATA[<h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>今天犯了一个贼SB的错误，起因是蓝牙键盘突然就不能输入了（虽然是连接状态，但是按什么键都没有反应）</p>
+<p>原来我的解决方法就是重启一下电脑，但是那会电脑开了贼多的软件。我就想重启也太麻烦了，既然重启的本质也是重启蓝牙，那我要不直接就把蓝牙重启算了，当时想到这里啊，我心中一阵狂喜，觉得我真TMD是个天才</p>
+<p>于是我兴冲冲的找到系统设置—蓝牙，把蓝牙关了，然后当我准备开启蓝牙的时候，我傻眼了，艹，我外设都是蓝牙连接的啊，这TM开不开了</p>
+<h2 id="解决过程"><a href="#解决过程" class="headerlink" title="解决过程"></a>解决过程</h2><h3 id="尝试用有线设备"><a href="#尝试用有线设备" class="headerlink" title="尝试用有线设备"></a>尝试用有线设备</h3><p>虽然心中有一丝紧张，但是我感觉这不就是个小事嘛，找个有线的外设不就可以了。于是翻箱倒柜，刨出来家里的古董有线键盘，插入了电脑前面的USB口。</p>
+<p>但是，重量级来了，无论按什么键，都没有反应，让我一度以为是不是键盘寄了。然后我把键盘插到了笔记本上，发现还是可以用的，灯也是亮的（但是刚刚插在台式机上灯就没亮）</p>
+<p>前面不行，后面总可以吧，肯定么得问题（Flag立的飞起）我买的主板可是有7个USB插口呢！！！这么想着我钻到桌子下面，吸着尘土，一个一个试着USB口，结果是全都不能用。当时心态就发生了一丝变化，我看着屏幕，屏幕看着我，但是感觉我们之间隔了一个不可逾越的鸿沟，那个鸿沟就是USB口。</p>
+<h3 id="尝试远程软件"><a href="#尝试远程软件" class="headerlink" title="尝试远程软件"></a>尝试远程软件</h3><p>我逐渐意识到了问题的严重性，但我灵机一动，心想不还有远程软件么，用手机作为输入不就解决了。</p>
+<p>我再次满怀希望的打开手机远程操作APP，在“我的设备”里寻找台式机，但是，咚咚咚！！！设备显示是离线状态，这我才想起来之前为了优化开机，把这个软件的开机自启给关了，我又傻眼了。</p>
+<h3 id="分析现状"><a href="#分析现状" class="headerlink" title="分析现状"></a>分析现状</h3><p>现在的问题是，台式机蓝牙关了，但是我的常用外设都是蓝牙连接的，没有有线功能。我有一个有线键盘，但是台式机的USB口不知道为什么全不能用了，这就意味着即使我有有线鼠标理论上也没有用。远程软件也没有开启，不用通过手机远程把蓝牙打开。</p>
+<h3 id="扣电池"><a href="#扣电池" class="headerlink" title="扣电池"></a>扣电池</h3><p>和卖主板的客服沟通后，建议我扣主板电池试试。关机后，等待5min后（为了放干净电），我把电池扣了下来，又等了3min左右装了上去。奇迹发生了，USB口能用了！！！于是我用键盘操作（一路按tab键）这找到了蓝牙的开关按钮，</p>
+<p><img src="https://s1.ax1x.com/2023/08/12/pPu8BIP.png" alt="屏幕截图 2023-08-12 181458"></p>
+<p>按空格打开了蓝牙的开关，至此，终于是解决了！！！</p>
+<p>PS：如果不知道用空格是确认，当时用键盘打开我的远程软件其实也解决了</p>
+<h2 id="反思及预防"><a href="#反思及预防" class="headerlink" title="反思及预防"></a>反思及预防</h2><p>三思而后行啊，<del>以及中午不能睡时间太长</del></p>
+<p>然后网上查到了USB口之前为什么不能用的原因及解决方法：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">为了省电，Windows默认情况下会在不使用USB控制器时将其关闭，在需要时再将其重新开启。但有时候Windows不会自动开启。</span><br><span class="line">1、右键单击开始菜单，打开设备管理器。</span><br><span class="line">2、双击展开“通用串行总线控制器”一栏。</span><br><span class="line">3、双击列表中的第一个“USB根集线器”。</span><br><span class="line">4、点击切换到“电源管理”标签页。</span><br><span class="line">5、取消勾选“允许计算机关闭此设备以节省电源”，点击“确定”。</span><br><span class="line">6、对通用串行总线控制器列表中的每个“USB根集线器”重复步骤3-5。</span><br></pre></td></tr></table></figure>
+<p><img src="https://s1.ax1x.com/2023/08/12/pPu8haq.png" alt="image-20230812182055614"></p>
+<p>按照教程把上面一个一个都关了就好了</p>
+]]></content>
+      <categories>
+        <category>个人笔记</category>
+      </categories>
   </entry>
   <entry>
     <title>图的邻接表表示转换成邻接矩阵</title>
@@ -651,158 +746,6 @@
       <tags>
         <tag>算法</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>复现论文ChineseBERT(ONTONOTES数据集)</title>
-    <url>/2023/06/08/%E5%A4%8D%E7%8E%B0%E8%AE%BA%E6%96%87ChineseBERT/</url>
-    <content><![CDATA[<p>记录一下自己复现论文<strong><a href="https://arxiv.org/pdf/2106.16038.pdf">《ChineseBERT: Chinese Pretraining Enhanced by Glyph and Pinyin Information》</a></strong>的过程，最近感觉老在调包，一天下来感觉什么也没干，就直播记录一下跑模型的过程吧</p>
-<p>自己电脑环境如下：</p>
-<ul>
-<li>显卡：3060TI</li>
-<li>CUDA : 11.0</li>
-<li>CUDAToolkit : 8.0.2</li>
-<li>tensorflow : 2.4.0</li>
-<li>pytorch : 1.7.0</li>
-</ul>
-<p>首先使用<code>Conda</code>创建一下项目的虚拟环境</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda create -n ChineseBERT python=3.8</span><br></pre></td></tr></table></figure>
-<p>进入环境</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda activate ChineseBERT</span><br></pre></td></tr></table></figure>
-<p>用<code>Pycharm</code>打开项目并切换到刚刚新建的环境</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-08%20093431.png" alt="屏幕截图 2023-06-08 093431"></p>
-<p>找到<code>requirements.txt</code>文件，在环境中一个一个安装</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-08%20094729.png" alt="屏幕截图 2023-06-08 094729"></p>
-<p>安装的时候，发现<code>torch</code>版本装不到这么低的</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-08%20101810.png" alt="屏幕截图 2023-06-08 101810"></p>
-<p>然后就装了项目简介中的版本，（发现自己要跑的<code>OntoNotes 4.0</code>数据集正好也需要装这个版本，nice）</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-08%20102015.png" alt="屏幕截图 2023-06-08 102015"></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install torch==1.7.1+cu101 torchvision==0.8.2+cu101 torchaudio==0.7.2 -f https://download.pytorch.org/whl/torch_stable.html</span><br></pre></td></tr></table></figure>
-<p>然后打开作者的文档<a href="https://github.com/ShannonAI/ChineseBert/blob/main/tasks/OntoNotes/README.md">OntoNotes NER task</a>，下载对应的<a href="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-11%20084906.png">数据集</a></p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-11%20084906.png" alt="屏幕截图 2023-06-11 084906"></p>
-<p>然后新建一个名为<code>ONTONOTES_DATA_PATH</code>的文件夹，把解压后的文件放进去</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-11%20085550.png" alt="屏幕截图 2023-06-11 085550"></p>
-<p>找到<code>tasks/OntoNotes/OntoNotes_trainer.py</code>文件，尝试第一次运行</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-11%20085821.png" alt="屏幕截图 2023-06-11 085821"></p>
-<p>果不其然会报错，好像是<code>numpy</code>版本不匹配的问题，搜一下</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-11%20090052.png" alt="屏幕截图 2023-06-11 090052"></p>
-<p>看了一眼自己装的<code>numpy</code>版本，果然高一点</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-11%20090154.png" alt="屏幕截图 2023-06-11 090154"></p>
-<p>然后直接</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pip uninstall numpy</span><br><span class="line">pip install numpy==1.23.4</span><br></pre></td></tr></table></figure>
-<p>再跑一次！</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-11%20090605.png" alt="屏幕截图 2023-06-11 090605"></p>
-<p>好消息，刚刚的错误解决了。新的错误好像是路径格式的问题？难道是我刚刚路径那没配好？</p>
-<p>又看了一遍文档，好像是我<strong><code>ChineseBERT-base</code></strong>模型没下，赶紧去<a href="https://drive.google.com/file/d/1CseJzc58W4s8U_eIuAnshHQmnmi7Sr5-/view">下载</a>一下</p>
-<p>然后按照文档中说的，也把模型文件都放在<code>CHINESEBERT_PATH</code>这个文件夹中（我猜的</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-11%20092103.png" alt="屏幕截图 2023-06-11 092103"></p>
-<p>配置完如下</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-11%20092339.png" alt="屏幕截图 2023-06-11 092339"></p>
-<p>再跑一次试试！</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-11%20092443.png" alt="屏幕截图 2023-06-11 092443"></p>
-<p>emmm待我研究一下…又看了眼文档，好像是跑错文件了？</p>
-<p>应该是要运行<code>chinesebert_base.sh</code>文件，再运行之前需要修改两个个参数，把这两个位置的地址换成自己的。（啊我终于理解作者的意思了，不是要新建一个<code>ONTONOTES_DATA_PATH</code>的文件夹啊，是要把这个地址修改成自己的…）</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-11%20210900.png" alt="屏幕截图 2023-06-11 210900"></p>
-<p>改到一半的时候发现，好像这其他路径也得该啊，而且这个是在<code>Linux</code>的环境下运行的,不管了先用<code>git</code>跑试试，改完路径后结果如下</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-11%20212135.png" alt="屏幕截图 2023-06-11 212135"></p>
-<p>配置一下<code>Pycharm</code>，让其可以直接用<code>git</code></p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-11%20214248.png" alt="屏幕截图 2023-06-11 214248"></p>
-<p>走起！</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-11%20214750.png" alt="屏幕截图 2023-06-11 214750"></p>
-<p>emmm闪一下就没了，什么情况</p>
-<p>在<code>chinesebert_base.sh</code>脚本最后加入以下代码以便查看运行情况</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#  使用read命令达到类似bat中的pause命令效果</span></span><br><span class="line"><span class="built_in">echo</span> 按任意键继续</span><br><span class="line"><span class="built_in">read</span> -n 1</span><br><span class="line"><span class="built_in">echo</span> 继续运行</span><br></pre></td></tr></table></figure>
-<p>运行情况如下</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-11%20214624.png" alt="屏幕截图 2023-06-11 214624"></p>
-<p>啊？没东西输出吗？看了一下路径，好像是<code>Windows</code>和<code>Linux</code>的路径不一样，Linux下路径是<code>/</code>，Win下应该是<code>\\</code></p>
-<p>再跑一次！</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-11%20215427.png" alt="屏幕截图 2023-06-11 215427"></p>
-<p>啊？？？（黑人问号.jpg)</p>
-<p>试试把.sh文件转成.bat的，搜了一下网上居然还有一键自动转换的<a href="https://daniel-sc.github.io/bash-shell-to-bat-converter/">网址</a>，太赞了</p>
-<p>转换完的<code>.bat</code>脚本如下</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"></span><br><span class="line">SET <span class="string">&quot;TIME=0711&quot;</span></span><br><span class="line">SET <span class="string">&quot;FILE_NAME=ontonotes_glyce_base&quot;</span></span><br><span class="line">SET <span class="string">&quot;REPO_PATH=D:\code\ChineseBert&quot;</span></span><br><span class="line">SET <span class="string">&quot;BERT_PATH=..\..\CHINESEBERT_PATH&quot;</span></span><br><span class="line">SET <span class="string">&quot;DATA_DIR=..\..\ONTONOTES_DATA_PATH&quot;</span></span><br><span class="line">SET <span class="string">&quot;SAVE_TOPK=20&quot;</span></span><br><span class="line">SET <span class="string">&quot;TRAIN_BATCH_SIZE=26&quot;</span></span><br><span class="line">SET <span class="string">&quot;LR=3e-5&quot;</span></span><br><span class="line">SET <span class="string">&quot;WEIGHT_DECAY=0.001&quot;</span></span><br><span class="line">SET <span class="string">&quot;WARMUP_PROPORTION=0.1&quot;</span></span><br><span class="line">SET <span class="string">&quot;MAX_LEN=275&quot;</span></span><br><span class="line">SET <span class="string">&quot;MAX_EPOCH=5&quot;</span></span><br><span class="line">SET <span class="string">&quot;DROPOUT=0.2&quot;</span></span><br><span class="line">SET <span class="string">&quot;ACC_GRAD=1&quot;</span></span><br><span class="line">SET <span class="string">&quot;VAL_CHECK_INTERVAL=0.25&quot;</span></span><br><span class="line">SET <span class="string">&quot;OPTIMIZER=torch.adam&quot;</span></span><br><span class="line">SET <span class="string">&quot;CLASSIFIER=multi&quot;</span></span><br><span class="line"></span><br><span class="line">SET <span class="string">&quot;OUTPUT_DIR=..\\..\\outputs/chinesebert\\%TIME%\\%FILE_NAME%_%MAX_EPOCH%_%TRAIN_BATCH_SIZE%_%LR%_%WEIGHT_DECAY%_%WARMUP_PROPORTION%_%MAX_LEN%_%DROPOUT%_%ACC_GRAD%_%VAL_CHECK_INTERVAL%&quot;</span></span><br><span class="line"><span class="built_in">mkdir</span> <span class="string">&quot;-p&quot;</span> <span class="string">&quot;%OUTPUT_DIR%&quot;</span></span><br><span class="line"><span class="built_in">export</span> <span class="string">&quot;PYTHONPATH=&quot;</span>%PYTHONPATH%:%REPO_PATH%<span class="string">&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">python3 <span class="string">&quot;%REPO_PATH%\\tasks\\OntoNotes\\OntoNotes_trainer.py&quot;</span> </span><br><span class="line">    <span class="string">&quot;--lr&quot;</span> <span class="string">&quot;%LR%&quot;</span> </span><br><span class="line">    <span class="string">&quot;--max_epochs&quot;</span> <span class="string">&quot;%MAX_EPOCH%&quot;</span> </span><br><span class="line">    <span class="string">&quot;--max_length&quot;</span> <span class="string">&quot;%MAX_LEN%&quot;</span> </span><br><span class="line">    <span class="string">&quot;--weight_decay&quot;</span> <span class="string">&quot;%WEIGHT_DECAY%&quot;</span> </span><br><span class="line">    <span class="string">&quot;--hidden_dropout_prob&quot;</span> <span class="string">&quot;%DROPOUT%&quot;</span> </span><br><span class="line">    <span class="string">&quot;--warmup_proportion&quot;</span> <span class="string">&quot;%WARMUP_PROPORTION%&quot;</span> </span><br><span class="line">    <span class="string">&quot;--train_batch_size&quot;</span> <span class="string">&quot;%TRAIN_BATCH_SIZE%&quot;</span> </span><br><span class="line">    <span class="string">&quot;--accumulate_grad_batches&quot;</span> <span class="string">&quot;%ACC_GRAD%&quot;</span> </span><br><span class="line">    <span class="string">&quot;--save_topk&quot;</span> <span class="string">&quot;%SAVE_TOPK%&quot;</span> </span><br><span class="line">    <span class="string">&quot;--bert_path&quot;</span> <span class="string">&quot;%BERT_PATH%&quot;</span> </span><br><span class="line">    <span class="string">&quot;--data_dir&quot;</span> <span class="string">&quot;%DATA_DIR%&quot;</span> </span><br><span class="line">    <span class="string">&quot;--save_path&quot;</span> <span class="string">&quot;%OUTPUT_DIR%&quot;</span> </span><br><span class="line">    <span class="string">&quot;--val_check_interval&quot;</span> <span class="string">&quot;%VAL_CHECK_INTERVAL%&quot;</span> </span><br><span class="line">    <span class="string">&quot;--gpus=1&quot;</span> </span><br><span class="line">    <span class="string">&quot;--precision=16&quot;</span> </span><br><span class="line">    <span class="string">&quot;--optimizer&quot;</span> <span class="string">&quot;%OPTIMIZER%&quot;</span> </span><br><span class="line">    <span class="string">&quot;--classifier&quot;</span> <span class="string">&quot;%CLASSIFIER%&quot;</span></span><br><span class="line">    </span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;按任意键继续&quot;</span></span><br><span class="line"><span class="built_in">read</span> <span class="string">&quot;-n&quot;</span> <span class="string">&quot;1&quot;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;继续运行&quot;</span></span><br></pre></td></tr></table></figure>
-<p>运行一下试试！</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-12%20205940.png" alt="屏幕截图 2023-06-12 205940"></p>
-<p>太痛了！好像又是路径的问题？检查了一下确实是路径的错误</p>
-<p>把上述<code>OUTPUT_DIR</code>的地址换成下面的</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">SET <span class="string">&quot;OUTPUT_DIR=..\..\outputs\chinesebert\%TIME%\%FILE_NAME%_%MAX_EPOCH%_%TRAIN_BATCH_SIZE%_%LR%_%WEIGHT_DECAY%_%WARMUP_PROPORTION%_%MAX_LEN%_%DROPOUT%_%ACC_GRAD%_%VAL_CHECK_INTERVAL%&quot;</span></span><br></pre></td></tr></table></figure>
-<p>再跑亿次！</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-12%20210918.png" alt="屏幕截图 2023-06-12 210918"></p>
-<p>我再康康…好像那个网站转换的有问题</p>
-<p>我用chatGPT转换了一下</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="built_in">set</span> TIME=0711</span><br><span class="line"><span class="built_in">set</span> FILE_NAME=ontonotes_glyce_base</span><br><span class="line"><span class="built_in">set</span> REPO_PATH=D:\code\ChineseBert</span><br><span class="line"><span class="built_in">set</span> BERT_PATH=..\..\CHINESEBERT_PATH</span><br><span class="line"><span class="built_in">set</span> DATA_DIR=..\..\ONTONOTES_DATA_PATH</span><br><span class="line"></span><br><span class="line"><span class="built_in">set</span> SAVE_TOPK=20</span><br><span class="line"><span class="built_in">set</span> TRAIN_BATCH_SIZE=26</span><br><span class="line"><span class="built_in">set</span> LR=3e-5</span><br><span class="line"><span class="built_in">set</span> WEIGHT_DECAY=0.001</span><br><span class="line"><span class="built_in">set</span> WARMUP_PROPORTION=0.1</span><br><span class="line"><span class="built_in">set</span> MAX_LEN=275</span><br><span class="line"><span class="built_in">set</span> MAX_EPOCH=5</span><br><span class="line"><span class="built_in">set</span> DROPOUT=0.2</span><br><span class="line"><span class="built_in">set</span> ACC_GRAD=1</span><br><span class="line"><span class="built_in">set</span> VAL_CHECK_INTERVAL=0.25</span><br><span class="line"><span class="built_in">set</span> OPTIMIZER=torch.adam</span><br><span class="line"><span class="built_in">set</span> CLASSIFIER=multi</span><br><span class="line"></span><br><span class="line"><span class="built_in">set</span> OUTPUT_DIR=..\..\outputs\chinesebert\%TIME%\%FILE_NAME%_%MAX_EPOCH%_%TRAIN_BATCH_SIZE%_%LR%_%WEIGHT_DECAY%_%WARMUP_PROPORTION%_%MAX_LEN%_%DROPOUT%_%ACC_GRAD%_%VAL_CHECK_INTERVAL%</span><br><span class="line"><span class="built_in">mkdir</span> %OUTPUT_DIR%</span><br><span class="line"><span class="built_in">set</span> PYTHONPATH=%PYTHONPATH%;%REPO_PATH%</span><br><span class="line"></span><br><span class="line">python %REPO_PATH%\tasks\OntoNotes\OntoNotes_trainer.py ^</span><br><span class="line">    --lr %LR% ^</span><br><span class="line">    --max_epochs %MAX_EPOCH% ^</span><br><span class="line">    --max_length %MAX_LEN% ^</span><br><span class="line">    --weight_decay %WEIGHT_DECAY% ^</span><br><span class="line">    --hidden_dropout_prob %DROPOUT% ^</span><br><span class="line">    --warmup_proportion %WARMUP_PROPORTION% ^</span><br><span class="line">    --train_batch_size %TRAIN_BATCH_SIZE% ^</span><br><span class="line">    --accumulate_grad_batches %ACC_GRAD% ^</span><br><span class="line">    --save_topk %SAVE_TOPK% ^</span><br><span class="line">    --bert_path %BERT_PATH% ^</span><br><span class="line">    --data_dir %DATA_DIR% ^</span><br><span class="line">    --save_path %OUTPUT_DIR% ^</span><br><span class="line">    --val_check_interval %VAL_CHECK_INTERVAL% ^</span><br><span class="line">    --gpus=<span class="string">&quot;1&quot;</span> ^</span><br><span class="line">    --precision=16 ^</span><br><span class="line">    --optimizer %OPTIMIZER% ^</span><br><span class="line">    --classifier %CLASSIFIER%</span><br><span class="line"></span><br><span class="line">pause</span><br></pre></td></tr></table></figure>
-<p>重新跑一下！</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-12%20214704.png" alt="屏幕截图 2023-06-12 214704"></p>
-<p>chatGPT牛逼！看来格式是转换对了，下面就是调包的问题了</p>
-<p>看这个错应该是这个<code>pypinyin</code>包没装，装一下试试</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install pypinyin</span><br></pre></td></tr></table></figure>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-12%20215157.png" alt="屏幕截图 2023-06-12 215157"></p>
-<p>但是环境里应该有了鸭，难道是跑的时候不在这个环境吗</p>
-<p>单独跑了一下这个文件，并没有报错！</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-12%20215537.png" alt="屏幕截图 2023-06-12 215537"></p>
-<p>感觉我的推理是正确的，查了一下如何在<code>bat</code>文件中选择环境</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">%切换到ChineseBert环境%</span><br><span class="line">CALL activate ChineseBert</span><br></pre></td></tr></table></figure>
-<p>将这段代码放在执行<code>Python</code>文件前面</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-13%20092124.png" alt="屏幕截图 2023-06-13 092124"></p>
-<p>然后走起！</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-13%20092200.png" alt="屏幕截图 2023-06-13 092200"></p>
-<p>这？？？这是跑起来了？？？有戏有戏</p>
-<p>等了一会也没反应，看了下说明，好像说是模型没训练初始化？</p>
-<p>又等了一会</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-13%20093055.png" alt="屏幕截图 2023-06-13 093055"></p>
-<p>难…难道再等等？好像又说CUDA和Pytorch不匹配？（但我之前专门按照官网装的鸭</p>
-<p>还说我什么<code>model.example_input_array</code>或者<code>input_array</code>属性没设置</p>
-<p>首先解决一下CUDA和Pytorch的版本匹配问题，再次检查一下作者提供的Pytorch安装代码，发现和我CUDA版本是不匹配的，看来这个需要自己修改一下，不能无脑复制</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-13%20094404.png" alt="屏幕截图 2023-06-13 094404"></p>
-<p>我自己的CUDA</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-13%20094832.png" alt="屏幕截图 2023-06-13 094832"></p>
-<p>于是直接重装吧</p>
-<p>先卸载</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip uninstall torch</span><br></pre></td></tr></table></figure>
-<p>再安装</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip3 install torch==1.7.1+cu110 torchvision==0.8.2+cu110 torchaudio==0.7.2 -f https://download.pytorch.org/whl/cu110/torch_stable.html</span><br></pre></td></tr></table></figure>
-<p>在跑一次试试！</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-13%20145951.png" alt="屏幕截图 2023-06-13 145951"></p>
-<p>跑起来了？！！！！！Ohhhhhhhh</p>
-<p>等了一下午，终于跑出了结果了</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-23%20185801.png" alt="屏幕截图 2023-06-23 185801"></p>
-<p>作者的结果如下</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>Model</th>
-<th>Test Precision</th>
-<th>Test Recall</th>
-<th>Test F1</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>BERT</td>
-<td>79.69</td>
-<td>82.09</td>
-<td>80.87</td>
-</tr>
-<tr>
-<td>RoBERTa</td>
-<td>80.43</td>
-<td>80.30</td>
-<td>80.37</td>
-</tr>
-<tr>
-<td>ChineseBERT</td>
-<td>80.03</td>
-<td>83.33</td>
-<td>81.65</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>不知道为什么<code>test_precision</code>这一项结果略低一点，其他结果相差不是很大</p>
-]]></content>
-      <categories>
-        <category>论文复现</category>
-      </categories>
   </entry>
   <entry>
     <title>复现论文《Efficient Estimation of Word Representations in Vector Space》（未跑通中）</title>
@@ -1054,6 +997,35 @@
       <categories>
         <category>论文复现</category>
       </categories>
+  </entry>
+  <entry>
+    <title>如何使用微信小程序IDE在github上实现团队合作</title>
+    <url>/2020/04/16/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8FIDE%E5%9C%A8github%E4%B8%8A%E5%AE%9E%E7%8E%B0%E5%9B%A2%E9%98%9F%E5%90%88%E4%BD%9C/</url>
+    <content><![CDATA[<p>——-原文——-(2020/4/16)</p>
+<p>@<a href="如何使用微信开发者工具在github上实现团队合作">TOC</a><br>一.发起者要做的一些步骤</p>
+<ol>
+<li>首先用IDE初始化本地的git仓库<br><img src="https://img-blog.csdnimg.cn/20200130111131527.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="a."><br><img src="https://img-blog.csdnimg.cn/20200130111301249.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="b."></li>
+<li>使用github-desktop客户端添加这个新建的本地git库并同时上传到新建的远程仓库中<br><img src="https://img-blog.csdnimg.cn/2020013011214879.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="添加本地仓库"><br><img src="https://img-blog.csdnimg.cn/20200130112202771.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="新建远程仓库"><br><img src="https://img-blog.csdnimg.cn/2020013011231537.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/2020013011291517.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="看一下成果嘿嘿嘿"></li>
+<li>添加参与者<br><img src="https://img-blog.csdnimg.cn/20200130113301950.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="最好添加的时候写参与者的名字"><br><strong>PS:被邀请者的必须要接受邀请才可以</strong></li>
+</ol>
+<p>二.参与者需要做的步骤</p>
+<ol>
+<li>在微信小程序开发者工具里添加远程仓库<br><img src="https://img-blog.csdnimg.cn/20200130114342510.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="添加远程仓库_1"><img src="https://img-blog.csdnimg.cn/20200130114356569.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="添加远程仓库_2"><br><img src="https://img-blog.csdnimg.cn/20200130114448885.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="如何查看仓库的地址"></li>
+<li>绑定自己的github账号<br><img src="https://img-blog.csdnimg.cn/20200130115015761.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="绑定账号"></li>
+</ol>
+<p>三.如何线上合作</p>
+<ol>
+<li>参与者在调试好了一些功能以后，提交到远程仓库的分支<br><img src="https://img-blog.csdnimg.cn/20200130120245999.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="提交分支"></li>
+<li>参与者请求合并分支<br><img src="https://img-blog.csdnimg.cn/20200130120523380.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="请求合并_1"><br><img src="https://img-blog.csdnimg.cn/20200130120921309.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="请求合并_2"><br><img src="https://img-blog.csdnimg.cn/20200130120955937.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="发起合并请求"></li>
+<li>在发起者经过了沉思熟虑，通计熟筹，仰观俯察后，同意合并分支的请求(＠￣ー￣＠)<br><img src="https://img-blog.csdnimg.cn/20200130121516212.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="找到请求_1"><br>从这里可以对比的看到分支和master的不同<br><img src="https://img-blog.csdnimg.cn/2020013012161487.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="找不同"><br>同意合并请求：<br><img src="https://img-blog.csdnimg.cn/20200130121829976.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="同意合并_2"><br><img src="https://img-blog.csdnimg.cn/20200130121938158.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="同意合并_3"><br>这样就分支就合并进去了<br><img src="https://img-blog.csdnimg.cn/20200130122111630.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="嘻嘻嘻"><br>当然如果参与者想要同步最新的代码，只要pull一下就好了<br><img src="https://img-blog.csdnimg.cn/20200130191852824.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="同步"><br>第一次接触github，如有一些错误，还请多多指教<br>(๑•̀ㅂ•́)و</li>
+</ol>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>微信小程序</tag>
+      </tags>
   </entry>
   <entry>
     <title>复现论文《SPIKING CONVOLUTIONAL NEURAL NETWORKS FOR TEXT CLASSIFICATION》</title>
@@ -1520,33 +1492,156 @@
       </categories>
   </entry>
   <entry>
-    <title>如何使用微信小程序IDE在github上实现团队合作</title>
-    <url>/2020/04/16/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8FIDE%E5%9C%A8github%E4%B8%8A%E5%AE%9E%E7%8E%B0%E5%9B%A2%E9%98%9F%E5%90%88%E4%BD%9C/</url>
-    <content><![CDATA[<p>——-原文——-(2020/4/16)</p>
-<p>@<a href="如何使用微信开发者工具在github上实现团队合作">TOC</a><br>一.发起者要做的一些步骤</p>
-<ol>
-<li>首先用IDE初始化本地的git仓库<br><img src="https://img-blog.csdnimg.cn/20200130111131527.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="a."><br><img src="https://img-blog.csdnimg.cn/20200130111301249.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="b."></li>
-<li>使用github-desktop客户端添加这个新建的本地git库并同时上传到新建的远程仓库中<br><img src="https://img-blog.csdnimg.cn/2020013011214879.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="添加本地仓库"><br><img src="https://img-blog.csdnimg.cn/20200130112202771.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="新建远程仓库"><br><img src="https://img-blog.csdnimg.cn/2020013011231537.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/2020013011291517.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="看一下成果嘿嘿嘿"></li>
-<li>添加参与者<br><img src="https://img-blog.csdnimg.cn/20200130113301950.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="最好添加的时候写参与者的名字"><br><strong>PS:被邀请者的必须要接受邀请才可以</strong></li>
-</ol>
-<p>二.参与者需要做的步骤</p>
-<ol>
-<li>在微信小程序开发者工具里添加远程仓库<br><img src="https://img-blog.csdnimg.cn/20200130114342510.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="添加远程仓库_1"><img src="https://img-blog.csdnimg.cn/20200130114356569.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="添加远程仓库_2"><br><img src="https://img-blog.csdnimg.cn/20200130114448885.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="如何查看仓库的地址"></li>
-<li>绑定自己的github账号<br><img src="https://img-blog.csdnimg.cn/20200130115015761.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="绑定账号"></li>
-</ol>
-<p>三.如何线上合作</p>
-<ol>
-<li>参与者在调试好了一些功能以后，提交到远程仓库的分支<br><img src="https://img-blog.csdnimg.cn/20200130120245999.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="提交分支"></li>
-<li>参与者请求合并分支<br><img src="https://img-blog.csdnimg.cn/20200130120523380.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="请求合并_1"><br><img src="https://img-blog.csdnimg.cn/20200130120921309.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="请求合并_2"><br><img src="https://img-blog.csdnimg.cn/20200130120955937.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="发起合并请求"></li>
-<li>在发起者经过了沉思熟虑，通计熟筹，仰观俯察后，同意合并分支的请求(＠￣ー￣＠)<br><img src="https://img-blog.csdnimg.cn/20200130121516212.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="找到请求_1"><br>从这里可以对比的看到分支和master的不同<br><img src="https://img-blog.csdnimg.cn/2020013012161487.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="找不同"><br>同意合并请求：<br><img src="https://img-blog.csdnimg.cn/20200130121829976.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="同意合并_2"><br><img src="https://img-blog.csdnimg.cn/20200130121938158.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="同意合并_3"><br>这样就分支就合并进去了<br><img src="https://img-blog.csdnimg.cn/20200130122111630.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="嘻嘻嘻"><br>当然如果参与者想要同步最新的代码，只要pull一下就好了<br><img src="https://img-blog.csdnimg.cn/20200130191852824.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="同步"><br>第一次接触github，如有一些错误，还请多多指教<br>(๑•̀ㅂ•́)و</li>
-</ol>
+    <title>复现论文ChineseBERT(ONTONOTES数据集)</title>
+    <url>/2023/06/08/%E5%A4%8D%E7%8E%B0%E8%AE%BA%E6%96%87ChineseBERT/</url>
+    <content><![CDATA[<p>记录一下自己复现论文<strong><a href="https://arxiv.org/pdf/2106.16038.pdf">《ChineseBERT: Chinese Pretraining Enhanced by Glyph and Pinyin Information》</a></strong>的过程，最近感觉老在调包，一天下来感觉什么也没干，就直播记录一下跑模型的过程吧</p>
+<p>自己电脑环境如下：</p>
+<ul>
+<li>显卡：3060TI</li>
+<li>CUDA : 11.0</li>
+<li>CUDAToolkit : 8.0.2</li>
+<li>tensorflow : 2.4.0</li>
+<li>pytorch : 1.7.0</li>
+</ul>
+<p>首先使用<code>Conda</code>创建一下项目的虚拟环境</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda create -n ChineseBERT python=3.8</span><br></pre></td></tr></table></figure>
+<p>进入环境</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda activate ChineseBERT</span><br></pre></td></tr></table></figure>
+<p>用<code>Pycharm</code>打开项目并切换到刚刚新建的环境</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-08%20093431.png" alt="屏幕截图 2023-06-08 093431"></p>
+<p>找到<code>requirements.txt</code>文件，在环境中一个一个安装</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-08%20094729.png" alt="屏幕截图 2023-06-08 094729"></p>
+<p>安装的时候，发现<code>torch</code>版本装不到这么低的</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-08%20101810.png" alt="屏幕截图 2023-06-08 101810"></p>
+<p>然后就装了项目简介中的版本，（发现自己要跑的<code>OntoNotes 4.0</code>数据集正好也需要装这个版本，nice）</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-08%20102015.png" alt="屏幕截图 2023-06-08 102015"></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install torch==1.7.1+cu101 torchvision==0.8.2+cu101 torchaudio==0.7.2 -f https://download.pytorch.org/whl/torch_stable.html</span><br></pre></td></tr></table></figure>
+<p>然后打开作者的文档<a href="https://github.com/ShannonAI/ChineseBert/blob/main/tasks/OntoNotes/README.md">OntoNotes NER task</a>，下载对应的<a href="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-11%20084906.png">数据集</a></p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-11%20084906.png" alt="屏幕截图 2023-06-11 084906"></p>
+<p>然后新建一个名为<code>ONTONOTES_DATA_PATH</code>的文件夹，把解压后的文件放进去</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-11%20085550.png" alt="屏幕截图 2023-06-11 085550"></p>
+<p>找到<code>tasks/OntoNotes/OntoNotes_trainer.py</code>文件，尝试第一次运行</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-11%20085821.png" alt="屏幕截图 2023-06-11 085821"></p>
+<p>果不其然会报错，好像是<code>numpy</code>版本不匹配的问题，搜一下</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-11%20090052.png" alt="屏幕截图 2023-06-11 090052"></p>
+<p>看了一眼自己装的<code>numpy</code>版本，果然高一点</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-11%20090154.png" alt="屏幕截图 2023-06-11 090154"></p>
+<p>然后直接</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pip uninstall numpy</span><br><span class="line">pip install numpy==1.23.4</span><br></pre></td></tr></table></figure>
+<p>再跑一次！</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-11%20090605.png" alt="屏幕截图 2023-06-11 090605"></p>
+<p>好消息，刚刚的错误解决了。新的错误好像是路径格式的问题？难道是我刚刚路径那没配好？</p>
+<p>又看了一遍文档，好像是我<strong><code>ChineseBERT-base</code></strong>模型没下，赶紧去<a href="https://drive.google.com/file/d/1CseJzc58W4s8U_eIuAnshHQmnmi7Sr5-/view">下载</a>一下</p>
+<p>然后按照文档中说的，也把模型文件都放在<code>CHINESEBERT_PATH</code>这个文件夹中（我猜的</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-11%20092103.png" alt="屏幕截图 2023-06-11 092103"></p>
+<p>配置完如下</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-11%20092339.png" alt="屏幕截图 2023-06-11 092339"></p>
+<p>再跑一次试试！</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-11%20092443.png" alt="屏幕截图 2023-06-11 092443"></p>
+<p>emmm待我研究一下…又看了眼文档，好像是跑错文件了？</p>
+<p>应该是要运行<code>chinesebert_base.sh</code>文件，再运行之前需要修改两个个参数，把这两个位置的地址换成自己的。（啊我终于理解作者的意思了，不是要新建一个<code>ONTONOTES_DATA_PATH</code>的文件夹啊，是要把这个地址修改成自己的…）</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-11%20210900.png" alt="屏幕截图 2023-06-11 210900"></p>
+<p>改到一半的时候发现，好像这其他路径也得该啊，而且这个是在<code>Linux</code>的环境下运行的,不管了先用<code>git</code>跑试试，改完路径后结果如下</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-11%20212135.png" alt="屏幕截图 2023-06-11 212135"></p>
+<p>配置一下<code>Pycharm</code>，让其可以直接用<code>git</code></p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-11%20214248.png" alt="屏幕截图 2023-06-11 214248"></p>
+<p>走起！</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-11%20214750.png" alt="屏幕截图 2023-06-11 214750"></p>
+<p>emmm闪一下就没了，什么情况</p>
+<p>在<code>chinesebert_base.sh</code>脚本最后加入以下代码以便查看运行情况</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#  使用read命令达到类似bat中的pause命令效果</span></span><br><span class="line"><span class="built_in">echo</span> 按任意键继续</span><br><span class="line"><span class="built_in">read</span> -n 1</span><br><span class="line"><span class="built_in">echo</span> 继续运行</span><br></pre></td></tr></table></figure>
+<p>运行情况如下</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-11%20214624.png" alt="屏幕截图 2023-06-11 214624"></p>
+<p>啊？没东西输出吗？看了一下路径，好像是<code>Windows</code>和<code>Linux</code>的路径不一样，Linux下路径是<code>/</code>，Win下应该是<code>\\</code></p>
+<p>再跑一次！</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-11%20215427.png" alt="屏幕截图 2023-06-11 215427"></p>
+<p>啊？？？（黑人问号.jpg)</p>
+<p>试试把.sh文件转成.bat的，搜了一下网上居然还有一键自动转换的<a href="https://daniel-sc.github.io/bash-shell-to-bat-converter/">网址</a>，太赞了</p>
+<p>转换完的<code>.bat</code>脚本如下</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"></span><br><span class="line">SET <span class="string">&quot;TIME=0711&quot;</span></span><br><span class="line">SET <span class="string">&quot;FILE_NAME=ontonotes_glyce_base&quot;</span></span><br><span class="line">SET <span class="string">&quot;REPO_PATH=D:\code\ChineseBert&quot;</span></span><br><span class="line">SET <span class="string">&quot;BERT_PATH=..\..\CHINESEBERT_PATH&quot;</span></span><br><span class="line">SET <span class="string">&quot;DATA_DIR=..\..\ONTONOTES_DATA_PATH&quot;</span></span><br><span class="line">SET <span class="string">&quot;SAVE_TOPK=20&quot;</span></span><br><span class="line">SET <span class="string">&quot;TRAIN_BATCH_SIZE=26&quot;</span></span><br><span class="line">SET <span class="string">&quot;LR=3e-5&quot;</span></span><br><span class="line">SET <span class="string">&quot;WEIGHT_DECAY=0.001&quot;</span></span><br><span class="line">SET <span class="string">&quot;WARMUP_PROPORTION=0.1&quot;</span></span><br><span class="line">SET <span class="string">&quot;MAX_LEN=275&quot;</span></span><br><span class="line">SET <span class="string">&quot;MAX_EPOCH=5&quot;</span></span><br><span class="line">SET <span class="string">&quot;DROPOUT=0.2&quot;</span></span><br><span class="line">SET <span class="string">&quot;ACC_GRAD=1&quot;</span></span><br><span class="line">SET <span class="string">&quot;VAL_CHECK_INTERVAL=0.25&quot;</span></span><br><span class="line">SET <span class="string">&quot;OPTIMIZER=torch.adam&quot;</span></span><br><span class="line">SET <span class="string">&quot;CLASSIFIER=multi&quot;</span></span><br><span class="line"></span><br><span class="line">SET <span class="string">&quot;OUTPUT_DIR=..\\..\\outputs/chinesebert\\%TIME%\\%FILE_NAME%_%MAX_EPOCH%_%TRAIN_BATCH_SIZE%_%LR%_%WEIGHT_DECAY%_%WARMUP_PROPORTION%_%MAX_LEN%_%DROPOUT%_%ACC_GRAD%_%VAL_CHECK_INTERVAL%&quot;</span></span><br><span class="line"><span class="built_in">mkdir</span> <span class="string">&quot;-p&quot;</span> <span class="string">&quot;%OUTPUT_DIR%&quot;</span></span><br><span class="line"><span class="built_in">export</span> <span class="string">&quot;PYTHONPATH=&quot;</span>%PYTHONPATH%:%REPO_PATH%<span class="string">&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">python3 <span class="string">&quot;%REPO_PATH%\\tasks\\OntoNotes\\OntoNotes_trainer.py&quot;</span> </span><br><span class="line">    <span class="string">&quot;--lr&quot;</span> <span class="string">&quot;%LR%&quot;</span> </span><br><span class="line">    <span class="string">&quot;--max_epochs&quot;</span> <span class="string">&quot;%MAX_EPOCH%&quot;</span> </span><br><span class="line">    <span class="string">&quot;--max_length&quot;</span> <span class="string">&quot;%MAX_LEN%&quot;</span> </span><br><span class="line">    <span class="string">&quot;--weight_decay&quot;</span> <span class="string">&quot;%WEIGHT_DECAY%&quot;</span> </span><br><span class="line">    <span class="string">&quot;--hidden_dropout_prob&quot;</span> <span class="string">&quot;%DROPOUT%&quot;</span> </span><br><span class="line">    <span class="string">&quot;--warmup_proportion&quot;</span> <span class="string">&quot;%WARMUP_PROPORTION%&quot;</span> </span><br><span class="line">    <span class="string">&quot;--train_batch_size&quot;</span> <span class="string">&quot;%TRAIN_BATCH_SIZE%&quot;</span> </span><br><span class="line">    <span class="string">&quot;--accumulate_grad_batches&quot;</span> <span class="string">&quot;%ACC_GRAD%&quot;</span> </span><br><span class="line">    <span class="string">&quot;--save_topk&quot;</span> <span class="string">&quot;%SAVE_TOPK%&quot;</span> </span><br><span class="line">    <span class="string">&quot;--bert_path&quot;</span> <span class="string">&quot;%BERT_PATH%&quot;</span> </span><br><span class="line">    <span class="string">&quot;--data_dir&quot;</span> <span class="string">&quot;%DATA_DIR%&quot;</span> </span><br><span class="line">    <span class="string">&quot;--save_path&quot;</span> <span class="string">&quot;%OUTPUT_DIR%&quot;</span> </span><br><span class="line">    <span class="string">&quot;--val_check_interval&quot;</span> <span class="string">&quot;%VAL_CHECK_INTERVAL%&quot;</span> </span><br><span class="line">    <span class="string">&quot;--gpus=1&quot;</span> </span><br><span class="line">    <span class="string">&quot;--precision=16&quot;</span> </span><br><span class="line">    <span class="string">&quot;--optimizer&quot;</span> <span class="string">&quot;%OPTIMIZER%&quot;</span> </span><br><span class="line">    <span class="string">&quot;--classifier&quot;</span> <span class="string">&quot;%CLASSIFIER%&quot;</span></span><br><span class="line">    </span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;按任意键继续&quot;</span></span><br><span class="line"><span class="built_in">read</span> <span class="string">&quot;-n&quot;</span> <span class="string">&quot;1&quot;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;继续运行&quot;</span></span><br></pre></td></tr></table></figure>
+<p>运行一下试试！</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-12%20205940.png" alt="屏幕截图 2023-06-12 205940"></p>
+<p>太痛了！好像又是路径的问题？检查了一下确实是路径的错误</p>
+<p>把上述<code>OUTPUT_DIR</code>的地址换成下面的</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">SET <span class="string">&quot;OUTPUT_DIR=..\..\outputs\chinesebert\%TIME%\%FILE_NAME%_%MAX_EPOCH%_%TRAIN_BATCH_SIZE%_%LR%_%WEIGHT_DECAY%_%WARMUP_PROPORTION%_%MAX_LEN%_%DROPOUT%_%ACC_GRAD%_%VAL_CHECK_INTERVAL%&quot;</span></span><br></pre></td></tr></table></figure>
+<p>再跑亿次！</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-12%20210918.png" alt="屏幕截图 2023-06-12 210918"></p>
+<p>我再康康…好像那个网站转换的有问题</p>
+<p>我用chatGPT转换了一下</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="built_in">set</span> TIME=0711</span><br><span class="line"><span class="built_in">set</span> FILE_NAME=ontonotes_glyce_base</span><br><span class="line"><span class="built_in">set</span> REPO_PATH=D:\code\ChineseBert</span><br><span class="line"><span class="built_in">set</span> BERT_PATH=..\..\CHINESEBERT_PATH</span><br><span class="line"><span class="built_in">set</span> DATA_DIR=..\..\ONTONOTES_DATA_PATH</span><br><span class="line"></span><br><span class="line"><span class="built_in">set</span> SAVE_TOPK=20</span><br><span class="line"><span class="built_in">set</span> TRAIN_BATCH_SIZE=26</span><br><span class="line"><span class="built_in">set</span> LR=3e-5</span><br><span class="line"><span class="built_in">set</span> WEIGHT_DECAY=0.001</span><br><span class="line"><span class="built_in">set</span> WARMUP_PROPORTION=0.1</span><br><span class="line"><span class="built_in">set</span> MAX_LEN=275</span><br><span class="line"><span class="built_in">set</span> MAX_EPOCH=5</span><br><span class="line"><span class="built_in">set</span> DROPOUT=0.2</span><br><span class="line"><span class="built_in">set</span> ACC_GRAD=1</span><br><span class="line"><span class="built_in">set</span> VAL_CHECK_INTERVAL=0.25</span><br><span class="line"><span class="built_in">set</span> OPTIMIZER=torch.adam</span><br><span class="line"><span class="built_in">set</span> CLASSIFIER=multi</span><br><span class="line"></span><br><span class="line"><span class="built_in">set</span> OUTPUT_DIR=..\..\outputs\chinesebert\%TIME%\%FILE_NAME%_%MAX_EPOCH%_%TRAIN_BATCH_SIZE%_%LR%_%WEIGHT_DECAY%_%WARMUP_PROPORTION%_%MAX_LEN%_%DROPOUT%_%ACC_GRAD%_%VAL_CHECK_INTERVAL%</span><br><span class="line"><span class="built_in">mkdir</span> %OUTPUT_DIR%</span><br><span class="line"><span class="built_in">set</span> PYTHONPATH=%PYTHONPATH%;%REPO_PATH%</span><br><span class="line"></span><br><span class="line">python %REPO_PATH%\tasks\OntoNotes\OntoNotes_trainer.py ^</span><br><span class="line">    --lr %LR% ^</span><br><span class="line">    --max_epochs %MAX_EPOCH% ^</span><br><span class="line">    --max_length %MAX_LEN% ^</span><br><span class="line">    --weight_decay %WEIGHT_DECAY% ^</span><br><span class="line">    --hidden_dropout_prob %DROPOUT% ^</span><br><span class="line">    --warmup_proportion %WARMUP_PROPORTION% ^</span><br><span class="line">    --train_batch_size %TRAIN_BATCH_SIZE% ^</span><br><span class="line">    --accumulate_grad_batches %ACC_GRAD% ^</span><br><span class="line">    --save_topk %SAVE_TOPK% ^</span><br><span class="line">    --bert_path %BERT_PATH% ^</span><br><span class="line">    --data_dir %DATA_DIR% ^</span><br><span class="line">    --save_path %OUTPUT_DIR% ^</span><br><span class="line">    --val_check_interval %VAL_CHECK_INTERVAL% ^</span><br><span class="line">    --gpus=<span class="string">&quot;1&quot;</span> ^</span><br><span class="line">    --precision=16 ^</span><br><span class="line">    --optimizer %OPTIMIZER% ^</span><br><span class="line">    --classifier %CLASSIFIER%</span><br><span class="line"></span><br><span class="line">pause</span><br></pre></td></tr></table></figure>
+<p>重新跑一下！</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-12%20214704.png" alt="屏幕截图 2023-06-12 214704"></p>
+<p>chatGPT牛逼！看来格式是转换对了，下面就是调包的问题了</p>
+<p>看这个错应该是这个<code>pypinyin</code>包没装，装一下试试</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install pypinyin</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-12%20215157.png" alt="屏幕截图 2023-06-12 215157"></p>
+<p>但是环境里应该有了鸭，难道是跑的时候不在这个环境吗</p>
+<p>单独跑了一下这个文件，并没有报错！</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-12%20215537.png" alt="屏幕截图 2023-06-12 215537"></p>
+<p>感觉我的推理是正确的，查了一下如何在<code>bat</code>文件中选择环境</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">%切换到ChineseBert环境%</span><br><span class="line">CALL activate ChineseBert</span><br></pre></td></tr></table></figure>
+<p>将这段代码放在执行<code>Python</code>文件前面</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-13%20092124.png" alt="屏幕截图 2023-06-13 092124"></p>
+<p>然后走起！</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-13%20092200.png" alt="屏幕截图 2023-06-13 092200"></p>
+<p>这？？？这是跑起来了？？？有戏有戏</p>
+<p>等了一会也没反应，看了下说明，好像说是模型没训练初始化？</p>
+<p>又等了一会</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-13%20093055.png" alt="屏幕截图 2023-06-13 093055"></p>
+<p>难…难道再等等？好像又说CUDA和Pytorch不匹配？（但我之前专门按照官网装的鸭</p>
+<p>还说我什么<code>model.example_input_array</code>或者<code>input_array</code>属性没设置</p>
+<p>首先解决一下CUDA和Pytorch的版本匹配问题，再次检查一下作者提供的Pytorch安装代码，发现和我CUDA版本是不匹配的，看来这个需要自己修改一下，不能无脑复制</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-13%20094404.png" alt="屏幕截图 2023-06-13 094404"></p>
+<p>我自己的CUDA</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-13%20094832.png" alt="屏幕截图 2023-06-13 094832"></p>
+<p>于是直接重装吧</p>
+<p>先卸载</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip uninstall torch</span><br></pre></td></tr></table></figure>
+<p>再安装</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip3 install torch==1.7.1+cu110 torchvision==0.8.2+cu110 torchaudio==0.7.2 -f https://download.pytorch.org/whl/cu110/torch_stable.html</span><br></pre></td></tr></table></figure>
+<p>在跑一次试试！</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-13%20145951.png" alt="屏幕截图 2023-06-13 145951"></p>
+<p>跑起来了？！！！！！Ohhhhhhhh</p>
+<p>等了一下午，终于跑出了结果了</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-23%20185801.png" alt="屏幕截图 2023-06-23 185801"></p>
+<p>作者的结果如下</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Test Precision</th>
+<th>Test Recall</th>
+<th>Test F1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BERT</td>
+<td>79.69</td>
+<td>82.09</td>
+<td>80.87</td>
+</tr>
+<tr>
+<td>RoBERTa</td>
+<td>80.43</td>
+<td>80.30</td>
+<td>80.37</td>
+</tr>
+<tr>
+<td>ChineseBERT</td>
+<td>80.03</td>
+<td>83.33</td>
+<td>81.65</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>不知道为什么<code>test_precision</code>这一项结果略低一点，其他结果相差不是很大</p>
 ]]></content>
       <categories>
-        <category>学习笔记</category>
+        <category>论文复现</category>
       </categories>
-      <tags>
-        <tag>微信小程序</tag>
-      </tags>
   </entry>
   <entry>
     <title>安装PaddlePaddle</title>
@@ -1604,6 +1699,34 @@
 ]]></content>
       <categories>
         <category>论文复现</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>拼模型尝试</title>
+    <url>/2023/08/12/%E6%8B%BC%E6%A8%A1%E5%9E%8B%E5%B0%9D%E8%AF%95/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>记录一下自己首次组合模型的过程，希望可以为以后论文打基础。</p>
+<p>PS：由于自己是零基础，看了一下李沐的教程，感觉理论部分有点多，没看完可能<code>deadline</code>都到了。唐老师的人工智能课也看了看，总感觉不是特别系统，都是一个一个项目，于是我打算效率亿点点，需要什么先学什么。</p>
+<p>我需要跑的一个模型是这样的架构</p>
+<p><img src="https://s1.ax1x.com/2023/08/12/pPuCZes.png" alt="模型架构"></p>
+<h2 id="分析问题"><a href="#分析问题" class="headerlink" title="分析问题"></a>分析问题</h2><p>客观分析一下我遇到的这个问题</p>
+<p><strong>1.目标问题</strong></p>
+<p>把这个架构跑通$\rightarrow$</p>
+<p>从中文电子病历提取有用信息$\rightarrow$</p>
+<p>进行医疗大数据挖掘、临床辅助决策系统、AI 电子病历质控系统构建等的基础工作</p>
+<p><strong>2.方法问题</strong></p>
+<p>寻找相似的项目或者使用了相似模型架构的项目，把他们的模型删删改改</p>
+<p>删改可能需要借助到模型的官方文档，例如<a href="https://paddlenlp.readthedocs.io/zh/latest/index.html">PaddleNLP文档</a>，或者<a href="https://pytorch-cn.readthedocs.io/zh/latest/">PyTorch文档</a></p>
+<p>然后多借鉴一些博客的方法</p>
+<p><strong>3.执行问题</strong></p>
+<p>先安装一下paddle，然后尝试先把网上的项目跑通，在看懂的基础上进行修改</p>
+<h2 id="执行阶段"><a href="#执行阶段" class="headerlink" title="执行阶段"></a>执行阶段</h2><h3 id="安装paddleNLP"><a href="#安装paddleNLP" class="headerlink" title="安装paddleNLP"></a>安装paddleNLP</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 默认前提是已经安装好了paddle，我之前已经安装完，现在直接进入这个环境</span></span><br><span class="line">conda activate paddle</span><br><span class="line"><span class="comment"># 安装PaddleNLP 换成阿里云的镜像安装会快很多</span></span><br><span class="line">pip install --upgrade paddlenlp&gt;=2.0.0rc -i https://mirrors.aliyun.com/pypi/simple/</span><br></pre></td></tr></table></figure>
+<p>验证安装</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">python</span><br><span class="line">import paddlenlp</span><br></pre></td></tr></table></figure>
+<p>没有error应该就是安装好了</p>
+<h3 id="复现别人项目"><a href="#复现别人项目" class="headerlink" title="复现别人项目"></a>复现别人项目</h3><p>首先找到一个使用了类似框架的项目——<a href="https://aistudio.baidu.com/aistudio/projectdetail/1761182">中文命名实体识别-Bi-GRU+CRF</a>，然后把代码以<code>.py</code>的格式下载下来,用PyCharm打开</p>
+]]></content>
+      <categories>
+        <category>个人笔记</category>
       </categories>
   </entry>
   <entry>
@@ -1832,74 +1955,5 @@
       <tags>
         <tag>其他</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>word2vec工具实战</title>
-    <url>/2023/07/04/word2vec%E5%B7%A5%E5%85%B7%E5%AE%9E%E6%88%98/</url>
-    <content><![CDATA[<p>最开始需要新建一个conda环境</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda create -n word2vec python=3.8</span><br><span class="line">conda activate word2vec</span><br></pre></td></tr></table></figure>
-<p>然后安装一下所需要的库</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install numpy</span><br><span class="line">pip install scipy</span><br><span class="line">pip install gensim</span><br><span class="line">pip install jieba</span><br></pre></td></tr></table></figure>
-<p>首先下载一下数据集<a href="https://dumps.wikimedia.org/zhwiki/20230701/zhwiki-20230701-pages-articles.xml.bz2">zhwiki-20230701-pages-articles.xml.bz2</a>，为了方便后续操作，这里需要把他转成<code>txt</code>格式的</p>
-<p>以下是转化的文件<code>transform_to_txt.py</code></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="comment"># 修改后的代码如下：</span></span><br><span class="line"><span class="keyword">import</span> logging</span><br><span class="line"><span class="keyword">import</span> os.path</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> gensim.corpora <span class="keyword">import</span> WikiCorpus</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line"></span><br><span class="line">    program = os.path.basename(sys.argv[<span class="number">0</span>])</span><br><span class="line">    logger = logging.getLogger(program)</span><br><span class="line">    logging.basicConfig(<span class="built_in">format</span>=<span class="string">&#x27;%(asctime)s: %(levelname)s: %(message)s&#x27;</span>)</span><br><span class="line">    logging.root.setLevel(level=logging.INFO)</span><br><span class="line">    logger.info(<span class="string">&quot;running %s&quot;</span> % <span class="string">&#x27; &#x27;</span>.join(sys.argv))</span><br><span class="line">    <span class="comment"># check and process input arguments</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(sys.argv) &lt; <span class="number">3</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="built_in">globals</span>()[<span class="string">&#x27;__doc__&#x27;</span>] % <span class="built_in">locals</span>())</span><br><span class="line">        sys.exit(<span class="number">1</span>)</span><br><span class="line">    inp, outp = sys.argv[<span class="number">1</span>:<span class="number">3</span>]</span><br><span class="line">    space = <span class="string">&quot;&quot;</span></span><br><span class="line">    i = <span class="number">0</span></span><br><span class="line">    output = <span class="built_in">open</span>(outp, <span class="string">&#x27;w&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">    <span class="comment"># wiki = WikiCorpus(inp, lemmatize=False, dictionary=&#123;&#125;)</span></span><br><span class="line">    wiki = WikiCorpus(inp, dictionary=&#123;&#125;)</span><br><span class="line">    <span class="keyword">for</span> text <span class="keyword">in</span> wiki.get_texts():</span><br><span class="line">        s = space.join(text)</span><br><span class="line">        <span class="comment"># s = s.decode(&#x27;utf8&#x27;) + &quot;\n&quot;</span></span><br><span class="line">        s = s.encode(<span class="string">&#x27;utf8&#x27;</span>).decode(<span class="string">&#x27;utf8&#x27;</span>) + <span class="string">&quot;\n&quot;</span></span><br><span class="line">        output.write(s)</span><br><span class="line">        i = i + <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> (i % <span class="number">10000</span> == <span class="number">0</span>):</span><br><span class="line">            logger.info(<span class="string">&quot;Saved &quot;</span> + <span class="built_in">str</span>(i) + <span class="string">&quot; articles&quot;</span>)</span><br><span class="line">    output.close()</span><br><span class="line">    logger.info(<span class="string">&quot;Finished Saved &quot;</span> + <span class="built_in">str</span>(i) + <span class="string">&quot; articles&quot;</span>)</span><br></pre></td></tr></table></figure>
-<p>然后将刚刚下载的数据集和此<code>Python</code>文件放在同一个目录下，并且用命令行跳转到这个目录，然后执行</p>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">python transform<span class="built_in">_</span>to<span class="built_in">_</span>txt.py zhwiki-20230701-pages-articles.xml.bz2 wiki.zh.text</span><br></pre></td></tr></table></figure>
-<p>其中，第一个参数是<code>Python</code>的文件名，第二个是要处理的数据文件名，第三个是要输出的文件名</p>
-<p>转换完之后就生成了一个txt文件</p>
-<p><img src="https://s1.ax1x.com/2023/07/04/pCs7rX8.png" alt="image-20230704195428973"></p>
-<p>直接浏览，可以看出这里面全是繁体字，所以下面需要把繁体转换成简体</p>
-<p><img src="https://s1.ax1x.com/2023/07/04/pCs760g.png" alt="image-20230704195605355"></p>
-<p>首先需要下载这个<a href="https://github.com/BYVoid/OpenCC/wiki/Download">转换工具</a>，<strong>记住要下载预编译的</strong>。</p>
-<p>然后解压后放在一个能记住的位置，例如我是</p>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">G:<span class="keyword">\Lab</span><span class="keyword">\DeepLearning</span><span class="keyword">\OpenCC</span><span class="keyword">\share</span><span class="keyword">\opencc</span></span><br></pre></td></tr></table></figure>
-<p>然后把文件夹中的<code>bin</code>目录配置到系统环境<code>path</code>里</p>
-<p><img src="https://s1.ax1x.com/2023/07/04/pCsblqO.png" alt="屏幕截图 2023-07-04 202744"></p>
-<p>最后验证一下是否配置成功</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">opencc --<span class="built_in">help</span></span><br></pre></td></tr></table></figure>
-<p><img src="https://s1.ax1x.com/2023/07/04/pCsHFNd.png" alt="屏幕截图 2023-07-04 201226"></p>
-<p>然后就可以转换啦，用<code>cmd</code>跳转到<code>wiki.zh.text</code>文件所在的目录，在命令行输入</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">opencc -i wiki.zh.text -o test_zh.txt -c G:\Lab\DeepLearning\OpenCC\share\opencc\t2s.json</span><br></pre></td></tr></table></figure>
-<p><code>wiki.zh.text</code>是待转换的繁体文本，<code>test_zh.txt</code>是输出的简体文本，<code>t2s.json</code>表示繁体转简体，其中这个需要换成自己的地址（<strong>地址不要有空格</strong>）</p>
-<p><img src="https://s1.ax1x.com/2023/07/04/pCsbmGR.png" alt="image-20230704203004637"></p>
-<p>等一会就好了</p>
-<p><img src="https://s1.ax1x.com/2023/07/04/pCsbtJA.png" alt="image-20230704203155840"></p>
-<p>然后就全部成了简体了，使用word2vec工具需要做的最后一步是分词</p>
-<p>分词使用<code>jieba</code>这个库来解决，以下是分词的文件<code>participle.py</code></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> codecs</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> jieba</span><br><span class="line"><span class="keyword">import</span> jieba.analyse</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">cut_words</span>(<span class="params">sentence</span>):</span><br><span class="line">    <span class="comment"># print sentence</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot; &quot;</span>.join(jieba.cut(sentence)).encode(<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">f = codecs.<span class="built_in">open</span>(<span class="string">&#x27;test_zh.txt&#x27;</span>, <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&quot;utf8&quot;</span>)</span><br><span class="line">target = codecs.<span class="built_in">open</span>(<span class="string">&quot;zh.jian.wiki.seg_1.5G.txt&quot;</span>, <span class="string">&#x27;w&#x27;</span>, encoding=<span class="string">&quot;utf8&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;open files&#x27;</span>)</span><br><span class="line">line_num = <span class="number">1</span></span><br><span class="line">line = f.readline()</span><br><span class="line"><span class="keyword">while</span> line:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;---- processing &#x27;</span>, line_num, <span class="string">&#x27; article----------------&#x27;</span>)</span><br><span class="line">    line_seg = <span class="string">&quot; &quot;</span>.join(jieba.cut(line))</span><br><span class="line">    target.writelines(line_seg)</span><br><span class="line">    line_num = line_num + <span class="number">1</span></span><br><span class="line">    line = f.readline()</span><br><span class="line">f.close()</span><br><span class="line">target.close()</span><br><span class="line">exit()</span><br><span class="line"><span class="keyword">while</span> line:</span><br><span class="line">    curr = []</span><br><span class="line">    <span class="keyword">for</span> oneline <span class="keyword">in</span> line:</span><br><span class="line">        <span class="comment"># print(oneline)</span></span><br><span class="line">        curr.append(oneline)</span><br><span class="line">    after_cut = <span class="built_in">map</span>(cut_words, curr)</span><br><span class="line">    target.writelines(after_cut)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;saved&#x27;</span>, line_num, <span class="string">&#x27;articles&#x27;</span>)</span><br><span class="line">    exit()</span><br><span class="line">    line = f.readline1()</span><br><span class="line">f.close()</span><br><span class="line">target.close()</span><br></pre></td></tr></table></figure>
-<p>其中，这一句是配置需要分词的文件<code>test_zh.txt</code></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">f = codecs.<span class="built_in">open</span>(<span class="string">&#x27;test_zh.txt&#x27;</span>, <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&quot;utf8&quot;</span>)</span><br></pre></td></tr></table></figure>
-<p>这一句是配置需要输出的文件<code>zh.jian.wiki.seg_1.5G.txt</code></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">target = codecs.<span class="built_in">open</span>(<span class="string">&quot;zh.jian.wiki.seg_1.5G.txt&quot;</span>, <span class="string">&#x27;w&#x27;</span>, encoding=<span class="string">&quot;utf8&quot;</span>)</span><br></pre></td></tr></table></figure>
-<p>将<code>participle.py</code>文件和上面输出的简体文本<code>test_zh.txt</code>放在同一个目录，用<code>cmd</code>（跳转到对应目录后输入<code>python Testjieba.py</code>）或者<code>Pycharm</code>直接运行<code>participle.py</code>文件</p>
-<p><strong>PS：无论是<code>cmd</code>还是<code>Pycharm</code>，记得切换到<code>word2vec</code>环境</strong></p>
-<p>经过将近一个多小时的时间，终于跑完了</p>
-<p><img src="https://s1.ax1x.com/2023/07/04/pCsb6ij.png" alt="屏幕截图 2023-07-04 192329"></p>
-<p>接下来就是正式使用word2vec的时候了，以下是使用word2vec的文件<code>word2vec_model.py</code></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> logging</span><br><span class="line"><span class="keyword">import</span> multiprocessing</span><br><span class="line"><span class="keyword">import</span> os.path</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> gensim.models <span class="keyword">import</span> Word2Vec</span><br><span class="line"><span class="keyword">from</span> gensim.models.word2vec <span class="keyword">import</span> LineSentence</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line"></span><br><span class="line">    program = os.path.basename(sys.argv[<span class="number">0</span>])</span><br><span class="line">    logger = logging.getLogger(program)</span><br><span class="line">    logging.basicConfig(<span class="built_in">format</span>=<span class="string">&#x27;%(asctime)s: %(levelname)s: %(message)s&#x27;</span>)</span><br><span class="line">    logging.root.setLevel(level=logging.INFO)</span><br><span class="line">    logger.info(<span class="string">&quot;running %s&quot;</span> % <span class="string">&#x27; &#x27;</span>.join(sys.argv))</span><br><span class="line">    <span class="comment"># check and process input arguments</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(sys.argv) &lt; <span class="number">4</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="built_in">globals</span>()[<span class="string">&#x27;__doc__&#x27;</span>] % <span class="built_in">locals</span>())</span><br><span class="line">        sys.exit(<span class="number">1</span>)</span><br><span class="line">    inp, outp1, outp2 = sys.argv[<span class="number">1</span>:<span class="number">4</span>]</span><br><span class="line">    model = Word2Vec(LineSentence(inp), size=<span class="number">400</span>, window=<span class="number">5</span>, min_count=<span class="number">5</span>, workers=multiprocessing.cpu_count())</span><br><span class="line">    model.save(outp1)</span><br><span class="line">    model.wv.save_word2vec_format(outp2, binary=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
-<p>将上文分好词的文件<code>zh.jian.wiki.seg_1.5G.txt</code>与<code>word2vec_model.py</code>文件也是放到同一个目录下，然后在<code>cmd</code>中执行</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">python word2vec_model.py zh.jian.wiki.seg_1.5G.txt wiki.zh.text.model wiki.zh.text.vector</span><br></pre></td></tr></table></figure>
-<p>其中，<code>wiki.zh.text.model</code>是生成的模型（同样记得切换环境）</p>
-<p><img src="https://s1.ax1x.com/2023/07/04/pCsqmTg.png" alt="image-20230704205047579"></p>
-<p>可能会报这个错，原因可能是<code>gensim</code>的版本的差异。</p>
-<p>这样把下面这句的<code>size</code>改成<code>vector_size</code>即可</p>
-<p>源代码：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">model = Word2Vec(LineSentence(inp), size=<span class="number">400</span>, window=<span class="number">5</span>, min_count=<span class="number">5</span>, workers=multiprocessing.cpu_count())</span><br></pre></td></tr></table></figure>
-<p>新代码：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">model = Word2Vec(LineSentence(inp), vector_size=<span class="number">400</span>, window=<span class="number">5</span>, min_count=<span class="number">5</span>, workers=multiprocessing.cpu_count())</span><br></pre></td></tr></table></figure>
-<p>然后就可以漫长的等待了！</p>
-<p><img src="https://s1.ax1x.com/2023/07/04/pCsqB11.png" alt="image-20230704205435161"></p>
-<p> 经过一段时间后，模型保存成功了！</p>
-<p><img src="https://s1.ax1x.com/2023/07/04/pCsO3ZT.png" alt="屏幕截图 2023-07-04 212910"></p>
-<p>最后测试一下模型</p>
-<p>测试文件<code>testModel.py</code>如下</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> gensim.models <span class="keyword">import</span> Word2Vec</span><br><span class="line"></span><br><span class="line">en_wiki_word2vec_model = Word2Vec.load(<span class="string">&#x27;wiki.zh.text.model&#x27;</span>)</span><br><span class="line"></span><br><span class="line">testwords = [<span class="string">&#x27;苹果&#x27;</span>, <span class="string">&#x27;数学&#x27;</span>, <span class="string">&#x27;学术&#x27;</span>, <span class="string">&#x27;白痴&#x27;</span>, <span class="string">&#x27;篮球&#x27;</span>]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">5</span>):</span><br><span class="line">    res = en_wiki_word2vec_model.wv.most_similar(testwords[i])</span><br><span class="line">    <span class="built_in">print</span>(testwords[i])</span><br><span class="line">    <span class="built_in">print</span>(res)</span><br></pre></td></tr></table></figure>
-<p>继续在同一个目录执行<code>testModel.py</code>文件，得到如下结果</p>
-<p><img src="https://s1.ax1x.com/2023/07/05/pCyEdl6.png" alt="image-20230705101212390"></p>
-<p>最后附上<a href="https://github.com/Ruvikm/Gensim_word2vec">项目完整地址</a></p>
-]]></content>
-      <categories>
-        <category>个人笔记</category>
-      </categories>
   </entry>
 </search>
