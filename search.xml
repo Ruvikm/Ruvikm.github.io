@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>C_C++用宏定义简化for循环</title>
+    <url>/2022/01/10/C_C++%E7%94%A8%E5%AE%8F%E5%AE%9A%E4%B9%89%E7%AE%80%E5%8C%96for%E5%BE%AA%E7%8E%AF/</url>
+    <content><![CDATA[<p>记录一下for循环简化<br><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> _for(i,a,b) for( int i=(a); i&lt;(b); ++i)</span></span><br></pre></td></tr></table></figure><br>这样<br><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)</span><br></pre></td></tr></table></figure><br>就简化为了</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">_for(i, <span class="number">0</span>, <span class="number">10</span>)</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>个人笔记</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>2021版王道数据结构课后代码题全部实现</title>
     <url>/2022/01/10/2021%E7%89%88%E7%8E%8B%E9%81%93%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E8%AF%BE%E5%90%8E%E4%BB%A3%E7%A0%81%E9%A2%98%E5%85%A8%E9%83%A8%E5%AE%9E%E7%8E%B0/</url>
     <content><![CDATA[<p>历时2个多月，把21版王道数据结构的课后代码题全部实现了一遍，一共96道题</p>
@@ -34,19 +47,6 @@
       </tags>
   </entry>
   <entry>
-    <title>C_C++用宏定义简化for循环</title>
-    <url>/2022/01/10/C_C++%E7%94%A8%E5%AE%8F%E5%AE%9A%E4%B9%89%E7%AE%80%E5%8C%96for%E5%BE%AA%E7%8E%AF/</url>
-    <content><![CDATA[<p>记录一下for循环简化<br><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> _for(i,a,b) for( int i=(a); i&lt;(b); ++i)</span></span><br></pre></td></tr></table></figure><br>这样<br><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)</span><br></pre></td></tr></table></figure><br>就简化为了</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">_for(i, <span class="number">0</span>, <span class="number">10</span>)</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>个人笔记</category>
-      </categories>
-      <tags>
-        <tag>算法</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Host文件备份</title>
     <url>/2023/07/03/Host%E6%96%87%E4%BB%B6%E5%A4%87%E4%BB%BD/</url>
     <content><![CDATA[<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="params">#</span> Copyright (c) 1993-2009 Microsoft Corp.</span><br><span class="line"><span class="params">#</span></span><br><span class="line"><span class="params">#</span> This is a sample HOSTS file used by Microsoft TCP/IP for Windows.</span><br><span class="line"><span class="params">#</span></span><br><span class="line"><span class="params">#</span> This file contains the mappings of IP addresses to host names. Each</span><br><span class="line"><span class="params">#</span> entry should be kept on an individual line. The IP address should</span><br><span class="line"><span class="params">#</span> be placed in the first column followed by the corresponding host name.</span><br><span class="line"><span class="params">#</span> The IP address and the host name should be separated by at least one</span><br><span class="line"><span class="params">#</span> space.</span><br><span class="line"><span class="params">#</span></span><br><span class="line"><span class="params">#</span> Additionally, comments (such as these) may be inserted on individual</span><br><span class="line"><span class="params">#</span> lines or following the machine name denoted by a &#x27;<span class="params">#</span>&#x27; symbol.</span><br><span class="line"><span class="params">#</span></span><br><span class="line"><span class="params">#</span> For example:</span><br><span class="line"><span class="params">#</span></span><br><span class="line"><span class="params">#</span> 102.54.94.97 rhino.acme.com <span class="params">#</span> source server</span><br><span class="line"><span class="params">#</span> 38.25.63.10 x.acme.com <span class="params">#</span> x client host</span><br><span class="line"><span class="params">#</span> localhost name resolution is handled within DNS itself.</span><br><span class="line"><span class="params">#</span> 127.0.0.1 localhost</span><br><span class="line"><span class="params">#</span> ::1 localhost</span><br><span class="line"></span><br><span class="line"><span class="params">#</span> Github</span><br><span class="line">140.82.114.4 github.com</span><br><span class="line">199.232.69.194 github.global.ssl.fastly.net</span><br><span class="line">185.199.108.153 assets-cdn.github.com</span><br><span class="line">185.199.110.153 assets-cdn.github.com</span><br><span class="line">185.199.111.153 assets-cdn.github.com</span><br></pre></td></tr></table></figure>
@@ -56,26 +56,25 @@
       </categories>
   </entry>
   <entry>
-    <title>LeetCode 46. Permutations</title>
-    <url>/2022/01/10/LeetCode%2046.%20Permutations/</url>
-    <content><![CDATA[<h2 id="Given-a-collection-of-distinct-integers-return-all-possible-permutations"><a href="#Given-a-collection-of-distinct-integers-return-all-possible-permutations" class="headerlink" title="Given a collection of distinct integers, return all possible permutations."></a>Given a collection of distinct integers, return all possible permutations.</h2><p>Example:</p>
-<p>Input: [1,2,3]<br>Output:<br>[<br>  [1,2,3],<br>  [1,3,2],<br>  [2,1,3],<br>  [2,3,1],<br>  [3,1,2],<br>  [3,2,1]<br>]</p>
-<p><a href="https://leetcode-cn.com/problems/permutations/">题目链接</a></p>
-<p>看了看大佬们的讲解，终于自己做出来一道回溯的题。<br>回溯大致分为三步：</p>
-<ol>
-<li>终止条件：回溯到什么情况就可以加入答案列表</li>
-<li>剪枝条件：什么情况下就可以停止回溯直接continue</li>
-<li>回溯范围：如何将当前层和下一层联系起来继续递归下去</li>
+    <title>Java实现鲜花销售系统</title>
+    <url>/2022/01/10/Java%E5%AE%9E%E7%8E%B0%E9%B2%9C%E8%8A%B1%E9%94%80%E5%94%AE%E7%B3%BB%E7%BB%9F/</url>
+    <content><![CDATA[<h2 id="项目环境"><a href="#项目环境" class="headerlink" title="项目环境"></a>项目环境</h2><ol>
+<li>IDE：IDEA</li>
+<li>数据库：Mysql 8.0.22</li>
+<li>JDK:1.8</li>
+<li><p>界面设计插件：JFormDesigner</p>
+<p><strong>登录界面</strong><br><img src="https://img-blog.csdnimg.cn/20210107222234507.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="登录"><br><strong>顾客界面</strong><br><img src="https://img-blog.csdnimg.cn/20210107222308547.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20210107222308532.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20210107222308539.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20210107222308538.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20210107222308489.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+</li>
 </ol>
-<p>对于这道全排列的题，我们需要一个res保存答案，一个temp参与回溯，当达到终于条件也就是temp的大小与nums的相等时便把temp加入res中;<br>然后需要一个check数组来标记使用过的元素，当一个数已经被使用过便把对应的位置的值设为1，这样避免了一个数重复使用多次。<br>由于这道题是要列出所有的排列结果，所以需要全部遍历</p>
-<p>代码如下：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; res;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">dfs</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums,vector&lt;<span class="type">int</span>&gt;&amp; temp,vector&lt;<span class="type">int</span>&gt;&amp; check)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(temp.<span class="built_in">size</span>()==nums.<span class="built_in">size</span>())&#123;</span><br><span class="line">            res.<span class="built_in">push_back</span>(temp);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;nums.<span class="built_in">size</span>();i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(check[i])</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            check[i]=<span class="number">1</span>;</span><br><span class="line">            temp.<span class="built_in">push_back</span>(nums[i]);</span><br><span class="line">            <span class="built_in">dfs</span>(nums,temp,check);</span><br><span class="line">            temp.<span class="built_in">pop_back</span>();</span><br><span class="line">            check[i]=<span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">permute</span>(vector&lt;<span class="type">int</span>&gt;&amp; nums) &#123;</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">check</span><span class="params">(nums.size(),<span class="number">0</span>)</span></span>;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; temp;</span><br><span class="line">        <span class="built_in">dfs</span>(nums,temp,check);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p><strong>后代管理界面</strong><br><img src="https://img-blog.csdnimg.cn/20210107222348530.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20210107222348518.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20210107222348524.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20210107222348521.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><strong>代码结构</strong><br><img src="https://img-blog.csdnimg.cn/20210107222558431.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<p><strong><a href="https://github.com/Ruvikm/Flower">源码链接</a></strong></p>
 ]]></content>
       <categories>
-        <category>刷题笔记</category>
+        <category>个人项目</category>
       </categories>
       <tags>
-        <tag>算法</tag>
+        <tag>java</tag>
       </tags>
   </entry>
   <entry>
@@ -106,25 +105,26 @@
       </tags>
   </entry>
   <entry>
-    <title>Java实现鲜花销售系统</title>
-    <url>/2022/01/10/Java%E5%AE%9E%E7%8E%B0%E9%B2%9C%E8%8A%B1%E9%94%80%E5%94%AE%E7%B3%BB%E7%BB%9F/</url>
-    <content><![CDATA[<h2 id="项目环境"><a href="#项目环境" class="headerlink" title="项目环境"></a>项目环境</h2><ol>
-<li>IDE：IDEA</li>
-<li>数据库：Mysql 8.0.22</li>
-<li>JDK:1.8</li>
-<li><p>界面设计插件：JFormDesigner</p>
-<p><strong>登录界面</strong><br><img src="https://img-blog.csdnimg.cn/20210107222234507.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="登录"><br><strong>顾客界面</strong><br><img src="https://img-blog.csdnimg.cn/20210107222308547.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20210107222308532.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20210107222308539.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20210107222308538.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20210107222308489.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-</li>
+    <title>LeetCode 46. Permutations</title>
+    <url>/2022/01/10/LeetCode%2046.%20Permutations/</url>
+    <content><![CDATA[<h2 id="Given-a-collection-of-distinct-integers-return-all-possible-permutations"><a href="#Given-a-collection-of-distinct-integers-return-all-possible-permutations" class="headerlink" title="Given a collection of distinct integers, return all possible permutations."></a>Given a collection of distinct integers, return all possible permutations.</h2><p>Example:</p>
+<p>Input: [1,2,3]<br>Output:<br>[<br>  [1,2,3],<br>  [1,3,2],<br>  [2,1,3],<br>  [2,3,1],<br>  [3,1,2],<br>  [3,2,1]<br>]</p>
+<p><a href="https://leetcode-cn.com/problems/permutations/">题目链接</a></p>
+<p>看了看大佬们的讲解，终于自己做出来一道回溯的题。<br>回溯大致分为三步：</p>
+<ol>
+<li>终止条件：回溯到什么情况就可以加入答案列表</li>
+<li>剪枝条件：什么情况下就可以停止回溯直接continue</li>
+<li>回溯范围：如何将当前层和下一层联系起来继续递归下去</li>
 </ol>
-<p><strong>后代管理界面</strong><br><img src="https://img-blog.csdnimg.cn/20210107222348530.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20210107222348518.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20210107222348524.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20210107222348521.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<p><strong>代码结构</strong><br><img src="https://img-blog.csdnimg.cn/20210107222558431.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
-<p><strong><a href="https://github.com/Ruvikm/Flower">源码链接</a></strong></p>
+<p>对于这道全排列的题，我们需要一个res保存答案，一个temp参与回溯，当达到终于条件也就是temp的大小与nums的相等时便把temp加入res中;<br>然后需要一个check数组来标记使用过的元素，当一个数已经被使用过便把对应的位置的值设为1，这样避免了一个数重复使用多次。<br>由于这道题是要列出所有的排列结果，所以需要全部遍历</p>
+<p>代码如下：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; res;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">dfs</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums,vector&lt;<span class="type">int</span>&gt;&amp; temp,vector&lt;<span class="type">int</span>&gt;&amp; check)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(temp.<span class="built_in">size</span>()==nums.<span class="built_in">size</span>())&#123;</span><br><span class="line">            res.<span class="built_in">push_back</span>(temp);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;nums.<span class="built_in">size</span>();i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(check[i])</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            check[i]=<span class="number">1</span>;</span><br><span class="line">            temp.<span class="built_in">push_back</span>(nums[i]);</span><br><span class="line">            <span class="built_in">dfs</span>(nums,temp,check);</span><br><span class="line">            temp.<span class="built_in">pop_back</span>();</span><br><span class="line">            check[i]=<span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">permute</span>(vector&lt;<span class="type">int</span>&gt;&amp; nums) &#123;</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">check</span><span class="params">(nums.size(),<span class="number">0</span>)</span></span>;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; temp;</span><br><span class="line">        <span class="built_in">dfs</span>(nums,temp,check);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
-        <category>个人项目</category>
+        <category>刷题笔记</category>
       </categories>
       <tags>
-        <tag>java</tag>
+        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
@@ -959,51 +959,6 @@
       </categories>
   </entry>
   <entry>
-    <title>复现论文SpikeGPT Generative Pre-trained Language Model with Spiking Neural Networks</title>
-    <url>/2023/07/22/%E5%A4%8D%E7%8E%B0%E8%AE%BA%E6%96%87SpikeGPT-Generative%20Pre-trained%20Language%20Model%20with%20Spiking%20Neural%20Networks/</url>
-    <content><![CDATA[<p>记录一下复现论文<a href="https://arxiv.org/abs/2302.13939v2">SpikeGPT: Generative Pre-trained Language Model with Spiking Neural Networks</a>的过程，论文给出了项目的<a href="https://github.com/ridgerchu/SpikeGPT">GitHub</a>地址。此博客是边跑边写边改的，尽量把顺序合理化，让人可以少走一些弯路</p>
-<h2 id="论文概述"><a href="#论文概述" class="headerlink" title="论文概述"></a>论文概述</h2><p>利用工具，可以大概对此篇论文有如下了解</p>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">这篇文章介绍了SpikeGPT，这是一种基于脉冲神经网络(SNNs)的生成式语言模型。SNNs利用稀疏、事件驱动的激活方式来减少计算复杂性，提高能源效率，因此在深度学习领域有很大的潜力。虽然SNNs在计算机视觉任务上取得了成功，但在语言生成方面仍然有待进一步探索，因为它们的训练过程相对复杂。文章的作者们对Transformer模块进行了修改，消除了多头自注意力带来的二次计算复杂度，并引入循环计算，实现了逐词计算，同时保留了长程依赖关系。结果得到的SpikeGPT模型在语言生成任务上表现出竞争力，同时能耗仅为传统人工神经网络(ANNs)的五分之一。该模型还是迄今为止最大的反向传播训练的功能性SNN模型，拥有多达2.6亿个参数。这项工作为在自然语言处理任务中有效训练大规模SNNs并将Transformer架构与SNNs结合起来实现高性能和能源效率开辟了新的潜力。</span><br></pre></td></tr></table></figure>
-<h2 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h2><h3 id="新建环境"><a href="#新建环境" class="headerlink" title="新建环境"></a>新建环境</h3><p>新建一个<code>Conda</code>环境</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">conda create -n SpikeGPT python=3.8</span><br><span class="line">conda activate SpikeGPT</span><br></pre></td></tr></table></figure>
-<p>然后用<code>pycharm</code>打开此项目，并切换到刚刚新建的环境</p>
-<p>接下来就是安装环境了，由于作者没有提供具体包的版本，只能根据缺啥安装啥的原则，有什么问题之后再慢慢改</p>
-<h3 id="安装accelerate"><a href="#安装accelerate" class="headerlink" title="安装accelerate"></a>安装accelerate</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install accelerate</span><br></pre></td></tr></table></figure>
-<p>在安装<code>accelerate</code>的时候，自动给我装了一个torch2.0.1版本的，这个后面管，只要这个torch版本大于10.0.0就行</p>
-<h3 id="安装Pytorch"><a href="#安装Pytorch" class="headerlink" title="安装Pytorch"></a>安装Pytorch</h3><p>根据我的<code>CUDA</code>版本，安装了如下的<code>torch</code>，具体安装细节可以参考<a href="https://ruvikm.gitee.io/2023/06/06/Win11%E9%85%8D%E7%BD%AEAnaconda-Cuda-Pytorch-Tenserflow%E7%8E%AF%E5%A2%83/">这篇博客</a></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda install pytorch==1.11.0 torchvision==0.12.0 torchaudio==0.11.0 cudatoolkit=11.3</span><br></pre></td></tr></table></figure>
-<h3 id="安装matplotlib"><a href="#安装matplotlib" class="headerlink" title="安装matplotlib"></a>安装matplotlib</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install matplotlib</span><br></pre></td></tr></table></figure>
-<h3 id="安装tqdm"><a href="#安装tqdm" class="headerlink" title="安装tqdm"></a>安装tqdm</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install tqdm</span><br></pre></td></tr></table></figure>
-<h3 id="安装transformers"><a href="#安装transformers" class="headerlink" title="安装transformers"></a>安装transformers</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install transformers</span><br></pre></td></tr></table></figure>
-<h3 id="安装deepspeed"><a href="#安装deepspeed" class="headerlink" title="安装deepspeed"></a>安装deepspeed</h3><h4 id="错误安装方法"><a href="#错误安装方法" class="headerlink" title="错误安装方法"></a>错误安装方法</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install deepspeed</span><br></pre></td></tr></table></figure>
-<p>安装的时候报错了</p>
-<p><img src="https://s1.ax1x.com/2023/07/22/pCbvDot.png" alt="image-20230722102232403"></p>
-<p>换<code>conda</code>试了后，<code>conda install deepspeed</code>，也不行。</p>
-<p>网上查了一个安装方式</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install transformers[deepspeed]</span><br></pre></td></tr></table></figure>
-<p>还是那个错，网上查了一下</p>
-<p><img src="https://s1.ax1x.com/2023/07/22/pCbxpY6.png" alt="image-20230722103014784"></p>
-<p>设置一下环境变量试试</p>
-<p><img src="https://s1.ax1x.com/2023/07/22/pCbxX38.png" alt="屏幕截图 2023-07-22 105535"></p>
-<p>报错！！！好消息是报错变了</p>
-<p><img src="https://s1.ax1x.com/2023/07/22/pCbxbNt.png" alt="image-20230722105444097"></p>
-<p>去<code>github</code>看了一下，意思大概是这个库原本是在<code>linux</code>上的，在<code>window</code>上的支持还不是很好</p>
-<p><img src="https://s1.ax1x.com/2023/07/22/pCbxy7R.png" alt="image-20230722103953254"></p>
-<h4 id="正确安装方法"><a href="#正确安装方法" class="headerlink" title="正确安装方法"></a>正确安装方法</h4><p>网上查到一篇win10成功安装的<a href="https://zhuanlan.zhihu.com/p/636450918">博客</a>，按照博客的说法</p>
-<p>首先安装必要组件</p>
-<p><img src="https://s1.ax1x.com/2023/07/22/pCq9crD.png" alt="image-20230722122822936">先把<a href="https://github.com/microsoft/DeepSpeed">官方</a>的开源的代码下载下来，解压（要用管理员权限）后</p>
-<p>用管理员权限打开cmd，切换到解压的目录，在命令行输入</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">build_win.bat</span><br></pre></td></tr></table></figure>
-<p><img src="https://s1.ax1x.com/2023/07/22/pCq9A8P.png" alt="image-20230722121606679"></p>
-<p>慢慢改错吧，先解决一个报错最多的</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">error: attribute <span class="string">&quot;nodiscard&quot;</span> does not take arguments</span><br></pre></td></tr></table></figure>
-<h3 id="下载数据集"><a href="#下载数据集" class="headerlink" title="下载数据集"></a>下载数据集</h3><p>作者提供数据集<code>Enwik8</code><a href="https://data.deepai.org/enwik8.zip">下载地址</a></p>
-]]></content>
-      <categories>
-        <category>论文复现</category>
-      </categories>
-  </entry>
-  <entry>
     <title>复现论文《Efficient Estimation of Word Representations in Vector Space》（未跑通中）</title>
     <url>/2023/07/03/%E5%A4%8D%E7%8E%B0%E8%AE%BA%E6%96%87%E3%80%8AEfficient%20Estimation%20of%20Word%20Representations%20in%20Vector%20Space%E3%80%8B/</url>
     <content><![CDATA[<p>Word2Vec工具的出处在一篇<a href="https://arxiv.org/abs/1301.3781">论文</a>《Efficient Estimation of Word Representations in Vector Space》中</p>
@@ -1063,6 +1018,51 @@
 <p>ps：如果显示找不到启动项可以试试<a href="https://blog.csdn.net/qq_46070108/article/details/128761974">这个方法</a></p>
 <p><img src="https://s1.ax1x.com/2023/07/03/pCrysRs.png" alt="image-20230703152429717"></p>
 <p>打扰了…找一个视频吧，我记得哔哩哔哩大学有使用这个工具的教程</p>
+]]></content>
+      <categories>
+        <category>论文复现</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>复现论文SpikeGPT Generative Pre-trained Language Model with Spiking Neural Networks</title>
+    <url>/2023/07/22/%E5%A4%8D%E7%8E%B0%E8%AE%BA%E6%96%87SpikeGPT-Generative%20Pre-trained%20Language%20Model%20with%20Spiking%20Neural%20Networks/</url>
+    <content><![CDATA[<p>记录一下复现论文<a href="https://arxiv.org/abs/2302.13939v2">SpikeGPT: Generative Pre-trained Language Model with Spiking Neural Networks</a>的过程，论文给出了项目的<a href="https://github.com/ridgerchu/SpikeGPT">GitHub</a>地址。此博客是边跑边写边改的，尽量把顺序合理化，让人可以少走一些弯路</p>
+<h2 id="论文概述"><a href="#论文概述" class="headerlink" title="论文概述"></a>论文概述</h2><p>利用工具，可以大概对此篇论文有如下了解</p>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">这篇文章介绍了SpikeGPT，这是一种基于脉冲神经网络(SNNs)的生成式语言模型。SNNs利用稀疏、事件驱动的激活方式来减少计算复杂性，提高能源效率，因此在深度学习领域有很大的潜力。虽然SNNs在计算机视觉任务上取得了成功，但在语言生成方面仍然有待进一步探索，因为它们的训练过程相对复杂。文章的作者们对Transformer模块进行了修改，消除了多头自注意力带来的二次计算复杂度，并引入循环计算，实现了逐词计算，同时保留了长程依赖关系。结果得到的SpikeGPT模型在语言生成任务上表现出竞争力，同时能耗仅为传统人工神经网络(ANNs)的五分之一。该模型还是迄今为止最大的反向传播训练的功能性SNN模型，拥有多达2.6亿个参数。这项工作为在自然语言处理任务中有效训练大规模SNNs并将Transformer架构与SNNs结合起来实现高性能和能源效率开辟了新的潜力。</span><br></pre></td></tr></table></figure>
+<h2 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h2><h3 id="新建环境"><a href="#新建环境" class="headerlink" title="新建环境"></a>新建环境</h3><p>新建一个<code>Conda</code>环境</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">conda create -n SpikeGPT python=3.8</span><br><span class="line">conda activate SpikeGPT</span><br></pre></td></tr></table></figure>
+<p>然后用<code>pycharm</code>打开此项目，并切换到刚刚新建的环境</p>
+<p>接下来就是安装环境了，由于作者没有提供具体包的版本，只能根据缺啥安装啥的原则，有什么问题之后再慢慢改</p>
+<h3 id="安装accelerate"><a href="#安装accelerate" class="headerlink" title="安装accelerate"></a>安装accelerate</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install accelerate</span><br></pre></td></tr></table></figure>
+<p>在安装<code>accelerate</code>的时候，自动给我装了一个torch2.0.1版本的，这个后面管，只要这个torch版本大于10.0.0就行</p>
+<h3 id="安装Pytorch"><a href="#安装Pytorch" class="headerlink" title="安装Pytorch"></a>安装Pytorch</h3><p>根据我的<code>CUDA</code>版本，安装了如下的<code>torch</code>，具体安装细节可以参考<a href="https://ruvikm.gitee.io/2023/06/06/Win11%E9%85%8D%E7%BD%AEAnaconda-Cuda-Pytorch-Tenserflow%E7%8E%AF%E5%A2%83/">这篇博客</a></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda install pytorch==1.11.0 torchvision==0.12.0 torchaudio==0.11.0 cudatoolkit=11.3</span><br></pre></td></tr></table></figure>
+<h3 id="安装matplotlib"><a href="#安装matplotlib" class="headerlink" title="安装matplotlib"></a>安装matplotlib</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install matplotlib</span><br></pre></td></tr></table></figure>
+<h3 id="安装tqdm"><a href="#安装tqdm" class="headerlink" title="安装tqdm"></a>安装tqdm</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install tqdm</span><br></pre></td></tr></table></figure>
+<h3 id="安装transformers"><a href="#安装transformers" class="headerlink" title="安装transformers"></a>安装transformers</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install transformers</span><br></pre></td></tr></table></figure>
+<h3 id="安装deepspeed"><a href="#安装deepspeed" class="headerlink" title="安装deepspeed"></a>安装deepspeed</h3><h4 id="错误安装方法"><a href="#错误安装方法" class="headerlink" title="错误安装方法"></a>错误安装方法</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install deepspeed</span><br></pre></td></tr></table></figure>
+<p>安装的时候报错了</p>
+<p><img src="https://s1.ax1x.com/2023/07/22/pCbvDot.png" alt="image-20230722102232403"></p>
+<p>换<code>conda</code>试了后，<code>conda install deepspeed</code>，也不行。</p>
+<p>网上查了一个安装方式</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install transformers[deepspeed]</span><br></pre></td></tr></table></figure>
+<p>还是那个错，网上查了一下</p>
+<p><img src="https://s1.ax1x.com/2023/07/22/pCbxpY6.png" alt="image-20230722103014784"></p>
+<p>设置一下环境变量试试</p>
+<p><img src="https://s1.ax1x.com/2023/07/22/pCbxX38.png" alt="屏幕截图 2023-07-22 105535"></p>
+<p>报错！！！好消息是报错变了</p>
+<p><img src="https://s1.ax1x.com/2023/07/22/pCbxbNt.png" alt="image-20230722105444097"></p>
+<p>去<code>github</code>看了一下，意思大概是这个库原本是在<code>linux</code>上的，在<code>window</code>上的支持还不是很好</p>
+<p><img src="https://s1.ax1x.com/2023/07/22/pCbxy7R.png" alt="image-20230722103953254"></p>
+<h4 id="正确安装方法"><a href="#正确安装方法" class="headerlink" title="正确安装方法"></a>正确安装方法</h4><p>网上查到一篇win10成功安装的<a href="https://zhuanlan.zhihu.com/p/636450918">博客</a>，按照博客的说法</p>
+<p>首先安装必要组件</p>
+<p><img src="https://s1.ax1x.com/2023/07/22/pCq9crD.png" alt="image-20230722122822936">先把<a href="https://github.com/microsoft/DeepSpeed">官方</a>的开源的代码下载下来，解压（要用管理员权限）后</p>
+<p>用管理员权限打开cmd，切换到解压的目录，在命令行输入</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">build_win.bat</span><br></pre></td></tr></table></figure>
+<p><img src="https://s1.ax1x.com/2023/07/22/pCq9A8P.png" alt="image-20230722121606679"></p>
+<p>慢慢改错吧，先解决一个报错最多的</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">error: attribute <span class="string">&quot;nodiscard&quot;</span> does not take arguments</span><br></pre></td></tr></table></figure>
+<h3 id="下载数据集"><a href="#下载数据集" class="headerlink" title="下载数据集"></a>下载数据集</h3><p>作者提供数据集<code>Enwik8</code><a href="https://data.deepai.org/enwik8.zip">下载地址</a></p>
 ]]></content>
       <categories>
         <category>论文复现</category>
@@ -1252,6 +1252,89 @@
 ]]></content>
       <categories>
         <category>论文复现</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>如何使用微信小程序IDE在github上实现团队合作</title>
+    <url>/2020/04/16/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8FIDE%E5%9C%A8github%E4%B8%8A%E5%AE%9E%E7%8E%B0%E5%9B%A2%E9%98%9F%E5%90%88%E4%BD%9C/</url>
+    <content><![CDATA[<p>——-原文——-(2020/4/16)</p>
+<p>@<a href="如何使用微信开发者工具在github上实现团队合作">TOC</a><br>一.发起者要做的一些步骤</p>
+<ol>
+<li>首先用IDE初始化本地的git仓库<br><img src="https://img-blog.csdnimg.cn/20200130111131527.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="a."><br><img src="https://img-blog.csdnimg.cn/20200130111301249.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="b."></li>
+<li>使用github-desktop客户端添加这个新建的本地git库并同时上传到新建的远程仓库中<br><img src="https://img-blog.csdnimg.cn/2020013011214879.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="添加本地仓库"><br><img src="https://img-blog.csdnimg.cn/20200130112202771.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="新建远程仓库"><br><img src="https://img-blog.csdnimg.cn/2020013011231537.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/2020013011291517.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="看一下成果嘿嘿嘿"></li>
+<li>添加参与者<br><img src="https://img-blog.csdnimg.cn/20200130113301950.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="最好添加的时候写参与者的名字"><br><strong>PS:被邀请者的必须要接受邀请才可以</strong></li>
+</ol>
+<p>二.参与者需要做的步骤</p>
+<ol>
+<li>在微信小程序开发者工具里添加远程仓库<br><img src="https://img-blog.csdnimg.cn/20200130114342510.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="添加远程仓库_1"><img src="https://img-blog.csdnimg.cn/20200130114356569.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="添加远程仓库_2"><br><img src="https://img-blog.csdnimg.cn/20200130114448885.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="如何查看仓库的地址"></li>
+<li>绑定自己的github账号<br><img src="https://img-blog.csdnimg.cn/20200130115015761.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="绑定账号"></li>
+</ol>
+<p>三.如何线上合作</p>
+<ol>
+<li>参与者在调试好了一些功能以后，提交到远程仓库的分支<br><img src="https://img-blog.csdnimg.cn/20200130120245999.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="提交分支"></li>
+<li>参与者请求合并分支<br><img src="https://img-blog.csdnimg.cn/20200130120523380.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="请求合并_1"><br><img src="https://img-blog.csdnimg.cn/20200130120921309.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="请求合并_2"><br><img src="https://img-blog.csdnimg.cn/20200130120955937.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="发起合并请求"></li>
+<li>在发起者经过了沉思熟虑，通计熟筹，仰观俯察后，同意合并分支的请求(＠￣ー￣＠)<br><img src="https://img-blog.csdnimg.cn/20200130121516212.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="找到请求_1"><br>从这里可以对比的看到分支和master的不同<br><img src="https://img-blog.csdnimg.cn/2020013012161487.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="找不同"><br>同意合并请求：<br><img src="https://img-blog.csdnimg.cn/20200130121829976.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="同意合并_2"><br><img src="https://img-blog.csdnimg.cn/20200130121938158.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="同意合并_3"><br>这样就分支就合并进去了<br><img src="https://img-blog.csdnimg.cn/20200130122111630.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="嘻嘻嘻"><br>当然如果参与者想要同步最新的代码，只要pull一下就好了<br><img src="https://img-blog.csdnimg.cn/20200130191852824.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="同步"><br>第一次接触github，如有一些错误，还请多多指教<br>(๑•̀ㅂ•́)و</li>
+</ol>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>微信小程序</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>学校GPU平台使用教程</title>
+    <url>/2023/08/28/%E5%AD%A6%E6%A0%A1GPU%E5%B9%B3%E5%8F%B0%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</url>
+    <content><![CDATA[<p>首先连接内网登录<a href="http://paas.183-175-12-11.nip.io:30080/">平台</a></p>
+<p>一般使用的话，直接找到<code>开发环境</code>一栏，创建环境。然后通过<code>Pycharm</code>中的<code>ssh</code>连接</p>
+<p><img src="https://s1.ax1x.com/2023/08/28/pPaw2X6.png" alt="屏幕截图 2023-08-28 221321"></p>
+<p>在<code>Pycharm</code>中，找到工具—部署—配置</p>
+<p><img src="https://s1.ax1x.com/2023/08/28/pPad5zq.png" alt="image-20230828220300678"></p>
+<p>点击<code>+</code>后选择<code>SFTP</code></p>
+<p><img src="https://s1.ax1x.com/2023/08/28/pPaw5Ae.png" alt="屏幕截图 2023-08-28 221526"></p>
+<p>在<code>SSH配置</code>那里后点击后面<code>...</code></p>
+<p><img src="https://s1.ax1x.com/2023/08/28/pPawbct.png" alt="屏幕截图 2023-08-28 092517"></p>
+<p>进入后填写主机名和用户名，这里详细讲一下</p>
+<p>例如平台给的ssh连接是</p>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">ssh://root@paas.xxx-xxx-xx-xx.nip.io:xxxxx</span><br></pre></td></tr></table></figure>
+<p>这里用户名就需要填写</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">root</span><br></pre></td></tr></table></figure>
+<p>主机名填写</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">paas.xxx-xxx-xx-xx.nip.io</span><br></pre></td></tr></table></figure>
+<p>端口号填写<code>xxxxx</code></p>
+<p>然后填写创建环境时设置的密码</p>
+<p><img src="https://s1.ax1x.com/2023/08/28/pPawjHS.png" alt="屏幕截图 2023-08-28 092917"></p>
+<p>这一步完事以后，点击确定，返回到之前的页面，点击<code>映射</code></p>
+<p><img src="https://s1.ax1x.com/2023/08/30/pPd7RaD.png" alt="屏幕截图 2023-08-30 145658"></p>
+<p>配置好本机的地址和远程的地址，点击确认</p>
+<p><img src="https://s1.ax1x.com/2023/08/30/pPd7LdS.png" alt="image-20230830145937224"></p>
+<p>之后选择工具—部署—选项</p>
+<p><img src="https://s1.ax1x.com/2023/08/30/pPdHIkF.png" alt="QQ截图20230830150656"></p>
+<p>可以根据自己习惯决定是否配置一下</p>
+<p>然后找到工具—启动SSH会话，选择刚刚配置的SSH</p>
+<p><img src="https://s1.ax1x.com/2023/08/30/pPdbmtg.png" alt="屏幕截图 2023-08-30 151730"></p>
+<p>然后输入</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">python</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="built_in">print</span>(sys.executable)</span><br></pre></td></tr></table></figure>
+<p>记住输出的地址，比如我的就是</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">usr/bin/python</span><br></pre></td></tr></table></figure>
+<p>最后，找到项目—项目XXXX—Python解释器，找到添加解释器—SSH</p>
+<p><img src="https://s1.ax1x.com/2023/08/30/pPdHj0K.png" alt="image-20230830151124394"></p>
+<p>选择刚刚配置的SSH服务器，然后下一步</p>
+<p><img src="https://s1.ax1x.com/2023/08/30/pPdbHUS.png" alt="屏幕截图 2023-08-30 152226"></p>
+<p>点击下一步</p>
+<p><img src="https://s1.ax1x.com/2023/08/30/pPdbO3j.png" alt="image-20230830152644100"></p>
+<p>然后选择<code>现有</code></p>
+<p>把刚刚的地址输入到<code>解释器</code>里</p>
+<p><img src="https://s1.ax1x.com/2023/08/30/pPdqSbV.png" alt="image-20230830152826067"></p>
+<p>点击确定就完事了</p>
+<p><img src="https://s1.ax1x.com/2023/08/30/pPdqtqP.png" alt="image-20230830152939492"></p>
+<p>之后用<code>工具</code>—<code>SSH会话</code>配合，就可以用学校的GPU跑程序了</p>
+<p>tips：后期可以在服务器上安装<code>Anaconda</code>，然后把新建的虚拟环境中python路径配置到上述图片的<code>解释器</code>中</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">jupyter notebook --ip 0.0.0.0 --allow-root</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>个人笔记</category>
       </categories>
   </entry>
   <entry>
@@ -1719,35 +1802,6 @@
       </categories>
   </entry>
   <entry>
-    <title>如何使用微信小程序IDE在github上实现团队合作</title>
-    <url>/2020/04/16/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8FIDE%E5%9C%A8github%E4%B8%8A%E5%AE%9E%E7%8E%B0%E5%9B%A2%E9%98%9F%E5%90%88%E4%BD%9C/</url>
-    <content><![CDATA[<p>——-原文——-(2020/4/16)</p>
-<p>@<a href="如何使用微信开发者工具在github上实现团队合作">TOC</a><br>一.发起者要做的一些步骤</p>
-<ol>
-<li>首先用IDE初始化本地的git仓库<br><img src="https://img-blog.csdnimg.cn/20200130111131527.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="a."><br><img src="https://img-blog.csdnimg.cn/20200130111301249.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="b."></li>
-<li>使用github-desktop客户端添加这个新建的本地git库并同时上传到新建的远程仓库中<br><img src="https://img-blog.csdnimg.cn/2020013011214879.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="添加本地仓库"><br><img src="https://img-blog.csdnimg.cn/20200130112202771.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="新建远程仓库"><br><img src="https://img-blog.csdnimg.cn/2020013011231537.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/2020013011291517.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="看一下成果嘿嘿嘿"></li>
-<li>添加参与者<br><img src="https://img-blog.csdnimg.cn/20200130113301950.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="最好添加的时候写参与者的名字"><br><strong>PS:被邀请者的必须要接受邀请才可以</strong></li>
-</ol>
-<p>二.参与者需要做的步骤</p>
-<ol>
-<li>在微信小程序开发者工具里添加远程仓库<br><img src="https://img-blog.csdnimg.cn/20200130114342510.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="添加远程仓库_1"><img src="https://img-blog.csdnimg.cn/20200130114356569.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="添加远程仓库_2"><br><img src="https://img-blog.csdnimg.cn/20200130114448885.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="如何查看仓库的地址"></li>
-<li>绑定自己的github账号<br><img src="https://img-blog.csdnimg.cn/20200130115015761.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="绑定账号"></li>
-</ol>
-<p>三.如何线上合作</p>
-<ol>
-<li>参与者在调试好了一些功能以后，提交到远程仓库的分支<br><img src="https://img-blog.csdnimg.cn/20200130120245999.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="提交分支"></li>
-<li>参与者请求合并分支<br><img src="https://img-blog.csdnimg.cn/20200130120523380.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="请求合并_1"><br><img src="https://img-blog.csdnimg.cn/20200130120921309.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="请求合并_2"><br><img src="https://img-blog.csdnimg.cn/20200130120955937.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="发起合并请求"></li>
-<li>在发起者经过了沉思熟虑，通计熟筹，仰观俯察后，同意合并分支的请求(＠￣ー￣＠)<br><img src="https://img-blog.csdnimg.cn/20200130121516212.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="找到请求_1"><br>从这里可以对比的看到分支和master的不同<br><img src="https://img-blog.csdnimg.cn/2020013012161487.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="找不同"><br>同意合并请求：<br><img src="https://img-blog.csdnimg.cn/20200130121829976.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="同意合并_2"><br><img src="https://img-blog.csdnimg.cn/20200130121938158.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="同意合并_3"><br>这样就分支就合并进去了<br><img src="https://img-blog.csdnimg.cn/20200130122111630.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="嘻嘻嘻"><br>当然如果参与者想要同步最新的代码，只要pull一下就好了<br><img src="https://img-blog.csdnimg.cn/20200130191852824.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="同步"><br>第一次接触github，如有一些错误，还请多多指教<br>(๑•̀ㅂ•́)و</li>
-</ol>
-]]></content>
-      <categories>
-        <category>学习笔记</category>
-      </categories>
-      <tags>
-        <tag>微信小程序</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>安装PaddlePaddle</title>
     <url>/2023/07/21/%E5%AE%89%E8%A3%85PaddlePaddle/</url>
     <content><![CDATA[<p>记录一下安装的过程，官方文档如下</p>
@@ -1962,6 +2016,64 @@
       </tags>
   </entry>
   <entry>
+    <title>软件体系结构基本知识——期末复习</title>
+    <url>/2022/01/10/%E8%BD%AF%E4%BB%B6%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86%E2%80%94%E2%80%94%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/</url>
+    <content><![CDATA[<p>根据老师画的重点做了一些思维导图，希望可以帮到需要的人</p>
+<h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><p><img src="https://img-blog.csdnimg.cn/20201214181436726.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="第一章"></p>
+<h2 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h2><p><img src="https://img-blog.csdnimg.cn/20201214181451777.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="第二章"></p>
+<h2 id="第三章"><a href="#第三章" class="headerlink" title="第三章"></a>第三章</h2><p><img src="https://img-blog.csdnimg.cn/20201214230846302.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="第三章"></p>
+<h2 id="第四章"><a href="#第四章" class="headerlink" title="第四章"></a>第四章</h2><p><img src="https://img-blog.csdnimg.cn/20201214181617762.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="第四章"></p>
+<h2 id="第六章"><a href="#第六章" class="headerlink" title="第六章"></a>第六章</h2><p><img src="https://img-blog.csdnimg.cn/20201214181632906.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="第六章"></p>
+<h2 id="第七章"><a href="#第七章" class="headerlink" title="第七章"></a>第七章</h2><p><img src="https://img-blog.csdnimg.cn/20201214181647481.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="第七章"></p>
+<h2 id="第八-九章"><a href="#第八-九章" class="headerlink" title="第八-九章"></a>第八-九章</h2><p><img src="https://img-blog.csdnimg.cn/20201214205838338.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="第八-九章"></p>
+<p><a href="https://ruvikm.lanzous.com/isUckjdbc0f">PDF文件</a></p>
+<p>做得如有不足，敬请谅解~</p>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>其他</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>算法期末复习</title>
+    <url>/2022/01/10/%E7%AE%97%E6%B3%95%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/</url>
+    <content><![CDATA[<h2 id="用思维导图整理了一下算法的基本知识"><a href="#用思维导图整理了一下算法的基本知识" class="headerlink" title="用思维导图整理了一下算法的基本知识"></a>用思维导图整理了一下算法的基本知识</h2><p>&emsp;<br>&emsp;</p>
+<ol>
+<li>算法概述<br>&emsp;<img src="https://img-blog.csdnimg.cn/20201219173740232.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="算法概述"><br>&emsp;</li>
+<li><p>递归与分治策略<br>&emsp;<br><img src="https://img-blog.csdnimg.cn/20201219190206679.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="递归与分治策略"></p>
+<p>&emsp;</p>
+</li>
+<li><p>动态规划<br>&emsp;<br><img src="https://img-blog.csdnimg.cn/20201219173858421.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="动态规划"><br>&emsp;</p>
+</li>
+<li><p>贪心算法<br>&emsp;<img src="https://img-blog.csdnimg.cn/20201219173922373.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="贪心算法"><br>&emsp;</p>
+</li>
+<li><p>回溯法<br>&emsp;<br><img src="https://img-blog.csdnimg.cn/20201219173946942.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="回溯法"><br>&emsp;</p>
+</li>
+<li>分支限界法<br>&emsp;<br><img src="https://img-blog.csdnimg.cn/20201219174007775.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="分支限界法"></li>
+</ol>
+<p><a href="https://ruvikm.lanzous.com/i9b5ajim3kh">PDF文件（内有超链接）</a></p>
+<p>参考资料：</p>
+<ul>
+<li><a href="https://blog.csdn.net/databatman/article/details/49304295">算法中的P问题、NP问题、NP完全问题和NP难问题</a></li>
+<li><a href="https://blog.csdn.net/qq_45904930/article/details/110748764">分治法之棋盘覆盖问题</a></li>
+<li><a href="https://blog.csdn.net/yjt13/article/details/82085537">排序之归并排序</a></li>
+<li><a href="https://blog.csdn.net/baidu_28312631/article/details/47418773">教你彻底学会动态规划——入门篇</a></li>
+<li><a href="https://blog.csdn.net/listen132/article/details/111242757">矩阵连乘</a></li>
+<li><a href="https://blog.csdn.net/a2392008643/article/details/81781766">最小生成树的两种方法（Kruskal算法和Prim算法）</a></li>
+<li><a href="https://blog.csdn.net/daoshen1314/article/details/101294101">循环赛日程表（分治法）</a></li>
+</ul>
+<p>最后推荐一个算法可视化的网站<br><a href="https://visualgo.net/">VisuAlgo</a></p>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>OSError [Errno 22] Invalid argument(已解决)</title>
     <url>/2023/07/12/%E8%A7%A3%E5%86%B3%E9%97%AE%E9%A2%98OSError%20%5BErrno%2022%5D%20Invalid%20argument/</url>
     <content><![CDATA[<p>最近跑别人的项目遇到一个这样的问题</p>
@@ -2031,63 +2143,5 @@
       <categories>
         <category>个人笔记</category>
       </categories>
-  </entry>
-  <entry>
-    <title>软件体系结构基本知识——期末复习</title>
-    <url>/2022/01/10/%E8%BD%AF%E4%BB%B6%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86%E2%80%94%E2%80%94%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/</url>
-    <content><![CDATA[<p>根据老师画的重点做了一些思维导图，希望可以帮到需要的人</p>
-<h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><p><img src="https://img-blog.csdnimg.cn/20201214181436726.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="第一章"></p>
-<h2 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h2><p><img src="https://img-blog.csdnimg.cn/20201214181451777.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="第二章"></p>
-<h2 id="第三章"><a href="#第三章" class="headerlink" title="第三章"></a>第三章</h2><p><img src="https://img-blog.csdnimg.cn/20201214230846302.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="第三章"></p>
-<h2 id="第四章"><a href="#第四章" class="headerlink" title="第四章"></a>第四章</h2><p><img src="https://img-blog.csdnimg.cn/20201214181617762.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="第四章"></p>
-<h2 id="第六章"><a href="#第六章" class="headerlink" title="第六章"></a>第六章</h2><p><img src="https://img-blog.csdnimg.cn/20201214181632906.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="第六章"></p>
-<h2 id="第七章"><a href="#第七章" class="headerlink" title="第七章"></a>第七章</h2><p><img src="https://img-blog.csdnimg.cn/20201214181647481.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="第七章"></p>
-<h2 id="第八-九章"><a href="#第八-九章" class="headerlink" title="第八-九章"></a>第八-九章</h2><p><img src="https://img-blog.csdnimg.cn/20201214205838338.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="第八-九章"></p>
-<p><a href="https://ruvikm.lanzous.com/isUckjdbc0f">PDF文件</a></p>
-<p>做得如有不足，敬请谅解~</p>
-]]></content>
-      <categories>
-        <category>学习笔记</category>
-      </categories>
-      <tags>
-        <tag>其他</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>算法期末复习</title>
-    <url>/2022/01/10/%E7%AE%97%E6%B3%95%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/</url>
-    <content><![CDATA[<h2 id="用思维导图整理了一下算法的基本知识"><a href="#用思维导图整理了一下算法的基本知识" class="headerlink" title="用思维导图整理了一下算法的基本知识"></a>用思维导图整理了一下算法的基本知识</h2><p>&emsp;<br>&emsp;</p>
-<ol>
-<li>算法概述<br>&emsp;<img src="https://img-blog.csdnimg.cn/20201219173740232.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="算法概述"><br>&emsp;</li>
-<li><p>递归与分治策略<br>&emsp;<br><img src="https://img-blog.csdnimg.cn/20201219190206679.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="递归与分治策略"></p>
-<p>&emsp;</p>
-</li>
-<li><p>动态规划<br>&emsp;<br><img src="https://img-blog.csdnimg.cn/20201219173858421.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="动态规划"><br>&emsp;</p>
-</li>
-<li><p>贪心算法<br>&emsp;<img src="https://img-blog.csdnimg.cn/20201219173922373.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="贪心算法"><br>&emsp;</p>
-</li>
-<li><p>回溯法<br>&emsp;<br><img src="https://img-blog.csdnimg.cn/20201219173946942.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="回溯法"><br>&emsp;</p>
-</li>
-<li>分支限界法<br>&emsp;<br><img src="https://img-blog.csdnimg.cn/20201219174007775.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="分支限界法"></li>
-</ol>
-<p><a href="https://ruvikm.lanzous.com/i9b5ajim3kh">PDF文件（内有超链接）</a></p>
-<p>参考资料：</p>
-<ul>
-<li><a href="https://blog.csdn.net/databatman/article/details/49304295">算法中的P问题、NP问题、NP完全问题和NP难问题</a></li>
-<li><a href="https://blog.csdn.net/qq_45904930/article/details/110748764">分治法之棋盘覆盖问题</a></li>
-<li><a href="https://blog.csdn.net/yjt13/article/details/82085537">排序之归并排序</a></li>
-<li><a href="https://blog.csdn.net/baidu_28312631/article/details/47418773">教你彻底学会动态规划——入门篇</a></li>
-<li><a href="https://blog.csdn.net/listen132/article/details/111242757">矩阵连乘</a></li>
-<li><a href="https://blog.csdn.net/a2392008643/article/details/81781766">最小生成树的两种方法（Kruskal算法和Prim算法）</a></li>
-<li><a href="https://blog.csdn.net/daoshen1314/article/details/101294101">循环赛日程表（分治法）</a></li>
-</ul>
-<p>最后推荐一个算法可视化的网站<br><a href="https://visualgo.net/">VisuAlgo</a></p>
-]]></content>
-      <categories>
-        <category>学习笔记</category>
-      </categories>
-      <tags>
-        <tag>算法</tag>
-      </tags>
   </entry>
 </search>

@@ -39,6 +39,29 @@
   </entry>
   
   <entry>
+    <title>学校GPU平台使用教程</title>
+    <link href="https://ruvikm.gitee.io/2023/08/28/%E5%AD%A6%E6%A0%A1GPU%E5%B9%B3%E5%8F%B0%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/"/>
+    <id>https://ruvikm.gitee.io/2023/08/28/%E5%AD%A6%E6%A0%A1GPU%E5%B9%B3%E5%8F%B0%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</id>
+    <published>2023-08-28T01:18:54.000Z</published>
+    <updated>2023-09-30T04:09:35.835Z</updated>
+    
+    <content type="html"><![CDATA[<p>首先连接内网登录<a href="http://paas.183-175-12-11.nip.io:30080/">平台</a></p><p>一般使用的话，直接找到<code>开发环境</code>一栏，创建环境。然后通过<code>Pycharm</code>中的<code>ssh</code>连接</p><p><img src="https://s1.ax1x.com/2023/08/28/pPaw2X6.png" alt="屏幕截图 2023-08-28 221321"></p><p>在<code>Pycharm</code>中，找到工具—部署—配置</p><p><img src="https://s1.ax1x.com/2023/08/28/pPad5zq.png" alt="image-20230828220300678"></p><p>点击<code>+</code>后选择<code>SFTP</code></p><p><img src="https://s1.ax1x.com/2023/08/28/pPaw5Ae.png" alt="屏幕截图 2023-08-28 221526"></p><p>在<code>SSH配置</code>那里后点击后面<code>...</code></p><p><img src="https://s1.ax1x.com/2023/08/28/pPawbct.png" alt="屏幕截图 2023-08-28 092517"></p><p>进入后填写主机名和用户名，这里详细讲一下</p><p>例如平台给的ssh连接是</p><figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">ssh://root@paas.xxx-xxx-xx-xx.nip.io:xxxxx</span><br></pre></td></tr></table></figure><p>这里用户名就需要填写</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">root</span><br></pre></td></tr></table></figure><p>主机名填写</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">paas.xxx-xxx-xx-xx.nip.io</span><br></pre></td></tr></table></figure><p>端口号填写<code>xxxxx</code></p><p>然后填写创建环境时设置的密码</p><p><img src="https://s1.ax1x.com/2023/08/28/pPawjHS.png" alt="屏幕截图 2023-08-28 092917"></p><p>这一步完事以后，点击确定，返回到之前的页面，点击<code>映射</code></p><p><img src="https://s1.ax1x.com/2023/08/30/pPd7RaD.png" alt="屏幕截图 2023-08-30 145658"></p><p>配置好本机的地址和远程的地址，点击确认</p><p><img src="https://s1.ax1x.com/2023/08/30/pPd7LdS.png" alt="image-20230830145937224"></p><p>之后选择工具—部署—选项</p><p><img src="https://s1.ax1x.com/2023/08/30/pPdHIkF.png" alt="QQ截图20230830150656"></p><p>可以根据自己习惯决定是否配置一下</p><p>然后找到工具—启动SSH会话，选择刚刚配置的SSH</p><p><img src="https://s1.ax1x.com/2023/08/30/pPdbmtg.png" alt="屏幕截图 2023-08-30 151730"></p><p>然后输入</p><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">python</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="built_in">print</span>(sys.executable)</span><br></pre></td></tr></table></figure><p>记住输出的地址，比如我的就是</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">usr/bin/python</span><br></pre></td></tr></table></figure><p>最后，找到项目—项目XXXX—Python解释器，找到添加解释器—SSH</p><p><img src="https://s1.ax1x.com/2023/08/30/pPdHj0K.png" alt="image-20230830151124394"></p><p>选择刚刚配置的SSH服务器，然后下一步</p><p><img src="https://s1.ax1x.com/2023/08/30/pPdbHUS.png" alt="屏幕截图 2023-08-30 152226"></p><p>点击下一步</p><p><img src="https://s1.ax1x.com/2023/08/30/pPdbO3j.png" alt="image-20230830152644100"></p><p>然后选择<code>现有</code></p><p>把刚刚的地址输入到<code>解释器</code>里</p><p><img src="https://s1.ax1x.com/2023/08/30/pPdqSbV.png" alt="image-20230830152826067"></p><p>点击确定就完事了</p><p><img src="https://s1.ax1x.com/2023/08/30/pPdqtqP.png" alt="image-20230830152939492"></p><p>之后用<code>工具</code>—<code>SSH会话</code>配合，就可以用学校的GPU跑程序了</p><p>tips：后期可以在服务器上安装<code>Anaconda</code>，然后把新建的虚拟环境中python路径配置到上述图片的<code>解释器</code>中</p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">jupyter notebook --ip 0.0.0.0 --allow-root</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;首先连接内网登录&lt;a href=&quot;http://paas.183-175-12-11.nip.io:30080/&quot;&gt;平台&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;一般使用的话，直接找到&lt;code&gt;开发环境&lt;/code&gt;一栏，创建环境。然后通过&lt;code&gt;Pycharm&lt;/code&gt;中的&lt;co</summary>
+      
+    
+    
+    
+    <category term="个人笔记" scheme="https://ruvikm.gitee.io/categories/%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>使用蓝牙外设却不小心把台式机电脑蓝牙关了</title>
     <link href="https://ruvikm.gitee.io/2023/08/12/%E4%BD%BF%E7%94%A8%E8%93%9D%E7%89%99%E5%A4%96%E8%AE%BE%E5%8D%B4%E4%B8%8D%E5%B0%8F%E5%BF%83%E6%8A%8A%E5%8F%B0%E5%BC%8F%E6%9C%BA%E7%94%B5%E8%84%91%E8%93%9D%E7%89%99%E5%85%B3%E4%BA%86/"/>
     <id>https://ruvikm.gitee.io/2023/08/12/%E4%BD%BF%E7%94%A8%E8%93%9D%E7%89%99%E5%A4%96%E8%AE%BE%E5%8D%B4%E4%B8%8D%E5%B0%8F%E5%BF%83%E6%8A%8A%E5%8F%B0%E5%BC%8F%E6%9C%BA%E7%94%B5%E8%84%91%E8%93%9D%E7%89%99%E5%85%B3%E4%BA%86/</id>
@@ -449,36 +472,6 @@
     
     
     <category term="学习笔记" scheme="https://ruvikm.gitee.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    
-    <category term="算法" scheme="https://ruvikm.gitee.io/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>斐波那契数列 C_C++</title>
-    <link href="https://ruvikm.gitee.io/2022/01/10/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97%20C_C++/"/>
-    <id>https://ruvikm.gitee.io/2022/01/10/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97%20C_C++/</id>
-    <published>2022-01-10T11:54:28.000Z</published>
-    <updated>2023-05-23T01:21:37.791Z</updated>
-    
-    <content type="html"><![CDATA[<p>用三种方法实现:</p><ol><li>带备忘录的递归</li><li>dp迭代</li><li>迭代优化，空间复杂度为O(1)</li></ol><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> _for(i,a,b) for(int i=(a);i&lt;=(b);i++)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//备忘录</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">helper</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; memo, <span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line"><span class="comment">//base case</span></span><br><span class="line"><span class="keyword">if</span> (n == <span class="number">2</span> || n == <span class="number">3</span>) &#123;</span><br><span class="line"><span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (memo[n] != <span class="number">0</span>) &#123;</span><br><span class="line"><span class="keyword">return</span> memo[n];</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> &#123;</span><br><span class="line">memo[n] = <span class="built_in">helper</span>(memo, n - <span class="number">1</span>) + <span class="built_in">helper</span>(memo, n - <span class="number">2</span>);</span><br><span class="line"><span class="keyword">return</span> memo[n];</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//带备忘录法</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">fib_1</span><span class="params">(<span class="type">int</span> N)</span> </span>&#123;</span><br><span class="line"><span class="keyword">if</span> (N &lt;= <span class="number">1</span>) &#123;</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">memo</span><span class="params">(N + <span class="number">1</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line"><span class="keyword">return</span> <span class="built_in">helper</span>(memo, N);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//dp数组迭代法</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">fib_2</span><span class="params">(<span class="type">int</span> N)</span> </span>&#123;</span><br><span class="line"><span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">dp</span><span class="params">(N + <span class="number">1</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line">dp[<span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">dp[<span class="number">2</span>] = dp[<span class="number">3</span>] = <span class="number">1</span>;</span><br><span class="line">_for(i, <span class="number">4</span>, N) &#123;</span><br><span class="line">dp[i] = dp[i - <span class="number">1</span>] + dp[i - <span class="number">2</span>];</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> dp[N];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//迭代优化</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">fib_3</span><span class="params">(<span class="type">int</span> N)</span> </span>&#123;</span><br><span class="line"><span class="keyword">if</span> (N == <span class="number">1</span>) &#123;</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (N == <span class="number">2</span> || N == <span class="number">3</span>) &#123;</span><br><span class="line"><span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">int</span> pre = <span class="number">1</span>, ppre = <span class="number">1</span>;</span><br><span class="line">_for(i, <span class="number">4</span>, N) &#123;</span><br><span class="line"><span class="type">int</span> sum = pre + ppre;</span><br><span class="line">ppre = pre;</span><br><span class="line">pre = sum;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> pre;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, <span class="built_in">fib_3</span>(<span class="number">10</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;用三种方法实现:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;带备忘录的递归&lt;/li&gt;
-&lt;li&gt;dp迭代&lt;/li&gt;
-&lt;li&gt;迭代优化，空间复杂度为O(1)&lt;/li&gt;
-&lt;/ol&gt;
-&lt;figure class=&quot;highlight cpp&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;</summary>
-      
-    
-    
-    
-    <category term="刷题笔记" scheme="https://ruvikm.gitee.io/categories/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/"/>
     
     
     <category term="算法" scheme="https://ruvikm.gitee.io/tags/%E7%AE%97%E6%B3%95/"/>
