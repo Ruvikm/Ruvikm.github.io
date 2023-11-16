@@ -1,19 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>C_C++用宏定义简化for循环</title>
-    <url>/2022/01/10/C_C++%E7%94%A8%E5%AE%8F%E5%AE%9A%E4%B9%89%E7%AE%80%E5%8C%96for%E5%BE%AA%E7%8E%AF/</url>
-    <content><![CDATA[<p>记录一下for循环简化<br><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> _for(i,a,b) for( int i=(a); i&lt;(b); ++i)</span></span><br></pre></td></tr></table></figure><br>这样<br><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)</span><br></pre></td></tr></table></figure><br>就简化为了</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">_for(i, <span class="number">0</span>, <span class="number">10</span>)</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>个人笔记</category>
-      </categories>
-      <tags>
-        <tag>算法</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>2021版王道数据结构课后代码题全部实现</title>
     <url>/2022/01/10/2021%E7%89%88%E7%8E%8B%E9%81%93%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E8%AF%BE%E5%90%8E%E4%BB%A3%E7%A0%81%E9%A2%98%E5%85%A8%E9%83%A8%E5%AE%9E%E7%8E%B0/</url>
     <content><![CDATA[<p>历时2个多月，把21版王道数据结构的课后代码题全部实现了一遍，一共96道题</p>
@@ -47,12 +34,46 @@
       </tags>
   </entry>
   <entry>
+    <title>C_C++用宏定义简化for循环</title>
+    <url>/2022/01/10/C_C++%E7%94%A8%E5%AE%8F%E5%AE%9A%E4%B9%89%E7%AE%80%E5%8C%96for%E5%BE%AA%E7%8E%AF/</url>
+    <content><![CDATA[<p>记录一下for循环简化<br><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> _for(i,a,b) for( int i=(a); i&lt;(b); ++i)</span></span><br></pre></td></tr></table></figure><br>这样<br><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)</span><br></pre></td></tr></table></figure><br>就简化为了</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">_for(i, <span class="number">0</span>, <span class="number">10</span>)</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>个人笔记</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Host文件备份</title>
     <url>/2023/07/03/Host%E6%96%87%E4%BB%B6%E5%A4%87%E4%BB%BD/</url>
     <content><![CDATA[<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="params">#</span> Copyright (c) 1993-2009 Microsoft Corp.</span><br><span class="line"><span class="params">#</span></span><br><span class="line"><span class="params">#</span> This is a sample HOSTS file used by Microsoft TCP/IP for Windows.</span><br><span class="line"><span class="params">#</span></span><br><span class="line"><span class="params">#</span> This file contains the mappings of IP addresses to host names. Each</span><br><span class="line"><span class="params">#</span> entry should be kept on an individual line. The IP address should</span><br><span class="line"><span class="params">#</span> be placed in the first column followed by the corresponding host name.</span><br><span class="line"><span class="params">#</span> The IP address and the host name should be separated by at least one</span><br><span class="line"><span class="params">#</span> space.</span><br><span class="line"><span class="params">#</span></span><br><span class="line"><span class="params">#</span> Additionally, comments (such as these) may be inserted on individual</span><br><span class="line"><span class="params">#</span> lines or following the machine name denoted by a &#x27;<span class="params">#</span>&#x27; symbol.</span><br><span class="line"><span class="params">#</span></span><br><span class="line"><span class="params">#</span> For example:</span><br><span class="line"><span class="params">#</span></span><br><span class="line"><span class="params">#</span> 102.54.94.97 rhino.acme.com <span class="params">#</span> source server</span><br><span class="line"><span class="params">#</span> 38.25.63.10 x.acme.com <span class="params">#</span> x client host</span><br><span class="line"><span class="params">#</span> localhost name resolution is handled within DNS itself.</span><br><span class="line"><span class="params">#</span> 127.0.0.1 localhost</span><br><span class="line"><span class="params">#</span> ::1 localhost</span><br><span class="line"></span><br><span class="line"><span class="params">#</span> Github</span><br><span class="line">140.82.114.4 github.com</span><br><span class="line">199.232.69.194 github.global.ssl.fastly.net</span><br><span class="line">185.199.108.153 assets-cdn.github.com</span><br><span class="line">185.199.110.153 assets-cdn.github.com</span><br><span class="line">185.199.111.153 assets-cdn.github.com</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>个人笔记</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>JZ6 从尾到头打印链表</title>
+    <url>/2023/11/15/JZ6%20%E4%BB%8E%E5%B0%BE%E5%88%B0%E5%A4%B4%E6%89%93%E5%8D%B0%E9%93%BE%E8%A1%A8/</url>
+    <content><![CDATA[<h2 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h2><p>输入一个链表的头节点，按链表从尾到头的顺序返回每个节点的值（用数组返回）。</p>
+<p>如输入{1,2,3}的链表如下图:</p>
+<p><img src="https://uploadfiles.nowcoder.com/images/20210717/557336_1626506480516/103D87B58E565E87DEFA9DD0B822C55F" alt="img"></p>
+<p>返回一个数组为[3,2,1]</p>
+<p>0 &lt;= 链表长度 &lt;= 10000</p>
+<h2 id="示例1"><a href="#示例1" class="headerlink" title="示例1"></a>示例1</h2><p>输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;1,2,3&#125;</span><br></pre></td></tr></table></figure>
+<p>返回值：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[3,2,1]</span><br></pre></td></tr></table></figure>
+<h2 id="算法思路1"><a href="#算法思路1" class="headerlink" title="算法思路1"></a>算法思路1</h2><p>主要考察翻转数组的操作，把链表的数据放到数组里，然后在数组里操作，一个比较简单的操作是调用C++的库函数</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">printListFromTailToHead</span><span class="params">(ListNode* head)</span> </span>&#123;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; vt;</span><br><span class="line">        ListNode* p = head;</span><br><span class="line">        <span class="keyword">while</span>(p != <span class="literal">nullptr</span>)&#123;</span><br><span class="line">            vt.<span class="built_in">push_back</span>(p-&gt;val);</span><br><span class="line">            p = p-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">reverse</span>(vt.<span class="built_in">begin</span>(),vt.<span class="built_in">end</span>());</span><br><span class="line">        <span class="keyword">return</span> vt;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="算法思路2"><a href="#算法思路2" class="headerlink" title="算法思路2"></a>算法思路2</h2><p>使用递归的方式解决，递归出口是链表循环到末尾，每次递归做的事就是把当前结点的值放到<code>vector</code>容器中，由于递归到末尾才会开始存放结点（<code>res.push_back(head-&gt;val);</code>）的值，时间顺序正好为从后往前的存放，符合题目要求的逆序</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">*  struct ListNode &#123;</span></span><br><span class="line"><span class="comment">*        int val;</span></span><br><span class="line"><span class="comment">*        struct ListNode *next;</span></span><br><span class="line"><span class="comment">*        ListNode(int x) :</span></span><br><span class="line"><span class="comment">*              val(x), next(NULL) &#123;</span></span><br><span class="line"><span class="comment">*        &#125;</span></span><br><span class="line"><span class="comment">*  &#125;;</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">reverse</span><span class="params">(ListNode* head,vector&lt;<span class="type">int</span>&gt; &amp;res)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(head != <span class="literal">nullptr</span>)&#123;</span><br><span class="line">            <span class="built_in">reverse</span>(head-&gt;next,res);</span><br><span class="line">            res.<span class="built_in">push_back</span>(head-&gt;val);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">printListFromTailToHead</span><span class="params">(ListNode* head)</span> </span>&#123;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; res;</span><br><span class="line">        <span class="built_in">reverse</span>(head,res);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>刷题笔记</category>
       </categories>
   </entry>
   <entry>
@@ -77,7 +98,7 @@
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">空链表则输出空                 </span><br></pre></td></tr></table></figure>
 <h1 id="题解1"><a href="#题解1" class="headerlink" title="题解1"></a>题解1</h1><p>使用栈当做中转站，把每个节点倒过来，然后重新拼成一个新链表</p>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *  int val;</span></span><br><span class="line"><span class="comment"> *  struct ListNode *next;</span></span><br><span class="line"><span class="comment"> *  ListNode(int x) : val(x), next(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">  <span class="keyword">public</span>:</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * @param head ListNode类</span></span><br><span class="line"><span class="comment">     * @return ListNode类</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function">ListNode* <span class="title">ReverseList</span><span class="params">(ListNode* head)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// write code here</span></span><br><span class="line">        <span class="keyword">if</span>(head == <span class="literal">nullptr</span>)</span><br><span class="line">            <span class="keyword">return</span> head;</span><br><span class="line">        stack&lt;ListNode*&gt; st;</span><br><span class="line">        ListNode* p = head;</span><br><span class="line">        <span class="keyword">while</span> (p != <span class="literal">nullptr</span>) &#123;</span><br><span class="line">            st.<span class="built_in">push</span>(p);</span><br><span class="line">            p = p-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        ListNode* tail = st.<span class="built_in">top</span>();</span><br><span class="line">        st.<span class="built_in">pop</span>();</span><br><span class="line">        ListNode* res = tail;</span><br><span class="line">        <span class="keyword">while</span> (!st.<span class="built_in">empty</span>()) &#123;</span><br><span class="line">            ListNode* node = st.<span class="built_in">top</span>();</span><br><span class="line">            st.<span class="built_in">pop</span>();</span><br><span class="line">            tail-&gt;next = node;</span><br><span class="line">            tail = node;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//最后的节点为原来的头结点，需要将其的下一个节点设为空，否则会构成环</span></span><br><span class="line">        tail-&gt;next = <span class="literal">nullptr</span>;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p><img src="/2023/11/16/JZ24%20%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/%E6%9E%84%E6%88%90%E7%8E%AF-1700131259364-2.png" alt="构成环"></p>
+<p><img src="https://z1.ax1x.com/2023/11/16/pit8EWR.png" alt="构成环"></p>
 <p><strong>题目细节</strong></p>
 <p>结点3为<code>tail</code>变量，经过<code>while</code>循环，会使用尾插法将结点1和2都插入到3后面，这期间，结点2和3和<code>next</code>指针都经过了处理，而最后一个结点1的<code>next</code>指针（结点1的<code>next</code>原本是指向结点2的）却没有处理，因为此时已经跳出了<code>while</code>循环。如果不将结点1的下一个结点置为空，则会在结点1和2之间形成环，程序输出会如下：</p>
 <figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">3,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2...</span><br></pre></td></tr></table></figure>
@@ -106,6 +127,33 @@
       </categories>
       <tags>
         <tag>java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LeetCode 131. Palindrome Partitioning</title>
+    <url>/2022/01/10/LeetCode%20131.%20Palindrome%20Partitioning/</url>
+    <content><![CDATA[<p>Given a string s, partition s such that every substring of the partition is a palindrome.</p>
+<p>Return all possible palindrome partitioning of s.</p>
+<p>Example:</p>
+<p>Input: “aab”<br>Output:<br>[<br>  [“aa”,”b”],<br>  [“a”,”a”,”b”]<br>]</p>
+<p><a href="https://leetcode-cn.com/problems/palindrome-partitioning/">题目链接</a></p>
+<p>可以回溯法切割出来字串，然后判断是否为回文串</p>
+<p>由于要找出来全部的字串，所有回溯的范围应该是全部遍历一遍。使用for循环进行横向的遍历，for循环结束的条件就是本层集合的个数（也就是树中孩子的数量），cur代表当前要切割的位置</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=cur;i&lt;s.<span class="built_in">length</span>();i++)</span><br></pre></td></tr></table></figure>
+<p>然后进行纵向的遍历，每当切割出来一个回文串，就把其放入tmp中，然后进行回溯。否则跳过。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="built_in">Ispalindrome</span>(s,cur,i))&#123;</span><br><span class="line">                string item=s.<span class="built_in">substr</span>(cur,i-cur+<span class="number">1</span>);</span><br><span class="line">                tmp.<span class="built_in">push_back</span>(item);</span><br><span class="line">                <span class="built_in">dfs</span>(s,i+<span class="number">1</span>);</span><br><span class="line">                tmp.<span class="built_in">pop_back</span>();</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br></pre></td></tr></table></figure>
+<p>回溯结束的条件就是当切割点cur的大小已经大于或者等于s的大小</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>(cur&gt;=s.<span class="built_in">length</span>())</span><br></pre></td></tr></table></figure>
+<p>判断回文串较为简单，用两个指针分别指向字符串的头和尾，如果两个指针所指向的字母一直相等到中间，就是回文串。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">bool</span> <span class="title">Ispalindrome</span><span class="params">(string s,<span class="type">int</span> start,<span class="type">int</span> end)</span></span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=start,j=end;i&lt;j;i++,j--)&#123;</span><br><span class="line">            <span class="keyword">if</span>(s[i]!=s[j])&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>全部代码如下：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    vector&lt;vector&lt;string&gt;&gt; res;</span><br><span class="line">    vector&lt;string&gt; tmp;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">dfs</span><span class="params">(<span class="type">const</span> string &amp;s,<span class="type">int</span> cur)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(cur&gt;=s.<span class="built_in">length</span>())&#123;</span><br><span class="line">            res.<span class="built_in">push_back</span>(tmp);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=cur;i&lt;s.<span class="built_in">length</span>();i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(<span class="built_in">Ispalindrome</span>(s,cur,i))&#123;</span><br><span class="line">                string item=s.<span class="built_in">substr</span>(cur,i-cur+<span class="number">1</span>);</span><br><span class="line">                tmp.<span class="built_in">push_back</span>(item);</span><br><span class="line">                <span class="built_in">dfs</span>(s,i+<span class="number">1</span>);</span><br><span class="line">                tmp.<span class="built_in">pop_back</span>();</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">           </span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">Ispalindrome</span><span class="params">(string s,<span class="type">int</span> start,<span class="type">int</span> end)</span></span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=start,j=end;i&lt;j;i++,j--)&#123;</span><br><span class="line">            <span class="keyword">if</span>(s[i]!=s[j])&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    vector&lt;vector&lt;string&gt;&gt; <span class="built_in">partition</span>(string s) &#123;</span><br><span class="line">        tmp.<span class="built_in">clear</span>();</span><br><span class="line">        res.<span class="built_in">clear</span>();</span><br><span class="line">        <span class="built_in">dfs</span>(s,<span class="number">0</span>);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>刷题笔记</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
@@ -682,33 +730,6 @@
       </categories>
   </entry>
   <entry>
-    <title>LeetCode 131. Palindrome Partitioning</title>
-    <url>/2022/01/10/LeetCode%20131.%20Palindrome%20Partitioning/</url>
-    <content><![CDATA[<p>Given a string s, partition s such that every substring of the partition is a palindrome.</p>
-<p>Return all possible palindrome partitioning of s.</p>
-<p>Example:</p>
-<p>Input: “aab”<br>Output:<br>[<br>  [“aa”,”b”],<br>  [“a”,”a”,”b”]<br>]</p>
-<p><a href="https://leetcode-cn.com/problems/palindrome-partitioning/">题目链接</a></p>
-<p>可以回溯法切割出来字串，然后判断是否为回文串</p>
-<p>由于要找出来全部的字串，所有回溯的范围应该是全部遍历一遍。使用for循环进行横向的遍历，for循环结束的条件就是本层集合的个数（也就是树中孩子的数量），cur代表当前要切割的位置</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=cur;i&lt;s.<span class="built_in">length</span>();i++)</span><br></pre></td></tr></table></figure>
-<p>然后进行纵向的遍历，每当切割出来一个回文串，就把其放入tmp中，然后进行回溯。否则跳过。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="built_in">Ispalindrome</span>(s,cur,i))&#123;</span><br><span class="line">                string item=s.<span class="built_in">substr</span>(cur,i-cur+<span class="number">1</span>);</span><br><span class="line">                tmp.<span class="built_in">push_back</span>(item);</span><br><span class="line">                <span class="built_in">dfs</span>(s,i+<span class="number">1</span>);</span><br><span class="line">                tmp.<span class="built_in">pop_back</span>();</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br></pre></td></tr></table></figure>
-<p>回溯结束的条件就是当切割点cur的大小已经大于或者等于s的大小</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>(cur&gt;=s.<span class="built_in">length</span>())</span><br></pre></td></tr></table></figure>
-<p>判断回文串较为简单，用两个指针分别指向字符串的头和尾，如果两个指针所指向的字母一直相等到中间，就是回文串。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">bool</span> <span class="title">Ispalindrome</span><span class="params">(string s,<span class="type">int</span> start,<span class="type">int</span> end)</span></span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=start,j=end;i&lt;j;i++,j--)&#123;</span><br><span class="line">            <span class="keyword">if</span>(s[i]!=s[j])&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<p>全部代码如下：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    vector&lt;vector&lt;string&gt;&gt; res;</span><br><span class="line">    vector&lt;string&gt; tmp;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">dfs</span><span class="params">(<span class="type">const</span> string &amp;s,<span class="type">int</span> cur)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(cur&gt;=s.<span class="built_in">length</span>())&#123;</span><br><span class="line">            res.<span class="built_in">push_back</span>(tmp);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=cur;i&lt;s.<span class="built_in">length</span>();i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(<span class="built_in">Ispalindrome</span>(s,cur,i))&#123;</span><br><span class="line">                string item=s.<span class="built_in">substr</span>(cur,i-cur+<span class="number">1</span>);</span><br><span class="line">                tmp.<span class="built_in">push_back</span>(item);</span><br><span class="line">                <span class="built_in">dfs</span>(s,i+<span class="number">1</span>);</span><br><span class="line">                tmp.<span class="built_in">pop_back</span>();</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">           </span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">Ispalindrome</span><span class="params">(string s,<span class="type">int</span> start,<span class="type">int</span> end)</span></span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=start,j=end;i&lt;j;i++,j--)&#123;</span><br><span class="line">            <span class="keyword">if</span>(s[i]!=s[j])&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    vector&lt;vector&lt;string&gt;&gt; <span class="built_in">partition</span>(string s) &#123;</span><br><span class="line">        tmp.<span class="built_in">clear</span>();</span><br><span class="line">        res.<span class="built_in">clear</span>();</span><br><span class="line">        <span class="built_in">dfs</span>(s,<span class="number">0</span>);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>刷题笔记</category>
-      </categories>
-      <tags>
-        <tag>算法</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>word2vec工具实战</title>
     <url>/2023/07/04/word2vec%E5%B7%A5%E5%85%B7%E5%AE%9E%E6%88%98/</url>
     <content><![CDATA[<p>最开始需要新建一个conda环境</p>
@@ -836,302 +857,6 @@
       <tags>
         <tag>算法</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>复现论文SpikeGPT Generative Pre-trained Language Model with Spiking Neural Networks</title>
-    <url>/2023/07/22/%E5%A4%8D%E7%8E%B0%E8%AE%BA%E6%96%87SpikeGPT-Generative%20Pre-trained%20Language%20Model%20with%20Spiking%20Neural%20Networks/</url>
-    <content><![CDATA[<p>记录一下复现论文<a href="https://arxiv.org/abs/2302.13939v2">SpikeGPT: Generative Pre-trained Language Model with Spiking Neural Networks</a>的过程，论文给出了项目的<a href="https://github.com/ridgerchu/SpikeGPT">GitHub</a>地址。此博客是边跑边写边改的，尽量把顺序合理化，让人可以少走一些弯路</p>
-<h2 id="论文概述"><a href="#论文概述" class="headerlink" title="论文概述"></a>论文概述</h2><p>利用工具，可以大概对此篇论文有如下了解</p>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">这篇文章介绍了SpikeGPT，这是一种基于脉冲神经网络(SNNs)的生成式语言模型。SNNs利用稀疏、事件驱动的激活方式来减少计算复杂性，提高能源效率，因此在深度学习领域有很大的潜力。虽然SNNs在计算机视觉任务上取得了成功，但在语言生成方面仍然有待进一步探索，因为它们的训练过程相对复杂。文章的作者们对Transformer模块进行了修改，消除了多头自注意力带来的二次计算复杂度，并引入循环计算，实现了逐词计算，同时保留了长程依赖关系。结果得到的SpikeGPT模型在语言生成任务上表现出竞争力，同时能耗仅为传统人工神经网络(ANNs)的五分之一。该模型还是迄今为止最大的反向传播训练的功能性SNN模型，拥有多达2.6亿个参数。这项工作为在自然语言处理任务中有效训练大规模SNNs并将Transformer架构与SNNs结合起来实现高性能和能源效率开辟了新的潜力。</span><br></pre></td></tr></table></figure>
-<h2 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h2><h3 id="新建环境"><a href="#新建环境" class="headerlink" title="新建环境"></a>新建环境</h3><p>新建一个<code>Conda</code>环境</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">conda create -n SpikeGPT python=3.8</span><br><span class="line">conda activate SpikeGPT</span><br></pre></td></tr></table></figure>
-<p>然后用<code>pycharm</code>打开此项目，并切换到刚刚新建的环境</p>
-<p>接下来就是安装环境了，由于作者没有提供具体包的版本，只能根据缺啥安装啥的原则，有什么问题之后再慢慢改</p>
-<h3 id="安装accelerate"><a href="#安装accelerate" class="headerlink" title="安装accelerate"></a>安装accelerate</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install accelerate</span><br></pre></td></tr></table></figure>
-<p>在安装<code>accelerate</code>的时候，自动给我装了一个torch2.0.1版本的，这个后面管，只要这个torch版本大于10.0.0就行</p>
-<h3 id="安装Pytorch"><a href="#安装Pytorch" class="headerlink" title="安装Pytorch"></a>安装Pytorch</h3><p>根据我的<code>CUDA</code>版本，安装了如下的<code>torch</code>，具体安装细节可以参考<a href="https://ruvikm.gitee.io/2023/06/06/Win11%E9%85%8D%E7%BD%AEAnaconda-Cuda-Pytorch-Tenserflow%E7%8E%AF%E5%A2%83/">这篇博客</a></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda install pytorch==1.11.0 torchvision==0.12.0 torchaudio==0.11.0 cudatoolkit=11.3</span><br></pre></td></tr></table></figure>
-<h3 id="安装matplotlib"><a href="#安装matplotlib" class="headerlink" title="安装matplotlib"></a>安装matplotlib</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install matplotlib</span><br></pre></td></tr></table></figure>
-<h3 id="安装tqdm"><a href="#安装tqdm" class="headerlink" title="安装tqdm"></a>安装tqdm</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install tqdm</span><br></pre></td></tr></table></figure>
-<h3 id="安装transformers"><a href="#安装transformers" class="headerlink" title="安装transformers"></a>安装transformers</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install transformers</span><br></pre></td></tr></table></figure>
-<h3 id="安装deepspeed"><a href="#安装deepspeed" class="headerlink" title="安装deepspeed"></a>安装deepspeed</h3><h4 id="错误安装方法"><a href="#错误安装方法" class="headerlink" title="错误安装方法"></a>错误安装方法</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install deepspeed</span><br></pre></td></tr></table></figure>
-<p>安装的时候报错了</p>
-<p><img src="https://s1.ax1x.com/2023/07/22/pCbvDot.png" alt="image-20230722102232403"></p>
-<p>换<code>conda</code>试了后，<code>conda install deepspeed</code>，也不行。</p>
-<p>网上查了一个安装方式</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install transformers[deepspeed]</span><br></pre></td></tr></table></figure>
-<p>还是那个错，网上查了一下</p>
-<p><img src="https://s1.ax1x.com/2023/07/22/pCbxpY6.png" alt="image-20230722103014784"></p>
-<p>设置一下环境变量试试</p>
-<p><img src="https://s1.ax1x.com/2023/07/22/pCbxX38.png" alt="屏幕截图 2023-07-22 105535"></p>
-<p>报错！！！好消息是报错变了</p>
-<p><img src="https://s1.ax1x.com/2023/07/22/pCbxbNt.png" alt="image-20230722105444097"></p>
-<p>去<code>github</code>看了一下，意思大概是这个库原本是在<code>linux</code>上的，在<code>window</code>上的支持还不是很好</p>
-<p><img src="https://s1.ax1x.com/2023/07/22/pCbxy7R.png" alt="image-20230722103953254"></p>
-<h4 id="正确安装方法"><a href="#正确安装方法" class="headerlink" title="正确安装方法"></a>正确安装方法</h4><p>网上查到一篇win10成功安装的<a href="https://zhuanlan.zhihu.com/p/636450918">博客</a>，按照博客的说法</p>
-<p>首先安装必要组件</p>
-<p><img src="https://s1.ax1x.com/2023/07/22/pCq9crD.png" alt="image-20230722122822936">先把<a href="https://github.com/microsoft/DeepSpeed">官方</a>的开源的代码下载下来，解压（要用管理员权限）后</p>
-<p>用管理员权限打开cmd，切换到解压的目录，在命令行输入</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">build_win.bat</span><br></pre></td></tr></table></figure>
-<p><img src="https://s1.ax1x.com/2023/07/22/pCq9A8P.png" alt="image-20230722121606679"></p>
-<p>慢慢改错吧，先解决一个报错最多的</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">error: attribute <span class="string">&quot;nodiscard&quot;</span> does not take arguments</span><br></pre></td></tr></table></figure>
-<h3 id="下载数据集"><a href="#下载数据集" class="headerlink" title="下载数据集"></a>下载数据集</h3><p>作者提供数据集<code>Enwik8</code><a href="https://data.deepai.org/enwik8.zip">下载地址</a></p>
-]]></content>
-      <categories>
-        <category>论文复现</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>复现论文《Efficient Estimation of Word Representations in Vector Space》（未跑通中）</title>
-    <url>/2023/07/03/%E5%A4%8D%E7%8E%B0%E8%AE%BA%E6%96%87%E3%80%8AEfficient%20Estimation%20of%20Word%20Representations%20in%20Vector%20Space%E3%80%8B/</url>
-    <content><![CDATA[<p>Word2Vec工具的出处在一篇<a href="https://arxiv.org/abs/1301.3781">论文</a>《Efficient Estimation of Word Representations in Vector Space》中</p>
-<p>从论文中可以找到提供的<a href="https://code.google.com/p/word2vec/">开源地址</a>，但是发现跳转网页的时候会显示<code>404</code>，于是换了一种方法<a href="https://ruvikm.gitee.io/2023/07/01/%E5%AE%89%E8%A3%85Word2Vec/">安装Word2Vec</a></p>
-<p>作者提供的开源地址中，提供了论文的<a href="https://storage.googleapis.com/google-code-archive-source/v2/code.google.com/word2vec/source-archive.zip">源码</a>，解压源码的压缩包然后用<code>Pycharm</code>打开，然后用<code>Pycharm</code>切换到<code>Word2Vec</code>环境（如果发现解压错误需要先新建一个名为<code>Word2Vec</code>的文件夹）</p>
-<p><img src="https://s1.ax1x.com/2023/07/03/pCrmbDO.png" alt="屏幕截图 2023-07-03 095919"></p>
-<p>打开后找到作者写的<code>README</code>文件</p>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">Tools for computing distributed representtion of words</span><br><span class="line">------------------------------------------------------</span><br><span class="line"></span><br><span class="line">We provide an implementation of the Continuous Bag-of-Words (CBOW) and the Skip-gram model (SG), as well as several demo scripts.</span><br><span class="line"></span><br><span class="line">Given a text corpus, the word2vec tool learns a vector for every word in the vocabulary using the Continuous</span><br><span class="line">Bag-of-Words or the Skip-Gram neural network architectures. The user should to specify the following:</span><br><span class="line"> - desired vector dimensionality</span><br><span class="line"> - the size of the context window for either the Skip-Gram or the Continuous Bag-of-Words model</span><br><span class="line"> - training algorithm: hierarchical softmax and / or negative sampling</span><br><span class="line"> - threshold for downsampling the frequent words </span><br><span class="line"> - number of threads to use</span><br><span class="line"> - the format of the output word vector file (text or binary)</span><br><span class="line"></span><br><span class="line">Usually, the other hyper-parameters such as the learning rate do not need to be tuned for different training sets. </span><br><span class="line"></span><br><span class="line">The script demo-word.sh downloads a small (100MB) text corpus from the web, and trains a small word vector model. After the training</span><br><span class="line">is finished, the user can interactively explore the similarity of the words.</span><br><span class="line"></span><br><span class="line">More information about the scripts is provided at https://code.google.com/p/word2vec/</span><br></pre></td></tr></table></figure>
-<p>翻译一下后</p>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">计算单词的分布式表示的工具</span><br><span class="line">------------------------------------------------------</span><br><span class="line"></span><br><span class="line">我们提供了一个连续词袋（CBOW）和跳格模型（SG）的实现，以及几个演示脚本。</span><br><span class="line"></span><br><span class="line">给定一个文本语料库，word2vec工具为词汇库中的每个词学习一个向量，使用连续词袋或跳格模式。</span><br><span class="line">字袋或跳格神经网络结构为词汇中的每个词学习一个向量。用户应该指定以下内容：</span><br><span class="line"> - 希望的向量维度</span><br><span class="line"> - Skip-Gram或Continuous Bag-of-Words模型的上下文窗口的大小</span><br><span class="line"> - 训练算法：层次化的softmax和/或负采样</span><br><span class="line"> - 对频繁出现的词进行下采样的阈值 </span><br><span class="line"> - 要使用的线程数</span><br><span class="line"> - 输出词向量文件的格式（文本或二进制）。</span><br><span class="line"></span><br><span class="line">通常情况下，其他超参数，如学习率，不需要针对不同的训练集进行调整。</span><br><span class="line"></span><br><span class="line">脚本demo-word.sh从网上下载了一个小型（100MB）文本语料库，并训练了一个小型的词向量模型。训练结束后</span><br><span class="line">训练完成后，用户可以交互式地探索这些词的相似性。</span><br><span class="line"></span><br><span class="line">关于这些脚本的更多信息，请见https://code.google.com/p/word2vec/</span><br></pre></td></tr></table></figure>
-<p>那就先跑一下<code>demo-word.sh</code>这个脚本试试吧，首先用万能的chatGPT把其转换成<code>demo-word.bat</code>脚本</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line">make</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> not exist text8 (</span><br><span class="line">    powershell -Command <span class="string">&quot;&amp; &#123; Invoke-WebRequest http://mattmahoney.net/dc/text8.zip -OutFile text8.gz &#125;&quot;</span></span><br><span class="line">    powershell -Command <span class="string">&quot;&amp; &#123; Expand-Archive -Path text8.gz -DestinationPath . -Force &#125;&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">time word2vec -train text8 -output vectors.bin -cbow 1 -size 200 -window 8 -negative 25 -hs 0 -sample 1e-4 -threads 20 -binary 1 -iter 15</span><br><span class="line"></span><br><span class="line">distance vectors.bin</span><br></pre></td></tr></table></figure>
-<p>跑一下试试吧</p>
-<p><img src="https://s1.ax1x.com/2023/07/03/pCrmXUH.png" alt="image-20230703100224888"></p>
-<p>按照提示改改吧</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> not exist text8 (</span><br><span class="line">    powershell -Command <span class="string">&quot;&amp; &#123; Invoke-WebRequest http://mattmahoney.net/dc/text8.zip -OutFile text8.zip &#125;&quot;</span></span><br><span class="line">    powershell -Command <span class="string">&quot;&amp; &#123; Expand-Archive -Path text8.zip -DestinationPath . -Force &#125;&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">time word2vec -train text8 -output vectors.bin -cbow 1 -size 200 -window 8 -negative 25 -hs 0 -sample 1e-4 -threads 20 -binary 1 -iter 15</span><br><span class="line"></span><br><span class="line">distance vectors.bin</span><br></pre></td></tr></table></figure>
-<p>再跑试试</p>
-<p><img src="https://s1.ax1x.com/2023/07/03/pCrM8Ig.png" alt="image-20230703100810359"></p>
-<p>好像是<code>distance vectors.bin</code>不太对，按照原来的脚本改成<code>./distance vectors.bin</code>试试</p>
-<p>跑了一下还报错，用一天一次的<code>chatGPT-4</code>转换了一下康康</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line">make</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> not exist text8 (</span><br><span class="line">  powershell -Command <span class="string">&quot;Invoke-WebRequest -Uri &#x27;http://mattmahoney.net/dc/text8.zip&#x27; -OutFile &#x27;text8.gz&#x27;&quot;</span></span><br><span class="line">  gzip -d text8.gz -f</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> Calculating word vectors...</span><br><span class="line">powershell -Command <span class="string">&quot;Measure-Command &#123; .\word2vec -train text8 -output vectors.bin -cbow 1 -size 200 -window 8 -negative 25 -hs 0 -sample 1e-4 -threads 20 -binary 1 -iter 15 &#125; | Select-Object TotalSeconds&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> Running distance...</span><br><span class="line">.\distance vectors.bin</span><br></pre></td></tr></table></figure>
-<p>然后把.gz换成zip试试</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line">make</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> not exist text8 (</span><br><span class="line">  powershell -Command <span class="string">&quot;Invoke-WebRequest -Uri &#x27;http://mattmahoney.net/dc/text8.zip&#x27; -OutFile &#x27;text8.zip&#x27;&quot;</span></span><br><span class="line">  gzip -d text8.zip -f</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> Calculating word vectors...</span><br><span class="line">powershell -Command <span class="string">&quot;Measure-Command &#123; .\word2vec -train text8 -output vectors.bin -cbow 1 -size 200 -window 8 -negative 25 -hs 0 -sample 1e-4 -threads 20 -binary 1 -iter 15 &#125; | Select-Object TotalSeconds&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> Running distance...</span><br><span class="line">.\distance vectors.bin</span><br></pre></td></tr></table></figure>
-<p><img src="https://s1.ax1x.com/2023/07/03/pCrM4eK.png" alt="image-20230703101439557"></p>
-<p>居然出来一个神奇的结果，再改改删删试试</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> not exist text8 (</span><br><span class="line">  powershell -Command <span class="string">&quot;Invoke-WebRequest -Uri &#x27;http://mattmahoney.net/dc/text8.zip&#x27; -OutFile &#x27;text8.zip&#x27;&quot;</span></span><br><span class="line">  zip -d text8.zip -f</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> Calculating word vectors...</span><br><span class="line">powershell -Command <span class="string">&quot;Measure-Command &#123; .\word2vec\truck -train text8 -output vectors.bin -cbow 1 -size 200 -window 8 -negative 25 -hs 0 -sample 1e-4 -threads 20 -binary 1 -iter 15 &#125; | Select-Object TotalSeconds&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> Running distance...</span><br><span class="line">.\distance vectors.bin</span><br></pre></td></tr></table></figure>
-<p>好吧，还是上面那个错</p>
-<p>又改了改</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> not exist text8 (</span><br><span class="line">  powershell -Command <span class="string">&quot;Invoke-WebRequest -Uri &#x27;http://mattmahoney.net/dc/text8.zip&#x27; -OutFile &#x27;text8.zip&#x27;&quot;</span></span><br><span class="line">  zip -d text8.zip -f</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> Calculating word vectors...</span><br><span class="line">powershell -Command <span class="string">&quot;Measure-Command &#123; .\word2vec.c -train text8 -output vectors.bin -cbow 1 -size 200 -window 8 -negative 25 -hs 0 -sample 1e-4 -threads 20 -binary 1 -iter 15 &#125; | Select-Object TotalSeconds&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> Running distance...</span><br><span class="line">.\distance.c vectors.bin</span><br></pre></td></tr></table></figure>
-<p>跑一下试试</p>
-<p><img src="https://s1.ax1x.com/2023/07/03/pCrQpFg.png" alt="image-20230703102332133"></p>
-<p>然后还突然弹出来我的<code>vs code</code>，就是这个<code>./distance</code>怎么老报错啊</p>
-<p>在问问万能的<code>chatGPT</code>吧</p>
-<p><img src="https://s1.ax1x.com/2023/07/03/pCrQGm6.png" alt="image-20230703102608238"></p>
-<p>但是好像我没有<code>distance</code>这个文件啊，搜一下康康</p>
-<p><img src="https://s1.ax1x.com/2023/07/03/pCrUfaR.png" alt="image-20230703125901033"></p>
-<p>好吧，看来还是有的，那就简单了，再把脚本修改一下</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> not exist text8 (</span><br><span class="line">  powershell -Command <span class="string">&quot;Invoke-WebRequest -Uri &#x27;http://mattmahoney.net/dc/text8.zip&#x27; -OutFile &#x27;text8.zip&#x27;&quot;</span></span><br><span class="line">  zip -d text8.zip -f</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> Calculating word vectors...</span><br><span class="line">powershell -Command <span class="string">&quot;Measure-Command &#123; .\word2vec.c -train text8 -output vectors.bin -cbow 1 -size 200 -window 8 -negative 25 -hs 0 -sample 1e-4 -threads 20 -binary 1 -iter 15 &#125; | Select-Object TotalSeconds&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> Running distance...</span><br><span class="line">.\distance.c vectors.bin</span><br></pre></td></tr></table></figure>
-<p>跑一次试试</p>
-<p><img src="https://s1.ax1x.com/2023/07/03/pCrUoRK.png" alt="image-20230703130041541"></p>
-<p>ohhhh这是运行完了？再康康文档对这个<code>demo</code>的解释吧</p>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">脚本demo-word.sh从网上下载了一个小型（100MB）文本语料库，并训练了一个小型的词向量模型。训练结束后</span><br><span class="line">训练完成后，用户可以交互式地探索这些词的相似性。</span><br></pre></td></tr></table></figure>
-<p>好像怎么也得有一点结果吧，我感觉是本来要在cmd里运行的<code>.c文件</code>，结果却用<code>vscode</code>打开了</p>
-<p>试试在脚本里能不能修改一下，继续求助chatGPT</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line">gcc -o your_program your_program.c</span><br><span class="line">your_program.exe</span><br></pre></td></tr></table></figure>
-<p>请注意，<code>your_program</code>应替换为您的C程序的名称，<code>your_program.c</code>应替换为您的C源代码文件的名称。</p>
-<p>照猫画虎的改改试试</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> not exist text8 (</span><br><span class="line">  powershell -Command <span class="string">&quot;Invoke-WebRequest -Uri &#x27;http://mattmahoney.net/dc/text8.zip&#x27; -OutFile &#x27;text8.zip&#x27;&quot;</span></span><br><span class="line">  zip -d text8.zip -f</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> Calculating word vectors...</span><br><span class="line">powershell -Command <span class="string">&quot;Measure-Command &#123; word2vec.c -train text8 -output vectors.bin -cbow 1 -size 200 -window 8 -negative 25 -hs 0 -sample 1e-4 -threads 20 -binary 1 -iter 15 &#125; | Select-Object TotalSeconds&quot;</span></span><br><span class="line">word2vec.exe</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> Running distance...</span><br><span class="line">gcc -o distance distance.c </span><br><span class="line">vectors.bin</span><br><span class="line">distance.exe</span><br></pre></td></tr></table></figure>
-<p><img src="https://s1.ax1x.com/2023/07/03/pCraKQU.png" alt="image-20230703130956790"></p>
-<p>emmmm意料之中,还是不能自己改啊，继续用chatGPT逐句改吧</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> not exist text8 (</span><br><span class="line">  powershell -Command <span class="string">&quot;Invoke-WebRequest -Uri &#x27;http://mattmahoney.net/dc/text8.zip&#x27; -OutFile &#x27;text8.zip&#x27;&quot;</span></span><br><span class="line">  zip -d text8.zip -f</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> Calculating word vectors...</span><br><span class="line">gcc -o word2vec word2vec.c</span><br><span class="line">time ./word2vec -train text8 -output vectors.bin -cbow 1 -size 200 -window 8 -negative 25 -hs 0 -sample 1e-4 -threads 20 -binary 1 -iter 15</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> Running distance...</span><br><span class="line">gcc -o distance distance.c</span><br><span class="line">./distance vectors.bin</span><br></pre></td></tr></table></figure>
-<p>跑一跑试试</p>
-<p><img src="https://s1.ax1x.com/2023/07/03/pCraTkn.png" alt="image-20230703132032334"></p>
-<p>感觉是用gcc编译运行了，但是好像是输入的时间变了又不对了。试试自己能不能把两个结合一下</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> not exist text8 (</span><br><span class="line">  powershell -Command <span class="string">&quot;Invoke-WebRequest -Uri &#x27;http://mattmahoney.net/dc/text8.zip&#x27; -OutFile &#x27;text8.zip&#x27;&quot;</span></span><br><span class="line">  zip -d text8.zip -f</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> Calculating word vectors...</span><br><span class="line"><span class="string">&quot;Measure-Command &#123;</span></span><br><span class="line"><span class="string">gcc -o word2vec word2vec.c</span></span><br><span class="line"><span class="string">	--train text8 ^</span></span><br><span class="line"><span class="string">    --output vectors.bin ^</span></span><br><span class="line"><span class="string">    --cbow 1 ^ </span></span><br><span class="line"><span class="string">    --size 200 ^</span></span><br><span class="line"><span class="string">    --window 8 ^</span></span><br><span class="line"><span class="string">    --negative 2 ^</span></span><br><span class="line"><span class="string">    --hs 0 ^</span></span><br><span class="line"><span class="string">    --sample 1e-4 ^</span></span><br><span class="line"><span class="string">    --threads 20 ^</span></span><br><span class="line"><span class="string">    --binary 1 ^</span></span><br><span class="line"><span class="string">    --iter 15 ^</span></span><br><span class="line"><span class="string">&#125;&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> Running distance...</span><br><span class="line">gcc -o distance distance.c</span><br><span class="line">	--output vectors.bin </span><br></pre></td></tr></table></figure>
-<p>好吧，还是崩了。那就直接用<code>visual studio</code>跑一下代码试试吧</p>
-<p>ps：如果显示找不到启动项可以试试<a href="https://blog.csdn.net/qq_46070108/article/details/128761974">这个方法</a></p>
-<p><img src="https://s1.ax1x.com/2023/07/03/pCrysRs.png" alt="image-20230703152429717"></p>
-<p>打扰了…找一个视频吧，我记得哔哩哔哩大学有使用这个工具的教程</p>
-]]></content>
-      <categories>
-        <category>论文复现</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>跑通项目《GAT-BiLSTM-CRF》</title>
-    <url>/2023/06/24/%E5%A4%8D%E7%8E%B0%E9%A1%B9%E7%9B%AE%E3%80%8AGAT-BiLSTM-CRF%E3%80%8B/</url>
-    <content><![CDATA[<p>记录一下自己跑通一个<a href="https://github.com/yx100/GAT-BiLSTM-CRF">GitHub项目</a>《GAT-BiLSTM-CRF》的过程</p>
-<p>自己电脑环境如下：</p>
-<ul>
-<li>显卡：3060TI</li>
-<li>CUDA : 11.0</li>
-<li>CUDAToolkit : 8.0.2</li>
-</ul>
-<p>首先新建一个conda环境</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda create -n GBC python=3.7</span><br><span class="line">conda activate GBC</span><br></pre></td></tr></table></figure>
-<p>然后用Pycharm打开其项目，并把Pycharm的环境也切换到<code>GBC</code></p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-24%20093507.png" alt="屏幕截图 2023-06-24 093507"></p>
-<p>下面就是安装环境了，根据作者的md文件，需要装一个Pytorch1.1版本</p>
-<p>从官网找见下载链接，并把<code>-c pytorch</code>去掉，以便使用清华源</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda install pytorch==1.1.0 torchvision==0.3.0 cudatoolkit=10.0</span><br></pre></td></tr></table></figure>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-24%20095053.png" alt="屏幕截图 2023-06-24 095053"></p>
-<p>看来这种方法不太行，换一种方法！</p>
-<p>打开Pytorch官网的<a href="https://download.pytorch.org/whl/torch_stable.html">下载源</a>，搜索<code>cu100/torch-1.1.0</code>，下载如下的包</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-24%20095456-1687571797951-11.png" alt="屏幕截图 2023-06-24 095456"></p>
-<p>ちょっと待って，我好像已经发现了问题，我的<code>CUDA11.0</code>肯定和这个不匹配，装了也没用，那就用<code>CPU</code>版本的<code>torch</code>跑一跑试试吧</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">CPU Only</span></span><br><span class="line">conda install pytorch-cpu==1.1.0 torchvision-cpu==0.3.0 cpuonly</span><br></pre></td></tr></table></figure>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20124226.png" alt="屏幕截图 2023-06-25 124226"></p>
-<p>应该是<code>numpy</code>版本不对？重装一下试试</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pip install numpy -U</span><br></pre></td></tr></table></figure>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20130608.png" alt="屏幕截图 2023-06-25 130608"></p>
-<p>那就卸载了重装一下吧</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip uninstall numpy</span><br><span class="line">pip install numpy</span><br></pre></td></tr></table></figure>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20130928.png" alt="屏幕截图 2023-06-25 130928"></p>
-<p>咦？我不是卸载了吗？根据之前的经验，可以试试强制升级<code>numpy</code>版本</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install numpy --ignore-installed numpy</span><br></pre></td></tr></table></figure>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20131310.png" alt="屏幕截图 2023-06-25 131310"></p>
-<p>再跑一次试试</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20131408.png" alt="屏幕截图 2023-06-25 131408"></p>
-<p>刚刚那个错解决了！这个应该是没有装<code>nltk</code>的包，装一下试试</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install nltk</span><br></pre></td></tr></table></figure>
-<p>再跑一次</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20131544.png" alt="屏幕截图 2023-06-25 131544"></p>
-<p>能跑起来一点点了，这应该是我还没有改地址的问题，改一下去，先全局搜索一下这个地址哪用到了（第52行）</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/image-20230625131832793.png" alt="image-20230625131832793"></p>
-<p>出现大问题了，作者并没有提供数据集，但是他提供了数据集的格式</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">Input is in CoNLL format (We use BIO tag scheme), where each character and its label are in one line. Sentences are split with a null line.</span><br></pre></td></tr></table></figure>
-<p>翻译一下</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">输入是CoNLL格式（我们使用BIO标签方案），其中每个字符和它的标签都在一行。句子用空行分割。</span><br></pre></td></tr></table></figure>
-<p>那就先自己找一个数据集康康能不能跑吧，数据集就用我<a href="https://raw.githubusercontent.com/SophonPlus/ChineseNlpCorpus/master/datasets/ChnSentiCorp_htl_all/ChnSentiCorp_htl_all.csv">之前的找的</a>试试</p>
-<p>按照作者的地址和文件夹创建一下</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20133501.png" alt="屏幕截图 2023-06-25 133501"></p>
-<p>先跑一下试试吧</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20133550.png" alt="屏幕截图 2023-06-25 133550"></p>
-<p>可恶啊，可能就是数据集的格式不对了。但是感觉有戏</p>
-<p>换一个有一个标注的数据集试试，经过一番搜索，找到了一个<a href="https://bj.bcebos.com/paddlehub-dataset/msra_ner.tar.gz">数据集</a></p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20135200.png" alt="屏幕截图 2023-06-25 135200"></p>
-<p>复制到项目中并修改一下路径试试</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20140111.png" alt="屏幕截图 2023-06-25 140111"></p>
-<p>跑一下试试</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20140224.png" alt="屏幕截图 2023-06-25 140224"></p>
-<p>可恶啊，还是数据集读的方式不对</p>
-<p>找师兄<del>borrow</del>了一个数据集，这个配置后的样子</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20142415.png" alt="屏幕截图 2023-06-25 142415"></p>
-<p>运行走起！</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20142455.png" alt="屏幕截图 2023-06-25 142455"></p>
-<p>又报错了，搜了一下，试试在最前面导入一个包</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> tqdm <span class="keyword">import</span> tqdm_notebook <span class="keyword">as</span> tqdm</span><br></pre></td></tr></table></figure>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/image-20230625142708124.png" alt="image-20230625142708124"></p>
-<p>emmmm再换一个别的包试试？</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> tqdm <span class="keyword">import</span> tqdm</span><br></pre></td></tr></table></figure>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20142851.png" alt="屏幕截图 2023-06-25 142851"></p>
-<p>又回到了格式问题,一直说是gdk编码不能识别，但我看了一下自己的数据集是<code>utf-8</code>编码的</p>
-<p>要不试试把打开文件的编码改一下？找到打开文件的编码，加上<code>encoding</code>属性（19行）</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20190447.png" alt="屏幕截图 2023-06-25 190447"></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">in_lines = <span class="built_in">open</span>(input_file, <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>).readlines()</span><br></pre></td></tr></table></figure>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20191202.png" alt="屏幕截图 2023-06-25 191202"></p>
-<p>啊？越界了！调试一下康康</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20191742.png" alt="屏幕截图 2023-06-25 191742"></p>
-<p>我猜，这个label应该就是标注，可能他的数据集中，标签在<code>pairs[-5]</code>的这个位置。但我的理论上貌似应该大概也许在<code>pairs[1]</code>的位置吧。改一下试试</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">label = pairs[<span class="number">1</span>]</span><br></pre></td></tr></table></figure>
-<p>再跑一次！</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20192031.png" alt="屏幕截图 2023-06-25 192031"></p>
-<p>emmmmmm为什么————</p>
-<p>我肯定的一点是，我应该是改对了，难道是数据太大了吗</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20192521.png" alt="屏幕截图 2023-06-25 192521"></p>
-<p>查了一下网上的方法，试试加入一个判断条件防止越界</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20192811.png" alt="屏幕截图 2023-06-25 192811"></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> idx <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(in_lines)):</span><br><span class="line">    <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20193334.png" alt="屏幕截图 2023-06-25 193334"></p>
-<p>跑一下试试</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20193411.png" alt="屏幕截图 2023-06-25 193411"></p>
-<p>纳尼？还可以越界的吗</p>
-<p>最后一招！我试试把数据集弄小一点</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20193916.png" alt="屏幕截图 2023-06-25 193916"></p>
-<p>其他的数据集也差不多这么大，就一句话！我不信这也可以越界了，把地址改完重跑一次</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20194043.png" alt="屏幕截图 2023-06-25 194043"></p>
-<p>emm确实不越界了，这个错误可能是之前没注释干净，继续注释试试</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/image-20230625194305060.png" alt="image-20230625194305060"></p>
-<p>再跑一次</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20194334.png" alt="屏幕截图 2023-06-25 194334"></p>
-<p>我猜想，我是安装的是<code>CPU</code>版本的<code>torch</code>，而他程序里要求的是带<code>GPU</code>的<code>torch</code>。我康康能不能把程序改一下吧</p>
-<p>网上搜索了一下，试试这么改</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20194942.png" alt="屏幕截图 2023-06-25 194942"></p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20195143.png" alt="屏幕截图 2023-06-25 195143"></p>
-<p>感觉这是一条不归路啊，要不先试试<code>torch1.7</code>版本（电脑这个版本可以调用GPU）能不能跑，如果不行再用cpu吧。</p>
-<p>从<a href="https://pytorch.org/get-started/previous-versions/">官网</a>找的链接</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda install pytorch==1.7.0 torchvision==0.8.0 torchaudio==0.7.0 cudatoolkit=11.0</span><br></pre></td></tr></table></figure>
-<p>安装完了</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20195937.png" alt="屏幕截图 2023-06-25 195937"></p>
-<p>跑跑试试（希望兼容希望兼容！）</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/image-20230625200042482.png" alt="image-20230625200042482"></p>
-<p>NO————————————！！！！！！！</p>
-<p>看了一下好像是自己的torch安装乱了，果然还得是先卸载再安装啊，不会自动卸载的</p>
-<p>先卸载</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip uninstall torch</span><br><span class="line">pip uninstall torchvision</span><br></pre></td></tr></table></figure>
-<p>然后看一下有没有卸载干净</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip list</span><br></pre></td></tr></table></figure>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20232346.png" alt="屏幕截图 2023-06-25 232346"></p>
-<p>像这样就可以了，再重装一下吧</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda install pytorch==1.7.0 torchvision==0.8.0 torchaudio==0.7.0 cudatoolkit=11.0</span><br></pre></td></tr></table></figure>
-<p>安装完再检查一下</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20232540.png" alt="屏幕截图 2023-06-25 232540"></p>
-<p>好的，现在就可以跑一下试试了！</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20232647.png" alt="屏幕截图 2023-06-25 232647"></p>
-<p>啊嘞？！我用<code>python</code>命令行试试能不能调用GPU</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">python</span><br><span class="line"><span class="keyword">import</span> torch</span><br><span class="line">torch.cuda.is_available()</span><br><span class="line">torch.cuda.get_device_name(<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20232835.png" alt="屏幕截图 2023-06-25 232835"></p>
-<p>emmm好吧，看来确实不能，再卸载了重装一下吧</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip uninstall torch</span><br><span class="line">pip uninstall torchvision</span><br></pre></td></tr></table></figure>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install torch==1.7.0+cu110 torchvision==0.8.0+cu110 torchaudio==0.7.0 -f https://download.pytorch.org/whl/torch_stable.html</span><br></pre></td></tr></table></figure>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20235355.png" alt="屏幕截图 2023-06-25 235355"></p>
-<p>又是什么情况？！那还是用<code>conda</code>装吧</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda install pytorch==1.7.0 torchvision==0.8.0 torchaudio==0.7.0 cudatoolkit=11.0</span><br></pre></td></tr></table></figure>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20235505-1687708623463-21.png" alt="屏幕截图 2023-06-25 235505"></p>
-<p>为什么是CPU版本的啊，换<code>torch1.7.1</code>试试？</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install torch==1.7.1+cu110 torchvision==0.8.2+cu110 torchaudio==0.7.2 -f https://download.pytorch.org/whl/torch_stable.html</span><br></pre></td></tr></table></figure>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20235744.png" alt="屏幕截图 2023-06-25 235744"></p>
-<p>这也太艰难了吧，网上查了一下</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20000009.png" alt="屏幕截图 2023-06-26 000009"></p>
-<p>按照他说的找到文件夹并且删除</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20000302.png" alt="屏幕截图 2023-06-26 000302"></p>
-<p>再重装一下</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install numpy</span><br></pre></td></tr></table></figure>
-<p>然后再装一下<code>torch</code>试试</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install torch==1.7.1+cu110 torchvision==0.8.2+cu110 torchaudio==0.7.2 -f https://download.pytorch.org/whl/torch_stable.html</span><br></pre></td></tr></table></figure>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20000557.png" alt="屏幕截图 2023-06-26 000557"></p>
-<p>感天动地，终于装好了。跑一下试试！</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20000741.png" alt="屏幕截图 2023-06-26 000741"></p>
-<p>是不是我数据量太少的原因，先改回原来的数据集</p>
-<p>然后我发现了设定数据集大小的位置，修改成比自己数据集大的大小</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20001114.png" alt="屏幕截图 2023-06-26 001114"></p>
-<p>走起试试！</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20001202.png" alt="屏幕截图 2023-06-26 001202"></p>
-<p>突然又发现了一个参数，可能是不是没改全的原因，改完跑一下试试</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20220112.png" alt="屏幕截图 2023-06-26 220112"></p>
-<p>走起</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20220233.png" alt="屏幕截图 2023-06-26 220233"></p>
-<p>emmmm好神秘啊！换成只有800行左右试试</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20002211.png" alt="屏幕截图 2023-06-26 002211"></p>
-<p>这又是什么诡异的错误…网上查了一下</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20220622.png" alt="屏幕截图 2023-06-26 220622"></p>
-<p>好像比较好改，直接看报错信息，找到最后一个代码里的报错</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20002211-1687788699344-4.png" alt="屏幕截图 2023-06-26 002211"></p>
-<p>点进去，会自动跳到报错那一行，然后用网上的方法修改一下</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">embeds_pack = pack_padded_sequence(embeds, batch_len.to(<span class="string">&#x27;cpu&#x27;</span>), batch_first=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20221334.png" alt="屏幕截图 2023-06-26 221334"></p>
-<p>再跑试试！</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/image-20230626221422520.png" alt="image-20230626221422520"></p>
-<p>跑了但没完全跑起来，是哪除0的情况没有考虑到应该，点进去代码里加一个判断条件试试</p>
-<p>把原本这段代码</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">epoch_cost = epoch_finish - epoch_start</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Epoch: %s training finished. Time: %.2fs, speed: %.2fst/s,  total loss: %s&quot;</span> % (</span><br><span class="line">idx, epoch_cost, train_num / epoch_cost, total_loss))</span><br></pre></td></tr></table></figure>
-<p>修改为这段</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">epoch_cost = epoch_finish - epoch_start</span><br><span class="line">train_speed = null</span><br><span class="line"><span class="keyword">if</span> epoch_cost != <span class="number">0</span>:</span><br><span class="line">    train_speed = train_num / epoch_cost</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Epoch: %s training finished. Time: %.2fs, speed: %.2fst/s,  total loss: %s&quot;</span> % (</span><br><span class="line">    idx, epoch_cost, train_speed, total_loss))</span><br></pre></td></tr></table></figure>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20222314.png" alt="屏幕截图 2023-06-26 222314"></p>
-<p>在试试吧</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20222500.png" alt="屏幕截图 2023-06-26 222500"></p>
-<p>emmm这样吗，网上一查</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20222529.png" alt="屏幕截图 2023-06-26 222529"></p>
-<p>那就把<code>null</code>改成<code>none</code>试试</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/image-20230626222633707.png" alt="image-20230626222633707"></p>
-<p>emmm行吧，那就直接改一个数字算了（114514<code>/doge</code>）</p>
-<p>woc跑起来！？</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/image-20230626222825231.png" alt="image-20230626222825231"></p>
-<p>所以这是成功了？！但是为什么好多0，总感觉不太对的样子</p>
-]]></content>
-      <categories>
-        <category>论文复现</category>
-      </categories>
   </entry>
   <entry>
     <title>复现论文ChineseBERT(ONTONOTES数据集)</title>
@@ -1286,49 +1011,113 @@
       </categories>
   </entry>
   <entry>
-    <title>如何使用微信小程序IDE在github上实现团队合作</title>
-    <url>/2020/04/16/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8FIDE%E5%9C%A8github%E4%B8%8A%E5%AE%9E%E7%8E%B0%E5%9B%A2%E9%98%9F%E5%90%88%E4%BD%9C/</url>
-    <content><![CDATA[<p>——-原文——-(2020/4/16)</p>
-<p>@<a href="如何使用微信开发者工具在github上实现团队合作">TOC</a><br>一.发起者要做的一些步骤</p>
-<ol>
-<li>首先用IDE初始化本地的git仓库<br><img src="https://img-blog.csdnimg.cn/20200130111131527.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="a."><br><img src="https://img-blog.csdnimg.cn/20200130111301249.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="b."></li>
-<li>使用github-desktop客户端添加这个新建的本地git库并同时上传到新建的远程仓库中<br><img src="https://img-blog.csdnimg.cn/2020013011214879.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="添加本地仓库"><br><img src="https://img-blog.csdnimg.cn/20200130112202771.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="新建远程仓库"><br><img src="https://img-blog.csdnimg.cn/2020013011231537.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/2020013011291517.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="看一下成果嘿嘿嘿"></li>
-<li>添加参与者<br><img src="https://img-blog.csdnimg.cn/20200130113301950.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="最好添加的时候写参与者的名字"><br><strong>PS:被邀请者的必须要接受邀请才可以</strong></li>
-</ol>
-<p>二.参与者需要做的步骤</p>
-<ol>
-<li>在微信小程序开发者工具里添加远程仓库<br><img src="https://img-blog.csdnimg.cn/20200130114342510.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="添加远程仓库_1"><img src="https://img-blog.csdnimg.cn/20200130114356569.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="添加远程仓库_2"><br><img src="https://img-blog.csdnimg.cn/20200130114448885.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="如何查看仓库的地址"></li>
-<li>绑定自己的github账号<br><img src="https://img-blog.csdnimg.cn/20200130115015761.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="绑定账号"></li>
-</ol>
-<p>三.如何线上合作</p>
-<ol>
-<li>参与者在调试好了一些功能以后，提交到远程仓库的分支<br><img src="https://img-blog.csdnimg.cn/20200130120245999.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="提交分支"></li>
-<li>参与者请求合并分支<br><img src="https://img-blog.csdnimg.cn/20200130120523380.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="请求合并_1"><br><img src="https://img-blog.csdnimg.cn/20200130120921309.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="请求合并_2"><br><img src="https://img-blog.csdnimg.cn/20200130120955937.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="发起合并请求"></li>
-<li>在发起者经过了沉思熟虑，通计熟筹，仰观俯察后，同意合并分支的请求(＠￣ー￣＠)<br><img src="https://img-blog.csdnimg.cn/20200130121516212.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="找到请求_1"><br>从这里可以对比的看到分支和master的不同<br><img src="https://img-blog.csdnimg.cn/2020013012161487.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="找不同"><br>同意合并请求：<br><img src="https://img-blog.csdnimg.cn/20200130121829976.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="同意合并_2"><br><img src="https://img-blog.csdnimg.cn/20200130121938158.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="同意合并_3"><br>这样就分支就合并进去了<br><img src="https://img-blog.csdnimg.cn/20200130122111630.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="嘻嘻嘻"><br>当然如果参与者想要同步最新的代码，只要pull一下就好了<br><img src="https://img-blog.csdnimg.cn/20200130191852824.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="同步"><br>第一次接触github，如有一些错误，还请多多指教<br>(๑•̀ㅂ•́)و</li>
-</ol>
+    <title>复现论文SpikeGPT Generative Pre-trained Language Model with Spiking Neural Networks</title>
+    <url>/2023/07/22/%E5%A4%8D%E7%8E%B0%E8%AE%BA%E6%96%87SpikeGPT-Generative%20Pre-trained%20Language%20Model%20with%20Spiking%20Neural%20Networks/</url>
+    <content><![CDATA[<p>记录一下复现论文<a href="https://arxiv.org/abs/2302.13939v2">SpikeGPT: Generative Pre-trained Language Model with Spiking Neural Networks</a>的过程，论文给出了项目的<a href="https://github.com/ridgerchu/SpikeGPT">GitHub</a>地址。此博客是边跑边写边改的，尽量把顺序合理化，让人可以少走一些弯路</p>
+<h2 id="论文概述"><a href="#论文概述" class="headerlink" title="论文概述"></a>论文概述</h2><p>利用工具，可以大概对此篇论文有如下了解</p>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">这篇文章介绍了SpikeGPT，这是一种基于脉冲神经网络(SNNs)的生成式语言模型。SNNs利用稀疏、事件驱动的激活方式来减少计算复杂性，提高能源效率，因此在深度学习领域有很大的潜力。虽然SNNs在计算机视觉任务上取得了成功，但在语言生成方面仍然有待进一步探索，因为它们的训练过程相对复杂。文章的作者们对Transformer模块进行了修改，消除了多头自注意力带来的二次计算复杂度，并引入循环计算，实现了逐词计算，同时保留了长程依赖关系。结果得到的SpikeGPT模型在语言生成任务上表现出竞争力，同时能耗仅为传统人工神经网络(ANNs)的五分之一。该模型还是迄今为止最大的反向传播训练的功能性SNN模型，拥有多达2.6亿个参数。这项工作为在自然语言处理任务中有效训练大规模SNNs并将Transformer架构与SNNs结合起来实现高性能和能源效率开辟了新的潜力。</span><br></pre></td></tr></table></figure>
+<h2 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h2><h3 id="新建环境"><a href="#新建环境" class="headerlink" title="新建环境"></a>新建环境</h3><p>新建一个<code>Conda</code>环境</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">conda create -n SpikeGPT python=3.8</span><br><span class="line">conda activate SpikeGPT</span><br></pre></td></tr></table></figure>
+<p>然后用<code>pycharm</code>打开此项目，并切换到刚刚新建的环境</p>
+<p>接下来就是安装环境了，由于作者没有提供具体包的版本，只能根据缺啥安装啥的原则，有什么问题之后再慢慢改</p>
+<h3 id="安装accelerate"><a href="#安装accelerate" class="headerlink" title="安装accelerate"></a>安装accelerate</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install accelerate</span><br></pre></td></tr></table></figure>
+<p>在安装<code>accelerate</code>的时候，自动给我装了一个torch2.0.1版本的，这个后面管，只要这个torch版本大于10.0.0就行</p>
+<h3 id="安装Pytorch"><a href="#安装Pytorch" class="headerlink" title="安装Pytorch"></a>安装Pytorch</h3><p>根据我的<code>CUDA</code>版本，安装了如下的<code>torch</code>，具体安装细节可以参考<a href="https://ruvikm.gitee.io/2023/06/06/Win11%E9%85%8D%E7%BD%AEAnaconda-Cuda-Pytorch-Tenserflow%E7%8E%AF%E5%A2%83/">这篇博客</a></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda install pytorch==1.11.0 torchvision==0.12.0 torchaudio==0.11.0 cudatoolkit=11.3</span><br></pre></td></tr></table></figure>
+<h3 id="安装matplotlib"><a href="#安装matplotlib" class="headerlink" title="安装matplotlib"></a>安装matplotlib</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install matplotlib</span><br></pre></td></tr></table></figure>
+<h3 id="安装tqdm"><a href="#安装tqdm" class="headerlink" title="安装tqdm"></a>安装tqdm</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install tqdm</span><br></pre></td></tr></table></figure>
+<h3 id="安装transformers"><a href="#安装transformers" class="headerlink" title="安装transformers"></a>安装transformers</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install transformers</span><br></pre></td></tr></table></figure>
+<h3 id="安装deepspeed"><a href="#安装deepspeed" class="headerlink" title="安装deepspeed"></a>安装deepspeed</h3><h4 id="错误安装方法"><a href="#错误安装方法" class="headerlink" title="错误安装方法"></a>错误安装方法</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install deepspeed</span><br></pre></td></tr></table></figure>
+<p>安装的时候报错了</p>
+<p><img src="https://s1.ax1x.com/2023/07/22/pCbvDot.png" alt="image-20230722102232403"></p>
+<p>换<code>conda</code>试了后，<code>conda install deepspeed</code>，也不行。</p>
+<p>网上查了一个安装方式</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install transformers[deepspeed]</span><br></pre></td></tr></table></figure>
+<p>还是那个错，网上查了一下</p>
+<p><img src="https://s1.ax1x.com/2023/07/22/pCbxpY6.png" alt="image-20230722103014784"></p>
+<p>设置一下环境变量试试</p>
+<p><img src="https://s1.ax1x.com/2023/07/22/pCbxX38.png" alt="屏幕截图 2023-07-22 105535"></p>
+<p>报错！！！好消息是报错变了</p>
+<p><img src="https://s1.ax1x.com/2023/07/22/pCbxbNt.png" alt="image-20230722105444097"></p>
+<p>去<code>github</code>看了一下，意思大概是这个库原本是在<code>linux</code>上的，在<code>window</code>上的支持还不是很好</p>
+<p><img src="https://s1.ax1x.com/2023/07/22/pCbxy7R.png" alt="image-20230722103953254"></p>
+<h4 id="正确安装方法"><a href="#正确安装方法" class="headerlink" title="正确安装方法"></a>正确安装方法</h4><p>网上查到一篇win10成功安装的<a href="https://zhuanlan.zhihu.com/p/636450918">博客</a>，按照博客的说法</p>
+<p>首先安装必要组件</p>
+<p><img src="https://s1.ax1x.com/2023/07/22/pCq9crD.png" alt="image-20230722122822936">先把<a href="https://github.com/microsoft/DeepSpeed">官方</a>的开源的代码下载下来，解压（要用管理员权限）后</p>
+<p>用管理员权限打开cmd，切换到解压的目录，在命令行输入</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">build_win.bat</span><br></pre></td></tr></table></figure>
+<p><img src="https://s1.ax1x.com/2023/07/22/pCq9A8P.png" alt="image-20230722121606679"></p>
+<p>慢慢改错吧，先解决一个报错最多的</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">error: attribute <span class="string">&quot;nodiscard&quot;</span> does not take arguments</span><br></pre></td></tr></table></figure>
+<h3 id="下载数据集"><a href="#下载数据集" class="headerlink" title="下载数据集"></a>下载数据集</h3><p>作者提供数据集<code>Enwik8</code><a href="https://data.deepai.org/enwik8.zip">下载地址</a></p>
 ]]></content>
       <categories>
-        <category>学习笔记</category>
+        <category>论文复现</category>
       </categories>
-      <tags>
-        <tag>微信小程序</tag>
-      </tags>
   </entry>
   <entry>
-    <title>安装PaddlePaddle</title>
-    <url>/2023/07/21/%E5%AE%89%E8%A3%85PaddlePaddle/</url>
-    <content><![CDATA[<p>记录一下安装的过程，官方文档如下</p>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">https://www.paddlepaddle.org.cn/documentation/docs/zh/install/conda/windows-conda.html</span><br></pre></td></tr></table></figure>
-<h2 id="创建虚拟环境"><a href="#创建虚拟环境" class="headerlink" title="创建虚拟环境"></a>创建虚拟环境</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda create -n paddle python=3.8</span><br><span class="line">conda activate paddle</span><br></pre></td></tr></table></figure>
-<h2 id="查看自己安装的CUDA版本"><a href="#查看自己安装的CUDA版本" class="headerlink" title="查看自己安装的CUDA版本"></a>查看自己安装的CUDA版本</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">nvcc -V</span><br></pre></td></tr></table></figure>
-<p><img src="https://s1.ax1x.com/2023/07/21/pCHjtOA.png" alt="image-20230721102917138"></p>
-<p>选择适合自己的版本，我安装的是CUDA11.2的</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda install paddlepaddle-gpu==2.5.0 cudatoolkit=11.2 -c https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/Paddle/ -c conda-forge</span><br></pre></td></tr></table></figure>
-<h2 id="验证安装"><a href="#验证安装" class="headerlink" title="验证安装"></a>验证安装</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">python</span><br><span class="line"><span class="keyword">import</span> paddle</span><br><span class="line">paddle.utils.run_check()</span><br></pre></td></tr></table></figure>
-<p><img src="https://s1.ax1x.com/2023/07/21/pCHvsN6.png" alt="image-20230721105441359"></p>
+    <title>复现论文《Efficient Estimation of Word Representations in Vector Space》（未跑通中）</title>
+    <url>/2023/07/03/%E5%A4%8D%E7%8E%B0%E8%AE%BA%E6%96%87%E3%80%8AEfficient%20Estimation%20of%20Word%20Representations%20in%20Vector%20Space%E3%80%8B/</url>
+    <content><![CDATA[<p>Word2Vec工具的出处在一篇<a href="https://arxiv.org/abs/1301.3781">论文</a>《Efficient Estimation of Word Representations in Vector Space》中</p>
+<p>从论文中可以找到提供的<a href="https://code.google.com/p/word2vec/">开源地址</a>，但是发现跳转网页的时候会显示<code>404</code>，于是换了一种方法<a href="https://ruvikm.gitee.io/2023/07/01/%E5%AE%89%E8%A3%85Word2Vec/">安装Word2Vec</a></p>
+<p>作者提供的开源地址中，提供了论文的<a href="https://storage.googleapis.com/google-code-archive-source/v2/code.google.com/word2vec/source-archive.zip">源码</a>，解压源码的压缩包然后用<code>Pycharm</code>打开，然后用<code>Pycharm</code>切换到<code>Word2Vec</code>环境（如果发现解压错误需要先新建一个名为<code>Word2Vec</code>的文件夹）</p>
+<p><img src="https://s1.ax1x.com/2023/07/03/pCrmbDO.png" alt="屏幕截图 2023-07-03 095919"></p>
+<p>打开后找到作者写的<code>README</code>文件</p>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">Tools for computing distributed representtion of words</span><br><span class="line">------------------------------------------------------</span><br><span class="line"></span><br><span class="line">We provide an implementation of the Continuous Bag-of-Words (CBOW) and the Skip-gram model (SG), as well as several demo scripts.</span><br><span class="line"></span><br><span class="line">Given a text corpus, the word2vec tool learns a vector for every word in the vocabulary using the Continuous</span><br><span class="line">Bag-of-Words or the Skip-Gram neural network architectures. The user should to specify the following:</span><br><span class="line"> - desired vector dimensionality</span><br><span class="line"> - the size of the context window for either the Skip-Gram or the Continuous Bag-of-Words model</span><br><span class="line"> - training algorithm: hierarchical softmax and / or negative sampling</span><br><span class="line"> - threshold for downsampling the frequent words </span><br><span class="line"> - number of threads to use</span><br><span class="line"> - the format of the output word vector file (text or binary)</span><br><span class="line"></span><br><span class="line">Usually, the other hyper-parameters such as the learning rate do not need to be tuned for different training sets. </span><br><span class="line"></span><br><span class="line">The script demo-word.sh downloads a small (100MB) text corpus from the web, and trains a small word vector model. After the training</span><br><span class="line">is finished, the user can interactively explore the similarity of the words.</span><br><span class="line"></span><br><span class="line">More information about the scripts is provided at https://code.google.com/p/word2vec/</span><br></pre></td></tr></table></figure>
+<p>翻译一下后</p>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">计算单词的分布式表示的工具</span><br><span class="line">------------------------------------------------------</span><br><span class="line"></span><br><span class="line">我们提供了一个连续词袋（CBOW）和跳格模型（SG）的实现，以及几个演示脚本。</span><br><span class="line"></span><br><span class="line">给定一个文本语料库，word2vec工具为词汇库中的每个词学习一个向量，使用连续词袋或跳格模式。</span><br><span class="line">字袋或跳格神经网络结构为词汇中的每个词学习一个向量。用户应该指定以下内容：</span><br><span class="line"> - 希望的向量维度</span><br><span class="line"> - Skip-Gram或Continuous Bag-of-Words模型的上下文窗口的大小</span><br><span class="line"> - 训练算法：层次化的softmax和/或负采样</span><br><span class="line"> - 对频繁出现的词进行下采样的阈值 </span><br><span class="line"> - 要使用的线程数</span><br><span class="line"> - 输出词向量文件的格式（文本或二进制）。</span><br><span class="line"></span><br><span class="line">通常情况下，其他超参数，如学习率，不需要针对不同的训练集进行调整。</span><br><span class="line"></span><br><span class="line">脚本demo-word.sh从网上下载了一个小型（100MB）文本语料库，并训练了一个小型的词向量模型。训练结束后</span><br><span class="line">训练完成后，用户可以交互式地探索这些词的相似性。</span><br><span class="line"></span><br><span class="line">关于这些脚本的更多信息，请见https://code.google.com/p/word2vec/</span><br></pre></td></tr></table></figure>
+<p>那就先跑一下<code>demo-word.sh</code>这个脚本试试吧，首先用万能的chatGPT把其转换成<code>demo-word.bat</code>脚本</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line">make</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> not exist text8 (</span><br><span class="line">    powershell -Command <span class="string">&quot;&amp; &#123; Invoke-WebRequest http://mattmahoney.net/dc/text8.zip -OutFile text8.gz &#125;&quot;</span></span><br><span class="line">    powershell -Command <span class="string">&quot;&amp; &#123; Expand-Archive -Path text8.gz -DestinationPath . -Force &#125;&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">time word2vec -train text8 -output vectors.bin -cbow 1 -size 200 -window 8 -negative 25 -hs 0 -sample 1e-4 -threads 20 -binary 1 -iter 15</span><br><span class="line"></span><br><span class="line">distance vectors.bin</span><br></pre></td></tr></table></figure>
+<p>跑一下试试吧</p>
+<p><img src="https://s1.ax1x.com/2023/07/03/pCrmXUH.png" alt="image-20230703100224888"></p>
+<p>按照提示改改吧</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> not exist text8 (</span><br><span class="line">    powershell -Command <span class="string">&quot;&amp; &#123; Invoke-WebRequest http://mattmahoney.net/dc/text8.zip -OutFile text8.zip &#125;&quot;</span></span><br><span class="line">    powershell -Command <span class="string">&quot;&amp; &#123; Expand-Archive -Path text8.zip -DestinationPath . -Force &#125;&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">time word2vec -train text8 -output vectors.bin -cbow 1 -size 200 -window 8 -negative 25 -hs 0 -sample 1e-4 -threads 20 -binary 1 -iter 15</span><br><span class="line"></span><br><span class="line">distance vectors.bin</span><br></pre></td></tr></table></figure>
+<p>再跑试试</p>
+<p><img src="https://s1.ax1x.com/2023/07/03/pCrM8Ig.png" alt="image-20230703100810359"></p>
+<p>好像是<code>distance vectors.bin</code>不太对，按照原来的脚本改成<code>./distance vectors.bin</code>试试</p>
+<p>跑了一下还报错，用一天一次的<code>chatGPT-4</code>转换了一下康康</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line">make</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> not exist text8 (</span><br><span class="line">  powershell -Command <span class="string">&quot;Invoke-WebRequest -Uri &#x27;http://mattmahoney.net/dc/text8.zip&#x27; -OutFile &#x27;text8.gz&#x27;&quot;</span></span><br><span class="line">  gzip -d text8.gz -f</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> Calculating word vectors...</span><br><span class="line">powershell -Command <span class="string">&quot;Measure-Command &#123; .\word2vec -train text8 -output vectors.bin -cbow 1 -size 200 -window 8 -negative 25 -hs 0 -sample 1e-4 -threads 20 -binary 1 -iter 15 &#125; | Select-Object TotalSeconds&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> Running distance...</span><br><span class="line">.\distance vectors.bin</span><br></pre></td></tr></table></figure>
+<p>然后把.gz换成zip试试</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line">make</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> not exist text8 (</span><br><span class="line">  powershell -Command <span class="string">&quot;Invoke-WebRequest -Uri &#x27;http://mattmahoney.net/dc/text8.zip&#x27; -OutFile &#x27;text8.zip&#x27;&quot;</span></span><br><span class="line">  gzip -d text8.zip -f</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> Calculating word vectors...</span><br><span class="line">powershell -Command <span class="string">&quot;Measure-Command &#123; .\word2vec -train text8 -output vectors.bin -cbow 1 -size 200 -window 8 -negative 25 -hs 0 -sample 1e-4 -threads 20 -binary 1 -iter 15 &#125; | Select-Object TotalSeconds&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> Running distance...</span><br><span class="line">.\distance vectors.bin</span><br></pre></td></tr></table></figure>
+<p><img src="https://s1.ax1x.com/2023/07/03/pCrM4eK.png" alt="image-20230703101439557"></p>
+<p>居然出来一个神奇的结果，再改改删删试试</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> not exist text8 (</span><br><span class="line">  powershell -Command <span class="string">&quot;Invoke-WebRequest -Uri &#x27;http://mattmahoney.net/dc/text8.zip&#x27; -OutFile &#x27;text8.zip&#x27;&quot;</span></span><br><span class="line">  zip -d text8.zip -f</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> Calculating word vectors...</span><br><span class="line">powershell -Command <span class="string">&quot;Measure-Command &#123; .\word2vec\truck -train text8 -output vectors.bin -cbow 1 -size 200 -window 8 -negative 25 -hs 0 -sample 1e-4 -threads 20 -binary 1 -iter 15 &#125; | Select-Object TotalSeconds&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> Running distance...</span><br><span class="line">.\distance vectors.bin</span><br></pre></td></tr></table></figure>
+<p>好吧，还是上面那个错</p>
+<p>又改了改</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> not exist text8 (</span><br><span class="line">  powershell -Command <span class="string">&quot;Invoke-WebRequest -Uri &#x27;http://mattmahoney.net/dc/text8.zip&#x27; -OutFile &#x27;text8.zip&#x27;&quot;</span></span><br><span class="line">  zip -d text8.zip -f</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> Calculating word vectors...</span><br><span class="line">powershell -Command <span class="string">&quot;Measure-Command &#123; .\word2vec.c -train text8 -output vectors.bin -cbow 1 -size 200 -window 8 -negative 25 -hs 0 -sample 1e-4 -threads 20 -binary 1 -iter 15 &#125; | Select-Object TotalSeconds&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> Running distance...</span><br><span class="line">.\distance.c vectors.bin</span><br></pre></td></tr></table></figure>
+<p>跑一下试试</p>
+<p><img src="https://s1.ax1x.com/2023/07/03/pCrQpFg.png" alt="image-20230703102332133"></p>
+<p>然后还突然弹出来我的<code>vs code</code>，就是这个<code>./distance</code>怎么老报错啊</p>
+<p>在问问万能的<code>chatGPT</code>吧</p>
+<p><img src="https://s1.ax1x.com/2023/07/03/pCrQGm6.png" alt="image-20230703102608238"></p>
+<p>但是好像我没有<code>distance</code>这个文件啊，搜一下康康</p>
+<p><img src="https://s1.ax1x.com/2023/07/03/pCrUfaR.png" alt="image-20230703125901033"></p>
+<p>好吧，看来还是有的，那就简单了，再把脚本修改一下</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> not exist text8 (</span><br><span class="line">  powershell -Command <span class="string">&quot;Invoke-WebRequest -Uri &#x27;http://mattmahoney.net/dc/text8.zip&#x27; -OutFile &#x27;text8.zip&#x27;&quot;</span></span><br><span class="line">  zip -d text8.zip -f</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> Calculating word vectors...</span><br><span class="line">powershell -Command <span class="string">&quot;Measure-Command &#123; .\word2vec.c -train text8 -output vectors.bin -cbow 1 -size 200 -window 8 -negative 25 -hs 0 -sample 1e-4 -threads 20 -binary 1 -iter 15 &#125; | Select-Object TotalSeconds&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> Running distance...</span><br><span class="line">.\distance.c vectors.bin</span><br></pre></td></tr></table></figure>
+<p>跑一次试试</p>
+<p><img src="https://s1.ax1x.com/2023/07/03/pCrUoRK.png" alt="image-20230703130041541"></p>
+<p>ohhhh这是运行完了？再康康文档对这个<code>demo</code>的解释吧</p>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">脚本demo-word.sh从网上下载了一个小型（100MB）文本语料库，并训练了一个小型的词向量模型。训练结束后</span><br><span class="line">训练完成后，用户可以交互式地探索这些词的相似性。</span><br></pre></td></tr></table></figure>
+<p>好像怎么也得有一点结果吧，我感觉是本来要在cmd里运行的<code>.c文件</code>，结果却用<code>vscode</code>打开了</p>
+<p>试试在脚本里能不能修改一下，继续求助chatGPT</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line">gcc -o your_program your_program.c</span><br><span class="line">your_program.exe</span><br></pre></td></tr></table></figure>
+<p>请注意，<code>your_program</code>应替换为您的C程序的名称，<code>your_program.c</code>应替换为您的C源代码文件的名称。</p>
+<p>照猫画虎的改改试试</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> not exist text8 (</span><br><span class="line">  powershell -Command <span class="string">&quot;Invoke-WebRequest -Uri &#x27;http://mattmahoney.net/dc/text8.zip&#x27; -OutFile &#x27;text8.zip&#x27;&quot;</span></span><br><span class="line">  zip -d text8.zip -f</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> Calculating word vectors...</span><br><span class="line">powershell -Command <span class="string">&quot;Measure-Command &#123; word2vec.c -train text8 -output vectors.bin -cbow 1 -size 200 -window 8 -negative 25 -hs 0 -sample 1e-4 -threads 20 -binary 1 -iter 15 &#125; | Select-Object TotalSeconds&quot;</span></span><br><span class="line">word2vec.exe</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> Running distance...</span><br><span class="line">gcc -o distance distance.c </span><br><span class="line">vectors.bin</span><br><span class="line">distance.exe</span><br></pre></td></tr></table></figure>
+<p><img src="https://s1.ax1x.com/2023/07/03/pCraKQU.png" alt="image-20230703130956790"></p>
+<p>emmmm意料之中,还是不能自己改啊，继续用chatGPT逐句改吧</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> not exist text8 (</span><br><span class="line">  powershell -Command <span class="string">&quot;Invoke-WebRequest -Uri &#x27;http://mattmahoney.net/dc/text8.zip&#x27; -OutFile &#x27;text8.zip&#x27;&quot;</span></span><br><span class="line">  zip -d text8.zip -f</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> Calculating word vectors...</span><br><span class="line">gcc -o word2vec word2vec.c</span><br><span class="line">time ./word2vec -train text8 -output vectors.bin -cbow 1 -size 200 -window 8 -negative 25 -hs 0 -sample 1e-4 -threads 20 -binary 1 -iter 15</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> Running distance...</span><br><span class="line">gcc -o distance distance.c</span><br><span class="line">./distance vectors.bin</span><br></pre></td></tr></table></figure>
+<p>跑一跑试试</p>
+<p><img src="https://s1.ax1x.com/2023/07/03/pCraTkn.png" alt="image-20230703132032334"></p>
+<p>感觉是用gcc编译运行了，但是好像是输入的时间变了又不对了。试试自己能不能把两个结合一下</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> not exist text8 (</span><br><span class="line">  powershell -Command <span class="string">&quot;Invoke-WebRequest -Uri &#x27;http://mattmahoney.net/dc/text8.zip&#x27; -OutFile &#x27;text8.zip&#x27;&quot;</span></span><br><span class="line">  zip -d text8.zip -f</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> Calculating word vectors...</span><br><span class="line"><span class="string">&quot;Measure-Command &#123;</span></span><br><span class="line"><span class="string">gcc -o word2vec word2vec.c</span></span><br><span class="line"><span class="string">	--train text8 ^</span></span><br><span class="line"><span class="string">    --output vectors.bin ^</span></span><br><span class="line"><span class="string">    --cbow 1 ^ </span></span><br><span class="line"><span class="string">    --size 200 ^</span></span><br><span class="line"><span class="string">    --window 8 ^</span></span><br><span class="line"><span class="string">    --negative 2 ^</span></span><br><span class="line"><span class="string">    --hs 0 ^</span></span><br><span class="line"><span class="string">    --sample 1e-4 ^</span></span><br><span class="line"><span class="string">    --threads 20 ^</span></span><br><span class="line"><span class="string">    --binary 1 ^</span></span><br><span class="line"><span class="string">    --iter 15 ^</span></span><br><span class="line"><span class="string">&#125;&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> Running distance...</span><br><span class="line">gcc -o distance distance.c</span><br><span class="line">	--output vectors.bin </span><br></pre></td></tr></table></figure>
+<p>好吧，还是崩了。那就直接用<code>visual studio</code>跑一下代码试试吧</p>
+<p>ps：如果显示找不到启动项可以试试<a href="https://blog.csdn.net/qq_46070108/article/details/128761974">这个方法</a></p>
+<p><img src="https://s1.ax1x.com/2023/07/03/pCrysRs.png" alt="image-20230703152429717"></p>
+<p>打扰了…找一个视频吧，我记得哔哩哔哩大学有使用这个工具的教程</p>
 ]]></content>
       <categories>
-        <category>个人笔记</category>
+        <category>论文复现</category>
       </categories>
   </entry>
   <entry>
@@ -1796,6 +1585,221 @@
       </categories>
   </entry>
   <entry>
+    <title>跑通项目《GAT-BiLSTM-CRF》</title>
+    <url>/2023/06/24/%E5%A4%8D%E7%8E%B0%E9%A1%B9%E7%9B%AE%E3%80%8AGAT-BiLSTM-CRF%E3%80%8B/</url>
+    <content><![CDATA[<p>记录一下自己跑通一个<a href="https://github.com/yx100/GAT-BiLSTM-CRF">GitHub项目</a>《GAT-BiLSTM-CRF》的过程</p>
+<p>自己电脑环境如下：</p>
+<ul>
+<li>显卡：3060TI</li>
+<li>CUDA : 11.0</li>
+<li>CUDAToolkit : 8.0.2</li>
+</ul>
+<p>首先新建一个conda环境</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda create -n GBC python=3.7</span><br><span class="line">conda activate GBC</span><br></pre></td></tr></table></figure>
+<p>然后用Pycharm打开其项目，并把Pycharm的环境也切换到<code>GBC</code></p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-24%20093507.png" alt="屏幕截图 2023-06-24 093507"></p>
+<p>下面就是安装环境了，根据作者的md文件，需要装一个Pytorch1.1版本</p>
+<p>从官网找见下载链接，并把<code>-c pytorch</code>去掉，以便使用清华源</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda install pytorch==1.1.0 torchvision==0.3.0 cudatoolkit=10.0</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-24%20095053.png" alt="屏幕截图 2023-06-24 095053"></p>
+<p>看来这种方法不太行，换一种方法！</p>
+<p>打开Pytorch官网的<a href="https://download.pytorch.org/whl/torch_stable.html">下载源</a>，搜索<code>cu100/torch-1.1.0</code>，下载如下的包</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-24%20095456-1687571797951-11.png" alt="屏幕截图 2023-06-24 095456"></p>
+<p>ちょっと待って，我好像已经发现了问题，我的<code>CUDA11.0</code>肯定和这个不匹配，装了也没用，那就用<code>CPU</code>版本的<code>torch</code>跑一跑试试吧</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">CPU Only</span></span><br><span class="line">conda install pytorch-cpu==1.1.0 torchvision-cpu==0.3.0 cpuonly</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20124226.png" alt="屏幕截图 2023-06-25 124226"></p>
+<p>应该是<code>numpy</code>版本不对？重装一下试试</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pip install numpy -U</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20130608.png" alt="屏幕截图 2023-06-25 130608"></p>
+<p>那就卸载了重装一下吧</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip uninstall numpy</span><br><span class="line">pip install numpy</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20130928.png" alt="屏幕截图 2023-06-25 130928"></p>
+<p>咦？我不是卸载了吗？根据之前的经验，可以试试强制升级<code>numpy</code>版本</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install numpy --ignore-installed numpy</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20131310.png" alt="屏幕截图 2023-06-25 131310"></p>
+<p>再跑一次试试</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20131408.png" alt="屏幕截图 2023-06-25 131408"></p>
+<p>刚刚那个错解决了！这个应该是没有装<code>nltk</code>的包，装一下试试</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install nltk</span><br></pre></td></tr></table></figure>
+<p>再跑一次</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20131544.png" alt="屏幕截图 2023-06-25 131544"></p>
+<p>能跑起来一点点了，这应该是我还没有改地址的问题，改一下去，先全局搜索一下这个地址哪用到了（第52行）</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/image-20230625131832793.png" alt="image-20230625131832793"></p>
+<p>出现大问题了，作者并没有提供数据集，但是他提供了数据集的格式</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">Input is in CoNLL format (We use BIO tag scheme), where each character and its label are in one line. Sentences are split with a null line.</span><br></pre></td></tr></table></figure>
+<p>翻译一下</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">输入是CoNLL格式（我们使用BIO标签方案），其中每个字符和它的标签都在一行。句子用空行分割。</span><br></pre></td></tr></table></figure>
+<p>那就先自己找一个数据集康康能不能跑吧，数据集就用我<a href="https://raw.githubusercontent.com/SophonPlus/ChineseNlpCorpus/master/datasets/ChnSentiCorp_htl_all/ChnSentiCorp_htl_all.csv">之前的找的</a>试试</p>
+<p>按照作者的地址和文件夹创建一下</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20133501.png" alt="屏幕截图 2023-06-25 133501"></p>
+<p>先跑一下试试吧</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20133550.png" alt="屏幕截图 2023-06-25 133550"></p>
+<p>可恶啊，可能就是数据集的格式不对了。但是感觉有戏</p>
+<p>换一个有一个标注的数据集试试，经过一番搜索，找到了一个<a href="https://bj.bcebos.com/paddlehub-dataset/msra_ner.tar.gz">数据集</a></p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20135200.png" alt="屏幕截图 2023-06-25 135200"></p>
+<p>复制到项目中并修改一下路径试试</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20140111.png" alt="屏幕截图 2023-06-25 140111"></p>
+<p>跑一下试试</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20140224.png" alt="屏幕截图 2023-06-25 140224"></p>
+<p>可恶啊，还是数据集读的方式不对</p>
+<p>找师兄<del>borrow</del>了一个数据集，这个配置后的样子</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20142415.png" alt="屏幕截图 2023-06-25 142415"></p>
+<p>运行走起！</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20142455.png" alt="屏幕截图 2023-06-25 142455"></p>
+<p>又报错了，搜了一下，试试在最前面导入一个包</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> tqdm <span class="keyword">import</span> tqdm_notebook <span class="keyword">as</span> tqdm</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/image-20230625142708124.png" alt="image-20230625142708124"></p>
+<p>emmmm再换一个别的包试试？</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> tqdm <span class="keyword">import</span> tqdm</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20142851.png" alt="屏幕截图 2023-06-25 142851"></p>
+<p>又回到了格式问题,一直说是gdk编码不能识别，但我看了一下自己的数据集是<code>utf-8</code>编码的</p>
+<p>要不试试把打开文件的编码改一下？找到打开文件的编码，加上<code>encoding</code>属性（19行）</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20190447.png" alt="屏幕截图 2023-06-25 190447"></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">in_lines = <span class="built_in">open</span>(input_file, <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>).readlines()</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20191202.png" alt="屏幕截图 2023-06-25 191202"></p>
+<p>啊？越界了！调试一下康康</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20191742.png" alt="屏幕截图 2023-06-25 191742"></p>
+<p>我猜，这个label应该就是标注，可能他的数据集中，标签在<code>pairs[-5]</code>的这个位置。但我的理论上貌似应该大概也许在<code>pairs[1]</code>的位置吧。改一下试试</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">label = pairs[<span class="number">1</span>]</span><br></pre></td></tr></table></figure>
+<p>再跑一次！</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20192031.png" alt="屏幕截图 2023-06-25 192031"></p>
+<p>emmmmmm为什么————</p>
+<p>我肯定的一点是，我应该是改对了，难道是数据太大了吗</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20192521.png" alt="屏幕截图 2023-06-25 192521"></p>
+<p>查了一下网上的方法，试试加入一个判断条件防止越界</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20192811.png" alt="屏幕截图 2023-06-25 192811"></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> idx <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(in_lines)):</span><br><span class="line">    <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20193334.png" alt="屏幕截图 2023-06-25 193334"></p>
+<p>跑一下试试</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20193411.png" alt="屏幕截图 2023-06-25 193411"></p>
+<p>纳尼？还可以越界的吗</p>
+<p>最后一招！我试试把数据集弄小一点</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20193916.png" alt="屏幕截图 2023-06-25 193916"></p>
+<p>其他的数据集也差不多这么大，就一句话！我不信这也可以越界了，把地址改完重跑一次</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20194043.png" alt="屏幕截图 2023-06-25 194043"></p>
+<p>emm确实不越界了，这个错误可能是之前没注释干净，继续注释试试</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/image-20230625194305060.png" alt="image-20230625194305060"></p>
+<p>再跑一次</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20194334.png" alt="屏幕截图 2023-06-25 194334"></p>
+<p>我猜想，我是安装的是<code>CPU</code>版本的<code>torch</code>，而他程序里要求的是带<code>GPU</code>的<code>torch</code>。我康康能不能把程序改一下吧</p>
+<p>网上搜索了一下，试试这么改</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20194942.png" alt="屏幕截图 2023-06-25 194942"></p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20195143.png" alt="屏幕截图 2023-06-25 195143"></p>
+<p>感觉这是一条不归路啊，要不先试试<code>torch1.7</code>版本（电脑这个版本可以调用GPU）能不能跑，如果不行再用cpu吧。</p>
+<p>从<a href="https://pytorch.org/get-started/previous-versions/">官网</a>找的链接</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda install pytorch==1.7.0 torchvision==0.8.0 torchaudio==0.7.0 cudatoolkit=11.0</span><br></pre></td></tr></table></figure>
+<p>安装完了</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20195937.png" alt="屏幕截图 2023-06-25 195937"></p>
+<p>跑跑试试（希望兼容希望兼容！）</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/image-20230625200042482.png" alt="image-20230625200042482"></p>
+<p>NO————————————！！！！！！！</p>
+<p>看了一下好像是自己的torch安装乱了，果然还得是先卸载再安装啊，不会自动卸载的</p>
+<p>先卸载</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip uninstall torch</span><br><span class="line">pip uninstall torchvision</span><br></pre></td></tr></table></figure>
+<p>然后看一下有没有卸载干净</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip list</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20232346.png" alt="屏幕截图 2023-06-25 232346"></p>
+<p>像这样就可以了，再重装一下吧</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda install pytorch==1.7.0 torchvision==0.8.0 torchaudio==0.7.0 cudatoolkit=11.0</span><br></pre></td></tr></table></figure>
+<p>安装完再检查一下</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20232540.png" alt="屏幕截图 2023-06-25 232540"></p>
+<p>好的，现在就可以跑一下试试了！</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20232647.png" alt="屏幕截图 2023-06-25 232647"></p>
+<p>啊嘞？！我用<code>python</code>命令行试试能不能调用GPU</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">python</span><br><span class="line"><span class="keyword">import</span> torch</span><br><span class="line">torch.cuda.is_available()</span><br><span class="line">torch.cuda.get_device_name(<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20232835.png" alt="屏幕截图 2023-06-25 232835"></p>
+<p>emmm好吧，看来确实不能，再卸载了重装一下吧</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip uninstall torch</span><br><span class="line">pip uninstall torchvision</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install torch==1.7.0+cu110 torchvision==0.8.0+cu110 torchaudio==0.7.0 -f https://download.pytorch.org/whl/torch_stable.html</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20235355.png" alt="屏幕截图 2023-06-25 235355"></p>
+<p>又是什么情况？！那还是用<code>conda</code>装吧</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda install pytorch==1.7.0 torchvision==0.8.0 torchaudio==0.7.0 cudatoolkit=11.0</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20235505-1687708623463-21.png" alt="屏幕截图 2023-06-25 235505"></p>
+<p>为什么是CPU版本的啊，换<code>torch1.7.1</code>试试？</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install torch==1.7.1+cu110 torchvision==0.8.2+cu110 torchaudio==0.7.2 -f https://download.pytorch.org/whl/torch_stable.html</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20235744.png" alt="屏幕截图 2023-06-25 235744"></p>
+<p>这也太艰难了吧，网上查了一下</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20000009.png" alt="屏幕截图 2023-06-26 000009"></p>
+<p>按照他说的找到文件夹并且删除</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20000302.png" alt="屏幕截图 2023-06-26 000302"></p>
+<p>再重装一下</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install numpy</span><br></pre></td></tr></table></figure>
+<p>然后再装一下<code>torch</code>试试</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install torch==1.7.1+cu110 torchvision==0.8.2+cu110 torchaudio==0.7.2 -f https://download.pytorch.org/whl/torch_stable.html</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20000557.png" alt="屏幕截图 2023-06-26 000557"></p>
+<p>感天动地，终于装好了。跑一下试试！</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20000741.png" alt="屏幕截图 2023-06-26 000741"></p>
+<p>是不是我数据量太少的原因，先改回原来的数据集</p>
+<p>然后我发现了设定数据集大小的位置，修改成比自己数据集大的大小</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20001114.png" alt="屏幕截图 2023-06-26 001114"></p>
+<p>走起试试！</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20001202.png" alt="屏幕截图 2023-06-26 001202"></p>
+<p>突然又发现了一个参数，可能是不是没改全的原因，改完跑一下试试</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20220112.png" alt="屏幕截图 2023-06-26 220112"></p>
+<p>走起</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20220233.png" alt="屏幕截图 2023-06-26 220233"></p>
+<p>emmmm好神秘啊！换成只有800行左右试试</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20002211.png" alt="屏幕截图 2023-06-26 002211"></p>
+<p>这又是什么诡异的错误…网上查了一下</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20220622.png" alt="屏幕截图 2023-06-26 220622"></p>
+<p>好像比较好改，直接看报错信息，找到最后一个代码里的报错</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20002211-1687788699344-4.png" alt="屏幕截图 2023-06-26 002211"></p>
+<p>点进去，会自动跳到报错那一行，然后用网上的方法修改一下</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">embeds_pack = pack_padded_sequence(embeds, batch_len.to(<span class="string">&#x27;cpu&#x27;</span>), batch_first=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20221334.png" alt="屏幕截图 2023-06-26 221334"></p>
+<p>再跑试试！</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/image-20230626221422520.png" alt="image-20230626221422520"></p>
+<p>跑了但没完全跑起来，是哪除0的情况没有考虑到应该，点进去代码里加一个判断条件试试</p>
+<p>把原本这段代码</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">epoch_cost = epoch_finish - epoch_start</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Epoch: %s training finished. Time: %.2fs, speed: %.2fst/s,  total loss: %s&quot;</span> % (</span><br><span class="line">idx, epoch_cost, train_num / epoch_cost, total_loss))</span><br></pre></td></tr></table></figure>
+<p>修改为这段</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">epoch_cost = epoch_finish - epoch_start</span><br><span class="line">train_speed = null</span><br><span class="line"><span class="keyword">if</span> epoch_cost != <span class="number">0</span>:</span><br><span class="line">    train_speed = train_num / epoch_cost</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Epoch: %s training finished. Time: %.2fs, speed: %.2fst/s,  total loss: %s&quot;</span> % (</span><br><span class="line">    idx, epoch_cost, train_speed, total_loss))</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20222314.png" alt="屏幕截图 2023-06-26 222314"></p>
+<p>在试试吧</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20222500.png" alt="屏幕截图 2023-06-26 222500"></p>
+<p>emmm这样吗，网上一查</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20222529.png" alt="屏幕截图 2023-06-26 222529"></p>
+<p>那就把<code>null</code>改成<code>none</code>试试</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/image-20230626222633707.png" alt="image-20230626222633707"></p>
+<p>emmm行吧，那就直接改一个数字算了（114514<code>/doge</code>）</p>
+<p>woc跑起来！？</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/image-20230626222825231.png" alt="image-20230626222825231"></p>
+<p>所以这是成功了？！但是为什么好多0，总感觉不太对的样子</p>
+]]></content>
+      <categories>
+        <category>论文复现</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>如何使用微信小程序IDE在github上实现团队合作</title>
+    <url>/2020/04/16/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8FIDE%E5%9C%A8github%E4%B8%8A%E5%AE%9E%E7%8E%B0%E5%9B%A2%E9%98%9F%E5%90%88%E4%BD%9C/</url>
+    <content><![CDATA[<p>——-原文——-(2020/4/16)</p>
+<p>@<a href="如何使用微信开发者工具在github上实现团队合作">TOC</a><br>一.发起者要做的一些步骤</p>
+<ol>
+<li>首先用IDE初始化本地的git仓库<br><img src="https://img-blog.csdnimg.cn/20200130111131527.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="a."><br><img src="https://img-blog.csdnimg.cn/20200130111301249.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="b."></li>
+<li>使用github-desktop客户端添加这个新建的本地git库并同时上传到新建的远程仓库中<br><img src="https://img-blog.csdnimg.cn/2020013011214879.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="添加本地仓库"><br><img src="https://img-blog.csdnimg.cn/20200130112202771.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="新建远程仓库"><br><img src="https://img-blog.csdnimg.cn/2020013011231537.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/2020013011291517.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="看一下成果嘿嘿嘿"></li>
+<li>添加参与者<br><img src="https://img-blog.csdnimg.cn/20200130113301950.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="最好添加的时候写参与者的名字"><br><strong>PS:被邀请者的必须要接受邀请才可以</strong></li>
+</ol>
+<p>二.参与者需要做的步骤</p>
+<ol>
+<li>在微信小程序开发者工具里添加远程仓库<br><img src="https://img-blog.csdnimg.cn/20200130114342510.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="添加远程仓库_1"><img src="https://img-blog.csdnimg.cn/20200130114356569.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="添加远程仓库_2"><br><img src="https://img-blog.csdnimg.cn/20200130114448885.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="如何查看仓库的地址"></li>
+<li>绑定自己的github账号<br><img src="https://img-blog.csdnimg.cn/20200130115015761.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="绑定账号"></li>
+</ol>
+<p>三.如何线上合作</p>
+<ol>
+<li>参与者在调试好了一些功能以后，提交到远程仓库的分支<br><img src="https://img-blog.csdnimg.cn/20200130120245999.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="提交分支"></li>
+<li>参与者请求合并分支<br><img src="https://img-blog.csdnimg.cn/20200130120523380.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="请求合并_1"><br><img src="https://img-blog.csdnimg.cn/20200130120921309.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="请求合并_2"><br><img src="https://img-blog.csdnimg.cn/20200130120955937.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="发起合并请求"></li>
+<li>在发起者经过了沉思熟虑，通计熟筹，仰观俯察后，同意合并分支的请求(＠￣ー￣＠)<br><img src="https://img-blog.csdnimg.cn/20200130121516212.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="找到请求_1"><br>从这里可以对比的看到分支和master的不同<br><img src="https://img-blog.csdnimg.cn/2020013012161487.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="找不同"><br>同意合并请求：<br><img src="https://img-blog.csdnimg.cn/20200130121829976.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="同意合并_2"><br><img src="https://img-blog.csdnimg.cn/20200130121938158.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="同意合并_3"><br>这样就分支就合并进去了<br><img src="https://img-blog.csdnimg.cn/20200130122111630.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="嘻嘻嘻"><br>当然如果参与者想要同步最新的代码，只要pull一下就好了<br><img src="https://img-blog.csdnimg.cn/20200130191852824.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="同步"><br>第一次接触github，如有一些错误，还请多多指教<br>(๑•̀ㅂ•́)و</li>
+</ol>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>微信小程序</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>学校GPU平台使用教程</title>
     <url>/2023/08/28/%E5%AD%A6%E6%A0%A1GPU%E5%B9%B3%E5%8F%B0%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</url>
     <content><![CDATA[<p>首先连接内网登录<a href="http://paas.183-175-12-11.nip.io:30080/">平台</a></p>
@@ -1869,6 +1873,23 @@
       </categories>
   </entry>
   <entry>
+    <title>安装PaddlePaddle</title>
+    <url>/2023/07/21/%E5%AE%89%E8%A3%85PaddlePaddle/</url>
+    <content><![CDATA[<p>记录一下安装的过程，官方文档如下</p>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">https://www.paddlepaddle.org.cn/documentation/docs/zh/install/conda/windows-conda.html</span><br></pre></td></tr></table></figure>
+<h2 id="创建虚拟环境"><a href="#创建虚拟环境" class="headerlink" title="创建虚拟环境"></a>创建虚拟环境</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda create -n paddle python=3.8</span><br><span class="line">conda activate paddle</span><br></pre></td></tr></table></figure>
+<h2 id="查看自己安装的CUDA版本"><a href="#查看自己安装的CUDA版本" class="headerlink" title="查看自己安装的CUDA版本"></a>查看自己安装的CUDA版本</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">nvcc -V</span><br></pre></td></tr></table></figure>
+<p><img src="https://s1.ax1x.com/2023/07/21/pCHjtOA.png" alt="image-20230721102917138"></p>
+<p>选择适合自己的版本，我安装的是CUDA11.2的</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda install paddlepaddle-gpu==2.5.0 cudatoolkit=11.2 -c https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/Paddle/ -c conda-forge</span><br></pre></td></tr></table></figure>
+<h2 id="验证安装"><a href="#验证安装" class="headerlink" title="验证安装"></a>验证安装</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">python</span><br><span class="line"><span class="keyword">import</span> paddle</span><br><span class="line">paddle.utils.run_check()</span><br></pre></td></tr></table></figure>
+<p><img src="https://s1.ax1x.com/2023/07/21/pCHvsN6.png" alt="image-20230721105441359"></p>
+]]></content>
+      <categories>
+        <category>个人笔记</category>
+      </categories>
+  </entry>
+  <entry>
     <title>安装Word2Vec</title>
     <url>/2023/07/01/%E5%AE%89%E8%A3%85Word2Vec/</url>
     <content><![CDATA[<p>由于最近需要用到一个预处理的数据集，方法在<a href="https://arxiv.org/abs/1301.3781">这篇论文</a>《Efficient Estimation of Word Representations in Vector Space》里，于是打算尝试能不能复现一下，论文提供了<a href="https://code.google.com/archive/p/word2vec/">代码地址</a>，但是当我打开下载的时候，却发现是404</p>
@@ -1908,24 +1929,6 @@
       <categories>
         <category>论文复现</category>
       </categories>
-  </entry>
-  <entry>
-    <title>斐波那契数列 C_C++</title>
-    <url>/2022/01/10/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97%20C_C++/</url>
-    <content><![CDATA[<p>用三种方法实现:</p>
-<ol>
-<li>带备忘录的递归</li>
-<li>dp迭代</li>
-<li>迭代优化，空间复杂度为O(1)</li>
-</ol>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> _for(i,a,b) for(int i=(a);i&lt;=(b);i++)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//备忘录</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">helper</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; memo, <span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">	<span class="comment">//base case</span></span><br><span class="line">	<span class="keyword">if</span> (n == <span class="number">2</span> || n == <span class="number">3</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (memo[n] != <span class="number">0</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> memo[n];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		memo[n] = <span class="built_in">helper</span>(memo, n - <span class="number">1</span>) + <span class="built_in">helper</span>(memo, n - <span class="number">2</span>);</span><br><span class="line">		<span class="keyword">return</span> memo[n];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//带备忘录法</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">fib_1</span><span class="params">(<span class="type">int</span> N)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (N &lt;= <span class="number">1</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">memo</span><span class="params">(N + <span class="number">1</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">helper</span>(memo, N);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//dp数组迭代法</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">fib_2</span><span class="params">(<span class="type">int</span> N)</span> </span>&#123;</span><br><span class="line">	<span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">dp</span><span class="params">(N + <span class="number">1</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line">	dp[<span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">	dp[<span class="number">2</span>] = dp[<span class="number">3</span>] = <span class="number">1</span>;</span><br><span class="line">	_for(i, <span class="number">4</span>, N) &#123;</span><br><span class="line">		dp[i] = dp[i - <span class="number">1</span>] + dp[i - <span class="number">2</span>];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> dp[N];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//迭代优化</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">fib_3</span><span class="params">(<span class="type">int</span> N)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (N == <span class="number">1</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (N == <span class="number">2</span> || N == <span class="number">3</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">int</span> pre = <span class="number">1</span>, ppre = <span class="number">1</span>;</span><br><span class="line">	_for(i, <span class="number">4</span>, N) &#123;</span><br><span class="line">		<span class="type">int</span> sum = pre + ppre;</span><br><span class="line">		ppre = pre;</span><br><span class="line">		pre = sum;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> pre;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, <span class="built_in">fib_3</span>(<span class="number">10</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>刷题笔记</category>
-      </categories>
-      <tags>
-        <tag>算法</tag>
-      </tags>
   </entry>
   <entry>
     <title>拼模型尝试</title>
@@ -1986,6 +1989,24 @@
       </categories>
   </entry>
   <entry>
+    <title>斐波那契数列 C_C++</title>
+    <url>/2022/01/10/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97%20C_C++/</url>
+    <content><![CDATA[<p>用三种方法实现:</p>
+<ol>
+<li>带备忘录的递归</li>
+<li>dp迭代</li>
+<li>迭代优化，空间复杂度为O(1)</li>
+</ol>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> _for(i,a,b) for(int i=(a);i&lt;=(b);i++)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//备忘录</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">helper</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; memo, <span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">	<span class="comment">//base case</span></span><br><span class="line">	<span class="keyword">if</span> (n == <span class="number">2</span> || n == <span class="number">3</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (memo[n] != <span class="number">0</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> memo[n];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		memo[n] = <span class="built_in">helper</span>(memo, n - <span class="number">1</span>) + <span class="built_in">helper</span>(memo, n - <span class="number">2</span>);</span><br><span class="line">		<span class="keyword">return</span> memo[n];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//带备忘录法</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">fib_1</span><span class="params">(<span class="type">int</span> N)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (N &lt;= <span class="number">1</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">memo</span><span class="params">(N + <span class="number">1</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">helper</span>(memo, N);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//dp数组迭代法</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">fib_2</span><span class="params">(<span class="type">int</span> N)</span> </span>&#123;</span><br><span class="line">	<span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">dp</span><span class="params">(N + <span class="number">1</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line">	dp[<span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">	dp[<span class="number">2</span>] = dp[<span class="number">3</span>] = <span class="number">1</span>;</span><br><span class="line">	_for(i, <span class="number">4</span>, N) &#123;</span><br><span class="line">		dp[i] = dp[i - <span class="number">1</span>] + dp[i - <span class="number">2</span>];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> dp[N];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//迭代优化</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">fib_3</span><span class="params">(<span class="type">int</span> N)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (N == <span class="number">1</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (N == <span class="number">2</span> || N == <span class="number">3</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">int</span> pre = <span class="number">1</span>, ppre = <span class="number">1</span>;</span><br><span class="line">	_for(i, <span class="number">4</span>, N) &#123;</span><br><span class="line">		<span class="type">int</span> sum = pre + ppre;</span><br><span class="line">		ppre = pre;</span><br><span class="line">		pre = sum;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> pre;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, <span class="built_in">fib_3</span>(<span class="number">10</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>刷题笔记</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>本地部署chatGPT</title>
     <url>/2023/07/15/%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2chatGPT/</url>
     <content><![CDATA[<p>首先打开<a href="https://github.com/ramonvc/freegpt-webui#cloning-the-repository-inbox_tray">项目网址</a>，把代码下载下来，按照其要求安装<a href="https://www.python.org/downloads/"><code>python</code></a>，<a href="https://git-scm.com/download/win"><code>git</code></a></p>
@@ -2016,6 +2037,54 @@
       <categories>
         <category>个人笔记</category>
       </categories>
+  </entry>
+  <entry>
+    <title>王道数据结构 线性表 链式存储小结</title>
+    <url>/2022/01/10/%E7%8E%8B%E9%81%93%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%20%E7%BA%BF%E6%80%A7%E8%A1%A8%20%E9%93%BE%E5%BC%8F%E5%AD%98%E5%82%A8%E5%B0%8F%E7%BB%93/</url>
+    <content><![CDATA[<h1 id="1-单链表"><a href="#1-单链表" class="headerlink" title="1.单链表"></a>1.单链表</h1><p><img src="https://img-blog.csdnimg.cn/20210116122507504.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="单链表"></p>
+<h2 id="头插法"><a href="#头插法" class="headerlink" title="头插法"></a>头插法</h2><p>图解：<br><img src="https://img-blog.csdnimg.cn/20210116125651161.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="1"></p>
+<ol>
+<li>待插入的next指向头结点原本指向的结点</li>
+<li>修改头结点的next指向待插入结点<br><img src="https://img-blog.csdnimg.cn/20210116125826814.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="如何插入"></li>
+</ol>
+<p>插入完毕<img src="https://img-blog.csdnimg.cn/20210116130021844.png#pic_center" alt="插入完毕"><br>代码实现</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//设带插入结点为S</span></span><br><span class="line">S-&gt;next=head-&gt;next;</span><br><span class="line">head-&gt;next=S;</span><br></pre></td></tr></table></figure>
+<h2 id="尾插法"><a href="#尾插法" class="headerlink" title="尾插法"></a>尾插法</h2><p>图解<br><img src="https://img-blog.csdnimg.cn/20210116130729224.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="待插入状态"></p>
+<ol>
+<li>将待插入结点的next域设为NULL</li>
+<li><p>将最后一个结点的next域指向带插入结点<br><img src="https://img-blog.csdnimg.cn/20210116130930320.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="插入方法"></p>
+<p>插入完毕<br><img src="https://img-blog.csdnimg.cn/20210116131032237.png#pic_center" alt="插入完毕"><br>代码实现</p>
+</li>
+</ol>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//设插入结点为S</span></span><br><span class="line">head-&gt;next=S;</span><br><span class="line">head=S;</span><br></pre></td></tr></table></figure>
+<h2 id="在中间插入"><a href="#在中间插入" class="headerlink" title="在中间插入"></a>在中间插入</h2><p>图解<br><img src="https://img-blog.csdnimg.cn/20210116202306782.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="插入前状态"></p>
+<ol>
+<li>将待插入结点的next域指向插入结点位置的前驱结点指向的后一个结点</li>
+<li>将原本位置上之前的结点指向待插入结点 </li>
+</ol>
+<p><img src="https://img-blog.csdnimg.cn/20210116202359651.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>插入完成<br><img src="https://img-blog.csdnimg.cn/20210116202638177.png#pic_center" alt="插入完成"></p>
+<p>代码实现</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//设待插入结点为S</span></span><br><span class="line"><span class="comment">//待插入位置的前驱结点为pre</span></span><br><span class="line">S-&gt;next=pre-&gt;next;</span><br><span class="line">pre-&gt;next=S;</span><br></pre></td></tr></table></figure>
+<h2 id="在中间删除"><a href="#在中间删除" class="headerlink" title="在中间删除"></a>在中间删除</h2><p>图解<br><img src="https://img-blog.csdnimg.cn/20210116204400671.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="删除前状态"></p>
+<ol>
+<li>将待删除结点的前一个结点的next指向待删除结点next的结点</li>
+<li>删除待删除结点</li>
+</ol>
+<p><img src="https://img-blog.csdnimg.cn/20210116204421686.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="步骤"><br>删除完成<br><img src="https://img-blog.csdnimg.cn/20210116204628265.png#pic_center" alt="删除完成"></p>
+<p>代码实现 </p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//设待删除前驱结点为pre</span></span><br><span class="line"><span class="comment">//待删除结点为S</span></span><br><span class="line">pre-&gt;next=S-&gt;next;</span><br><span class="line"><span class="keyword">delete</span> S;</span><br></pre></td></tr></table></figure>
+<h2 id="原地逆置链表"><a href="#原地逆置链表" class="headerlink" title="原地逆置链表"></a>原地逆置链表</h2><ol>
+<li>将头结点与后面的结点断开，然后重新用头插法插入</li>
+<li>使用三个指针逆置<br>图解<br>1.<img src="https://img-blog.csdnimg.cn/20210116213023974.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="1"><br>2.<img src="https://img-blog.csdnimg.cn/20210116213042409.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="2"><br>3.<img src="https://img-blog.csdnimg.cn/20210116213051310.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="3"><br>4.<img src="https://img-blog.csdnimg.cn/20210116213109935.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="4"><br>5.逆置完毕（最后将头结点指向p）<img src="https://img-blog.csdnimg.cn/20210116213123148.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="5"></li>
+</ol>
+<p>代码实现</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">ReverseList</span><span class="params">(LinkList&amp; head)</span> </span>&#123;</span><br><span class="line">	LNode* pre, * p = head-&gt;next, * r = p-&gt;next;</span><br><span class="line">	p-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">	<span class="keyword">while</span> (r != <span class="literal">NULL</span>) &#123;</span><br><span class="line">		pre = p;</span><br><span class="line">		p = r;</span><br><span class="line">		r = r-&gt;next;</span><br><span class="line">		p-&gt;next = pre;</span><br><span class="line">	&#125;</span><br><span class="line">	head-&gt;next = p;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+      </tags>
   </entry>
   <entry>
     <title>算法期末复习</title>
@@ -2145,74 +2214,5 @@
       <tags>
         <tag>其他</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>王道数据结构 线性表 链式存储小结</title>
-    <url>/2022/01/10/%E7%8E%8B%E9%81%93%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%20%E7%BA%BF%E6%80%A7%E8%A1%A8%20%E9%93%BE%E5%BC%8F%E5%AD%98%E5%82%A8%E5%B0%8F%E7%BB%93/</url>
-    <content><![CDATA[<h1 id="1-单链表"><a href="#1-单链表" class="headerlink" title="1.单链表"></a>1.单链表</h1><p><img src="https://img-blog.csdnimg.cn/20210116122507504.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="单链表"></p>
-<h2 id="头插法"><a href="#头插法" class="headerlink" title="头插法"></a>头插法</h2><p>图解：<br><img src="https://img-blog.csdnimg.cn/20210116125651161.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="1"></p>
-<ol>
-<li>待插入的next指向头结点原本指向的结点</li>
-<li>修改头结点的next指向待插入结点<br><img src="https://img-blog.csdnimg.cn/20210116125826814.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="如何插入"></li>
-</ol>
-<p>插入完毕<img src="https://img-blog.csdnimg.cn/20210116130021844.png#pic_center" alt="插入完毕"><br>代码实现</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//设带插入结点为S</span></span><br><span class="line">S-&gt;next=head-&gt;next;</span><br><span class="line">head-&gt;next=S;</span><br></pre></td></tr></table></figure>
-<h2 id="尾插法"><a href="#尾插法" class="headerlink" title="尾插法"></a>尾插法</h2><p>图解<br><img src="https://img-blog.csdnimg.cn/20210116130729224.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="待插入状态"></p>
-<ol>
-<li>将待插入结点的next域设为NULL</li>
-<li><p>将最后一个结点的next域指向带插入结点<br><img src="https://img-blog.csdnimg.cn/20210116130930320.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="插入方法"></p>
-<p>插入完毕<br><img src="https://img-blog.csdnimg.cn/20210116131032237.png#pic_center" alt="插入完毕"><br>代码实现</p>
-</li>
-</ol>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//设插入结点为S</span></span><br><span class="line">head-&gt;next=S;</span><br><span class="line">head=S;</span><br></pre></td></tr></table></figure>
-<h2 id="在中间插入"><a href="#在中间插入" class="headerlink" title="在中间插入"></a>在中间插入</h2><p>图解<br><img src="https://img-blog.csdnimg.cn/20210116202306782.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="插入前状态"></p>
-<ol>
-<li>将待插入结点的next域指向插入结点位置的前驱结点指向的后一个结点</li>
-<li>将原本位置上之前的结点指向待插入结点 </li>
-</ol>
-<p><img src="https://img-blog.csdnimg.cn/20210116202359651.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>插入完成<br><img src="https://img-blog.csdnimg.cn/20210116202638177.png#pic_center" alt="插入完成"></p>
-<p>代码实现</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//设待插入结点为S</span></span><br><span class="line"><span class="comment">//待插入位置的前驱结点为pre</span></span><br><span class="line">S-&gt;next=pre-&gt;next;</span><br><span class="line">pre-&gt;next=S;</span><br></pre></td></tr></table></figure>
-<h2 id="在中间删除"><a href="#在中间删除" class="headerlink" title="在中间删除"></a>在中间删除</h2><p>图解<br><img src="https://img-blog.csdnimg.cn/20210116204400671.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="删除前状态"></p>
-<ol>
-<li>将待删除结点的前一个结点的next指向待删除结点next的结点</li>
-<li>删除待删除结点</li>
-</ol>
-<p><img src="https://img-blog.csdnimg.cn/20210116204421686.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="步骤"><br>删除完成<br><img src="https://img-blog.csdnimg.cn/20210116204628265.png#pic_center" alt="删除完成"></p>
-<p>代码实现 </p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//设待删除前驱结点为pre</span></span><br><span class="line"><span class="comment">//待删除结点为S</span></span><br><span class="line">pre-&gt;next=S-&gt;next;</span><br><span class="line"><span class="keyword">delete</span> S;</span><br></pre></td></tr></table></figure>
-<h2 id="原地逆置链表"><a href="#原地逆置链表" class="headerlink" title="原地逆置链表"></a>原地逆置链表</h2><ol>
-<li>将头结点与后面的结点断开，然后重新用头插法插入</li>
-<li>使用三个指针逆置<br>图解<br>1.<img src="https://img-blog.csdnimg.cn/20210116213023974.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="1"><br>2.<img src="https://img-blog.csdnimg.cn/20210116213042409.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="2"><br>3.<img src="https://img-blog.csdnimg.cn/20210116213051310.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="3"><br>4.<img src="https://img-blog.csdnimg.cn/20210116213109935.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="4"><br>5.逆置完毕（最后将头结点指向p）<img src="https://img-blog.csdnimg.cn/20210116213123148.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="5"></li>
-</ol>
-<p>代码实现</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">ReverseList</span><span class="params">(LinkList&amp; head)</span> </span>&#123;</span><br><span class="line">	LNode* pre, * p = head-&gt;next, * r = p-&gt;next;</span><br><span class="line">	p-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">	<span class="keyword">while</span> (r != <span class="literal">NULL</span>) &#123;</span><br><span class="line">		pre = p;</span><br><span class="line">		p = r;</span><br><span class="line">		r = r-&gt;next;</span><br><span class="line">		p-&gt;next = pre;</span><br><span class="line">	&#125;</span><br><span class="line">	head-&gt;next = p;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>学习笔记</category>
-      </categories>
-      <tags>
-        <tag>算法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>JZ6 从尾到头打印链表</title>
-    <url>/2023/11/15/JZ6%20%E4%BB%8E%E5%B0%BE%E5%88%B0%E5%A4%B4%E6%89%93%E5%8D%B0%E9%93%BE%E8%A1%A8/</url>
-    <content><![CDATA[<h2 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h2><p>输入一个链表的头节点，按链表从尾到头的顺序返回每个节点的值（用数组返回）。</p>
-<p>如输入{1,2,3}的链表如下图:</p>
-<p><img src="https://uploadfiles.nowcoder.com/images/20210717/557336_1626506480516/103D87B58E565E87DEFA9DD0B822C55F" alt="img"></p>
-<p>返回一个数组为[3,2,1]</p>
-<p>0 &lt;= 链表长度 &lt;= 10000</p>
-<h2 id="示例1"><a href="#示例1" class="headerlink" title="示例1"></a>示例1</h2><p>输入：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;1,2,3&#125;</span><br></pre></td></tr></table></figure>
-<p>返回值：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[3,2,1]</span><br></pre></td></tr></table></figure>
-<h2 id="算法思路1"><a href="#算法思路1" class="headerlink" title="算法思路1"></a>算法思路1</h2><p>主要考察翻转数组的操作，把链表的数据放到数组里，然后在数组里操作，一个比较简单的操作是调用C++的库函数</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">printListFromTailToHead</span><span class="params">(ListNode* head)</span> </span>&#123;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; vt;</span><br><span class="line">        ListNode* p = head;</span><br><span class="line">        <span class="keyword">while</span>(p != <span class="literal">nullptr</span>)&#123;</span><br><span class="line">            vt.<span class="built_in">push_back</span>(p-&gt;val);</span><br><span class="line">            p = p-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">reverse</span>(vt.<span class="built_in">begin</span>(),vt.<span class="built_in">end</span>());</span><br><span class="line">        <span class="keyword">return</span> vt;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="算法思路2"><a href="#算法思路2" class="headerlink" title="算法思路2"></a>算法思路2</h2><p>使用递归的方式解决，递归出口是链表循环到末尾，每次递归做的事就是把当前结点的值放到<code>vector</code>容器中，由于递归到末尾才会开始存放结点（<code>res.push_back(head-&gt;val);</code>）的值，时间顺序正好为从后往前的存放，符合题目要求的逆序</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">*  struct ListNode &#123;</span></span><br><span class="line"><span class="comment">*        int val;</span></span><br><span class="line"><span class="comment">*        struct ListNode *next;</span></span><br><span class="line"><span class="comment">*        ListNode(int x) :</span></span><br><span class="line"><span class="comment">*              val(x), next(NULL) &#123;</span></span><br><span class="line"><span class="comment">*        &#125;</span></span><br><span class="line"><span class="comment">*  &#125;;</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">reverse</span><span class="params">(ListNode* head,vector&lt;<span class="type">int</span>&gt; &amp;res)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(head != <span class="literal">nullptr</span>)&#123;</span><br><span class="line">            <span class="built_in">reverse</span>(head-&gt;next,res);</span><br><span class="line">            res.<span class="built_in">push_back</span>(head-&gt;val);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">printListFromTailToHead</span><span class="params">(ListNode* head)</span> </span>&#123;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; res;</span><br><span class="line">        <span class="built_in">reverse</span>(head,res);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>刷题笔记</category>
-      </categories>
   </entry>
 </search>
