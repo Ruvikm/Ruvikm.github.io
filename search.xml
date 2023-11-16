@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>C_C++用宏定义简化for循环</title>
+    <url>/2022/01/10/C_C++%E7%94%A8%E5%AE%8F%E5%AE%9A%E4%B9%89%E7%AE%80%E5%8C%96for%E5%BE%AA%E7%8E%AF/</url>
+    <content><![CDATA[<p>记录一下for循环简化<br><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> _for(i,a,b) for( int i=(a); i&lt;(b); ++i)</span></span><br></pre></td></tr></table></figure><br>这样<br><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)</span><br></pre></td></tr></table></figure><br>就简化为了</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">_for(i, <span class="number">0</span>, <span class="number">10</span>)</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>个人笔记</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>2021版王道数据结构课后代码题全部实现</title>
     <url>/2022/01/10/2021%E7%89%88%E7%8E%8B%E9%81%93%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E8%AF%BE%E5%90%8E%E4%BB%A3%E7%A0%81%E9%A2%98%E5%85%A8%E9%83%A8%E5%AE%9E%E7%8E%B0/</url>
     <content><![CDATA[<p>历时2个多月，把21版王道数据结构的课后代码题全部实现了一遍，一共96道题</p>
@@ -34,25 +47,43 @@
       </tags>
   </entry>
   <entry>
-    <title>C_C++用宏定义简化for循环</title>
-    <url>/2022/01/10/C_C++%E7%94%A8%E5%AE%8F%E5%AE%9A%E4%B9%89%E7%AE%80%E5%8C%96for%E5%BE%AA%E7%8E%AF/</url>
-    <content><![CDATA[<p>记录一下for循环简化<br><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> _for(i,a,b) for( int i=(a); i&lt;(b); ++i)</span></span><br></pre></td></tr></table></figure><br>这样<br><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)</span><br></pre></td></tr></table></figure><br>就简化为了</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">_for(i, <span class="number">0</span>, <span class="number">10</span>)</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>个人笔记</category>
-      </categories>
-      <tags>
-        <tag>算法</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Host文件备份</title>
     <url>/2023/07/03/Host%E6%96%87%E4%BB%B6%E5%A4%87%E4%BB%BD/</url>
     <content><![CDATA[<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="params">#</span> Copyright (c) 1993-2009 Microsoft Corp.</span><br><span class="line"><span class="params">#</span></span><br><span class="line"><span class="params">#</span> This is a sample HOSTS file used by Microsoft TCP/IP for Windows.</span><br><span class="line"><span class="params">#</span></span><br><span class="line"><span class="params">#</span> This file contains the mappings of IP addresses to host names. Each</span><br><span class="line"><span class="params">#</span> entry should be kept on an individual line. The IP address should</span><br><span class="line"><span class="params">#</span> be placed in the first column followed by the corresponding host name.</span><br><span class="line"><span class="params">#</span> The IP address and the host name should be separated by at least one</span><br><span class="line"><span class="params">#</span> space.</span><br><span class="line"><span class="params">#</span></span><br><span class="line"><span class="params">#</span> Additionally, comments (such as these) may be inserted on individual</span><br><span class="line"><span class="params">#</span> lines or following the machine name denoted by a &#x27;<span class="params">#</span>&#x27; symbol.</span><br><span class="line"><span class="params">#</span></span><br><span class="line"><span class="params">#</span> For example:</span><br><span class="line"><span class="params">#</span></span><br><span class="line"><span class="params">#</span> 102.54.94.97 rhino.acme.com <span class="params">#</span> source server</span><br><span class="line"><span class="params">#</span> 38.25.63.10 x.acme.com <span class="params">#</span> x client host</span><br><span class="line"><span class="params">#</span> localhost name resolution is handled within DNS itself.</span><br><span class="line"><span class="params">#</span> 127.0.0.1 localhost</span><br><span class="line"><span class="params">#</span> ::1 localhost</span><br><span class="line"></span><br><span class="line"><span class="params">#</span> Github</span><br><span class="line">140.82.114.4 github.com</span><br><span class="line">199.232.69.194 github.global.ssl.fastly.net</span><br><span class="line">185.199.108.153 assets-cdn.github.com</span><br><span class="line">185.199.110.153 assets-cdn.github.com</span><br><span class="line">185.199.111.153 assets-cdn.github.com</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>个人笔记</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>JZ24 反转链表</title>
+    <url>/2023/11/16/JZ24%20%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/</url>
+    <content><![CDATA[<h2 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h2><p>给定一个单链表的头结点<code>pHead</code>(该头节点是有值的，比如在下图，它的<code>val</code>是1)，长度为n，反转该链表后，返回新链表的表头。</p>
+<p>数据范围： 0≤10000≤<em>n</em>≤1000</p>
+<p>要求：空间复杂度 O<em>(1) ，时间复杂度 O</em>(<em>n</em>) 。</p>
+<p>如当输入链表{1,2,3}时，</p>
+<p>经反转后，原链表变为{3,2,1}，所以对应的输出为{3,2,1}。</p>
+<p>以上转换过程如下图所示：</p>
+<p><img src="https://uploadfiles.nowcoder.com/images/20211014/423483716_1634206291971/4A47A0DB6E60853DEDFCFDF08A5CA249" alt="img"></p>
+<h2 id="示例1"><a href="#示例1" class="headerlink" title="示例1"></a>示例1</h2><p>输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;1,2,3&#125;</span><br></pre></td></tr></table></figure>
+<p>返回值：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;3,2,1&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="示例2"><a href="#示例2" class="headerlink" title="示例2"></a>示例2</h2><p>输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;&#125;</span><br></pre></td></tr></table></figure>
+<p>返回值：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;&#125;</span><br></pre></td></tr></table></figure>
+<p>说明：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">空链表则输出空                 </span><br></pre></td></tr></table></figure>
+<h1 id="题解1"><a href="#题解1" class="headerlink" title="题解1"></a>题解1</h1><p>使用栈当做中转站，把每个节点倒过来，然后重新拼成一个新链表</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *  int val;</span></span><br><span class="line"><span class="comment"> *  struct ListNode *next;</span></span><br><span class="line"><span class="comment"> *  ListNode(int x) : val(x), next(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">  <span class="keyword">public</span>:</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * @param head ListNode类</span></span><br><span class="line"><span class="comment">     * @return ListNode类</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function">ListNode* <span class="title">ReverseList</span><span class="params">(ListNode* head)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// write code here</span></span><br><span class="line">        <span class="keyword">if</span>(head == <span class="literal">nullptr</span>)</span><br><span class="line">            <span class="keyword">return</span> head;</span><br><span class="line">        stack&lt;ListNode*&gt; st;</span><br><span class="line">        ListNode* p = head;</span><br><span class="line">        <span class="keyword">while</span> (p != <span class="literal">nullptr</span>) &#123;</span><br><span class="line">            st.<span class="built_in">push</span>(p);</span><br><span class="line">            p = p-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        ListNode* tail = st.<span class="built_in">top</span>();</span><br><span class="line">        st.<span class="built_in">pop</span>();</span><br><span class="line">        ListNode* res = tail;</span><br><span class="line">        <span class="keyword">while</span> (!st.<span class="built_in">empty</span>()) &#123;</span><br><span class="line">            ListNode* node = st.<span class="built_in">top</span>();</span><br><span class="line">            st.<span class="built_in">pop</span>();</span><br><span class="line">            tail-&gt;next = node;</span><br><span class="line">            tail = node;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//最后的节点为原来的头结点，需要将其的下一个节点设为空，否则会构成环</span></span><br><span class="line">        tail-&gt;next = <span class="literal">nullptr</span>;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p><img src="/2023/11/16/JZ24%20%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/%E6%9E%84%E6%88%90%E7%8E%AF-1700131259364-2.png" alt="构成环"></p>
+<p><strong>题目细节</strong></p>
+<p>结点3为<code>tail</code>变量，经过<code>while</code>循环，会使用尾插法将结点1和2都插入到3后面，这期间，结点2和3和<code>next</code>指针都经过了处理，而最后一个结点1的<code>next</code>指针（结点1的<code>next</code>原本是指向结点2的）却没有处理，因为此时已经跳出了<code>while</code>循环。如果不将结点1的下一个结点置为空，则会在结点1和2之间形成环，程序输出会如下：</p>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">3,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2...</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>刷题笔记</category>
       </categories>
   </entry>
   <entry>
@@ -78,22 +109,6 @@
       </tags>
   </entry>
   <entry>
-    <title></title>
-    <url>/2023/11/15/JZ6%20%E4%BB%8E%E5%B0%BE%E5%88%B0%E5%A4%B4%E6%89%93%E5%8D%B0%E9%93%BE%E8%A1%A8/</url>
-    <content><![CDATA[<h1 id="JZ6-从尾到头打印链表"><a href="#JZ6-从尾到头打印链表" class="headerlink" title="JZ6 从尾到头打印链表"></a><strong>JZ6</strong> <strong>从尾到头打印链表</strong></h1><h2 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h2><p>输入一个链表的头节点，按链表从尾到头的顺序返回每个节点的值（用数组返回）。</p>
-<p>如输入{1,2,3}的链表如下图:</p>
-<p><img src="https://uploadfiles.nowcoder.com/images/20210717/557336_1626506480516/103D87B58E565E87DEFA9DD0B822C55F" alt="img"></p>
-<p>返回一个数组为[3,2,1]</p>
-<p>0 &lt;= 链表长度 &lt;= 10000</p>
-<h2 id="示例1"><a href="#示例1" class="headerlink" title="示例1"></a>示例1</h2><p>输入：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;1,2,3&#125;</span><br></pre></td></tr></table></figure>
-<p>返回值：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[3,2,1]</span><br></pre></td></tr></table></figure>
-<h2 id="算法思路"><a href="#算法思路" class="headerlink" title="算法思路"></a>算法思路</h2><p>主要考察翻转数组的操作，把链表的数据放到数组里，然后在数组里操作，一个比较简单的操作是调用C++的库函数</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">printListFromTailToHead</span><span class="params">(ListNode* head)</span> </span>&#123;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; vt;</span><br><span class="line">        ListNode* p = head;</span><br><span class="line">        <span class="keyword">while</span>(p != <span class="literal">nullptr</span>)&#123;</span><br><span class="line">            vt.<span class="built_in">push_back</span>(p-&gt;val);</span><br><span class="line">            p = p-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">reverse</span>(vt.<span class="built_in">begin</span>(),vt.<span class="built_in">end</span>());</span><br><span class="line">        <span class="keyword">return</span> vt;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-]]></content>
-  </entry>
-  <entry>
     <title>LeetCode 46. Permutations</title>
     <url>/2022/01/10/LeetCode%2046.%20Permutations/</url>
     <content><![CDATA[<h2 id="Given-a-collection-of-distinct-integers-return-all-possible-permutations"><a href="#Given-a-collection-of-distinct-integers-return-all-possible-permutations" class="headerlink" title="Given a collection of distinct integers, return all possible permutations."></a>Given a collection of distinct integers, return all possible permutations.</h2><p>Example:</p>
@@ -108,61 +123,6 @@
 <p>对于这道全排列的题，我们需要一个res保存答案，一个temp参与回溯，当达到终于条件也就是temp的大小与nums的相等时便把temp加入res中;<br>然后需要一个check数组来标记使用过的元素，当一个数已经被使用过便把对应的位置的值设为1，这样避免了一个数重复使用多次。<br>由于这道题是要列出所有的排列结果，所以需要全部遍历</p>
 <p>代码如下：</p>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; res;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">dfs</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums,vector&lt;<span class="type">int</span>&gt;&amp; temp,vector&lt;<span class="type">int</span>&gt;&amp; check)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(temp.<span class="built_in">size</span>()==nums.<span class="built_in">size</span>())&#123;</span><br><span class="line">            res.<span class="built_in">push_back</span>(temp);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;nums.<span class="built_in">size</span>();i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(check[i])</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            check[i]=<span class="number">1</span>;</span><br><span class="line">            temp.<span class="built_in">push_back</span>(nums[i]);</span><br><span class="line">            <span class="built_in">dfs</span>(nums,temp,check);</span><br><span class="line">            temp.<span class="built_in">pop_back</span>();</span><br><span class="line">            check[i]=<span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">permute</span>(vector&lt;<span class="type">int</span>&gt;&amp; nums) &#123;</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">check</span><span class="params">(nums.size(),<span class="number">0</span>)</span></span>;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; temp;</span><br><span class="line">        <span class="built_in">dfs</span>(nums,temp,check);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>刷题笔记</category>
-      </categories>
-      <tags>
-        <tag>算法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/2023/11/16/JZ24%20%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/</url>
-    <content><![CDATA[<h1 id="JZ24-反转链表"><a href="#JZ24-反转链表" class="headerlink" title="JZ24 反转链表"></a><strong>JZ24</strong> <strong>反转链表</strong></h1><h2 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h2><p>给定一个单链表的头结点<code>pHead</code>(该头节点是有值的，比如在下图，它的<code>val</code>是1)，长度为n，反转该链表后，返回新链表的表头。</p>
-<p>数据范围： 0≤10000≤<em>n</em>≤1000</p>
-<p>要求：空间复杂度 O<em>(1) ，时间复杂度 O</em>(<em>n</em>) 。</p>
-<p>如当输入链表{1,2,3}时，</p>
-<p>经反转后，原链表变为{3,2,1}，所以对应的输出为{3,2,1}。</p>
-<p>以上转换过程如下图所示：</p>
-<p><img src="https://uploadfiles.nowcoder.com/images/20211014/423483716_1634206291971/4A47A0DB6E60853DEDFCFDF08A5CA249" alt="img"></p>
-<h2 id="示例1"><a href="#示例1" class="headerlink" title="示例1"></a>示例1</h2><p>输入：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;1,2,3&#125;</span><br></pre></td></tr></table></figure>
-<p>返回值：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;3,2,1&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="示例2"><a href="#示例2" class="headerlink" title="示例2"></a>示例2</h2><p>输入：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;&#125;</span><br></pre></td></tr></table></figure>
-<p>返回值：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;&#125;</span><br></pre></td></tr></table></figure>
-<p>说明：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">空链表则输出空                 </span><br></pre></td></tr></table></figure>
-<h1 id="题解1"><a href="#题解1" class="headerlink" title="题解1"></a>题解1</h1><p>使用栈当做中转站，把每个节点倒过来，然后重新拼成一个新链表</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *  int val;</span></span><br><span class="line"><span class="comment"> *  struct ListNode *next;</span></span><br><span class="line"><span class="comment"> *  ListNode(int x) : val(x), next(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">  <span class="keyword">public</span>:</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * @param head ListNode类</span></span><br><span class="line"><span class="comment">     * @return ListNode类</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function">ListNode* <span class="title">ReverseList</span><span class="params">(ListNode* head)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// write code here</span></span><br><span class="line">        <span class="keyword">if</span>(head == <span class="literal">nullptr</span>)</span><br><span class="line">            <span class="keyword">return</span> head;</span><br><span class="line">        stack&lt;ListNode*&gt; st;</span><br><span class="line">        ListNode* p = head;</span><br><span class="line">        <span class="keyword">while</span> (p != <span class="literal">nullptr</span>) &#123;</span><br><span class="line">            st.<span class="built_in">push</span>(p);</span><br><span class="line">            p = p-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        ListNode* tail = st.<span class="built_in">top</span>();</span><br><span class="line">        st.<span class="built_in">pop</span>();</span><br><span class="line">        ListNode* res = tail;</span><br><span class="line">        <span class="keyword">while</span> (!st.<span class="built_in">empty</span>()) &#123;</span><br><span class="line">            ListNode* node = st.<span class="built_in">top</span>();</span><br><span class="line">            st.<span class="built_in">pop</span>();</span><br><span class="line">            tail-&gt;next = node;</span><br><span class="line">            tail = node;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//最后的节点为原来的头结点，需要将其的下一个节点设为空，否则会构成环</span></span><br><span class="line">        tail-&gt;next = <span class="literal">nullptr</span>;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p><img src="/2023/11/16/JZ24%20%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/%E6%9E%84%E6%88%90%E7%8E%AF-1700131259364-2.png" alt="构成环"></p>
-<p><strong>题目细节</strong></p>
-<p>结点3为<code>tail</code>变量，经过<code>while</code>循环，会使用尾插法将结点1和2都插入到3后面，这期间，结点2和3和<code>next</code>指针都经过了处理，而最后一个结点1的<code>next</code>指针（结点1的<code>next</code>原本是指向结点2的）却没有处理，因为此时已经跳出了<code>while</code>循环。如果不将结点1的下一个结点置为空，则会在结点1和2之间形成环，程序输出会如下：</p>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">3,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2...</span><br></pre></td></tr></table></figure>
-]]></content>
-  </entry>
-  <entry>
-    <title>LeetCode 131. Palindrome Partitioning</title>
-    <url>/2022/01/10/LeetCode%20131.%20Palindrome%20Partitioning/</url>
-    <content><![CDATA[<p>Given a string s, partition s such that every substring of the partition is a palindrome.</p>
-<p>Return all possible palindrome partitioning of s.</p>
-<p>Example:</p>
-<p>Input: “aab”<br>Output:<br>[<br>  [“aa”,”b”],<br>  [“a”,”a”,”b”]<br>]</p>
-<p><a href="https://leetcode-cn.com/problems/palindrome-partitioning/">题目链接</a></p>
-<p>可以回溯法切割出来字串，然后判断是否为回文串</p>
-<p>由于要找出来全部的字串，所有回溯的范围应该是全部遍历一遍。使用for循环进行横向的遍历，for循环结束的条件就是本层集合的个数（也就是树中孩子的数量），cur代表当前要切割的位置</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=cur;i&lt;s.<span class="built_in">length</span>();i++)</span><br></pre></td></tr></table></figure>
-<p>然后进行纵向的遍历，每当切割出来一个回文串，就把其放入tmp中，然后进行回溯。否则跳过。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="built_in">Ispalindrome</span>(s,cur,i))&#123;</span><br><span class="line">                string item=s.<span class="built_in">substr</span>(cur,i-cur+<span class="number">1</span>);</span><br><span class="line">                tmp.<span class="built_in">push_back</span>(item);</span><br><span class="line">                <span class="built_in">dfs</span>(s,i+<span class="number">1</span>);</span><br><span class="line">                tmp.<span class="built_in">pop_back</span>();</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br></pre></td></tr></table></figure>
-<p>回溯结束的条件就是当切割点cur的大小已经大于或者等于s的大小</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>(cur&gt;=s.<span class="built_in">length</span>())</span><br></pre></td></tr></table></figure>
-<p>判断回文串较为简单，用两个指针分别指向字符串的头和尾，如果两个指针所指向的字母一直相等到中间，就是回文串。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">bool</span> <span class="title">Ispalindrome</span><span class="params">(string s,<span class="type">int</span> start,<span class="type">int</span> end)</span></span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=start,j=end;i&lt;j;i++,j--)&#123;</span><br><span class="line">            <span class="keyword">if</span>(s[i]!=s[j])&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<p>全部代码如下：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    vector&lt;vector&lt;string&gt;&gt; res;</span><br><span class="line">    vector&lt;string&gt; tmp;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">dfs</span><span class="params">(<span class="type">const</span> string &amp;s,<span class="type">int</span> cur)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(cur&gt;=s.<span class="built_in">length</span>())&#123;</span><br><span class="line">            res.<span class="built_in">push_back</span>(tmp);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=cur;i&lt;s.<span class="built_in">length</span>();i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(<span class="built_in">Ispalindrome</span>(s,cur,i))&#123;</span><br><span class="line">                string item=s.<span class="built_in">substr</span>(cur,i-cur+<span class="number">1</span>);</span><br><span class="line">                tmp.<span class="built_in">push_back</span>(item);</span><br><span class="line">                <span class="built_in">dfs</span>(s,i+<span class="number">1</span>);</span><br><span class="line">                tmp.<span class="built_in">pop_back</span>();</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">           </span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">Ispalindrome</span><span class="params">(string s,<span class="type">int</span> start,<span class="type">int</span> end)</span></span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=start,j=end;i&lt;j;i++,j--)&#123;</span><br><span class="line">            <span class="keyword">if</span>(s[i]!=s[j])&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    vector&lt;vector&lt;string&gt;&gt; <span class="built_in">partition</span>(string s) &#123;</span><br><span class="line">        tmp.<span class="built_in">clear</span>();</span><br><span class="line">        res.<span class="built_in">clear</span>();</span><br><span class="line">        <span class="built_in">dfs</span>(s,<span class="number">0</span>);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>刷题笔记</category>
@@ -722,6 +682,33 @@
       </categories>
   </entry>
   <entry>
+    <title>LeetCode 131. Palindrome Partitioning</title>
+    <url>/2022/01/10/LeetCode%20131.%20Palindrome%20Partitioning/</url>
+    <content><![CDATA[<p>Given a string s, partition s such that every substring of the partition is a palindrome.</p>
+<p>Return all possible palindrome partitioning of s.</p>
+<p>Example:</p>
+<p>Input: “aab”<br>Output:<br>[<br>  [“aa”,”b”],<br>  [“a”,”a”,”b”]<br>]</p>
+<p><a href="https://leetcode-cn.com/problems/palindrome-partitioning/">题目链接</a></p>
+<p>可以回溯法切割出来字串，然后判断是否为回文串</p>
+<p>由于要找出来全部的字串，所有回溯的范围应该是全部遍历一遍。使用for循环进行横向的遍历，for循环结束的条件就是本层集合的个数（也就是树中孩子的数量），cur代表当前要切割的位置</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=cur;i&lt;s.<span class="built_in">length</span>();i++)</span><br></pre></td></tr></table></figure>
+<p>然后进行纵向的遍历，每当切割出来一个回文串，就把其放入tmp中，然后进行回溯。否则跳过。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="built_in">Ispalindrome</span>(s,cur,i))&#123;</span><br><span class="line">                string item=s.<span class="built_in">substr</span>(cur,i-cur+<span class="number">1</span>);</span><br><span class="line">                tmp.<span class="built_in">push_back</span>(item);</span><br><span class="line">                <span class="built_in">dfs</span>(s,i+<span class="number">1</span>);</span><br><span class="line">                tmp.<span class="built_in">pop_back</span>();</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br></pre></td></tr></table></figure>
+<p>回溯结束的条件就是当切割点cur的大小已经大于或者等于s的大小</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>(cur&gt;=s.<span class="built_in">length</span>())</span><br></pre></td></tr></table></figure>
+<p>判断回文串较为简单，用两个指针分别指向字符串的头和尾，如果两个指针所指向的字母一直相等到中间，就是回文串。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">bool</span> <span class="title">Ispalindrome</span><span class="params">(string s,<span class="type">int</span> start,<span class="type">int</span> end)</span></span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=start,j=end;i&lt;j;i++,j--)&#123;</span><br><span class="line">            <span class="keyword">if</span>(s[i]!=s[j])&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>全部代码如下：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    vector&lt;vector&lt;string&gt;&gt; res;</span><br><span class="line">    vector&lt;string&gt; tmp;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">dfs</span><span class="params">(<span class="type">const</span> string &amp;s,<span class="type">int</span> cur)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(cur&gt;=s.<span class="built_in">length</span>())&#123;</span><br><span class="line">            res.<span class="built_in">push_back</span>(tmp);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=cur;i&lt;s.<span class="built_in">length</span>();i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(<span class="built_in">Ispalindrome</span>(s,cur,i))&#123;</span><br><span class="line">                string item=s.<span class="built_in">substr</span>(cur,i-cur+<span class="number">1</span>);</span><br><span class="line">                tmp.<span class="built_in">push_back</span>(item);</span><br><span class="line">                <span class="built_in">dfs</span>(s,i+<span class="number">1</span>);</span><br><span class="line">                tmp.<span class="built_in">pop_back</span>();</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">           </span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">Ispalindrome</span><span class="params">(string s,<span class="type">int</span> start,<span class="type">int</span> end)</span></span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=start,j=end;i&lt;j;i++,j--)&#123;</span><br><span class="line">            <span class="keyword">if</span>(s[i]!=s[j])&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    vector&lt;vector&lt;string&gt;&gt; <span class="built_in">partition</span>(string s) &#123;</span><br><span class="line">        tmp.<span class="built_in">clear</span>();</span><br><span class="line">        res.<span class="built_in">clear</span>();</span><br><span class="line">        <span class="built_in">dfs</span>(s,<span class="number">0</span>);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>刷题笔记</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>word2vec工具实战</title>
     <url>/2023/07/04/word2vec%E5%B7%A5%E5%85%B7%E5%AE%9E%E6%88%98/</url>
     <content><![CDATA[<p>最开始需要新建一个conda环境</p>
@@ -851,152 +838,45 @@
       </tags>
   </entry>
   <entry>
-    <title>复现论文ChineseBERT(ONTONOTES数据集)</title>
-    <url>/2023/06/08/%E5%A4%8D%E7%8E%B0%E8%AE%BA%E6%96%87ChineseBERT/</url>
-    <content><![CDATA[<p>记录一下自己复现论文<strong><a href="https://arxiv.org/pdf/2106.16038.pdf">《ChineseBERT: Chinese Pretraining Enhanced by Glyph and Pinyin Information》</a></strong>的过程，最近感觉老在调包，一天下来感觉什么也没干，就直播记录一下跑模型的过程吧</p>
-<p>自己电脑环境如下：</p>
-<ul>
-<li>显卡：3060TI</li>
-<li>CUDA : 11.0</li>
-<li>CUDAToolkit : 8.0.2</li>
-<li>tensorflow : 2.4.0</li>
-<li>pytorch : 1.7.0</li>
-</ul>
-<p>首先使用<code>Conda</code>创建一下项目的虚拟环境</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda create -n ChineseBERT python=3.8</span><br></pre></td></tr></table></figure>
-<p>进入环境</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda activate ChineseBERT</span><br></pre></td></tr></table></figure>
-<p>用<code>Pycharm</code>打开项目并切换到刚刚新建的环境</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-08%20093431.png" alt="屏幕截图 2023-06-08 093431"></p>
-<p>找到<code>requirements.txt</code>文件，在环境中一个一个安装</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-08%20094729.png" alt="屏幕截图 2023-06-08 094729"></p>
-<p>安装的时候，发现<code>torch</code>版本装不到这么低的</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-08%20101810.png" alt="屏幕截图 2023-06-08 101810"></p>
-<p>然后就装了项目简介中的版本，（发现自己要跑的<code>OntoNotes 4.0</code>数据集正好也需要装这个版本，nice）</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-08%20102015.png" alt="屏幕截图 2023-06-08 102015"></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install torch==1.7.1+cu101 torchvision==0.8.2+cu101 torchaudio==0.7.2 -f https://download.pytorch.org/whl/torch_stable.html</span><br></pre></td></tr></table></figure>
-<p>然后打开作者的文档<a href="https://github.com/ShannonAI/ChineseBert/blob/main/tasks/OntoNotes/README.md">OntoNotes NER task</a>，下载对应的<a href="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-11%20084906.png">数据集</a></p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-11%20084906.png" alt="屏幕截图 2023-06-11 084906"></p>
-<p>然后新建一个名为<code>ONTONOTES_DATA_PATH</code>的文件夹，把解压后的文件放进去</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-11%20085550.png" alt="屏幕截图 2023-06-11 085550"></p>
-<p>找到<code>tasks/OntoNotes/OntoNotes_trainer.py</code>文件，尝试第一次运行</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-11%20085821.png" alt="屏幕截图 2023-06-11 085821"></p>
-<p>果不其然会报错，好像是<code>numpy</code>版本不匹配的问题，搜一下</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-11%20090052.png" alt="屏幕截图 2023-06-11 090052"></p>
-<p>看了一眼自己装的<code>numpy</code>版本，果然高一点</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-11%20090154.png" alt="屏幕截图 2023-06-11 090154"></p>
-<p>然后直接</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pip uninstall numpy</span><br><span class="line">pip install numpy==1.23.4</span><br></pre></td></tr></table></figure>
-<p>再跑一次！</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-11%20090605.png" alt="屏幕截图 2023-06-11 090605"></p>
-<p>好消息，刚刚的错误解决了。新的错误好像是路径格式的问题？难道是我刚刚路径那没配好？</p>
-<p>又看了一遍文档，好像是我<strong><code>ChineseBERT-base</code></strong>模型没下，赶紧去<a href="https://drive.google.com/file/d/1CseJzc58W4s8U_eIuAnshHQmnmi7Sr5-/view">下载</a>一下</p>
-<p>然后按照文档中说的，也把模型文件都放在<code>CHINESEBERT_PATH</code>这个文件夹中（我猜的</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-11%20092103.png" alt="屏幕截图 2023-06-11 092103"></p>
-<p>配置完如下</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-11%20092339.png" alt="屏幕截图 2023-06-11 092339"></p>
-<p>再跑一次试试！</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-11%20092443.png" alt="屏幕截图 2023-06-11 092443"></p>
-<p>emmm待我研究一下…又看了眼文档，好像是跑错文件了？</p>
-<p>应该是要运行<code>chinesebert_base.sh</code>文件，再运行之前需要修改两个个参数，把这两个位置的地址换成自己的。（啊我终于理解作者的意思了，不是要新建一个<code>ONTONOTES_DATA_PATH</code>的文件夹啊，是要把这个地址修改成自己的…）</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-11%20210900.png" alt="屏幕截图 2023-06-11 210900"></p>
-<p>改到一半的时候发现，好像这其他路径也得该啊，而且这个是在<code>Linux</code>的环境下运行的,不管了先用<code>git</code>跑试试，改完路径后结果如下</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-11%20212135.png" alt="屏幕截图 2023-06-11 212135"></p>
-<p>配置一下<code>Pycharm</code>，让其可以直接用<code>git</code></p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-11%20214248.png" alt="屏幕截图 2023-06-11 214248"></p>
-<p>走起！</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-11%20214750.png" alt="屏幕截图 2023-06-11 214750"></p>
-<p>emmm闪一下就没了，什么情况</p>
-<p>在<code>chinesebert_base.sh</code>脚本最后加入以下代码以便查看运行情况</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#  使用read命令达到类似bat中的pause命令效果</span></span><br><span class="line"><span class="built_in">echo</span> 按任意键继续</span><br><span class="line"><span class="built_in">read</span> -n 1</span><br><span class="line"><span class="built_in">echo</span> 继续运行</span><br></pre></td></tr></table></figure>
-<p>运行情况如下</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-11%20214624.png" alt="屏幕截图 2023-06-11 214624"></p>
-<p>啊？没东西输出吗？看了一下路径，好像是<code>Windows</code>和<code>Linux</code>的路径不一样，Linux下路径是<code>/</code>，Win下应该是<code>\\</code></p>
-<p>再跑一次！</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-11%20215427.png" alt="屏幕截图 2023-06-11 215427"></p>
-<p>啊？？？（黑人问号.jpg)</p>
-<p>试试把.sh文件转成.bat的，搜了一下网上居然还有一键自动转换的<a href="https://daniel-sc.github.io/bash-shell-to-bat-converter/">网址</a>，太赞了</p>
-<p>转换完的<code>.bat</code>脚本如下</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"></span><br><span class="line">SET <span class="string">&quot;TIME=0711&quot;</span></span><br><span class="line">SET <span class="string">&quot;FILE_NAME=ontonotes_glyce_base&quot;</span></span><br><span class="line">SET <span class="string">&quot;REPO_PATH=D:\code\ChineseBert&quot;</span></span><br><span class="line">SET <span class="string">&quot;BERT_PATH=..\..\CHINESEBERT_PATH&quot;</span></span><br><span class="line">SET <span class="string">&quot;DATA_DIR=..\..\ONTONOTES_DATA_PATH&quot;</span></span><br><span class="line">SET <span class="string">&quot;SAVE_TOPK=20&quot;</span></span><br><span class="line">SET <span class="string">&quot;TRAIN_BATCH_SIZE=26&quot;</span></span><br><span class="line">SET <span class="string">&quot;LR=3e-5&quot;</span></span><br><span class="line">SET <span class="string">&quot;WEIGHT_DECAY=0.001&quot;</span></span><br><span class="line">SET <span class="string">&quot;WARMUP_PROPORTION=0.1&quot;</span></span><br><span class="line">SET <span class="string">&quot;MAX_LEN=275&quot;</span></span><br><span class="line">SET <span class="string">&quot;MAX_EPOCH=5&quot;</span></span><br><span class="line">SET <span class="string">&quot;DROPOUT=0.2&quot;</span></span><br><span class="line">SET <span class="string">&quot;ACC_GRAD=1&quot;</span></span><br><span class="line">SET <span class="string">&quot;VAL_CHECK_INTERVAL=0.25&quot;</span></span><br><span class="line">SET <span class="string">&quot;OPTIMIZER=torch.adam&quot;</span></span><br><span class="line">SET <span class="string">&quot;CLASSIFIER=multi&quot;</span></span><br><span class="line"></span><br><span class="line">SET <span class="string">&quot;OUTPUT_DIR=..\\..\\outputs/chinesebert\\%TIME%\\%FILE_NAME%_%MAX_EPOCH%_%TRAIN_BATCH_SIZE%_%LR%_%WEIGHT_DECAY%_%WARMUP_PROPORTION%_%MAX_LEN%_%DROPOUT%_%ACC_GRAD%_%VAL_CHECK_INTERVAL%&quot;</span></span><br><span class="line"><span class="built_in">mkdir</span> <span class="string">&quot;-p&quot;</span> <span class="string">&quot;%OUTPUT_DIR%&quot;</span></span><br><span class="line"><span class="built_in">export</span> <span class="string">&quot;PYTHONPATH=&quot;</span>%PYTHONPATH%:%REPO_PATH%<span class="string">&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">python3 <span class="string">&quot;%REPO_PATH%\\tasks\\OntoNotes\\OntoNotes_trainer.py&quot;</span> </span><br><span class="line">    <span class="string">&quot;--lr&quot;</span> <span class="string">&quot;%LR%&quot;</span> </span><br><span class="line">    <span class="string">&quot;--max_epochs&quot;</span> <span class="string">&quot;%MAX_EPOCH%&quot;</span> </span><br><span class="line">    <span class="string">&quot;--max_length&quot;</span> <span class="string">&quot;%MAX_LEN%&quot;</span> </span><br><span class="line">    <span class="string">&quot;--weight_decay&quot;</span> <span class="string">&quot;%WEIGHT_DECAY%&quot;</span> </span><br><span class="line">    <span class="string">&quot;--hidden_dropout_prob&quot;</span> <span class="string">&quot;%DROPOUT%&quot;</span> </span><br><span class="line">    <span class="string">&quot;--warmup_proportion&quot;</span> <span class="string">&quot;%WARMUP_PROPORTION%&quot;</span> </span><br><span class="line">    <span class="string">&quot;--train_batch_size&quot;</span> <span class="string">&quot;%TRAIN_BATCH_SIZE%&quot;</span> </span><br><span class="line">    <span class="string">&quot;--accumulate_grad_batches&quot;</span> <span class="string">&quot;%ACC_GRAD%&quot;</span> </span><br><span class="line">    <span class="string">&quot;--save_topk&quot;</span> <span class="string">&quot;%SAVE_TOPK%&quot;</span> </span><br><span class="line">    <span class="string">&quot;--bert_path&quot;</span> <span class="string">&quot;%BERT_PATH%&quot;</span> </span><br><span class="line">    <span class="string">&quot;--data_dir&quot;</span> <span class="string">&quot;%DATA_DIR%&quot;</span> </span><br><span class="line">    <span class="string">&quot;--save_path&quot;</span> <span class="string">&quot;%OUTPUT_DIR%&quot;</span> </span><br><span class="line">    <span class="string">&quot;--val_check_interval&quot;</span> <span class="string">&quot;%VAL_CHECK_INTERVAL%&quot;</span> </span><br><span class="line">    <span class="string">&quot;--gpus=1&quot;</span> </span><br><span class="line">    <span class="string">&quot;--precision=16&quot;</span> </span><br><span class="line">    <span class="string">&quot;--optimizer&quot;</span> <span class="string">&quot;%OPTIMIZER%&quot;</span> </span><br><span class="line">    <span class="string">&quot;--classifier&quot;</span> <span class="string">&quot;%CLASSIFIER%&quot;</span></span><br><span class="line">    </span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;按任意键继续&quot;</span></span><br><span class="line"><span class="built_in">read</span> <span class="string">&quot;-n&quot;</span> <span class="string">&quot;1&quot;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;继续运行&quot;</span></span><br></pre></td></tr></table></figure>
-<p>运行一下试试！</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-12%20205940.png" alt="屏幕截图 2023-06-12 205940"></p>
-<p>太痛了！好像又是路径的问题？检查了一下确实是路径的错误</p>
-<p>把上述<code>OUTPUT_DIR</code>的地址换成下面的</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">SET <span class="string">&quot;OUTPUT_DIR=..\..\outputs\chinesebert\%TIME%\%FILE_NAME%_%MAX_EPOCH%_%TRAIN_BATCH_SIZE%_%LR%_%WEIGHT_DECAY%_%WARMUP_PROPORTION%_%MAX_LEN%_%DROPOUT%_%ACC_GRAD%_%VAL_CHECK_INTERVAL%&quot;</span></span><br></pre></td></tr></table></figure>
-<p>再跑亿次！</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-12%20210918.png" alt="屏幕截图 2023-06-12 210918"></p>
-<p>我再康康…好像那个网站转换的有问题</p>
-<p>我用chatGPT转换了一下</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="built_in">set</span> TIME=0711</span><br><span class="line"><span class="built_in">set</span> FILE_NAME=ontonotes_glyce_base</span><br><span class="line"><span class="built_in">set</span> REPO_PATH=D:\code\ChineseBert</span><br><span class="line"><span class="built_in">set</span> BERT_PATH=..\..\CHINESEBERT_PATH</span><br><span class="line"><span class="built_in">set</span> DATA_DIR=..\..\ONTONOTES_DATA_PATH</span><br><span class="line"></span><br><span class="line"><span class="built_in">set</span> SAVE_TOPK=20</span><br><span class="line"><span class="built_in">set</span> TRAIN_BATCH_SIZE=26</span><br><span class="line"><span class="built_in">set</span> LR=3e-5</span><br><span class="line"><span class="built_in">set</span> WEIGHT_DECAY=0.001</span><br><span class="line"><span class="built_in">set</span> WARMUP_PROPORTION=0.1</span><br><span class="line"><span class="built_in">set</span> MAX_LEN=275</span><br><span class="line"><span class="built_in">set</span> MAX_EPOCH=5</span><br><span class="line"><span class="built_in">set</span> DROPOUT=0.2</span><br><span class="line"><span class="built_in">set</span> ACC_GRAD=1</span><br><span class="line"><span class="built_in">set</span> VAL_CHECK_INTERVAL=0.25</span><br><span class="line"><span class="built_in">set</span> OPTIMIZER=torch.adam</span><br><span class="line"><span class="built_in">set</span> CLASSIFIER=multi</span><br><span class="line"></span><br><span class="line"><span class="built_in">set</span> OUTPUT_DIR=..\..\outputs\chinesebert\%TIME%\%FILE_NAME%_%MAX_EPOCH%_%TRAIN_BATCH_SIZE%_%LR%_%WEIGHT_DECAY%_%WARMUP_PROPORTION%_%MAX_LEN%_%DROPOUT%_%ACC_GRAD%_%VAL_CHECK_INTERVAL%</span><br><span class="line"><span class="built_in">mkdir</span> %OUTPUT_DIR%</span><br><span class="line"><span class="built_in">set</span> PYTHONPATH=%PYTHONPATH%;%REPO_PATH%</span><br><span class="line"></span><br><span class="line">python %REPO_PATH%\tasks\OntoNotes\OntoNotes_trainer.py ^</span><br><span class="line">    --lr %LR% ^</span><br><span class="line">    --max_epochs %MAX_EPOCH% ^</span><br><span class="line">    --max_length %MAX_LEN% ^</span><br><span class="line">    --weight_decay %WEIGHT_DECAY% ^</span><br><span class="line">    --hidden_dropout_prob %DROPOUT% ^</span><br><span class="line">    --warmup_proportion %WARMUP_PROPORTION% ^</span><br><span class="line">    --train_batch_size %TRAIN_BATCH_SIZE% ^</span><br><span class="line">    --accumulate_grad_batches %ACC_GRAD% ^</span><br><span class="line">    --save_topk %SAVE_TOPK% ^</span><br><span class="line">    --bert_path %BERT_PATH% ^</span><br><span class="line">    --data_dir %DATA_DIR% ^</span><br><span class="line">    --save_path %OUTPUT_DIR% ^</span><br><span class="line">    --val_check_interval %VAL_CHECK_INTERVAL% ^</span><br><span class="line">    --gpus=<span class="string">&quot;1&quot;</span> ^</span><br><span class="line">    --precision=16 ^</span><br><span class="line">    --optimizer %OPTIMIZER% ^</span><br><span class="line">    --classifier %CLASSIFIER%</span><br><span class="line"></span><br><span class="line">pause</span><br></pre></td></tr></table></figure>
-<p>重新跑一下！</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-12%20214704.png" alt="屏幕截图 2023-06-12 214704"></p>
-<p>chatGPT牛逼！看来格式是转换对了，下面就是调包的问题了</p>
-<p>看这个错应该是这个<code>pypinyin</code>包没装，装一下试试</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install pypinyin</span><br></pre></td></tr></table></figure>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-12%20215157.png" alt="屏幕截图 2023-06-12 215157"></p>
-<p>但是环境里应该有了鸭，难道是跑的时候不在这个环境吗</p>
-<p>单独跑了一下这个文件，并没有报错！</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-12%20215537.png" alt="屏幕截图 2023-06-12 215537"></p>
-<p>感觉我的推理是正确的，查了一下如何在<code>bat</code>文件中选择环境</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">%切换到ChineseBert环境%</span><br><span class="line">CALL activate ChineseBert</span><br></pre></td></tr></table></figure>
-<p>将这段代码放在执行<code>Python</code>文件前面</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-13%20092124.png" alt="屏幕截图 2023-06-13 092124"></p>
-<p>然后走起！</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-13%20092200.png" alt="屏幕截图 2023-06-13 092200"></p>
-<p>这？？？这是跑起来了？？？有戏有戏</p>
-<p>等了一会也没反应，看了下说明，好像说是模型没训练初始化？</p>
-<p>又等了一会</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-13%20093055.png" alt="屏幕截图 2023-06-13 093055"></p>
-<p>难…难道再等等？好像又说CUDA和Pytorch不匹配？（但我之前专门按照官网装的鸭</p>
-<p>还说我什么<code>model.example_input_array</code>或者<code>input_array</code>属性没设置</p>
-<p>首先解决一下CUDA和Pytorch的版本匹配问题，再次检查一下作者提供的Pytorch安装代码，发现和我CUDA版本是不匹配的，看来这个需要自己修改一下，不能无脑复制</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-13%20094404.png" alt="屏幕截图 2023-06-13 094404"></p>
-<p>我自己的CUDA</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-13%20094832.png" alt="屏幕截图 2023-06-13 094832"></p>
-<p>于是直接重装吧</p>
-<p>先卸载</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip uninstall torch</span><br></pre></td></tr></table></figure>
-<p>再安装</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip3 install torch==1.7.1+cu110 torchvision==0.8.2+cu110 torchaudio==0.7.2 -f https://download.pytorch.org/whl/cu110/torch_stable.html</span><br></pre></td></tr></table></figure>
-<p>在跑一次试试！</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-13%20145951.png" alt="屏幕截图 2023-06-13 145951"></p>
-<p>跑起来了？！！！！！Ohhhhhhhh</p>
-<p>等了一下午，终于跑出了结果了</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-23%20185801.png" alt="屏幕截图 2023-06-23 185801"></p>
-<p>作者的结果如下</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>Model</th>
-<th>Test Precision</th>
-<th>Test Recall</th>
-<th>Test F1</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>BERT</td>
-<td>79.69</td>
-<td>82.09</td>
-<td>80.87</td>
-</tr>
-<tr>
-<td>RoBERTa</td>
-<td>80.43</td>
-<td>80.30</td>
-<td>80.37</td>
-</tr>
-<tr>
-<td>ChineseBERT</td>
-<td>80.03</td>
-<td>83.33</td>
-<td>81.65</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>不知道为什么<code>test_precision</code>这一项结果略低一点，其他结果相差不是很大</p>
+    <title>复现论文SpikeGPT Generative Pre-trained Language Model with Spiking Neural Networks</title>
+    <url>/2023/07/22/%E5%A4%8D%E7%8E%B0%E8%AE%BA%E6%96%87SpikeGPT-Generative%20Pre-trained%20Language%20Model%20with%20Spiking%20Neural%20Networks/</url>
+    <content><![CDATA[<p>记录一下复现论文<a href="https://arxiv.org/abs/2302.13939v2">SpikeGPT: Generative Pre-trained Language Model with Spiking Neural Networks</a>的过程，论文给出了项目的<a href="https://github.com/ridgerchu/SpikeGPT">GitHub</a>地址。此博客是边跑边写边改的，尽量把顺序合理化，让人可以少走一些弯路</p>
+<h2 id="论文概述"><a href="#论文概述" class="headerlink" title="论文概述"></a>论文概述</h2><p>利用工具，可以大概对此篇论文有如下了解</p>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">这篇文章介绍了SpikeGPT，这是一种基于脉冲神经网络(SNNs)的生成式语言模型。SNNs利用稀疏、事件驱动的激活方式来减少计算复杂性，提高能源效率，因此在深度学习领域有很大的潜力。虽然SNNs在计算机视觉任务上取得了成功，但在语言生成方面仍然有待进一步探索，因为它们的训练过程相对复杂。文章的作者们对Transformer模块进行了修改，消除了多头自注意力带来的二次计算复杂度，并引入循环计算，实现了逐词计算，同时保留了长程依赖关系。结果得到的SpikeGPT模型在语言生成任务上表现出竞争力，同时能耗仅为传统人工神经网络(ANNs)的五分之一。该模型还是迄今为止最大的反向传播训练的功能性SNN模型，拥有多达2.6亿个参数。这项工作为在自然语言处理任务中有效训练大规模SNNs并将Transformer架构与SNNs结合起来实现高性能和能源效率开辟了新的潜力。</span><br></pre></td></tr></table></figure>
+<h2 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h2><h3 id="新建环境"><a href="#新建环境" class="headerlink" title="新建环境"></a>新建环境</h3><p>新建一个<code>Conda</code>环境</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">conda create -n SpikeGPT python=3.8</span><br><span class="line">conda activate SpikeGPT</span><br></pre></td></tr></table></figure>
+<p>然后用<code>pycharm</code>打开此项目，并切换到刚刚新建的环境</p>
+<p>接下来就是安装环境了，由于作者没有提供具体包的版本，只能根据缺啥安装啥的原则，有什么问题之后再慢慢改</p>
+<h3 id="安装accelerate"><a href="#安装accelerate" class="headerlink" title="安装accelerate"></a>安装accelerate</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install accelerate</span><br></pre></td></tr></table></figure>
+<p>在安装<code>accelerate</code>的时候，自动给我装了一个torch2.0.1版本的，这个后面管，只要这个torch版本大于10.0.0就行</p>
+<h3 id="安装Pytorch"><a href="#安装Pytorch" class="headerlink" title="安装Pytorch"></a>安装Pytorch</h3><p>根据我的<code>CUDA</code>版本，安装了如下的<code>torch</code>，具体安装细节可以参考<a href="https://ruvikm.gitee.io/2023/06/06/Win11%E9%85%8D%E7%BD%AEAnaconda-Cuda-Pytorch-Tenserflow%E7%8E%AF%E5%A2%83/">这篇博客</a></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda install pytorch==1.11.0 torchvision==0.12.0 torchaudio==0.11.0 cudatoolkit=11.3</span><br></pre></td></tr></table></figure>
+<h3 id="安装matplotlib"><a href="#安装matplotlib" class="headerlink" title="安装matplotlib"></a>安装matplotlib</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install matplotlib</span><br></pre></td></tr></table></figure>
+<h3 id="安装tqdm"><a href="#安装tqdm" class="headerlink" title="安装tqdm"></a>安装tqdm</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install tqdm</span><br></pre></td></tr></table></figure>
+<h3 id="安装transformers"><a href="#安装transformers" class="headerlink" title="安装transformers"></a>安装transformers</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install transformers</span><br></pre></td></tr></table></figure>
+<h3 id="安装deepspeed"><a href="#安装deepspeed" class="headerlink" title="安装deepspeed"></a>安装deepspeed</h3><h4 id="错误安装方法"><a href="#错误安装方法" class="headerlink" title="错误安装方法"></a>错误安装方法</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install deepspeed</span><br></pre></td></tr></table></figure>
+<p>安装的时候报错了</p>
+<p><img src="https://s1.ax1x.com/2023/07/22/pCbvDot.png" alt="image-20230722102232403"></p>
+<p>换<code>conda</code>试了后，<code>conda install deepspeed</code>，也不行。</p>
+<p>网上查了一个安装方式</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install transformers[deepspeed]</span><br></pre></td></tr></table></figure>
+<p>还是那个错，网上查了一下</p>
+<p><img src="https://s1.ax1x.com/2023/07/22/pCbxpY6.png" alt="image-20230722103014784"></p>
+<p>设置一下环境变量试试</p>
+<p><img src="https://s1.ax1x.com/2023/07/22/pCbxX38.png" alt="屏幕截图 2023-07-22 105535"></p>
+<p>报错！！！好消息是报错变了</p>
+<p><img src="https://s1.ax1x.com/2023/07/22/pCbxbNt.png" alt="image-20230722105444097"></p>
+<p>去<code>github</code>看了一下，意思大概是这个库原本是在<code>linux</code>上的，在<code>window</code>上的支持还不是很好</p>
+<p><img src="https://s1.ax1x.com/2023/07/22/pCbxy7R.png" alt="image-20230722103953254"></p>
+<h4 id="正确安装方法"><a href="#正确安装方法" class="headerlink" title="正确安装方法"></a>正确安装方法</h4><p>网上查到一篇win10成功安装的<a href="https://zhuanlan.zhihu.com/p/636450918">博客</a>，按照博客的说法</p>
+<p>首先安装必要组件</p>
+<p><img src="https://s1.ax1x.com/2023/07/22/pCq9crD.png" alt="image-20230722122822936">先把<a href="https://github.com/microsoft/DeepSpeed">官方</a>的开源的代码下载下来，解压（要用管理员权限）后</p>
+<p>用管理员权限打开cmd，切换到解压的目录，在命令行输入</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">build_win.bat</span><br></pre></td></tr></table></figure>
+<p><img src="https://s1.ax1x.com/2023/07/22/pCq9A8P.png" alt="image-20230722121606679"></p>
+<p>慢慢改错吧，先解决一个报错最多的</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">error: attribute <span class="string">&quot;nodiscard&quot;</span> does not take arguments</span><br></pre></td></tr></table></figure>
+<h3 id="下载数据集"><a href="#下载数据集" class="headerlink" title="下载数据集"></a>下载数据集</h3><p>作者提供数据集<code>Enwik8</code><a href="https://data.deepai.org/enwik8.zip">下载地址</a></p>
 ]]></content>
       <categories>
         <category>论文复现</category>
@@ -1062,121 +942,6 @@
 <p>ps：如果显示找不到启动项可以试试<a href="https://blog.csdn.net/qq_46070108/article/details/128761974">这个方法</a></p>
 <p><img src="https://s1.ax1x.com/2023/07/03/pCrysRs.png" alt="image-20230703152429717"></p>
 <p>打扰了…找一个视频吧，我记得哔哩哔哩大学有使用这个工具的教程</p>
-]]></content>
-      <categories>
-        <category>论文复现</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>复现论文SpikeGPT Generative Pre-trained Language Model with Spiking Neural Networks</title>
-    <url>/2023/07/22/%E5%A4%8D%E7%8E%B0%E8%AE%BA%E6%96%87SpikeGPT-Generative%20Pre-trained%20Language%20Model%20with%20Spiking%20Neural%20Networks/</url>
-    <content><![CDATA[<p>记录一下复现论文<a href="https://arxiv.org/abs/2302.13939v2">SpikeGPT: Generative Pre-trained Language Model with Spiking Neural Networks</a>的过程，论文给出了项目的<a href="https://github.com/ridgerchu/SpikeGPT">GitHub</a>地址。此博客是边跑边写边改的，尽量把顺序合理化，让人可以少走一些弯路</p>
-<h2 id="论文概述"><a href="#论文概述" class="headerlink" title="论文概述"></a>论文概述</h2><p>利用工具，可以大概对此篇论文有如下了解</p>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">这篇文章介绍了SpikeGPT，这是一种基于脉冲神经网络(SNNs)的生成式语言模型。SNNs利用稀疏、事件驱动的激活方式来减少计算复杂性，提高能源效率，因此在深度学习领域有很大的潜力。虽然SNNs在计算机视觉任务上取得了成功，但在语言生成方面仍然有待进一步探索，因为它们的训练过程相对复杂。文章的作者们对Transformer模块进行了修改，消除了多头自注意力带来的二次计算复杂度，并引入循环计算，实现了逐词计算，同时保留了长程依赖关系。结果得到的SpikeGPT模型在语言生成任务上表现出竞争力，同时能耗仅为传统人工神经网络(ANNs)的五分之一。该模型还是迄今为止最大的反向传播训练的功能性SNN模型，拥有多达2.6亿个参数。这项工作为在自然语言处理任务中有效训练大规模SNNs并将Transformer架构与SNNs结合起来实现高性能和能源效率开辟了新的潜力。</span><br></pre></td></tr></table></figure>
-<h2 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h2><h3 id="新建环境"><a href="#新建环境" class="headerlink" title="新建环境"></a>新建环境</h3><p>新建一个<code>Conda</code>环境</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">conda create -n SpikeGPT python=3.8</span><br><span class="line">conda activate SpikeGPT</span><br></pre></td></tr></table></figure>
-<p>然后用<code>pycharm</code>打开此项目，并切换到刚刚新建的环境</p>
-<p>接下来就是安装环境了，由于作者没有提供具体包的版本，只能根据缺啥安装啥的原则，有什么问题之后再慢慢改</p>
-<h3 id="安装accelerate"><a href="#安装accelerate" class="headerlink" title="安装accelerate"></a>安装accelerate</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install accelerate</span><br></pre></td></tr></table></figure>
-<p>在安装<code>accelerate</code>的时候，自动给我装了一个torch2.0.1版本的，这个后面管，只要这个torch版本大于10.0.0就行</p>
-<h3 id="安装Pytorch"><a href="#安装Pytorch" class="headerlink" title="安装Pytorch"></a>安装Pytorch</h3><p>根据我的<code>CUDA</code>版本，安装了如下的<code>torch</code>，具体安装细节可以参考<a href="https://ruvikm.gitee.io/2023/06/06/Win11%E9%85%8D%E7%BD%AEAnaconda-Cuda-Pytorch-Tenserflow%E7%8E%AF%E5%A2%83/">这篇博客</a></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda install pytorch==1.11.0 torchvision==0.12.0 torchaudio==0.11.0 cudatoolkit=11.3</span><br></pre></td></tr></table></figure>
-<h3 id="安装matplotlib"><a href="#安装matplotlib" class="headerlink" title="安装matplotlib"></a>安装matplotlib</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install matplotlib</span><br></pre></td></tr></table></figure>
-<h3 id="安装tqdm"><a href="#安装tqdm" class="headerlink" title="安装tqdm"></a>安装tqdm</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install tqdm</span><br></pre></td></tr></table></figure>
-<h3 id="安装transformers"><a href="#安装transformers" class="headerlink" title="安装transformers"></a>安装transformers</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install transformers</span><br></pre></td></tr></table></figure>
-<h3 id="安装deepspeed"><a href="#安装deepspeed" class="headerlink" title="安装deepspeed"></a>安装deepspeed</h3><h4 id="错误安装方法"><a href="#错误安装方法" class="headerlink" title="错误安装方法"></a>错误安装方法</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install deepspeed</span><br></pre></td></tr></table></figure>
-<p>安装的时候报错了</p>
-<p><img src="https://s1.ax1x.com/2023/07/22/pCbvDot.png" alt="image-20230722102232403"></p>
-<p>换<code>conda</code>试了后，<code>conda install deepspeed</code>，也不行。</p>
-<p>网上查了一个安装方式</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install transformers[deepspeed]</span><br></pre></td></tr></table></figure>
-<p>还是那个错，网上查了一下</p>
-<p><img src="https://s1.ax1x.com/2023/07/22/pCbxpY6.png" alt="image-20230722103014784"></p>
-<p>设置一下环境变量试试</p>
-<p><img src="https://s1.ax1x.com/2023/07/22/pCbxX38.png" alt="屏幕截图 2023-07-22 105535"></p>
-<p>报错！！！好消息是报错变了</p>
-<p><img src="https://s1.ax1x.com/2023/07/22/pCbxbNt.png" alt="image-20230722105444097"></p>
-<p>去<code>github</code>看了一下，意思大概是这个库原本是在<code>linux</code>上的，在<code>window</code>上的支持还不是很好</p>
-<p><img src="https://s1.ax1x.com/2023/07/22/pCbxy7R.png" alt="image-20230722103953254"></p>
-<h4 id="正确安装方法"><a href="#正确安装方法" class="headerlink" title="正确安装方法"></a>正确安装方法</h4><p>网上查到一篇win10成功安装的<a href="https://zhuanlan.zhihu.com/p/636450918">博客</a>，按照博客的说法</p>
-<p>首先安装必要组件</p>
-<p><img src="https://s1.ax1x.com/2023/07/22/pCq9crD.png" alt="image-20230722122822936">先把<a href="https://github.com/microsoft/DeepSpeed">官方</a>的开源的代码下载下来，解压（要用管理员权限）后</p>
-<p>用管理员权限打开cmd，切换到解压的目录，在命令行输入</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">build_win.bat</span><br></pre></td></tr></table></figure>
-<p><img src="https://s1.ax1x.com/2023/07/22/pCq9A8P.png" alt="image-20230722121606679"></p>
-<p>慢慢改错吧，先解决一个报错最多的</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">error: attribute <span class="string">&quot;nodiscard&quot;</span> does not take arguments</span><br></pre></td></tr></table></figure>
-<h3 id="下载数据集"><a href="#下载数据集" class="headerlink" title="下载数据集"></a>下载数据集</h3><p>作者提供数据集<code>Enwik8</code><a href="https://data.deepai.org/enwik8.zip">下载地址</a></p>
-]]></content>
-      <categories>
-        <category>论文复现</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>如何使用微信小程序IDE在github上实现团队合作</title>
-    <url>/2020/04/16/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8FIDE%E5%9C%A8github%E4%B8%8A%E5%AE%9E%E7%8E%B0%E5%9B%A2%E9%98%9F%E5%90%88%E4%BD%9C/</url>
-    <content><![CDATA[<p>——-原文——-(2020/4/16)</p>
-<p>@<a href="如何使用微信开发者工具在github上实现团队合作">TOC</a><br>一.发起者要做的一些步骤</p>
-<ol>
-<li>首先用IDE初始化本地的git仓库<br><img src="https://img-blog.csdnimg.cn/20200130111131527.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="a."><br><img src="https://img-blog.csdnimg.cn/20200130111301249.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="b."></li>
-<li>使用github-desktop客户端添加这个新建的本地git库并同时上传到新建的远程仓库中<br><img src="https://img-blog.csdnimg.cn/2020013011214879.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="添加本地仓库"><br><img src="https://img-blog.csdnimg.cn/20200130112202771.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="新建远程仓库"><br><img src="https://img-blog.csdnimg.cn/2020013011231537.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/2020013011291517.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="看一下成果嘿嘿嘿"></li>
-<li>添加参与者<br><img src="https://img-blog.csdnimg.cn/20200130113301950.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="最好添加的时候写参与者的名字"><br><strong>PS:被邀请者的必须要接受邀请才可以</strong></li>
-</ol>
-<p>二.参与者需要做的步骤</p>
-<ol>
-<li>在微信小程序开发者工具里添加远程仓库<br><img src="https://img-blog.csdnimg.cn/20200130114342510.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="添加远程仓库_1"><img src="https://img-blog.csdnimg.cn/20200130114356569.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="添加远程仓库_2"><br><img src="https://img-blog.csdnimg.cn/20200130114448885.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="如何查看仓库的地址"></li>
-<li>绑定自己的github账号<br><img src="https://img-blog.csdnimg.cn/20200130115015761.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="绑定账号"></li>
-</ol>
-<p>三.如何线上合作</p>
-<ol>
-<li>参与者在调试好了一些功能以后，提交到远程仓库的分支<br><img src="https://img-blog.csdnimg.cn/20200130120245999.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="提交分支"></li>
-<li>参与者请求合并分支<br><img src="https://img-blog.csdnimg.cn/20200130120523380.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="请求合并_1"><br><img src="https://img-blog.csdnimg.cn/20200130120921309.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="请求合并_2"><br><img src="https://img-blog.csdnimg.cn/20200130120955937.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="发起合并请求"></li>
-<li>在发起者经过了沉思熟虑，通计熟筹，仰观俯察后，同意合并分支的请求(＠￣ー￣＠)<br><img src="https://img-blog.csdnimg.cn/20200130121516212.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="找到请求_1"><br>从这里可以对比的看到分支和master的不同<br><img src="https://img-blog.csdnimg.cn/2020013012161487.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="找不同"><br>同意合并请求：<br><img src="https://img-blog.csdnimg.cn/20200130121829976.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="同意合并_2"><br><img src="https://img-blog.csdnimg.cn/20200130121938158.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="同意合并_3"><br>这样就分支就合并进去了<br><img src="https://img-blog.csdnimg.cn/20200130122111630.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="嘻嘻嘻"><br>当然如果参与者想要同步最新的代码，只要pull一下就好了<br><img src="https://img-blog.csdnimg.cn/20200130191852824.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="同步"><br>第一次接触github，如有一些错误，还请多多指教<br>(๑•̀ㅂ•́)و</li>
-</ol>
-]]></content>
-      <categories>
-        <category>学习笔记</category>
-      </categories>
-      <tags>
-        <tag>微信小程序</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>安装Word2Vec</title>
-    <url>/2023/07/01/%E5%AE%89%E8%A3%85Word2Vec/</url>
-    <content><![CDATA[<p>由于最近需要用到一个预处理的数据集，方法在<a href="https://arxiv.org/abs/1301.3781">这篇论文</a>《Efficient Estimation of Word Representations in Vector Space》里，于是打算尝试能不能复现一下，论文提供了<a href="https://code.google.com/archive/p/word2vec/">代码地址</a>，但是当我打开下载的时候，却发现是404</p>
-<p><img src="https://s1.ax1x.com/2023/07/01/pCB5ZT0.png" alt="image-20230701163100641"></p>
-<p>于是经过一番搜索，找到了最新的<a href="https://pypi.org/project/word2vec/">地址</a>（应该是吧</p>
-<p>先创建一下新的虚拟环境</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">conda create -n word2vec python=3.8</span><br><span class="line">conda activate word2vec</span><br></pre></td></tr></table></figure>
-<p>然后安装<code>numpy</code>、<code>scipy</code></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pip install numpy</span><br><span class="line">pip install scipy</span><br></pre></td></tr></table></figure>
-<p>安装<a href="https://visualstudio.microsoft.com/zh-hans/vs/">Microsoft Visual C++ 14.0</a></p>
-<p>下载下来是一个安装器，然后进行如下操作</p>
-<p><img src="https://s1.ax1x.com/2023/07/01/pCBoUQe.png" alt="屏幕截图 2023-07-01 165446"></p>
-<p>然后</p>
-<p><img src="https://s1.ax1x.com/2023/07/01/pCBodLd.png" alt="屏幕截图 2023-07-01 165358"></p>
-<p>最后安装有点麻烦的<code>gcc</code>，首先使用清华镜像下载<a href="http://files.1f0.de/mingw/mingw-w64-gcc-12.2-stable-r38.7z">mingw-w64-gcc</a>，然后解压的位置选一个自己能记住的位置，比如我的就是</p>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">G:<span class="keyword">\Program</span> Files<span class="keyword">\MinGW</span>-w64</span><br></pre></td></tr></table></figure>
-<p>然后把<code>bin</code>目录添加到系统变量里</p>
-<p>例如我的路径就是</p>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">G:<span class="keyword">\Program</span> Files<span class="keyword">\MinGW</span>-w64<span class="keyword">\mingw</span>-w64-gcc-12.2-stable-r38<span class="keyword">\bin</span></span><br></pre></td></tr></table></figure>
-<p><img src="https://s1.ax1x.com/2023/07/01/pCBTy7R.png" alt="屏幕截图 2023-07-01 172554"></p>
-<p>最后测试一下时候配置成功</p>
-<p>在<code>D盘</code>根目录先新建一个<code>helloword.c</code>的文件</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;hello world\n&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>然后用<code>cmd</code>到<code>D盘</code>根目录</p>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">cd/d D:</span><br></pre></td></tr></table></figure>
-<p>用gcc编译</p>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">gcc helloword.c</span><br></pre></td></tr></table></figure>
-<p><strong>如果没报错说明其实已经配置好了，想看文件运行结果的可以继续输入</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">a.exe</span><br></pre></td></tr></table></figure>
-<p><img src="https://s1.ax1x.com/2023/07/01/pCB7EgU.png" alt="image-20230701173710147"></p>
-<p>这样，<code>word2vec</code>所需的组件就算全部安装完了，下面正式开始安装<code>word2vec</code>（在conda那个命令窗口哦，希望不要报错！）</p>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">pip install word2vec</span><br></pre></td></tr></table></figure>
-<p><img src="https://s1.ax1x.com/2023/07/01/pCB7w5t.png" alt="image-20230701174216784"></p>
-<p>如果出现这个问题，重启一下试试。本人就是重启完莫名安装成功了，可能是刚刚有的组件需要重启吧</p>
-<p><img src="https://s1.ax1x.com/2023/07/01/pCDCOPS.png" alt="image-20230701225337075"></p>
 ]]></content>
       <categories>
         <category>论文复现</category>
@@ -1369,77 +1134,185 @@
       </categories>
   </entry>
   <entry>
-    <title>学校GPU平台使用教程</title>
-    <url>/2023/08/28/%E5%AD%A6%E6%A0%A1GPU%E5%B9%B3%E5%8F%B0%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</url>
-    <content><![CDATA[<p>首先连接内网登录<a href="http://paas.183-175-12-11.nip.io:30080/">平台</a></p>
-<p>一般使用的话，直接找到<code>开发环境</code>一栏，创建环境。然后通过<code>Pycharm</code>中的<code>ssh</code>连接</p>
-<p><img src="https://s1.ax1x.com/2023/08/28/pPaw2X6.png" alt="屏幕截图 2023-08-28 221321"></p>
-<p>在<code>Pycharm</code>中，找到工具—部署—配置</p>
-<p><img src="https://s1.ax1x.com/2023/08/28/pPad5zq.png" alt="image-20230828220300678"></p>
-<p>点击<code>+</code>后选择<code>SFTP</code></p>
-<p><img src="https://s1.ax1x.com/2023/08/28/pPaw5Ae.png" alt="屏幕截图 2023-08-28 221526"></p>
-<p>在<code>SSH配置</code>那里后点击后面<code>...</code></p>
-<p><img src="https://s1.ax1x.com/2023/08/28/pPawbct.png" alt="屏幕截图 2023-08-28 092517"></p>
-<p>进入后填写主机名和用户名，这里详细讲一下</p>
-<p>例如平台给的ssh连接是</p>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">ssh://root@paas.xxx-xxx-xx-xx.nip.io:xxxxx</span><br></pre></td></tr></table></figure>
-<p>这里用户名就需要填写</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">root</span><br></pre></td></tr></table></figure>
-<p>主机名填写</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">paas.xxx-xxx-xx-xx.nip.io</span><br></pre></td></tr></table></figure>
-<p>端口号填写<code>xxxxx</code></p>
-<p>然后填写创建环境时设置的密码</p>
-<p><img src="https://s1.ax1x.com/2023/08/28/pPawjHS.png" alt="屏幕截图 2023-08-28 092917"></p>
-<p>这一步完事以后，点击确定，返回到之前的页面，点击<code>映射</code></p>
-<p><img src="https://s1.ax1x.com/2023/08/30/pPd7RaD.png" alt="屏幕截图 2023-08-30 145658"></p>
-<p>配置好本机的地址和远程的地址，点击确认</p>
-<p><img src="https://s1.ax1x.com/2023/08/30/pPd7LdS.png" alt="image-20230830145937224"></p>
-<p>之后选择工具—部署—选项</p>
-<p><img src="https://s1.ax1x.com/2023/08/30/pPdHIkF.png" alt="QQ截图20230830150656"></p>
-<p>可以根据自己习惯决定是否配置一下</p>
-<p>然后找到工具—启动SSH会话，选择刚刚配置的SSH</p>
-<p><img src="https://s1.ax1x.com/2023/08/30/pPdbmtg.png" alt="屏幕截图 2023-08-30 151730"></p>
-<p>然后输入</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">python</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="built_in">print</span>(sys.executable)</span><br></pre></td></tr></table></figure>
-<p>记住输出的地址，比如我的就是</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">usr/bin/python</span><br></pre></td></tr></table></figure>
-<p>最后，找到项目—项目XXXX—Python解释器，找到添加解释器—SSH</p>
-<p><img src="https://s1.ax1x.com/2023/08/30/pPdHj0K.png" alt="image-20230830151124394"></p>
-<p>选择刚刚配置的SSH服务器，然后下一步</p>
-<p><img src="https://s1.ax1x.com/2023/08/30/pPdbHUS.png" alt="屏幕截图 2023-08-30 152226"></p>
-<p>点击下一步</p>
-<p><img src="https://s1.ax1x.com/2023/08/30/pPdbO3j.png" alt="image-20230830152644100"></p>
-<p>然后选择<code>现有</code></p>
-<p>把刚刚的地址输入到<code>解释器</code>里</p>
-<p><img src="https://s1.ax1x.com/2023/08/30/pPdqSbV.png" alt="image-20230830152826067"></p>
-<p>点击确定就完事了</p>
-<p><img src="https://s1.ax1x.com/2023/08/30/pPdqtqP.png" alt="image-20230830152939492"></p>
-<p>之后用<code>工具</code>—<code>SSH会话</code>配合，就可以用学校的GPU跑程序了</p>
-<p>tips：后期可以在服务器上安装<code>Anaconda</code>，然后把新建的虚拟环境中python路径配置到上述图片的<code>解释器</code>中</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">jupyter notebook --ip 0.0.0.0 --allow-root</span><br></pre></td></tr></table></figure>
-<p>再补充一下，之前用conda的操作可能是麻烦了，服务器里自带好多python的环境，每个环境里也有很多自带的包</p>
-<p><img src="https://z1.ax1x.com/2023/10/04/pPOHyIe.png" alt="屏幕截图 2023-10-04 204942"></p>
-<p>选择例如选择python3.6后</p>
-<p><img src="https://z1.ax1x.com/2023/10/04/pPOHgGd.png" alt="屏幕截图 2023-10-04 211210"></p>
-<p>之后就《愉快》的调参吧，附一张成功用学校GPU跑代码的图片</p>
-<p><img src="https://z1.ax1x.com/2023/10/04/pPOHqRs.png" alt="image-20231004211915616"></p>
-<p> <strong>10.19继续补充一下</strong><br>有的项目跑起来需要运行作者的<code>run.sh</code>文件，这时候需要切换到项目的目录然后运行</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">bash run.sh</span><br></pre></td></tr></table></figure>
-<p>但是环境默认是python2.7版本的，项目跑不起来，这时候需要切换python的环境</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">whereis python</span><br><span class="line">rm /usr/bin/python</span><br><span class="line">ln -s /usr/bin/python3.6 /usr/bin/python</span><br></pre></td></tr></table></figure>
-<p><img src="https://z1.ax1x.com/2023/10/19/piitih6.png" alt="image-20231019153231564"></p>
-<p>还有一种方法，比如需要切换的环境在</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">usr/bin/python3.6</span><br></pre></td></tr></table></figure>
-<p>这时候需要在<code>.sh</code>文件中开头加上</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/usr/bin/env python3.6</span></span><br></pre></td></tr></table></figure>
-<p>可以在后面查看python环境</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">python --version</span><br></pre></td></tr></table></figure>
-<p><img src="https://z1.ax1x.com/2023/10/19/piir6K0.png" alt="image-20231019163749724"></p>
-<p>这时候就切换了</p>
+    <title>复现论文ChineseBERT(ONTONOTES数据集)</title>
+    <url>/2023/06/08/%E5%A4%8D%E7%8E%B0%E8%AE%BA%E6%96%87ChineseBERT/</url>
+    <content><![CDATA[<p>记录一下自己复现论文<strong><a href="https://arxiv.org/pdf/2106.16038.pdf">《ChineseBERT: Chinese Pretraining Enhanced by Glyph and Pinyin Information》</a></strong>的过程，最近感觉老在调包，一天下来感觉什么也没干，就直播记录一下跑模型的过程吧</p>
+<p>自己电脑环境如下：</p>
+<ul>
+<li>显卡：3060TI</li>
+<li>CUDA : 11.0</li>
+<li>CUDAToolkit : 8.0.2</li>
+<li>tensorflow : 2.4.0</li>
+<li>pytorch : 1.7.0</li>
+</ul>
+<p>首先使用<code>Conda</code>创建一下项目的虚拟环境</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda create -n ChineseBERT python=3.8</span><br></pre></td></tr></table></figure>
+<p>进入环境</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda activate ChineseBERT</span><br></pre></td></tr></table></figure>
+<p>用<code>Pycharm</code>打开项目并切换到刚刚新建的环境</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-08%20093431.png" alt="屏幕截图 2023-06-08 093431"></p>
+<p>找到<code>requirements.txt</code>文件，在环境中一个一个安装</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-08%20094729.png" alt="屏幕截图 2023-06-08 094729"></p>
+<p>安装的时候，发现<code>torch</code>版本装不到这么低的</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-08%20101810.png" alt="屏幕截图 2023-06-08 101810"></p>
+<p>然后就装了项目简介中的版本，（发现自己要跑的<code>OntoNotes 4.0</code>数据集正好也需要装这个版本，nice）</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-08%20102015.png" alt="屏幕截图 2023-06-08 102015"></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install torch==1.7.1+cu101 torchvision==0.8.2+cu101 torchaudio==0.7.2 -f https://download.pytorch.org/whl/torch_stable.html</span><br></pre></td></tr></table></figure>
+<p>然后打开作者的文档<a href="https://github.com/ShannonAI/ChineseBert/blob/main/tasks/OntoNotes/README.md">OntoNotes NER task</a>，下载对应的<a href="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-11%20084906.png">数据集</a></p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-11%20084906.png" alt="屏幕截图 2023-06-11 084906"></p>
+<p>然后新建一个名为<code>ONTONOTES_DATA_PATH</code>的文件夹，把解压后的文件放进去</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-11%20085550.png" alt="屏幕截图 2023-06-11 085550"></p>
+<p>找到<code>tasks/OntoNotes/OntoNotes_trainer.py</code>文件，尝试第一次运行</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-11%20085821.png" alt="屏幕截图 2023-06-11 085821"></p>
+<p>果不其然会报错，好像是<code>numpy</code>版本不匹配的问题，搜一下</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-11%20090052.png" alt="屏幕截图 2023-06-11 090052"></p>
+<p>看了一眼自己装的<code>numpy</code>版本，果然高一点</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-11%20090154.png" alt="屏幕截图 2023-06-11 090154"></p>
+<p>然后直接</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pip uninstall numpy</span><br><span class="line">pip install numpy==1.23.4</span><br></pre></td></tr></table></figure>
+<p>再跑一次！</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-11%20090605.png" alt="屏幕截图 2023-06-11 090605"></p>
+<p>好消息，刚刚的错误解决了。新的错误好像是路径格式的问题？难道是我刚刚路径那没配好？</p>
+<p>又看了一遍文档，好像是我<strong><code>ChineseBERT-base</code></strong>模型没下，赶紧去<a href="https://drive.google.com/file/d/1CseJzc58W4s8U_eIuAnshHQmnmi7Sr5-/view">下载</a>一下</p>
+<p>然后按照文档中说的，也把模型文件都放在<code>CHINESEBERT_PATH</code>这个文件夹中（我猜的</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-11%20092103.png" alt="屏幕截图 2023-06-11 092103"></p>
+<p>配置完如下</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-11%20092339.png" alt="屏幕截图 2023-06-11 092339"></p>
+<p>再跑一次试试！</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-11%20092443.png" alt="屏幕截图 2023-06-11 092443"></p>
+<p>emmm待我研究一下…又看了眼文档，好像是跑错文件了？</p>
+<p>应该是要运行<code>chinesebert_base.sh</code>文件，再运行之前需要修改两个个参数，把这两个位置的地址换成自己的。（啊我终于理解作者的意思了，不是要新建一个<code>ONTONOTES_DATA_PATH</code>的文件夹啊，是要把这个地址修改成自己的…）</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-11%20210900.png" alt="屏幕截图 2023-06-11 210900"></p>
+<p>改到一半的时候发现，好像这其他路径也得该啊，而且这个是在<code>Linux</code>的环境下运行的,不管了先用<code>git</code>跑试试，改完路径后结果如下</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-11%20212135.png" alt="屏幕截图 2023-06-11 212135"></p>
+<p>配置一下<code>Pycharm</code>，让其可以直接用<code>git</code></p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-11%20214248.png" alt="屏幕截图 2023-06-11 214248"></p>
+<p>走起！</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-11%20214750.png" alt="屏幕截图 2023-06-11 214750"></p>
+<p>emmm闪一下就没了，什么情况</p>
+<p>在<code>chinesebert_base.sh</code>脚本最后加入以下代码以便查看运行情况</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#  使用read命令达到类似bat中的pause命令效果</span></span><br><span class="line"><span class="built_in">echo</span> 按任意键继续</span><br><span class="line"><span class="built_in">read</span> -n 1</span><br><span class="line"><span class="built_in">echo</span> 继续运行</span><br></pre></td></tr></table></figure>
+<p>运行情况如下</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-11%20214624.png" alt="屏幕截图 2023-06-11 214624"></p>
+<p>啊？没东西输出吗？看了一下路径，好像是<code>Windows</code>和<code>Linux</code>的路径不一样，Linux下路径是<code>/</code>，Win下应该是<code>\\</code></p>
+<p>再跑一次！</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-11%20215427.png" alt="屏幕截图 2023-06-11 215427"></p>
+<p>啊？？？（黑人问号.jpg)</p>
+<p>试试把.sh文件转成.bat的，搜了一下网上居然还有一键自动转换的<a href="https://daniel-sc.github.io/bash-shell-to-bat-converter/">网址</a>，太赞了</p>
+<p>转换完的<code>.bat</code>脚本如下</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"></span><br><span class="line">SET <span class="string">&quot;TIME=0711&quot;</span></span><br><span class="line">SET <span class="string">&quot;FILE_NAME=ontonotes_glyce_base&quot;</span></span><br><span class="line">SET <span class="string">&quot;REPO_PATH=D:\code\ChineseBert&quot;</span></span><br><span class="line">SET <span class="string">&quot;BERT_PATH=..\..\CHINESEBERT_PATH&quot;</span></span><br><span class="line">SET <span class="string">&quot;DATA_DIR=..\..\ONTONOTES_DATA_PATH&quot;</span></span><br><span class="line">SET <span class="string">&quot;SAVE_TOPK=20&quot;</span></span><br><span class="line">SET <span class="string">&quot;TRAIN_BATCH_SIZE=26&quot;</span></span><br><span class="line">SET <span class="string">&quot;LR=3e-5&quot;</span></span><br><span class="line">SET <span class="string">&quot;WEIGHT_DECAY=0.001&quot;</span></span><br><span class="line">SET <span class="string">&quot;WARMUP_PROPORTION=0.1&quot;</span></span><br><span class="line">SET <span class="string">&quot;MAX_LEN=275&quot;</span></span><br><span class="line">SET <span class="string">&quot;MAX_EPOCH=5&quot;</span></span><br><span class="line">SET <span class="string">&quot;DROPOUT=0.2&quot;</span></span><br><span class="line">SET <span class="string">&quot;ACC_GRAD=1&quot;</span></span><br><span class="line">SET <span class="string">&quot;VAL_CHECK_INTERVAL=0.25&quot;</span></span><br><span class="line">SET <span class="string">&quot;OPTIMIZER=torch.adam&quot;</span></span><br><span class="line">SET <span class="string">&quot;CLASSIFIER=multi&quot;</span></span><br><span class="line"></span><br><span class="line">SET <span class="string">&quot;OUTPUT_DIR=..\\..\\outputs/chinesebert\\%TIME%\\%FILE_NAME%_%MAX_EPOCH%_%TRAIN_BATCH_SIZE%_%LR%_%WEIGHT_DECAY%_%WARMUP_PROPORTION%_%MAX_LEN%_%DROPOUT%_%ACC_GRAD%_%VAL_CHECK_INTERVAL%&quot;</span></span><br><span class="line"><span class="built_in">mkdir</span> <span class="string">&quot;-p&quot;</span> <span class="string">&quot;%OUTPUT_DIR%&quot;</span></span><br><span class="line"><span class="built_in">export</span> <span class="string">&quot;PYTHONPATH=&quot;</span>%PYTHONPATH%:%REPO_PATH%<span class="string">&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">python3 <span class="string">&quot;%REPO_PATH%\\tasks\\OntoNotes\\OntoNotes_trainer.py&quot;</span> </span><br><span class="line">    <span class="string">&quot;--lr&quot;</span> <span class="string">&quot;%LR%&quot;</span> </span><br><span class="line">    <span class="string">&quot;--max_epochs&quot;</span> <span class="string">&quot;%MAX_EPOCH%&quot;</span> </span><br><span class="line">    <span class="string">&quot;--max_length&quot;</span> <span class="string">&quot;%MAX_LEN%&quot;</span> </span><br><span class="line">    <span class="string">&quot;--weight_decay&quot;</span> <span class="string">&quot;%WEIGHT_DECAY%&quot;</span> </span><br><span class="line">    <span class="string">&quot;--hidden_dropout_prob&quot;</span> <span class="string">&quot;%DROPOUT%&quot;</span> </span><br><span class="line">    <span class="string">&quot;--warmup_proportion&quot;</span> <span class="string">&quot;%WARMUP_PROPORTION%&quot;</span> </span><br><span class="line">    <span class="string">&quot;--train_batch_size&quot;</span> <span class="string">&quot;%TRAIN_BATCH_SIZE%&quot;</span> </span><br><span class="line">    <span class="string">&quot;--accumulate_grad_batches&quot;</span> <span class="string">&quot;%ACC_GRAD%&quot;</span> </span><br><span class="line">    <span class="string">&quot;--save_topk&quot;</span> <span class="string">&quot;%SAVE_TOPK%&quot;</span> </span><br><span class="line">    <span class="string">&quot;--bert_path&quot;</span> <span class="string">&quot;%BERT_PATH%&quot;</span> </span><br><span class="line">    <span class="string">&quot;--data_dir&quot;</span> <span class="string">&quot;%DATA_DIR%&quot;</span> </span><br><span class="line">    <span class="string">&quot;--save_path&quot;</span> <span class="string">&quot;%OUTPUT_DIR%&quot;</span> </span><br><span class="line">    <span class="string">&quot;--val_check_interval&quot;</span> <span class="string">&quot;%VAL_CHECK_INTERVAL%&quot;</span> </span><br><span class="line">    <span class="string">&quot;--gpus=1&quot;</span> </span><br><span class="line">    <span class="string">&quot;--precision=16&quot;</span> </span><br><span class="line">    <span class="string">&quot;--optimizer&quot;</span> <span class="string">&quot;%OPTIMIZER%&quot;</span> </span><br><span class="line">    <span class="string">&quot;--classifier&quot;</span> <span class="string">&quot;%CLASSIFIER%&quot;</span></span><br><span class="line">    </span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;按任意键继续&quot;</span></span><br><span class="line"><span class="built_in">read</span> <span class="string">&quot;-n&quot;</span> <span class="string">&quot;1&quot;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;继续运行&quot;</span></span><br></pre></td></tr></table></figure>
+<p>运行一下试试！</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-12%20205940.png" alt="屏幕截图 2023-06-12 205940"></p>
+<p>太痛了！好像又是路径的问题？检查了一下确实是路径的错误</p>
+<p>把上述<code>OUTPUT_DIR</code>的地址换成下面的</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">SET <span class="string">&quot;OUTPUT_DIR=..\..\outputs\chinesebert\%TIME%\%FILE_NAME%_%MAX_EPOCH%_%TRAIN_BATCH_SIZE%_%LR%_%WEIGHT_DECAY%_%WARMUP_PROPORTION%_%MAX_LEN%_%DROPOUT%_%ACC_GRAD%_%VAL_CHECK_INTERVAL%&quot;</span></span><br></pre></td></tr></table></figure>
+<p>再跑亿次！</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-12%20210918.png" alt="屏幕截图 2023-06-12 210918"></p>
+<p>我再康康…好像那个网站转换的有问题</p>
+<p>我用chatGPT转换了一下</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="built_in">set</span> TIME=0711</span><br><span class="line"><span class="built_in">set</span> FILE_NAME=ontonotes_glyce_base</span><br><span class="line"><span class="built_in">set</span> REPO_PATH=D:\code\ChineseBert</span><br><span class="line"><span class="built_in">set</span> BERT_PATH=..\..\CHINESEBERT_PATH</span><br><span class="line"><span class="built_in">set</span> DATA_DIR=..\..\ONTONOTES_DATA_PATH</span><br><span class="line"></span><br><span class="line"><span class="built_in">set</span> SAVE_TOPK=20</span><br><span class="line"><span class="built_in">set</span> TRAIN_BATCH_SIZE=26</span><br><span class="line"><span class="built_in">set</span> LR=3e-5</span><br><span class="line"><span class="built_in">set</span> WEIGHT_DECAY=0.001</span><br><span class="line"><span class="built_in">set</span> WARMUP_PROPORTION=0.1</span><br><span class="line"><span class="built_in">set</span> MAX_LEN=275</span><br><span class="line"><span class="built_in">set</span> MAX_EPOCH=5</span><br><span class="line"><span class="built_in">set</span> DROPOUT=0.2</span><br><span class="line"><span class="built_in">set</span> ACC_GRAD=1</span><br><span class="line"><span class="built_in">set</span> VAL_CHECK_INTERVAL=0.25</span><br><span class="line"><span class="built_in">set</span> OPTIMIZER=torch.adam</span><br><span class="line"><span class="built_in">set</span> CLASSIFIER=multi</span><br><span class="line"></span><br><span class="line"><span class="built_in">set</span> OUTPUT_DIR=..\..\outputs\chinesebert\%TIME%\%FILE_NAME%_%MAX_EPOCH%_%TRAIN_BATCH_SIZE%_%LR%_%WEIGHT_DECAY%_%WARMUP_PROPORTION%_%MAX_LEN%_%DROPOUT%_%ACC_GRAD%_%VAL_CHECK_INTERVAL%</span><br><span class="line"><span class="built_in">mkdir</span> %OUTPUT_DIR%</span><br><span class="line"><span class="built_in">set</span> PYTHONPATH=%PYTHONPATH%;%REPO_PATH%</span><br><span class="line"></span><br><span class="line">python %REPO_PATH%\tasks\OntoNotes\OntoNotes_trainer.py ^</span><br><span class="line">    --lr %LR% ^</span><br><span class="line">    --max_epochs %MAX_EPOCH% ^</span><br><span class="line">    --max_length %MAX_LEN% ^</span><br><span class="line">    --weight_decay %WEIGHT_DECAY% ^</span><br><span class="line">    --hidden_dropout_prob %DROPOUT% ^</span><br><span class="line">    --warmup_proportion %WARMUP_PROPORTION% ^</span><br><span class="line">    --train_batch_size %TRAIN_BATCH_SIZE% ^</span><br><span class="line">    --accumulate_grad_batches %ACC_GRAD% ^</span><br><span class="line">    --save_topk %SAVE_TOPK% ^</span><br><span class="line">    --bert_path %BERT_PATH% ^</span><br><span class="line">    --data_dir %DATA_DIR% ^</span><br><span class="line">    --save_path %OUTPUT_DIR% ^</span><br><span class="line">    --val_check_interval %VAL_CHECK_INTERVAL% ^</span><br><span class="line">    --gpus=<span class="string">&quot;1&quot;</span> ^</span><br><span class="line">    --precision=16 ^</span><br><span class="line">    --optimizer %OPTIMIZER% ^</span><br><span class="line">    --classifier %CLASSIFIER%</span><br><span class="line"></span><br><span class="line">pause</span><br></pre></td></tr></table></figure>
+<p>重新跑一下！</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-12%20214704.png" alt="屏幕截图 2023-06-12 214704"></p>
+<p>chatGPT牛逼！看来格式是转换对了，下面就是调包的问题了</p>
+<p>看这个错应该是这个<code>pypinyin</code>包没装，装一下试试</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install pypinyin</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-12%20215157.png" alt="屏幕截图 2023-06-12 215157"></p>
+<p>但是环境里应该有了鸭，难道是跑的时候不在这个环境吗</p>
+<p>单独跑了一下这个文件，并没有报错！</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-12%20215537.png" alt="屏幕截图 2023-06-12 215537"></p>
+<p>感觉我的推理是正确的，查了一下如何在<code>bat</code>文件中选择环境</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">%切换到ChineseBert环境%</span><br><span class="line">CALL activate ChineseBert</span><br></pre></td></tr></table></figure>
+<p>将这段代码放在执行<code>Python</code>文件前面</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-13%20092124.png" alt="屏幕截图 2023-06-13 092124"></p>
+<p>然后走起！</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-13%20092200.png" alt="屏幕截图 2023-06-13 092200"></p>
+<p>这？？？这是跑起来了？？？有戏有戏</p>
+<p>等了一会也没反应，看了下说明，好像说是模型没训练初始化？</p>
+<p>又等了一会</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-13%20093055.png" alt="屏幕截图 2023-06-13 093055"></p>
+<p>难…难道再等等？好像又说CUDA和Pytorch不匹配？（但我之前专门按照官网装的鸭</p>
+<p>还说我什么<code>model.example_input_array</code>或者<code>input_array</code>属性没设置</p>
+<p>首先解决一下CUDA和Pytorch的版本匹配问题，再次检查一下作者提供的Pytorch安装代码，发现和我CUDA版本是不匹配的，看来这个需要自己修改一下，不能无脑复制</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-13%20094404.png" alt="屏幕截图 2023-06-13 094404"></p>
+<p>我自己的CUDA</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-13%20094832.png" alt="屏幕截图 2023-06-13 094832"></p>
+<p>于是直接重装吧</p>
+<p>先卸载</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip uninstall torch</span><br></pre></td></tr></table></figure>
+<p>再安装</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip3 install torch==1.7.1+cu110 torchvision==0.8.2+cu110 torchaudio==0.7.2 -f https://download.pytorch.org/whl/cu110/torch_stable.html</span><br></pre></td></tr></table></figure>
+<p>在跑一次试试！</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-13%20145951.png" alt="屏幕截图 2023-06-13 145951"></p>
+<p>跑起来了？！！！！！Ohhhhhhhh</p>
+<p>等了一下午，终于跑出了结果了</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-23%20185801.png" alt="屏幕截图 2023-06-23 185801"></p>
+<p>作者的结果如下</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Test Precision</th>
+<th>Test Recall</th>
+<th>Test F1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BERT</td>
+<td>79.69</td>
+<td>82.09</td>
+<td>80.87</td>
+</tr>
+<tr>
+<td>RoBERTa</td>
+<td>80.43</td>
+<td>80.30</td>
+<td>80.37</td>
+</tr>
+<tr>
+<td>ChineseBERT</td>
+<td>80.03</td>
+<td>83.33</td>
+<td>81.65</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>不知道为什么<code>test_precision</code>这一项结果略低一点，其他结果相差不是很大</p>
 ]]></content>
       <categories>
-        <category>个人笔记</category>
+        <category>论文复现</category>
       </categories>
+  </entry>
+  <entry>
+    <title>如何使用微信小程序IDE在github上实现团队合作</title>
+    <url>/2020/04/16/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8FIDE%E5%9C%A8github%E4%B8%8A%E5%AE%9E%E7%8E%B0%E5%9B%A2%E9%98%9F%E5%90%88%E4%BD%9C/</url>
+    <content><![CDATA[<p>——-原文——-(2020/4/16)</p>
+<p>@<a href="如何使用微信开发者工具在github上实现团队合作">TOC</a><br>一.发起者要做的一些步骤</p>
+<ol>
+<li>首先用IDE初始化本地的git仓库<br><img src="https://img-blog.csdnimg.cn/20200130111131527.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="a."><br><img src="https://img-blog.csdnimg.cn/20200130111301249.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="b."></li>
+<li>使用github-desktop客户端添加这个新建的本地git库并同时上传到新建的远程仓库中<br><img src="https://img-blog.csdnimg.cn/2020013011214879.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="添加本地仓库"><br><img src="https://img-blog.csdnimg.cn/20200130112202771.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="新建远程仓库"><br><img src="https://img-blog.csdnimg.cn/2020013011231537.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/2020013011291517.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="看一下成果嘿嘿嘿"></li>
+<li>添加参与者<br><img src="https://img-blog.csdnimg.cn/20200130113301950.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="最好添加的时候写参与者的名字"><br><strong>PS:被邀请者的必须要接受邀请才可以</strong></li>
+</ol>
+<p>二.参与者需要做的步骤</p>
+<ol>
+<li>在微信小程序开发者工具里添加远程仓库<br><img src="https://img-blog.csdnimg.cn/20200130114342510.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="添加远程仓库_1"><img src="https://img-blog.csdnimg.cn/20200130114356569.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="添加远程仓库_2"><br><img src="https://img-blog.csdnimg.cn/20200130114448885.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="如何查看仓库的地址"></li>
+<li>绑定自己的github账号<br><img src="https://img-blog.csdnimg.cn/20200130115015761.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="绑定账号"></li>
+</ol>
+<p>三.如何线上合作</p>
+<ol>
+<li>参与者在调试好了一些功能以后，提交到远程仓库的分支<br><img src="https://img-blog.csdnimg.cn/20200130120245999.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="提交分支"></li>
+<li>参与者请求合并分支<br><img src="https://img-blog.csdnimg.cn/20200130120523380.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="请求合并_1"><br><img src="https://img-blog.csdnimg.cn/20200130120921309.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="请求合并_2"><br><img src="https://img-blog.csdnimg.cn/20200130120955937.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="发起合并请求"></li>
+<li>在发起者经过了沉思熟虑，通计熟筹，仰观俯察后，同意合并分支的请求(＠￣ー￣＠)<br><img src="https://img-blog.csdnimg.cn/20200130121516212.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="找到请求_1"><br>从这里可以对比的看到分支和master的不同<br><img src="https://img-blog.csdnimg.cn/2020013012161487.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="找不同"><br>同意合并请求：<br><img src="https://img-blog.csdnimg.cn/20200130121829976.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="同意合并_2"><br><img src="https://img-blog.csdnimg.cn/20200130121938158.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="同意合并_3"><br>这样就分支就合并进去了<br><img src="https://img-blog.csdnimg.cn/20200130122111630.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="嘻嘻嘻"><br>当然如果参与者想要同步最新的代码，只要pull一下就好了<br><img src="https://img-blog.csdnimg.cn/20200130191852824.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="同步"><br>第一次接触github，如有一些错误，还请多多指教<br>(๑•̀ㅂ•́)و</li>
+</ol>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>微信小程序</tag>
+      </tags>
   </entry>
   <entry>
     <title>安装PaddlePaddle</title>
@@ -1923,6 +1796,138 @@
       </categories>
   </entry>
   <entry>
+    <title>学校GPU平台使用教程</title>
+    <url>/2023/08/28/%E5%AD%A6%E6%A0%A1GPU%E5%B9%B3%E5%8F%B0%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</url>
+    <content><![CDATA[<p>首先连接内网登录<a href="http://paas.183-175-12-11.nip.io:30080/">平台</a></p>
+<p>一般使用的话，直接找到<code>开发环境</code>一栏，创建环境。然后通过<code>Pycharm</code>中的<code>ssh</code>连接</p>
+<p><img src="https://s1.ax1x.com/2023/08/28/pPaw2X6.png" alt="屏幕截图 2023-08-28 221321"></p>
+<p>在<code>Pycharm</code>中，找到工具—部署—配置</p>
+<p><img src="https://s1.ax1x.com/2023/08/28/pPad5zq.png" alt="image-20230828220300678"></p>
+<p>点击<code>+</code>后选择<code>SFTP</code></p>
+<p><img src="https://s1.ax1x.com/2023/08/28/pPaw5Ae.png" alt="屏幕截图 2023-08-28 221526"></p>
+<p>在<code>SSH配置</code>那里后点击后面<code>...</code></p>
+<p><img src="https://s1.ax1x.com/2023/08/28/pPawbct.png" alt="屏幕截图 2023-08-28 092517"></p>
+<p>进入后填写主机名和用户名，这里详细讲一下</p>
+<p>例如平台给的ssh连接是</p>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">ssh://root@paas.xxx-xxx-xx-xx.nip.io:xxxxx</span><br></pre></td></tr></table></figure>
+<p>这里用户名就需要填写</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">root</span><br></pre></td></tr></table></figure>
+<p>主机名填写</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">paas.xxx-xxx-xx-xx.nip.io</span><br></pre></td></tr></table></figure>
+<p>端口号填写<code>xxxxx</code></p>
+<p>然后填写创建环境时设置的密码</p>
+<p><img src="https://s1.ax1x.com/2023/08/28/pPawjHS.png" alt="屏幕截图 2023-08-28 092917"></p>
+<p>这一步完事以后，点击确定，返回到之前的页面，点击<code>映射</code></p>
+<p><img src="https://s1.ax1x.com/2023/08/30/pPd7RaD.png" alt="屏幕截图 2023-08-30 145658"></p>
+<p>配置好本机的地址和远程的地址，点击确认</p>
+<p><img src="https://s1.ax1x.com/2023/08/30/pPd7LdS.png" alt="image-20230830145937224"></p>
+<p>之后选择工具—部署—选项</p>
+<p><img src="https://s1.ax1x.com/2023/08/30/pPdHIkF.png" alt="QQ截图20230830150656"></p>
+<p>可以根据自己习惯决定是否配置一下</p>
+<p>然后找到工具—启动SSH会话，选择刚刚配置的SSH</p>
+<p><img src="https://s1.ax1x.com/2023/08/30/pPdbmtg.png" alt="屏幕截图 2023-08-30 151730"></p>
+<p>然后输入</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">python</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="built_in">print</span>(sys.executable)</span><br></pre></td></tr></table></figure>
+<p>记住输出的地址，比如我的就是</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">usr/bin/python</span><br></pre></td></tr></table></figure>
+<p>最后，找到项目—项目XXXX—Python解释器，找到添加解释器—SSH</p>
+<p><img src="https://s1.ax1x.com/2023/08/30/pPdHj0K.png" alt="image-20230830151124394"></p>
+<p>选择刚刚配置的SSH服务器，然后下一步</p>
+<p><img src="https://s1.ax1x.com/2023/08/30/pPdbHUS.png" alt="屏幕截图 2023-08-30 152226"></p>
+<p>点击下一步</p>
+<p><img src="https://s1.ax1x.com/2023/08/30/pPdbO3j.png" alt="image-20230830152644100"></p>
+<p>然后选择<code>现有</code></p>
+<p>把刚刚的地址输入到<code>解释器</code>里</p>
+<p><img src="https://s1.ax1x.com/2023/08/30/pPdqSbV.png" alt="image-20230830152826067"></p>
+<p>点击确定就完事了</p>
+<p><img src="https://s1.ax1x.com/2023/08/30/pPdqtqP.png" alt="image-20230830152939492"></p>
+<p>之后用<code>工具</code>—<code>SSH会话</code>配合，就可以用学校的GPU跑程序了</p>
+<p>tips：后期可以在服务器上安装<code>Anaconda</code>，然后把新建的虚拟环境中python路径配置到上述图片的<code>解释器</code>中</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">jupyter notebook --ip 0.0.0.0 --allow-root</span><br></pre></td></tr></table></figure>
+<p>再补充一下，之前用conda的操作可能是麻烦了，服务器里自带好多python的环境，每个环境里也有很多自带的包</p>
+<p><img src="https://z1.ax1x.com/2023/10/04/pPOHyIe.png" alt="屏幕截图 2023-10-04 204942"></p>
+<p>选择例如选择python3.6后</p>
+<p><img src="https://z1.ax1x.com/2023/10/04/pPOHgGd.png" alt="屏幕截图 2023-10-04 211210"></p>
+<p>之后就《愉快》的调参吧，附一张成功用学校GPU跑代码的图片</p>
+<p><img src="https://z1.ax1x.com/2023/10/04/pPOHqRs.png" alt="image-20231004211915616"></p>
+<p> <strong>10.19继续补充一下</strong><br>有的项目跑起来需要运行作者的<code>run.sh</code>文件，这时候需要切换到项目的目录然后运行</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">bash run.sh</span><br></pre></td></tr></table></figure>
+<p>但是环境默认是python2.7版本的，项目跑不起来，这时候需要切换python的环境</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">whereis python</span><br><span class="line">rm /usr/bin/python</span><br><span class="line">ln -s /usr/bin/python3.6 /usr/bin/python</span><br></pre></td></tr></table></figure>
+<p><img src="https://z1.ax1x.com/2023/10/19/piitih6.png" alt="image-20231019153231564"></p>
+<p>还有一种方法，比如需要切换的环境在</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">usr/bin/python3.6</span><br></pre></td></tr></table></figure>
+<p>这时候需要在<code>.sh</code>文件中开头加上</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/usr/bin/env python3.6</span></span><br></pre></td></tr></table></figure>
+<p>可以在后面查看python环境</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">python --version</span><br></pre></td></tr></table></figure>
+<p><img src="https://z1.ax1x.com/2023/10/19/piir6K0.png" alt="image-20231019163749724"></p>
+<p>这时候就切换了</p>
+]]></content>
+      <categories>
+        <category>个人笔记</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>安装Word2Vec</title>
+    <url>/2023/07/01/%E5%AE%89%E8%A3%85Word2Vec/</url>
+    <content><![CDATA[<p>由于最近需要用到一个预处理的数据集，方法在<a href="https://arxiv.org/abs/1301.3781">这篇论文</a>《Efficient Estimation of Word Representations in Vector Space》里，于是打算尝试能不能复现一下，论文提供了<a href="https://code.google.com/archive/p/word2vec/">代码地址</a>，但是当我打开下载的时候，却发现是404</p>
+<p><img src="https://s1.ax1x.com/2023/07/01/pCB5ZT0.png" alt="image-20230701163100641"></p>
+<p>于是经过一番搜索，找到了最新的<a href="https://pypi.org/project/word2vec/">地址</a>（应该是吧</p>
+<p>先创建一下新的虚拟环境</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">conda create -n word2vec python=3.8</span><br><span class="line">conda activate word2vec</span><br></pre></td></tr></table></figure>
+<p>然后安装<code>numpy</code>、<code>scipy</code></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pip install numpy</span><br><span class="line">pip install scipy</span><br></pre></td></tr></table></figure>
+<p>安装<a href="https://visualstudio.microsoft.com/zh-hans/vs/">Microsoft Visual C++ 14.0</a></p>
+<p>下载下来是一个安装器，然后进行如下操作</p>
+<p><img src="https://s1.ax1x.com/2023/07/01/pCBoUQe.png" alt="屏幕截图 2023-07-01 165446"></p>
+<p>然后</p>
+<p><img src="https://s1.ax1x.com/2023/07/01/pCBodLd.png" alt="屏幕截图 2023-07-01 165358"></p>
+<p>最后安装有点麻烦的<code>gcc</code>，首先使用清华镜像下载<a href="http://files.1f0.de/mingw/mingw-w64-gcc-12.2-stable-r38.7z">mingw-w64-gcc</a>，然后解压的位置选一个自己能记住的位置，比如我的就是</p>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">G:<span class="keyword">\Program</span> Files<span class="keyword">\MinGW</span>-w64</span><br></pre></td></tr></table></figure>
+<p>然后把<code>bin</code>目录添加到系统变量里</p>
+<p>例如我的路径就是</p>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">G:<span class="keyword">\Program</span> Files<span class="keyword">\MinGW</span>-w64<span class="keyword">\mingw</span>-w64-gcc-12.2-stable-r38<span class="keyword">\bin</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://s1.ax1x.com/2023/07/01/pCBTy7R.png" alt="屏幕截图 2023-07-01 172554"></p>
+<p>最后测试一下时候配置成功</p>
+<p>在<code>D盘</code>根目录先新建一个<code>helloword.c</code>的文件</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;hello world\n&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后用<code>cmd</code>到<code>D盘</code>根目录</p>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">cd/d D:</span><br></pre></td></tr></table></figure>
+<p>用gcc编译</p>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">gcc helloword.c</span><br></pre></td></tr></table></figure>
+<p><strong>如果没报错说明其实已经配置好了，想看文件运行结果的可以继续输入</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">a.exe</span><br></pre></td></tr></table></figure>
+<p><img src="https://s1.ax1x.com/2023/07/01/pCB7EgU.png" alt="image-20230701173710147"></p>
+<p>这样，<code>word2vec</code>所需的组件就算全部安装完了，下面正式开始安装<code>word2vec</code>（在conda那个命令窗口哦，希望不要报错！）</p>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">pip install word2vec</span><br></pre></td></tr></table></figure>
+<p><img src="https://s1.ax1x.com/2023/07/01/pCB7w5t.png" alt="image-20230701174216784"></p>
+<p>如果出现这个问题，重启一下试试。本人就是重启完莫名安装成功了，可能是刚刚有的组件需要重启吧</p>
+<p><img src="https://s1.ax1x.com/2023/07/01/pCDCOPS.png" alt="image-20230701225337075"></p>
+]]></content>
+      <categories>
+        <category>论文复现</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>斐波那契数列 C_C++</title>
+    <url>/2022/01/10/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97%20C_C++/</url>
+    <content><![CDATA[<p>用三种方法实现:</p>
+<ol>
+<li>带备忘录的递归</li>
+<li>dp迭代</li>
+<li>迭代优化，空间复杂度为O(1)</li>
+</ol>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> _for(i,a,b) for(int i=(a);i&lt;=(b);i++)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//备忘录</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">helper</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; memo, <span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">	<span class="comment">//base case</span></span><br><span class="line">	<span class="keyword">if</span> (n == <span class="number">2</span> || n == <span class="number">3</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (memo[n] != <span class="number">0</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> memo[n];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		memo[n] = <span class="built_in">helper</span>(memo, n - <span class="number">1</span>) + <span class="built_in">helper</span>(memo, n - <span class="number">2</span>);</span><br><span class="line">		<span class="keyword">return</span> memo[n];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//带备忘录法</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">fib_1</span><span class="params">(<span class="type">int</span> N)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (N &lt;= <span class="number">1</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">memo</span><span class="params">(N + <span class="number">1</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">helper</span>(memo, N);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//dp数组迭代法</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">fib_2</span><span class="params">(<span class="type">int</span> N)</span> </span>&#123;</span><br><span class="line">	<span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">dp</span><span class="params">(N + <span class="number">1</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line">	dp[<span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">	dp[<span class="number">2</span>] = dp[<span class="number">3</span>] = <span class="number">1</span>;</span><br><span class="line">	_for(i, <span class="number">4</span>, N) &#123;</span><br><span class="line">		dp[i] = dp[i - <span class="number">1</span>] + dp[i - <span class="number">2</span>];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> dp[N];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//迭代优化</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">fib_3</span><span class="params">(<span class="type">int</span> N)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (N == <span class="number">1</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (N == <span class="number">2</span> || N == <span class="number">3</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">int</span> pre = <span class="number">1</span>, ppre = <span class="number">1</span>;</span><br><span class="line">	_for(i, <span class="number">4</span>, N) &#123;</span><br><span class="line">		<span class="type">int</span> sum = pre + ppre;</span><br><span class="line">		ppre = pre;</span><br><span class="line">		pre = sum;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> pre;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, <span class="built_in">fib_3</span>(<span class="number">10</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>刷题笔记</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>拼模型尝试</title>
     <url>/2023/08/12/%E6%8B%BC%E6%A8%A1%E5%9E%8B%E5%B0%9D%E8%AF%95/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>记录一下自己首次组合模型的过程，希望可以为以后论文打基础。</p>
@@ -1981,24 +1986,6 @@
       </categories>
   </entry>
   <entry>
-    <title>斐波那契数列 C_C++</title>
-    <url>/2022/01/10/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97%20C_C++/</url>
-    <content><![CDATA[<p>用三种方法实现:</p>
-<ol>
-<li>带备忘录的递归</li>
-<li>dp迭代</li>
-<li>迭代优化，空间复杂度为O(1)</li>
-</ol>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> _for(i,a,b) for(int i=(a);i&lt;=(b);i++)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//备忘录</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">helper</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; memo, <span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">	<span class="comment">//base case</span></span><br><span class="line">	<span class="keyword">if</span> (n == <span class="number">2</span> || n == <span class="number">3</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (memo[n] != <span class="number">0</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> memo[n];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		memo[n] = <span class="built_in">helper</span>(memo, n - <span class="number">1</span>) + <span class="built_in">helper</span>(memo, n - <span class="number">2</span>);</span><br><span class="line">		<span class="keyword">return</span> memo[n];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//带备忘录法</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">fib_1</span><span class="params">(<span class="type">int</span> N)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (N &lt;= <span class="number">1</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">memo</span><span class="params">(N + <span class="number">1</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">helper</span>(memo, N);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//dp数组迭代法</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">fib_2</span><span class="params">(<span class="type">int</span> N)</span> </span>&#123;</span><br><span class="line">	<span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">dp</span><span class="params">(N + <span class="number">1</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line">	dp[<span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">	dp[<span class="number">2</span>] = dp[<span class="number">3</span>] = <span class="number">1</span>;</span><br><span class="line">	_for(i, <span class="number">4</span>, N) &#123;</span><br><span class="line">		dp[i] = dp[i - <span class="number">1</span>] + dp[i - <span class="number">2</span>];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> dp[N];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//迭代优化</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">fib_3</span><span class="params">(<span class="type">int</span> N)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (N == <span class="number">1</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (N == <span class="number">2</span> || N == <span class="number">3</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">int</span> pre = <span class="number">1</span>, ppre = <span class="number">1</span>;</span><br><span class="line">	_for(i, <span class="number">4</span>, N) &#123;</span><br><span class="line">		<span class="type">int</span> sum = pre + ppre;</span><br><span class="line">		ppre = pre;</span><br><span class="line">		pre = sum;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> pre;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, <span class="built_in">fib_3</span>(<span class="number">10</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>刷题笔记</category>
-      </categories>
-      <tags>
-        <tag>算法</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>本地部署chatGPT</title>
     <url>/2023/07/15/%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2chatGPT/</url>
     <content><![CDATA[<p>首先打开<a href="https://github.com/ramonvc/freegpt-webui#cloning-the-repository-inbox_tray">项目网址</a>，把代码下载下来，按照其要求安装<a href="https://www.python.org/downloads/"><code>python</code></a>，<a href="https://git-scm.com/download/win"><code>git</code></a></p>
@@ -2029,54 +2016,6 @@
       <categories>
         <category>个人笔记</category>
       </categories>
-  </entry>
-  <entry>
-    <title>王道数据结构 线性表 链式存储小结</title>
-    <url>/2022/01/10/%E7%8E%8B%E9%81%93%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%20%E7%BA%BF%E6%80%A7%E8%A1%A8%20%E9%93%BE%E5%BC%8F%E5%AD%98%E5%82%A8%E5%B0%8F%E7%BB%93/</url>
-    <content><![CDATA[<h1 id="1-单链表"><a href="#1-单链表" class="headerlink" title="1.单链表"></a>1.单链表</h1><p><img src="https://img-blog.csdnimg.cn/20210116122507504.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="单链表"></p>
-<h2 id="头插法"><a href="#头插法" class="headerlink" title="头插法"></a>头插法</h2><p>图解：<br><img src="https://img-blog.csdnimg.cn/20210116125651161.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="1"></p>
-<ol>
-<li>待插入的next指向头结点原本指向的结点</li>
-<li>修改头结点的next指向待插入结点<br><img src="https://img-blog.csdnimg.cn/20210116125826814.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="如何插入"></li>
-</ol>
-<p>插入完毕<img src="https://img-blog.csdnimg.cn/20210116130021844.png#pic_center" alt="插入完毕"><br>代码实现</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//设带插入结点为S</span></span><br><span class="line">S-&gt;next=head-&gt;next;</span><br><span class="line">head-&gt;next=S;</span><br></pre></td></tr></table></figure>
-<h2 id="尾插法"><a href="#尾插法" class="headerlink" title="尾插法"></a>尾插法</h2><p>图解<br><img src="https://img-blog.csdnimg.cn/20210116130729224.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="待插入状态"></p>
-<ol>
-<li>将待插入结点的next域设为NULL</li>
-<li><p>将最后一个结点的next域指向带插入结点<br><img src="https://img-blog.csdnimg.cn/20210116130930320.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="插入方法"></p>
-<p>插入完毕<br><img src="https://img-blog.csdnimg.cn/20210116131032237.png#pic_center" alt="插入完毕"><br>代码实现</p>
-</li>
-</ol>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//设插入结点为S</span></span><br><span class="line">head-&gt;next=S;</span><br><span class="line">head=S;</span><br></pre></td></tr></table></figure>
-<h2 id="在中间插入"><a href="#在中间插入" class="headerlink" title="在中间插入"></a>在中间插入</h2><p>图解<br><img src="https://img-blog.csdnimg.cn/20210116202306782.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="插入前状态"></p>
-<ol>
-<li>将待插入结点的next域指向插入结点位置的前驱结点指向的后一个结点</li>
-<li>将原本位置上之前的结点指向待插入结点 </li>
-</ol>
-<p><img src="https://img-blog.csdnimg.cn/20210116202359651.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>插入完成<br><img src="https://img-blog.csdnimg.cn/20210116202638177.png#pic_center" alt="插入完成"></p>
-<p>代码实现</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//设待插入结点为S</span></span><br><span class="line"><span class="comment">//待插入位置的前驱结点为pre</span></span><br><span class="line">S-&gt;next=pre-&gt;next;</span><br><span class="line">pre-&gt;next=S;</span><br></pre></td></tr></table></figure>
-<h2 id="在中间删除"><a href="#在中间删除" class="headerlink" title="在中间删除"></a>在中间删除</h2><p>图解<br><img src="https://img-blog.csdnimg.cn/20210116204400671.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="删除前状态"></p>
-<ol>
-<li>将待删除结点的前一个结点的next指向待删除结点next的结点</li>
-<li>删除待删除结点</li>
-</ol>
-<p><img src="https://img-blog.csdnimg.cn/20210116204421686.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="步骤"><br>删除完成<br><img src="https://img-blog.csdnimg.cn/20210116204628265.png#pic_center" alt="删除完成"></p>
-<p>代码实现 </p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//设待删除前驱结点为pre</span></span><br><span class="line"><span class="comment">//待删除结点为S</span></span><br><span class="line">pre-&gt;next=S-&gt;next;</span><br><span class="line"><span class="keyword">delete</span> S;</span><br></pre></td></tr></table></figure>
-<h2 id="原地逆置链表"><a href="#原地逆置链表" class="headerlink" title="原地逆置链表"></a>原地逆置链表</h2><ol>
-<li>将头结点与后面的结点断开，然后重新用头插法插入</li>
-<li>使用三个指针逆置<br>图解<br>1.<img src="https://img-blog.csdnimg.cn/20210116213023974.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="1"><br>2.<img src="https://img-blog.csdnimg.cn/20210116213042409.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="2"><br>3.<img src="https://img-blog.csdnimg.cn/20210116213051310.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="3"><br>4.<img src="https://img-blog.csdnimg.cn/20210116213109935.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="4"><br>5.逆置完毕（最后将头结点指向p）<img src="https://img-blog.csdnimg.cn/20210116213123148.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="5"></li>
-</ol>
-<p>代码实现</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">ReverseList</span><span class="params">(LinkList&amp; head)</span> </span>&#123;</span><br><span class="line">	LNode* pre, * p = head-&gt;next, * r = p-&gt;next;</span><br><span class="line">	p-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">	<span class="keyword">while</span> (r != <span class="literal">NULL</span>) &#123;</span><br><span class="line">		pre = p;</span><br><span class="line">		p = r;</span><br><span class="line">		r = r-&gt;next;</span><br><span class="line">		p-&gt;next = pre;</span><br><span class="line">	&#125;</span><br><span class="line">	head-&gt;next = p;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>学习笔记</category>
-      </categories>
-      <tags>
-        <tag>算法</tag>
-      </tags>
   </entry>
   <entry>
     <title>算法期末复习</title>
@@ -2206,5 +2145,74 @@
       <tags>
         <tag>其他</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>王道数据结构 线性表 链式存储小结</title>
+    <url>/2022/01/10/%E7%8E%8B%E9%81%93%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%20%E7%BA%BF%E6%80%A7%E8%A1%A8%20%E9%93%BE%E5%BC%8F%E5%AD%98%E5%82%A8%E5%B0%8F%E7%BB%93/</url>
+    <content><![CDATA[<h1 id="1-单链表"><a href="#1-单链表" class="headerlink" title="1.单链表"></a>1.单链表</h1><p><img src="https://img-blog.csdnimg.cn/20210116122507504.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="单链表"></p>
+<h2 id="头插法"><a href="#头插法" class="headerlink" title="头插法"></a>头插法</h2><p>图解：<br><img src="https://img-blog.csdnimg.cn/20210116125651161.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="1"></p>
+<ol>
+<li>待插入的next指向头结点原本指向的结点</li>
+<li>修改头结点的next指向待插入结点<br><img src="https://img-blog.csdnimg.cn/20210116125826814.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="如何插入"></li>
+</ol>
+<p>插入完毕<img src="https://img-blog.csdnimg.cn/20210116130021844.png#pic_center" alt="插入完毕"><br>代码实现</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//设带插入结点为S</span></span><br><span class="line">S-&gt;next=head-&gt;next;</span><br><span class="line">head-&gt;next=S;</span><br></pre></td></tr></table></figure>
+<h2 id="尾插法"><a href="#尾插法" class="headerlink" title="尾插法"></a>尾插法</h2><p>图解<br><img src="https://img-blog.csdnimg.cn/20210116130729224.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="待插入状态"></p>
+<ol>
+<li>将待插入结点的next域设为NULL</li>
+<li><p>将最后一个结点的next域指向带插入结点<br><img src="https://img-blog.csdnimg.cn/20210116130930320.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="插入方法"></p>
+<p>插入完毕<br><img src="https://img-blog.csdnimg.cn/20210116131032237.png#pic_center" alt="插入完毕"><br>代码实现</p>
+</li>
+</ol>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//设插入结点为S</span></span><br><span class="line">head-&gt;next=S;</span><br><span class="line">head=S;</span><br></pre></td></tr></table></figure>
+<h2 id="在中间插入"><a href="#在中间插入" class="headerlink" title="在中间插入"></a>在中间插入</h2><p>图解<br><img src="https://img-blog.csdnimg.cn/20210116202306782.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="插入前状态"></p>
+<ol>
+<li>将待插入结点的next域指向插入结点位置的前驱结点指向的后一个结点</li>
+<li>将原本位置上之前的结点指向待插入结点 </li>
+</ol>
+<p><img src="https://img-blog.csdnimg.cn/20210116202359651.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>插入完成<br><img src="https://img-blog.csdnimg.cn/20210116202638177.png#pic_center" alt="插入完成"></p>
+<p>代码实现</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//设待插入结点为S</span></span><br><span class="line"><span class="comment">//待插入位置的前驱结点为pre</span></span><br><span class="line">S-&gt;next=pre-&gt;next;</span><br><span class="line">pre-&gt;next=S;</span><br></pre></td></tr></table></figure>
+<h2 id="在中间删除"><a href="#在中间删除" class="headerlink" title="在中间删除"></a>在中间删除</h2><p>图解<br><img src="https://img-blog.csdnimg.cn/20210116204400671.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="删除前状态"></p>
+<ol>
+<li>将待删除结点的前一个结点的next指向待删除结点next的结点</li>
+<li>删除待删除结点</li>
+</ol>
+<p><img src="https://img-blog.csdnimg.cn/20210116204421686.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="步骤"><br>删除完成<br><img src="https://img-blog.csdnimg.cn/20210116204628265.png#pic_center" alt="删除完成"></p>
+<p>代码实现 </p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//设待删除前驱结点为pre</span></span><br><span class="line"><span class="comment">//待删除结点为S</span></span><br><span class="line">pre-&gt;next=S-&gt;next;</span><br><span class="line"><span class="keyword">delete</span> S;</span><br></pre></td></tr></table></figure>
+<h2 id="原地逆置链表"><a href="#原地逆置链表" class="headerlink" title="原地逆置链表"></a>原地逆置链表</h2><ol>
+<li>将头结点与后面的结点断开，然后重新用头插法插入</li>
+<li>使用三个指针逆置<br>图解<br>1.<img src="https://img-blog.csdnimg.cn/20210116213023974.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="1"><br>2.<img src="https://img-blog.csdnimg.cn/20210116213042409.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="2"><br>3.<img src="https://img-blog.csdnimg.cn/20210116213051310.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="3"><br>4.<img src="https://img-blog.csdnimg.cn/20210116213109935.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="4"><br>5.逆置完毕（最后将头结点指向p）<img src="https://img-blog.csdnimg.cn/20210116213123148.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="5"></li>
+</ol>
+<p>代码实现</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">ReverseList</span><span class="params">(LinkList&amp; head)</span> </span>&#123;</span><br><span class="line">	LNode* pre, * p = head-&gt;next, * r = p-&gt;next;</span><br><span class="line">	p-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">	<span class="keyword">while</span> (r != <span class="literal">NULL</span>) &#123;</span><br><span class="line">		pre = p;</span><br><span class="line">		p = r;</span><br><span class="line">		r = r-&gt;next;</span><br><span class="line">		p-&gt;next = pre;</span><br><span class="line">	&#125;</span><br><span class="line">	head-&gt;next = p;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JZ6 从尾到头打印链表</title>
+    <url>/2023/11/15/JZ6%20%E4%BB%8E%E5%B0%BE%E5%88%B0%E5%A4%B4%E6%89%93%E5%8D%B0%E9%93%BE%E8%A1%A8/</url>
+    <content><![CDATA[<h2 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h2><p>输入一个链表的头节点，按链表从尾到头的顺序返回每个节点的值（用数组返回）。</p>
+<p>如输入{1,2,3}的链表如下图:</p>
+<p><img src="https://uploadfiles.nowcoder.com/images/20210717/557336_1626506480516/103D87B58E565E87DEFA9DD0B822C55F" alt="img"></p>
+<p>返回一个数组为[3,2,1]</p>
+<p>0 &lt;= 链表长度 &lt;= 10000</p>
+<h2 id="示例1"><a href="#示例1" class="headerlink" title="示例1"></a>示例1</h2><p>输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;1,2,3&#125;</span><br></pre></td></tr></table></figure>
+<p>返回值：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[3,2,1]</span><br></pre></td></tr></table></figure>
+<h2 id="算法思路1"><a href="#算法思路1" class="headerlink" title="算法思路1"></a>算法思路1</h2><p>主要考察翻转数组的操作，把链表的数据放到数组里，然后在数组里操作，一个比较简单的操作是调用C++的库函数</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">printListFromTailToHead</span><span class="params">(ListNode* head)</span> </span>&#123;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; vt;</span><br><span class="line">        ListNode* p = head;</span><br><span class="line">        <span class="keyword">while</span>(p != <span class="literal">nullptr</span>)&#123;</span><br><span class="line">            vt.<span class="built_in">push_back</span>(p-&gt;val);</span><br><span class="line">            p = p-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">reverse</span>(vt.<span class="built_in">begin</span>(),vt.<span class="built_in">end</span>());</span><br><span class="line">        <span class="keyword">return</span> vt;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="算法思路2"><a href="#算法思路2" class="headerlink" title="算法思路2"></a>算法思路2</h2><p>使用递归的方式解决，递归出口是链表循环到末尾，每次递归做的事就是把当前结点的值放到<code>vector</code>容器中，由于递归到末尾才会开始存放结点（<code>res.push_back(head-&gt;val);</code>）的值，时间顺序正好为从后往前的存放，符合题目要求的逆序</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">*  struct ListNode &#123;</span></span><br><span class="line"><span class="comment">*        int val;</span></span><br><span class="line"><span class="comment">*        struct ListNode *next;</span></span><br><span class="line"><span class="comment">*        ListNode(int x) :</span></span><br><span class="line"><span class="comment">*              val(x), next(NULL) &#123;</span></span><br><span class="line"><span class="comment">*        &#125;</span></span><br><span class="line"><span class="comment">*  &#125;;</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">reverse</span><span class="params">(ListNode* head,vector&lt;<span class="type">int</span>&gt; &amp;res)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(head != <span class="literal">nullptr</span>)&#123;</span><br><span class="line">            <span class="built_in">reverse</span>(head-&gt;next,res);</span><br><span class="line">            res.<span class="built_in">push_back</span>(head-&gt;val);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">printListFromTailToHead</span><span class="params">(ListNode* head)</span> </span>&#123;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; res;</span><br><span class="line">        <span class="built_in">reverse</span>(head,res);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>刷题笔记</category>
+      </categories>
   </entry>
 </search>
