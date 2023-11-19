@@ -6,7 +6,7 @@
   <link href="https://ruvikm.gitee.io/atom.xml" rel="self"/>
   
   <link href="https://ruvikm.gitee.io/"/>
-  <updated>2023-11-17T08:52:04.906Z</updated>
+  <updated>2023-11-19T10:37:12.869Z</updated>
   <id>https://ruvikm.gitee.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>jz25 合并两个排序的链表</title>
+    <link href="https://ruvikm.gitee.io/2023/11/18/%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%8E%92%E5%BA%8F%E7%9A%84%E9%93%BE%E8%A1%A8/"/>
+    <id>https://ruvikm.gitee.io/2023/11/18/%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%8E%92%E5%BA%8F%E7%9A%84%E9%93%BE%E8%A1%A8/</id>
+    <published>2023-11-18T02:35:51.000Z</published>
+    <updated>2023-11-19T10:37:12.869Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h2><p>输入两个递增的链表，单个链表的长度为n，合并这两个链表并使新链表中的节点仍然是递增排序的。</p><p>数据范围： 0≤10000≤<em>n</em>≤1000，−1000≤节点值≤1000−1000≤节点值≤1000<br>要求：空间复杂度 <em>O</em>(1)，时间复杂度 <em>O</em>(<em>n</em>)</p><p>如输入{1,3,5},{2,4,6}时，合并后的链表为{1,2,3,4,5,6}，所以对应的输出为{1,2,3,4,5,6}，转换过程如下图所示：</p><p><img src="/2023/11/18/%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%8E%92%E5%BA%8F%E7%9A%84%E9%93%BE%E8%A1%A8/09DD8C2662B96CE14928333F055C5580.png" alt="img"></p><p>或输入{-1,2,4},{1,3,4}时，合并后的链表为{-1,1,2,3,4,4}，所以对应的输出为{-1,1,2,3,4,4}，转换过程如下图所示：</p><p><img src="/2023/11/18/%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%8E%92%E5%BA%8F%E7%9A%84%E9%93%BE%E8%A1%A8/8266E4BFEDA1BD42D8F9794EB4EA0A13.png" alt="img"></p><h2 id="示例1"><a href="#示例1" class="headerlink" title="示例1"></a>示例1</h2><p>输入：</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;1,3,5&#125;,&#123;2,4,6&#125;</span><br></pre></td></tr></table></figure><p>返回值：</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;1,2,3,4,5,6&#125;</span><br></pre></td></tr></table></figure><h2 id="示例2"><a href="#示例2" class="headerlink" title="示例2"></a>示例2</h2><p>输入：</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;&#125;,&#123;&#125;</span><br></pre></td></tr></table></figure><p>返回值：</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;&#125;</span><br></pre></td></tr></table></figure><h2 id="示例3"><a href="#示例3" class="headerlink" title="示例3"></a>示例3</h2><p>输入：</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;-1,2,4&#125;,&#123;1,3,4&#125;</span><br></pre></td></tr></table></figure><p>返回值：</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;-1,1,2,3,4,4&#125;</span><br></pre></td></tr></table></figure><h1 id="题解1"><a href="#题解1" class="headerlink" title="题解1"></a>题解1</h1><p>可以使用虚拟头结点，可以再新建一个链表，然后把两个链表的结点从小到大依次插入到新链表中即可。使用双指针分别指向两个链表，然后每次将较小的结点放在虚拟头结点后面，然后指针（刚刚较小的）放后移动，另一个指针不动</p><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *  int val;</span></span><br><span class="line"><span class="comment"> *  struct ListNode *next;</span></span><br><span class="line"><span class="comment"> *  ListNode(int x) : val(x), next(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">  <span class="keyword">public</span>:</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * @param pHead1 ListNode类</span></span><br><span class="line"><span class="comment">     * @param pHead2 ListNode类</span></span><br><span class="line"><span class="comment">     * @return ListNode类</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function">ListNode* <span class="title">Merge</span><span class="params">(ListNode* pHead1, ListNode* pHead2)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// write code here</span></span><br><span class="line">        <span class="keyword">if</span> (pHead1 == <span class="literal">nullptr</span>)</span><br><span class="line">            <span class="keyword">return</span> pHead2;</span><br><span class="line">        <span class="keyword">if</span> (pHead2 == <span class="literal">nullptr</span>)</span><br><span class="line">            <span class="keyword">return</span> pHead1;</span><br><span class="line">        ListNode* p = pHead2, *q = pHead1;</span><br><span class="line">        ListNode* newHead;</span><br><span class="line">        newHead = p-&gt;val &lt;= q-&gt;val ? p : q;</span><br><span class="line">        ListNode *res = newHead;</span><br><span class="line">        <span class="keyword">while</span> (p != <span class="literal">nullptr</span> &amp;&amp; q != <span class="literal">nullptr</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (p-&gt;val &lt;= q-&gt;val) &#123;</span><br><span class="line">                ListNode* tmp = p-&gt;next;</span><br><span class="line">                ListNode* node = p;</span><br><span class="line">                newHead-&gt;next = node;</span><br><span class="line">                newHead = node;</span><br><span class="line">                p = tmp;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                ListNode* tmp = q-&gt;next;</span><br><span class="line">                ListNode* node = q;</span><br><span class="line">                newHead-&gt;next = node;</span><br><span class="line">                newHead = node;</span><br><span class="line">                q = tmp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span> (p != <span class="literal">nullptr</span>) &#123;</span><br><span class="line">            newHead-&gt;next = p;</span><br><span class="line">            newHead = p;</span><br><span class="line">            p = p-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span> (q != <span class="literal">nullptr</span>) &#123;</span><br><span class="line">            newHead-&gt;next = q;</span><br><span class="line">            newHead = q;</span><br><span class="line">            q = q-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><p>本来打算将一个链表插入到另一个链表之中的，但是太复杂了，一直没有AC</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;描述&quot;&gt;&lt;a href=&quot;#描述&quot; class=&quot;headerlink&quot; title=&quot;描述&quot;&gt;&lt;/a&gt;描述&lt;/h2&gt;&lt;p&gt;输入两个递增的链表，单个链表的长度为n，合并这两个链表并使新链表中的节点仍然是递增排序的。&lt;/p&gt;
+&lt;p&gt;数据范围： 0≤10000≤&lt;em</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>JZ24 反转链表</title>
@@ -449,29 +470,6 @@
     
     
     <category term="环境配置" scheme="https://ruvikm.gitee.io/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>hexo部署到Gitee后显示404||没有更新</title>
-    <link href="https://ruvikm.gitee.io/2023/05/26/hexo%E9%83%A8%E7%BD%B2%E5%88%B0Gitee%E5%90%8E%E6%98%BE%E7%A4%BA404/"/>
-    <id>https://ruvikm.gitee.io/2023/05/26/hexo%E9%83%A8%E7%BD%B2%E5%88%B0Gitee%E5%90%8E%E6%98%BE%E7%A4%BA404/</id>
-    <published>2023-05-26T08:40:55.000Z</published>
-    <updated>2023-05-26T09:02:36.987Z</updated>
-    
-    <content type="html"><![CDATA[<p>在Gitee开启了Gitee Pages，并且本地完成了</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g -d</span><br></pre></td></tr></table></figure><p>然后发现已经上传到了Gitee仓库里，但是访问博客的网址却显示404</p><p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-05-26%20163430-1685090681023-7.png" alt="屏幕截图 2023-05-26 163430"></p><p>有以下两种可能的原因：</p><h3 id="hexo根目录下的-config-yml文件里，url没有配置对"><a href="#hexo根目录下的-config-yml文件里，url没有配置对" class="headerlink" title="hexo根目录下的_config.yml文件里，url没有配置对"></a>hexo根目录下的_config.yml文件里，url没有配置对</h3><p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-05-26%20164633.png" alt="屏幕截图 2023-05-26 164633"></p><p>如果仓库名和Gitee的用户名不一致时，root属性也需要修改。</p><p>比如用户名为xxx新建的仓库地址为</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">https://gitee.com/xxx/myblog </span><br></pre></td></tr></table></figure><p>则以上内容需要修改为</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">url: https://xxx.gitee.io/</span><br><span class="line">root: /myblog</span><br></pre></td></tr></table></figure><h3 id="没有手动再部署一遍！！！"><a href="#没有手动再部署一遍！！！" class="headerlink" title="没有手动再部署一遍！！！"></a>没有手动再部署一遍！！！</h3><p>是的你没有听错，这个居然上传成功后还需要手动再更新一下！</p><p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-05-26%20164839.png" alt="屏幕截图 2023-05-26 164839"></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;在Gitee开启了Gitee Pages，并且本地完成了&lt;/p&gt;
-&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;hexo clean&lt;/span</summary>
-      
-    
-    
-    
-    <category term="个人笔记" scheme="https://ruvikm.gitee.io/categories/%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/"/>
-    
     
   </entry>
   

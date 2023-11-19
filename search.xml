@@ -34,49 +34,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Host文件备份</title>
-    <url>/2023/07/03/Host%E6%96%87%E4%BB%B6%E5%A4%87%E4%BB%BD/</url>
-    <content><![CDATA[<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="params">#</span> Copyright (c) 1993-2009 Microsoft Corp.</span><br><span class="line"><span class="params">#</span></span><br><span class="line"><span class="params">#</span> This is a sample HOSTS file used by Microsoft TCP/IP for Windows.</span><br><span class="line"><span class="params">#</span></span><br><span class="line"><span class="params">#</span> This file contains the mappings of IP addresses to host names. Each</span><br><span class="line"><span class="params">#</span> entry should be kept on an individual line. The IP address should</span><br><span class="line"><span class="params">#</span> be placed in the first column followed by the corresponding host name.</span><br><span class="line"><span class="params">#</span> The IP address and the host name should be separated by at least one</span><br><span class="line"><span class="params">#</span> space.</span><br><span class="line"><span class="params">#</span></span><br><span class="line"><span class="params">#</span> Additionally, comments (such as these) may be inserted on individual</span><br><span class="line"><span class="params">#</span> lines or following the machine name denoted by a &#x27;<span class="params">#</span>&#x27; symbol.</span><br><span class="line"><span class="params">#</span></span><br><span class="line"><span class="params">#</span> For example:</span><br><span class="line"><span class="params">#</span></span><br><span class="line"><span class="params">#</span> 102.54.94.97 rhino.acme.com <span class="params">#</span> source server</span><br><span class="line"><span class="params">#</span> 38.25.63.10 x.acme.com <span class="params">#</span> x client host</span><br><span class="line"><span class="params">#</span> localhost name resolution is handled within DNS itself.</span><br><span class="line"><span class="params">#</span> 127.0.0.1 localhost</span><br><span class="line"><span class="params">#</span> ::1 localhost</span><br><span class="line"></span><br><span class="line"><span class="params">#</span> Github</span><br><span class="line">140.82.114.4 github.com</span><br><span class="line">199.232.69.194 github.global.ssl.fastly.net</span><br><span class="line">185.199.108.153 assets-cdn.github.com</span><br><span class="line">185.199.110.153 assets-cdn.github.com</span><br><span class="line">185.199.111.153 assets-cdn.github.com</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>个人笔记</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>C_C++用宏定义简化for循环</title>
-    <url>/2022/01/10/C_C++%E7%94%A8%E5%AE%8F%E5%AE%9A%E4%B9%89%E7%AE%80%E5%8C%96for%E5%BE%AA%E7%8E%AF/</url>
-    <content><![CDATA[<p>记录一下for循环简化<br><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> _for(i,a,b) for( int i=(a); i&lt;(b); ++i)</span></span><br></pre></td></tr></table></figure><br>这样<br><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)</span><br></pre></td></tr></table></figure><br>就简化为了</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">_for(i, <span class="number">0</span>, <span class="number">10</span>)</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>个人笔记</category>
-      </categories>
-      <tags>
-        <tag>算法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>JZ6 从尾到头打印链表</title>
-    <url>/2023/11/15/JZ6%20%E4%BB%8E%E5%B0%BE%E5%88%B0%E5%A4%B4%E6%89%93%E5%8D%B0%E9%93%BE%E8%A1%A8/</url>
-    <content><![CDATA[<h2 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h2><p>输入一个链表的头节点，按链表从尾到头的顺序返回每个节点的值（用数组返回）。</p>
-<p>如输入{1,2,3}的链表如下图:</p>
-<p><img src="https://uploadfiles.nowcoder.com/images/20210717/557336_1626506480516/103D87B58E565E87DEFA9DD0B822C55F" alt="img"></p>
-<p>返回一个数组为[3,2,1]</p>
-<p>0 &lt;= 链表长度 &lt;= 10000</p>
-<h2 id="示例1"><a href="#示例1" class="headerlink" title="示例1"></a>示例1</h2><p>输入：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;1,2,3&#125;</span><br></pre></td></tr></table></figure>
-<p>返回值：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[3,2,1]</span><br></pre></td></tr></table></figure>
-<h2 id="算法思路1"><a href="#算法思路1" class="headerlink" title="算法思路1"></a>算法思路1</h2><p>主要考察翻转数组的操作，把链表的数据放到数组里，然后在数组里操作，一个比较简单的操作是调用C++的库函数</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">printListFromTailToHead</span><span class="params">(ListNode* head)</span> </span>&#123;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; vt;</span><br><span class="line">        ListNode* p = head;</span><br><span class="line">        <span class="keyword">while</span>(p != <span class="literal">nullptr</span>)&#123;</span><br><span class="line">            vt.<span class="built_in">push_back</span>(p-&gt;val);</span><br><span class="line">            p = p-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">reverse</span>(vt.<span class="built_in">begin</span>(),vt.<span class="built_in">end</span>());</span><br><span class="line">        <span class="keyword">return</span> vt;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="算法思路2"><a href="#算法思路2" class="headerlink" title="算法思路2"></a>算法思路2</h2><p>使用递归的方式解决，递归出口是链表循环到末尾，每次递归做的事就是把当前结点的值放到<code>vector</code>容器中，由于递归到末尾才会开始存放结点（<code>res.push_back(head-&gt;val);</code>）的值，时间顺序正好为从后往前的存放，符合题目要求的逆序</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">*  struct ListNode &#123;</span></span><br><span class="line"><span class="comment">*        int val;</span></span><br><span class="line"><span class="comment">*        struct ListNode *next;</span></span><br><span class="line"><span class="comment">*        ListNode(int x) :</span></span><br><span class="line"><span class="comment">*              val(x), next(NULL) &#123;</span></span><br><span class="line"><span class="comment">*        &#125;</span></span><br><span class="line"><span class="comment">*  &#125;;</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">reverse</span><span class="params">(ListNode* head,vector&lt;<span class="type">int</span>&gt; &amp;res)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(head != <span class="literal">nullptr</span>)&#123;</span><br><span class="line">            <span class="built_in">reverse</span>(head-&gt;next,res);</span><br><span class="line">            res.<span class="built_in">push_back</span>(head-&gt;val);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">printListFromTailToHead</span><span class="params">(ListNode* head)</span> </span>&#123;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; res;</span><br><span class="line">        <span class="built_in">reverse</span>(head,res);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>刷题笔记</category>
-      </categories>
-  </entry>
-  <entry>
     <title>JZ24 反转链表</title>
     <url>/2023/11/16/JZ24%20%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/</url>
     <content><![CDATA[<h2 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h2><p>给定一个单链表的头结点<code>pHead</code>(该头节点是有值的，比如在下图，它的<code>val</code>是1)，长度为n，反转该链表后，返回新链表的表头。</p>
@@ -173,6 +130,19 @@
       </tags>
   </entry>
   <entry>
+    <title>C_C++用宏定义简化for循环</title>
+    <url>/2022/01/10/C_C++%E7%94%A8%E5%AE%8F%E5%AE%9A%E4%B9%89%E7%AE%80%E5%8C%96for%E5%BE%AA%E7%8E%AF/</url>
+    <content><![CDATA[<p>记录一下for循环简化<br><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> _for(i,a,b) for( int i=(a); i&lt;(b); ++i)</span></span><br></pre></td></tr></table></figure><br>这样<br><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)</span><br></pre></td></tr></table></figure><br>就简化为了</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">_for(i, <span class="number">0</span>, <span class="number">10</span>)</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>个人笔记</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>LeetCode 46. Permutations</title>
     <url>/2022/01/10/LeetCode%2046.%20Permutations/</url>
     <content><![CDATA[<h2 id="Given-a-collection-of-distinct-integers-return-all-possible-permutations"><a href="#Given-a-collection-of-distinct-integers-return-all-possible-permutations" class="headerlink" title="Given a collection of distinct integers, return all possible permutations."></a>Given a collection of distinct integers, return all possible permutations.</h2><p>Example:</p>
@@ -196,96 +166,24 @@
       </tags>
   </entry>
   <entry>
-    <title>WSL命令行操作笔记</title>
-    <url>/2023/05/23/WSL%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%93%8D%E4%BD%9C%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<p>记录一下这段时间在WSL2上学习conda以及ubuntu的命令行指令，<del>以便以后直接粘贴复制</del></p>
-<h2 id="1-wsl相关"><a href="#1-wsl相关" class="headerlink" title="1.wsl相关"></a>1.wsl相关</h2><h3 id="创建用户username"><a href="#创建用户username" class="headerlink" title="创建用户username"></a>创建用户username</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">useradd username</span><br></pre></td></tr></table></figure>
-<h3 id="给已创建的用户username设置密码"><a href="#给已创建的用户username设置密码" class="headerlink" title="给已创建的用户username设置密码"></a>给已创建的用户username设置密码</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">passwd username</span><br></pre></td></tr></table></figure>
-<h3 id="修改用户这个命令的相关参数"><a href="#修改用户这个命令的相关参数" class="headerlink" title="修改用户这个命令的相关参数"></a>修改用户这个命令的相关参数</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">usermod --<span class="built_in">help</span></span><br></pre></td></tr></table></figure>
-<h3 id="删除用户username"><a href="#删除用户username" class="headerlink" title="删除用户username"></a>删除用户username</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">userdel username</span><br></pre></td></tr></table></figure>
-<h3 id="删除用户username所在目录"><a href="#删除用户username所在目录" class="headerlink" title="删除用户username所在目录"></a>删除用户username所在目录</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">rm</span> -rf username</span><br></pre></td></tr></table></figure>
-<h3 id="用户切换"><a href="#用户切换" class="headerlink" title="用户切换"></a>用户切换</h3><h4 id="切换到root"><a href="#切换到root" class="headerlink" title="切换到root"></a>切换到root</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo -s	</span><br></pre></td></tr></table></figure>
-<h4 id="切换到用户username"><a href="#切换到用户username" class="headerlink" title="切换到用户username"></a>切换到用户username</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">su username</span><br><span class="line"></span><br><span class="line">eg:su ubuntu22</span><br></pre></td></tr></table></figure>
-<h3 id="首先查看所有分发版本"><a href="#首先查看所有分发版本" class="headerlink" title="首先查看所有分发版本"></a>首先查看所有分发版本</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">wsl -l --all  -v</span><br></pre></td></tr></table></figure>
-<h3 id="关闭WSL2"><a href="#关闭WSL2" class="headerlink" title="关闭WSL2"></a>关闭WSL2</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">wsl --shutdown</span><br></pre></td></tr></table></figure>
-<h2 id="2-Conda相关"><a href="#2-Conda相关" class="headerlink" title="2.Conda相关"></a>2.Conda相关</h2><h3 id="切换环境"><a href="#切换环境" class="headerlink" title="切换环境"></a>切换环境</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda activate cu118py310</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda activate tensorflow</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda activate NER</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda activate torch</span><br></pre></td></tr></table></figure>
-<h3 id="查看并删除环境"><a href="#查看并删除环境" class="headerlink" title="查看并删除环境"></a>查看并删除环境</h3><h4 id="查看环境列表"><a href="#查看环境列表" class="headerlink" title="查看环境列表"></a>查看环境列表</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda info --<span class="built_in">env</span></span><br></pre></td></tr></table></figure>
-<h4 id="删除环境"><a href="#删除环境" class="headerlink" title="删除环境"></a>删除环境</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda remove -n 环境名 --all</span><br><span class="line"></span><br><span class="line">eg:conda remove -n code --all</span><br></pre></td></tr></table></figure>
-<h3 id="创建环境"><a href="#创建环境" class="headerlink" title="创建环境"></a>创建环境</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda create -n 环境名 python=版本号</span><br><span class="line"></span><br><span class="line">eg:conda create -n ChineseBERT python=3.8</span><br></pre></td></tr></table></figure>
-<h3 id="退出当前环境"><a href="#退出当前环境" class="headerlink" title="退出当前环境"></a>退出当前环境</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda activate base</span><br></pre></td></tr></table></figure>
-<h3 id="查看当前环境已安装的包"><a href="#查看当前环境已安装的包" class="headerlink" title="查看当前环境已安装的包"></a>查看当前环境已安装的包</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip list</span><br></pre></td></tr></table></figure>
-<h3 id="查看WSL2可用内存空间"><a href="#查看WSL2可用内存空间" class="headerlink" title="查看WSL2可用内存空间"></a>查看WSL2可用内存空间</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cat</span> /proc/meminfo</span><br></pre></td></tr></table></figure>
-<h2 id="3-Docker相关"><a href="#3-Docker相关" class="headerlink" title="3.Docker相关"></a>3.Docker相关</h2><h3 id="停止Docker服务"><a href="#停止Docker服务" class="headerlink" title="停止Docker服务"></a>停止Docker服务</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo service docker stop</span><br></pre></td></tr></table></figure>
-<h3 id="开启Docker服务"><a href="#开启Docker服务" class="headerlink" title="开启Docker服务"></a>开启Docker服务</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo service docker start</span><br></pre></td></tr></table></figure>
-<h3 id="在jupyter运行TensorFlow的官方docker镜像"><a href="#在jupyter运行TensorFlow的官方docker镜像" class="headerlink" title="在jupyter运行TensorFlow的官方docker镜像"></a>在jupyter运行TensorFlow的官方docker镜像</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker run -it --gpus all -p 8888:8888 tensorflow/tensorflow:latest-gpu-py3-jupyter</span><br></pre></td></tr></table></figure>
+    <title>JZ6 从尾到头打印链表</title>
+    <url>/2023/11/15/JZ6%20%E4%BB%8E%E5%B0%BE%E5%88%B0%E5%A4%B4%E6%89%93%E5%8D%B0%E9%93%BE%E8%A1%A8/</url>
+    <content><![CDATA[<h2 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h2><p>输入一个链表的头节点，按链表从尾到头的顺序返回每个节点的值（用数组返回）。</p>
+<p>如输入{1,2,3}的链表如下图:</p>
+<p><img src="https://uploadfiles.nowcoder.com/images/20210717/557336_1626506480516/103D87B58E565E87DEFA9DD0B822C55F" alt="img"></p>
+<p>返回一个数组为[3,2,1]</p>
+<p>0 &lt;= 链表长度 &lt;= 10000</p>
+<h2 id="示例1"><a href="#示例1" class="headerlink" title="示例1"></a>示例1</h2><p>输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;1,2,3&#125;</span><br></pre></td></tr></table></figure>
+<p>返回值：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[3,2,1]</span><br></pre></td></tr></table></figure>
+<h2 id="算法思路1"><a href="#算法思路1" class="headerlink" title="算法思路1"></a>算法思路1</h2><p>主要考察翻转数组的操作，把链表的数据放到数组里，然后在数组里操作，一个比较简单的操作是调用C++的库函数</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">printListFromTailToHead</span><span class="params">(ListNode* head)</span> </span>&#123;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; vt;</span><br><span class="line">        ListNode* p = head;</span><br><span class="line">        <span class="keyword">while</span>(p != <span class="literal">nullptr</span>)&#123;</span><br><span class="line">            vt.<span class="built_in">push_back</span>(p-&gt;val);</span><br><span class="line">            p = p-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">reverse</span>(vt.<span class="built_in">begin</span>(),vt.<span class="built_in">end</span>());</span><br><span class="line">        <span class="keyword">return</span> vt;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="算法思路2"><a href="#算法思路2" class="headerlink" title="算法思路2"></a>算法思路2</h2><p>使用递归的方式解决，递归出口是链表循环到末尾，每次递归做的事就是把当前结点的值放到<code>vector</code>容器中，由于递归到末尾才会开始存放结点（<code>res.push_back(head-&gt;val);</code>）的值，时间顺序正好为从后往前的存放，符合题目要求的逆序</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">*  struct ListNode &#123;</span></span><br><span class="line"><span class="comment">*        int val;</span></span><br><span class="line"><span class="comment">*        struct ListNode *next;</span></span><br><span class="line"><span class="comment">*        ListNode(int x) :</span></span><br><span class="line"><span class="comment">*              val(x), next(NULL) &#123;</span></span><br><span class="line"><span class="comment">*        &#125;</span></span><br><span class="line"><span class="comment">*  &#125;;</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">reverse</span><span class="params">(ListNode* head,vector&lt;<span class="type">int</span>&gt; &amp;res)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(head != <span class="literal">nullptr</span>)&#123;</span><br><span class="line">            <span class="built_in">reverse</span>(head-&gt;next,res);</span><br><span class="line">            res.<span class="built_in">push_back</span>(head-&gt;val);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">printListFromTailToHead</span><span class="params">(ListNode* head)</span> </span>&#123;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; res;</span><br><span class="line">        <span class="built_in">reverse</span>(head,res);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
-        <category>个人笔记</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Win11转移conda环境——从C盘转移到D盘</title>
-    <url>/2023/06/28/Win11%E8%BD%AC%E7%A7%BBconda%E7%8E%AF%E5%A2%83%E2%80%94%E2%80%94%E4%BB%8EC%E7%9B%98%E8%BD%AC%E7%A7%BB%E5%88%B0D%E7%9B%98/</url>
-    <content><![CDATA[<p>原本就是将<code>Anaconda</code>安装到了C盘，结果发现环境他还是默认安装到了C盘，就打算再转移一下</p>
-<p>conda版本为</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-28%20095709.png" alt="屏幕截图 2023-06-28 095709"></p>
-<p>首先找到Win11下面的环境位置</p>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">C:<span class="keyword">\Users</span><span class="keyword">\用</span>户名<span class="keyword">\.</span>conda<span class="keyword">\envs</span></span><br></pre></td></tr></table></figure>
-<p>比如我的就是</p>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">C:<span class="keyword">\Users</span><span class="keyword">\Arona</span><span class="keyword">\.</span>conda<span class="keyword">\envs</span></span><br></pre></td></tr></table></figure>
-<p>找到D盘安装<code>Anaconda</code>的位置</p>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">D:<span class="keyword">\ProgramData</span><span class="keyword">\anaconda</span>3<span class="keyword">\envs</span></span><br></pre></td></tr></table></figure>
-<p>C盘的将<code>envs</code>文件夹剪切过去，环境迁移一半就完成了</p>
-<p>测试了一下，如果新建一个环境，默认还会装在C盘</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-28%20101113.png" alt="屏幕截图 2023-06-28 101113"></p>
-<p>于是要修改一下环境的默认安装位置</p>
-<p>找到用户目录下的<code>.condarc</code>文件</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">explorer %USERPROFILE%</span><br></pre></td></tr></table></figure>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-28%20101811.png" alt="屏幕截图 2023-06-28 101811"></p>
-<p>用<code>Visual Studio Code</code>打开</p>
-<p>加入这段话</p>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">envs<span class="built_in">_</span>dirs:</span><br><span class="line">  - D:<span class="keyword">\ProgramData</span><span class="keyword">\anaconda</span>3<span class="keyword">\envs</span></span><br></pre></td></tr></table></figure>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-28%20102057.png" alt="屏幕截图 2023-06-28 102057"></p>
-<p>这样默认就会安装到D盘了</p>
-<p>测试一下，新建一个名为<code>test1</code>的环境</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-28%20102249.png" alt="屏幕截图 2023-06-28 102249"></p>
-<p>如果发现地址还没变的话，可以继续以下操作</p>
-<p>找到<code>Anaconda</code>的文件夹，右键属性—安全，把users下面的权限全部打钩就行</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-28%20102811.png" alt="屏幕截图 2023-06-28 102811"></p>
-<p>应用过程中可能还会出现这种错误</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/image-20230628103929133.png" alt="image-20230628103929133"></p>
-<p>可以按照这个<a href="https://blog.csdn.net/qq_37653414/article/details/103462173">博客</a>的方法来解决，那个图比较清楚</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/image-20230628104526618.png" alt="image-20230628104526618"></p>
-<p>等待一段时间</p>
-<p>然后再回到上述操作，把users下面的权限全部打钩，再等待亿段时间</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/image-20230628104915818.png" alt="image-20230628104915818"></p>
-<p>完成后最后测试一下，新建一个名为test2的环境</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-28%20105049.png" alt="屏幕截图 2023-06-28 105049"></p>
-<p>成功！</p>
-<p>补充一下：</p>
-<p>发现刚刚上述只是把环境迁移了，下载的缓存还是留在C盘</p>
-<p>找到刚刚用户目录的.<code>condarc</code>文件，再加入几句话</p>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">pkgs<span class="built_in">_</span>dirs:</span><br><span class="line">  - D:<span class="keyword">\ProgramData</span><span class="keyword">\pkgs</span></span><br></pre></td></tr></table></figure>
-<p>保存查看一下，输入</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda info</span><br></pre></td></tr></table></figure>
-<p><img src="https://s1.ax1x.com/2023/06/28/pCdNtKI.png" alt="image-20230628115703963"></p>
-<p>说明配置成功，接下来把C盘的<code>pkgs</code>文件夹剪切到D盘刚刚的目录下就行了</p>
-<p><img src="https://s1.ax1x.com/2023/06/28/pCdNqqx.png" alt="image-20230628115948908"></p>
-<p>完事！</p>
-<p>补充：</p>
-<p>之后跑项目遇到了这个问题</p>
-<p><img src="https://s1.ax1x.com/2023/07/14/pC41RGd.png" alt="屏幕截图 2023-07-05 155524"></p>
-<p>这个原因是之前<code>pycharm</code>保存的环境还默认在C盘，没有自动更新环境的位置，这时候重新加载一下就好了</p>
-<p><img src="https://s1.ax1x.com/2023/07/14/pC41Iqf.png" alt="image-20230714111213354"></p>
-]]></content>
-      <categories>
-        <category>个人笔记</category>
+        <category>刷题笔记</category>
       </categories>
   </entry>
   <entry>
@@ -308,6 +206,190 @@
       <tags>
         <tag>算法</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Win11配置多个CUDA环境</title>
+    <url>/2023/09/30/Win11%E9%85%8D%E7%BD%AE%E5%A4%9A%E4%B8%AACUDA%E7%8E%AF%E5%A2%83/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>由于跑项目发现需要配置不同版本的Pytorch，而不同版本的Pytorch又对应不同版本的CUDA，于是有了在Win上装多个CUDA的打算</p>
+<p>默认已经在电脑上装了一个CUDA</p>
+<p><img src="https://z1.ax1x.com/2023/09/30/pPqY5Bd.png" alt="屏幕截图 2023-09-30 112423"></p>
+<p>现在开始下载第二个CUDA版本，前面下载的操作和普通安装的几乎一样</p>
+<h2 id="安装CUDA"><a href="#安装CUDA" class="headerlink" title="安装CUDA"></a>安装CUDA</h2><p><a href="https://developer.nvidia.com/cuda-toolkit-archive">CUDA下载链接</a></p>
+<p>下载自己需要的CUDA版本，以我自己要安装的为例</p>
+<p><img src="https://z1.ax1x.com/2023/09/30/pPqlwXn.png" alt="屏幕截图 2023-09-30 095614"></p>
+<p><img src="https://z1.ax1x.com/2023/09/30/pPqlD00.png" alt="屏幕截图 2023-09-30 095815"></p>
+<p>下载打开exe文件进行安装，第一步不用管，直接点击确认</p>
+<p><img src="https://z1.ax1x.com/2023/09/30/pPqlWc9.png" alt="屏幕截图 2023-09-30 100402"></p>
+<p>后面选择自定义安装，只选择安装CUDA</p>
+<p><img src="https://z1.ax1x.com/2023/09/30/pPqlfXR.png" alt="屏幕截图 2023-09-30 100534"></p>
+<p>其他一路下一步就可以了</p>
+<h2 id="安装cuDNN"><a href="#安装cuDNN" class="headerlink" title="安装cuDNN"></a>安装cuDNN</h2><p><a href="https://developer.nvidia.com/rdp/cudnn-archive">cuDNN下载链接</a></p>
+<p>PS：下载需要登录一下账号</p>
+<p><img src="https://z1.ax1x.com/2023/09/30/pPqlchF.png" alt="屏幕截图 2023-09-30 100047"></p>
+<p>下载下来后，把压缩包解压，得到如下文件</p>
+<p><img src="https://z1.ax1x.com/2023/09/30/pPqlq9e.png" alt="image-20230930100746137"></p>
+<p>将<strong>bin，include文件夹中的文件</strong>，分别复制到下列地址对应的文件夹下（CUDA的安装地址，以我的地址为例），遇到提示，为全部选择覆盖和替换。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.7</span><br></pre></td></tr></table></figure>
+<p>需要注意的是，lib文件夹里的所有文件，需要复制到</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.7\lib\x64</span><br></pre></td></tr></table></figure>
+<p>至此，安装工作就做完了，可以看到电脑上已经有两个CUDA版本了</p>
+<p><img src="https://z1.ax1x.com/2023/09/30/pPq3dZq.png" alt="image-20230930101157014"></p>
+<h2 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h2><p>由于CUDA11.7是后面安装的，所以可以看到系统把之前的环境覆盖了</p>
+<p><img src="https://z1.ax1x.com/2023/09/30/pPq3rJU.png" alt="屏幕截图 2023-09-30 103109"></p>
+<p>以作者在为例，系统变量的PATH里配置一下路径</p>
+<p><strong>CUDA_11.7</strong></p>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="comment">%CUDA_PATH_V11_7%\lib\x64</span></span><br><span class="line"><span class="comment">%CUDA_PATH_V11_7%\include</span></span><br><span class="line"><span class="comment">%CUDA_PATH_V11_7%\extras\CUPTI\lib64</span></span><br><span class="line"><span class="comment">%CUDA_PATH_V11_7%\bin</span></span><br><span class="line"><span class="comment">%CUDA_PATH_V11_7%\libnvvp</span></span><br></pre></td></tr></table></figure>
+<p><strong>CUDA_11.0</strong></p>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="comment">%CUDA_PATH_V11_0%\lib\x64</span></span><br><span class="line"><span class="comment">%CUDA_PATH_V11_0%\include</span></span><br><span class="line"><span class="comment">%CUDA_PATH_V11_0%\extras\CUPTI\lib64</span></span><br><span class="line"><span class="comment">%CUDA_PATH_V11_0%\bin</span></span><br><span class="line"><span class="comment">%CUDA_PATH_V11_0%\libnvvp</span></span><br></pre></td></tr></table></figure>
+<p>配置好如下：</p>
+<p><img src="https://z1.ax1x.com/2023/09/30/pPq3yz4.jpg" alt="微信截图_20230930105036"></p>
+<p>配置好之后，默认CUDA版本是11.7的，如果要切换到11.0版本的，只需要把下面的五条整体上移到CUDA_11.7配置的前面</p>
+<p><img src="https://z1.ax1x.com/2023/09/30/pPq3cQJ.jpg" alt="微信截图_20230930105411"></p>
+<h2 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h2><h3 id="测试CUDA11-7"><a href="#测试CUDA11-7" class="headerlink" title="测试CUDA11.7"></a>测试CUDA11.7</h3><p>首先验证CUDA_11.7是否配置成功</p>
+<p><img src="https://z1.ax1x.com/2023/09/30/pPq8upF.png" alt="image-20230930105601201"></p>
+<p>测试Pytorch是否可以调用显卡</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">python</span><br><span class="line"><span class="keyword">import</span> torch</span><br><span class="line">torch.cuda.is_available()</span><br><span class="line">torch.cuda.get_device_name(<span class="number">0</span>)</span><br><span class="line">torch.version.cuda</span><br></pre></td></tr></table></figure>
+<p><img src="https://z1.ax1x.com/2023/09/30/pPqYiOH.png" alt="image-20230930120418607"></p>
+<h3 id="测试CUDA11-0"><a href="#测试CUDA11-0" class="headerlink" title="测试CUDA11.0"></a>测试CUDA11.0</h3><p>先把系统变量里Path里相关路径上移</p>
+<p><img src="https://z1.ax1x.com/2023/09/30/pPq8ZkV.jpg" alt="微信截图_20230930110409"></p>
+<p><strong>然后重启！重启！重启！</strong></p>
+<p>验证CUDA_11.7是否配置成功</p>
+<p><img src="https://z1.ax1x.com/2023/09/30/pPqGkge.png" alt="image-20230930112425329"></p>
+<p>测试Pytorch是否可以调用显卡</p>
+<p><img src="https://z1.ax1x.com/2023/09/30/pPqYkmd.png" alt="image-20230930112626663"></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>切换CUDA的时候除了要修改系统变量Path中的路径顺序，一定要记得重启！</p>
+]]></content>
+      <categories>
+        <category>个人笔记</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>hexo部署到Gitee后显示404||没有更新</title>
+    <url>/2023/05/26/hexo%E9%83%A8%E7%BD%B2%E5%88%B0Gitee%E5%90%8E%E6%98%BE%E7%A4%BA404/</url>
+    <content><![CDATA[<p>在Gitee开启了Gitee Pages，并且本地完成了</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g -d</span><br></pre></td></tr></table></figure>
+<p>然后发现已经上传到了Gitee仓库里，但是访问博客的网址却显示404</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-05-26%20163430-1685090681023-7.png" alt="屏幕截图 2023-05-26 163430"></p>
+<p>有以下两种可能的原因：</p>
+<h3 id="hexo根目录下的-config-yml文件里，url没有配置对"><a href="#hexo根目录下的-config-yml文件里，url没有配置对" class="headerlink" title="hexo根目录下的_config.yml文件里，url没有配置对"></a>hexo根目录下的_config.yml文件里，url没有配置对</h3><p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-05-26%20164633.png" alt="屏幕截图 2023-05-26 164633"></p>
+<p>如果仓库名和Gitee的用户名不一致时，root属性也需要修改。</p>
+<p>比如用户名为xxx新建的仓库地址为</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">https://gitee.com/xxx/myblog </span><br></pre></td></tr></table></figure>
+<p>则以上内容需要修改为</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">url: https://xxx.gitee.io/</span><br><span class="line">root: /myblog</span><br></pre></td></tr></table></figure>
+<h3 id="没有手动再部署一遍！！！"><a href="#没有手动再部署一遍！！！" class="headerlink" title="没有手动再部署一遍！！！"></a>没有手动再部署一遍！！！</h3><p>是的你没有听错，这个居然上传成功后还需要手动再更新一下！</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-05-26%20164839.png" alt="屏幕截图 2023-05-26 164839"></p>
+]]></content>
+      <categories>
+        <category>个人笔记</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>word2vec工具实战</title>
+    <url>/2023/07/04/word2vec%E5%B7%A5%E5%85%B7%E5%AE%9E%E6%88%98/</url>
+    <content><![CDATA[<p>最开始需要新建一个conda环境</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda create -n word2vec python=3.8</span><br><span class="line">conda activate word2vec</span><br></pre></td></tr></table></figure>
+<p>然后安装一下所需要的库</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install numpy</span><br><span class="line">pip install scipy</span><br><span class="line">pip install gensim</span><br><span class="line">pip install jieba</span><br></pre></td></tr></table></figure>
+<p>首先下载一下数据集<a href="https://dumps.wikimedia.org/zhwiki/20230701/zhwiki-20230701-pages-articles.xml.bz2">zhwiki-20230701-pages-articles.xml.bz2</a>，为了方便后续操作，这里需要把他转成<code>txt</code>格式的</p>
+<p>以下是转化的文件<code>transform_to_txt.py</code></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="comment"># 修改后的代码如下：</span></span><br><span class="line"><span class="keyword">import</span> logging</span><br><span class="line"><span class="keyword">import</span> os.path</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> gensim.corpora <span class="keyword">import</span> WikiCorpus</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line"></span><br><span class="line">    program = os.path.basename(sys.argv[<span class="number">0</span>])</span><br><span class="line">    logger = logging.getLogger(program)</span><br><span class="line">    logging.basicConfig(<span class="built_in">format</span>=<span class="string">&#x27;%(asctime)s: %(levelname)s: %(message)s&#x27;</span>)</span><br><span class="line">    logging.root.setLevel(level=logging.INFO)</span><br><span class="line">    logger.info(<span class="string">&quot;running %s&quot;</span> % <span class="string">&#x27; &#x27;</span>.join(sys.argv))</span><br><span class="line">    <span class="comment"># check and process input arguments</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(sys.argv) &lt; <span class="number">3</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="built_in">globals</span>()[<span class="string">&#x27;__doc__&#x27;</span>] % <span class="built_in">locals</span>())</span><br><span class="line">        sys.exit(<span class="number">1</span>)</span><br><span class="line">    inp, outp = sys.argv[<span class="number">1</span>:<span class="number">3</span>]</span><br><span class="line">    space = <span class="string">&quot;&quot;</span></span><br><span class="line">    i = <span class="number">0</span></span><br><span class="line">    output = <span class="built_in">open</span>(outp, <span class="string">&#x27;w&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">    <span class="comment"># wiki = WikiCorpus(inp, lemmatize=False, dictionary=&#123;&#125;)</span></span><br><span class="line">    wiki = WikiCorpus(inp, dictionary=&#123;&#125;)</span><br><span class="line">    <span class="keyword">for</span> text <span class="keyword">in</span> wiki.get_texts():</span><br><span class="line">        s = space.join(text)</span><br><span class="line">        <span class="comment"># s = s.decode(&#x27;utf8&#x27;) + &quot;\n&quot;</span></span><br><span class="line">        s = s.encode(<span class="string">&#x27;utf8&#x27;</span>).decode(<span class="string">&#x27;utf8&#x27;</span>) + <span class="string">&quot;\n&quot;</span></span><br><span class="line">        output.write(s)</span><br><span class="line">        i = i + <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> (i % <span class="number">10000</span> == <span class="number">0</span>):</span><br><span class="line">            logger.info(<span class="string">&quot;Saved &quot;</span> + <span class="built_in">str</span>(i) + <span class="string">&quot; articles&quot;</span>)</span><br><span class="line">    output.close()</span><br><span class="line">    logger.info(<span class="string">&quot;Finished Saved &quot;</span> + <span class="built_in">str</span>(i) + <span class="string">&quot; articles&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>然后将刚刚下载的数据集和此<code>Python</code>文件放在同一个目录下，并且用命令行跳转到这个目录，然后执行</p>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">python transform<span class="built_in">_</span>to<span class="built_in">_</span>txt.py zhwiki-20230701-pages-articles.xml.bz2 wiki.zh.text</span><br></pre></td></tr></table></figure>
+<p>其中，第一个参数是<code>Python</code>的文件名，第二个是要处理的数据文件名，第三个是要输出的文件名</p>
+<p>转换完之后就生成了一个txt文件</p>
+<p><img src="https://s1.ax1x.com/2023/07/04/pCs7rX8.png" alt="image-20230704195428973"></p>
+<p>直接浏览，可以看出这里面全是繁体字，所以下面需要把繁体转换成简体</p>
+<p><img src="https://s1.ax1x.com/2023/07/04/pCs760g.png" alt="image-20230704195605355"></p>
+<p>首先需要下载这个<a href="https://github.com/BYVoid/OpenCC/wiki/Download">转换工具</a>，<strong>记住要下载预编译的</strong>。</p>
+<p>然后解压后放在一个能记住的位置，例如我是</p>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">G:<span class="keyword">\Lab</span><span class="keyword">\DeepLearning</span><span class="keyword">\OpenCC</span><span class="keyword">\share</span><span class="keyword">\opencc</span></span><br></pre></td></tr></table></figure>
+<p>然后把文件夹中的<code>bin</code>目录配置到系统环境<code>path</code>里</p>
+<p><img src="https://s1.ax1x.com/2023/07/04/pCsblqO.png" alt="屏幕截图 2023-07-04 202744"></p>
+<p>最后验证一下是否配置成功</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">opencc --<span class="built_in">help</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://s1.ax1x.com/2023/07/04/pCsHFNd.png" alt="屏幕截图 2023-07-04 201226"></p>
+<p>然后就可以转换啦，用<code>cmd</code>跳转到<code>wiki.zh.text</code>文件所在的目录，在命令行输入</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">opencc -i wiki.zh.text -o test_zh.txt -c G:\Lab\DeepLearning\OpenCC\share\opencc\t2s.json</span><br></pre></td></tr></table></figure>
+<p><code>wiki.zh.text</code>是待转换的繁体文本，<code>test_zh.txt</code>是输出的简体文本，<code>t2s.json</code>表示繁体转简体，其中这个需要换成自己的地址（<strong>地址不要有空格</strong>）</p>
+<p><img src="https://s1.ax1x.com/2023/07/04/pCsbmGR.png" alt="image-20230704203004637"></p>
+<p>等一会就好了</p>
+<p><img src="https://s1.ax1x.com/2023/07/04/pCsbtJA.png" alt="image-20230704203155840"></p>
+<p>然后就全部成了简体了，使用word2vec工具需要做的最后一步是分词</p>
+<p>分词使用<code>jieba</code>这个库来解决，以下是分词的文件<code>participle.py</code></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> codecs</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> jieba</span><br><span class="line"><span class="keyword">import</span> jieba.analyse</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">cut_words</span>(<span class="params">sentence</span>):</span><br><span class="line">    <span class="comment"># print sentence</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot; &quot;</span>.join(jieba.cut(sentence)).encode(<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">f = codecs.<span class="built_in">open</span>(<span class="string">&#x27;test_zh.txt&#x27;</span>, <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&quot;utf8&quot;</span>)</span><br><span class="line">target = codecs.<span class="built_in">open</span>(<span class="string">&quot;zh.jian.wiki.seg_1.5G.txt&quot;</span>, <span class="string">&#x27;w&#x27;</span>, encoding=<span class="string">&quot;utf8&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;open files&#x27;</span>)</span><br><span class="line">line_num = <span class="number">1</span></span><br><span class="line">line = f.readline()</span><br><span class="line"><span class="keyword">while</span> line:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;---- processing &#x27;</span>, line_num, <span class="string">&#x27; article----------------&#x27;</span>)</span><br><span class="line">    line_seg = <span class="string">&quot; &quot;</span>.join(jieba.cut(line))</span><br><span class="line">    target.writelines(line_seg)</span><br><span class="line">    line_num = line_num + <span class="number">1</span></span><br><span class="line">    line = f.readline()</span><br><span class="line">f.close()</span><br><span class="line">target.close()</span><br><span class="line">exit()</span><br><span class="line"><span class="keyword">while</span> line:</span><br><span class="line">    curr = []</span><br><span class="line">    <span class="keyword">for</span> oneline <span class="keyword">in</span> line:</span><br><span class="line">        <span class="comment"># print(oneline)</span></span><br><span class="line">        curr.append(oneline)</span><br><span class="line">    after_cut = <span class="built_in">map</span>(cut_words, curr)</span><br><span class="line">    target.writelines(after_cut)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;saved&#x27;</span>, line_num, <span class="string">&#x27;articles&#x27;</span>)</span><br><span class="line">    exit()</span><br><span class="line">    line = f.readline1()</span><br><span class="line">f.close()</span><br><span class="line">target.close()</span><br></pre></td></tr></table></figure>
+<p>其中，这一句是配置需要分词的文件<code>test_zh.txt</code></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">f = codecs.<span class="built_in">open</span>(<span class="string">&#x27;test_zh.txt&#x27;</span>, <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&quot;utf8&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>这一句是配置需要输出的文件<code>zh.jian.wiki.seg_1.5G.txt</code></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">target = codecs.<span class="built_in">open</span>(<span class="string">&quot;zh.jian.wiki.seg_1.5G.txt&quot;</span>, <span class="string">&#x27;w&#x27;</span>, encoding=<span class="string">&quot;utf8&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>将<code>participle.py</code>文件和上面输出的简体文本<code>test_zh.txt</code>放在同一个目录，用<code>cmd</code>（跳转到对应目录后输入<code>python Testjieba.py</code>）或者<code>Pycharm</code>直接运行<code>participle.py</code>文件</p>
+<p><strong>PS：无论是<code>cmd</code>还是<code>Pycharm</code>，记得切换到<code>word2vec</code>环境</strong></p>
+<p>经过将近一个多小时的时间，终于跑完了</p>
+<p><img src="https://s1.ax1x.com/2023/07/04/pCsb6ij.png" alt="屏幕截图 2023-07-04 192329"></p>
+<p>接下来就是正式使用word2vec的时候了，以下是使用word2vec的文件<code>word2vec_model.py</code></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> logging</span><br><span class="line"><span class="keyword">import</span> multiprocessing</span><br><span class="line"><span class="keyword">import</span> os.path</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> gensim.models <span class="keyword">import</span> Word2Vec</span><br><span class="line"><span class="keyword">from</span> gensim.models.word2vec <span class="keyword">import</span> LineSentence</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line"></span><br><span class="line">    program = os.path.basename(sys.argv[<span class="number">0</span>])</span><br><span class="line">    logger = logging.getLogger(program)</span><br><span class="line">    logging.basicConfig(<span class="built_in">format</span>=<span class="string">&#x27;%(asctime)s: %(levelname)s: %(message)s&#x27;</span>)</span><br><span class="line">    logging.root.setLevel(level=logging.INFO)</span><br><span class="line">    logger.info(<span class="string">&quot;running %s&quot;</span> % <span class="string">&#x27; &#x27;</span>.join(sys.argv))</span><br><span class="line">    <span class="comment"># check and process input arguments</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(sys.argv) &lt; <span class="number">4</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="built_in">globals</span>()[<span class="string">&#x27;__doc__&#x27;</span>] % <span class="built_in">locals</span>())</span><br><span class="line">        sys.exit(<span class="number">1</span>)</span><br><span class="line">    inp, outp1, outp2 = sys.argv[<span class="number">1</span>:<span class="number">4</span>]</span><br><span class="line">    model = Word2Vec(LineSentence(inp), size=<span class="number">400</span>, window=<span class="number">5</span>, min_count=<span class="number">5</span>, workers=multiprocessing.cpu_count())</span><br><span class="line">    model.save(outp1)</span><br><span class="line">    model.wv.save_word2vec_format(outp2, binary=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+<p>将上文分好词的文件<code>zh.jian.wiki.seg_1.5G.txt</code>与<code>word2vec_model.py</code>文件也是放到同一个目录下，然后在<code>cmd</code>中执行</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">python word2vec_model.py zh.jian.wiki.seg_1.5G.txt wiki.zh.text.model wiki.zh.text.vector</span><br></pre></td></tr></table></figure>
+<p>其中，<code>wiki.zh.text.model</code>是生成的模型（同样记得切换环境）</p>
+<p><img src="https://s1.ax1x.com/2023/07/04/pCsqmTg.png" alt="image-20230704205047579"></p>
+<p>可能会报这个错，原因可能是<code>gensim</code>的版本的差异。</p>
+<p>这样把下面这句的<code>size</code>改成<code>vector_size</code>即可</p>
+<p>源代码：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">model = Word2Vec(LineSentence(inp), size=<span class="number">400</span>, window=<span class="number">5</span>, min_count=<span class="number">5</span>, workers=multiprocessing.cpu_count())</span><br></pre></td></tr></table></figure>
+<p>新代码：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">model = Word2Vec(LineSentence(inp), vector_size=<span class="number">400</span>, window=<span class="number">5</span>, min_count=<span class="number">5</span>, workers=multiprocessing.cpu_count())</span><br></pre></td></tr></table></figure>
+<p>然后就可以漫长的等待了！</p>
+<p><img src="https://s1.ax1x.com/2023/07/04/pCsqB11.png" alt="image-20230704205435161"></p>
+<p> 经过一段时间后，模型保存成功了！</p>
+<p><img src="https://s1.ax1x.com/2023/07/04/pCsO3ZT.png" alt="屏幕截图 2023-07-04 212910"></p>
+<p>最后测试一下模型</p>
+<p>测试文件<code>testModel.py</code>如下</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> gensim.models <span class="keyword">import</span> Word2Vec</span><br><span class="line"></span><br><span class="line">en_wiki_word2vec_model = Word2Vec.load(<span class="string">&#x27;wiki.zh.text.model&#x27;</span>)</span><br><span class="line"></span><br><span class="line">testwords = [<span class="string">&#x27;苹果&#x27;</span>, <span class="string">&#x27;数学&#x27;</span>, <span class="string">&#x27;学术&#x27;</span>, <span class="string">&#x27;白痴&#x27;</span>, <span class="string">&#x27;篮球&#x27;</span>]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">5</span>):</span><br><span class="line">    res = en_wiki_word2vec_model.wv.most_similar(testwords[i])</span><br><span class="line">    <span class="built_in">print</span>(testwords[i])</span><br><span class="line">    <span class="built_in">print</span>(res)</span><br></pre></td></tr></table></figure>
+<p>继续在同一个目录执行<code>testModel.py</code>文件，得到如下结果</p>
+<p><img src="https://s1.ax1x.com/2023/07/05/pCyEdl6.png" alt="image-20230705101212390"></p>
+<p>最后附上<a href="https://github.com/Ruvikm/Gensim_word2vec">项目完整地址</a></p>
+]]></content>
+      <categories>
+        <category>个人笔记</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Host文件备份</title>
+    <url>/2023/07/03/Host%E6%96%87%E4%BB%B6%E5%A4%87%E4%BB%BD/</url>
+    <content><![CDATA[<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="params">#</span> Copyright (c) 1993-2009 Microsoft Corp.</span><br><span class="line"><span class="params">#</span></span><br><span class="line"><span class="params">#</span> This is a sample HOSTS file used by Microsoft TCP/IP for Windows.</span><br><span class="line"><span class="params">#</span></span><br><span class="line"><span class="params">#</span> This file contains the mappings of IP addresses to host names. Each</span><br><span class="line"><span class="params">#</span> entry should be kept on an individual line. The IP address should</span><br><span class="line"><span class="params">#</span> be placed in the first column followed by the corresponding host name.</span><br><span class="line"><span class="params">#</span> The IP address and the host name should be separated by at least one</span><br><span class="line"><span class="params">#</span> space.</span><br><span class="line"><span class="params">#</span></span><br><span class="line"><span class="params">#</span> Additionally, comments (such as these) may be inserted on individual</span><br><span class="line"><span class="params">#</span> lines or following the machine name denoted by a &#x27;<span class="params">#</span>&#x27; symbol.</span><br><span class="line"><span class="params">#</span></span><br><span class="line"><span class="params">#</span> For example:</span><br><span class="line"><span class="params">#</span></span><br><span class="line"><span class="params">#</span> 102.54.94.97 rhino.acme.com <span class="params">#</span> source server</span><br><span class="line"><span class="params">#</span> 38.25.63.10 x.acme.com <span class="params">#</span> x client host</span><br><span class="line"><span class="params">#</span> localhost name resolution is handled within DNS itself.</span><br><span class="line"><span class="params">#</span> 127.0.0.1 localhost</span><br><span class="line"><span class="params">#</span> ::1 localhost</span><br><span class="line"></span><br><span class="line"><span class="params">#</span> Github</span><br><span class="line">140.82.114.4 github.com</span><br><span class="line">199.232.69.194 github.global.ssl.fastly.net</span><br><span class="line">185.199.108.153 assets-cdn.github.com</span><br><span class="line">185.199.110.153 assets-cdn.github.com</span><br><span class="line">185.199.111.153 assets-cdn.github.com</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>个人笔记</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>使用蓝牙外设却不小心把台式机电脑蓝牙关了</title>
+    <url>/2023/08/12/%E4%BD%BF%E7%94%A8%E8%93%9D%E7%89%99%E5%A4%96%E8%AE%BE%E5%8D%B4%E4%B8%8D%E5%B0%8F%E5%BF%83%E6%8A%8A%E5%8F%B0%E5%BC%8F%E6%9C%BA%E7%94%B5%E8%84%91%E8%93%9D%E7%89%99%E5%85%B3%E4%BA%86/</url>
+    <content><![CDATA[<h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>今天犯了一个贼SB的错误，起因是蓝牙键盘突然就不能输入了（虽然是连接状态，但是按什么键都没有反应）</p>
+<p>原来我的解决方法就是重启一下电脑，但是那会电脑开了贼多的软件。我就想重启也太麻烦了，既然重启的本质也是重启蓝牙，那我要不直接就把蓝牙重启算了，当时想到这里啊，我心中一阵狂喜，觉得我真TMD是个天才</p>
+<p>于是我兴冲冲的找到系统设置—蓝牙，把蓝牙关了，然后当我准备开启蓝牙的时候，我傻眼了，艹，我外设都是蓝牙连接的啊，这TM开不开了</p>
+<h2 id="解决过程"><a href="#解决过程" class="headerlink" title="解决过程"></a>解决过程</h2><h3 id="尝试用带USB接收器的鼠标"><a href="#尝试用带USB接收器的鼠标" class="headerlink" title="尝试用带USB接收器的鼠标"></a>尝试用带USB接收器的鼠标</h3><p>我的鼠标不仅可以蓝牙连接，还可以用USB接收器连接，我心想这不是轻轻松松简简单单。于是给鼠标换了一个连接方式，插入了USB接收器。但是奇怪的事情发生了，无论我怎么动鼠标，鼠标的指针就是纹丝不动。我怀疑难道是关了蓝牙功能，连这个都影响到了吗</p>
+<h3 id="尝试用有线设备"><a href="#尝试用有线设备" class="headerlink" title="尝试用有线设备"></a>尝试用有线设备</h3><p>虽然心中有一丝紧张，但是我感觉这不就是个小事嘛，那要不找个有线的外设不就可以了。于是翻箱倒柜，刨出来家里的古董有线键盘，插入了电脑前面的USB口。</p>
+<p>但是，重量级来了，无论按什么键，都没有反应，让我一度以为是不是键盘寄了。然后我把键盘插到了笔记本上，发现还是可以用的，灯也是亮的（但是刚刚插在台式机上灯就没亮）</p>
+<p>前面不行，后面总可以吧，肯定么得问题（Flag立的飞起）我买的主板可是有7个USB插口呢！！！这么想着我钻到桌子下面，吸着尘土，一个一个试着USB口，结果是全都不能用。当时心态就发生了一丝变化，我看着屏幕，屏幕看着我，但是感觉我们之间隔了一个不可逾越的鸿沟，那个鸿沟就是USB口。</p>
+<h3 id="尝试远程软件"><a href="#尝试远程软件" class="headerlink" title="尝试远程软件"></a>尝试远程软件</h3><p>我逐渐意识到了问题的严重性，但我灵机一动，心想不还有远程软件么，用手机作为输入不就解决了。</p>
+<p>我再次满怀希望的打开手机远程操作APP，在“我的设备”里寻找台式机，但是，咚咚咚！！！设备显示是离线状态，这我才想起来之前为了优化开机，把这个软件的开机自启给关了，我又傻眼了。</p>
+<h3 id="分析现状"><a href="#分析现状" class="headerlink" title="分析现状"></a>分析现状</h3><p>现在的问题是，台式机蓝牙关了，但是我的常用外设都是蓝牙连接的，没有有线功能。我有一个有线键盘，但是台式机的USB口不知道为什么全不能用了，这就意味着即使我有有线鼠标理论上也没有用。远程软件也没有开启，不用通过手机远程把蓝牙打开。</p>
+<h3 id="扣电池"><a href="#扣电池" class="headerlink" title="扣电池"></a>扣电池</h3><p>和卖主板的客服沟通后，建议我扣主板电池试试。关机后，等待5min后（为了放干净电），我把电池扣了下来，又等了3min左右装了上去。奇迹发生了，USB口能用了！！！于是我用键盘操作（一路按tab键）这找到了蓝牙的开关按钮，</p>
+<p><img src="https://s1.ax1x.com/2023/08/12/pPu8BIP.png" alt="屏幕截图 2023-08-12 181458"></p>
+<p>按空格打开了蓝牙的开关，至此，终于是解决了！！！</p>
+<p>PS：如果不知道用空格是确认，当时用键盘打开我的远程软件其实也解决了</p>
+<h2 id="反思及预防"><a href="#反思及预防" class="headerlink" title="反思及预防"></a>反思及预防</h2><p>三思而后行啊，<del>以及中午不能睡时间太长</del></p>
+<h3 id="关闭蓝牙功能影响USB接收器的使用吗"><a href="#关闭蓝牙功能影响USB接收器的使用吗" class="headerlink" title="关闭蓝牙功能影响USB接收器的使用吗"></a>关闭蓝牙功能影响USB接收器的使用吗</h3><p>之后又专门把蓝牙关了，使用带USB接收器的鼠标连接，发现可以正常使用。看来问题就出在USB接口上了</p>
+<h3 id="为什么USB接口不能用"><a href="#为什么USB接口不能用" class="headerlink" title="为什么USB接口不能用"></a>为什么USB接口不能用</h3><p>然后网上查到了USB口之前为什么不能用的原因及解决方法：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">为了省电，Windows默认情况下会在不使用USB控制器时将其关闭，在需要时再将其重新开启。但有时候Windows不会自动开启。</span><br><span class="line">1、右键单击开始菜单，打开设备管理器。</span><br><span class="line">2、双击展开“通用串行总线控制器”一栏。</span><br><span class="line">3、双击列表中的第一个“USB根集线器”。</span><br><span class="line">4、点击切换到“电源管理”标签页。</span><br><span class="line">5、取消勾选“允许计算机关闭此设备以节省电源”，点击“确定”。</span><br><span class="line">6、对通用串行总线控制器列表中的每个“USB根集线器”重复步骤3-5。</span><br></pre></td></tr></table></figure>
+<p><img src="https://s1.ax1x.com/2023/08/12/pPu8haq.png" alt="image-20230812182055614"></p>
+<p>按照教程把上面一个一个都关了就好了</p>
+<h3 id="打开远程软件的自启"><a href="#打开远程软件的自启" class="headerlink" title="打开远程软件的自启"></a>打开远程软件的自启</h3><p>由于也没啥重要的东西，就把软件自启打开了。再也不想为了一点优化差点坑死自己了</p>
+]]></content>
+      <categories>
+        <category>个人笔记</category>
+      </categories>
   </entry>
   <entry>
     <title>Win11+3060Ti配置Anaconda+Cuda+Pytorch+Tenserflow环境</title>
@@ -669,152 +751,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Win11配置多个CUDA环境</title>
-    <url>/2023/09/30/Win11%E9%85%8D%E7%BD%AE%E5%A4%9A%E4%B8%AACUDA%E7%8E%AF%E5%A2%83/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>由于跑项目发现需要配置不同版本的Pytorch，而不同版本的Pytorch又对应不同版本的CUDA，于是有了在Win上装多个CUDA的打算</p>
-<p>默认已经在电脑上装了一个CUDA</p>
-<p><img src="https://z1.ax1x.com/2023/09/30/pPqY5Bd.png" alt="屏幕截图 2023-09-30 112423"></p>
-<p>现在开始下载第二个CUDA版本，前面下载的操作和普通安装的几乎一样</p>
-<h2 id="安装CUDA"><a href="#安装CUDA" class="headerlink" title="安装CUDA"></a>安装CUDA</h2><p><a href="https://developer.nvidia.com/cuda-toolkit-archive">CUDA下载链接</a></p>
-<p>下载自己需要的CUDA版本，以我自己要安装的为例</p>
-<p><img src="https://z1.ax1x.com/2023/09/30/pPqlwXn.png" alt="屏幕截图 2023-09-30 095614"></p>
-<p><img src="https://z1.ax1x.com/2023/09/30/pPqlD00.png" alt="屏幕截图 2023-09-30 095815"></p>
-<p>下载打开exe文件进行安装，第一步不用管，直接点击确认</p>
-<p><img src="https://z1.ax1x.com/2023/09/30/pPqlWc9.png" alt="屏幕截图 2023-09-30 100402"></p>
-<p>后面选择自定义安装，只选择安装CUDA</p>
-<p><img src="https://z1.ax1x.com/2023/09/30/pPqlfXR.png" alt="屏幕截图 2023-09-30 100534"></p>
-<p>其他一路下一步就可以了</p>
-<h2 id="安装cuDNN"><a href="#安装cuDNN" class="headerlink" title="安装cuDNN"></a>安装cuDNN</h2><p><a href="https://developer.nvidia.com/rdp/cudnn-archive">cuDNN下载链接</a></p>
-<p>PS：下载需要登录一下账号</p>
-<p><img src="https://z1.ax1x.com/2023/09/30/pPqlchF.png" alt="屏幕截图 2023-09-30 100047"></p>
-<p>下载下来后，把压缩包解压，得到如下文件</p>
-<p><img src="https://z1.ax1x.com/2023/09/30/pPqlq9e.png" alt="image-20230930100746137"></p>
-<p>将<strong>bin，include文件夹中的文件</strong>，分别复制到下列地址对应的文件夹下（CUDA的安装地址，以我的地址为例），遇到提示，为全部选择覆盖和替换。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.7</span><br></pre></td></tr></table></figure>
-<p>需要注意的是，lib文件夹里的所有文件，需要复制到</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.7\lib\x64</span><br></pre></td></tr></table></figure>
-<p>至此，安装工作就做完了，可以看到电脑上已经有两个CUDA版本了</p>
-<p><img src="https://z1.ax1x.com/2023/09/30/pPq3dZq.png" alt="image-20230930101157014"></p>
-<h2 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h2><p>由于CUDA11.7是后面安装的，所以可以看到系统把之前的环境覆盖了</p>
-<p><img src="https://z1.ax1x.com/2023/09/30/pPq3rJU.png" alt="屏幕截图 2023-09-30 103109"></p>
-<p>以作者在为例，系统变量的PATH里配置一下路径</p>
-<p><strong>CUDA_11.7</strong></p>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="comment">%CUDA_PATH_V11_7%\lib\x64</span></span><br><span class="line"><span class="comment">%CUDA_PATH_V11_7%\include</span></span><br><span class="line"><span class="comment">%CUDA_PATH_V11_7%\extras\CUPTI\lib64</span></span><br><span class="line"><span class="comment">%CUDA_PATH_V11_7%\bin</span></span><br><span class="line"><span class="comment">%CUDA_PATH_V11_7%\libnvvp</span></span><br></pre></td></tr></table></figure>
-<p><strong>CUDA_11.0</strong></p>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="comment">%CUDA_PATH_V11_0%\lib\x64</span></span><br><span class="line"><span class="comment">%CUDA_PATH_V11_0%\include</span></span><br><span class="line"><span class="comment">%CUDA_PATH_V11_0%\extras\CUPTI\lib64</span></span><br><span class="line"><span class="comment">%CUDA_PATH_V11_0%\bin</span></span><br><span class="line"><span class="comment">%CUDA_PATH_V11_0%\libnvvp</span></span><br></pre></td></tr></table></figure>
-<p>配置好如下：</p>
-<p><img src="https://z1.ax1x.com/2023/09/30/pPq3yz4.jpg" alt="微信截图_20230930105036"></p>
-<p>配置好之后，默认CUDA版本是11.7的，如果要切换到11.0版本的，只需要把下面的五条整体上移到CUDA_11.7配置的前面</p>
-<p><img src="https://z1.ax1x.com/2023/09/30/pPq3cQJ.jpg" alt="微信截图_20230930105411"></p>
-<h2 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h2><h3 id="测试CUDA11-7"><a href="#测试CUDA11-7" class="headerlink" title="测试CUDA11.7"></a>测试CUDA11.7</h3><p>首先验证CUDA_11.7是否配置成功</p>
-<p><img src="https://z1.ax1x.com/2023/09/30/pPq8upF.png" alt="image-20230930105601201"></p>
-<p>测试Pytorch是否可以调用显卡</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">python</span><br><span class="line"><span class="keyword">import</span> torch</span><br><span class="line">torch.cuda.is_available()</span><br><span class="line">torch.cuda.get_device_name(<span class="number">0</span>)</span><br><span class="line">torch.version.cuda</span><br></pre></td></tr></table></figure>
-<p><img src="https://z1.ax1x.com/2023/09/30/pPqYiOH.png" alt="image-20230930120418607"></p>
-<h3 id="测试CUDA11-0"><a href="#测试CUDA11-0" class="headerlink" title="测试CUDA11.0"></a>测试CUDA11.0</h3><p>先把系统变量里Path里相关路径上移</p>
-<p><img src="https://z1.ax1x.com/2023/09/30/pPq8ZkV.jpg" alt="微信截图_20230930110409"></p>
-<p><strong>然后重启！重启！重启！</strong></p>
-<p>验证CUDA_11.7是否配置成功</p>
-<p><img src="https://z1.ax1x.com/2023/09/30/pPqGkge.png" alt="image-20230930112425329"></p>
-<p>测试Pytorch是否可以调用显卡</p>
-<p><img src="https://z1.ax1x.com/2023/09/30/pPqYkmd.png" alt="image-20230930112626663"></p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>切换CUDA的时候除了要修改系统变量Path中的路径顺序，一定要记得重启！</p>
-]]></content>
-      <categories>
-        <category>个人笔记</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>hexo部署到Gitee后显示404||没有更新</title>
-    <url>/2023/05/26/hexo%E9%83%A8%E7%BD%B2%E5%88%B0Gitee%E5%90%8E%E6%98%BE%E7%A4%BA404/</url>
-    <content><![CDATA[<p>在Gitee开启了Gitee Pages，并且本地完成了</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g -d</span><br></pre></td></tr></table></figure>
-<p>然后发现已经上传到了Gitee仓库里，但是访问博客的网址却显示404</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-05-26%20163430-1685090681023-7.png" alt="屏幕截图 2023-05-26 163430"></p>
-<p>有以下两种可能的原因：</p>
-<h3 id="hexo根目录下的-config-yml文件里，url没有配置对"><a href="#hexo根目录下的-config-yml文件里，url没有配置对" class="headerlink" title="hexo根目录下的_config.yml文件里，url没有配置对"></a>hexo根目录下的_config.yml文件里，url没有配置对</h3><p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-05-26%20164633.png" alt="屏幕截图 2023-05-26 164633"></p>
-<p>如果仓库名和Gitee的用户名不一致时，root属性也需要修改。</p>
-<p>比如用户名为xxx新建的仓库地址为</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">https://gitee.com/xxx/myblog </span><br></pre></td></tr></table></figure>
-<p>则以上内容需要修改为</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">url: https://xxx.gitee.io/</span><br><span class="line">root: /myblog</span><br></pre></td></tr></table></figure>
-<h3 id="没有手动再部署一遍！！！"><a href="#没有手动再部署一遍！！！" class="headerlink" title="没有手动再部署一遍！！！"></a>没有手动再部署一遍！！！</h3><p>是的你没有听错，这个居然上传成功后还需要手动再更新一下！</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-05-26%20164839.png" alt="屏幕截图 2023-05-26 164839"></p>
-]]></content>
-      <categories>
-        <category>个人笔记</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>word2vec工具实战</title>
-    <url>/2023/07/04/word2vec%E5%B7%A5%E5%85%B7%E5%AE%9E%E6%88%98/</url>
-    <content><![CDATA[<p>最开始需要新建一个conda环境</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda create -n word2vec python=3.8</span><br><span class="line">conda activate word2vec</span><br></pre></td></tr></table></figure>
-<p>然后安装一下所需要的库</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install numpy</span><br><span class="line">pip install scipy</span><br><span class="line">pip install gensim</span><br><span class="line">pip install jieba</span><br></pre></td></tr></table></figure>
-<p>首先下载一下数据集<a href="https://dumps.wikimedia.org/zhwiki/20230701/zhwiki-20230701-pages-articles.xml.bz2">zhwiki-20230701-pages-articles.xml.bz2</a>，为了方便后续操作，这里需要把他转成<code>txt</code>格式的</p>
-<p>以下是转化的文件<code>transform_to_txt.py</code></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="comment"># 修改后的代码如下：</span></span><br><span class="line"><span class="keyword">import</span> logging</span><br><span class="line"><span class="keyword">import</span> os.path</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> gensim.corpora <span class="keyword">import</span> WikiCorpus</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line"></span><br><span class="line">    program = os.path.basename(sys.argv[<span class="number">0</span>])</span><br><span class="line">    logger = logging.getLogger(program)</span><br><span class="line">    logging.basicConfig(<span class="built_in">format</span>=<span class="string">&#x27;%(asctime)s: %(levelname)s: %(message)s&#x27;</span>)</span><br><span class="line">    logging.root.setLevel(level=logging.INFO)</span><br><span class="line">    logger.info(<span class="string">&quot;running %s&quot;</span> % <span class="string">&#x27; &#x27;</span>.join(sys.argv))</span><br><span class="line">    <span class="comment"># check and process input arguments</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(sys.argv) &lt; <span class="number">3</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="built_in">globals</span>()[<span class="string">&#x27;__doc__&#x27;</span>] % <span class="built_in">locals</span>())</span><br><span class="line">        sys.exit(<span class="number">1</span>)</span><br><span class="line">    inp, outp = sys.argv[<span class="number">1</span>:<span class="number">3</span>]</span><br><span class="line">    space = <span class="string">&quot;&quot;</span></span><br><span class="line">    i = <span class="number">0</span></span><br><span class="line">    output = <span class="built_in">open</span>(outp, <span class="string">&#x27;w&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">    <span class="comment"># wiki = WikiCorpus(inp, lemmatize=False, dictionary=&#123;&#125;)</span></span><br><span class="line">    wiki = WikiCorpus(inp, dictionary=&#123;&#125;)</span><br><span class="line">    <span class="keyword">for</span> text <span class="keyword">in</span> wiki.get_texts():</span><br><span class="line">        s = space.join(text)</span><br><span class="line">        <span class="comment"># s = s.decode(&#x27;utf8&#x27;) + &quot;\n&quot;</span></span><br><span class="line">        s = s.encode(<span class="string">&#x27;utf8&#x27;</span>).decode(<span class="string">&#x27;utf8&#x27;</span>) + <span class="string">&quot;\n&quot;</span></span><br><span class="line">        output.write(s)</span><br><span class="line">        i = i + <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> (i % <span class="number">10000</span> == <span class="number">0</span>):</span><br><span class="line">            logger.info(<span class="string">&quot;Saved &quot;</span> + <span class="built_in">str</span>(i) + <span class="string">&quot; articles&quot;</span>)</span><br><span class="line">    output.close()</span><br><span class="line">    logger.info(<span class="string">&quot;Finished Saved &quot;</span> + <span class="built_in">str</span>(i) + <span class="string">&quot; articles&quot;</span>)</span><br></pre></td></tr></table></figure>
-<p>然后将刚刚下载的数据集和此<code>Python</code>文件放在同一个目录下，并且用命令行跳转到这个目录，然后执行</p>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">python transform<span class="built_in">_</span>to<span class="built_in">_</span>txt.py zhwiki-20230701-pages-articles.xml.bz2 wiki.zh.text</span><br></pre></td></tr></table></figure>
-<p>其中，第一个参数是<code>Python</code>的文件名，第二个是要处理的数据文件名，第三个是要输出的文件名</p>
-<p>转换完之后就生成了一个txt文件</p>
-<p><img src="https://s1.ax1x.com/2023/07/04/pCs7rX8.png" alt="image-20230704195428973"></p>
-<p>直接浏览，可以看出这里面全是繁体字，所以下面需要把繁体转换成简体</p>
-<p><img src="https://s1.ax1x.com/2023/07/04/pCs760g.png" alt="image-20230704195605355"></p>
-<p>首先需要下载这个<a href="https://github.com/BYVoid/OpenCC/wiki/Download">转换工具</a>，<strong>记住要下载预编译的</strong>。</p>
-<p>然后解压后放在一个能记住的位置，例如我是</p>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">G:<span class="keyword">\Lab</span><span class="keyword">\DeepLearning</span><span class="keyword">\OpenCC</span><span class="keyword">\share</span><span class="keyword">\opencc</span></span><br></pre></td></tr></table></figure>
-<p>然后把文件夹中的<code>bin</code>目录配置到系统环境<code>path</code>里</p>
-<p><img src="https://s1.ax1x.com/2023/07/04/pCsblqO.png" alt="屏幕截图 2023-07-04 202744"></p>
-<p>最后验证一下是否配置成功</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">opencc --<span class="built_in">help</span></span><br></pre></td></tr></table></figure>
-<p><img src="https://s1.ax1x.com/2023/07/04/pCsHFNd.png" alt="屏幕截图 2023-07-04 201226"></p>
-<p>然后就可以转换啦，用<code>cmd</code>跳转到<code>wiki.zh.text</code>文件所在的目录，在命令行输入</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">opencc -i wiki.zh.text -o test_zh.txt -c G:\Lab\DeepLearning\OpenCC\share\opencc\t2s.json</span><br></pre></td></tr></table></figure>
-<p><code>wiki.zh.text</code>是待转换的繁体文本，<code>test_zh.txt</code>是输出的简体文本，<code>t2s.json</code>表示繁体转简体，其中这个需要换成自己的地址（<strong>地址不要有空格</strong>）</p>
-<p><img src="https://s1.ax1x.com/2023/07/04/pCsbmGR.png" alt="image-20230704203004637"></p>
-<p>等一会就好了</p>
-<p><img src="https://s1.ax1x.com/2023/07/04/pCsbtJA.png" alt="image-20230704203155840"></p>
-<p>然后就全部成了简体了，使用word2vec工具需要做的最后一步是分词</p>
-<p>分词使用<code>jieba</code>这个库来解决，以下是分词的文件<code>participle.py</code></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> codecs</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> jieba</span><br><span class="line"><span class="keyword">import</span> jieba.analyse</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">cut_words</span>(<span class="params">sentence</span>):</span><br><span class="line">    <span class="comment"># print sentence</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot; &quot;</span>.join(jieba.cut(sentence)).encode(<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">f = codecs.<span class="built_in">open</span>(<span class="string">&#x27;test_zh.txt&#x27;</span>, <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&quot;utf8&quot;</span>)</span><br><span class="line">target = codecs.<span class="built_in">open</span>(<span class="string">&quot;zh.jian.wiki.seg_1.5G.txt&quot;</span>, <span class="string">&#x27;w&#x27;</span>, encoding=<span class="string">&quot;utf8&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;open files&#x27;</span>)</span><br><span class="line">line_num = <span class="number">1</span></span><br><span class="line">line = f.readline()</span><br><span class="line"><span class="keyword">while</span> line:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;---- processing &#x27;</span>, line_num, <span class="string">&#x27; article----------------&#x27;</span>)</span><br><span class="line">    line_seg = <span class="string">&quot; &quot;</span>.join(jieba.cut(line))</span><br><span class="line">    target.writelines(line_seg)</span><br><span class="line">    line_num = line_num + <span class="number">1</span></span><br><span class="line">    line = f.readline()</span><br><span class="line">f.close()</span><br><span class="line">target.close()</span><br><span class="line">exit()</span><br><span class="line"><span class="keyword">while</span> line:</span><br><span class="line">    curr = []</span><br><span class="line">    <span class="keyword">for</span> oneline <span class="keyword">in</span> line:</span><br><span class="line">        <span class="comment"># print(oneline)</span></span><br><span class="line">        curr.append(oneline)</span><br><span class="line">    after_cut = <span class="built_in">map</span>(cut_words, curr)</span><br><span class="line">    target.writelines(after_cut)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;saved&#x27;</span>, line_num, <span class="string">&#x27;articles&#x27;</span>)</span><br><span class="line">    exit()</span><br><span class="line">    line = f.readline1()</span><br><span class="line">f.close()</span><br><span class="line">target.close()</span><br></pre></td></tr></table></figure>
-<p>其中，这一句是配置需要分词的文件<code>test_zh.txt</code></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">f = codecs.<span class="built_in">open</span>(<span class="string">&#x27;test_zh.txt&#x27;</span>, <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&quot;utf8&quot;</span>)</span><br></pre></td></tr></table></figure>
-<p>这一句是配置需要输出的文件<code>zh.jian.wiki.seg_1.5G.txt</code></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">target = codecs.<span class="built_in">open</span>(<span class="string">&quot;zh.jian.wiki.seg_1.5G.txt&quot;</span>, <span class="string">&#x27;w&#x27;</span>, encoding=<span class="string">&quot;utf8&quot;</span>)</span><br></pre></td></tr></table></figure>
-<p>将<code>participle.py</code>文件和上面输出的简体文本<code>test_zh.txt</code>放在同一个目录，用<code>cmd</code>（跳转到对应目录后输入<code>python Testjieba.py</code>）或者<code>Pycharm</code>直接运行<code>participle.py</code>文件</p>
-<p><strong>PS：无论是<code>cmd</code>还是<code>Pycharm</code>，记得切换到<code>word2vec</code>环境</strong></p>
-<p>经过将近一个多小时的时间，终于跑完了</p>
-<p><img src="https://s1.ax1x.com/2023/07/04/pCsb6ij.png" alt="屏幕截图 2023-07-04 192329"></p>
-<p>接下来就是正式使用word2vec的时候了，以下是使用word2vec的文件<code>word2vec_model.py</code></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> logging</span><br><span class="line"><span class="keyword">import</span> multiprocessing</span><br><span class="line"><span class="keyword">import</span> os.path</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> gensim.models <span class="keyword">import</span> Word2Vec</span><br><span class="line"><span class="keyword">from</span> gensim.models.word2vec <span class="keyword">import</span> LineSentence</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line"></span><br><span class="line">    program = os.path.basename(sys.argv[<span class="number">0</span>])</span><br><span class="line">    logger = logging.getLogger(program)</span><br><span class="line">    logging.basicConfig(<span class="built_in">format</span>=<span class="string">&#x27;%(asctime)s: %(levelname)s: %(message)s&#x27;</span>)</span><br><span class="line">    logging.root.setLevel(level=logging.INFO)</span><br><span class="line">    logger.info(<span class="string">&quot;running %s&quot;</span> % <span class="string">&#x27; &#x27;</span>.join(sys.argv))</span><br><span class="line">    <span class="comment"># check and process input arguments</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(sys.argv) &lt; <span class="number">4</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="built_in">globals</span>()[<span class="string">&#x27;__doc__&#x27;</span>] % <span class="built_in">locals</span>())</span><br><span class="line">        sys.exit(<span class="number">1</span>)</span><br><span class="line">    inp, outp1, outp2 = sys.argv[<span class="number">1</span>:<span class="number">4</span>]</span><br><span class="line">    model = Word2Vec(LineSentence(inp), size=<span class="number">400</span>, window=<span class="number">5</span>, min_count=<span class="number">5</span>, workers=multiprocessing.cpu_count())</span><br><span class="line">    model.save(outp1)</span><br><span class="line">    model.wv.save_word2vec_format(outp2, binary=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
-<p>将上文分好词的文件<code>zh.jian.wiki.seg_1.5G.txt</code>与<code>word2vec_model.py</code>文件也是放到同一个目录下，然后在<code>cmd</code>中执行</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">python word2vec_model.py zh.jian.wiki.seg_1.5G.txt wiki.zh.text.model wiki.zh.text.vector</span><br></pre></td></tr></table></figure>
-<p>其中，<code>wiki.zh.text.model</code>是生成的模型（同样记得切换环境）</p>
-<p><img src="https://s1.ax1x.com/2023/07/04/pCsqmTg.png" alt="image-20230704205047579"></p>
-<p>可能会报这个错，原因可能是<code>gensim</code>的版本的差异。</p>
-<p>这样把下面这句的<code>size</code>改成<code>vector_size</code>即可</p>
-<p>源代码：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">model = Word2Vec(LineSentence(inp), size=<span class="number">400</span>, window=<span class="number">5</span>, min_count=<span class="number">5</span>, workers=multiprocessing.cpu_count())</span><br></pre></td></tr></table></figure>
-<p>新代码：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">model = Word2Vec(LineSentence(inp), vector_size=<span class="number">400</span>, window=<span class="number">5</span>, min_count=<span class="number">5</span>, workers=multiprocessing.cpu_count())</span><br></pre></td></tr></table></figure>
-<p>然后就可以漫长的等待了！</p>
-<p><img src="https://s1.ax1x.com/2023/07/04/pCsqB11.png" alt="image-20230704205435161"></p>
-<p> 经过一段时间后，模型保存成功了！</p>
-<p><img src="https://s1.ax1x.com/2023/07/04/pCsO3ZT.png" alt="屏幕截图 2023-07-04 212910"></p>
-<p>最后测试一下模型</p>
-<p>测试文件<code>testModel.py</code>如下</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> gensim.models <span class="keyword">import</span> Word2Vec</span><br><span class="line"></span><br><span class="line">en_wiki_word2vec_model = Word2Vec.load(<span class="string">&#x27;wiki.zh.text.model&#x27;</span>)</span><br><span class="line"></span><br><span class="line">testwords = [<span class="string">&#x27;苹果&#x27;</span>, <span class="string">&#x27;数学&#x27;</span>, <span class="string">&#x27;学术&#x27;</span>, <span class="string">&#x27;白痴&#x27;</span>, <span class="string">&#x27;篮球&#x27;</span>]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">5</span>):</span><br><span class="line">    res = en_wiki_word2vec_model.wv.most_similar(testwords[i])</span><br><span class="line">    <span class="built_in">print</span>(testwords[i])</span><br><span class="line">    <span class="built_in">print</span>(res)</span><br></pre></td></tr></table></figure>
-<p>继续在同一个目录执行<code>testModel.py</code>文件，得到如下结果</p>
-<p><img src="https://s1.ax1x.com/2023/07/05/pCyEdl6.png" alt="image-20230705101212390"></p>
-<p>最后附上<a href="https://github.com/Ruvikm/Gensim_word2vec">项目完整地址</a></p>
-]]></content>
-      <categories>
-        <category>个人笔记</category>
-      </categories>
-  </entry>
-  <entry>
     <title>使用Xpath和Requests实现爬虫并存储在Excel表里---爬取链家上杭州近期二手房价</title>
     <url>/2020/10/18/%E4%BD%BF%E7%94%A8Xpath%E5%92%8CRequests%E5%AE%9E%E7%8E%B0%E7%88%AC%E8%99%AB%E5%B9%B6%E5%AD%98%E5%82%A8%E5%9C%A8Excel%E8%A1%A8%E9%87%8C-%E7%88%AC%E5%8F%96%E9%93%BE%E5%AE%B6%E4%B8%8A%E6%9D%AD%E5%B7%9E%E8%BF%91%E6%9C%9F%E4%BA%8C%E6%89%8B%E6%88%BF%E4%BB%B7/</url>
     <content><![CDATA[<p>爬的是杭州近期的的新房价</p>
@@ -828,33 +764,30 @@
       </tags>
   </entry>
   <entry>
-    <title>使用蓝牙外设却不小心把台式机电脑蓝牙关了</title>
-    <url>/2023/08/12/%E4%BD%BF%E7%94%A8%E8%93%9D%E7%89%99%E5%A4%96%E8%AE%BE%E5%8D%B4%E4%B8%8D%E5%B0%8F%E5%BF%83%E6%8A%8A%E5%8F%B0%E5%BC%8F%E6%9C%BA%E7%94%B5%E8%84%91%E8%93%9D%E7%89%99%E5%85%B3%E4%BA%86/</url>
-    <content><![CDATA[<h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>今天犯了一个贼SB的错误，起因是蓝牙键盘突然就不能输入了（虽然是连接状态，但是按什么键都没有反应）</p>
-<p>原来我的解决方法就是重启一下电脑，但是那会电脑开了贼多的软件。我就想重启也太麻烦了，既然重启的本质也是重启蓝牙，那我要不直接就把蓝牙重启算了，当时想到这里啊，我心中一阵狂喜，觉得我真TMD是个天才</p>
-<p>于是我兴冲冲的找到系统设置—蓝牙，把蓝牙关了，然后当我准备开启蓝牙的时候，我傻眼了，艹，我外设都是蓝牙连接的啊，这TM开不开了</p>
-<h2 id="解决过程"><a href="#解决过程" class="headerlink" title="解决过程"></a>解决过程</h2><h3 id="尝试用带USB接收器的鼠标"><a href="#尝试用带USB接收器的鼠标" class="headerlink" title="尝试用带USB接收器的鼠标"></a>尝试用带USB接收器的鼠标</h3><p>我的鼠标不仅可以蓝牙连接，还可以用USB接收器连接，我心想这不是轻轻松松简简单单。于是给鼠标换了一个连接方式，插入了USB接收器。但是奇怪的事情发生了，无论我怎么动鼠标，鼠标的指针就是纹丝不动。我怀疑难道是关了蓝牙功能，连这个都影响到了吗</p>
-<h3 id="尝试用有线设备"><a href="#尝试用有线设备" class="headerlink" title="尝试用有线设备"></a>尝试用有线设备</h3><p>虽然心中有一丝紧张，但是我感觉这不就是个小事嘛，那要不找个有线的外设不就可以了。于是翻箱倒柜，刨出来家里的古董有线键盘，插入了电脑前面的USB口。</p>
-<p>但是，重量级来了，无论按什么键，都没有反应，让我一度以为是不是键盘寄了。然后我把键盘插到了笔记本上，发现还是可以用的，灯也是亮的（但是刚刚插在台式机上灯就没亮）</p>
-<p>前面不行，后面总可以吧，肯定么得问题（Flag立的飞起）我买的主板可是有7个USB插口呢！！！这么想着我钻到桌子下面，吸着尘土，一个一个试着USB口，结果是全都不能用。当时心态就发生了一丝变化，我看着屏幕，屏幕看着我，但是感觉我们之间隔了一个不可逾越的鸿沟，那个鸿沟就是USB口。</p>
-<h3 id="尝试远程软件"><a href="#尝试远程软件" class="headerlink" title="尝试远程软件"></a>尝试远程软件</h3><p>我逐渐意识到了问题的严重性，但我灵机一动，心想不还有远程软件么，用手机作为输入不就解决了。</p>
-<p>我再次满怀希望的打开手机远程操作APP，在“我的设备”里寻找台式机，但是，咚咚咚！！！设备显示是离线状态，这我才想起来之前为了优化开机，把这个软件的开机自启给关了，我又傻眼了。</p>
-<h3 id="分析现状"><a href="#分析现状" class="headerlink" title="分析现状"></a>分析现状</h3><p>现在的问题是，台式机蓝牙关了，但是我的常用外设都是蓝牙连接的，没有有线功能。我有一个有线键盘，但是台式机的USB口不知道为什么全不能用了，这就意味着即使我有有线鼠标理论上也没有用。远程软件也没有开启，不用通过手机远程把蓝牙打开。</p>
-<h3 id="扣电池"><a href="#扣电池" class="headerlink" title="扣电池"></a>扣电池</h3><p>和卖主板的客服沟通后，建议我扣主板电池试试。关机后，等待5min后（为了放干净电），我把电池扣了下来，又等了3min左右装了上去。奇迹发生了，USB口能用了！！！于是我用键盘操作（一路按tab键）这找到了蓝牙的开关按钮，</p>
-<p><img src="https://s1.ax1x.com/2023/08/12/pPu8BIP.png" alt="屏幕截图 2023-08-12 181458"></p>
-<p>按空格打开了蓝牙的开关，至此，终于是解决了！！！</p>
-<p>PS：如果不知道用空格是确认，当时用键盘打开我的远程软件其实也解决了</p>
-<h2 id="反思及预防"><a href="#反思及预防" class="headerlink" title="反思及预防"></a>反思及预防</h2><p>三思而后行啊，<del>以及中午不能睡时间太长</del></p>
-<h3 id="关闭蓝牙功能影响USB接收器的使用吗"><a href="#关闭蓝牙功能影响USB接收器的使用吗" class="headerlink" title="关闭蓝牙功能影响USB接收器的使用吗"></a>关闭蓝牙功能影响USB接收器的使用吗</h3><p>之后又专门把蓝牙关了，使用带USB接收器的鼠标连接，发现可以正常使用。看来问题就出在USB接口上了</p>
-<h3 id="为什么USB接口不能用"><a href="#为什么USB接口不能用" class="headerlink" title="为什么USB接口不能用"></a>为什么USB接口不能用</h3><p>然后网上查到了USB口之前为什么不能用的原因及解决方法：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">为了省电，Windows默认情况下会在不使用USB控制器时将其关闭，在需要时再将其重新开启。但有时候Windows不会自动开启。</span><br><span class="line">1、右键单击开始菜单，打开设备管理器。</span><br><span class="line">2、双击展开“通用串行总线控制器”一栏。</span><br><span class="line">3、双击列表中的第一个“USB根集线器”。</span><br><span class="line">4、点击切换到“电源管理”标签页。</span><br><span class="line">5、取消勾选“允许计算机关闭此设备以节省电源”，点击“确定”。</span><br><span class="line">6、对通用串行总线控制器列表中的每个“USB根集线器”重复步骤3-5。</span><br></pre></td></tr></table></figure>
-<p><img src="https://s1.ax1x.com/2023/08/12/pPu8haq.png" alt="image-20230812182055614"></p>
-<p>按照教程把上面一个一个都关了就好了</p>
-<h3 id="打开远程软件的自启"><a href="#打开远程软件的自启" class="headerlink" title="打开远程软件的自启"></a>打开远程软件的自启</h3><p>由于也没啥重要的东西，就把软件自启打开了。再也不想为了一点优化差点坑死自己了</p>
+    <title>jz25 合并两个排序的链表</title>
+    <url>/2023/11/18/%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%8E%92%E5%BA%8F%E7%9A%84%E9%93%BE%E8%A1%A8/</url>
+    <content><![CDATA[<h2 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h2><p>输入两个递增的链表，单个链表的长度为n，合并这两个链表并使新链表中的节点仍然是递增排序的。</p>
+<p>数据范围： 0≤10000≤<em>n</em>≤1000，−1000≤节点值≤1000−1000≤节点值≤1000<br>要求：空间复杂度 <em>O</em>(1)，时间复杂度 <em>O</em>(<em>n</em>)</p>
+<p>如输入{1,3,5},{2,4,6}时，合并后的链表为{1,2,3,4,5,6}，所以对应的输出为{1,2,3,4,5,6}，转换过程如下图所示：</p>
+<p><img src="/2023/11/18/%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%8E%92%E5%BA%8F%E7%9A%84%E9%93%BE%E8%A1%A8/09DD8C2662B96CE14928333F055C5580.png" alt="img"></p>
+<p>或输入{-1,2,4},{1,3,4}时，合并后的链表为{-1,1,2,3,4,4}，所以对应的输出为{-1,1,2,3,4,4}，转换过程如下图所示：</p>
+<p><img src="/2023/11/18/%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%8E%92%E5%BA%8F%E7%9A%84%E9%93%BE%E8%A1%A8/8266E4BFEDA1BD42D8F9794EB4EA0A13.png" alt="img"></p>
+<h2 id="示例1"><a href="#示例1" class="headerlink" title="示例1"></a>示例1</h2><p>输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;1,3,5&#125;,&#123;2,4,6&#125;</span><br></pre></td></tr></table></figure>
+<p>返回值：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;1,2,3,4,5,6&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="示例2"><a href="#示例2" class="headerlink" title="示例2"></a>示例2</h2><p>输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;&#125;,&#123;&#125;</span><br></pre></td></tr></table></figure>
+<p>返回值：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="示例3"><a href="#示例3" class="headerlink" title="示例3"></a>示例3</h2><p>输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;-1,2,4&#125;,&#123;1,3,4&#125;</span><br></pre></td></tr></table></figure>
+<p>返回值：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;-1,1,2,3,4,4&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="题解1"><a href="#题解1" class="headerlink" title="题解1"></a>题解1</h1><p>可以使用虚拟头结点，可以再新建一个链表，然后把两个链表的结点从小到大依次插入到新链表中即可。使用双指针分别指向两个链表，然后每次将较小的结点放在虚拟头结点后面，然后指针（刚刚较小的）放后移动，另一个指针不动</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *  int val;</span></span><br><span class="line"><span class="comment"> *  struct ListNode *next;</span></span><br><span class="line"><span class="comment"> *  ListNode(int x) : val(x), next(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">  <span class="keyword">public</span>:</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * @param pHead1 ListNode类</span></span><br><span class="line"><span class="comment">     * @param pHead2 ListNode类</span></span><br><span class="line"><span class="comment">     * @return ListNode类</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function">ListNode* <span class="title">Merge</span><span class="params">(ListNode* pHead1, ListNode* pHead2)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// write code here</span></span><br><span class="line">        <span class="keyword">if</span> (pHead1 == <span class="literal">nullptr</span>)</span><br><span class="line">            <span class="keyword">return</span> pHead2;</span><br><span class="line">        <span class="keyword">if</span> (pHead2 == <span class="literal">nullptr</span>)</span><br><span class="line">            <span class="keyword">return</span> pHead1;</span><br><span class="line">        ListNode* p = pHead2, *q = pHead1;</span><br><span class="line">        ListNode* newHead;</span><br><span class="line">        newHead = p-&gt;val &lt;= q-&gt;val ? p : q;</span><br><span class="line">        ListNode *res = newHead;</span><br><span class="line">        <span class="keyword">while</span> (p != <span class="literal">nullptr</span> &amp;&amp; q != <span class="literal">nullptr</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (p-&gt;val &lt;= q-&gt;val) &#123;</span><br><span class="line">                ListNode* tmp = p-&gt;next;</span><br><span class="line">                ListNode* node = p;</span><br><span class="line">                newHead-&gt;next = node;</span><br><span class="line">                newHead = node;</span><br><span class="line">                p = tmp;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                ListNode* tmp = q-&gt;next;</span><br><span class="line">                ListNode* node = q;</span><br><span class="line">                newHead-&gt;next = node;</span><br><span class="line">                newHead = node;</span><br><span class="line">                q = tmp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span> (p != <span class="literal">nullptr</span>) &#123;</span><br><span class="line">            newHead-&gt;next = p;</span><br><span class="line">            newHead = p;</span><br><span class="line">            p = p-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span> (q != <span class="literal">nullptr</span>) &#123;</span><br><span class="line">            newHead-&gt;next = q;</span><br><span class="line">            newHead = q;</span><br><span class="line">            q = q-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>本来打算将一个链表插入到另一个链表之中的，但是太复杂了，一直没有AC</p>
 ]]></content>
-      <categories>
-        <category>个人笔记</category>
-      </categories>
   </entry>
   <entry>
     <title>图的邻接表表示转换成邻接矩阵</title>
@@ -873,51 +806,6 @@
       <tags>
         <tag>算法</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>复现论文SpikeGPT Generative Pre-trained Language Model with Spiking Neural Networks</title>
-    <url>/2023/07/22/%E5%A4%8D%E7%8E%B0%E8%AE%BA%E6%96%87SpikeGPT-Generative%20Pre-trained%20Language%20Model%20with%20Spiking%20Neural%20Networks/</url>
-    <content><![CDATA[<p>记录一下复现论文<a href="https://arxiv.org/abs/2302.13939v2">SpikeGPT: Generative Pre-trained Language Model with Spiking Neural Networks</a>的过程，论文给出了项目的<a href="https://github.com/ridgerchu/SpikeGPT">GitHub</a>地址。此博客是边跑边写边改的，尽量把顺序合理化，让人可以少走一些弯路</p>
-<h2 id="论文概述"><a href="#论文概述" class="headerlink" title="论文概述"></a>论文概述</h2><p>利用工具，可以大概对此篇论文有如下了解</p>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">这篇文章介绍了SpikeGPT，这是一种基于脉冲神经网络(SNNs)的生成式语言模型。SNNs利用稀疏、事件驱动的激活方式来减少计算复杂性，提高能源效率，因此在深度学习领域有很大的潜力。虽然SNNs在计算机视觉任务上取得了成功，但在语言生成方面仍然有待进一步探索，因为它们的训练过程相对复杂。文章的作者们对Transformer模块进行了修改，消除了多头自注意力带来的二次计算复杂度，并引入循环计算，实现了逐词计算，同时保留了长程依赖关系。结果得到的SpikeGPT模型在语言生成任务上表现出竞争力，同时能耗仅为传统人工神经网络(ANNs)的五分之一。该模型还是迄今为止最大的反向传播训练的功能性SNN模型，拥有多达2.6亿个参数。这项工作为在自然语言处理任务中有效训练大规模SNNs并将Transformer架构与SNNs结合起来实现高性能和能源效率开辟了新的潜力。</span><br></pre></td></tr></table></figure>
-<h2 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h2><h3 id="新建环境"><a href="#新建环境" class="headerlink" title="新建环境"></a>新建环境</h3><p>新建一个<code>Conda</code>环境</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">conda create -n SpikeGPT python=3.8</span><br><span class="line">conda activate SpikeGPT</span><br></pre></td></tr></table></figure>
-<p>然后用<code>pycharm</code>打开此项目，并切换到刚刚新建的环境</p>
-<p>接下来就是安装环境了，由于作者没有提供具体包的版本，只能根据缺啥安装啥的原则，有什么问题之后再慢慢改</p>
-<h3 id="安装accelerate"><a href="#安装accelerate" class="headerlink" title="安装accelerate"></a>安装accelerate</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install accelerate</span><br></pre></td></tr></table></figure>
-<p>在安装<code>accelerate</code>的时候，自动给我装了一个torch2.0.1版本的，这个后面管，只要这个torch版本大于10.0.0就行</p>
-<h3 id="安装Pytorch"><a href="#安装Pytorch" class="headerlink" title="安装Pytorch"></a>安装Pytorch</h3><p>根据我的<code>CUDA</code>版本，安装了如下的<code>torch</code>，具体安装细节可以参考<a href="https://ruvikm.gitee.io/2023/06/06/Win11%E9%85%8D%E7%BD%AEAnaconda-Cuda-Pytorch-Tenserflow%E7%8E%AF%E5%A2%83/">这篇博客</a></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda install pytorch==1.11.0 torchvision==0.12.0 torchaudio==0.11.0 cudatoolkit=11.3</span><br></pre></td></tr></table></figure>
-<h3 id="安装matplotlib"><a href="#安装matplotlib" class="headerlink" title="安装matplotlib"></a>安装matplotlib</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install matplotlib</span><br></pre></td></tr></table></figure>
-<h3 id="安装tqdm"><a href="#安装tqdm" class="headerlink" title="安装tqdm"></a>安装tqdm</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install tqdm</span><br></pre></td></tr></table></figure>
-<h3 id="安装transformers"><a href="#安装transformers" class="headerlink" title="安装transformers"></a>安装transformers</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install transformers</span><br></pre></td></tr></table></figure>
-<h3 id="安装deepspeed"><a href="#安装deepspeed" class="headerlink" title="安装deepspeed"></a>安装deepspeed</h3><h4 id="错误安装方法"><a href="#错误安装方法" class="headerlink" title="错误安装方法"></a>错误安装方法</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install deepspeed</span><br></pre></td></tr></table></figure>
-<p>安装的时候报错了</p>
-<p><img src="https://s1.ax1x.com/2023/07/22/pCbvDot.png" alt="image-20230722102232403"></p>
-<p>换<code>conda</code>试了后，<code>conda install deepspeed</code>，也不行。</p>
-<p>网上查了一个安装方式</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install transformers[deepspeed]</span><br></pre></td></tr></table></figure>
-<p>还是那个错，网上查了一下</p>
-<p><img src="https://s1.ax1x.com/2023/07/22/pCbxpY6.png" alt="image-20230722103014784"></p>
-<p>设置一下环境变量试试</p>
-<p><img src="https://s1.ax1x.com/2023/07/22/pCbxX38.png" alt="屏幕截图 2023-07-22 105535"></p>
-<p>报错！！！好消息是报错变了</p>
-<p><img src="https://s1.ax1x.com/2023/07/22/pCbxbNt.png" alt="image-20230722105444097"></p>
-<p>去<code>github</code>看了一下，意思大概是这个库原本是在<code>linux</code>上的，在<code>window</code>上的支持还不是很好</p>
-<p><img src="https://s1.ax1x.com/2023/07/22/pCbxy7R.png" alt="image-20230722103953254"></p>
-<h4 id="正确安装方法"><a href="#正确安装方法" class="headerlink" title="正确安装方法"></a>正确安装方法</h4><p>网上查到一篇win10成功安装的<a href="https://zhuanlan.zhihu.com/p/636450918">博客</a>，按照博客的说法</p>
-<p>首先安装必要组件</p>
-<p><img src="https://s1.ax1x.com/2023/07/22/pCq9crD.png" alt="image-20230722122822936">先把<a href="https://github.com/microsoft/DeepSpeed">官方</a>的开源的代码下载下来，解压（要用管理员权限）后</p>
-<p>用管理员权限打开cmd，切换到解压的目录，在命令行输入</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">build_win.bat</span><br></pre></td></tr></table></figure>
-<p><img src="https://s1.ax1x.com/2023/07/22/pCq9A8P.png" alt="image-20230722121606679"></p>
-<p>慢慢改错吧，先解决一个报错最多的</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">error: attribute <span class="string">&quot;nodiscard&quot;</span> does not take arguments</span><br></pre></td></tr></table></figure>
-<h3 id="下载数据集"><a href="#下载数据集" class="headerlink" title="下载数据集"></a>下载数据集</h3><p>作者提供数据集<code>Enwik8</code><a href="https://data.deepai.org/enwik8.zip">下载地址</a></p>
-]]></content>
-      <categories>
-        <category>论文复现</category>
-      </categories>
   </entry>
   <entry>
     <title>复现论文ChineseBERT(ONTONOTES数据集)</title>
@@ -1137,6 +1025,65 @@
       </categories>
   </entry>
   <entry>
+    <title>Win11转移conda环境——从C盘转移到D盘</title>
+    <url>/2023/06/28/Win11%E8%BD%AC%E7%A7%BBconda%E7%8E%AF%E5%A2%83%E2%80%94%E2%80%94%E4%BB%8EC%E7%9B%98%E8%BD%AC%E7%A7%BB%E5%88%B0D%E7%9B%98/</url>
+    <content><![CDATA[<p>原本就是将<code>Anaconda</code>安装到了C盘，结果发现环境他还是默认安装到了C盘，就打算再转移一下</p>
+<p>conda版本为</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-28%20095709.png" alt="屏幕截图 2023-06-28 095709"></p>
+<p>首先找到Win11下面的环境位置</p>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">C:<span class="keyword">\Users</span><span class="keyword">\用</span>户名<span class="keyword">\.</span>conda<span class="keyword">\envs</span></span><br></pre></td></tr></table></figure>
+<p>比如我的就是</p>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">C:<span class="keyword">\Users</span><span class="keyword">\Arona</span><span class="keyword">\.</span>conda<span class="keyword">\envs</span></span><br></pre></td></tr></table></figure>
+<p>找到D盘安装<code>Anaconda</code>的位置</p>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">D:<span class="keyword">\ProgramData</span><span class="keyword">\anaconda</span>3<span class="keyword">\envs</span></span><br></pre></td></tr></table></figure>
+<p>C盘的将<code>envs</code>文件夹剪切过去，环境迁移一半就完成了</p>
+<p>测试了一下，如果新建一个环境，默认还会装在C盘</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-28%20101113.png" alt="屏幕截图 2023-06-28 101113"></p>
+<p>于是要修改一下环境的默认安装位置</p>
+<p>找到用户目录下的<code>.condarc</code>文件</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">explorer %USERPROFILE%</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-28%20101811.png" alt="屏幕截图 2023-06-28 101811"></p>
+<p>用<code>Visual Studio Code</code>打开</p>
+<p>加入这段话</p>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">envs<span class="built_in">_</span>dirs:</span><br><span class="line">  - D:<span class="keyword">\ProgramData</span><span class="keyword">\anaconda</span>3<span class="keyword">\envs</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-28%20102057.png" alt="屏幕截图 2023-06-28 102057"></p>
+<p>这样默认就会安装到D盘了</p>
+<p>测试一下，新建一个名为<code>test1</code>的环境</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-28%20102249.png" alt="屏幕截图 2023-06-28 102249"></p>
+<p>如果发现地址还没变的话，可以继续以下操作</p>
+<p>找到<code>Anaconda</code>的文件夹，右键属性—安全，把users下面的权限全部打钩就行</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-28%20102811.png" alt="屏幕截图 2023-06-28 102811"></p>
+<p>应用过程中可能还会出现这种错误</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/image-20230628103929133.png" alt="image-20230628103929133"></p>
+<p>可以按照这个<a href="https://blog.csdn.net/qq_37653414/article/details/103462173">博客</a>的方法来解决，那个图比较清楚</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/image-20230628104526618.png" alt="image-20230628104526618"></p>
+<p>等待一段时间</p>
+<p>然后再回到上述操作，把users下面的权限全部打钩，再等待亿段时间</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/image-20230628104915818.png" alt="image-20230628104915818"></p>
+<p>完成后最后测试一下，新建一个名为test2的环境</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-28%20105049.png" alt="屏幕截图 2023-06-28 105049"></p>
+<p>成功！</p>
+<p>补充一下：</p>
+<p>发现刚刚上述只是把环境迁移了，下载的缓存还是留在C盘</p>
+<p>找到刚刚用户目录的.<code>condarc</code>文件，再加入几句话</p>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">pkgs<span class="built_in">_</span>dirs:</span><br><span class="line">  - D:<span class="keyword">\ProgramData</span><span class="keyword">\pkgs</span></span><br></pre></td></tr></table></figure>
+<p>保存查看一下，输入</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda info</span><br></pre></td></tr></table></figure>
+<p><img src="https://s1.ax1x.com/2023/06/28/pCdNtKI.png" alt="image-20230628115703963"></p>
+<p>说明配置成功，接下来把C盘的<code>pkgs</code>文件夹剪切到D盘刚刚的目录下就行了</p>
+<p><img src="https://s1.ax1x.com/2023/06/28/pCdNqqx.png" alt="image-20230628115948908"></p>
+<p>完事！</p>
+<p>补充：</p>
+<p>之后跑项目遇到了这个问题</p>
+<p><img src="https://s1.ax1x.com/2023/07/14/pC41RGd.png" alt="屏幕截图 2023-07-05 155524"></p>
+<p>这个原因是之前<code>pycharm</code>保存的环境还默认在C盘，没有自动更新环境的位置，这时候重新加载一下就好了</p>
+<p><img src="https://s1.ax1x.com/2023/07/14/pC41Iqf.png" alt="image-20230714111213354"></p>
+]]></content>
+      <categories>
+        <category>个人笔记</category>
+      </categories>
+  </entry>
+  <entry>
     <title>跑通项目《GAT-BiLSTM-CRF》</title>
     <url>/2023/06/24/%E5%A4%8D%E7%8E%B0%E9%A1%B9%E7%9B%AE%E3%80%8AGAT-BiLSTM-CRF%E3%80%8B/</url>
     <content><![CDATA[<p>记录一下自己跑通一个<a href="https://github.com/yx100/GAT-BiLSTM-CRF">GitHub项目</a>《GAT-BiLSTM-CRF》的过程</p>
@@ -1321,6 +1268,145 @@
       <categories>
         <category>论文复现</category>
       </categories>
+  </entry>
+  <entry>
+    <title>如何使用微信小程序IDE在github上实现团队合作</title>
+    <url>/2020/04/16/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8FIDE%E5%9C%A8github%E4%B8%8A%E5%AE%9E%E7%8E%B0%E5%9B%A2%E9%98%9F%E5%90%88%E4%BD%9C/</url>
+    <content><![CDATA[<p>——-原文——-(2020/4/16)</p>
+<p>@<a href="如何使用微信开发者工具在github上实现团队合作">TOC</a><br>一.发起者要做的一些步骤</p>
+<ol>
+<li>首先用IDE初始化本地的git仓库<br><img src="https://img-blog.csdnimg.cn/20200130111131527.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="a."><br><img src="https://img-blog.csdnimg.cn/20200130111301249.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="b."></li>
+<li>使用github-desktop客户端添加这个新建的本地git库并同时上传到新建的远程仓库中<br><img src="https://img-blog.csdnimg.cn/2020013011214879.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="添加本地仓库"><br><img src="https://img-blog.csdnimg.cn/20200130112202771.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="新建远程仓库"><br><img src="https://img-blog.csdnimg.cn/2020013011231537.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/2020013011291517.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="看一下成果嘿嘿嘿"></li>
+<li>添加参与者<br><img src="https://img-blog.csdnimg.cn/20200130113301950.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="最好添加的时候写参与者的名字"><br><strong>PS:被邀请者的必须要接受邀请才可以</strong></li>
+</ol>
+<p>二.参与者需要做的步骤</p>
+<ol>
+<li>在微信小程序开发者工具里添加远程仓库<br><img src="https://img-blog.csdnimg.cn/20200130114342510.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="添加远程仓库_1"><img src="https://img-blog.csdnimg.cn/20200130114356569.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="添加远程仓库_2"><br><img src="https://img-blog.csdnimg.cn/20200130114448885.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="如何查看仓库的地址"></li>
+<li>绑定自己的github账号<br><img src="https://img-blog.csdnimg.cn/20200130115015761.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="绑定账号"></li>
+</ol>
+<p>三.如何线上合作</p>
+<ol>
+<li>参与者在调试好了一些功能以后，提交到远程仓库的分支<br><img src="https://img-blog.csdnimg.cn/20200130120245999.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="提交分支"></li>
+<li>参与者请求合并分支<br><img src="https://img-blog.csdnimg.cn/20200130120523380.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="请求合并_1"><br><img src="https://img-blog.csdnimg.cn/20200130120921309.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="请求合并_2"><br><img src="https://img-blog.csdnimg.cn/20200130120955937.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="发起合并请求"></li>
+<li>在发起者经过了沉思熟虑，通计熟筹，仰观俯察后，同意合并分支的请求(＠￣ー￣＠)<br><img src="https://img-blog.csdnimg.cn/20200130121516212.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="找到请求_1"><br>从这里可以对比的看到分支和master的不同<br><img src="https://img-blog.csdnimg.cn/2020013012161487.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="找不同"><br>同意合并请求：<br><img src="https://img-blog.csdnimg.cn/20200130121829976.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="同意合并_2"><br><img src="https://img-blog.csdnimg.cn/20200130121938158.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="同意合并_3"><br>这样就分支就合并进去了<br><img src="https://img-blog.csdnimg.cn/20200130122111630.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="嘻嘻嘻"><br>当然如果参与者想要同步最新的代码，只要pull一下就好了<br><img src="https://img-blog.csdnimg.cn/20200130191852824.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="同步"><br>第一次接触github，如有一些错误，还请多多指教<br>(๑•̀ㅂ•́)و</li>
+</ol>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>微信小程序</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>WSL命令行操作笔记</title>
+    <url>/2023/05/23/WSL%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%93%8D%E4%BD%9C%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<p>记录一下这段时间在WSL2上学习conda以及ubuntu的命令行指令，<del>以便以后直接粘贴复制</del></p>
+<h2 id="1-wsl相关"><a href="#1-wsl相关" class="headerlink" title="1.wsl相关"></a>1.wsl相关</h2><h3 id="创建用户username"><a href="#创建用户username" class="headerlink" title="创建用户username"></a>创建用户username</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">useradd username</span><br></pre></td></tr></table></figure>
+<h3 id="给已创建的用户username设置密码"><a href="#给已创建的用户username设置密码" class="headerlink" title="给已创建的用户username设置密码"></a>给已创建的用户username设置密码</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">passwd username</span><br></pre></td></tr></table></figure>
+<h3 id="修改用户这个命令的相关参数"><a href="#修改用户这个命令的相关参数" class="headerlink" title="修改用户这个命令的相关参数"></a>修改用户这个命令的相关参数</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">usermod --<span class="built_in">help</span></span><br></pre></td></tr></table></figure>
+<h3 id="删除用户username"><a href="#删除用户username" class="headerlink" title="删除用户username"></a>删除用户username</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">userdel username</span><br></pre></td></tr></table></figure>
+<h3 id="删除用户username所在目录"><a href="#删除用户username所在目录" class="headerlink" title="删除用户username所在目录"></a>删除用户username所在目录</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">rm</span> -rf username</span><br></pre></td></tr></table></figure>
+<h3 id="用户切换"><a href="#用户切换" class="headerlink" title="用户切换"></a>用户切换</h3><h4 id="切换到root"><a href="#切换到root" class="headerlink" title="切换到root"></a>切换到root</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo -s	</span><br></pre></td></tr></table></figure>
+<h4 id="切换到用户username"><a href="#切换到用户username" class="headerlink" title="切换到用户username"></a>切换到用户username</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">su username</span><br><span class="line"></span><br><span class="line">eg:su ubuntu22</span><br></pre></td></tr></table></figure>
+<h3 id="首先查看所有分发版本"><a href="#首先查看所有分发版本" class="headerlink" title="首先查看所有分发版本"></a>首先查看所有分发版本</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">wsl -l --all  -v</span><br></pre></td></tr></table></figure>
+<h3 id="关闭WSL2"><a href="#关闭WSL2" class="headerlink" title="关闭WSL2"></a>关闭WSL2</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">wsl --shutdown</span><br></pre></td></tr></table></figure>
+<h2 id="2-Conda相关"><a href="#2-Conda相关" class="headerlink" title="2.Conda相关"></a>2.Conda相关</h2><h3 id="切换环境"><a href="#切换环境" class="headerlink" title="切换环境"></a>切换环境</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda activate cu118py310</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda activate tensorflow</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda activate NER</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda activate torch</span><br></pre></td></tr></table></figure>
+<h3 id="查看并删除环境"><a href="#查看并删除环境" class="headerlink" title="查看并删除环境"></a>查看并删除环境</h3><h4 id="查看环境列表"><a href="#查看环境列表" class="headerlink" title="查看环境列表"></a>查看环境列表</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda info --<span class="built_in">env</span></span><br></pre></td></tr></table></figure>
+<h4 id="删除环境"><a href="#删除环境" class="headerlink" title="删除环境"></a>删除环境</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda remove -n 环境名 --all</span><br><span class="line"></span><br><span class="line">eg:conda remove -n code --all</span><br></pre></td></tr></table></figure>
+<h3 id="创建环境"><a href="#创建环境" class="headerlink" title="创建环境"></a>创建环境</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda create -n 环境名 python=版本号</span><br><span class="line"></span><br><span class="line">eg:conda create -n ChineseBERT python=3.8</span><br></pre></td></tr></table></figure>
+<h3 id="退出当前环境"><a href="#退出当前环境" class="headerlink" title="退出当前环境"></a>退出当前环境</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda activate base</span><br></pre></td></tr></table></figure>
+<h3 id="查看当前环境已安装的包"><a href="#查看当前环境已安装的包" class="headerlink" title="查看当前环境已安装的包"></a>查看当前环境已安装的包</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip list</span><br></pre></td></tr></table></figure>
+<h3 id="查看WSL2可用内存空间"><a href="#查看WSL2可用内存空间" class="headerlink" title="查看WSL2可用内存空间"></a>查看WSL2可用内存空间</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cat</span> /proc/meminfo</span><br></pre></td></tr></table></figure>
+<h2 id="3-Docker相关"><a href="#3-Docker相关" class="headerlink" title="3.Docker相关"></a>3.Docker相关</h2><h3 id="停止Docker服务"><a href="#停止Docker服务" class="headerlink" title="停止Docker服务"></a>停止Docker服务</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo service docker stop</span><br></pre></td></tr></table></figure>
+<h3 id="开启Docker服务"><a href="#开启Docker服务" class="headerlink" title="开启Docker服务"></a>开启Docker服务</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo service docker start</span><br></pre></td></tr></table></figure>
+<h3 id="在jupyter运行TensorFlow的官方docker镜像"><a href="#在jupyter运行TensorFlow的官方docker镜像" class="headerlink" title="在jupyter运行TensorFlow的官方docker镜像"></a>在jupyter运行TensorFlow的官方docker镜像</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker run -it --gpus all -p 8888:8888 tensorflow/tensorflow:latest-gpu-py3-jupyter</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>个人笔记</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>安装PaddlePaddle</title>
+    <url>/2023/07/21/%E5%AE%89%E8%A3%85PaddlePaddle/</url>
+    <content><![CDATA[<p>记录一下安装的过程，官方文档如下</p>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">https://www.paddlepaddle.org.cn/documentation/docs/zh/install/conda/windows-conda.html</span><br></pre></td></tr></table></figure>
+<h2 id="创建虚拟环境"><a href="#创建虚拟环境" class="headerlink" title="创建虚拟环境"></a>创建虚拟环境</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda create -n paddle python=3.8</span><br><span class="line">conda activate paddle</span><br></pre></td></tr></table></figure>
+<h2 id="查看自己安装的CUDA版本"><a href="#查看自己安装的CUDA版本" class="headerlink" title="查看自己安装的CUDA版本"></a>查看自己安装的CUDA版本</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">nvcc -V</span><br></pre></td></tr></table></figure>
+<p><img src="https://s1.ax1x.com/2023/07/21/pCHjtOA.png" alt="image-20230721102917138"></p>
+<p>选择适合自己的版本，我安装的是CUDA11.2的</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda install paddlepaddle-gpu==2.5.0 cudatoolkit=11.2 -c https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/Paddle/ -c conda-forge</span><br></pre></td></tr></table></figure>
+<h2 id="验证安装"><a href="#验证安装" class="headerlink" title="验证安装"></a>验证安装</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">python</span><br><span class="line"><span class="keyword">import</span> paddle</span><br><span class="line">paddle.utils.run_check()</span><br></pre></td></tr></table></figure>
+<p><img src="https://s1.ax1x.com/2023/07/21/pCHvsN6.png" alt="image-20230721105441359"></p>
+]]></content>
+      <categories>
+        <category>个人笔记</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>安装Word2Vec</title>
+    <url>/2023/07/01/%E5%AE%89%E8%A3%85Word2Vec/</url>
+    <content><![CDATA[<p>由于最近需要用到一个预处理的数据集，方法在<a href="https://arxiv.org/abs/1301.3781">这篇论文</a>《Efficient Estimation of Word Representations in Vector Space》里，于是打算尝试能不能复现一下，论文提供了<a href="https://code.google.com/archive/p/word2vec/">代码地址</a>，但是当我打开下载的时候，却发现是404</p>
+<p><img src="https://s1.ax1x.com/2023/07/01/pCB5ZT0.png" alt="image-20230701163100641"></p>
+<p>于是经过一番搜索，找到了最新的<a href="https://pypi.org/project/word2vec/">地址</a>（应该是吧</p>
+<p>先创建一下新的虚拟环境</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">conda create -n word2vec python=3.8</span><br><span class="line">conda activate word2vec</span><br></pre></td></tr></table></figure>
+<p>然后安装<code>numpy</code>、<code>scipy</code></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pip install numpy</span><br><span class="line">pip install scipy</span><br></pre></td></tr></table></figure>
+<p>安装<a href="https://visualstudio.microsoft.com/zh-hans/vs/">Microsoft Visual C++ 14.0</a></p>
+<p>下载下来是一个安装器，然后进行如下操作</p>
+<p><img src="https://s1.ax1x.com/2023/07/01/pCBoUQe.png" alt="屏幕截图 2023-07-01 165446"></p>
+<p>然后</p>
+<p><img src="https://s1.ax1x.com/2023/07/01/pCBodLd.png" alt="屏幕截图 2023-07-01 165358"></p>
+<p>最后安装有点麻烦的<code>gcc</code>，首先使用清华镜像下载<a href="http://files.1f0.de/mingw/mingw-w64-gcc-12.2-stable-r38.7z">mingw-w64-gcc</a>，然后解压的位置选一个自己能记住的位置，比如我的就是</p>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">G:<span class="keyword">\Program</span> Files<span class="keyword">\MinGW</span>-w64</span><br></pre></td></tr></table></figure>
+<p>然后把<code>bin</code>目录添加到系统变量里</p>
+<p>例如我的路径就是</p>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">G:<span class="keyword">\Program</span> Files<span class="keyword">\MinGW</span>-w64<span class="keyword">\mingw</span>-w64-gcc-12.2-stable-r38<span class="keyword">\bin</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://s1.ax1x.com/2023/07/01/pCBTy7R.png" alt="屏幕截图 2023-07-01 172554"></p>
+<p>最后测试一下时候配置成功</p>
+<p>在<code>D盘</code>根目录先新建一个<code>helloword.c</code>的文件</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;hello world\n&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后用<code>cmd</code>到<code>D盘</code>根目录</p>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">cd/d D:</span><br></pre></td></tr></table></figure>
+<p>用gcc编译</p>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">gcc helloword.c</span><br></pre></td></tr></table></figure>
+<p><strong>如果没报错说明其实已经配置好了，想看文件运行结果的可以继续输入</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">a.exe</span><br></pre></td></tr></table></figure>
+<p><img src="https://s1.ax1x.com/2023/07/01/pCB7EgU.png" alt="image-20230701173710147"></p>
+<p>这样，<code>word2vec</code>所需的组件就算全部安装完了，下面正式开始安装<code>word2vec</code>（在conda那个命令窗口哦，希望不要报错！）</p>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">pip install word2vec</span><br></pre></td></tr></table></figure>
+<p><img src="https://s1.ax1x.com/2023/07/01/pCB7w5t.png" alt="image-20230701174216784"></p>
+<p>如果出现这个问题，重启一下试试。本人就是重启完莫名安装成功了，可能是刚刚有的组件需要重启吧</p>
+<p><img src="https://s1.ax1x.com/2023/07/01/pCDCOPS.png" alt="image-20230701225337075"></p>
+]]></content>
+      <categories>
+        <category>论文复现</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>斐波那契数列 C_C++</title>
+    <url>/2022/01/10/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97%20C_C++/</url>
+    <content><![CDATA[<p>用三种方法实现:</p>
+<ol>
+<li>带备忘录的递归</li>
+<li>dp迭代</li>
+<li>迭代优化，空间复杂度为O(1)</li>
+</ol>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> _for(i,a,b) for(int i=(a);i&lt;=(b);i++)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//备忘录</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">helper</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; memo, <span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">	<span class="comment">//base case</span></span><br><span class="line">	<span class="keyword">if</span> (n == <span class="number">2</span> || n == <span class="number">3</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (memo[n] != <span class="number">0</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> memo[n];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		memo[n] = <span class="built_in">helper</span>(memo, n - <span class="number">1</span>) + <span class="built_in">helper</span>(memo, n - <span class="number">2</span>);</span><br><span class="line">		<span class="keyword">return</span> memo[n];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//带备忘录法</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">fib_1</span><span class="params">(<span class="type">int</span> N)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (N &lt;= <span class="number">1</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">memo</span><span class="params">(N + <span class="number">1</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">helper</span>(memo, N);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//dp数组迭代法</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">fib_2</span><span class="params">(<span class="type">int</span> N)</span> </span>&#123;</span><br><span class="line">	<span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">dp</span><span class="params">(N + <span class="number">1</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line">	dp[<span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">	dp[<span class="number">2</span>] = dp[<span class="number">3</span>] = <span class="number">1</span>;</span><br><span class="line">	_for(i, <span class="number">4</span>, N) &#123;</span><br><span class="line">		dp[i] = dp[i - <span class="number">1</span>] + dp[i - <span class="number">2</span>];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> dp[N];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//迭代优化</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">fib_3</span><span class="params">(<span class="type">int</span> N)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (N == <span class="number">1</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (N == <span class="number">2</span> || N == <span class="number">3</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">int</span> pre = <span class="number">1</span>, ppre = <span class="number">1</span>;</span><br><span class="line">	_for(i, <span class="number">4</span>, N) &#123;</span><br><span class="line">		<span class="type">int</span> sum = pre + ppre;</span><br><span class="line">		ppre = pre;</span><br><span class="line">		pre = sum;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> pre;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, <span class="built_in">fib_3</span>(<span class="number">10</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>刷题笔记</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+      </tags>
   </entry>
   <entry>
     <title>复现论文《SPIKING CONVOLUTIONAL NEURAL NETWORKS FOR TEXT CLASSIFICATION》</title>
@@ -1787,33 +1873,110 @@
       </categories>
   </entry>
   <entry>
-    <title>如何使用微信小程序IDE在github上实现团队合作</title>
-    <url>/2020/04/16/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8FIDE%E5%9C%A8github%E4%B8%8A%E5%AE%9E%E7%8E%B0%E5%9B%A2%E9%98%9F%E5%90%88%E4%BD%9C/</url>
-    <content><![CDATA[<p>——-原文——-(2020/4/16)</p>
-<p>@<a href="如何使用微信开发者工具在github上实现团队合作">TOC</a><br>一.发起者要做的一些步骤</p>
+    <title>王道数据结构 线性表 链式存储小结</title>
+    <url>/2022/01/10/%E7%8E%8B%E9%81%93%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%20%E7%BA%BF%E6%80%A7%E8%A1%A8%20%E9%93%BE%E5%BC%8F%E5%AD%98%E5%82%A8%E5%B0%8F%E7%BB%93/</url>
+    <content><![CDATA[<h1 id="1-单链表"><a href="#1-单链表" class="headerlink" title="1.单链表"></a>1.单链表</h1><p><img src="https://img-blog.csdnimg.cn/20210116122507504.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="单链表"></p>
+<h2 id="头插法"><a href="#头插法" class="headerlink" title="头插法"></a>头插法</h2><p>图解：<br><img src="https://img-blog.csdnimg.cn/20210116125651161.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="1"></p>
 <ol>
-<li>首先用IDE初始化本地的git仓库<br><img src="https://img-blog.csdnimg.cn/20200130111131527.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="a."><br><img src="https://img-blog.csdnimg.cn/20200130111301249.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="b."></li>
-<li>使用github-desktop客户端添加这个新建的本地git库并同时上传到新建的远程仓库中<br><img src="https://img-blog.csdnimg.cn/2020013011214879.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="添加本地仓库"><br><img src="https://img-blog.csdnimg.cn/20200130112202771.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="新建远程仓库"><br><img src="https://img-blog.csdnimg.cn/2020013011231537.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/2020013011291517.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="看一下成果嘿嘿嘿"></li>
-<li>添加参与者<br><img src="https://img-blog.csdnimg.cn/20200130113301950.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="最好添加的时候写参与者的名字"><br><strong>PS:被邀请者的必须要接受邀请才可以</strong></li>
+<li>待插入的next指向头结点原本指向的结点</li>
+<li>修改头结点的next指向待插入结点<br><img src="https://img-blog.csdnimg.cn/20210116125826814.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="如何插入"></li>
 </ol>
-<p>二.参与者需要做的步骤</p>
+<p>插入完毕<img src="https://img-blog.csdnimg.cn/20210116130021844.png#pic_center" alt="插入完毕"><br>代码实现</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//设带插入结点为S</span></span><br><span class="line">S-&gt;next=head-&gt;next;</span><br><span class="line">head-&gt;next=S;</span><br></pre></td></tr></table></figure>
+<h2 id="尾插法"><a href="#尾插法" class="headerlink" title="尾插法"></a>尾插法</h2><p>图解<br><img src="https://img-blog.csdnimg.cn/20210116130729224.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="待插入状态"></p>
 <ol>
-<li>在微信小程序开发者工具里添加远程仓库<br><img src="https://img-blog.csdnimg.cn/20200130114342510.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="添加远程仓库_1"><img src="https://img-blog.csdnimg.cn/20200130114356569.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="添加远程仓库_2"><br><img src="https://img-blog.csdnimg.cn/20200130114448885.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="如何查看仓库的地址"></li>
-<li>绑定自己的github账号<br><img src="https://img-blog.csdnimg.cn/20200130115015761.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="绑定账号"></li>
+<li>将待插入结点的next域设为NULL</li>
+<li><p>将最后一个结点的next域指向带插入结点<br><img src="https://img-blog.csdnimg.cn/20210116130930320.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="插入方法"></p>
+<p>插入完毕<br><img src="https://img-blog.csdnimg.cn/20210116131032237.png#pic_center" alt="插入完毕"><br>代码实现</p>
+</li>
 </ol>
-<p>三.如何线上合作</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//设插入结点为S</span></span><br><span class="line">head-&gt;next=S;</span><br><span class="line">head=S;</span><br></pre></td></tr></table></figure>
+<h2 id="在中间插入"><a href="#在中间插入" class="headerlink" title="在中间插入"></a>在中间插入</h2><p>图解<br><img src="https://img-blog.csdnimg.cn/20210116202306782.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="插入前状态"></p>
 <ol>
-<li>参与者在调试好了一些功能以后，提交到远程仓库的分支<br><img src="https://img-blog.csdnimg.cn/20200130120245999.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="提交分支"></li>
-<li>参与者请求合并分支<br><img src="https://img-blog.csdnimg.cn/20200130120523380.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="请求合并_1"><br><img src="https://img-blog.csdnimg.cn/20200130120921309.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="请求合并_2"><br><img src="https://img-blog.csdnimg.cn/20200130120955937.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="发起合并请求"></li>
-<li>在发起者经过了沉思熟虑，通计熟筹，仰观俯察后，同意合并分支的请求(＠￣ー￣＠)<br><img src="https://img-blog.csdnimg.cn/20200130121516212.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="找到请求_1"><br>从这里可以对比的看到分支和master的不同<br><img src="https://img-blog.csdnimg.cn/2020013012161487.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="找不同"><br>同意合并请求：<br><img src="https://img-blog.csdnimg.cn/20200130121829976.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="同意合并_2"><br><img src="https://img-blog.csdnimg.cn/20200130121938158.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="同意合并_3"><br>这样就分支就合并进去了<br><img src="https://img-blog.csdnimg.cn/20200130122111630.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="嘻嘻嘻"><br>当然如果参与者想要同步最新的代码，只要pull一下就好了<br><img src="https://img-blog.csdnimg.cn/20200130191852824.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="同步"><br>第一次接触github，如有一些错误，还请多多指教<br>(๑•̀ㅂ•́)و</li>
+<li>将待插入结点的next域指向插入结点位置的前驱结点指向的后一个结点</li>
+<li>将原本位置上之前的结点指向待插入结点 </li>
 </ol>
-]]></content>
+<p><img src="https://img-blog.csdnimg.cn/20210116202359651.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>插入完成<br><img src="https://img-blog.csdnimg.cn/20210116202638177.png#pic_center" alt="插入完成"></p>
+<p>代码实现</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//设待插入结点为S</span></span><br><span class="line"><span class="comment">//待插入位置的前驱结点为pre</span></span><br><span class="line">S-&gt;next=pre-&gt;next;</span><br><span class="line">pre-&gt;next=S;</span><br></pre></td></tr></table></figure>
+<h2 id="在中间删除"><a href="#在中间删除" class="headerlink" title="在中间删除"></a>在中间删除</h2><p>图解<br><img src="https://img-blog.csdnimg.cn/20210116204400671.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="删除前状态"></p>
+<ol>
+<li>将待删除结点的前一个结点的next指向待删除结点next的结点</li>
+<li>删除待删除结点</li>
+</ol>
+<p><img src="https://img-blog.csdnimg.cn/20210116204421686.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="步骤"><br>删除完成<br><img src="https://img-blog.csdnimg.cn/20210116204628265.png#pic_center" alt="删除完成"></p>
+<p>代码实现 </p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//设待删除前驱结点为pre</span></span><br><span class="line"><span class="comment">//待删除结点为S</span></span><br><span class="line">pre-&gt;next=S-&gt;next;</span><br><span class="line"><span class="keyword">delete</span> S;</span><br></pre></td></tr></table></figure>
+<h2 id="原地逆置链表"><a href="#原地逆置链表" class="headerlink" title="原地逆置链表"></a>原地逆置链表</h2><ol>
+<li>将头结点与后面的结点断开，然后重新用头插法插入</li>
+<li>使用三个指针逆置<br>图解<br>1.<img src="https://img-blog.csdnimg.cn/20210116213023974.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="1"><br>2.<img src="https://img-blog.csdnimg.cn/20210116213042409.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="2"><br>3.<img src="https://img-blog.csdnimg.cn/20210116213051310.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="3"><br>4.<img src="https://img-blog.csdnimg.cn/20210116213109935.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="4"><br>5.逆置完毕（最后将头结点指向p）<img src="https://img-blog.csdnimg.cn/20210116213123148.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="5"></li>
+</ol>
+<p>代码实现</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">ReverseList</span><span class="params">(LinkList&amp; head)</span> </span>&#123;</span><br><span class="line">	LNode* pre, * p = head-&gt;next, * r = p-&gt;next;</span><br><span class="line">	p-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">	<span class="keyword">while</span> (r != <span class="literal">NULL</span>) &#123;</span><br><span class="line">		pre = p;</span><br><span class="line">		p = r;</span><br><span class="line">		r = r-&gt;next;</span><br><span class="line">		p-&gt;next = pre;</span><br><span class="line">	&#125;</span><br><span class="line">	head-&gt;next = p;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>学习笔记</category>
       </categories>
       <tags>
-        <tag>微信小程序</tag>
+        <tag>算法</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>拼模型尝试</title>
+    <url>/2023/08/12/%E6%8B%BC%E6%A8%A1%E5%9E%8B%E5%B0%9D%E8%AF%95/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>记录一下自己首次组合模型的过程，希望可以为以后论文打基础。</p>
+<p>PS：由于自己是零基础，看了一下李沐的教程，感觉理论部分有点多，没看完可能<code>deadline</code>都到了。唐老师的人工智能课也看了看，总感觉不是特别系统，都是一个一个项目，于是我打算效率亿点点，需要什么先学什么。</p>
+<p>我需要跑的一个模型是这样的架构</p>
+<p><img src="https://s1.ax1x.com/2023/08/12/pPuCZes.png" alt="模型架构"></p>
+<h2 id="分析问题"><a href="#分析问题" class="headerlink" title="分析问题"></a>分析问题</h2><p>客观分析一下我遇到的这个问题</p>
+<p><strong>1.目标问题</strong></p>
+<p>把这个架构跑通$\rightarrow$</p>
+<p>从中文电子病历提取有用信息$\rightarrow$</p>
+<p>进行医疗大数据挖掘、临床辅助决策系统、AI 电子病历质控系统构建等的基础工作</p>
+<p><strong>2.方法问题</strong></p>
+<p>寻找相似的项目或者使用了相似模型架构的项目，把他们的模型删删改改</p>
+<p>删改可能需要借助到模型的官方文档，例如<a href="https://paddlenlp.readthedocs.io/zh/latest/index.html">PaddleNLP文档</a>，或者<a href="https://pytorch-cn.readthedocs.io/zh/latest/">PyTorch文档</a></p>
+<p>然后多借鉴一些博客的方法</p>
+<p><strong>3.执行问题</strong></p>
+<p>先安装一下paddle，然后尝试先把网上的项目跑通，在看懂的基础上进行修改</p>
+<h2 id="执行阶段"><a href="#执行阶段" class="headerlink" title="执行阶段"></a>执行阶段</h2><h3 id="安装paddleNLP"><a href="#安装paddleNLP" class="headerlink" title="安装paddleNLP"></a>安装paddleNLP</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 默认前提是已经安装好了paddle(2.5.1)，我之前已经安装完，现在直接进入这个环境(CUDA 11.0)</span></span><br><span class="line">conda activate paddle</span><br><span class="line"><span class="comment"># 安装PaddleNLP 换成阿里云的镜像安装会快很多</span></span><br><span class="line">pip install --upgrade paddlenlp&gt;=2.0.0rc -i https://mirrors.aliyun.com/pypi/simple/</span><br></pre></td></tr></table></figure>
+<p>验证安装</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">python</span><br><span class="line"><span class="keyword">import</span> paddlenlp</span><br></pre></td></tr></table></figure>
+<p>没有error应该就是安装好了</p>
+<h3 id="复现别人项目"><a href="#复现别人项目" class="headerlink" title="复现别人项目"></a>复现别人项目</h3><p>首先找到一个使用了类似框架的项目——<a href="https://aistudio.baidu.com/aistudio/projectdetail/1761182">中文命名实体识别-Bi-GRU+CRF</a>，然后把代码以<code>.py</code>的格式下载下来,用PyCharm打开</p>
+<p>打开后项目结构如下</p>
+<p><img src="https://s1.ax1x.com/2023/08/13/pPKFcad.png" alt="image-20230813171608656"></p>
+<p>开始一步一步跑了</p>
+<p>首先遇到的一个问题，<code>UnicodeDecodeError: &#39;gbk&#39; codec can&#39;t decode byte 0xa8 in position 2: illegal multibyte sequence</code></p>
+<p><img src="https://s1.ax1x.com/2023/08/13/pPKFoqg.png" alt="image-20230813172211506"></p>
+<p>加一个<code>encoding</code>属性就可以了</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> i, line <span class="keyword">in</span> <span class="built_in">enumerate</span>(<span class="built_in">open</span>(<span class="string">&#x27;data/train.txt&#x27;</span>,encoding=<span class="string">&#x27;utf-8&#x27;</span>)):</span><br></pre></td></tr></table></figure>
+<p>往下跑的时候又出现了一个错，<code>ValueError: not enough values to unpack (expected 2, got 1)</code></p>
+<p><img src="https://s1.ax1x.com/2023/08/13/pPK0js0.png" alt="image-20230813205507724"></p>
+<p>经过调试发现，<code>word_vocab = load_dict(&#39;./conf/word.dic&#39;)</code>这句就不会报错，只有前一句报错，于是我对比了两个数据集，发现了原因</p>
+<p><code>word.dic</code>数据集（部分）</p>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">0	a</span><br><span class="line">1	e</span><br><span class="line">2	i</span><br><span class="line">3	n</span><br><span class="line">4	o</span><br><span class="line">5	s</span><br></pre></td></tr></table></figure>
+<p><code>tag.dic</code>数据集（部分）</p>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">B-PER</span><br><span class="line">I-PER</span><br><span class="line">B-ORG</span><br><span class="line">I-ORG</span><br></pre></td></tr></table></figure>
+<p>问题就出现在函数<code>load_dict</code>的这句话上</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">load_dict</span>(<span class="params">dict_path</span>):</span><br><span class="line">    vocab = &#123;&#125;</span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> <span class="built_in">open</span>(dict_path, <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>):</span><br><span class="line">    	//这句有问题，第一个数据集一行有两个参数，但是第二个数据集只有一个参数</span><br><span class="line">        value, key = line.strip(<span class="string">&#x27;\n&#x27;</span>).split(<span class="string">&#x27;\t&#x27;</span>)  </span><br><span class="line">        vocab[key] = <span class="built_in">int</span>(value)</span><br><span class="line">    <span class="keyword">return</span> vocab</span><br></pre></td></tr></table></figure>
+<p>于是我分开写了两个函数</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">load_word_dict</span>(<span class="params">dict_path</span>):</span><br><span class="line">    vocab = &#123;&#125;</span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> <span class="built_in">open</span>(dict_path, <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>):</span><br><span class="line">        value, key = line.strip(<span class="string">&#x27;\n&#x27;</span>).split(<span class="string">&#x27;\t&#x27;</span>)</span><br><span class="line">        vocab[key] = <span class="built_in">int</span>(value)</span><br><span class="line">    <span class="keyword">return</span> vocab</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">load_tag_dict</span>(<span class="params">dict_path</span>):</span><br><span class="line">    vocab = &#123;&#125;</span><br><span class="line">    key = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> <span class="built_in">open</span>(dict_path, <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>):</span><br><span class="line">        value = line.strip(<span class="string">&#x27;\n&#x27;</span>).split(<span class="string">&#x27;\t&#x27;</span>)</span><br><span class="line">        vocab[key] = value</span><br><span class="line">        key += <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> vocab</span><br></pre></td></tr></table></figure>
+<p>后面的调用在改一下就行了</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">label_vocab = load_tag_dict(<span class="string">&#x27;./conf/tag.dic&#x27;</span>) </span><br><span class="line">word_vocab = load_word_dict(<span class="string">&#x27;./conf/word.dic&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p>按照同样的逻辑，把前面单元格里的代码改一下就行，但是发现还有错误</p>
+<p><img src="https://s1.ax1x.com/2023/08/13/pPKBYef.png" alt="image-20230813211023632"></p>
+<p>发现上下两个代码块其实意思差不多，把上面代码块里的<code>load_dataset</code>函数替换掉下面的就行</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">load_dataset</span>(<span class="params">datafiles</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">read</span>(<span class="params">data_path</span>):</span><br><span class="line">        <span class="keyword">with</span> <span class="built_in">open</span>(data_path, <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">            word_list = []</span><br><span class="line">            tag_list = []</span><br><span class="line">            <span class="keyword">for</span> line <span class="keyword">in</span> f:</span><br><span class="line">                <span class="keyword">if</span> line != <span class="string">&#x27;\n&#x27;</span>:</span><br><span class="line">                    word, tag = line.strip(<span class="string">&#x27;\n&#x27;</span>).split()</span><br><span class="line">                    word_list.append(word)</span><br><span class="line">                    tag_list.append(tag)</span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    <span class="keyword">yield</span> word_list, tag_list</span><br><span class="line">                    word_list = []</span><br><span class="line">                    tag_list = []</span><br><span class="line">            <span class="comment"># next(fp)</span></span><br><span class="line">            <span class="comment"># for line in fp.readlines():</span></span><br><span class="line">            <span class="comment">#     words, labels = line.strip(&#x27;\n&#x27;).split(&#x27;\t&#x27;)</span></span><br><span class="line">            <span class="comment">#     words = words.split(&#x27;\002&#x27;)</span></span><br><span class="line">            <span class="comment">#     labels = labels.split(&#x27;\002&#x27;)</span></span><br><span class="line">            <span class="comment">#     yield words, labels</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">isinstance</span>(datafiles, <span class="built_in">str</span>):</span><br><span class="line">        <span class="keyword">return</span> MapDataset(<span class="built_in">list</span>(read(datafiles)))</span><br><span class="line">    <span class="keyword">elif</span> <span class="built_in">isinstance</span>(datafiles, <span class="built_in">list</span>) <span class="keyword">or</span> <span class="built_in">isinstance</span>(datafiles, <span class="built_in">tuple</span>):</span><br><span class="line">        <span class="keyword">return</span> [MapDataset(<span class="built_in">list</span>(read(datafile))) <span class="keyword">for</span> datafile <span class="keyword">in</span> datafiles]</span><br></pre></td></tr></table></figure>
+<p>之后好多代码块都没有报错，直到需要训练的时候，遇到了这个</p>
+<p><img src="https://s1.ax1x.com/2023/08/13/pPKsRk8.png" alt="image-20230813220554458"></p>
+<p>网上查了好长时间也不知道怎么解决，以为是版本<code>paddle</code>太高了，降级完但是出现了更多的错，弄了好半天也没成功，最后又装回<code>2.5.1</code>版本的了。后来看到网上说很可能是dataset类型的原因，官方API要求的类型如下</p>
+<p><strong>dataset</strong> (Dataset) - <code>DataLoader</code> 从此参数给定数据集中加载数据，此参数必须是 <code>paddle.io.Dataset</code> 或 <code>paddle.io.IterableDataset</code> 的一个子类实例。</p>
+<p>而我的类型是<code>paddlenlp.datasets.dataset.MapDataset</code></p>
+<p><img src="https://s1.ax1x.com/2023/08/15/pPQAQHS.png" alt="image-20230815155330435"></p>
+]]></content>
+      <categories>
+        <category>个人笔记</category>
+      </categories>
   </entry>
   <entry>
     <title>学校GPU平台使用教程</title>
@@ -1889,217 +2052,48 @@
       </categories>
   </entry>
   <entry>
-    <title>安装PaddlePaddle</title>
-    <url>/2023/07/21/%E5%AE%89%E8%A3%85PaddlePaddle/</url>
-    <content><![CDATA[<p>记录一下安装的过程，官方文档如下</p>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">https://www.paddlepaddle.org.cn/documentation/docs/zh/install/conda/windows-conda.html</span><br></pre></td></tr></table></figure>
-<h2 id="创建虚拟环境"><a href="#创建虚拟环境" class="headerlink" title="创建虚拟环境"></a>创建虚拟环境</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda create -n paddle python=3.8</span><br><span class="line">conda activate paddle</span><br></pre></td></tr></table></figure>
-<h2 id="查看自己安装的CUDA版本"><a href="#查看自己安装的CUDA版本" class="headerlink" title="查看自己安装的CUDA版本"></a>查看自己安装的CUDA版本</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">nvcc -V</span><br></pre></td></tr></table></figure>
-<p><img src="https://s1.ax1x.com/2023/07/21/pCHjtOA.png" alt="image-20230721102917138"></p>
-<p>选择适合自己的版本，我安装的是CUDA11.2的</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda install paddlepaddle-gpu==2.5.0 cudatoolkit=11.2 -c https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/Paddle/ -c conda-forge</span><br></pre></td></tr></table></figure>
-<h2 id="验证安装"><a href="#验证安装" class="headerlink" title="验证安装"></a>验证安装</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">python</span><br><span class="line"><span class="keyword">import</span> paddle</span><br><span class="line">paddle.utils.run_check()</span><br></pre></td></tr></table></figure>
-<p><img src="https://s1.ax1x.com/2023/07/21/pCHvsN6.png" alt="image-20230721105441359"></p>
-]]></content>
-      <categories>
-        <category>个人笔记</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>安装Word2Vec</title>
-    <url>/2023/07/01/%E5%AE%89%E8%A3%85Word2Vec/</url>
-    <content><![CDATA[<p>由于最近需要用到一个预处理的数据集，方法在<a href="https://arxiv.org/abs/1301.3781">这篇论文</a>《Efficient Estimation of Word Representations in Vector Space》里，于是打算尝试能不能复现一下，论文提供了<a href="https://code.google.com/archive/p/word2vec/">代码地址</a>，但是当我打开下载的时候，却发现是404</p>
-<p><img src="https://s1.ax1x.com/2023/07/01/pCB5ZT0.png" alt="image-20230701163100641"></p>
-<p>于是经过一番搜索，找到了最新的<a href="https://pypi.org/project/word2vec/">地址</a>（应该是吧</p>
-<p>先创建一下新的虚拟环境</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">conda create -n word2vec python=3.8</span><br><span class="line">conda activate word2vec</span><br></pre></td></tr></table></figure>
-<p>然后安装<code>numpy</code>、<code>scipy</code></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pip install numpy</span><br><span class="line">pip install scipy</span><br></pre></td></tr></table></figure>
-<p>安装<a href="https://visualstudio.microsoft.com/zh-hans/vs/">Microsoft Visual C++ 14.0</a></p>
-<p>下载下来是一个安装器，然后进行如下操作</p>
-<p><img src="https://s1.ax1x.com/2023/07/01/pCBoUQe.png" alt="屏幕截图 2023-07-01 165446"></p>
-<p>然后</p>
-<p><img src="https://s1.ax1x.com/2023/07/01/pCBodLd.png" alt="屏幕截图 2023-07-01 165358"></p>
-<p>最后安装有点麻烦的<code>gcc</code>，首先使用清华镜像下载<a href="http://files.1f0.de/mingw/mingw-w64-gcc-12.2-stable-r38.7z">mingw-w64-gcc</a>，然后解压的位置选一个自己能记住的位置，比如我的就是</p>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">G:<span class="keyword">\Program</span> Files<span class="keyword">\MinGW</span>-w64</span><br></pre></td></tr></table></figure>
-<p>然后把<code>bin</code>目录添加到系统变量里</p>
-<p>例如我的路径就是</p>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">G:<span class="keyword">\Program</span> Files<span class="keyword">\MinGW</span>-w64<span class="keyword">\mingw</span>-w64-gcc-12.2-stable-r38<span class="keyword">\bin</span></span><br></pre></td></tr></table></figure>
-<p><img src="https://s1.ax1x.com/2023/07/01/pCBTy7R.png" alt="屏幕截图 2023-07-01 172554"></p>
-<p>最后测试一下时候配置成功</p>
-<p>在<code>D盘</code>根目录先新建一个<code>helloword.c</code>的文件</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;hello world\n&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>然后用<code>cmd</code>到<code>D盘</code>根目录</p>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">cd/d D:</span><br></pre></td></tr></table></figure>
-<p>用gcc编译</p>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">gcc helloword.c</span><br></pre></td></tr></table></figure>
-<p><strong>如果没报错说明其实已经配置好了，想看文件运行结果的可以继续输入</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">a.exe</span><br></pre></td></tr></table></figure>
-<p><img src="https://s1.ax1x.com/2023/07/01/pCB7EgU.png" alt="image-20230701173710147"></p>
-<p>这样，<code>word2vec</code>所需的组件就算全部安装完了，下面正式开始安装<code>word2vec</code>（在conda那个命令窗口哦，希望不要报错！）</p>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">pip install word2vec</span><br></pre></td></tr></table></figure>
-<p><img src="https://s1.ax1x.com/2023/07/01/pCB7w5t.png" alt="image-20230701174216784"></p>
-<p>如果出现这个问题，重启一下试试。本人就是重启完莫名安装成功了，可能是刚刚有的组件需要重启吧</p>
-<p><img src="https://s1.ax1x.com/2023/07/01/pCDCOPS.png" alt="image-20230701225337075"></p>
+    <title>复现论文SpikeGPT Generative Pre-trained Language Model with Spiking Neural Networks</title>
+    <url>/2023/07/22/%E5%A4%8D%E7%8E%B0%E8%AE%BA%E6%96%87SpikeGPT-Generative%20Pre-trained%20Language%20Model%20with%20Spiking%20Neural%20Networks/</url>
+    <content><![CDATA[<p>记录一下复现论文<a href="https://arxiv.org/abs/2302.13939v2">SpikeGPT: Generative Pre-trained Language Model with Spiking Neural Networks</a>的过程，论文给出了项目的<a href="https://github.com/ridgerchu/SpikeGPT">GitHub</a>地址。此博客是边跑边写边改的，尽量把顺序合理化，让人可以少走一些弯路</p>
+<h2 id="论文概述"><a href="#论文概述" class="headerlink" title="论文概述"></a>论文概述</h2><p>利用工具，可以大概对此篇论文有如下了解</p>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">这篇文章介绍了SpikeGPT，这是一种基于脉冲神经网络(SNNs)的生成式语言模型。SNNs利用稀疏、事件驱动的激活方式来减少计算复杂性，提高能源效率，因此在深度学习领域有很大的潜力。虽然SNNs在计算机视觉任务上取得了成功，但在语言生成方面仍然有待进一步探索，因为它们的训练过程相对复杂。文章的作者们对Transformer模块进行了修改，消除了多头自注意力带来的二次计算复杂度，并引入循环计算，实现了逐词计算，同时保留了长程依赖关系。结果得到的SpikeGPT模型在语言生成任务上表现出竞争力，同时能耗仅为传统人工神经网络(ANNs)的五分之一。该模型还是迄今为止最大的反向传播训练的功能性SNN模型，拥有多达2.6亿个参数。这项工作为在自然语言处理任务中有效训练大规模SNNs并将Transformer架构与SNNs结合起来实现高性能和能源效率开辟了新的潜力。</span><br></pre></td></tr></table></figure>
+<h2 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h2><h3 id="新建环境"><a href="#新建环境" class="headerlink" title="新建环境"></a>新建环境</h3><p>新建一个<code>Conda</code>环境</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">conda create -n SpikeGPT python=3.8</span><br><span class="line">conda activate SpikeGPT</span><br></pre></td></tr></table></figure>
+<p>然后用<code>pycharm</code>打开此项目，并切换到刚刚新建的环境</p>
+<p>接下来就是安装环境了，由于作者没有提供具体包的版本，只能根据缺啥安装啥的原则，有什么问题之后再慢慢改</p>
+<h3 id="安装accelerate"><a href="#安装accelerate" class="headerlink" title="安装accelerate"></a>安装accelerate</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install accelerate</span><br></pre></td></tr></table></figure>
+<p>在安装<code>accelerate</code>的时候，自动给我装了一个torch2.0.1版本的，这个后面管，只要这个torch版本大于10.0.0就行</p>
+<h3 id="安装Pytorch"><a href="#安装Pytorch" class="headerlink" title="安装Pytorch"></a>安装Pytorch</h3><p>根据我的<code>CUDA</code>版本，安装了如下的<code>torch</code>，具体安装细节可以参考<a href="https://ruvikm.gitee.io/2023/06/06/Win11%E9%85%8D%E7%BD%AEAnaconda-Cuda-Pytorch-Tenserflow%E7%8E%AF%E5%A2%83/">这篇博客</a></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda install pytorch==1.11.0 torchvision==0.12.0 torchaudio==0.11.0 cudatoolkit=11.3</span><br></pre></td></tr></table></figure>
+<h3 id="安装matplotlib"><a href="#安装matplotlib" class="headerlink" title="安装matplotlib"></a>安装matplotlib</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install matplotlib</span><br></pre></td></tr></table></figure>
+<h3 id="安装tqdm"><a href="#安装tqdm" class="headerlink" title="安装tqdm"></a>安装tqdm</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install tqdm</span><br></pre></td></tr></table></figure>
+<h3 id="安装transformers"><a href="#安装transformers" class="headerlink" title="安装transformers"></a>安装transformers</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install transformers</span><br></pre></td></tr></table></figure>
+<h3 id="安装deepspeed"><a href="#安装deepspeed" class="headerlink" title="安装deepspeed"></a>安装deepspeed</h3><h4 id="错误安装方法"><a href="#错误安装方法" class="headerlink" title="错误安装方法"></a>错误安装方法</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install deepspeed</span><br></pre></td></tr></table></figure>
+<p>安装的时候报错了</p>
+<p><img src="https://s1.ax1x.com/2023/07/22/pCbvDot.png" alt="image-20230722102232403"></p>
+<p>换<code>conda</code>试了后，<code>conda install deepspeed</code>，也不行。</p>
+<p>网上查了一个安装方式</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install transformers[deepspeed]</span><br></pre></td></tr></table></figure>
+<p>还是那个错，网上查了一下</p>
+<p><img src="https://s1.ax1x.com/2023/07/22/pCbxpY6.png" alt="image-20230722103014784"></p>
+<p>设置一下环境变量试试</p>
+<p><img src="https://s1.ax1x.com/2023/07/22/pCbxX38.png" alt="屏幕截图 2023-07-22 105535"></p>
+<p>报错！！！好消息是报错变了</p>
+<p><img src="https://s1.ax1x.com/2023/07/22/pCbxbNt.png" alt="image-20230722105444097"></p>
+<p>去<code>github</code>看了一下，意思大概是这个库原本是在<code>linux</code>上的，在<code>window</code>上的支持还不是很好</p>
+<p><img src="https://s1.ax1x.com/2023/07/22/pCbxy7R.png" alt="image-20230722103953254"></p>
+<h4 id="正确安装方法"><a href="#正确安装方法" class="headerlink" title="正确安装方法"></a>正确安装方法</h4><p>网上查到一篇win10成功安装的<a href="https://zhuanlan.zhihu.com/p/636450918">博客</a>，按照博客的说法</p>
+<p>首先安装必要组件</p>
+<p><img src="https://s1.ax1x.com/2023/07/22/pCq9crD.png" alt="image-20230722122822936">先把<a href="https://github.com/microsoft/DeepSpeed">官方</a>的开源的代码下载下来，解压（要用管理员权限）后</p>
+<p>用管理员权限打开cmd，切换到解压的目录，在命令行输入</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">build_win.bat</span><br></pre></td></tr></table></figure>
+<p><img src="https://s1.ax1x.com/2023/07/22/pCq9A8P.png" alt="image-20230722121606679"></p>
+<p>慢慢改错吧，先解决一个报错最多的</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">error: attribute <span class="string">&quot;nodiscard&quot;</span> does not take arguments</span><br></pre></td></tr></table></figure>
+<h3 id="下载数据集"><a href="#下载数据集" class="headerlink" title="下载数据集"></a>下载数据集</h3><p>作者提供数据集<code>Enwik8</code><a href="https://data.deepai.org/enwik8.zip">下载地址</a></p>
 ]]></content>
       <categories>
         <category>论文复现</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>斐波那契数列 C_C++</title>
-    <url>/2022/01/10/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97%20C_C++/</url>
-    <content><![CDATA[<p>用三种方法实现:</p>
-<ol>
-<li>带备忘录的递归</li>
-<li>dp迭代</li>
-<li>迭代优化，空间复杂度为O(1)</li>
-</ol>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> _for(i,a,b) for(int i=(a);i&lt;=(b);i++)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//备忘录</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">helper</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; memo, <span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">	<span class="comment">//base case</span></span><br><span class="line">	<span class="keyword">if</span> (n == <span class="number">2</span> || n == <span class="number">3</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (memo[n] != <span class="number">0</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> memo[n];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		memo[n] = <span class="built_in">helper</span>(memo, n - <span class="number">1</span>) + <span class="built_in">helper</span>(memo, n - <span class="number">2</span>);</span><br><span class="line">		<span class="keyword">return</span> memo[n];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//带备忘录法</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">fib_1</span><span class="params">(<span class="type">int</span> N)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (N &lt;= <span class="number">1</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">memo</span><span class="params">(N + <span class="number">1</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">helper</span>(memo, N);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//dp数组迭代法</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">fib_2</span><span class="params">(<span class="type">int</span> N)</span> </span>&#123;</span><br><span class="line">	<span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">dp</span><span class="params">(N + <span class="number">1</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line">	dp[<span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">	dp[<span class="number">2</span>] = dp[<span class="number">3</span>] = <span class="number">1</span>;</span><br><span class="line">	_for(i, <span class="number">4</span>, N) &#123;</span><br><span class="line">		dp[i] = dp[i - <span class="number">1</span>] + dp[i - <span class="number">2</span>];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> dp[N];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//迭代优化</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">fib_3</span><span class="params">(<span class="type">int</span> N)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (N == <span class="number">1</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (N == <span class="number">2</span> || N == <span class="number">3</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">int</span> pre = <span class="number">1</span>, ppre = <span class="number">1</span>;</span><br><span class="line">	_for(i, <span class="number">4</span>, N) &#123;</span><br><span class="line">		<span class="type">int</span> sum = pre + ppre;</span><br><span class="line">		ppre = pre;</span><br><span class="line">		pre = sum;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> pre;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, <span class="built_in">fib_3</span>(<span class="number">10</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>刷题笔记</category>
-      </categories>
-      <tags>
-        <tag>算法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>拼模型尝试</title>
-    <url>/2023/08/12/%E6%8B%BC%E6%A8%A1%E5%9E%8B%E5%B0%9D%E8%AF%95/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>记录一下自己首次组合模型的过程，希望可以为以后论文打基础。</p>
-<p>PS：由于自己是零基础，看了一下李沐的教程，感觉理论部分有点多，没看完可能<code>deadline</code>都到了。唐老师的人工智能课也看了看，总感觉不是特别系统，都是一个一个项目，于是我打算效率亿点点，需要什么先学什么。</p>
-<p>我需要跑的一个模型是这样的架构</p>
-<p><img src="https://s1.ax1x.com/2023/08/12/pPuCZes.png" alt="模型架构"></p>
-<h2 id="分析问题"><a href="#分析问题" class="headerlink" title="分析问题"></a>分析问题</h2><p>客观分析一下我遇到的这个问题</p>
-<p><strong>1.目标问题</strong></p>
-<p>把这个架构跑通$\rightarrow$</p>
-<p>从中文电子病历提取有用信息$\rightarrow$</p>
-<p>进行医疗大数据挖掘、临床辅助决策系统、AI 电子病历质控系统构建等的基础工作</p>
-<p><strong>2.方法问题</strong></p>
-<p>寻找相似的项目或者使用了相似模型架构的项目，把他们的模型删删改改</p>
-<p>删改可能需要借助到模型的官方文档，例如<a href="https://paddlenlp.readthedocs.io/zh/latest/index.html">PaddleNLP文档</a>，或者<a href="https://pytorch-cn.readthedocs.io/zh/latest/">PyTorch文档</a></p>
-<p>然后多借鉴一些博客的方法</p>
-<p><strong>3.执行问题</strong></p>
-<p>先安装一下paddle，然后尝试先把网上的项目跑通，在看懂的基础上进行修改</p>
-<h2 id="执行阶段"><a href="#执行阶段" class="headerlink" title="执行阶段"></a>执行阶段</h2><h3 id="安装paddleNLP"><a href="#安装paddleNLP" class="headerlink" title="安装paddleNLP"></a>安装paddleNLP</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 默认前提是已经安装好了paddle(2.5.1)，我之前已经安装完，现在直接进入这个环境(CUDA 11.0)</span></span><br><span class="line">conda activate paddle</span><br><span class="line"><span class="comment"># 安装PaddleNLP 换成阿里云的镜像安装会快很多</span></span><br><span class="line">pip install --upgrade paddlenlp&gt;=2.0.0rc -i https://mirrors.aliyun.com/pypi/simple/</span><br></pre></td></tr></table></figure>
-<p>验证安装</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">python</span><br><span class="line"><span class="keyword">import</span> paddlenlp</span><br></pre></td></tr></table></figure>
-<p>没有error应该就是安装好了</p>
-<h3 id="复现别人项目"><a href="#复现别人项目" class="headerlink" title="复现别人项目"></a>复现别人项目</h3><p>首先找到一个使用了类似框架的项目——<a href="https://aistudio.baidu.com/aistudio/projectdetail/1761182">中文命名实体识别-Bi-GRU+CRF</a>，然后把代码以<code>.py</code>的格式下载下来,用PyCharm打开</p>
-<p>打开后项目结构如下</p>
-<p><img src="https://s1.ax1x.com/2023/08/13/pPKFcad.png" alt="image-20230813171608656"></p>
-<p>开始一步一步跑了</p>
-<p>首先遇到的一个问题，<code>UnicodeDecodeError: &#39;gbk&#39; codec can&#39;t decode byte 0xa8 in position 2: illegal multibyte sequence</code></p>
-<p><img src="https://s1.ax1x.com/2023/08/13/pPKFoqg.png" alt="image-20230813172211506"></p>
-<p>加一个<code>encoding</code>属性就可以了</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> i, line <span class="keyword">in</span> <span class="built_in">enumerate</span>(<span class="built_in">open</span>(<span class="string">&#x27;data/train.txt&#x27;</span>,encoding=<span class="string">&#x27;utf-8&#x27;</span>)):</span><br></pre></td></tr></table></figure>
-<p>往下跑的时候又出现了一个错，<code>ValueError: not enough values to unpack (expected 2, got 1)</code></p>
-<p><img src="https://s1.ax1x.com/2023/08/13/pPK0js0.png" alt="image-20230813205507724"></p>
-<p>经过调试发现，<code>word_vocab = load_dict(&#39;./conf/word.dic&#39;)</code>这句就不会报错，只有前一句报错，于是我对比了两个数据集，发现了原因</p>
-<p><code>word.dic</code>数据集（部分）</p>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">0	a</span><br><span class="line">1	e</span><br><span class="line">2	i</span><br><span class="line">3	n</span><br><span class="line">4	o</span><br><span class="line">5	s</span><br></pre></td></tr></table></figure>
-<p><code>tag.dic</code>数据集（部分）</p>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">B-PER</span><br><span class="line">I-PER</span><br><span class="line">B-ORG</span><br><span class="line">I-ORG</span><br></pre></td></tr></table></figure>
-<p>问题就出现在函数<code>load_dict</code>的这句话上</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">load_dict</span>(<span class="params">dict_path</span>):</span><br><span class="line">    vocab = &#123;&#125;</span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> <span class="built_in">open</span>(dict_path, <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>):</span><br><span class="line">    	//这句有问题，第一个数据集一行有两个参数，但是第二个数据集只有一个参数</span><br><span class="line">        value, key = line.strip(<span class="string">&#x27;\n&#x27;</span>).split(<span class="string">&#x27;\t&#x27;</span>)  </span><br><span class="line">        vocab[key] = <span class="built_in">int</span>(value)</span><br><span class="line">    <span class="keyword">return</span> vocab</span><br></pre></td></tr></table></figure>
-<p>于是我分开写了两个函数</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">load_word_dict</span>(<span class="params">dict_path</span>):</span><br><span class="line">    vocab = &#123;&#125;</span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> <span class="built_in">open</span>(dict_path, <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>):</span><br><span class="line">        value, key = line.strip(<span class="string">&#x27;\n&#x27;</span>).split(<span class="string">&#x27;\t&#x27;</span>)</span><br><span class="line">        vocab[key] = <span class="built_in">int</span>(value)</span><br><span class="line">    <span class="keyword">return</span> vocab</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">load_tag_dict</span>(<span class="params">dict_path</span>):</span><br><span class="line">    vocab = &#123;&#125;</span><br><span class="line">    key = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> <span class="built_in">open</span>(dict_path, <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>):</span><br><span class="line">        value = line.strip(<span class="string">&#x27;\n&#x27;</span>).split(<span class="string">&#x27;\t&#x27;</span>)</span><br><span class="line">        vocab[key] = value</span><br><span class="line">        key += <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> vocab</span><br></pre></td></tr></table></figure>
-<p>后面的调用在改一下就行了</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">label_vocab = load_tag_dict(<span class="string">&#x27;./conf/tag.dic&#x27;</span>) </span><br><span class="line">word_vocab = load_word_dict(<span class="string">&#x27;./conf/word.dic&#x27;</span>)</span><br></pre></td></tr></table></figure>
-<p>按照同样的逻辑，把前面单元格里的代码改一下就行，但是发现还有错误</p>
-<p><img src="https://s1.ax1x.com/2023/08/13/pPKBYef.png" alt="image-20230813211023632"></p>
-<p>发现上下两个代码块其实意思差不多，把上面代码块里的<code>load_dataset</code>函数替换掉下面的就行</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">load_dataset</span>(<span class="params">datafiles</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">read</span>(<span class="params">data_path</span>):</span><br><span class="line">        <span class="keyword">with</span> <span class="built_in">open</span>(data_path, <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">            word_list = []</span><br><span class="line">            tag_list = []</span><br><span class="line">            <span class="keyword">for</span> line <span class="keyword">in</span> f:</span><br><span class="line">                <span class="keyword">if</span> line != <span class="string">&#x27;\n&#x27;</span>:</span><br><span class="line">                    word, tag = line.strip(<span class="string">&#x27;\n&#x27;</span>).split()</span><br><span class="line">                    word_list.append(word)</span><br><span class="line">                    tag_list.append(tag)</span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    <span class="keyword">yield</span> word_list, tag_list</span><br><span class="line">                    word_list = []</span><br><span class="line">                    tag_list = []</span><br><span class="line">            <span class="comment"># next(fp)</span></span><br><span class="line">            <span class="comment"># for line in fp.readlines():</span></span><br><span class="line">            <span class="comment">#     words, labels = line.strip(&#x27;\n&#x27;).split(&#x27;\t&#x27;)</span></span><br><span class="line">            <span class="comment">#     words = words.split(&#x27;\002&#x27;)</span></span><br><span class="line">            <span class="comment">#     labels = labels.split(&#x27;\002&#x27;)</span></span><br><span class="line">            <span class="comment">#     yield words, labels</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">isinstance</span>(datafiles, <span class="built_in">str</span>):</span><br><span class="line">        <span class="keyword">return</span> MapDataset(<span class="built_in">list</span>(read(datafiles)))</span><br><span class="line">    <span class="keyword">elif</span> <span class="built_in">isinstance</span>(datafiles, <span class="built_in">list</span>) <span class="keyword">or</span> <span class="built_in">isinstance</span>(datafiles, <span class="built_in">tuple</span>):</span><br><span class="line">        <span class="keyword">return</span> [MapDataset(<span class="built_in">list</span>(read(datafile))) <span class="keyword">for</span> datafile <span class="keyword">in</span> datafiles]</span><br></pre></td></tr></table></figure>
-<p>之后好多代码块都没有报错，直到需要训练的时候，遇到了这个</p>
-<p><img src="https://s1.ax1x.com/2023/08/13/pPKsRk8.png" alt="image-20230813220554458"></p>
-<p>网上查了好长时间也不知道怎么解决，以为是版本<code>paddle</code>太高了，降级完但是出现了更多的错，弄了好半天也没成功，最后又装回<code>2.5.1</code>版本的了。后来看到网上说很可能是dataset类型的原因，官方API要求的类型如下</p>
-<p><strong>dataset</strong> (Dataset) - <code>DataLoader</code> 从此参数给定数据集中加载数据，此参数必须是 <code>paddle.io.Dataset</code> 或 <code>paddle.io.IterableDataset</code> 的一个子类实例。</p>
-<p>而我的类型是<code>paddlenlp.datasets.dataset.MapDataset</code></p>
-<p><img src="https://s1.ax1x.com/2023/08/15/pPQAQHS.png" alt="image-20230815155330435"></p>
-]]></content>
-      <categories>
-        <category>个人笔记</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>王道数据结构 线性表 链式存储小结</title>
-    <url>/2022/01/10/%E7%8E%8B%E9%81%93%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%20%E7%BA%BF%E6%80%A7%E8%A1%A8%20%E9%93%BE%E5%BC%8F%E5%AD%98%E5%82%A8%E5%B0%8F%E7%BB%93/</url>
-    <content><![CDATA[<h1 id="1-单链表"><a href="#1-单链表" class="headerlink" title="1.单链表"></a>1.单链表</h1><p><img src="https://img-blog.csdnimg.cn/20210116122507504.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="单链表"></p>
-<h2 id="头插法"><a href="#头插法" class="headerlink" title="头插法"></a>头插法</h2><p>图解：<br><img src="https://img-blog.csdnimg.cn/20210116125651161.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="1"></p>
-<ol>
-<li>待插入的next指向头结点原本指向的结点</li>
-<li>修改头结点的next指向待插入结点<br><img src="https://img-blog.csdnimg.cn/20210116125826814.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="如何插入"></li>
-</ol>
-<p>插入完毕<img src="https://img-blog.csdnimg.cn/20210116130021844.png#pic_center" alt="插入完毕"><br>代码实现</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//设带插入结点为S</span></span><br><span class="line">S-&gt;next=head-&gt;next;</span><br><span class="line">head-&gt;next=S;</span><br></pre></td></tr></table></figure>
-<h2 id="尾插法"><a href="#尾插法" class="headerlink" title="尾插法"></a>尾插法</h2><p>图解<br><img src="https://img-blog.csdnimg.cn/20210116130729224.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="待插入状态"></p>
-<ol>
-<li>将待插入结点的next域设为NULL</li>
-<li><p>将最后一个结点的next域指向带插入结点<br><img src="https://img-blog.csdnimg.cn/20210116130930320.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="插入方法"></p>
-<p>插入完毕<br><img src="https://img-blog.csdnimg.cn/20210116131032237.png#pic_center" alt="插入完毕"><br>代码实现</p>
-</li>
-</ol>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//设插入结点为S</span></span><br><span class="line">head-&gt;next=S;</span><br><span class="line">head=S;</span><br></pre></td></tr></table></figure>
-<h2 id="在中间插入"><a href="#在中间插入" class="headerlink" title="在中间插入"></a>在中间插入</h2><p>图解<br><img src="https://img-blog.csdnimg.cn/20210116202306782.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="插入前状态"></p>
-<ol>
-<li>将待插入结点的next域指向插入结点位置的前驱结点指向的后一个结点</li>
-<li>将原本位置上之前的结点指向待插入结点 </li>
-</ol>
-<p><img src="https://img-blog.csdnimg.cn/20210116202359651.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>插入完成<br><img src="https://img-blog.csdnimg.cn/20210116202638177.png#pic_center" alt="插入完成"></p>
-<p>代码实现</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//设待插入结点为S</span></span><br><span class="line"><span class="comment">//待插入位置的前驱结点为pre</span></span><br><span class="line">S-&gt;next=pre-&gt;next;</span><br><span class="line">pre-&gt;next=S;</span><br></pre></td></tr></table></figure>
-<h2 id="在中间删除"><a href="#在中间删除" class="headerlink" title="在中间删除"></a>在中间删除</h2><p>图解<br><img src="https://img-blog.csdnimg.cn/20210116204400671.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="删除前状态"></p>
-<ol>
-<li>将待删除结点的前一个结点的next指向待删除结点next的结点</li>
-<li>删除待删除结点</li>
-</ol>
-<p><img src="https://img-blog.csdnimg.cn/20210116204421686.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="步骤"><br>删除完成<br><img src="https://img-blog.csdnimg.cn/20210116204628265.png#pic_center" alt="删除完成"></p>
-<p>代码实现 </p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//设待删除前驱结点为pre</span></span><br><span class="line"><span class="comment">//待删除结点为S</span></span><br><span class="line">pre-&gt;next=S-&gt;next;</span><br><span class="line"><span class="keyword">delete</span> S;</span><br></pre></td></tr></table></figure>
-<h2 id="原地逆置链表"><a href="#原地逆置链表" class="headerlink" title="原地逆置链表"></a>原地逆置链表</h2><ol>
-<li>将头结点与后面的结点断开，然后重新用头插法插入</li>
-<li>使用三个指针逆置<br>图解<br>1.<img src="https://img-blog.csdnimg.cn/20210116213023974.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="1"><br>2.<img src="https://img-blog.csdnimg.cn/20210116213042409.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="2"><br>3.<img src="https://img-blog.csdnimg.cn/20210116213051310.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="3"><br>4.<img src="https://img-blog.csdnimg.cn/20210116213109935.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="4"><br>5.逆置完毕（最后将头结点指向p）<img src="https://img-blog.csdnimg.cn/20210116213123148.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="5"></li>
-</ol>
-<p>代码实现</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">ReverseList</span><span class="params">(LinkList&amp; head)</span> </span>&#123;</span><br><span class="line">	LNode* pre, * p = head-&gt;next, * r = p-&gt;next;</span><br><span class="line">	p-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">	<span class="keyword">while</span> (r != <span class="literal">NULL</span>) &#123;</span><br><span class="line">		pre = p;</span><br><span class="line">		p = r;</span><br><span class="line">		r = r-&gt;next;</span><br><span class="line">		p-&gt;next = pre;</span><br><span class="line">	&#125;</span><br><span class="line">	head-&gt;next = p;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>学习笔记</category>
-      </categories>
-      <tags>
-        <tag>算法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>本地部署chatGPT</title>
-    <url>/2023/07/15/%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2chatGPT/</url>
-    <content><![CDATA[<p>首先打开<a href="https://github.com/ramonvc/freegpt-webui#cloning-the-repository-inbox_tray">项目网址</a>，把代码下载下来，按照其要求安装<a href="https://www.python.org/downloads/"><code>python</code></a>，<a href="https://git-scm.com/download/win"><code>git</code></a></p>
-<p>安装完成后，检查一下自己是否安装成功，<code>Win+R</code>后输入<code>cmd</code>，在弹出来的窗口内输入<code>python</code></p>
-<p><img src="https://s1.ax1x.com/2023/07/15/pC5VexS.png" alt="image-20230715091723681"></p>
-<p>若和下图类似，则说明安装成功</p>
-<p>输入<code>exit()</code>退出<code>python</code>的编辑模式。继续输入<code>git --version</code></p>
-<p><img src="https://s1.ax1x.com/2023/07/15/pC5VQVs.png" alt="image-20230715091956265"></p>
-<p>说明<code>git</code>也安装成功。</p>
-<p>将下载下来的压缩包解压，并用<code>cmd</code>进入其项目文件夹，输入</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install -r requirements.txt</span><br></pre></td></tr></table></figure>
-<p><img src="https://s1.ax1x.com/2023/07/15/pC5VoJP.png" alt="image-20230715093344938"></p>
-<p><strong>安装完毕后然后开启海外全局<code>magic</code></strong>，运行</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">python run.py</span><br></pre></td></tr></table></figure>
-<p>如果遇到这个问题</p>
-<p><img src="https://s1.ax1x.com/2023/07/15/pC5ZnW6.png" alt="image-20230715094624768"></p>
-<p>找到项目中的<code>config.json</code>文件</p>
-<p>把<code>port</code>改成<code>8088</code></p>
-<p><img src="https://s1.ax1x.com/2023/07/15/pC5ZMQO.png" alt="image-20230715094711628"></p>
-<p>若出现以下界面</p>
-<p><img src="https://s1.ax1x.com/2023/07/15/pC5ZlOe.png" alt="image-20230715094750540"></p>
-<p>则可以打开</p>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">http://localhost:8088</span><br></pre></td></tr></table></figure>
-<p><img src="https://s1.ax1x.com/2023/07/15/pC5ZlOe.png" alt="image-20230715094750540"></p>
-<p>成功部署chatGPT！</p>
-<p><img src="https://s1.ax1x.com/2023/07/15/pC5ZI0J.png" alt="屏幕截图 2023-07-15 095407"></p>
-]]></content>
-      <categories>
-        <category>个人笔记</category>
       </categories>
   </entry>
   <entry>
@@ -2138,6 +2132,59 @@
       <tags>
         <tag>算法</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>软件体系结构基本知识——期末复习</title>
+    <url>/2022/01/10/%E8%BD%AF%E4%BB%B6%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86%E2%80%94%E2%80%94%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/</url>
+    <content><![CDATA[<p>根据老师画的重点做了一些思维导图，希望可以帮到需要的人</p>
+<h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><p><img src="https://img-blog.csdnimg.cn/20201214181436726.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="第一章"></p>
+<h2 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h2><p><img src="https://img-blog.csdnimg.cn/20201214181451777.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="第二章"></p>
+<h2 id="第三章"><a href="#第三章" class="headerlink" title="第三章"></a>第三章</h2><p><img src="https://img-blog.csdnimg.cn/20201214230846302.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="第三章"></p>
+<h2 id="第四章"><a href="#第四章" class="headerlink" title="第四章"></a>第四章</h2><p><img src="https://img-blog.csdnimg.cn/20201214181617762.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="第四章"></p>
+<h2 id="第六章"><a href="#第六章" class="headerlink" title="第六章"></a>第六章</h2><p><img src="https://img-blog.csdnimg.cn/20201214181632906.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="第六章"></p>
+<h2 id="第七章"><a href="#第七章" class="headerlink" title="第七章"></a>第七章</h2><p><img src="https://img-blog.csdnimg.cn/20201214181647481.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="第七章"></p>
+<h2 id="第八-九章"><a href="#第八-九章" class="headerlink" title="第八-九章"></a>第八-九章</h2><p><img src="https://img-blog.csdnimg.cn/20201214205838338.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="第八-九章"></p>
+<p><a href="https://ruvikm.lanzous.com/isUckjdbc0f">PDF文件</a></p>
+<p>做得如有不足，敬请谅解~</p>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>其他</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>本地部署chatGPT</title>
+    <url>/2023/07/15/%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2chatGPT/</url>
+    <content><![CDATA[<p>首先打开<a href="https://github.com/ramonvc/freegpt-webui#cloning-the-repository-inbox_tray">项目网址</a>，把代码下载下来，按照其要求安装<a href="https://www.python.org/downloads/"><code>python</code></a>，<a href="https://git-scm.com/download/win"><code>git</code></a></p>
+<p>安装完成后，检查一下自己是否安装成功，<code>Win+R</code>后输入<code>cmd</code>，在弹出来的窗口内输入<code>python</code></p>
+<p><img src="https://s1.ax1x.com/2023/07/15/pC5VexS.png" alt="image-20230715091723681"></p>
+<p>若和下图类似，则说明安装成功</p>
+<p>输入<code>exit()</code>退出<code>python</code>的编辑模式。继续输入<code>git --version</code></p>
+<p><img src="https://s1.ax1x.com/2023/07/15/pC5VQVs.png" alt="image-20230715091956265"></p>
+<p>说明<code>git</code>也安装成功。</p>
+<p>将下载下来的压缩包解压，并用<code>cmd</code>进入其项目文件夹，输入</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install -r requirements.txt</span><br></pre></td></tr></table></figure>
+<p><img src="https://s1.ax1x.com/2023/07/15/pC5VoJP.png" alt="image-20230715093344938"></p>
+<p><strong>安装完毕后然后开启海外全局<code>magic</code></strong>，运行</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">python run.py</span><br></pre></td></tr></table></figure>
+<p>如果遇到这个问题</p>
+<p><img src="https://s1.ax1x.com/2023/07/15/pC5ZnW6.png" alt="image-20230715094624768"></p>
+<p>找到项目中的<code>config.json</code>文件</p>
+<p>把<code>port</code>改成<code>8088</code></p>
+<p><img src="https://s1.ax1x.com/2023/07/15/pC5ZMQO.png" alt="image-20230715094711628"></p>
+<p>若出现以下界面</p>
+<p><img src="https://s1.ax1x.com/2023/07/15/pC5ZlOe.png" alt="image-20230715094750540"></p>
+<p>则可以打开</p>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">http://localhost:8088</span><br></pre></td></tr></table></figure>
+<p><img src="https://s1.ax1x.com/2023/07/15/pC5ZlOe.png" alt="image-20230715094750540"></p>
+<p>成功部署chatGPT！</p>
+<p><img src="https://s1.ax1x.com/2023/07/15/pC5ZI0J.png" alt="屏幕截图 2023-07-15 095407"></p>
+]]></content>
+      <categories>
+        <category>个人笔记</category>
+      </categories>
   </entry>
   <entry>
     <title>OSError [Errno 22] Invalid argument(已解决)</title>
@@ -2209,26 +2256,5 @@
       <categories>
         <category>个人笔记</category>
       </categories>
-  </entry>
-  <entry>
-    <title>软件体系结构基本知识——期末复习</title>
-    <url>/2022/01/10/%E8%BD%AF%E4%BB%B6%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86%E2%80%94%E2%80%94%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/</url>
-    <content><![CDATA[<p>根据老师画的重点做了一些思维导图，希望可以帮到需要的人</p>
-<h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><p><img src="https://img-blog.csdnimg.cn/20201214181436726.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="第一章"></p>
-<h2 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h2><p><img src="https://img-blog.csdnimg.cn/20201214181451777.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="第二章"></p>
-<h2 id="第三章"><a href="#第三章" class="headerlink" title="第三章"></a>第三章</h2><p><img src="https://img-blog.csdnimg.cn/20201214230846302.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="第三章"></p>
-<h2 id="第四章"><a href="#第四章" class="headerlink" title="第四章"></a>第四章</h2><p><img src="https://img-blog.csdnimg.cn/20201214181617762.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="第四章"></p>
-<h2 id="第六章"><a href="#第六章" class="headerlink" title="第六章"></a>第六章</h2><p><img src="https://img-blog.csdnimg.cn/20201214181632906.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="第六章"></p>
-<h2 id="第七章"><a href="#第七章" class="headerlink" title="第七章"></a>第七章</h2><p><img src="https://img-blog.csdnimg.cn/20201214181647481.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="第七章"></p>
-<h2 id="第八-九章"><a href="#第八-九章" class="headerlink" title="第八-九章"></a>第八-九章</h2><p><img src="https://img-blog.csdnimg.cn/20201214205838338.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="第八-九章"></p>
-<p><a href="https://ruvikm.lanzous.com/isUckjdbc0f">PDF文件</a></p>
-<p>做得如有不足，敬请谅解~</p>
-]]></content>
-      <categories>
-        <category>学习笔记</category>
-      </categories>
-      <tags>
-        <tag>其他</tag>
-      </tags>
   </entry>
 </search>
