@@ -6,7 +6,7 @@
   <link href="https://ruvikm.gitee.io/atom.xml" rel="self"/>
   
   <link href="https://ruvikm.gitee.io/"/>
-  <updated>2023-12-15T10:20:30.849Z</updated>
+  <updated>2024-01-08T12:57:08.034Z</updated>
   <id>https://ruvikm.gitee.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>在虚拟机Centos 7中配置Redis环境</title>
+    <link href="https://ruvikm.gitee.io/2024/01/08/%E9%85%8D%E7%BD%AERedis%E7%8E%AF%E5%A2%83/"/>
+    <id>https://ruvikm.gitee.io/2024/01/08/%E9%85%8D%E7%BD%AERedis%E7%8E%AF%E5%A2%83/</id>
+    <published>2024-01-08T12:05:08.000Z</published>
+    <updated>2024-01-08T12:57:08.034Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="安装Redis"><a href="#安装Redis" class="headerlink" title="安装Redis"></a>安装Redis</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 下载fedora的epel仓库</span></span><br><span class="line">sudo yum install epel-release</span><br><span class="line"><span class="comment"># 安装redis数据库</span></span><br><span class="line">sudo yum install redis</span><br></pre></td></tr></table></figure><p>测试是否安装成功</p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#启动redis</span></span><br><span class="line">service redis start</span><br><span class="line"><span class="comment">#查看redis进程</span></span><br><span class="line">ps -ef | grep redis</span><br></pre></td></tr></table></figure><p><img src="https://s11.ax1x.com/2024/01/08/pFSvcQg.png" alt="image-20240108203745982"></p><h2 id="配置Redis"><a href="#配置Redis" class="headerlink" title="配置Redis"></a>配置Redis</h2><p><strong>以需求为远程连接Redis为例</strong></p><p>开始配置之前，先关闭Redis服务</p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#关闭redis</span></span><br><span class="line">service redis stop</span><br></pre></td></tr></table></figure><h4 id="打开配置文件"><a href="#打开配置文件" class="headerlink" title="打开配置文件"></a>打开配置文件</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo vim /etc/redis.conf</span><br></pre></td></tr></table></figure><p>进入编辑器后，输入<code>/</code>+<code>搜索的内容</code>然后回车进行搜索，按<code>n</code>键查找下一个(eg:修改端口号时输入/port)，按<code>i</code>进入到插入模式进行修改，修改完后按<code>Esc</code>退出插入模式</p><h4 id="修改端口号（按照需求修改）"><a href="#修改端口号（按照需求修改）" class="headerlink" title="修改端口号（按照需求修改）"></a>修改端口号（按照需求修改）</h4><p><img src="https://s11.ax1x.com/2024/01/08/pFSvmM4.png" alt="image-20240108202709064"></p><h4 id="修改默认密码（建议修改）"><a href="#修改默认密码（建议修改）" class="headerlink" title="修改默认密码（建议修改）"></a>修改默认密码（建议修改）</h4><p><img src="https://s11.ax1x.com/2024/01/08/pFSvnsJ.png" alt="image-20240108202554924"></p><h4 id="取消只允许在本机连接redis"><a href="#取消只允许在本机连接redis" class="headerlink" title="取消只允许在本机连接redis"></a>取消只允许在本机连接redis</h4><p><img src="/2024/01/08/%E9%85%8D%E7%BD%AERedis%E7%8E%AF%E5%A2%83/image-20240108202958241.png" alt="image-20240108202958241"></p><p>将<code>bind 127.0.0.1</code>注释掉</p><p>然后输入<code>:wq</code>保存并退出</p><h4 id="设置Redis开机自启"><a href="#设置Redis开机自启" class="headerlink" title="设置Redis开机自启"></a>设置Redis开机自启</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">chkconfig redis on</span><br></pre></td></tr></table></figure><h2 id="配置防火墙"><a href="#配置防火墙" class="headerlink" title="配置防火墙"></a>配置防火墙</h2><p>在linux下的防火墙中开放6379端口（如果上面更换了端口号就按自己的来）</p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo firewall-cmd --zone=public --add-port=6379/tcp --permanent</span><br></pre></td></tr></table></figure><p>重启防火墙</p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">systemctl restart firewalld</span><br></pre></td></tr></table></figure><h2 id="使用可视化软件连接Redis"><a href="#使用可视化软件连接Redis" class="headerlink" title="使用可视化软件连接Redis"></a>使用可视化软件连接Redis</h2><p>下载可视化软件</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">https://gitee.com/qishibo/AnotherRedisDesktopManager/releases</span><br></pre></td></tr></table></figure><p>查看自己ip地址</p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ip addr</span><br></pre></td></tr></table></figure><p><img src="/2024/01/08/%E9%85%8D%E7%BD%AERedis%E7%8E%AF%E5%A2%83/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-01-08%20204612.png" alt="屏幕截图 2024-01-08 204612"></p><p>配置远程连接，地址为上面的箭头所指的ip地址，密码为刚刚配置Redis时配置的</p><p><img src="/2024/01/08/%E9%85%8D%E7%BD%AERedis%E7%8E%AF%E5%A2%83/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-01-08%20205033.png" alt="屏幕截图 2024-01-08 205033"></p><p>连接成功</p><p><img src="/2024/01/08/%E9%85%8D%E7%BD%AERedis%E7%8E%AF%E5%A2%83/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-01-08%20205120.png" alt="屏幕截图 2024-01-08 205120"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;安装Redis&quot;&gt;&lt;a href=&quot;#安装Redis&quot; class=&quot;headerlink&quot; title=&quot;安装Redis&quot;&gt;&lt;/a&gt;安装Redis&lt;/h2&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;</summary>
+      
+    
+    
+    
+    
+    <category term="个人笔记" scheme="https://ruvikm.gitee.io/tags/%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>建立一个简易的TCP客户端与服务端</title>
@@ -438,30 +460,6 @@
     
     
     <category term="论文复现" scheme="https://ruvikm.gitee.io/categories/%E8%AE%BA%E6%96%87%E5%A4%8D%E7%8E%B0/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Win11转移conda环境——从C盘转移到D盘</title>
-    <link href="https://ruvikm.gitee.io/2023/06/28/Win11%E8%BD%AC%E7%A7%BBconda%E7%8E%AF%E5%A2%83%E2%80%94%E2%80%94%E4%BB%8EC%E7%9B%98%E8%BD%AC%E7%A7%BB%E5%88%B0D%E7%9B%98/"/>
-    <id>https://ruvikm.gitee.io/2023/06/28/Win11%E8%BD%AC%E7%A7%BBconda%E7%8E%AF%E5%A2%83%E2%80%94%E2%80%94%E4%BB%8EC%E7%9B%98%E8%BD%AC%E7%A7%BB%E5%88%B0D%E7%9B%98/</id>
-    <published>2023-06-28T01:55:51.000Z</published>
-    <updated>2023-07-14T03:12:32.576Z</updated>
-    
-    <content type="html"><![CDATA[<p>原本就是将<code>Anaconda</code>安装到了C盘，结果发现环境他还是默认安装到了C盘，就打算再转移一下</p><p>conda版本为</p><p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-28%20095709.png" alt="屏幕截图 2023-06-28 095709"></p><p>首先找到Win11下面的环境位置</p><figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">C:<span class="keyword">\Users</span><span class="keyword">\用</span>户名<span class="keyword">\.</span>conda<span class="keyword">\envs</span></span><br></pre></td></tr></table></figure><p>比如我的就是</p><figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">C:<span class="keyword">\Users</span><span class="keyword">\Arona</span><span class="keyword">\.</span>conda<span class="keyword">\envs</span></span><br></pre></td></tr></table></figure><p>找到D盘安装<code>Anaconda</code>的位置</p><figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">D:<span class="keyword">\ProgramData</span><span class="keyword">\anaconda</span>3<span class="keyword">\envs</span></span><br></pre></td></tr></table></figure><p>C盘的将<code>envs</code>文件夹剪切过去，环境迁移一半就完成了</p><p>测试了一下，如果新建一个环境，默认还会装在C盘</p><p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-28%20101113.png" alt="屏幕截图 2023-06-28 101113"></p><p>于是要修改一下环境的默认安装位置</p><p>找到用户目录下的<code>.condarc</code>文件</p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">explorer %USERPROFILE%</span><br></pre></td></tr></table></figure><p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-28%20101811.png" alt="屏幕截图 2023-06-28 101811"></p><p>用<code>Visual Studio Code</code>打开</p><p>加入这段话</p><figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">envs<span class="built_in">_</span>dirs:</span><br><span class="line">  - D:<span class="keyword">\ProgramData</span><span class="keyword">\anaconda</span>3<span class="keyword">\envs</span></span><br></pre></td></tr></table></figure><p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-28%20102057.png" alt="屏幕截图 2023-06-28 102057"></p><p>这样默认就会安装到D盘了</p><p>测试一下，新建一个名为<code>test1</code>的环境</p><p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-28%20102249.png" alt="屏幕截图 2023-06-28 102249"></p><p>如果发现地址还没变的话，可以继续以下操作</p><p>找到<code>Anaconda</code>的文件夹，右键属性—安全，把users下面的权限全部打钩就行</p><p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-28%20102811.png" alt="屏幕截图 2023-06-28 102811"></p><p>应用过程中可能还会出现这种错误</p><p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/image-20230628103929133.png" alt="image-20230628103929133"></p><p>可以按照这个<a href="https://blog.csdn.net/qq_37653414/article/details/103462173">博客</a>的方法来解决，那个图比较清楚</p><p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/image-20230628104526618.png" alt="image-20230628104526618"></p><p>等待一段时间</p><p>然后再回到上述操作，把users下面的权限全部打钩，再等待亿段时间</p><p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/image-20230628104915818.png" alt="image-20230628104915818"></p><p>完成后最后测试一下，新建一个名为test2的环境</p><p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-28%20105049.png" alt="屏幕截图 2023-06-28 105049"></p><p>成功！</p><p>补充一下：</p><p>发现刚刚上述只是把环境迁移了，下载的缓存还是留在C盘</p><p>找到刚刚用户目录的.<code>condarc</code>文件，再加入几句话</p><figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">pkgs<span class="built_in">_</span>dirs:</span><br><span class="line">  - D:<span class="keyword">\ProgramData</span><span class="keyword">\pkgs</span></span><br></pre></td></tr></table></figure><p>保存查看一下，输入</p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda info</span><br></pre></td></tr></table></figure><p><img src="https://s1.ax1x.com/2023/06/28/pCdNtKI.png" alt="image-20230628115703963"></p><p>说明配置成功，接下来把C盘的<code>pkgs</code>文件夹剪切到D盘刚刚的目录下就行了</p><p><img src="https://s1.ax1x.com/2023/06/28/pCdNqqx.png" alt="image-20230628115948908"></p><p>完事！</p><p>补充：</p><p>之后跑项目遇到了这个问题</p><p><img src="https://s1.ax1x.com/2023/07/14/pC41RGd.png" alt="屏幕截图 2023-07-05 155524"></p><p>这个原因是之前<code>pycharm</code>保存的环境还默认在C盘，没有自动更新环境的位置，这时候重新加载一下就好了</p><p><img src="https://s1.ax1x.com/2023/07/14/pC41Iqf.png" alt="image-20230714111213354"></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;原本就是将&lt;code&gt;Anaconda&lt;/code&gt;安装到了C盘，结果发现环境他还是默认安装到了C盘，就打算再转移一下&lt;/p&gt;
-&lt;p&gt;conda版本为&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://gitee.com/Ruvikm/pic/raw/master/img/</summary>
-      
-    
-    
-    
-    <category term="个人笔记" scheme="https://ruvikm.gitee.io/categories/%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/"/>
     
     
   </entry>
