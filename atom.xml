@@ -6,7 +6,7 @@
   <link href="https://ruvikm.gitee.io/atom.xml" rel="self"/>
   
   <link href="https://ruvikm.gitee.io/"/>
-  <updated>2024-01-08T13:04:38.805Z</updated>
+  <updated>2024-01-26T14:07:24.191Z</updated>
   <id>https://ruvikm.gitee.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>nginx反向代理出错</title>
+    <link href="https://ruvikm.gitee.io/2024/01/26/nginx%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E5%87%BA%E9%94%99/"/>
+    <id>https://ruvikm.gitee.io/2024/01/26/nginx%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E5%87%BA%E9%94%99/</id>
+    <published>2024-01-26T13:24:54.000Z</published>
+    <updated>2024-01-26T14:07:24.191Z</updated>
+    
+    <content type="html"><![CDATA[<p>使用yum安装好了nginx</p><h2 id="问题再现"><a href="#问题再现" class="headerlink" title="问题再现"></a>问题再现</h2><p>进入路径配置好了<code>nginx.conf</code>文件</p><p><img src="https://s11.ax1x.com/2024/01/26/pFnwVDP.png" alt="QQ截图20240126212909"></p><p>验证<code>nginx.conf</code>文件是否有语法错误</p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo nginx -t</span><br></pre></td></tr></table></figure><p>重载nginx服务</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo nginx -s reload</span><br></pre></td></tr></table></figure><p>然后启动程序，发现nginx报错</p><p><img src="https://s11.ax1x.com/2024/01/26/pFnwmE8.png" alt="img"></p><p>在终端可以尝试输入了这样一句话</p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">setsebool -P httpd_can_network_connect <span class="literal">true</span></span><br></pre></td></tr></table></figure><p>解释：可能是SELinux的原因，它会基于最小权限原则默认拦截了 Nginx 的请求</p><p><img src="https://s11.ax1x.com/2024/01/26/pFnwnUS.png" alt="image-20240126213917121"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;使用yum安装好了nginx&lt;/p&gt;
+&lt;h2 id=&quot;问题再现&quot;&gt;&lt;a href=&quot;#问题再现&quot; class=&quot;headerlink&quot; title=&quot;问题再现&quot;&gt;&lt;/a&gt;问题再现&lt;/h2&gt;&lt;p&gt;进入路径配置好了&lt;code&gt;nginx.conf&lt;/code&gt;文件&lt;/p&gt;
+&lt;p</summary>
+      
+    
+    
+    
+    
+    <category term="个人笔记" scheme="https://ruvikm.gitee.io/tags/%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>在虚拟机Centos 7中配置Redis环境</title>
@@ -433,28 +457,6 @@
       
     <summary type="html">&lt;p&gt;Word2Vec工具的出处在一篇&lt;a href=&quot;https://arxiv.org/abs/1301.3781&quot;&gt;论文&lt;/a&gt;《Efficient Estimation of Word Representations in Vector Space》中&lt;/p&gt;
 &lt;p&gt;从论</summary>
-      
-    
-    
-    
-    <category term="论文复现" scheme="https://ruvikm.gitee.io/categories/%E8%AE%BA%E6%96%87%E5%A4%8D%E7%8E%B0/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>安装Word2Vec</title>
-    <link href="https://ruvikm.gitee.io/2023/07/01/%E5%AE%89%E8%A3%85Word2Vec/"/>
-    <id>https://ruvikm.gitee.io/2023/07/01/%E5%AE%89%E8%A3%85Word2Vec/</id>
-    <published>2023-07-01T08:21:49.000Z</published>
-    <updated>2023-07-01T15:01:00.814Z</updated>
-    
-    <content type="html"><![CDATA[<p>由于最近需要用到一个预处理的数据集，方法在<a href="https://arxiv.org/abs/1301.3781">这篇论文</a>《Efficient Estimation of Word Representations in Vector Space》里，于是打算尝试能不能复现一下，论文提供了<a href="https://code.google.com/archive/p/word2vec/">代码地址</a>，但是当我打开下载的时候，却发现是404</p><p><img src="https://s1.ax1x.com/2023/07/01/pCB5ZT0.png" alt="image-20230701163100641"></p><p>于是经过一番搜索，找到了最新的<a href="https://pypi.org/project/word2vec/">地址</a>（应该是吧</p><p>先创建一下新的虚拟环境</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">conda create -n word2vec python=3.8</span><br><span class="line">conda activate word2vec</span><br></pre></td></tr></table></figure><p>然后安装<code>numpy</code>、<code>scipy</code></p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pip install numpy</span><br><span class="line">pip install scipy</span><br></pre></td></tr></table></figure><p>安装<a href="https://visualstudio.microsoft.com/zh-hans/vs/">Microsoft Visual C++ 14.0</a></p><p>下载下来是一个安装器，然后进行如下操作</p><p><img src="https://s1.ax1x.com/2023/07/01/pCBoUQe.png" alt="屏幕截图 2023-07-01 165446"></p><p>然后</p><p><img src="https://s1.ax1x.com/2023/07/01/pCBodLd.png" alt="屏幕截图 2023-07-01 165358"></p><p>最后安装有点麻烦的<code>gcc</code>，首先使用清华镜像下载<a href="http://files.1f0.de/mingw/mingw-w64-gcc-12.2-stable-r38.7z">mingw-w64-gcc</a>，然后解压的位置选一个自己能记住的位置，比如我的就是</p><figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">G:<span class="keyword">\Program</span> Files<span class="keyword">\MinGW</span>-w64</span><br></pre></td></tr></table></figure><p>然后把<code>bin</code>目录添加到系统变量里</p><p>例如我的路径就是</p><figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">G:<span class="keyword">\Program</span> Files<span class="keyword">\MinGW</span>-w64<span class="keyword">\mingw</span>-w64-gcc-12.2-stable-r38<span class="keyword">\bin</span></span><br></pre></td></tr></table></figure><p><img src="https://s1.ax1x.com/2023/07/01/pCBTy7R.png" alt="屏幕截图 2023-07-01 172554"></p><p>最后测试一下时候配置成功</p><p>在<code>D盘</code>根目录先新建一个<code>helloword.c</code>的文件</p><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;hello world\n&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>然后用<code>cmd</code>到<code>D盘</code>根目录</p><figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">cd/d D:</span><br></pre></td></tr></table></figure><p>用gcc编译</p><figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">gcc helloword.c</span><br></pre></td></tr></table></figure><p><strong>如果没报错说明其实已经配置好了，想看文件运行结果的可以继续输入</strong></p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">a.exe</span><br></pre></td></tr></table></figure><p><img src="https://s1.ax1x.com/2023/07/01/pCB7EgU.png" alt="image-20230701173710147"></p><p>这样，<code>word2vec</code>所需的组件就算全部安装完了，下面正式开始安装<code>word2vec</code>（在conda那个命令窗口哦，希望不要报错！）</p><figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">pip install word2vec</span><br></pre></td></tr></table></figure><p><img src="https://s1.ax1x.com/2023/07/01/pCB7w5t.png" alt="image-20230701174216784"></p><p>如果出现这个问题，重启一下试试。本人就是重启完莫名安装成功了，可能是刚刚有的组件需要重启吧</p><p><img src="https://s1.ax1x.com/2023/07/01/pCDCOPS.png" alt="image-20230701225337075"></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;由于最近需要用到一个预处理的数据集，方法在&lt;a href=&quot;https://arxiv.org/abs/1301.3781&quot;&gt;这篇论文&lt;/a&gt;《Efficient Estimation of Word Representations in Vector Space》里，于是</summary>
       
     
     
