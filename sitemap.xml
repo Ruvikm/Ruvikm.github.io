@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://ruvikm.gitee.io/2024/03/02/%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%8D%87%E7%BA%A7%E4%B8%BAselect%E6%A8%A1%E5%9E%8B/</loc>
+    
+    <lastmod>2024-03-02</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ruvikm.gitee.io/2023/12/15/%E5%BB%BA%E7%AB%8B%E4%B8%80%E4%B8%AA%E7%AE%80%E6%98%93%E7%9A%84TCP%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%B8%8E%E6%9C%8D%E5%8A%A1%E7%AB%AF/</loc>
+    
+    <lastmod>2024-03-02</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://ruvikm.gitee.io/2024/01/26/nginx%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E5%87%BA%E9%94%99/</loc>
     
     <lastmod>2024-01-26</lastmod>
@@ -12,15 +30,6 @@
   
   <url>
     <loc>https://ruvikm.gitee.io/2024/01/08/%E9%85%8D%E7%BD%AERedis%E7%8E%AF%E5%A2%83/</loc>
-    
-    <lastmod>2024-01-08</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ruvikm.gitee.io/2023/12/15/%E5%BB%BA%E7%AB%8B%E4%B8%80%E4%B8%AA%E7%AE%80%E6%98%93%E7%9A%84TCP%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%B8%8E%E6%9C%8D%E5%8A%A1%E7%AB%AF/</loc>
     
     <lastmod>2024-01-08</lastmod>
     
@@ -456,7 +465,7 @@
   </url>
   
   <url>
-    <loc>https://ruvikm.gitee.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
+    <loc>https://ruvikm.gitee.io/tags/C-socket%E9%A1%B9%E7%9B%AE/</loc>
     <lastmod>2024-03-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
