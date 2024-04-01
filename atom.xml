@@ -6,7 +6,7 @@
   <link href="https://ruvikm.gitee.io/atom.xml" rel="self"/>
   
   <link href="https://ruvikm.gitee.io/"/>
-  <updated>2024-04-01T10:57:31.602Z</updated>
+  <updated>2024-04-01T11:20:04.095Z</updated>
   <id>https://ruvikm.gitee.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>学校GPU平台使用教程(优化版)</title>
+    <link href="https://ruvikm.gitee.io/2024/04/01/%E5%AD%A6%E6%A0%A1GPU%E5%B9%B3%E5%8F%B0%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B-%E6%94%B9%E8%BF%9B%E7%89%88/"/>
+    <id>https://ruvikm.gitee.io/2024/04/01/%E5%AD%A6%E6%A0%A1GPU%E5%B9%B3%E5%8F%B0%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B-%E6%94%B9%E8%BF%9B%E7%89%88/</id>
+    <published>2024-04-01T11:10:22.000Z</published>
+    <updated>2024-04-01T11:20:04.095Z</updated>
+    
+    <content type="html"><![CDATA[<p>首先连接内网登录<a href="http://paas.183-175-12-11.nip.io:30080/">平台</a></p><p>一般使用的话，直接找到<code>开发环境</code>一栏，创建环境。然后通过<code>Pycharm</code>中的<code>ssh</code>连接</p><p><img src="https://s1.ax1x.com/2023/08/28/pPaw2X6.png" alt="屏幕截图 2023-08-28 221321"></p><p>在<code>Pycharm</code>中，找到工具—部署—配置</p><p><img src="https://s1.ax1x.com/2023/08/28/pPad5zq.png" alt="image-20230828220300678"></p><p>点击<code>+</code>后选择<code>SFTP</code></p><p><img src="https://s1.ax1x.com/2023/08/28/pPaw5Ae.png" alt="屏幕截图 2023-08-28 221526"></p><p>在<code>SSH配置</code>那里后点击后面<code>...</code></p><p><img src="https://s1.ax1x.com/2023/08/28/pPawbct.png" alt="屏幕截图 2023-08-28 092517"></p><p>进入后填写主机名和用户名，这里详细讲一下</p><p>例如平台给的ssh连接是</p><figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">ssh://root@paas.xxx-xxx-xx-xx.nip.io:xxxxx</span><br></pre></td></tr></table></figure><p>这里用户名就需要填写</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">root</span><br></pre></td></tr></table></figure><p>主机名填写</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">paas.xxx-xxx-xx-xx.nip.io</span><br></pre></td></tr></table></figure><p>端口号填写<code>xxxxx</code></p><p>然后填写创建环境时设置的密码</p><p><img src="https://s1.ax1x.com/2023/08/28/pPawjHS.png" alt="屏幕截图 2023-08-28 092917"></p><p>这一步完事以后，点击确定，返回到之前的页面，点击<code>映射</code></p><p><img src="https://s1.ax1x.com/2023/08/30/pPd7RaD.png" alt="屏幕截图 2023-08-30 145658"></p><p>配置好本机的地址和远程的地址，点击确认</p><p><img src="https://s1.ax1x.com/2023/08/30/pPd7LdS.png" alt="image-20230830145937224"></p><p>之后选择工具—部署—选项</p><p><img src="https://s1.ax1x.com/2023/08/30/pPdHIkF.png" alt="QQ截图20230830150656"></p><p>可以根据自己习惯决定是否配置一下</p><p>之后就可以用Pycharm作为修改代码和文件传输的工具了</p><p>由于Pycharm自带的终端个人认为并不好用，所以可以使用Xshell软件使用终端操作，Xshell的配置同上</p><p><img src="https://s21.ax1x.com/2024/04/01/pF7gw01.png" alt></p><p>由于已经在里面安装了Anaconda，所以每次跑一个项目的时候新建一个虚拟环境即可</p><h3 id="切换环境"><a href="#切换环境" class="headerlink" title="切换环境"></a>切换环境</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda activate cu118py310</span><br></pre></td></tr></table></figure><h3 id="查看并删除环境"><a href="#查看并删除环境" class="headerlink" title="查看并删除环境"></a>查看并删除环境</h3><h4 id="查看环境列表"><a href="#查看环境列表" class="headerlink" title="查看环境列表"></a>查看环境列表</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda info --<span class="built_in">env</span></span><br></pre></td></tr></table></figure><h4 id="删除环境"><a href="#删除环境" class="headerlink" title="删除环境"></a>删除环境</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda remove -n 环境名 --all</span><br><span class="line"></span><br><span class="line">eg:conda remove -n code --all</span><br></pre></td></tr></table></figure><h3 id="创建环境"><a href="#创建环境" class="headerlink" title="创建环境"></a>创建环境</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda create -n 环境名 python=版本号</span><br><span class="line"></span><br><span class="line">eg:conda create -n ChineseBERT python=3.8</span><br></pre></td></tr></table></figure><h3 id="退出当前环境"><a href="#退出当前环境" class="headerlink" title="退出当前环境"></a>退出当前环境</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda activate base</span><br></pre></td></tr></table></figure><h3 id="查看当前环境已安装的包"><a href="#查看当前环境已安装的包" class="headerlink" title="查看当前环境已安装的包"></a>查看当前环境已安装的包</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip list</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;首先连接内网登录&lt;a href=&quot;http://paas.183-175-12-11.nip.io:30080/&quot;&gt;平台&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;一般使用的话，直接找到&lt;code&gt;开发环境&lt;/code&gt;一栏，创建环境。然后通过&lt;code&gt;Pycharm&lt;/code&gt;中的&lt;co</summary>
+      
+    
+    
+    
+    <category term="个人笔记" scheme="https://ruvikm.gitee.io/categories/%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>客户端服务端跨平台移植，并添加线程</title>
@@ -313,7 +336,7 @@
     <link href="https://ruvikm.gitee.io/2023/08/28/%E5%AD%A6%E6%A0%A1GPU%E5%B9%B3%E5%8F%B0%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/"/>
     <id>https://ruvikm.gitee.io/2023/08/28/%E5%AD%A6%E6%A0%A1GPU%E5%B9%B3%E5%8F%B0%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</id>
     <published>2023-08-28T01:18:54.000Z</published>
-    <updated>2024-04-01T10:43:49.545Z</updated>
+    <updated>2024-04-01T11:09:52.725Z</updated>
     
     <content type="html"><![CDATA[<p>首先连接内网登录<a href="http://paas.183-175-12-11.nip.io:30080/">平台</a></p><p>一般使用的话，直接找到<code>开发环境</code>一栏，创建环境。然后通过<code>Pycharm</code>中的<code>ssh</code>连接</p><p><img src="https://s1.ax1x.com/2023/08/28/pPaw2X6.png" alt="屏幕截图 2023-08-28 221321"></p><p>在<code>Pycharm</code>中，找到工具—部署—配置</p><p><img src="https://s1.ax1x.com/2023/08/28/pPad5zq.png" alt="image-20230828220300678"></p><p>点击<code>+</code>后选择<code>SFTP</code></p><p><img src="https://s1.ax1x.com/2023/08/28/pPaw5Ae.png" alt="屏幕截图 2023-08-28 221526"></p><p>在<code>SSH配置</code>那里后点击后面<code>...</code></p><p><img src="https://s1.ax1x.com/2023/08/28/pPawbct.png" alt="屏幕截图 2023-08-28 092517"></p><p>进入后填写主机名和用户名，这里详细讲一下</p><p>例如平台给的ssh连接是</p><figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">ssh://root@paas.xxx-xxx-xx-xx.nip.io:xxxxx</span><br></pre></td></tr></table></figure><p>这里用户名就需要填写</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">root</span><br></pre></td></tr></table></figure><p>主机名填写</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">paas.xxx-xxx-xx-xx.nip.io</span><br></pre></td></tr></table></figure><p>端口号填写<code>xxxxx</code></p><p>然后填写创建环境时设置的密码</p><p><img src="https://s1.ax1x.com/2023/08/28/pPawjHS.png" alt="屏幕截图 2023-08-28 092917"></p><p>这一步完事以后，点击确定，返回到之前的页面，点击<code>映射</code></p><p><img src="https://s1.ax1x.com/2023/08/30/pPd7RaD.png" alt="屏幕截图 2023-08-30 145658"></p><p>配置好本机的地址和远程的地址，点击确认</p><p><img src="https://s1.ax1x.com/2023/08/30/pPd7LdS.png" alt="image-20230830145937224"></p><p>之后选择工具—部署—选项</p><p><img src="https://s1.ax1x.com/2023/08/30/pPdHIkF.png" alt="QQ截图20230830150656"></p><p>可以根据自己习惯决定是否配置一下</p><p>然后找到工具—启动SSH会话，选择刚刚配置的SSH</p><p><img src="https://s1.ax1x.com/2023/08/30/pPdbmtg.png" alt="屏幕截图 2023-08-30 151730"></p><p>然后输入</p><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">python</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="built_in">print</span>(sys.executable)</span><br></pre></td></tr></table></figure><p>记住输出的地址，比如我的就是</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">usr/bin/python</span><br></pre></td></tr></table></figure><p>最后，找到项目—项目XXXX—Python解释器，找到添加解释器—SSH</p><p><img src="https://s1.ax1x.com/2023/08/30/pPdHj0K.png" alt="image-20230830151124394"></p><p>选择刚刚配置的SSH服务器，然后下一步</p><p><img src="https://s1.ax1x.com/2023/08/30/pPdbHUS.png" alt="屏幕截图 2023-08-30 152226"></p><p>点击下一步</p><p><img src="https://s1.ax1x.com/2023/08/30/pPdbO3j.png" alt="image-20230830152644100"></p><p>然后选择<code>现有</code></p><p>把刚刚的地址输入到<code>解释器</code>里</p><p><img src="https://s1.ax1x.com/2023/08/30/pPdqSbV.png" alt="image-20230830152826067"></p><p>点击确定就完事了</p><p><img src="https://s1.ax1x.com/2023/08/30/pPdqtqP.png" alt="image-20230830152939492"></p><p>之后用<code>工具</code>—<code>SSH会话</code>配合，就可以用学校的GPU跑程序了</p><p>tips：后期可以在服务器上安装<code>Anaconda</code>，然后把新建的虚拟环境中python路径配置到上述图片的<code>解释器</code>中</p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">jupyter notebook --ip 0.0.0.0 --allow-root</span><br></pre></td></tr></table></figure><p>再补充一下，之前用conda的操作可能是麻烦了，服务器里自带好多python的环境，每个环境里也有很多自带的包</p><p><img src="https://z1.ax1x.com/2023/10/04/pPOHyIe.png" alt="屏幕截图 2023-10-04 204942"></p><p>选择例如选择python3.6后</p><p><img src="https://z1.ax1x.com/2023/10/04/pPOHgGd.png" alt="屏幕截图 2023-10-04 211210"></p><p>之后就《愉快》的调参吧，附一张成功用学校GPU跑代码的图片</p><p><img src="https://z1.ax1x.com/2023/10/04/pPOHqRs.png" alt="image-20231004211915616"></p><p> <strong>10.19继续补充一下</strong><br>有的项目跑起来需要运行作者的<code>run.sh</code>文件，这时候需要切换到项目的目录然后运行</p><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">bash run.sh</span><br></pre></td></tr></table></figure><p>但是环境默认是python2.7版本的，项目跑不起来，这时候需要切换python的环境</p><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">whereis python</span><br><span class="line">rm /usr/bin/python</span><br><span class="line">ln -s /usr/bin/python3.6 /usr/bin/python</span><br></pre></td></tr></table></figure><p><img src="https://z1.ax1x.com/2023/10/19/piitih6.png" alt="image-20231019153231564"></p><p>还有一种方法，比如需要切换的环境在</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">usr/bin/python3.6</span><br></pre></td></tr></table></figure><p>这时候需要在<code>.sh</code>文件中开头加上</p><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/usr/bin/env python3.6</span></span><br></pre></td></tr></table></figure><p>可以在后面查看python环境</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">python --version</span><br></pre></td></tr></table></figure><p><img src="https://z1.ax1x.com/2023/10/19/piir6K0.png" alt="image-20231019163749724"></p><p>这时候就切换了</p><p>2024-4-1补充</p><p>其实可以用Pycharm上传文件，然后用Xshell跑代码，Xshell配置和之前的大差不差</p><p><img src="https://s21.ax1x.com/2024/04/01/pF7gw01.png" alt></p>]]></content>
     
@@ -435,29 +458,6 @@
       
       
     <summary type="html">&lt;p&gt;首先打开&lt;a href=&quot;https://github.com/ramonvc/freegpt-webui#cloning-the-repository-inbox_tray&quot;&gt;项目网址&lt;/a&gt;，把代码下载下来，按照其要求安装&lt;a href=&quot;https://www.pyt</summary>
-      
-    
-    
-    
-    <category term="个人笔记" scheme="https://ruvikm.gitee.io/categories/%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>OSError [Errno 22] Invalid argument(已解决)</title>
-    <link href="https://ruvikm.gitee.io/2023/07/12/%E8%A7%A3%E5%86%B3%E9%97%AE%E9%A2%98OSError%20[Errno%2022]%20Invalid%20argument/"/>
-    <id>https://ruvikm.gitee.io/2023/07/12/%E8%A7%A3%E5%86%B3%E9%97%AE%E9%A2%98OSError%20[Errno%2022]%20Invalid%20argument/</id>
-    <published>2023-07-12T14:31:56.000Z</published>
-    <updated>2023-07-12T14:42:34.626Z</updated>
-    
-    <content type="html"><![CDATA[<p>最近跑别人的项目遇到一个这样的问题</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">OSError: [Errno 22] Invalid argument xxxxxxxxxxxxxxxxxx</span><br></pre></td></tr></table></figure><p><img src="https://s1.ax1x.com/2023/07/12/pCh9Ni4.png" alt="屏幕截图 2023-07-12 203923"></p><p>一开始以为是没有用管理员的权限运行，导致创建不了日志文件</p><p>后来发现是和windows的命名规则冲突了（以下来源<a href="https://learn.microsoft.com/zh-cn/windows/win32/fileio/naming-a-file">官网地址</a>）</p><h3 id="命名约定"><a href="#命名约定" class="headerlink" title="命名约定"></a>命名约定</h3><p>以下基本规则使应用程序能够创建和处理文件和目录的有效名称，而不考虑文件系统：</p><ul><li><p>使用句点将基文件名与目录或文件名称中的扩展名分隔开。</p></li><li><p>使用反斜杠 () 分隔<em>路径</em>的<em>组件</em>。 反斜杠将文件名从路径中除以，将一个目录名与路径中的另一个目录名称分开。 不能在实际文件或目录的名称中使用反斜杠，因为它是将名称分隔成组件的保留字符。</p></li><li><p>根据需要使用反斜杠作为 <a href="https://learn.microsoft.com/zh-cn/windows/win32/fileio/naming-a-volume">卷名称</a>的一部分，例如“C：\”在“C：\path\file”或“\server\share\path\file”中为通用命名约定的“\server\share” (UNC) 名称。 有关 UNC 名称的详细信息，请参阅 <a href="https://learn.microsoft.com/zh-cn/windows/win32/fileio/naming-a-file#maximum-path-length-limitation">最大路径长度限制</a> 部分。</p></li><li><p>不要假定区分大小写。 例如，将 OSCAR、Oscar 和 oscar 的名称视为相同，即使某些文件系统 (（如符合 POSIX 的文件系统) 可能认为它们不同）。 请注意，NTFS 支持 POSIX 语义区分大小写，但这不是默认行为。 有关详细信息，请参阅 <a href="https://learn.microsoft.com/zh-cn/windows/desktop/api/FileAPI/nf-fileapi-createfilea"><strong>CreateFile</strong></a>。</p></li><li><p>(驱动器号) 的卷指定符同样不区分大小写。 例如，“D：\”和“d：\”引用同一卷。</p></li><li><p>使用当前代码页中的任何字符作为名称，包括 Unicode 字符和扩展字符集中 (128-255) 字符，但以下各项除外：</p><ul><li>以下保留字符：<ul><li>&lt;（小于）</li><li>>（大于）</li><li>:（冒号）</li><li>“（双引号）</li><li>/（正斜杠）</li><li>\（反斜杠）</li><li>| (竖线或竖线)</li><li>? （问号）</li><li>*（星号）</li></ul></li><li>整数值零，有时称为 ASCII <em>NUL</em> 字符。</li><li>整数表示形式的字符介于 1 到 31 之间，但允许这些字符的备用数据流除外。 有关文件流的详细信息，请参阅 <a href="https://learn.microsoft.com/zh-cn/windows/win32/fileio/file-streams">文件流</a>。</li><li>目标文件系统不允许的任何其他字符。</li></ul></li><li><p>使用句点作为路径中的目录 <em>组件</em> 来表示当前目录，例如“.\temp.txt”。 有关详细信息，请参阅 <a href="https://learn.microsoft.com/zh-cn/windows/win32/fileio/naming-a-file#fully-qualified-vs-relative-paths">路径</a>。</p></li><li><p>使用两个连续的句点 (。) 作为路径中的目录 <em>组件</em> 来表示当前目录的父目录，例如“.”。\temp.txt”。 有关详细信息，请参阅 <a href="https://learn.microsoft.com/zh-cn/windows/win32/fileio/naming-a-file#fully-qualified-vs-relative-paths">路径</a>。</p></li><li><p>不要将以下保留名称用于文件的名称：</p><p>CON、PRN、AUX、NUL、COM0、COM1、COM2、COM3、COM4、COM5、COM6、COM7、COM8、COM9、LPT0、LPT1、LPT2、LPT3、LPT4、LPT5、LPT6、LPT7、LPT8 和 LPT9。 另请避免这些名称紧跟扩展名;例如，NUL.txt 和 NUL.tar.gz 都等效于 NUL。 有关详细信息，请参阅<a href="https://learn.microsoft.com/zh-cn/windows/win32/fileio/naming-a-file#win32-file-namespaces">命名空间</a>。</p></li><li><p>不要用空格或句点结束文件或目录名称。 尽管基础文件系统可能支持此类名称，但 Windows shell 和用户界面不支持。 但是，可以接受指定句点作为名称的第一个字符。 例如“.temp”。</p></li></ul><h3 id="划重点：下列符号是不能用的"><a href="#划重点：下列符号是不能用的" class="headerlink" title="划重点：下列符号是不能用的"></a><strong>划重点：下列符号是不能用的</strong></h3><ul><li>&lt;（小于）</li><li>>（大于）</li><li>:（冒号）</li><li>“（双引号）</li><li>/（正斜杠）</li><li>\（反斜杠）</li><li>| (竖线或竖线)</li><li>? （问号）</li><li>*（星号）</li></ul><p>然后我细心的观察到了这一点</p><p><img src="https://s1.ax1x.com/2023/07/12/pChpwb8.png" alt="屏幕截图 2023-07-12 222221"></p><p>很显然，<code>:</code>是不能存在的</p><p>把他换成<code>-</code>后，程序就跑起来了</p><p><img src="https://s1.ax1x.com/2023/07/12/pCh96oD.png" alt="屏幕截图 2023-07-12 222822"></p><p>类似的问题可以参考一下下</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;最近跑别人的项目遇到一个这样的问题&lt;/p&gt;
-&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;OSError: [Errno 22] Invalid</summary>
       
     
     
