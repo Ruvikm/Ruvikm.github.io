@@ -1,19 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>C_C++用宏定义简化for循环</title>
-    <url>/2022/01/10/C_C++%E7%94%A8%E5%AE%8F%E5%AE%9A%E4%B9%89%E7%AE%80%E5%8C%96for%E5%BE%AA%E7%8E%AF/</url>
-    <content><![CDATA[<p>记录一下for循环简化<br><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> _for(i,a,b) for( int i=(a); i&lt;(b); ++i)</span></span><br></pre></td></tr></table></figure><br>这样<br><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)</span><br></pre></td></tr></table></figure><br>就简化为了</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">_for(i, <span class="number">0</span>, <span class="number">10</span>)</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>个人笔记</category>
-      </categories>
-      <tags>
-        <tag>算法</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>2021版王道数据结构课后代码题全部实现</title>
     <url>/2022/01/10/2021%E7%89%88%E7%8E%8B%E9%81%93%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E8%AF%BE%E5%90%8E%E4%BB%A3%E7%A0%81%E9%A2%98%E5%85%A8%E9%83%A8%E5%AE%9E%E7%8E%B0/</url>
     <content><![CDATA[<p>历时2个多月，把21版王道数据结构的课后代码题全部实现了一遍，一共96道题</p>
@@ -41,6 +28,19 @@
 ]]></content>
       <categories>
         <category>刷题笔记</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>C_C++用宏定义简化for循环</title>
+    <url>/2022/01/10/C_C++%E7%94%A8%E5%AE%8F%E5%AE%9A%E4%B9%89%E7%AE%80%E5%8C%96for%E5%BE%AA%E7%8E%AF/</url>
+    <content><![CDATA[<p>记录一下for循环简化<br><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> _for(i,a,b) for( int i=(a); i&lt;(b); ++i)</span></span><br></pre></td></tr></table></figure><br>这样<br><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)</span><br></pre></td></tr></table></figure><br>就简化为了</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">_for(i, <span class="number">0</span>, <span class="number">10</span>)</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>个人笔记</category>
       </categories>
       <tags>
         <tag>算法</tag>
@@ -124,6 +124,27 @@
       </categories>
   </entry>
   <entry>
+    <title>JZ6 从尾到头打印链表</title>
+    <url>/2023/11/15/JZ6%20%E4%BB%8E%E5%B0%BE%E5%88%B0%E5%A4%B4%E6%89%93%E5%8D%B0%E9%93%BE%E8%A1%A8/</url>
+    <content><![CDATA[<h2 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h2><p>输入一个链表的头节点，按链表从尾到头的顺序返回每个节点的值（用数组返回）。</p>
+<p>如输入{1,2,3}的链表如下图:</p>
+<p><img src="https://z1.ax1x.com/2023/11/19/piUE8bR.png" alt="103D87B58E565E87DEFA9DD0B822C55F"></p>
+<p>返回一个数组为[3,2,1]</p>
+<p>0 &lt;= 链表长度 &lt;= 10000</p>
+<h2 id="示例1"><a href="#示例1" class="headerlink" title="示例1"></a>示例1</h2><p>输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;1,2,3&#125;</span><br></pre></td></tr></table></figure>
+<p>返回值：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[3,2,1]</span><br></pre></td></tr></table></figure>
+<h2 id="算法思路1"><a href="#算法思路1" class="headerlink" title="算法思路1"></a>算法思路1</h2><p>主要考察翻转数组的操作，把链表的数据放到数组里，然后在数组里操作，一个比较简单的操作是调用C++的库函数</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">printListFromTailToHead</span><span class="params">(ListNode* head)</span> </span>&#123;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; vt;</span><br><span class="line">        ListNode* p = head;</span><br><span class="line">        <span class="keyword">while</span>(p != <span class="literal">nullptr</span>)&#123;</span><br><span class="line">            vt.<span class="built_in">push_back</span>(p-&gt;val);</span><br><span class="line">            p = p-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">reverse</span>(vt.<span class="built_in">begin</span>(),vt.<span class="built_in">end</span>());</span><br><span class="line">        <span class="keyword">return</span> vt;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="算法思路2"><a href="#算法思路2" class="headerlink" title="算法思路2"></a>算法思路2</h2><p>使用递归的方式解决，递归出口是链表循环到末尾，每次递归做的事就是把当前结点的值放到<code>vector</code>容器中，由于递归到末尾才会开始存放结点（<code>res.push_back(head-&gt;val);</code>）的值，时间顺序正好为从后往前的存放，符合题目要求的逆序</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">*  struct ListNode &#123;</span></span><br><span class="line"><span class="comment">*        int val;</span></span><br><span class="line"><span class="comment">*        struct ListNode *next;</span></span><br><span class="line"><span class="comment">*        ListNode(int x) :</span></span><br><span class="line"><span class="comment">*              val(x), next(NULL) &#123;</span></span><br><span class="line"><span class="comment">*        &#125;</span></span><br><span class="line"><span class="comment">*  &#125;;</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">reverse</span><span class="params">(ListNode* head,vector&lt;<span class="type">int</span>&gt; &amp;res)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(head != <span class="literal">nullptr</span>)&#123;</span><br><span class="line">            <span class="built_in">reverse</span>(head-&gt;next,res);</span><br><span class="line">            res.<span class="built_in">push_back</span>(head-&gt;val);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">printListFromTailToHead</span><span class="params">(ListNode* head)</span> </span>&#123;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; res;</span><br><span class="line">        <span class="built_in">reverse</span>(head,res);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>刷题笔记</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Java实现鲜花销售系统</title>
     <url>/2022/01/10/Java%E5%AE%9E%E7%8E%B0%E9%B2%9C%E8%8A%B1%E9%94%80%E5%94%AE%E7%B3%BB%E7%BB%9F/</url>
     <content><![CDATA[<h2 id="项目环境"><a href="#项目环境" class="headerlink" title="项目环境"></a>项目环境</h2><ol>
@@ -144,27 +165,6 @@
       <tags>
         <tag>java</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>JZ6 从尾到头打印链表</title>
-    <url>/2023/11/15/JZ6%20%E4%BB%8E%E5%B0%BE%E5%88%B0%E5%A4%B4%E6%89%93%E5%8D%B0%E9%93%BE%E8%A1%A8/</url>
-    <content><![CDATA[<h2 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h2><p>输入一个链表的头节点，按链表从尾到头的顺序返回每个节点的值（用数组返回）。</p>
-<p>如输入{1,2,3}的链表如下图:</p>
-<p><img src="https://z1.ax1x.com/2023/11/19/piUE8bR.png" alt="103D87B58E565E87DEFA9DD0B822C55F"></p>
-<p>返回一个数组为[3,2,1]</p>
-<p>0 &lt;= 链表长度 &lt;= 10000</p>
-<h2 id="示例1"><a href="#示例1" class="headerlink" title="示例1"></a>示例1</h2><p>输入：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;1,2,3&#125;</span><br></pre></td></tr></table></figure>
-<p>返回值：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[3,2,1]</span><br></pre></td></tr></table></figure>
-<h2 id="算法思路1"><a href="#算法思路1" class="headerlink" title="算法思路1"></a>算法思路1</h2><p>主要考察翻转数组的操作，把链表的数据放到数组里，然后在数组里操作，一个比较简单的操作是调用C++的库函数</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">printListFromTailToHead</span><span class="params">(ListNode* head)</span> </span>&#123;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; vt;</span><br><span class="line">        ListNode* p = head;</span><br><span class="line">        <span class="keyword">while</span>(p != <span class="literal">nullptr</span>)&#123;</span><br><span class="line">            vt.<span class="built_in">push_back</span>(p-&gt;val);</span><br><span class="line">            p = p-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">reverse</span>(vt.<span class="built_in">begin</span>(),vt.<span class="built_in">end</span>());</span><br><span class="line">        <span class="keyword">return</span> vt;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="算法思路2"><a href="#算法思路2" class="headerlink" title="算法思路2"></a>算法思路2</h2><p>使用递归的方式解决，递归出口是链表循环到末尾，每次递归做的事就是把当前结点的值放到<code>vector</code>容器中，由于递归到末尾才会开始存放结点（<code>res.push_back(head-&gt;val);</code>）的值，时间顺序正好为从后往前的存放，符合题目要求的逆序</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">*  struct ListNode &#123;</span></span><br><span class="line"><span class="comment">*        int val;</span></span><br><span class="line"><span class="comment">*        struct ListNode *next;</span></span><br><span class="line"><span class="comment">*        ListNode(int x) :</span></span><br><span class="line"><span class="comment">*              val(x), next(NULL) &#123;</span></span><br><span class="line"><span class="comment">*        &#125;</span></span><br><span class="line"><span class="comment">*  &#125;;</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">reverse</span><span class="params">(ListNode* head,vector&lt;<span class="type">int</span>&gt; &amp;res)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(head != <span class="literal">nullptr</span>)&#123;</span><br><span class="line">            <span class="built_in">reverse</span>(head-&gt;next,res);</span><br><span class="line">            res.<span class="built_in">push_back</span>(head-&gt;val);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">printListFromTailToHead</span><span class="params">(ListNode* head)</span> </span>&#123;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; res;</span><br><span class="line">        <span class="built_in">reverse</span>(head,res);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>刷题笔记</category>
-      </categories>
   </entry>
   <entry>
     <title>LeetCode 131. Palindrome Partitioning</title>
@@ -690,6 +690,27 @@
       </tags>
   </entry>
   <entry>
+    <title>hexo部署到Gitee后显示404||没有更新</title>
+    <url>/2023/05/26/hexo%E9%83%A8%E7%BD%B2%E5%88%B0Gitee%E5%90%8E%E6%98%BE%E7%A4%BA404/</url>
+    <content><![CDATA[<p>在Gitee开启了Gitee Pages，并且本地完成了</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g -d</span><br></pre></td></tr></table></figure>
+<p>然后发现已经上传到了Gitee仓库里，但是访问博客的网址却显示404</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-05-26%20163430-1685090681023-7.png" alt="屏幕截图 2023-05-26 163430"></p>
+<p>有以下两种可能的原因：</p>
+<h3 id="hexo根目录下的-config-yml文件里，url没有配置对"><a href="#hexo根目录下的-config-yml文件里，url没有配置对" class="headerlink" title="hexo根目录下的_config.yml文件里，url没有配置对"></a>hexo根目录下的_config.yml文件里，url没有配置对</h3><p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-05-26%20164633.png" alt="屏幕截图 2023-05-26 164633"></p>
+<p>如果仓库名和Gitee的用户名不一致时，root属性也需要修改。</p>
+<p>比如用户名为xxx新建的仓库地址为</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">https://gitee.com/xxx/myblog </span><br></pre></td></tr></table></figure>
+<p>则以上内容需要修改为</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">url: https://xxx.gitee.io/</span><br><span class="line">root: /myblog</span><br></pre></td></tr></table></figure>
+<h3 id="没有手动再部署一遍！！！"><a href="#没有手动再部署一遍！！！" class="headerlink" title="没有手动再部署一遍！！！"></a>没有手动再部署一遍！！！</h3><p>是的你没有听错，这个居然上传成功后还需要手动再更新一下！</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-05-26%20164839.png" alt="屏幕截图 2023-05-26 164839"></p>
+]]></content>
+      <categories>
+        <category>个人笔记</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Win11配置多个CUDA环境</title>
     <url>/2023/09/30/Win11%E9%85%8D%E7%BD%AE%E5%A4%9A%E4%B8%AACUDA%E7%8E%AF%E5%A2%83/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>由于跑项目发现需要配置不同版本的Pytorch，而不同版本的Pytorch又对应不同版本的CUDA，于是有了在Win上装多个CUDA的打算</p>
@@ -740,27 +761,6 @@
 <p>测试Pytorch是否可以调用显卡</p>
 <p><img src="https://z1.ax1x.com/2023/09/30/pPqYkmd.png" alt="image-20230930112626663"></p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>切换CUDA的时候除了要修改系统变量Path中的路径顺序，一定要记得重启！</p>
-]]></content>
-      <categories>
-        <category>个人笔记</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>hexo部署到Gitee后显示404||没有更新</title>
-    <url>/2023/05/26/hexo%E9%83%A8%E7%BD%B2%E5%88%B0Gitee%E5%90%8E%E6%98%BE%E7%A4%BA404/</url>
-    <content><![CDATA[<p>在Gitee开启了Gitee Pages，并且本地完成了</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g -d</span><br></pre></td></tr></table></figure>
-<p>然后发现已经上传到了Gitee仓库里，但是访问博客的网址却显示404</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-05-26%20163430-1685090681023-7.png" alt="屏幕截图 2023-05-26 163430"></p>
-<p>有以下两种可能的原因：</p>
-<h3 id="hexo根目录下的-config-yml文件里，url没有配置对"><a href="#hexo根目录下的-config-yml文件里，url没有配置对" class="headerlink" title="hexo根目录下的_config.yml文件里，url没有配置对"></a>hexo根目录下的_config.yml文件里，url没有配置对</h3><p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-05-26%20164633.png" alt="屏幕截图 2023-05-26 164633"></p>
-<p>如果仓库名和Gitee的用户名不一致时，root属性也需要修改。</p>
-<p>比如用户名为xxx新建的仓库地址为</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">https://gitee.com/xxx/myblog </span><br></pre></td></tr></table></figure>
-<p>则以上内容需要修改为</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">url: https://xxx.gitee.io/</span><br><span class="line">root: /myblog</span><br></pre></td></tr></table></figure>
-<h3 id="没有手动再部署一遍！！！"><a href="#没有手动再部署一遍！！！" class="headerlink" title="没有手动再部署一遍！！！"></a>没有手动再部署一遍！！！</h3><p>是的你没有听错，这个居然上传成功后还需要手动再更新一下！</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-05-26%20164839.png" alt="屏幕截图 2023-05-26 164839"></p>
 ]]></content>
       <categories>
         <category>个人笔记</category>
@@ -973,42 +973,6 @@
       </tags>
   </entry>
   <entry>
-    <title>复现KnowLog模型</title>
-    <url>/2024/03/31/%E5%A4%8D%E7%8E%B0KnowLog%E6%A8%A1%E5%9E%8B/</url>
-    <content><![CDATA[<p>这次要复现的一个项目是<strong><a href="https://github.com/LeaperOvO/KnowLog">KnowLog</a></strong>，首先创建一个虚拟环境</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda create KnowLog -n python=3.8</span><br><span class="line">conda activate KnowLog</span><br></pre></td></tr></table></figure>
-<p>然后来到项目的根目录，安装项目所需的环境</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install -r requirements.txt</span><br></pre></td></tr></table></figure>
-<p>之后尝试运行训练的部分</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">python KnowLog_pretrain.py --pretrain_data ./datasets/pre-train/all_log.json --abbr ./datasets/pre-train/abbr.json --base_model bert-base-uncased</span><br></pre></td></tr></table></figure>
-<p>毫无意外的会出报错，提示少了什么包，这时候提示缺什么用pip安装即可</p>
-<p>再安装完这些包之后，再次尝试训练，出现了下面这个错</p>
-<p><img src="https://s21.ax1x.com/2024/03/31/pF7ZiLT.png" alt="image-20240331100215828"></p>
-<p>查了一下是python关于SSLError的错误，尝试降级版本解决</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pip install urllib3==1.25.11</span><br></pre></td></tr></table></figure>
-<p><img src="https://s21.ax1x.com/2024/03/31/pF7ZkeU.png" alt="image-20240331101640666"></p>
-<p>成功解决问题，开启魔法可以正常下载了</p>
-<p><img src="https://s21.ax1x.com/2024/03/31/pF7ZAwF.png" alt="image-20240331101821967"></p>
-<p>但是发现下载一半又断开连接了，可能是这种下载方式不支持断点续传，于是打算先把预训练模型下载到本地试试</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">huggingface-cli download --resume-download google-bert/bert-base-uncased --local-dir bert-base-uncased</span><br></pre></td></tr></table></figure>
-<p><img src="https://s21.ax1x.com/2024/03/31/pF7ZEo4.png" alt="image-20240331104044658"></p>
-<p>下好了之后再次尝试跑一下，应该是下了CPU版的torch，重新安装一下吧</p>
-<p><img src="https://s21.ax1x.com/2024/03/31/pF7ZeY9.png" alt="image-20240331104118085"></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda install pytorch==1.10.1 torchvision==0.11.2 torchaudio==0.10.1 cudatoolkit=11.3</span><br></pre></td></tr></table></figure>
-<p>再次尝试训练，跑通了！！！</p>
-<p><img src="https://s21.ax1x.com/2024/03/31/pF7ZuS1.png" alt="image-20240331110908244"></p>
-<p>但是一直卡在34%了…重启运行了一下代码，把代理开了开（可能是代理的原因？）就可以继续往下跑了，但是好像跑不动，之后在GPU服务器上跑一下试试</p>
-<p><img src="https://s21.ax1x.com/2024/03/31/pF7ZKQx.png" alt="image-20240331112852208"></p>
-<p>尝试直接验证一下模型</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">python KnowLog_finetune_single.py --train_data ./datasets/tasks/MC/hw_switch_train.json --dev_data ./datasets/tasks/MC/hw_switch_dev.json --test_data ./datasets/tasks/MC/hw_switch_test.json</span><br></pre></td></tr></table></figure>
-<p><img src="https://s21.ax1x.com/2024/03/31/pF7Z3wD.png" alt="image-20240331113220505"></p>
-<p>也跑通了，之后在服务器上完整的跑一下</p>
-]]></content>
-      <categories>
-        <category>论文复现</category>
-      </categories>
-  </entry>
-  <entry>
     <title>复现论文ChineseBERT(ONTONOTES数据集)</title>
     <url>/2023/06/08/%E5%A4%8D%E7%8E%B0%E8%AE%BA%E6%96%87ChineseBERT/</url>
     <content><![CDATA[<p>记录一下自己复现论文<strong><a href="https://arxiv.org/pdf/2106.16038.pdf">《ChineseBERT: Chinese Pretraining Enhanced by Glyph and Pinyin Information》</a></strong>的过程，最近感觉老在调包，一天下来感觉什么也没干，就直播记录一下跑模型的过程吧</p>
@@ -1155,6 +1119,42 @@
 </table>
 </div>
 <p>不知道为什么<code>test_precision</code>这一项结果略低一点，其他结果相差不是很大</p>
+]]></content>
+      <categories>
+        <category>论文复现</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>复现KnowLog模型</title>
+    <url>/2024/03/31/%E5%A4%8D%E7%8E%B0KnowLog%E6%A8%A1%E5%9E%8B/</url>
+    <content><![CDATA[<p>这次要复现的一个项目是<strong><a href="https://github.com/LeaperOvO/KnowLog">KnowLog</a></strong>，首先创建一个虚拟环境</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda create KnowLog -n python=3.8</span><br><span class="line">conda activate KnowLog</span><br></pre></td></tr></table></figure>
+<p>然后来到项目的根目录，安装项目所需的环境</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install -r requirements.txt</span><br></pre></td></tr></table></figure>
+<p>之后尝试运行训练的部分</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">python KnowLog_pretrain.py --pretrain_data ./datasets/pre-train/all_log.json --abbr ./datasets/pre-train/abbr.json --base_model bert-base-uncased</span><br></pre></td></tr></table></figure>
+<p>毫无意外的会出报错，提示少了什么包，这时候提示缺什么用pip安装即可</p>
+<p>再安装完这些包之后，再次尝试训练，出现了下面这个错</p>
+<p><img src="https://s21.ax1x.com/2024/03/31/pF7ZiLT.png" alt="image-20240331100215828"></p>
+<p>查了一下是python关于SSLError的错误，尝试降级版本解决</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pip install urllib3==1.25.11</span><br></pre></td></tr></table></figure>
+<p><img src="https://s21.ax1x.com/2024/03/31/pF7ZkeU.png" alt="image-20240331101640666"></p>
+<p>成功解决问题，开启魔法可以正常下载了</p>
+<p><img src="https://s21.ax1x.com/2024/03/31/pF7ZAwF.png" alt="image-20240331101821967"></p>
+<p>但是发现下载一半又断开连接了，可能是这种下载方式不支持断点续传，于是打算先把预训练模型下载到本地试试</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">huggingface-cli download --resume-download google-bert/bert-base-uncased --local-dir bert-base-uncased</span><br></pre></td></tr></table></figure>
+<p><img src="https://s21.ax1x.com/2024/03/31/pF7ZEo4.png" alt="image-20240331104044658"></p>
+<p>下好了之后再次尝试跑一下，应该是下了CPU版的torch，重新安装一下吧</p>
+<p><img src="https://s21.ax1x.com/2024/03/31/pF7ZeY9.png" alt="image-20240331104118085"></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda install pytorch==1.10.1 torchvision==0.11.2 torchaudio==0.10.1 cudatoolkit=11.3</span><br></pre></td></tr></table></figure>
+<p>再次尝试训练，跑通了！！！</p>
+<p><img src="https://s21.ax1x.com/2024/03/31/pF7ZuS1.png" alt="image-20240331110908244"></p>
+<p>但是一直卡在34%了…重启运行了一下代码，把代理开了开（可能是代理的原因？）就可以继续往下跑了，但是好像跑不动，之后在GPU服务器上跑一下试试</p>
+<p><img src="https://s21.ax1x.com/2024/03/31/pF7ZKQx.png" alt="image-20240331112852208"></p>
+<p>尝试直接验证一下模型</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">python KnowLog_finetune_single.py --train_data ./datasets/tasks/MC/hw_switch_train.json --dev_data ./datasets/tasks/MC/hw_switch_dev.json --test_data ./datasets/tasks/MC/hw_switch_test.json</span><br></pre></td></tr></table></figure>
+<p><img src="https://s21.ax1x.com/2024/03/31/pF7Z3wD.png" alt="image-20240331113220505"></p>
+<p>也跑通了，之后在服务器上完整的跑一下</p>
 ]]></content>
       <categories>
         <category>论文复现</category>
@@ -1921,35 +1921,6 @@
       </categories>
   </entry>
   <entry>
-    <title>如何使用微信小程序IDE在github上实现团队合作</title>
-    <url>/2020/04/16/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8FIDE%E5%9C%A8github%E4%B8%8A%E5%AE%9E%E7%8E%B0%E5%9B%A2%E9%98%9F%E5%90%88%E4%BD%9C/</url>
-    <content><![CDATA[<p>——-原文——-(2020/4/16)</p>
-<p>@<a href="如何使用微信开发者工具在github上实现团队合作">TOC</a><br>一.发起者要做的一些步骤</p>
-<ol>
-<li>首先用IDE初始化本地的git仓库<br><img src="https://img-blog.csdnimg.cn/20200130111131527.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="a."><br><img src="https://img-blog.csdnimg.cn/20200130111301249.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="b."></li>
-<li>使用github-desktop客户端添加这个新建的本地git库并同时上传到新建的远程仓库中<br><img src="https://img-blog.csdnimg.cn/2020013011214879.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="添加本地仓库"><br><img src="https://img-blog.csdnimg.cn/20200130112202771.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="新建远程仓库"><br><img src="https://img-blog.csdnimg.cn/2020013011231537.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/2020013011291517.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="看一下成果嘿嘿嘿"></li>
-<li>添加参与者<br><img src="https://img-blog.csdnimg.cn/20200130113301950.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="最好添加的时候写参与者的名字"><br><strong>PS:被邀请者的必须要接受邀请才可以</strong></li>
-</ol>
-<p>二.参与者需要做的步骤</p>
-<ol>
-<li>在微信小程序开发者工具里添加远程仓库<br><img src="https://img-blog.csdnimg.cn/20200130114342510.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="添加远程仓库_1"><img src="https://img-blog.csdnimg.cn/20200130114356569.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="添加远程仓库_2"><br><img src="https://img-blog.csdnimg.cn/20200130114448885.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="如何查看仓库的地址"></li>
-<li>绑定自己的github账号<br><img src="https://img-blog.csdnimg.cn/20200130115015761.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="绑定账号"></li>
-</ol>
-<p>三.如何线上合作</p>
-<ol>
-<li>参与者在调试好了一些功能以后，提交到远程仓库的分支<br><img src="https://img-blog.csdnimg.cn/20200130120245999.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="提交分支"></li>
-<li>参与者请求合并分支<br><img src="https://img-blog.csdnimg.cn/20200130120523380.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="请求合并_1"><br><img src="https://img-blog.csdnimg.cn/20200130120921309.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="请求合并_2"><br><img src="https://img-blog.csdnimg.cn/20200130120955937.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="发起合并请求"></li>
-<li>在发起者经过了沉思熟虑，通计熟筹，仰观俯察后，同意合并分支的请求(＠￣ー￣＠)<br><img src="https://img-blog.csdnimg.cn/20200130121516212.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="找到请求_1"><br>从这里可以对比的看到分支和master的不同<br><img src="https://img-blog.csdnimg.cn/2020013012161487.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="找不同"><br>同意合并请求：<br><img src="https://img-blog.csdnimg.cn/20200130121829976.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="同意合并_2"><br><img src="https://img-blog.csdnimg.cn/20200130121938158.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="同意合并_3"><br>这样就分支就合并进去了<br><img src="https://img-blog.csdnimg.cn/20200130122111630.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="嘻嘻嘻"><br>当然如果参与者想要同步最新的代码，只要pull一下就好了<br><img src="https://img-blog.csdnimg.cn/20200130191852824.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="同步"><br>第一次接触github，如有一些错误，还请多多指教<br>(๑•̀ㅂ•́)و</li>
-</ol>
-]]></content>
-      <categories>
-        <category>学习笔记</category>
-      </categories>
-      <tags>
-        <tag>微信小程序</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>学校GPU平台使用教程(优化版)</title>
     <url>/2024/04/01/%E5%AD%A6%E6%A0%A1GPU%E5%B9%B3%E5%8F%B0%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B-%E6%94%B9%E8%BF%9B%E7%89%88/</url>
     <content><![CDATA[<p>首先连接内网登录<a href="http://paas.183-175-12-11.nip.io:30080/">平台</a></p>
@@ -1992,6 +1963,35 @@
       <categories>
         <category>个人笔记</category>
       </categories>
+  </entry>
+  <entry>
+    <title>如何使用微信小程序IDE在github上实现团队合作</title>
+    <url>/2020/04/16/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8FIDE%E5%9C%A8github%E4%B8%8A%E5%AE%9E%E7%8E%B0%E5%9B%A2%E9%98%9F%E5%90%88%E4%BD%9C/</url>
+    <content><![CDATA[<p>——-原文——-(2020/4/16)</p>
+<p>@<a href="如何使用微信开发者工具在github上实现团队合作">TOC</a><br>一.发起者要做的一些步骤</p>
+<ol>
+<li>首先用IDE初始化本地的git仓库<br><img src="https://img-blog.csdnimg.cn/20200130111131527.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="a."><br><img src="https://img-blog.csdnimg.cn/20200130111301249.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="b."></li>
+<li>使用github-desktop客户端添加这个新建的本地git库并同时上传到新建的远程仓库中<br><img src="https://img-blog.csdnimg.cn/2020013011214879.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="添加本地仓库"><br><img src="https://img-blog.csdnimg.cn/20200130112202771.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="新建远程仓库"><br><img src="https://img-blog.csdnimg.cn/2020013011231537.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/2020013011291517.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="看一下成果嘿嘿嘿"></li>
+<li>添加参与者<br><img src="https://img-blog.csdnimg.cn/20200130113301950.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="最好添加的时候写参与者的名字"><br><strong>PS:被邀请者的必须要接受邀请才可以</strong></li>
+</ol>
+<p>二.参与者需要做的步骤</p>
+<ol>
+<li>在微信小程序开发者工具里添加远程仓库<br><img src="https://img-blog.csdnimg.cn/20200130114342510.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="添加远程仓库_1"><img src="https://img-blog.csdnimg.cn/20200130114356569.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="添加远程仓库_2"><br><img src="https://img-blog.csdnimg.cn/20200130114448885.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="如何查看仓库的地址"></li>
+<li>绑定自己的github账号<br><img src="https://img-blog.csdnimg.cn/20200130115015761.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="绑定账号"></li>
+</ol>
+<p>三.如何线上合作</p>
+<ol>
+<li>参与者在调试好了一些功能以后，提交到远程仓库的分支<br><img src="https://img-blog.csdnimg.cn/20200130120245999.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="提交分支"></li>
+<li>参与者请求合并分支<br><img src="https://img-blog.csdnimg.cn/20200130120523380.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="请求合并_1"><br><img src="https://img-blog.csdnimg.cn/20200130120921309.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="请求合并_2"><br><img src="https://img-blog.csdnimg.cn/20200130120955937.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="发起合并请求"></li>
+<li>在发起者经过了沉思熟虑，通计熟筹，仰观俯察后，同意合并分支的请求(＠￣ー￣＠)<br><img src="https://img-blog.csdnimg.cn/20200130121516212.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="找到请求_1"><br>从这里可以对比的看到分支和master的不同<br><img src="https://img-blog.csdnimg.cn/2020013012161487.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="找不同"><br>同意合并请求：<br><img src="https://img-blog.csdnimg.cn/20200130121829976.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="同意合并_2"><br><img src="https://img-blog.csdnimg.cn/20200130121938158.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="同意合并_3"><br>这样就分支就合并进去了<br><img src="https://img-blog.csdnimg.cn/20200130122111630.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="嘻嘻嘻"><br>当然如果参与者想要同步最新的代码，只要pull一下就好了<br><img src="https://img-blog.csdnimg.cn/20200130191852824.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="同步"><br>第一次接触github，如有一些错误，还请多多指教<br>(๑•̀ㅂ•́)و</li>
+</ol>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>微信小程序</tag>
+      </tags>
   </entry>
   <entry>
     <title>学校GPU平台使用教程</title>
@@ -2125,6 +2125,25 @@
 ]]></content>
       <categories>
         <category>论文复现</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>实习规划</title>
+    <url>/2024/04/27/%E5%AE%9E%E4%B9%A0%E8%A7%84%E5%88%92/</url>
+    <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="169fbf894317b657214b8fe189f1d938f36230aa167e9b8290bd75c409eabdb9">f666a1e82130d441cf5f17739ffab407d3700cc5340db38aca8cc539ab20da66955efd2229a88f228c2b043e435c632234ba58b9599b5db4b315db24ea1b712ffda270aa7ecfeb9bb15204a9e2b665faa99d7dc1f44755898b8a4c13ef5c4e75693ff484b9043ddbf7e02452aa852453a1f2169c2e78244c91f9cedc486857f58ddebe03739017a0f0c8fad7829e6c863ad8de560ae7df1b4c3021031958502fbd651fe5815aaabc24e907a929795c4cc6aa6eb605c57f320585bc5f219625ad8530e074ccd933d19870b1bdfa1467c5fbf33a97f221a58b62387520c75882ee34f7e690b3ccec362968080bb4ecc7cb9b5a1bafcc33d7ab4eafb2a10e7c1778d8ea3533b9950a89ef536912202a357ce2e072b2b506317d66fcd16da30fcd87fbc0edbb024941f7a8380396bced2240b475c4427508876650eba8d00fd37da9dfad6ed5f01fa4fe0f2307421d01166d99dab9bdee0762d8c6a098f5562149d2f15452c3ea62f8878c4532cd504ae42ae8d1cb84d61e5c72428f30cc65623d2a87bbe0538162ed46374407381efd5302c80883113b7da2d20cf8c5ae63217a28438c22d5caa540c4ba41673fed7060520746472c3a2b8144984bff025db8b4899edfd0b0351d156b6510f8ddb0cd165a9dfc76b2882c07576f8374ad8eaa7e6780ee5d27ba29b237f0ee0227face9e6dc28239c9776cc5b4f1bb2303988dfe685117e7398dc531721f653f1c68209e8d1149c59fadaa530c9ed4ab00e37f5682a81ee3fcca8fe4ef8ad2d46d79c4d88df1a1d8fa7b29a8b257ce9665c3d582d2cb449a717d82788e2f00fb96a1fb24a277c0fddf331c13be24aac49cbcb4c00b8784ade7c0b847b519767eba7992ff4885ff87d0706ea42fcbfb82534a8b1afce4ba3733f92f96c5a6bec26cef9086acd289280e958155b740ec413e5ecfa65e0d9a95dd31c115943a1e8c0da8c45cca9e0862aa44d0fe3cc8eb28cbe972096a3297384fb3ae1e0a56a91260f3a4410e7d417784d425bb7fe803bc7ebd73b4f93205cd4ca02a4742604fa85d6f47966372808ff9f9f29156737989aaaefbde90d9c1d9902c898d11b93f9bc3a9af60c172ae29d29b046f994d8b297c0a6427aa9347988003aa69d6e9a61983ac9a7807cd5390b7afa16c61d8ab3f940629af963d3530deea92c448c60a40f73e5dd967b06bacf6ecf86c238c23cf0a07b222ab9b12ff3b39341b9f78e30fe703ec5e087dd2511ffcd77deba839cf22fbd139be374a10c3fb2c2a2dca5335859d39c7d051b01dda3280122f481621d5d464206ac66a6ff10f2eb24f473ab5df37b4ee05ef2c071eea001842ac1e6620f4f67f1ccd3486bb234122ab2f4b9772c3e11e3bf8f94bf454a0f32c0f3fd8e3db9ba8e6b9dfe56e6d9b323125eb205b94d417b4aba9ed1c868ad172e77f55e2d870eb789d4e180afff26b50f3d2b0c98fa30cd7b835481752f1f1aaa53fc66a5cd42e3fc5e0d5883222901b1ab3bc4e3dab2ef372ed7e284aa0adbebf9f32adeb893539a21b6948fa21d778de6f8101041b7433c7148f9fb3e45c6c4ec0eb0c7ac8ada2ebf891743d3f6890f7d98b3784f3948c6376003ebfb7b754e923caf1f026475ab7b17e5f12f5259783da9628503130c9a7b480854e61cc632e08b748ac49442ecf052ec4c2d70173d803d40d6809372e8a98b08103d54e73c37812cd984a8620592700c5ff180aaf1d24b7e5cb50a7a165c107899ea755517084ae52f79ec15fbe27d3e3244f9e80bce20f836892869eadb96ae9b077f885bfda65130481af9bc05bf878125385bbd779c34721e93db5908fe4c2d0bd9b3a2848afc01e81e1b946bff595d6e22d300f7a5a29dddcecfa065a0bdb47e9b02095b7c04e8f0fc359484e00b66cb5f15b86675234bfaf4fd85b89c8e038f4dfd3601f42688b21c4eb81944b0e1cd8e3e79e5dbb9c4afc4dffc043ad601879cfbab35474003959296db2f1db84256cec6884a91c6297137ccc1ae47509574b2b00e2b8bc3bdca647fb10610d5aec4bb73f4db006aaf8e75b95b9021eb6de8794c0f62565df31d177b4bf44d2a4be836ea73f280c1f88a62d339d44fd677e9b499518928bc15db6f95cb55f039c221f137385de5f328624a84b3b3ca97b3015da55b7efadd603ca54a48d3ba7ea5001707b5dce7c708f57313917a688b6594c4fa1524d7737fa55e49df0767201c9b97959e8c2486b2b898f4ab2ad2c693456e292c2b1f047e902c531cda78811b1a80cf3ecfb0a7b42c6a225fc205012012378a323016a49798416098885d2477bc42136c03f5f32cab550178da78e9b2d619152728ef3813651bb753e097539178dcf4a6d434fb6bf050073f9d2c978e42a70e54206b81ab863da22dd45df38d1154fe9a12bec7f971b6613e523b86b0f5a5509508f477c882a3ac1fc466b3ad764ce2bcd8eec4e8ff73697157f3c90e889c9dad10d664f82c3d44dae39bd68696348e8a107dbd5c44b33a4e7095cc8ccb2bb929b8dafdcd90d22fba4a460ecbb0165cd034c285d21f4aa6114accbca3f9d40429800976c7b6cfe5b86bc09406c865d8a7d38780cd871e04e71f93a764e66099325223716d150e58b0b771dede2ff1ac971b9db39da2ab4fafa9094b3a2d9d80cc58f2b09537b9bea48d0647e1b1da1ff49f73b6a1aa7a257ccee95e13b136f5d9a935b80015f9e1b908d8a9c4607a1adb06bb0a1be22724dc10155c028ec746b0ab25dada915eef1468e49734aace49f86416a4ce34f13d69e31bda8e95ebb265feb732bb2167e98d934033ac9eddb504da9c039ef66b21dffd4127b62204f3424579abb859500dd0414cb1dd6770b242bafe5adc10f61441c58271fec5718598182eeab1b8cf675e03c73226d68b1fb577e776a37d5edab4bd1592d310f2a51d2426bb8c048f89cc535194cf9dca54fba75a2997166d783fc96f777db3aa2bbeb00811ce9cd70640ae53945174bd13cca8846ad4ae76448c79dd7e4fc9c4be39896c7ad4af19cd3d973e867eb5cf5bc60d8837287c8cbc08942ca428e3c6c9b98f131c2b4c53bb4cf6881f5c2f2714ea67f4b4dc375d68cb46d4ddb27fe0c7f98ec0fd5812d4c3c22efef3bf575360a804ed6bebb877982d360c6e6e8e5d3f7365b4bf0f61d7d07046d7a661e72fe3ccf3662551601e26f614262c756050189a7d2c3890b68b72866c99889a41a624212000fc669d95b3137bd5e89852f0c65ee64401fd2eb364e6babcdd6703532734a6e6c242a710f1104e53228ad8769e9824ca6e02b433bd9d1aadc0204673ffde93d56703ee508cfff4958e9550216097e60c4f02591c840127729b9e8bb8d7812958b66ed989e2e7b0a9c92e2cbd61b0a26ae5b396da92dc31ed50d98d685770f91c9d3b26dca7b435e75222ed915d9018d692f10b98e64b562a6733fb1bdb3c978115f7dec574750f04bf3f726bcc9b3476f87089536c46d97fd80618d4b6dff3ebedb5150fa4e833d06e4195da64423b107fa214b3aa94c1979d94085dc6dbdffe0160398d8afa6050dcc29edc052fee7f6133cdef42a</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">Hey, password is required here.</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+      <categories>
+        <category>人生规划</category>
       </categories>
   </entry>
   <entry>
@@ -2293,43 +2312,6 @@
       </categories>
   </entry>
   <entry>
-    <title>算法期末复习</title>
-    <url>/2022/01/10/%E7%AE%97%E6%B3%95%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/</url>
-    <content><![CDATA[<h2 id="用思维导图整理了一下算法的基本知识"><a href="#用思维导图整理了一下算法的基本知识" class="headerlink" title="用思维导图整理了一下算法的基本知识"></a>用思维导图整理了一下算法的基本知识</h2><p>&emsp;<br>&emsp;</p>
-<ol>
-<li>算法概述<br>&emsp;<img src="https://img-blog.csdnimg.cn/20201219173740232.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="算法概述"><br>&emsp;</li>
-<li><p>递归与分治策略<br>&emsp;<br><img src="https://img-blog.csdnimg.cn/20201219190206679.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="递归与分治策略"></p>
-<p>&emsp;</p>
-</li>
-<li><p>动态规划<br>&emsp;<br><img src="https://img-blog.csdnimg.cn/20201219173858421.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="动态规划"><br>&emsp;</p>
-</li>
-<li><p>贪心算法<br>&emsp;<img src="https://img-blog.csdnimg.cn/20201219173922373.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="贪心算法"><br>&emsp;</p>
-</li>
-<li><p>回溯法<br>&emsp;<br><img src="https://img-blog.csdnimg.cn/20201219173946942.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="回溯法"><br>&emsp;</p>
-</li>
-<li>分支限界法<br>&emsp;<br><img src="https://img-blog.csdnimg.cn/20201219174007775.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="分支限界法"></li>
-</ol>
-<p><a href="https://ruvikm.lanzous.com/i9b5ajim3kh">PDF文件（内有超链接）</a></p>
-<p>参考资料：</p>
-<ul>
-<li><a href="https://blog.csdn.net/databatman/article/details/49304295">算法中的P问题、NP问题、NP完全问题和NP难问题</a></li>
-<li><a href="https://blog.csdn.net/qq_45904930/article/details/110748764">分治法之棋盘覆盖问题</a></li>
-<li><a href="https://blog.csdn.net/yjt13/article/details/82085537">排序之归并排序</a></li>
-<li><a href="https://blog.csdn.net/baidu_28312631/article/details/47418773">教你彻底学会动态规划——入门篇</a></li>
-<li><a href="https://blog.csdn.net/listen132/article/details/111242757">矩阵连乘</a></li>
-<li><a href="https://blog.csdn.net/a2392008643/article/details/81781766">最小生成树的两种方法（Kruskal算法和Prim算法）</a></li>
-<li><a href="https://blog.csdn.net/daoshen1314/article/details/101294101">循环赛日程表（分治法）</a></li>
-</ul>
-<p>最后推荐一个算法可视化的网站<br><a href="https://visualgo.net/">VisuAlgo</a></p>
-]]></content>
-      <categories>
-        <category>学习笔记</category>
-      </categories>
-      <tags>
-        <tag>算法</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>王道数据结构 线性表 链式存储小结</title>
     <url>/2022/01/10/%E7%8E%8B%E9%81%93%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%20%E7%BA%BF%E6%80%A7%E8%A1%A8%20%E9%93%BE%E5%BC%8F%E5%AD%98%E5%82%A8%E5%B0%8F%E7%BB%93/</url>
     <content><![CDATA[<h1 id="1-单链表"><a href="#1-单链表" class="headerlink" title="1.单链表"></a>1.单链表</h1><p><img src="https://img-blog.csdnimg.cn/20210116122507504.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="单链表"></p>
@@ -2376,6 +2358,114 @@
       <tags>
         <tag>算法</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>算法期末复习</title>
+    <url>/2022/01/10/%E7%AE%97%E6%B3%95%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/</url>
+    <content><![CDATA[<h2 id="用思维导图整理了一下算法的基本知识"><a href="#用思维导图整理了一下算法的基本知识" class="headerlink" title="用思维导图整理了一下算法的基本知识"></a>用思维导图整理了一下算法的基本知识</h2><p>&emsp;<br>&emsp;</p>
+<ol>
+<li>算法概述<br>&emsp;<img src="https://img-blog.csdnimg.cn/20201219173740232.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="算法概述"><br>&emsp;</li>
+<li><p>递归与分治策略<br>&emsp;<br><img src="https://img-blog.csdnimg.cn/20201219190206679.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="递归与分治策略"></p>
+<p>&emsp;</p>
+</li>
+<li><p>动态规划<br>&emsp;<br><img src="https://img-blog.csdnimg.cn/20201219173858421.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="动态规划"><br>&emsp;</p>
+</li>
+<li><p>贪心算法<br>&emsp;<img src="https://img-blog.csdnimg.cn/20201219173922373.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="贪心算法"><br>&emsp;</p>
+</li>
+<li><p>回溯法<br>&emsp;<br><img src="https://img-blog.csdnimg.cn/20201219173946942.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="回溯法"><br>&emsp;</p>
+</li>
+<li>分支限界法<br>&emsp;<br><img src="https://img-blog.csdnimg.cn/20201219174007775.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="分支限界法"></li>
+</ol>
+<p><a href="https://ruvikm.lanzous.com/i9b5ajim3kh">PDF文件（内有超链接）</a></p>
+<p>参考资料：</p>
+<ul>
+<li><a href="https://blog.csdn.net/databatman/article/details/49304295">算法中的P问题、NP问题、NP完全问题和NP难问题</a></li>
+<li><a href="https://blog.csdn.net/qq_45904930/article/details/110748764">分治法之棋盘覆盖问题</a></li>
+<li><a href="https://blog.csdn.net/yjt13/article/details/82085537">排序之归并排序</a></li>
+<li><a href="https://blog.csdn.net/baidu_28312631/article/details/47418773">教你彻底学会动态规划——入门篇</a></li>
+<li><a href="https://blog.csdn.net/listen132/article/details/111242757">矩阵连乘</a></li>
+<li><a href="https://blog.csdn.net/a2392008643/article/details/81781766">最小生成树的两种方法（Kruskal算法和Prim算法）</a></li>
+<li><a href="https://blog.csdn.net/daoshen1314/article/details/101294101">循环赛日程表（分治法）</a></li>
+</ul>
+<p>最后推荐一个算法可视化的网站<br><a href="https://visualgo.net/">VisuAlgo</a></p>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>OSError [Errno 22] Invalid argument(已解决)</title>
+    <url>/2023/07/12/%E8%A7%A3%E5%86%B3%E9%97%AE%E9%A2%98OSError%20%5BErrno%2022%5D%20Invalid%20argument/</url>
+    <content><![CDATA[<p>最近跑别人的项目遇到一个这样的问题</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">OSError: [Errno 22] Invalid argument xxxxxxxxxxxxxxxxxx</span><br></pre></td></tr></table></figure>
+<p><img src="https://s1.ax1x.com/2023/07/12/pCh9Ni4.png" alt="屏幕截图 2023-07-12 203923"></p>
+<p>一开始以为是没有用管理员的权限运行，导致创建不了日志文件</p>
+<p>后来发现是和windows的命名规则冲突了（以下来源<a href="https://learn.microsoft.com/zh-cn/windows/win32/fileio/naming-a-file">官网地址</a>）</p>
+<h3 id="命名约定"><a href="#命名约定" class="headerlink" title="命名约定"></a>命名约定</h3><p>以下基本规则使应用程序能够创建和处理文件和目录的有效名称，而不考虑文件系统：</p>
+<ul>
+<li><p>使用句点将基文件名与目录或文件名称中的扩展名分隔开。</p>
+</li>
+<li><p>使用反斜杠 () 分隔<em>路径</em>的<em>组件</em>。 反斜杠将文件名从路径中除以，将一个目录名与路径中的另一个目录名称分开。 不能在实际文件或目录的名称中使用反斜杠，因为它是将名称分隔成组件的保留字符。</p>
+</li>
+<li><p>根据需要使用反斜杠作为 <a href="https://learn.microsoft.com/zh-cn/windows/win32/fileio/naming-a-volume">卷名称</a>的一部分，例如“C：\”在“C：\path\file”或“\server\share\path\file”中为通用命名约定的“\server\share” (UNC) 名称。 有关 UNC 名称的详细信息，请参阅 <a href="https://learn.microsoft.com/zh-cn/windows/win32/fileio/naming-a-file#maximum-path-length-limitation">最大路径长度限制</a> 部分。</p>
+</li>
+<li><p>不要假定区分大小写。 例如，将 OSCAR、Oscar 和 oscar 的名称视为相同，即使某些文件系统 (（如符合 POSIX 的文件系统) 可能认为它们不同）。 请注意，NTFS 支持 POSIX 语义区分大小写，但这不是默认行为。 有关详细信息，请参阅 <a href="https://learn.microsoft.com/zh-cn/windows/desktop/api/FileAPI/nf-fileapi-createfilea"><strong>CreateFile</strong></a>。</p>
+</li>
+<li><p>(驱动器号) 的卷指定符同样不区分大小写。 例如，“D：\”和“d：\”引用同一卷。</p>
+</li>
+<li><p>使用当前代码页中的任何字符作为名称，包括 Unicode 字符和扩展字符集中 (128-255) 字符，但以下各项除外：</p>
+<ul>
+<li>以下保留字符：<ul>
+<li>&lt;（小于）</li>
+<li>>（大于）</li>
+<li>:（冒号）</li>
+<li>“（双引号）</li>
+<li>/（正斜杠）</li>
+<li>\（反斜杠）</li>
+<li>| (竖线或竖线)</li>
+<li>? （问号）</li>
+<li>*（星号）</li>
+</ul>
+</li>
+<li>整数值零，有时称为 ASCII <em>NUL</em> 字符。</li>
+<li>整数表示形式的字符介于 1 到 31 之间，但允许这些字符的备用数据流除外。 有关文件流的详细信息，请参阅 <a href="https://learn.microsoft.com/zh-cn/windows/win32/fileio/file-streams">文件流</a>。</li>
+<li>目标文件系统不允许的任何其他字符。</li>
+</ul>
+</li>
+<li><p>使用句点作为路径中的目录 <em>组件</em> 来表示当前目录，例如“.\temp.txt”。 有关详细信息，请参阅 <a href="https://learn.microsoft.com/zh-cn/windows/win32/fileio/naming-a-file#fully-qualified-vs-relative-paths">路径</a>。</p>
+</li>
+<li><p>使用两个连续的句点 (。) 作为路径中的目录 <em>组件</em> 来表示当前目录的父目录，例如“.”。\temp.txt”。 有关详细信息，请参阅 <a href="https://learn.microsoft.com/zh-cn/windows/win32/fileio/naming-a-file#fully-qualified-vs-relative-paths">路径</a>。</p>
+</li>
+<li><p>不要将以下保留名称用于文件的名称：</p>
+<p>CON、PRN、AUX、NUL、COM0、COM1、COM2、COM3、COM4、COM5、COM6、COM7、COM8、COM9、LPT0、LPT1、LPT2、LPT3、LPT4、LPT5、LPT6、LPT7、LPT8 和 LPT9。 另请避免这些名称紧跟扩展名;例如，NUL.txt 和 NUL.tar.gz 都等效于 NUL。 有关详细信息，请参阅<a href="https://learn.microsoft.com/zh-cn/windows/win32/fileio/naming-a-file#win32-file-namespaces">命名空间</a>。</p>
+</li>
+<li><p>不要用空格或句点结束文件或目录名称。 尽管基础文件系统可能支持此类名称，但 Windows shell 和用户界面不支持。 但是，可以接受指定句点作为名称的第一个字符。 例如“.temp”。</p>
+</li>
+</ul>
+<h3 id="划重点：下列符号是不能用的"><a href="#划重点：下列符号是不能用的" class="headerlink" title="划重点：下列符号是不能用的"></a><strong>划重点：下列符号是不能用的</strong></h3><ul>
+<li>&lt;（小于）</li>
+<li>>（大于）</li>
+<li>:（冒号）</li>
+<li>“（双引号）</li>
+<li>/（正斜杠）</li>
+<li>\（反斜杠）</li>
+<li>| (竖线或竖线)</li>
+<li>? （问号）</li>
+<li>*（星号）</li>
+</ul>
+<p>然后我细心的观察到了这一点</p>
+<p><img src="https://s1.ax1x.com/2023/07/12/pChpwb8.png" alt="屏幕截图 2023-07-12 222221"></p>
+<p>很显然，<code>:</code>是不能存在的</p>
+<p>把他换成<code>-</code>后，程序就跑起来了</p>
+<p><img src="https://s1.ax1x.com/2023/07/12/pCh96oD.png" alt="屏幕截图 2023-07-12 222822"></p>
+<p>类似的问题可以参考一下下</p>
+]]></content>
+      <categories>
+        <category>个人笔记</category>
+      </categories>
   </entry>
   <entry>
     <title>软件体系结构基本知识——期末复习</title>
@@ -2479,76 +2569,5 @@ a = S_{dis} = nb</script><script type="math/tex; mode=display">
 F_{dis} = 2nb</script><p>所以当两个指针相遇的时候，将快指针移到链表头部重新往后走，这次一次走一步。慢指针保持原来的位置，继续向后走，也是一次走一步，当两个指针相遇的时候，即是环的入口处。（这时候快指针刚好走完<code>a = nb</code>的长度到达环的入口处）</p>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">struct ListNode &#123;</span></span><br><span class="line"><span class="comment">    int val;</span></span><br><span class="line"><span class="comment">    struct ListNode *next;</span></span><br><span class="line"><span class="comment">    ListNode(int x) :</span></span><br><span class="line"><span class="comment">        val(x), next(NULL) &#123;</span></span><br><span class="line"><span class="comment">    &#125;</span></span><br><span class="line"><span class="comment">&#125;;</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">  <span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode* <span class="title">EntryNodeOfLoop</span><span class="params">(ListNode* pHead)</span> </span>&#123;</span><br><span class="line">        ListNode* slow = pHead;</span><br><span class="line">        ListNode* fast = pHead;</span><br><span class="line">        <span class="keyword">do</span> &#123;</span><br><span class="line">            slow = slow -&gt;next;</span><br><span class="line">            fast = fast-&gt;next-&gt;next;</span><br><span class="line">            <span class="comment">//如果指向空就说明没有环</span></span><br><span class="line">            <span class="keyword">if</span> (slow == <span class="literal">nullptr</span> || fast == <span class="literal">nullptr</span>) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">nullptr</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">while</span> (slow != fast);</span><br><span class="line">        fast = pHead;</span><br><span class="line">        <span class="keyword">while</span> (fast != slow) &#123;</span><br><span class="line">            fast = fast-&gt;next;</span><br><span class="line">            slow = slow-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> fast;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 ]]></content>
-  </entry>
-  <entry>
-    <title>OSError [Errno 22] Invalid argument(已解决)</title>
-    <url>/2023/07/12/%E8%A7%A3%E5%86%B3%E9%97%AE%E9%A2%98OSError%20%5BErrno%2022%5D%20Invalid%20argument/</url>
-    <content><![CDATA[<p>最近跑别人的项目遇到一个这样的问题</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">OSError: [Errno 22] Invalid argument xxxxxxxxxxxxxxxxxx</span><br></pre></td></tr></table></figure>
-<p><img src="https://s1.ax1x.com/2023/07/12/pCh9Ni4.png" alt="屏幕截图 2023-07-12 203923"></p>
-<p>一开始以为是没有用管理员的权限运行，导致创建不了日志文件</p>
-<p>后来发现是和windows的命名规则冲突了（以下来源<a href="https://learn.microsoft.com/zh-cn/windows/win32/fileio/naming-a-file">官网地址</a>）</p>
-<h3 id="命名约定"><a href="#命名约定" class="headerlink" title="命名约定"></a>命名约定</h3><p>以下基本规则使应用程序能够创建和处理文件和目录的有效名称，而不考虑文件系统：</p>
-<ul>
-<li><p>使用句点将基文件名与目录或文件名称中的扩展名分隔开。</p>
-</li>
-<li><p>使用反斜杠 () 分隔<em>路径</em>的<em>组件</em>。 反斜杠将文件名从路径中除以，将一个目录名与路径中的另一个目录名称分开。 不能在实际文件或目录的名称中使用反斜杠，因为它是将名称分隔成组件的保留字符。</p>
-</li>
-<li><p>根据需要使用反斜杠作为 <a href="https://learn.microsoft.com/zh-cn/windows/win32/fileio/naming-a-volume">卷名称</a>的一部分，例如“C：\”在“C：\path\file”或“\server\share\path\file”中为通用命名约定的“\server\share” (UNC) 名称。 有关 UNC 名称的详细信息，请参阅 <a href="https://learn.microsoft.com/zh-cn/windows/win32/fileio/naming-a-file#maximum-path-length-limitation">最大路径长度限制</a> 部分。</p>
-</li>
-<li><p>不要假定区分大小写。 例如，将 OSCAR、Oscar 和 oscar 的名称视为相同，即使某些文件系统 (（如符合 POSIX 的文件系统) 可能认为它们不同）。 请注意，NTFS 支持 POSIX 语义区分大小写，但这不是默认行为。 有关详细信息，请参阅 <a href="https://learn.microsoft.com/zh-cn/windows/desktop/api/FileAPI/nf-fileapi-createfilea"><strong>CreateFile</strong></a>。</p>
-</li>
-<li><p>(驱动器号) 的卷指定符同样不区分大小写。 例如，“D：\”和“d：\”引用同一卷。</p>
-</li>
-<li><p>使用当前代码页中的任何字符作为名称，包括 Unicode 字符和扩展字符集中 (128-255) 字符，但以下各项除外：</p>
-<ul>
-<li>以下保留字符：<ul>
-<li>&lt;（小于）</li>
-<li>>（大于）</li>
-<li>:（冒号）</li>
-<li>“（双引号）</li>
-<li>/（正斜杠）</li>
-<li>\（反斜杠）</li>
-<li>| (竖线或竖线)</li>
-<li>? （问号）</li>
-<li>*（星号）</li>
-</ul>
-</li>
-<li>整数值零，有时称为 ASCII <em>NUL</em> 字符。</li>
-<li>整数表示形式的字符介于 1 到 31 之间，但允许这些字符的备用数据流除外。 有关文件流的详细信息，请参阅 <a href="https://learn.microsoft.com/zh-cn/windows/win32/fileio/file-streams">文件流</a>。</li>
-<li>目标文件系统不允许的任何其他字符。</li>
-</ul>
-</li>
-<li><p>使用句点作为路径中的目录 <em>组件</em> 来表示当前目录，例如“.\temp.txt”。 有关详细信息，请参阅 <a href="https://learn.microsoft.com/zh-cn/windows/win32/fileio/naming-a-file#fully-qualified-vs-relative-paths">路径</a>。</p>
-</li>
-<li><p>使用两个连续的句点 (。) 作为路径中的目录 <em>组件</em> 来表示当前目录的父目录，例如“.”。\temp.txt”。 有关详细信息，请参阅 <a href="https://learn.microsoft.com/zh-cn/windows/win32/fileio/naming-a-file#fully-qualified-vs-relative-paths">路径</a>。</p>
-</li>
-<li><p>不要将以下保留名称用于文件的名称：</p>
-<p>CON、PRN、AUX、NUL、COM0、COM1、COM2、COM3、COM4、COM5、COM6、COM7、COM8、COM9、LPT0、LPT1、LPT2、LPT3、LPT4、LPT5、LPT6、LPT7、LPT8 和 LPT9。 另请避免这些名称紧跟扩展名;例如，NUL.txt 和 NUL.tar.gz 都等效于 NUL。 有关详细信息，请参阅<a href="https://learn.microsoft.com/zh-cn/windows/win32/fileio/naming-a-file#win32-file-namespaces">命名空间</a>。</p>
-</li>
-<li><p>不要用空格或句点结束文件或目录名称。 尽管基础文件系统可能支持此类名称，但 Windows shell 和用户界面不支持。 但是，可以接受指定句点作为名称的第一个字符。 例如“.temp”。</p>
-</li>
-</ul>
-<h3 id="划重点：下列符号是不能用的"><a href="#划重点：下列符号是不能用的" class="headerlink" title="划重点：下列符号是不能用的"></a><strong>划重点：下列符号是不能用的</strong></h3><ul>
-<li>&lt;（小于）</li>
-<li>>（大于）</li>
-<li>:（冒号）</li>
-<li>“（双引号）</li>
-<li>/（正斜杠）</li>
-<li>\（反斜杠）</li>
-<li>| (竖线或竖线)</li>
-<li>? （问号）</li>
-<li>*（星号）</li>
-</ul>
-<p>然后我细心的观察到了这一点</p>
-<p><img src="https://s1.ax1x.com/2023/07/12/pChpwb8.png" alt="屏幕截图 2023-07-12 222221"></p>
-<p>很显然，<code>:</code>是不能存在的</p>
-<p>把他换成<code>-</code>后，程序就跑起来了</p>
-<p><img src="https://s1.ax1x.com/2023/07/12/pCh96oD.png" alt="屏幕截图 2023-07-12 222822"></p>
-<p>类似的问题可以参考一下下</p>
-]]></content>
-      <categories>
-        <category>个人笔记</category>
-      </categories>
   </entry>
 </search>
