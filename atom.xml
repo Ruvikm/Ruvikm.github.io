@@ -18,8 +18,8 @@
   
   <entry>
     <title>Centos 7常用操作记录</title>
-    <link href="https://ruvikm.gitee.io/2024/05/03/Centos%207%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95/"/>
-    <id>https://ruvikm.gitee.io/2024/05/03/Centos%207%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95/</id>
+    <link href="https://ruvikm.gitee.io/posts/undefined.html"/>
+    <id>https://ruvikm.gitee.io/posts/undefined.html</id>
     <published>2024-05-03T11:08:37.000Z</published>
     <updated>2024-05-03T12:05:24.036Z</updated>
     
@@ -40,8 +40,8 @@
   
   <entry>
     <title>客户端升级封装EasyTcpClient，同时与多个服务端进行网络通信</title>
-    <link href="https://ruvikm.gitee.io/2024/04/28/%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%8D%87%E7%BA%A7%E5%B0%81%E8%A3%85EasyTcpClient%EF%BC%8C%E5%90%8C%E6%97%B6%E4%B8%8E%E5%A4%9A%E4%B8%AA%E6%9C%8D%E5%8A%A1%E7%AB%AF%E8%BF%9B%E8%A1%8C%E7%BD%91%E7%BB%9C%E9%80%9A%E4%BF%A1/"/>
-    <id>https://ruvikm.gitee.io/2024/04/28/%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%8D%87%E7%BA%A7%E5%B0%81%E8%A3%85EasyTcpClient%EF%BC%8C%E5%90%8C%E6%97%B6%E4%B8%8E%E5%A4%9A%E4%B8%AA%E6%9C%8D%E5%8A%A1%E7%AB%AF%E8%BF%9B%E8%A1%8C%E7%BD%91%E7%BB%9C%E9%80%9A%E4%BF%A1/</id>
+    <link href="https://ruvikm.gitee.io/posts/56591828.html"/>
+    <id>https://ruvikm.gitee.io/posts/56591828.html</id>
     <published>2024-04-28T14:54:33.000Z</published>
     <updated>2024-04-28T15:05:34.673Z</updated>
     
@@ -65,8 +65,8 @@
   
   <entry>
     <title>备战2026校招</title>
-    <link href="https://ruvikm.gitee.io/2024/04/27/%E5%A4%87%E6%88%982026%E6%A0%A1%E6%8B%9B/"/>
-    <id>https://ruvikm.gitee.io/2024/04/27/%E5%A4%87%E6%88%982026%E6%A0%A1%E6%8B%9B/</id>
+    <link href="https://ruvikm.gitee.io/posts/4bf9d947.html"/>
+    <id>https://ruvikm.gitee.io/posts/4bf9d947.html</id>
     <published>2024-04-27T09:13:38.000Z</published>
     <updated>2024-04-28T15:06:47.864Z</updated>
     
@@ -84,8 +84,8 @@
   
   <entry>
     <title>实习规划</title>
-    <link href="https://ruvikm.gitee.io/2024/04/27/%E5%AE%9E%E4%B9%A0%E8%A7%84%E5%88%92/"/>
-    <id>https://ruvikm.gitee.io/2024/04/27/%E5%AE%9E%E4%B9%A0%E8%A7%84%E5%88%92/</id>
+    <link href="https://ruvikm.gitee.io/posts/261b5ce3.html"/>
+    <id>https://ruvikm.gitee.io/posts/261b5ce3.html</id>
     <published>2024-04-27T08:57:02.000Z</published>
     <updated>2024-04-27T10:51:53.316Z</updated>
     
@@ -103,8 +103,8 @@
   
   <entry>
     <title>学校GPU平台使用教程(优化版)</title>
-    <link href="https://ruvikm.gitee.io/2024/04/01/%E5%AD%A6%E6%A0%A1GPU%E5%B9%B3%E5%8F%B0%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B-%E6%94%B9%E8%BF%9B%E7%89%88/"/>
-    <id>https://ruvikm.gitee.io/2024/04/01/%E5%AD%A6%E6%A0%A1GPU%E5%B9%B3%E5%8F%B0%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B-%E6%94%B9%E8%BF%9B%E7%89%88/</id>
+    <link href="https://ruvikm.gitee.io/posts/72bb20cc.html"/>
+    <id>https://ruvikm.gitee.io/posts/72bb20cc.html</id>
     <published>2024-04-01T11:10:22.000Z</published>
     <updated>2024-04-01T11:20:04.095Z</updated>
     
@@ -126,8 +126,8 @@
   
   <entry>
     <title>客户端服务端跨平台移植，并添加线程</title>
-    <link href="https://ruvikm.gitee.io/2024/03/31/%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%9C%8D%E5%8A%A1%E7%AB%AF%E8%B7%A8%E5%B9%B3%E5%8F%B0%E7%A7%BB%E6%A4%8D/"/>
-    <id>https://ruvikm.gitee.io/2024/03/31/%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%9C%8D%E5%8A%A1%E7%AB%AF%E8%B7%A8%E5%B9%B3%E5%8F%B0%E7%A7%BB%E6%A4%8D/</id>
+    <link href="https://ruvikm.gitee.io/posts/7cdb8e03.html"/>
+    <id>https://ruvikm.gitee.io/posts/7cdb8e03.html</id>
     <published>2024-03-31T12:14:57.000Z</published>
     <updated>2024-04-27T11:13:22.633Z</updated>
     
@@ -151,8 +151,8 @@
   
   <entry>
     <title>复现KnowLog模型</title>
-    <link href="https://ruvikm.gitee.io/2024/03/31/%E5%A4%8D%E7%8E%B0KnowLog%E6%A8%A1%E5%9E%8B/"/>
-    <id>https://ruvikm.gitee.io/2024/03/31/%E5%A4%8D%E7%8E%B0KnowLog%E6%A8%A1%E5%9E%8B/</id>
+    <link href="https://ruvikm.gitee.io/posts/2a42dcdb.html"/>
+    <id>https://ruvikm.gitee.io/posts/2a42dcdb.html</id>
     <published>2024-03-31T01:52:08.000Z</published>
     <updated>2024-03-31T13:05:57.429Z</updated>
     
@@ -174,8 +174,8 @@
   
   <entry>
     <title>客户端服务器升为select模型</title>
-    <link href="https://ruvikm.gitee.io/2024/03/02/%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%8D%87%E7%BA%A7%E4%B8%BAselect%E6%A8%A1%E5%9E%8B/"/>
-    <id>https://ruvikm.gitee.io/2024/03/02/%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%8D%87%E7%BA%A7%E4%B8%BAselect%E6%A8%A1%E5%9E%8B/</id>
+    <link href="https://ruvikm.gitee.io/posts/cbda1d27.html"/>
+    <id>https://ruvikm.gitee.io/posts/cbda1d27.html</id>
     <published>2024-03-02T02:17:20.000Z</published>
     <updated>2024-04-27T11:13:09.540Z</updated>
     
@@ -199,8 +199,8 @@
   
   <entry>
     <title>nginx反向代理出错</title>
-    <link href="https://ruvikm.gitee.io/2024/01/26/nginx%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E5%87%BA%E9%94%99/"/>
-    <id>https://ruvikm.gitee.io/2024/01/26/nginx%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E5%87%BA%E9%94%99/</id>
+    <link href="https://ruvikm.gitee.io/posts/548bc04a.html"/>
+    <id>https://ruvikm.gitee.io/posts/548bc04a.html</id>
     <published>2024-01-26T13:24:54.000Z</published>
     <updated>2024-01-26T14:07:24.191Z</updated>
     
@@ -223,8 +223,8 @@
   
   <entry>
     <title>在虚拟机Centos 7中配置Redis环境</title>
-    <link href="https://ruvikm.gitee.io/2024/01/08/%E9%85%8D%E7%BD%AERedis%E7%8E%AF%E5%A2%83/"/>
-    <id>https://ruvikm.gitee.io/2024/01/08/%E9%85%8D%E7%BD%AERedis%E7%8E%AF%E5%A2%83/</id>
+    <link href="https://ruvikm.gitee.io/posts/undefined.html"/>
+    <id>https://ruvikm.gitee.io/posts/undefined.html</id>
     <published>2024-01-08T12:05:08.000Z</published>
     <updated>2024-01-08T13:04:38.805Z</updated>
     
@@ -245,8 +245,8 @@
   
   <entry>
     <title>建立一个简易的TCP客户端与服务端</title>
-    <link href="https://ruvikm.gitee.io/2023/12/15/%E5%BB%BA%E7%AB%8B%E4%B8%80%E4%B8%AA%E7%AE%80%E6%98%93%E7%9A%84TCP%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%B8%8E%E6%9C%8D%E5%8A%A1%E7%AB%AF/"/>
-    <id>https://ruvikm.gitee.io/2023/12/15/%E5%BB%BA%E7%AB%8B%E4%B8%80%E4%B8%AA%E7%AE%80%E6%98%93%E7%9A%84TCP%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%B8%8E%E6%9C%8D%E5%8A%A1%E7%AB%AF/</id>
+    <link href="https://ruvikm.gitee.io/posts/aa711198.html"/>
+    <id>https://ruvikm.gitee.io/posts/aa711198.html</id>
     <published>2023-12-15T10:19:52.000Z</published>
     <updated>2024-04-27T11:12:58.709Z</updated>
     
@@ -272,8 +272,8 @@
   
   <entry>
     <title>JZ22 链表中倒数最后k个结点</title>
-    <link href="https://ruvikm.gitee.io/2023/11/20/JZ22%E9%93%BE%E8%A1%A8%E4%B8%AD%E5%80%92%E6%95%B0%E6%9C%80%E5%90%8Ek%E4%B8%AA%E7%BB%93%E7%82%B9/"/>
-    <id>https://ruvikm.gitee.io/2023/11/20/JZ22%E9%93%BE%E8%A1%A8%E4%B8%AD%E5%80%92%E6%95%B0%E6%9C%80%E5%90%8Ek%E4%B8%AA%E7%BB%93%E7%82%B9/</id>
+    <link href="https://ruvikm.gitee.io/posts/8f3b69e8.html"/>
+    <id>https://ruvikm.gitee.io/posts/8f3b69e8.html</id>
     <published>2023-11-20T08:08:47.000Z</published>
     <updated>2024-04-27T11:11:36.614Z</updated>
     
@@ -295,8 +295,8 @@
   
   <entry>
     <title>jz23 链表中环的入口结点</title>
-    <link href="https://ruvikm.gitee.io/2023/11/20/%E9%93%BE%E8%A1%A8%E4%B8%AD%E7%8E%AF%E7%9A%84%E5%85%A5%E5%8F%A3%E7%BB%93%E7%82%B9/"/>
-    <id>https://ruvikm.gitee.io/2023/11/20/%E9%93%BE%E8%A1%A8%E4%B8%AD%E7%8E%AF%E7%9A%84%E5%85%A5%E5%8F%A3%E7%BB%93%E7%82%B9/</id>
+    <link href="https://ruvikm.gitee.io/posts/f7d0df50.html"/>
+    <id>https://ruvikm.gitee.io/posts/f7d0df50.html</id>
     <published>2023-11-20T02:33:18.000Z</published>
     <updated>2024-04-27T11:12:49.680Z</updated>
     
@@ -318,8 +318,8 @@
   
   <entry>
     <title>JZ52 两个链表的第一个公共结点</title>
-    <link href="https://ruvikm.gitee.io/2023/11/19/%E4%B8%A4%E4%B8%AA%E9%93%BE%E8%A1%A8%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%85%AC%E5%85%B1%E7%BB%93%E7%82%B9/"/>
-    <id>https://ruvikm.gitee.io/2023/11/19/%E4%B8%A4%E4%B8%AA%E9%93%BE%E8%A1%A8%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%85%AC%E5%85%B1%E7%BB%93%E7%82%B9/</id>
+    <link href="https://ruvikm.gitee.io/posts/c87ee886.html"/>
+    <id>https://ruvikm.gitee.io/posts/c87ee886.html</id>
     <published>2023-11-19T11:13:13.000Z</published>
     <updated>2024-04-27T11:11:50.475Z</updated>
     
@@ -341,8 +341,8 @@
   
   <entry>
     <title>jz25 合并两个排序的链表</title>
-    <link href="https://ruvikm.gitee.io/2023/11/18/%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%8E%92%E5%BA%8F%E7%9A%84%E9%93%BE%E8%A1%A8/"/>
-    <id>https://ruvikm.gitee.io/2023/11/18/%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%8E%92%E5%BA%8F%E7%9A%84%E9%93%BE%E8%A1%A8/</id>
+    <link href="https://ruvikm.gitee.io/posts/5ac6a0d9.html"/>
+    <id>https://ruvikm.gitee.io/posts/5ac6a0d9.html</id>
     <published>2023-11-18T02:35:51.000Z</published>
     <updated>2024-04-27T11:12:03.806Z</updated>
     
@@ -364,8 +364,8 @@
   
   <entry>
     <title>JZ24 反转链表</title>
-    <link href="https://ruvikm.gitee.io/2023/11/16/JZ24%20%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/"/>
-    <id>https://ruvikm.gitee.io/2023/11/16/JZ24%20%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/</id>
+    <link href="https://ruvikm.gitee.io/posts/628ce84.html"/>
+    <id>https://ruvikm.gitee.io/posts/628ce84.html</id>
     <published>2023-11-16T10:48:55.000Z</published>
     <updated>2023-11-19T12:58:52.791Z</updated>
     
@@ -386,8 +386,8 @@
   
   <entry>
     <title>JZ6 从尾到头打印链表</title>
-    <link href="https://ruvikm.gitee.io/2023/11/15/JZ6%20%E4%BB%8E%E5%B0%BE%E5%88%B0%E5%A4%B4%E6%89%93%E5%8D%B0%E9%93%BE%E8%A1%A8/"/>
-    <id>https://ruvikm.gitee.io/2023/11/15/JZ6%20%E4%BB%8E%E5%B0%BE%E5%88%B0%E5%A4%B4%E6%89%93%E5%8D%B0%E9%93%BE%E8%A1%A8/</id>
+    <link href="https://ruvikm.gitee.io/posts/2423e4d.html"/>
+    <id>https://ruvikm.gitee.io/posts/2423e4d.html</id>
     <published>2023-11-15T12:15:13.000Z</published>
     <updated>2023-11-19T12:58:04.518Z</updated>
     
@@ -410,8 +410,8 @@
   
   <entry>
     <title>Win11配置多个CUDA环境</title>
-    <link href="https://ruvikm.gitee.io/2023/09/30/Win11%E9%85%8D%E7%BD%AE%E5%A4%9A%E4%B8%AACUDA%E7%8E%AF%E5%A2%83/"/>
-    <id>https://ruvikm.gitee.io/2023/09/30/Win11%E9%85%8D%E7%BD%AE%E5%A4%9A%E4%B8%AACUDA%E7%8E%AF%E5%A2%83/</id>
+    <link href="https://ruvikm.gitee.io/posts/a6ee722a.html"/>
+    <id>https://ruvikm.gitee.io/posts/a6ee722a.html</id>
     <published>2023-09-30T01:25:18.000Z</published>
     <updated>2023-09-30T04:13:35.011Z</updated>
     
@@ -432,8 +432,8 @@
   
   <entry>
     <title>学校GPU平台使用教程</title>
-    <link href="https://ruvikm.gitee.io/2023/08/28/%E5%AD%A6%E6%A0%A1GPU%E5%B9%B3%E5%8F%B0%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/"/>
-    <id>https://ruvikm.gitee.io/2023/08/28/%E5%AD%A6%E6%A0%A1GPU%E5%B9%B3%E5%8F%B0%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</id>
+    <link href="https://ruvikm.gitee.io/posts/7c8e228e.html"/>
+    <id>https://ruvikm.gitee.io/posts/7c8e228e.html</id>
     <published>2023-08-28T01:18:54.000Z</published>
     <updated>2024-04-01T11:09:52.725Z</updated>
     
@@ -455,8 +455,8 @@
   
   <entry>
     <title>使用蓝牙外设却不小心把台式机电脑蓝牙关了</title>
-    <link href="https://ruvikm.gitee.io/2023/08/12/%E4%BD%BF%E7%94%A8%E8%93%9D%E7%89%99%E5%A4%96%E8%AE%BE%E5%8D%B4%E4%B8%8D%E5%B0%8F%E5%BF%83%E6%8A%8A%E5%8F%B0%E5%BC%8F%E6%9C%BA%E7%94%B5%E8%84%91%E8%93%9D%E7%89%99%E5%85%B3%E4%BA%86/"/>
-    <id>https://ruvikm.gitee.io/2023/08/12/%E4%BD%BF%E7%94%A8%E8%93%9D%E7%89%99%E5%A4%96%E8%AE%BE%E5%8D%B4%E4%B8%8D%E5%B0%8F%E5%BF%83%E6%8A%8A%E5%8F%B0%E5%BC%8F%E6%9C%BA%E7%94%B5%E8%84%91%E8%93%9D%E7%89%99%E5%85%B3%E4%BA%86/</id>
+    <link href="https://ruvikm.gitee.io/posts/46127e37.html"/>
+    <id>https://ruvikm.gitee.io/posts/46127e37.html</id>
     <published>2023-08-12T09:43:40.000Z</published>
     <updated>2023-08-12T10:54:07.670Z</updated>
     
