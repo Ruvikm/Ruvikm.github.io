@@ -6,7 +6,7 @@
   <link href="https://ruvikm.gitee.io/atom.xml" rel="self"/>
   
   <link href="https://ruvikm.gitee.io/"/>
-  <updated>2024-05-03T13:17:19.881Z</updated>
+  <updated>2024-05-03T13:20:52.365Z</updated>
   <id>https://ruvikm.gitee.io/</id>
   
   <author>
@@ -18,10 +18,10 @@
   
   <entry>
     <title>Centos 7常用操作记录</title>
-    <link href="https://ruvikm.gitee.io/posts/fjsdoif2.html"/>
-    <id>https://ruvikm.gitee.io/posts/fjsdoif2.html</id>
+    <link href="https://ruvikm.gitee.io/posts/4c414756.html"/>
+    <id>https://ruvikm.gitee.io/posts/4c414756.html</id>
     <published>2024-05-03T11:08:37.000Z</published>
-    <updated>2024-05-03T13:17:19.881Z</updated>
+    <updated>2024-05-03T13:20:52.365Z</updated>
     
     <content type="html"><![CDATA[<h2 id="进程相关"><a href="#进程相关" class="headerlink" title="进程相关"></a>进程相关</h2><h3 id="搜索某一个进程-以进程Server为例"><a href="#搜索某一个进程-以进程Server为例" class="headerlink" title="搜索某一个进程(以进程Server为例)"></a>搜索某一个进程(以进程Server为例)</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ps -ef | grep 进程名 <span class="comment"># 根据进程名查看进程信息</span></span><br><span class="line"></span><br><span class="line">netstat -tunlp | grep 端口号 <span class="comment"># 根据端口查看对应进程，查看占用8080端口的进程id</span></span><br></pre></td></tr></table></figure><p>举例</p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ps -ef | grep Server</span><br><span class="line"></span><br><span class="line">netstat -tunlp | grep 8080</span><br></pre></td></tr></table></figure><h3 id="关闭进程"><a href="#关闭进程" class="headerlink" title="关闭进程"></a>关闭进程</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">kill</span> -9 端口号</span><br></pre></td></tr></table></figure><p>举例：例如要关闭端口号为8088的进程</p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">kill</span> -9 8088</span><br></pre></td></tr></table></figure><h2 id="防火墙相关"><a href="#防火墙相关" class="headerlink" title="防火墙相关"></a>防火墙相关</h2><h3 id="放行端口"><a href="#放行端口" class="headerlink" title="放行端口"></a>放行端口</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">firewall-cmd --zone=public --add-port=4568/tcp --permanent   <span class="comment"># 开放4568端口</span></span><br><span class="line"></span><br><span class="line">firewall-cmd --zone=public --remove-port=4567/tcp --permanent  <span class="comment">#关闭4567端口</span></span><br><span class="line"></span><br><span class="line">firewall-cmd --reload   <span class="comment"># 配置立即生效</span></span><br></pre></td></tr></table></figure>]]></content>
     
