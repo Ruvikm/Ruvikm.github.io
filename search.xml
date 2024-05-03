@@ -47,15 +47,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Host文件备份</title>
-    <url>/2023/07/03/Host%E6%96%87%E4%BB%B6%E5%A4%87%E4%BB%BD/</url>
-    <content><![CDATA[<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="params">#</span> Copyright (c) 1993-2009 Microsoft Corp.</span><br><span class="line"><span class="params">#</span></span><br><span class="line"><span class="params">#</span> This is a sample HOSTS file used by Microsoft TCP/IP for Windows.</span><br><span class="line"><span class="params">#</span></span><br><span class="line"><span class="params">#</span> This file contains the mappings of IP addresses to host names. Each</span><br><span class="line"><span class="params">#</span> entry should be kept on an individual line. The IP address should</span><br><span class="line"><span class="params">#</span> be placed in the first column followed by the corresponding host name.</span><br><span class="line"><span class="params">#</span> The IP address and the host name should be separated by at least one</span><br><span class="line"><span class="params">#</span> space.</span><br><span class="line"><span class="params">#</span></span><br><span class="line"><span class="params">#</span> Additionally, comments (such as these) may be inserted on individual</span><br><span class="line"><span class="params">#</span> lines or following the machine name denoted by a &#x27;<span class="params">#</span>&#x27; symbol.</span><br><span class="line"><span class="params">#</span></span><br><span class="line"><span class="params">#</span> For example:</span><br><span class="line"><span class="params">#</span></span><br><span class="line"><span class="params">#</span> 102.54.94.97 rhino.acme.com <span class="params">#</span> source server</span><br><span class="line"><span class="params">#</span> 38.25.63.10 x.acme.com <span class="params">#</span> x client host</span><br><span class="line"><span class="params">#</span> localhost name resolution is handled within DNS itself.</span><br><span class="line"><span class="params">#</span> 127.0.0.1 localhost</span><br><span class="line"><span class="params">#</span> ::1 localhost</span><br><span class="line"></span><br><span class="line"><span class="params">#</span> Github</span><br><span class="line">140.82.114.4 github.com</span><br><span class="line">199.232.69.194 github.global.ssl.fastly.net</span><br><span class="line">185.199.108.153 assets-cdn.github.com</span><br><span class="line">185.199.110.153 assets-cdn.github.com</span><br><span class="line">185.199.111.153 assets-cdn.github.com</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>个人笔记</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Centos 7常用操作记录</title>
     <url>/2024/05/03/Centos%207%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95/</url>
     <content><![CDATA[<h2 id="进程相关"><a href="#进程相关" class="headerlink" title="进程相关"></a>进程相关</h2><h3 id="搜索某一个进程-以进程Server为例"><a href="#搜索某一个进程-以进程Server为例" class="headerlink" title="搜索某一个进程(以进程Server为例)"></a>搜索某一个进程(以进程Server为例)</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ps -ef | grep 进程名 <span class="comment"># 根据进程名查看进程信息</span></span><br><span class="line"></span><br><span class="line">netstat -tunlp | grep 端口号 <span class="comment"># 根据端口查看对应进程，查看占用8080端口的进程id</span></span><br></pre></td></tr></table></figure>
@@ -65,6 +56,15 @@
 <p>举例：例如要关闭端口号为8088的进程</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">kill</span> -9 8088</span><br></pre></td></tr></table></figure>
 <h2 id="防火墙相关"><a href="#防火墙相关" class="headerlink" title="防火墙相关"></a>防火墙相关</h2><h3 id="放行端口"><a href="#放行端口" class="headerlink" title="放行端口"></a>放行端口</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">firewall-cmd --zone=public --add-port=4568/tcp --permanent   <span class="comment"># 开放4568端口</span></span><br><span class="line"></span><br><span class="line">firewall-cmd --zone=public --remove-port=4567/tcp --permanent  <span class="comment">#关闭4567端口</span></span><br><span class="line"></span><br><span class="line">firewall-cmd --reload   <span class="comment"># 配置立即生效</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>个人笔记</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Host文件备份</title>
+    <url>/2023/07/03/Host%E6%96%87%E4%BB%B6%E5%A4%87%E4%BB%BD/</url>
+    <content><![CDATA[<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="params">#</span> Copyright (c) 1993-2009 Microsoft Corp.</span><br><span class="line"><span class="params">#</span></span><br><span class="line"><span class="params">#</span> This is a sample HOSTS file used by Microsoft TCP/IP for Windows.</span><br><span class="line"><span class="params">#</span></span><br><span class="line"><span class="params">#</span> This file contains the mappings of IP addresses to host names. Each</span><br><span class="line"><span class="params">#</span> entry should be kept on an individual line. The IP address should</span><br><span class="line"><span class="params">#</span> be placed in the first column followed by the corresponding host name.</span><br><span class="line"><span class="params">#</span> The IP address and the host name should be separated by at least one</span><br><span class="line"><span class="params">#</span> space.</span><br><span class="line"><span class="params">#</span></span><br><span class="line"><span class="params">#</span> Additionally, comments (such as these) may be inserted on individual</span><br><span class="line"><span class="params">#</span> lines or following the machine name denoted by a &#x27;<span class="params">#</span>&#x27; symbol.</span><br><span class="line"><span class="params">#</span></span><br><span class="line"><span class="params">#</span> For example:</span><br><span class="line"><span class="params">#</span></span><br><span class="line"><span class="params">#</span> 102.54.94.97 rhino.acme.com <span class="params">#</span> source server</span><br><span class="line"><span class="params">#</span> 38.25.63.10 x.acme.com <span class="params">#</span> x client host</span><br><span class="line"><span class="params">#</span> localhost name resolution is handled within DNS itself.</span><br><span class="line"><span class="params">#</span> 127.0.0.1 localhost</span><br><span class="line"><span class="params">#</span> ::1 localhost</span><br><span class="line"></span><br><span class="line"><span class="params">#</span> Github</span><br><span class="line">140.82.114.4 github.com</span><br><span class="line">199.232.69.194 github.global.ssl.fastly.net</span><br><span class="line">185.199.108.153 assets-cdn.github.com</span><br><span class="line">185.199.110.153 assets-cdn.github.com</span><br><span class="line">185.199.111.153 assets-cdn.github.com</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>个人笔记</category>
@@ -89,6 +89,27 @@
 <h2 id="题解2"><a href="#题解2" class="headerlink" title="题解2"></a>题解2</h2><p>用一个栈处理，由于栈是后进先出的，所以正好符合题意的倒数。倒数第k个结点就意味着栈需要弹出k次即可。</p>
 <p>这里有一个细节，栈都弹完了，k还是大于等于0的，则应该返回空值</p>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *  int val;</span></span><br><span class="line"><span class="comment"> *  struct ListNode *next;</span></span><br><span class="line"><span class="comment"> *  ListNode(int x) : val(x), next(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">  <span class="keyword">public</span>:</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * @param pHead ListNode类</span></span><br><span class="line"><span class="comment">     * @param k int整型</span></span><br><span class="line"><span class="comment">     * @return ListNode类</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function">ListNode* <span class="title">FindKthToTail</span><span class="params">(ListNode* pHead, <span class="type">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// write code here</span></span><br><span class="line">        stack&lt;ListNode*&gt; st;</span><br><span class="line">        ListNode* res;</span><br><span class="line">        <span class="keyword">if</span>(k &lt;= <span class="number">0</span>) <span class="keyword">return</span> <span class="literal">nullptr</span>;</span><br><span class="line">        <span class="keyword">while</span> (pHead != <span class="literal">nullptr</span>) &#123;</span><br><span class="line">            st.<span class="built_in">push</span>(pHead);</span><br><span class="line">            pHead = pHead-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span> (k-- &amp;&amp; !st.<span class="built_in">empty</span>()) &#123;</span><br><span class="line">            res = st.<span class="built_in">top</span>();</span><br><span class="line">            st.<span class="built_in">pop</span>();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (k &gt;= <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">nullptr</span>;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>刷题笔记</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>JZ6 从尾到头打印链表</title>
+    <url>/2023/11/15/JZ6%20%E4%BB%8E%E5%B0%BE%E5%88%B0%E5%A4%B4%E6%89%93%E5%8D%B0%E9%93%BE%E8%A1%A8/</url>
+    <content><![CDATA[<h2 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h2><p>输入一个链表的头节点，按链表从尾到头的顺序返回每个节点的值（用数组返回）。</p>
+<p>如输入{1,2,3}的链表如下图:</p>
+<p><img src="https://z1.ax1x.com/2023/11/19/piUE8bR.png" alt="103D87B58E565E87DEFA9DD0B822C55F"></p>
+<p>返回一个数组为[3,2,1]</p>
+<p>0 &lt;= 链表长度 &lt;= 10000</p>
+<h2 id="示例1"><a href="#示例1" class="headerlink" title="示例1"></a>示例1</h2><p>输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;1,2,3&#125;</span><br></pre></td></tr></table></figure>
+<p>返回值：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[3,2,1]</span><br></pre></td></tr></table></figure>
+<h2 id="算法思路1"><a href="#算法思路1" class="headerlink" title="算法思路1"></a>算法思路1</h2><p>主要考察翻转数组的操作，把链表的数据放到数组里，然后在数组里操作，一个比较简单的操作是调用C++的库函数</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">printListFromTailToHead</span><span class="params">(ListNode* head)</span> </span>&#123;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; vt;</span><br><span class="line">        ListNode* p = head;</span><br><span class="line">        <span class="keyword">while</span>(p != <span class="literal">nullptr</span>)&#123;</span><br><span class="line">            vt.<span class="built_in">push_back</span>(p-&gt;val);</span><br><span class="line">            p = p-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">reverse</span>(vt.<span class="built_in">begin</span>(),vt.<span class="built_in">end</span>());</span><br><span class="line">        <span class="keyword">return</span> vt;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="算法思路2"><a href="#算法思路2" class="headerlink" title="算法思路2"></a>算法思路2</h2><p>使用递归的方式解决，递归出口是链表循环到末尾，每次递归做的事就是把当前结点的值放到<code>vector</code>容器中，由于递归到末尾才会开始存放结点（<code>res.push_back(head-&gt;val);</code>）的值，时间顺序正好为从后往前的存放，符合题目要求的逆序</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">*  struct ListNode &#123;</span></span><br><span class="line"><span class="comment">*        int val;</span></span><br><span class="line"><span class="comment">*        struct ListNode *next;</span></span><br><span class="line"><span class="comment">*        ListNode(int x) :</span></span><br><span class="line"><span class="comment">*              val(x), next(NULL) &#123;</span></span><br><span class="line"><span class="comment">*        &#125;</span></span><br><span class="line"><span class="comment">*  &#125;;</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">reverse</span><span class="params">(ListNode* head,vector&lt;<span class="type">int</span>&gt; &amp;res)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(head != <span class="literal">nullptr</span>)&#123;</span><br><span class="line">            <span class="built_in">reverse</span>(head-&gt;next,res);</span><br><span class="line">            res.<span class="built_in">push_back</span>(head-&gt;val);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">printListFromTailToHead</span><span class="params">(ListNode* head)</span> </span>&#123;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; res;</span><br><span class="line">        <span class="built_in">reverse</span>(head,res);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>刷题笔记</category>
@@ -136,27 +157,6 @@
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *	int val;</span></span><br><span class="line"><span class="comment"> *	struct ListNode *next;</span></span><br><span class="line"><span class="comment"> *	ListNode(int x) : val(x), next(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * </span></span><br><span class="line"><span class="comment">     * @param head ListNode类 </span></span><br><span class="line"><span class="comment">     * @return ListNode类</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function">ListNode* <span class="title">ReverseList</span><span class="params">(ListNode* head)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(head == <span class="literal">nullptr</span>)</span><br><span class="line">            <span class="keyword">return</span> head;</span><br><span class="line">        <span class="comment">// write code here</span></span><br><span class="line">        ListNode* p = head-&gt;next, *pre = head;</span><br><span class="line">        pre-&gt;next = <span class="literal">nullptr</span>;<span class="comment">//第一个结点的next指针要预先处理，循环只能处理后面结点的next指针</span></span><br><span class="line">        <span class="keyword">while</span>(p != <span class="literal">nullptr</span>)&#123;</span><br><span class="line">            ListNode* tmp = p-&gt;next;</span><br><span class="line">            <span class="comment">//反转</span></span><br><span class="line">            p-&gt;next = pre;</span><br><span class="line"></span><br><span class="line">            pre = p;</span><br><span class="line">            p = tmp;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> pre;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <h2 id="解法4"><a href="#解法4" class="headerlink" title="解法4"></a>解法4</h2><p>使用递归解决</p>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *  int val;</span></span><br><span class="line"><span class="comment"> *  struct ListNode *next;</span></span><br><span class="line"><span class="comment"> *  ListNode(int x) : val(x), next(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">  <span class="keyword">public</span>:</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * @param head ListNode类</span></span><br><span class="line"><span class="comment">     * @return ListNode类</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function">ListNode* <span class="title">ReverseList</span><span class="params">(ListNode* head)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (head == <span class="literal">nullptr</span> || head-&gt;next == <span class="literal">nullptr</span>)</span><br><span class="line">            <span class="keyword">return</span> head;</span><br><span class="line">        ListNode* cur_next = head-&gt;next;</span><br><span class="line">        ListNode* newHead = <span class="built_in">ReverseList</span>(cur_next);</span><br><span class="line">        cur_next-&gt;next = head;</span><br><span class="line">        head-&gt;next = <span class="literal">nullptr</span>;</span><br><span class="line">        <span class="keyword">return</span> newHead;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>刷题笔记</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>JZ6 从尾到头打印链表</title>
-    <url>/2023/11/15/JZ6%20%E4%BB%8E%E5%B0%BE%E5%88%B0%E5%A4%B4%E6%89%93%E5%8D%B0%E9%93%BE%E8%A1%A8/</url>
-    <content><![CDATA[<h2 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h2><p>输入一个链表的头节点，按链表从尾到头的顺序返回每个节点的值（用数组返回）。</p>
-<p>如输入{1,2,3}的链表如下图:</p>
-<p><img src="https://z1.ax1x.com/2023/11/19/piUE8bR.png" alt="103D87B58E565E87DEFA9DD0B822C55F"></p>
-<p>返回一个数组为[3,2,1]</p>
-<p>0 &lt;= 链表长度 &lt;= 10000</p>
-<h2 id="示例1"><a href="#示例1" class="headerlink" title="示例1"></a>示例1</h2><p>输入：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;1,2,3&#125;</span><br></pre></td></tr></table></figure>
-<p>返回值：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[3,2,1]</span><br></pre></td></tr></table></figure>
-<h2 id="算法思路1"><a href="#算法思路1" class="headerlink" title="算法思路1"></a>算法思路1</h2><p>主要考察翻转数组的操作，把链表的数据放到数组里，然后在数组里操作，一个比较简单的操作是调用C++的库函数</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">printListFromTailToHead</span><span class="params">(ListNode* head)</span> </span>&#123;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; vt;</span><br><span class="line">        ListNode* p = head;</span><br><span class="line">        <span class="keyword">while</span>(p != <span class="literal">nullptr</span>)&#123;</span><br><span class="line">            vt.<span class="built_in">push_back</span>(p-&gt;val);</span><br><span class="line">            p = p-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">reverse</span>(vt.<span class="built_in">begin</span>(),vt.<span class="built_in">end</span>());</span><br><span class="line">        <span class="keyword">return</span> vt;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="算法思路2"><a href="#算法思路2" class="headerlink" title="算法思路2"></a>算法思路2</h2><p>使用递归的方式解决，递归出口是链表循环到末尾，每次递归做的事就是把当前结点的值放到<code>vector</code>容器中，由于递归到末尾才会开始存放结点（<code>res.push_back(head-&gt;val);</code>）的值，时间顺序正好为从后往前的存放，符合题目要求的逆序</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">*  struct ListNode &#123;</span></span><br><span class="line"><span class="comment">*        int val;</span></span><br><span class="line"><span class="comment">*        struct ListNode *next;</span></span><br><span class="line"><span class="comment">*        ListNode(int x) :</span></span><br><span class="line"><span class="comment">*              val(x), next(NULL) &#123;</span></span><br><span class="line"><span class="comment">*        &#125;</span></span><br><span class="line"><span class="comment">*  &#125;;</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">reverse</span><span class="params">(ListNode* head,vector&lt;<span class="type">int</span>&gt; &amp;res)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(head != <span class="literal">nullptr</span>)&#123;</span><br><span class="line">            <span class="built_in">reverse</span>(head-&gt;next,res);</span><br><span class="line">            res.<span class="built_in">push_back</span>(head-&gt;val);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">printListFromTailToHead</span><span class="params">(ListNode* head)</span> </span>&#123;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; res;</span><br><span class="line">        <span class="built_in">reverse</span>(head,res);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>刷题笔记</category>
@@ -235,6 +235,27 @@
       </tags>
   </entry>
   <entry>
+    <title>LeetCode 47 Permutations II</title>
+    <url>/2022/01/10/LeetCode%2047%20Permutations%20II/</url>
+    <content><![CDATA[<h2 id="Given-a-collection-of-numbers-nums-that-might-contain-duplicates-return-all-possible-unique-permutations-in-any-order"><a href="#Given-a-collection-of-numbers-nums-that-might-contain-duplicates-return-all-possible-unique-permutations-in-any-order" class="headerlink" title="Given a collection of numbers, nums, that might contain duplicates, return all possible unique permutations in any order."></a>Given a collection of numbers, nums, that might contain duplicates, return all possible unique permutations in any order.</h2><p>Example 1:</p>
+<p>Input: nums = [1,1,2]<br>Output:<br>[[1,1,2],<br> [1,2,1],<br> [2,1,1]]<br>Example 2:</p>
+<p>Input: nums = [1,2,3]<br>Output: [[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]</p>
+<p>Constraints:</p>
+<p>1 &lt;= nums.length &lt;= 8<br>-10 &lt;= nums[i] &lt;= 10</p>
+<p><a href="https://leetcode-cn.com/problems/permutations-ii/">题目链接</a></p>
+<p>这道题在<a href="https://blog.csdn.net/ruvikm/article/details/109636529">全排列1</a>上添加了重复的元素，所以剪枝的情况要多考虑一种。比如1，2，2’<br>2，2’与2’，2其实是一种情况，所以要舍去。<br>而对于重复的元素，一开始先排序是一个不错的选择。再排序完之后，如果当前元素和上一个元素相等并且上一个元素还没有被用过（但是后面一定会被用到造成重复)，这样的时候就要考虑剪枝</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>(i&gt;<span class="number">0</span> &amp;&amp; nums[i]==nums[i<span class="number">-1</span>]&amp;&amp;!check[i<span class="number">-1</span>])&#123;</span><br><span class="line">               <span class="keyword">continue</span>;</span><br><span class="line">           &#125;</span><br></pre></td></tr></table></figure>
+<p>全部代码如下：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; res;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">dfs</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums,vector&lt;<span class="type">int</span>&gt;&amp; temp,vector&lt;<span class="type">int</span>&gt;&amp; check)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(temp.<span class="built_in">size</span>()==nums.<span class="built_in">size</span>())&#123;</span><br><span class="line">            res.<span class="built_in">push_back</span>(temp);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;nums.<span class="built_in">size</span>();i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(check[i])&#123;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125; </span><br><span class="line">            <span class="keyword">if</span>(i&gt;<span class="number">0</span> &amp;&amp; nums[i]==nums[i<span class="number">-1</span>]&amp;&amp;!check[i<span class="number">-1</span>])&#123;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            check[i]=<span class="number">1</span>;</span><br><span class="line">            temp.<span class="built_in">push_back</span>(nums[i]);</span><br><span class="line">            <span class="built_in">dfs</span>(nums,temp,check);</span><br><span class="line">            temp.<span class="built_in">pop_back</span>();</span><br><span class="line">            check[i]=<span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">permuteUnique</span>(vector&lt;<span class="type">int</span>&gt;&amp; nums) &#123;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; temp;</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">check</span><span class="params">(nums.size(),<span class="number">0</span>)</span></span>;</span><br><span class="line">        <span class="built_in">sort</span>(nums.<span class="built_in">begin</span>(),nums.<span class="built_in">end</span>());</span><br><span class="line">        <span class="built_in">dfs</span>(nums,temp,check);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>刷题笔记</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>WSL命令行操作笔记</title>
     <url>/2023/05/23/WSL%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%93%8D%E4%BD%9C%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<p>记录一下这段时间在WSL2上学习conda以及ubuntu的命令行指令，<del>以便以后直接粘贴复制</del></p>
@@ -269,25 +290,63 @@
       </tags>
   </entry>
   <entry>
-    <title>LeetCode 47 Permutations II</title>
-    <url>/2022/01/10/LeetCode%2047%20Permutations%20II/</url>
-    <content><![CDATA[<h2 id="Given-a-collection-of-numbers-nums-that-might-contain-duplicates-return-all-possible-unique-permutations-in-any-order"><a href="#Given-a-collection-of-numbers-nums-that-might-contain-duplicates-return-all-possible-unique-permutations-in-any-order" class="headerlink" title="Given a collection of numbers, nums, that might contain duplicates, return all possible unique permutations in any order."></a>Given a collection of numbers, nums, that might contain duplicates, return all possible unique permutations in any order.</h2><p>Example 1:</p>
-<p>Input: nums = [1,1,2]<br>Output:<br>[[1,1,2],<br> [1,2,1],<br> [2,1,1]]<br>Example 2:</p>
-<p>Input: nums = [1,2,3]<br>Output: [[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]</p>
-<p>Constraints:</p>
-<p>1 &lt;= nums.length &lt;= 8<br>-10 &lt;= nums[i] &lt;= 10</p>
-<p><a href="https://leetcode-cn.com/problems/permutations-ii/">题目链接</a></p>
-<p>这道题在<a href="https://blog.csdn.net/ruvikm/article/details/109636529">全排列1</a>上添加了重复的元素，所以剪枝的情况要多考虑一种。比如1，2，2’<br>2，2’与2’，2其实是一种情况，所以要舍去。<br>而对于重复的元素，一开始先排序是一个不错的选择。再排序完之后，如果当前元素和上一个元素相等并且上一个元素还没有被用过（但是后面一定会被用到造成重复)，这样的时候就要考虑剪枝</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>(i&gt;<span class="number">0</span> &amp;&amp; nums[i]==nums[i<span class="number">-1</span>]&amp;&amp;!check[i<span class="number">-1</span>])&#123;</span><br><span class="line">               <span class="keyword">continue</span>;</span><br><span class="line">           &#125;</span><br></pre></td></tr></table></figure>
-<p>全部代码如下：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; res;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">dfs</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums,vector&lt;<span class="type">int</span>&gt;&amp; temp,vector&lt;<span class="type">int</span>&gt;&amp; check)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(temp.<span class="built_in">size</span>()==nums.<span class="built_in">size</span>())&#123;</span><br><span class="line">            res.<span class="built_in">push_back</span>(temp);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;nums.<span class="built_in">size</span>();i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(check[i])&#123;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125; </span><br><span class="line">            <span class="keyword">if</span>(i&gt;<span class="number">0</span> &amp;&amp; nums[i]==nums[i<span class="number">-1</span>]&amp;&amp;!check[i<span class="number">-1</span>])&#123;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            check[i]=<span class="number">1</span>;</span><br><span class="line">            temp.<span class="built_in">push_back</span>(nums[i]);</span><br><span class="line">            <span class="built_in">dfs</span>(nums,temp,check);</span><br><span class="line">            temp.<span class="built_in">pop_back</span>();</span><br><span class="line">            check[i]=<span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">permuteUnique</span>(vector&lt;<span class="type">int</span>&gt;&amp; nums) &#123;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; temp;</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">check</span><span class="params">(nums.size(),<span class="number">0</span>)</span></span>;</span><br><span class="line">        <span class="built_in">sort</span>(nums.<span class="built_in">begin</span>(),nums.<span class="built_in">end</span>());</span><br><span class="line">        <span class="built_in">dfs</span>(nums,temp,check);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+    <title>Win11转移conda环境——从C盘转移到D盘</title>
+    <url>/2023/06/28/Win11%E8%BD%AC%E7%A7%BBconda%E7%8E%AF%E5%A2%83%E2%80%94%E2%80%94%E4%BB%8EC%E7%9B%98%E8%BD%AC%E7%A7%BB%E5%88%B0D%E7%9B%98/</url>
+    <content><![CDATA[<p>原本就是将<code>Anaconda</code>安装到了C盘，结果发现环境他还是默认安装到了C盘，就打算再转移一下</p>
+<p>conda版本为</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-28%20095709.png" alt="屏幕截图 2023-06-28 095709"></p>
+<p>首先找到Win11下面的环境位置</p>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">C:<span class="keyword">\Users</span><span class="keyword">\用</span>户名<span class="keyword">\.</span>conda<span class="keyword">\envs</span></span><br></pre></td></tr></table></figure>
+<p>比如我的就是</p>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">C:<span class="keyword">\Users</span><span class="keyword">\Arona</span><span class="keyword">\.</span>conda<span class="keyword">\envs</span></span><br></pre></td></tr></table></figure>
+<p>找到D盘安装<code>Anaconda</code>的位置</p>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">D:<span class="keyword">\ProgramData</span><span class="keyword">\anaconda</span>3<span class="keyword">\envs</span></span><br></pre></td></tr></table></figure>
+<p>C盘的将<code>envs</code>文件夹剪切过去，环境迁移一半就完成了</p>
+<p>测试了一下，如果新建一个环境，默认还会装在C盘</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-28%20101113.png" alt="屏幕截图 2023-06-28 101113"></p>
+<p>于是要修改一下环境的默认安装位置</p>
+<p>找到用户目录下的<code>.condarc</code>文件</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">explorer %USERPROFILE%</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-28%20101811.png" alt="屏幕截图 2023-06-28 101811"></p>
+<p>用<code>Visual Studio Code</code>打开</p>
+<p>加入这段话</p>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">envs<span class="built_in">_</span>dirs:</span><br><span class="line">  - D:<span class="keyword">\ProgramData</span><span class="keyword">\anaconda</span>3<span class="keyword">\envs</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-28%20102057.png" alt="屏幕截图 2023-06-28 102057"></p>
+<p>这样默认就会安装到D盘了</p>
+<p>测试一下，新建一个名为<code>test1</code>的环境</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-28%20102249.png" alt="屏幕截图 2023-06-28 102249"></p>
+<p>如果发现地址还没变的话，可以继续以下操作</p>
+<p>找到<code>Anaconda</code>的文件夹，右键属性—安全，把users下面的权限全部打钩就行</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-28%20102811.png" alt="屏幕截图 2023-06-28 102811"></p>
+<p>应用过程中可能还会出现这种错误</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/image-20230628103929133.png" alt="image-20230628103929133"></p>
+<p>可以按照这个<a href="https://blog.csdn.net/qq_37653414/article/details/103462173">博客</a>的方法来解决，那个图比较清楚</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/image-20230628104526618.png" alt="image-20230628104526618"></p>
+<p>等待一段时间</p>
+<p>然后再回到上述操作，把users下面的权限全部打钩，再等待亿段时间</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/image-20230628104915818.png" alt="image-20230628104915818"></p>
+<p>完成后最后测试一下，新建一个名为test2的环境</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-28%20105049.png" alt="屏幕截图 2023-06-28 105049"></p>
+<p>成功！</p>
+<p>补充一下：</p>
+<p>发现刚刚上述只是把环境迁移了，下载的缓存还是留在C盘</p>
+<p>找到刚刚用户目录的.<code>condarc</code>文件，再加入几句话</p>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">pkgs<span class="built_in">_</span>dirs:</span><br><span class="line">  - D:<span class="keyword">\ProgramData</span><span class="keyword">\pkgs</span></span><br></pre></td></tr></table></figure>
+<p>保存查看一下，输入</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda info</span><br></pre></td></tr></table></figure>
+<p><img src="https://s1.ax1x.com/2023/06/28/pCdNtKI.png" alt="image-20230628115703963"></p>
+<p>说明配置成功，接下来把C盘的<code>pkgs</code>文件夹剪切到D盘刚刚的目录下就行了</p>
+<p><img src="https://s1.ax1x.com/2023/06/28/pCdNqqx.png" alt="image-20230628115948908"></p>
+<p>完事！</p>
+<p>补充：</p>
+<p>之后跑项目遇到了这个问题</p>
+<p><img src="https://s1.ax1x.com/2023/07/14/pC41RGd.png" alt="屏幕截图 2023-07-05 155524"></p>
+<p>这个原因是之前<code>pycharm</code>保存的环境还默认在C盘，没有自动更新环境的位置，这时候重新加载一下就好了</p>
+<p><img src="https://s1.ax1x.com/2023/07/14/pC41Iqf.png" alt="image-20230714111213354"></p>
 ]]></content>
       <categories>
-        <category>刷题笔记</category>
+        <category>个人笔记</category>
       </categories>
-      <tags>
-        <tag>算法</tag>
-      </tags>
   </entry>
   <entry>
     <title>Win11+3060Ti配置Anaconda+Cuda+Pytorch+Tenserflow环境</title>
@@ -705,65 +764,6 @@
       </categories>
   </entry>
   <entry>
-    <title>Win11转移conda环境——从C盘转移到D盘</title>
-    <url>/2023/06/28/Win11%E8%BD%AC%E7%A7%BBconda%E7%8E%AF%E5%A2%83%E2%80%94%E2%80%94%E4%BB%8EC%E7%9B%98%E8%BD%AC%E7%A7%BB%E5%88%B0D%E7%9B%98/</url>
-    <content><![CDATA[<p>原本就是将<code>Anaconda</code>安装到了C盘，结果发现环境他还是默认安装到了C盘，就打算再转移一下</p>
-<p>conda版本为</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-28%20095709.png" alt="屏幕截图 2023-06-28 095709"></p>
-<p>首先找到Win11下面的环境位置</p>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">C:<span class="keyword">\Users</span><span class="keyword">\用</span>户名<span class="keyword">\.</span>conda<span class="keyword">\envs</span></span><br></pre></td></tr></table></figure>
-<p>比如我的就是</p>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">C:<span class="keyword">\Users</span><span class="keyword">\Arona</span><span class="keyword">\.</span>conda<span class="keyword">\envs</span></span><br></pre></td></tr></table></figure>
-<p>找到D盘安装<code>Anaconda</code>的位置</p>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">D:<span class="keyword">\ProgramData</span><span class="keyword">\anaconda</span>3<span class="keyword">\envs</span></span><br></pre></td></tr></table></figure>
-<p>C盘的将<code>envs</code>文件夹剪切过去，环境迁移一半就完成了</p>
-<p>测试了一下，如果新建一个环境，默认还会装在C盘</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-28%20101113.png" alt="屏幕截图 2023-06-28 101113"></p>
-<p>于是要修改一下环境的默认安装位置</p>
-<p>找到用户目录下的<code>.condarc</code>文件</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">explorer %USERPROFILE%</span><br></pre></td></tr></table></figure>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-28%20101811.png" alt="屏幕截图 2023-06-28 101811"></p>
-<p>用<code>Visual Studio Code</code>打开</p>
-<p>加入这段话</p>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">envs<span class="built_in">_</span>dirs:</span><br><span class="line">  - D:<span class="keyword">\ProgramData</span><span class="keyword">\anaconda</span>3<span class="keyword">\envs</span></span><br></pre></td></tr></table></figure>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-28%20102057.png" alt="屏幕截图 2023-06-28 102057"></p>
-<p>这样默认就会安装到D盘了</p>
-<p>测试一下，新建一个名为<code>test1</code>的环境</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-28%20102249.png" alt="屏幕截图 2023-06-28 102249"></p>
-<p>如果发现地址还没变的话，可以继续以下操作</p>
-<p>找到<code>Anaconda</code>的文件夹，右键属性—安全，把users下面的权限全部打钩就行</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-28%20102811.png" alt="屏幕截图 2023-06-28 102811"></p>
-<p>应用过程中可能还会出现这种错误</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/image-20230628103929133.png" alt="image-20230628103929133"></p>
-<p>可以按照这个<a href="https://blog.csdn.net/qq_37653414/article/details/103462173">博客</a>的方法来解决，那个图比较清楚</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/image-20230628104526618.png" alt="image-20230628104526618"></p>
-<p>等待一段时间</p>
-<p>然后再回到上述操作，把users下面的权限全部打钩，再等待亿段时间</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/image-20230628104915818.png" alt="image-20230628104915818"></p>
-<p>完成后最后测试一下，新建一个名为test2的环境</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-28%20105049.png" alt="屏幕截图 2023-06-28 105049"></p>
-<p>成功！</p>
-<p>补充一下：</p>
-<p>发现刚刚上述只是把环境迁移了，下载的缓存还是留在C盘</p>
-<p>找到刚刚用户目录的.<code>condarc</code>文件，再加入几句话</p>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">pkgs<span class="built_in">_</span>dirs:</span><br><span class="line">  - D:<span class="keyword">\ProgramData</span><span class="keyword">\pkgs</span></span><br></pre></td></tr></table></figure>
-<p>保存查看一下，输入</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda info</span><br></pre></td></tr></table></figure>
-<p><img src="https://s1.ax1x.com/2023/06/28/pCdNtKI.png" alt="image-20230628115703963"></p>
-<p>说明配置成功，接下来把C盘的<code>pkgs</code>文件夹剪切到D盘刚刚的目录下就行了</p>
-<p><img src="https://s1.ax1x.com/2023/06/28/pCdNqqx.png" alt="image-20230628115948908"></p>
-<p>完事！</p>
-<p>补充：</p>
-<p>之后跑项目遇到了这个问题</p>
-<p><img src="https://s1.ax1x.com/2023/07/14/pC41RGd.png" alt="屏幕截图 2023-07-05 155524"></p>
-<p>这个原因是之前<code>pycharm</code>保存的环境还默认在C盘，没有自动更新环境的位置，这时候重新加载一下就好了</p>
-<p><img src="https://s1.ax1x.com/2023/07/14/pC41Iqf.png" alt="image-20230714111213354"></p>
-]]></content>
-      <categories>
-        <category>个人笔记</category>
-      </categories>
-  </entry>
-  <entry>
     <title>hexo部署到Gitee后显示404||没有更新</title>
     <url>/2023/05/26/hexo%E9%83%A8%E7%BD%B2%E5%88%B0Gitee%E5%90%8E%E6%98%BE%E7%A4%BA404/</url>
     <content><![CDATA[<p>在Gitee开启了Gitee Pages，并且本地完成了</p>
@@ -979,6 +979,24 @@
       </categories>
   </entry>
   <entry>
+    <title>图的邻接表表示转换成邻接矩阵</title>
+    <url>/2022/01/10/%E5%9B%BE%E7%9A%84%E9%82%BB%E6%8E%A5%E8%A1%A8%E8%A1%A8%E7%A4%BA%E8%BD%AC%E6%8D%A2%E6%88%90%E9%82%BB%E6%8E%A5%E7%9F%A9%E9%98%B5/</url>
+    <content><![CDATA[<p>算法思想：<br>先初始化邻接矩阵。依次遍历各个顶点的边表，根据边表中记录的“改弧所指向的顶点的位置”修改邻接矩阵arc[i][j]的值。例如遍历第 i 行的时候（当前的顶点所在行数为 i ），依次遍历该顶点的边表结点，若当前顶点的弧顶点的位置为j，则<code>arc[i][j] = 1</code> </p>
+<p>创建如下的图：<br><img src="https://img-blog.csdnimg.cn/20210218215606727.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<p>全部代码如下：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> region 创建邻接表存储的无向图</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> MaxVertexNum 100    <span class="comment">//图中顶点数目最大值</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> VertexType char</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> _for(i,a,b) for(int i=(a);i&lt;(b);i++)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> <span class="title class_">ArcNode</span> &#123;    <span class="comment">//边表结点</span></span><br><span class="line">    <span class="type">int</span> adjvex;             <span class="comment">//该弧所指向的顶点的位置</span></span><br><span class="line">    ArcNode* next;          <span class="comment">//指向下一条弧的指针</span></span><br><span class="line">&#125;ArcNode;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> <span class="title class_">VNode</span> &#123;      <span class="comment">//顶点表结点</span></span><br><span class="line">    VertexType data;        <span class="comment">//顶点信息</span></span><br><span class="line">    ArcNode* first;         <span class="comment">//指向第一条依附该顶点的弧的指针</span></span><br><span class="line">&#125;VNode,AdjList[MaxVertexNum];</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> &#123;            </span><br><span class="line">    AdjList vertices;       <span class="comment">//领接表</span></span><br><span class="line">    <span class="type">int</span> vexnum, arcnum;     <span class="comment">//图的顶点数和弧数</span></span><br><span class="line">&#125;ALGraph;                   <span class="comment">//ALGraph是以邻接表存储的图类型</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">LocateVex</span><span class="params">(ALGraph&amp; G, VertexType x)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    _for(i, <span class="number">0</span>, G.vexnum) &#123;</span><br><span class="line">        <span class="keyword">if</span> (G.vertices[i].data == x)</span><br><span class="line">            <span class="keyword">return</span> i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">CreateALGraph</span><span class="params">(ALGraph&amp; G)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;输入顶点数和边数&quot;</span>&lt;&lt;endl;</span><br><span class="line">    cin &gt;&gt; G.vexnum &gt;&gt; G.arcnum;</span><br><span class="line">    _for(i, <span class="number">0</span>, G.vexnum) &#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;输入第&quot;</span> &lt;&lt; i + <span class="number">1</span> &lt;&lt; <span class="string">&quot;个顶点的信息&quot;</span> &lt;&lt; endl;</span><br><span class="line">        cin &gt;&gt; G.vertices[i].data;</span><br><span class="line">        G.vertices[i].first = <span class="literal">NULL</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    _for(k, <span class="number">0</span>, G.arcnum) &#123;</span><br><span class="line">        VertexType e1, e2;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;输入第&quot;</span> &lt;&lt; k + <span class="number">1</span> &lt;&lt; <span class="string">&quot;条边的顶点：&quot;</span> &lt;&lt; endl;</span><br><span class="line">        cin &gt;&gt; e1 &gt;&gt; e2;</span><br><span class="line">        ArcNode* e = <span class="keyword">new</span> ArcNode;</span><br><span class="line">        <span class="keyword">if</span> (!e) &#123;</span><br><span class="line">            cout &lt;&lt; <span class="string">&quot;内存申请失败！&quot;</span> &lt;&lt; endl;</span><br><span class="line">            <span class="built_in">exit</span>(<span class="number">0</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="type">int</span> vi = <span class="built_in">LocateVex</span>(G, e1);</span><br><span class="line">        <span class="type">int</span> vj = <span class="built_in">LocateVex</span>(G, e2);</span><br><span class="line"></span><br><span class="line">        e-&gt;adjvex = vj;									<span class="comment">//这三步，类似于单链表的头插法</span></span><br><span class="line">        e-&gt;next = G.vertices[vi].first;</span><br><span class="line">        G.vertices[vi].first = e;</span><br><span class="line"></span><br><span class="line">        e = <span class="keyword">new</span> ArcNode;</span><br><span class="line">        <span class="keyword">if</span> (!e) &#123;</span><br><span class="line">            cout &lt;&lt; <span class="string">&quot;内存申请失败！&quot;</span> &lt;&lt; endl;</span><br><span class="line">            <span class="built_in">exit</span>(<span class="number">0</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        e-&gt;adjvex = vi;									</span><br><span class="line">        e-&gt;next = G.vertices[vj].first;</span><br><span class="line">        G.vertices[vj].first = e;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">bool</span> visited[MaxVertexNum];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">DFS</span><span class="params">(ALGraph G, <span class="type">int</span> i)</span>          <span class="comment">//邻接表的深度优先递归</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ArcNode* p;</span><br><span class="line">    visited[i] = <span class="literal">true</span>;         		<span class="comment">//访问过了该顶点，标记为TRUE </span></span><br><span class="line">    cout &lt;&lt; G.vertices[i].data &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    p = G.vertices[i].first;        <span class="comment">//让p指向边表第一个结点 </span></span><br><span class="line">    <span class="keyword">while</span> (p) &#123;                     <span class="comment">//在边表内遍历 </span></span><br><span class="line">        <span class="keyword">if</span> (!visited[p-&gt;adjvex])    <span class="comment">//对未访问的邻接顶点递归调用 </span></span><br><span class="line">            <span class="built_in">DFS</span>(G, p-&gt;adjvex);</span><br><span class="line">        p = p-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">DFSTraverse</span><span class="params">(ALGraph G)</span> </span>&#123;        <span class="comment">//邻接表的深度遍历操作</span></span><br><span class="line">    _for(i, <span class="number">0</span>, G.vexnum)</span><br><span class="line">        visited[i] = <span class="literal">false</span>;         <span class="comment">//初始设置为未访问 </span></span><br><span class="line">    _for(i, <span class="number">0</span>, G.vexnum)</span><br><span class="line">        <span class="keyword">if</span> (!visited[i])</span><br><span class="line">            <span class="built_in">DFS</span>(G, i);	            <span class="comment">//对未访问的顶点调用DFS，若是连通图只会执行一次 			</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> endregion</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//P223.4</span></span><br><span class="line"><span class="comment">//写出从图的邻接表表示转换成邻接矩阵表示的算法。</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Convert</span><span class="params">(ALGraph&amp; G, <span class="type">int</span> arcs[MaxVertexNum][MaxVertexNum])</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    _for(i, <span class="number">0</span>, G.vexnum) &#123;</span><br><span class="line">        ArcNode *p = G.vertices[i].first;</span><br><span class="line">        <span class="keyword">while</span> (p) &#123;</span><br><span class="line">            arcs[i][p-&gt;adjvex] = <span class="number">1</span>;</span><br><span class="line">            p = p-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> arcs[MaxVertexNum][MaxVertexNum];</span><br><span class="line">    <span class="built_in">memset</span>(arcs, <span class="number">0</span>, <span class="built_in">sizeof</span>(arcs));</span><br><span class="line">    ALGraph G;</span><br><span class="line">    <span class="built_in">CreateALGraph</span>(G);</span><br><span class="line">    cout &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;DFS:&quot;</span> &lt;&lt; endl;</span><br><span class="line">    <span class="built_in">DFSTraverse</span>(G);</span><br><span class="line">    cout &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt;<span class="string">&quot;转换后的邻接矩阵:&quot;</span>&lt;&lt; endl;</span><br><span class="line">    <span class="built_in">Convert</span>(G, arcs);</span><br><span class="line">    _for(i, <span class="number">0</span>, G.vexnum) &#123;</span><br><span class="line">        _for(j, <span class="number">0</span>, G.vexnum)</span><br><span class="line">            cout &lt;&lt; arcs[i][j] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">        cout &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">   </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输入：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="number">5</span> <span class="number">7</span></span><br><span class="line">a b c d e</span><br><span class="line">a b</span><br><span class="line">a e</span><br><span class="line">b c</span><br><span class="line">b d</span><br><span class="line">b e</span><br><span class="line">c d</span><br><span class="line">d e</span><br></pre></td></tr></table></figure>
+<p>运行结果如下：<br><img src="https://img-blog.csdnimg.cn/20210218215732477.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+]]></content>
+      <categories>
+        <category>刷题笔记</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>备战2026校招</title>
     <url>/2024/04/27/%E5%A4%87%E6%88%982026%E6%A0%A1%E6%8B%9B/</url>
     <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
@@ -1032,24 +1050,6 @@
       <categories>
         <category>论文复现</category>
       </categories>
-  </entry>
-  <entry>
-    <title>图的邻接表表示转换成邻接矩阵</title>
-    <url>/2022/01/10/%E5%9B%BE%E7%9A%84%E9%82%BB%E6%8E%A5%E8%A1%A8%E8%A1%A8%E7%A4%BA%E8%BD%AC%E6%8D%A2%E6%88%90%E9%82%BB%E6%8E%A5%E7%9F%A9%E9%98%B5/</url>
-    <content><![CDATA[<p>算法思想：<br>先初始化邻接矩阵。依次遍历各个顶点的边表，根据边表中记录的“改弧所指向的顶点的位置”修改邻接矩阵arc[i][j]的值。例如遍历第 i 行的时候（当前的顶点所在行数为 i ），依次遍历该顶点的边表结点，若当前顶点的弧顶点的位置为j，则<code>arc[i][j] = 1</code> </p>
-<p>创建如下的图：<br><img src="https://img-blog.csdnimg.cn/20210218215606727.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
-<p>全部代码如下：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> region 创建邻接表存储的无向图</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> MaxVertexNum 100    <span class="comment">//图中顶点数目最大值</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> VertexType char</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> _for(i,a,b) for(int i=(a);i&lt;(b);i++)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> <span class="title class_">ArcNode</span> &#123;    <span class="comment">//边表结点</span></span><br><span class="line">    <span class="type">int</span> adjvex;             <span class="comment">//该弧所指向的顶点的位置</span></span><br><span class="line">    ArcNode* next;          <span class="comment">//指向下一条弧的指针</span></span><br><span class="line">&#125;ArcNode;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> <span class="title class_">VNode</span> &#123;      <span class="comment">//顶点表结点</span></span><br><span class="line">    VertexType data;        <span class="comment">//顶点信息</span></span><br><span class="line">    ArcNode* first;         <span class="comment">//指向第一条依附该顶点的弧的指针</span></span><br><span class="line">&#125;VNode,AdjList[MaxVertexNum];</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> &#123;            </span><br><span class="line">    AdjList vertices;       <span class="comment">//领接表</span></span><br><span class="line">    <span class="type">int</span> vexnum, arcnum;     <span class="comment">//图的顶点数和弧数</span></span><br><span class="line">&#125;ALGraph;                   <span class="comment">//ALGraph是以邻接表存储的图类型</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">LocateVex</span><span class="params">(ALGraph&amp; G, VertexType x)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    _for(i, <span class="number">0</span>, G.vexnum) &#123;</span><br><span class="line">        <span class="keyword">if</span> (G.vertices[i].data == x)</span><br><span class="line">            <span class="keyword">return</span> i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">CreateALGraph</span><span class="params">(ALGraph&amp; G)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;输入顶点数和边数&quot;</span>&lt;&lt;endl;</span><br><span class="line">    cin &gt;&gt; G.vexnum &gt;&gt; G.arcnum;</span><br><span class="line">    _for(i, <span class="number">0</span>, G.vexnum) &#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;输入第&quot;</span> &lt;&lt; i + <span class="number">1</span> &lt;&lt; <span class="string">&quot;个顶点的信息&quot;</span> &lt;&lt; endl;</span><br><span class="line">        cin &gt;&gt; G.vertices[i].data;</span><br><span class="line">        G.vertices[i].first = <span class="literal">NULL</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    _for(k, <span class="number">0</span>, G.arcnum) &#123;</span><br><span class="line">        VertexType e1, e2;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;输入第&quot;</span> &lt;&lt; k + <span class="number">1</span> &lt;&lt; <span class="string">&quot;条边的顶点：&quot;</span> &lt;&lt; endl;</span><br><span class="line">        cin &gt;&gt; e1 &gt;&gt; e2;</span><br><span class="line">        ArcNode* e = <span class="keyword">new</span> ArcNode;</span><br><span class="line">        <span class="keyword">if</span> (!e) &#123;</span><br><span class="line">            cout &lt;&lt; <span class="string">&quot;内存申请失败！&quot;</span> &lt;&lt; endl;</span><br><span class="line">            <span class="built_in">exit</span>(<span class="number">0</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="type">int</span> vi = <span class="built_in">LocateVex</span>(G, e1);</span><br><span class="line">        <span class="type">int</span> vj = <span class="built_in">LocateVex</span>(G, e2);</span><br><span class="line"></span><br><span class="line">        e-&gt;adjvex = vj;									<span class="comment">//这三步，类似于单链表的头插法</span></span><br><span class="line">        e-&gt;next = G.vertices[vi].first;</span><br><span class="line">        G.vertices[vi].first = e;</span><br><span class="line"></span><br><span class="line">        e = <span class="keyword">new</span> ArcNode;</span><br><span class="line">        <span class="keyword">if</span> (!e) &#123;</span><br><span class="line">            cout &lt;&lt; <span class="string">&quot;内存申请失败！&quot;</span> &lt;&lt; endl;</span><br><span class="line">            <span class="built_in">exit</span>(<span class="number">0</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        e-&gt;adjvex = vi;									</span><br><span class="line">        e-&gt;next = G.vertices[vj].first;</span><br><span class="line">        G.vertices[vj].first = e;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">bool</span> visited[MaxVertexNum];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">DFS</span><span class="params">(ALGraph G, <span class="type">int</span> i)</span>          <span class="comment">//邻接表的深度优先递归</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ArcNode* p;</span><br><span class="line">    visited[i] = <span class="literal">true</span>;         		<span class="comment">//访问过了该顶点，标记为TRUE </span></span><br><span class="line">    cout &lt;&lt; G.vertices[i].data &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    p = G.vertices[i].first;        <span class="comment">//让p指向边表第一个结点 </span></span><br><span class="line">    <span class="keyword">while</span> (p) &#123;                     <span class="comment">//在边表内遍历 </span></span><br><span class="line">        <span class="keyword">if</span> (!visited[p-&gt;adjvex])    <span class="comment">//对未访问的邻接顶点递归调用 </span></span><br><span class="line">            <span class="built_in">DFS</span>(G, p-&gt;adjvex);</span><br><span class="line">        p = p-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">DFSTraverse</span><span class="params">(ALGraph G)</span> </span>&#123;        <span class="comment">//邻接表的深度遍历操作</span></span><br><span class="line">    _for(i, <span class="number">0</span>, G.vexnum)</span><br><span class="line">        visited[i] = <span class="literal">false</span>;         <span class="comment">//初始设置为未访问 </span></span><br><span class="line">    _for(i, <span class="number">0</span>, G.vexnum)</span><br><span class="line">        <span class="keyword">if</span> (!visited[i])</span><br><span class="line">            <span class="built_in">DFS</span>(G, i);	            <span class="comment">//对未访问的顶点调用DFS，若是连通图只会执行一次 			</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> endregion</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//P223.4</span></span><br><span class="line"><span class="comment">//写出从图的邻接表表示转换成邻接矩阵表示的算法。</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Convert</span><span class="params">(ALGraph&amp; G, <span class="type">int</span> arcs[MaxVertexNum][MaxVertexNum])</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    _for(i, <span class="number">0</span>, G.vexnum) &#123;</span><br><span class="line">        ArcNode *p = G.vertices[i].first;</span><br><span class="line">        <span class="keyword">while</span> (p) &#123;</span><br><span class="line">            arcs[i][p-&gt;adjvex] = <span class="number">1</span>;</span><br><span class="line">            p = p-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> arcs[MaxVertexNum][MaxVertexNum];</span><br><span class="line">    <span class="built_in">memset</span>(arcs, <span class="number">0</span>, <span class="built_in">sizeof</span>(arcs));</span><br><span class="line">    ALGraph G;</span><br><span class="line">    <span class="built_in">CreateALGraph</span>(G);</span><br><span class="line">    cout &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;DFS:&quot;</span> &lt;&lt; endl;</span><br><span class="line">    <span class="built_in">DFSTraverse</span>(G);</span><br><span class="line">    cout &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt;<span class="string">&quot;转换后的邻接矩阵:&quot;</span>&lt;&lt; endl;</span><br><span class="line">    <span class="built_in">Convert</span>(G, arcs);</span><br><span class="line">    _for(i, <span class="number">0</span>, G.vexnum) &#123;</span><br><span class="line">        _for(j, <span class="number">0</span>, G.vexnum)</span><br><span class="line">            cout &lt;&lt; arcs[i][j] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">        cout &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">   </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>输入：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="number">5</span> <span class="number">7</span></span><br><span class="line">a b c d e</span><br><span class="line">a b</span><br><span class="line">a e</span><br><span class="line">b c</span><br><span class="line">b d</span><br><span class="line">b e</span><br><span class="line">c d</span><br><span class="line">d e</span><br></pre></td></tr></table></figure>
-<p>运行结果如下：<br><img src="https://img-blog.csdnimg.cn/20210218215732477.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3J1dmlrbQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-]]></content>
-      <categories>
-        <category>刷题笔记</category>
-      </categories>
-      <tags>
-        <tag>算法</tag>
-      </tags>
   </entry>
   <entry>
     <title>复现论文ChineseBERT(ONTONOTES数据集)</title>
@@ -1308,192 +1308,6 @@
 <p>ps：如果显示找不到启动项可以试试<a href="https://blog.csdn.net/qq_46070108/article/details/128761974">这个方法</a></p>
 <p><img src="https://s1.ax1x.com/2023/07/03/pCrysRs.png" alt="image-20230703152429717"></p>
 <p>打扰了…找一个视频吧，我记得哔哩哔哩大学有使用这个工具的教程</p>
-]]></content>
-      <categories>
-        <category>论文复现</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>跑通项目《GAT-BiLSTM-CRF》</title>
-    <url>/2023/06/24/%E5%A4%8D%E7%8E%B0%E9%A1%B9%E7%9B%AE%E3%80%8AGAT-BiLSTM-CRF%E3%80%8B/</url>
-    <content><![CDATA[<p>记录一下自己跑通一个<a href="https://github.com/yx100/GAT-BiLSTM-CRF">GitHub项目</a>《GAT-BiLSTM-CRF》的过程</p>
-<p>自己电脑环境如下：</p>
-<ul>
-<li>显卡：3060TI</li>
-<li>CUDA : 11.0</li>
-<li>CUDAToolkit : 8.0.2</li>
-</ul>
-<p>首先新建一个conda环境</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda create -n GBC python=3.7</span><br><span class="line">conda activate GBC</span><br></pre></td></tr></table></figure>
-<p>然后用Pycharm打开其项目，并把Pycharm的环境也切换到<code>GBC</code></p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-24%20093507.png" alt="屏幕截图 2023-06-24 093507"></p>
-<p>下面就是安装环境了，根据作者的md文件，需要装一个Pytorch1.1版本</p>
-<p>从官网找见下载链接，并把<code>-c pytorch</code>去掉，以便使用清华源</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda install pytorch==1.1.0 torchvision==0.3.0 cudatoolkit=10.0</span><br></pre></td></tr></table></figure>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-24%20095053.png" alt="屏幕截图 2023-06-24 095053"></p>
-<p>看来这种方法不太行，换一种方法！</p>
-<p>打开Pytorch官网的<a href="https://download.pytorch.org/whl/torch_stable.html">下载源</a>，搜索<code>cu100/torch-1.1.0</code>，下载如下的包</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-24%20095456-1687571797951-11.png" alt="屏幕截图 2023-06-24 095456"></p>
-<p>ちょっと待って，我好像已经发现了问题，我的<code>CUDA11.0</code>肯定和这个不匹配，装了也没用，那就用<code>CPU</code>版本的<code>torch</code>跑一跑试试吧</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">CPU Only</span></span><br><span class="line">conda install pytorch-cpu==1.1.0 torchvision-cpu==0.3.0 cpuonly</span><br></pre></td></tr></table></figure>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20124226.png" alt="屏幕截图 2023-06-25 124226"></p>
-<p>应该是<code>numpy</code>版本不对？重装一下试试</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pip install numpy -U</span><br></pre></td></tr></table></figure>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20130608.png" alt="屏幕截图 2023-06-25 130608"></p>
-<p>那就卸载了重装一下吧</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip uninstall numpy</span><br><span class="line">pip install numpy</span><br></pre></td></tr></table></figure>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20130928.png" alt="屏幕截图 2023-06-25 130928"></p>
-<p>咦？我不是卸载了吗？根据之前的经验，可以试试强制升级<code>numpy</code>版本</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install numpy --ignore-installed numpy</span><br></pre></td></tr></table></figure>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20131310.png" alt="屏幕截图 2023-06-25 131310"></p>
-<p>再跑一次试试</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20131408.png" alt="屏幕截图 2023-06-25 131408"></p>
-<p>刚刚那个错解决了！这个应该是没有装<code>nltk</code>的包，装一下试试</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install nltk</span><br></pre></td></tr></table></figure>
-<p>再跑一次</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20131544.png" alt="屏幕截图 2023-06-25 131544"></p>
-<p>能跑起来一点点了，这应该是我还没有改地址的问题，改一下去，先全局搜索一下这个地址哪用到了（第52行）</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/image-20230625131832793.png" alt="image-20230625131832793"></p>
-<p>出现大问题了，作者并没有提供数据集，但是他提供了数据集的格式</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">Input is in CoNLL format (We use BIO tag scheme), where each character and its label are in one line. Sentences are split with a null line.</span><br></pre></td></tr></table></figure>
-<p>翻译一下</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">输入是CoNLL格式（我们使用BIO标签方案），其中每个字符和它的标签都在一行。句子用空行分割。</span><br></pre></td></tr></table></figure>
-<p>那就先自己找一个数据集康康能不能跑吧，数据集就用我<a href="https://raw.githubusercontent.com/SophonPlus/ChineseNlpCorpus/master/datasets/ChnSentiCorp_htl_all/ChnSentiCorp_htl_all.csv">之前的找的</a>试试</p>
-<p>按照作者的地址和文件夹创建一下</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20133501.png" alt="屏幕截图 2023-06-25 133501"></p>
-<p>先跑一下试试吧</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20133550.png" alt="屏幕截图 2023-06-25 133550"></p>
-<p>可恶啊，可能就是数据集的格式不对了。但是感觉有戏</p>
-<p>换一个有一个标注的数据集试试，经过一番搜索，找到了一个<a href="https://bj.bcebos.com/paddlehub-dataset/msra_ner.tar.gz">数据集</a></p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20135200.png" alt="屏幕截图 2023-06-25 135200"></p>
-<p>复制到项目中并修改一下路径试试</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20140111.png" alt="屏幕截图 2023-06-25 140111"></p>
-<p>跑一下试试</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20140224.png" alt="屏幕截图 2023-06-25 140224"></p>
-<p>可恶啊，还是数据集读的方式不对</p>
-<p>找师兄<del>borrow</del>了一个数据集，这个配置后的样子</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20142415.png" alt="屏幕截图 2023-06-25 142415"></p>
-<p>运行走起！</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20142455.png" alt="屏幕截图 2023-06-25 142455"></p>
-<p>又报错了，搜了一下，试试在最前面导入一个包</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> tqdm <span class="keyword">import</span> tqdm_notebook <span class="keyword">as</span> tqdm</span><br></pre></td></tr></table></figure>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/image-20230625142708124.png" alt="image-20230625142708124"></p>
-<p>emmmm再换一个别的包试试？</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> tqdm <span class="keyword">import</span> tqdm</span><br></pre></td></tr></table></figure>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20142851.png" alt="屏幕截图 2023-06-25 142851"></p>
-<p>又回到了格式问题,一直说是gdk编码不能识别，但我看了一下自己的数据集是<code>utf-8</code>编码的</p>
-<p>要不试试把打开文件的编码改一下？找到打开文件的编码，加上<code>encoding</code>属性（19行）</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20190447.png" alt="屏幕截图 2023-06-25 190447"></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">in_lines = <span class="built_in">open</span>(input_file, <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>).readlines()</span><br></pre></td></tr></table></figure>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20191202.png" alt="屏幕截图 2023-06-25 191202"></p>
-<p>啊？越界了！调试一下康康</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20191742.png" alt="屏幕截图 2023-06-25 191742"></p>
-<p>我猜，这个label应该就是标注，可能他的数据集中，标签在<code>pairs[-5]</code>的这个位置。但我的理论上貌似应该大概也许在<code>pairs[1]</code>的位置吧。改一下试试</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">label = pairs[<span class="number">1</span>]</span><br></pre></td></tr></table></figure>
-<p>再跑一次！</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20192031.png" alt="屏幕截图 2023-06-25 192031"></p>
-<p>emmmmmm为什么————</p>
-<p>我肯定的一点是，我应该是改对了，难道是数据太大了吗</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20192521.png" alt="屏幕截图 2023-06-25 192521"></p>
-<p>查了一下网上的方法，试试加入一个判断条件防止越界</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20192811.png" alt="屏幕截图 2023-06-25 192811"></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> idx <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(in_lines)):</span><br><span class="line">    <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20193334.png" alt="屏幕截图 2023-06-25 193334"></p>
-<p>跑一下试试</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20193411.png" alt="屏幕截图 2023-06-25 193411"></p>
-<p>纳尼？还可以越界的吗</p>
-<p>最后一招！我试试把数据集弄小一点</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20193916.png" alt="屏幕截图 2023-06-25 193916"></p>
-<p>其他的数据集也差不多这么大，就一句话！我不信这也可以越界了，把地址改完重跑一次</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20194043.png" alt="屏幕截图 2023-06-25 194043"></p>
-<p>emm确实不越界了，这个错误可能是之前没注释干净，继续注释试试</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/image-20230625194305060.png" alt="image-20230625194305060"></p>
-<p>再跑一次</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20194334.png" alt="屏幕截图 2023-06-25 194334"></p>
-<p>我猜想，我是安装的是<code>CPU</code>版本的<code>torch</code>，而他程序里要求的是带<code>GPU</code>的<code>torch</code>。我康康能不能把程序改一下吧</p>
-<p>网上搜索了一下，试试这么改</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20194942.png" alt="屏幕截图 2023-06-25 194942"></p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20195143.png" alt="屏幕截图 2023-06-25 195143"></p>
-<p>感觉这是一条不归路啊，要不先试试<code>torch1.7</code>版本（电脑这个版本可以调用GPU）能不能跑，如果不行再用cpu吧。</p>
-<p>从<a href="https://pytorch.org/get-started/previous-versions/">官网</a>找的链接</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda install pytorch==1.7.0 torchvision==0.8.0 torchaudio==0.7.0 cudatoolkit=11.0</span><br></pre></td></tr></table></figure>
-<p>安装完了</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20195937.png" alt="屏幕截图 2023-06-25 195937"></p>
-<p>跑跑试试（希望兼容希望兼容！）</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/image-20230625200042482.png" alt="image-20230625200042482"></p>
-<p>NO————————————！！！！！！！</p>
-<p>看了一下好像是自己的torch安装乱了，果然还得是先卸载再安装啊，不会自动卸载的</p>
-<p>先卸载</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip uninstall torch</span><br><span class="line">pip uninstall torchvision</span><br></pre></td></tr></table></figure>
-<p>然后看一下有没有卸载干净</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip list</span><br></pre></td></tr></table></figure>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20232346.png" alt="屏幕截图 2023-06-25 232346"></p>
-<p>像这样就可以了，再重装一下吧</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda install pytorch==1.7.0 torchvision==0.8.0 torchaudio==0.7.0 cudatoolkit=11.0</span><br></pre></td></tr></table></figure>
-<p>安装完再检查一下</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20232540.png" alt="屏幕截图 2023-06-25 232540"></p>
-<p>好的，现在就可以跑一下试试了！</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20232647.png" alt="屏幕截图 2023-06-25 232647"></p>
-<p>啊嘞？！我用<code>python</code>命令行试试能不能调用GPU</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">python</span><br><span class="line"><span class="keyword">import</span> torch</span><br><span class="line">torch.cuda.is_available()</span><br><span class="line">torch.cuda.get_device_name(<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20232835.png" alt="屏幕截图 2023-06-25 232835"></p>
-<p>emmm好吧，看来确实不能，再卸载了重装一下吧</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip uninstall torch</span><br><span class="line">pip uninstall torchvision</span><br></pre></td></tr></table></figure>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install torch==1.7.0+cu110 torchvision==0.8.0+cu110 torchaudio==0.7.0 -f https://download.pytorch.org/whl/torch_stable.html</span><br></pre></td></tr></table></figure>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20235355.png" alt="屏幕截图 2023-06-25 235355"></p>
-<p>又是什么情况？！那还是用<code>conda</code>装吧</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda install pytorch==1.7.0 torchvision==0.8.0 torchaudio==0.7.0 cudatoolkit=11.0</span><br></pre></td></tr></table></figure>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20235505-1687708623463-21.png" alt="屏幕截图 2023-06-25 235505"></p>
-<p>为什么是CPU版本的啊，换<code>torch1.7.1</code>试试？</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install torch==1.7.1+cu110 torchvision==0.8.2+cu110 torchaudio==0.7.2 -f https://download.pytorch.org/whl/torch_stable.html</span><br></pre></td></tr></table></figure>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20235744.png" alt="屏幕截图 2023-06-25 235744"></p>
-<p>这也太艰难了吧，网上查了一下</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20000009.png" alt="屏幕截图 2023-06-26 000009"></p>
-<p>按照他说的找到文件夹并且删除</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20000302.png" alt="屏幕截图 2023-06-26 000302"></p>
-<p>再重装一下</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install numpy</span><br></pre></td></tr></table></figure>
-<p>然后再装一下<code>torch</code>试试</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install torch==1.7.1+cu110 torchvision==0.8.2+cu110 torchaudio==0.7.2 -f https://download.pytorch.org/whl/torch_stable.html</span><br></pre></td></tr></table></figure>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20000557.png" alt="屏幕截图 2023-06-26 000557"></p>
-<p>感天动地，终于装好了。跑一下试试！</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20000741.png" alt="屏幕截图 2023-06-26 000741"></p>
-<p>是不是我数据量太少的原因，先改回原来的数据集</p>
-<p>然后我发现了设定数据集大小的位置，修改成比自己数据集大的大小</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20001114.png" alt="屏幕截图 2023-06-26 001114"></p>
-<p>走起试试！</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20001202.png" alt="屏幕截图 2023-06-26 001202"></p>
-<p>突然又发现了一个参数，可能是不是没改全的原因，改完跑一下试试</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20220112.png" alt="屏幕截图 2023-06-26 220112"></p>
-<p>走起</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20220233.png" alt="屏幕截图 2023-06-26 220233"></p>
-<p>emmmm好神秘啊！换成只有800行左右试试</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20002211.png" alt="屏幕截图 2023-06-26 002211"></p>
-<p>这又是什么诡异的错误…网上查了一下</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20220622.png" alt="屏幕截图 2023-06-26 220622"></p>
-<p>好像比较好改，直接看报错信息，找到最后一个代码里的报错</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20002211-1687788699344-4.png" alt="屏幕截图 2023-06-26 002211"></p>
-<p>点进去，会自动跳到报错那一行，然后用网上的方法修改一下</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">embeds_pack = pack_padded_sequence(embeds, batch_len.to(<span class="string">&#x27;cpu&#x27;</span>), batch_first=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20221334.png" alt="屏幕截图 2023-06-26 221334"></p>
-<p>再跑试试！</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/image-20230626221422520.png" alt="image-20230626221422520"></p>
-<p>跑了但没完全跑起来，是哪除0的情况没有考虑到应该，点进去代码里加一个判断条件试试</p>
-<p>把原本这段代码</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">epoch_cost = epoch_finish - epoch_start</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Epoch: %s training finished. Time: %.2fs, speed: %.2fst/s,  total loss: %s&quot;</span> % (</span><br><span class="line">idx, epoch_cost, train_num / epoch_cost, total_loss))</span><br></pre></td></tr></table></figure>
-<p>修改为这段</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">epoch_cost = epoch_finish - epoch_start</span><br><span class="line">train_speed = null</span><br><span class="line"><span class="keyword">if</span> epoch_cost != <span class="number">0</span>:</span><br><span class="line">    train_speed = train_num / epoch_cost</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Epoch: %s training finished. Time: %.2fs, speed: %.2fst/s,  total loss: %s&quot;</span> % (</span><br><span class="line">    idx, epoch_cost, train_speed, total_loss))</span><br></pre></td></tr></table></figure>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20222314.png" alt="屏幕截图 2023-06-26 222314"></p>
-<p>在试试吧</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20222500.png" alt="屏幕截图 2023-06-26 222500"></p>
-<p>emmm这样吗，网上一查</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20222529.png" alt="屏幕截图 2023-06-26 222529"></p>
-<p>那就把<code>null</code>改成<code>none</code>试试</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/image-20230626222633707.png" alt="image-20230626222633707"></p>
-<p>emmm行吧，那就直接改一个数字算了（114514<code>/doge</code>）</p>
-<p>woc跑起来！？</p>
-<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/image-20230626222825231.png" alt="image-20230626222825231"></p>
-<p>所以这是成功了？！但是为什么好多0，总感觉不太对的样子</p>
 ]]></content>
       <categories>
         <category>论文复现</category>
@@ -1958,6 +1772,192 @@
 <p><img src="https://s1.ax1x.com/2023/07/13/pChfl3d.png" alt="image-20230713162351591"></p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>历时20多天，终于把这个论文复现出来了。</p>
 <p><strong>再次感谢<a href="https://github.com/Lvchangze">作者</a>，提供了数据集！！！</strong></p>
+]]></content>
+      <categories>
+        <category>论文复现</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>跑通项目《GAT-BiLSTM-CRF》</title>
+    <url>/2023/06/24/%E5%A4%8D%E7%8E%B0%E9%A1%B9%E7%9B%AE%E3%80%8AGAT-BiLSTM-CRF%E3%80%8B/</url>
+    <content><![CDATA[<p>记录一下自己跑通一个<a href="https://github.com/yx100/GAT-BiLSTM-CRF">GitHub项目</a>《GAT-BiLSTM-CRF》的过程</p>
+<p>自己电脑环境如下：</p>
+<ul>
+<li>显卡：3060TI</li>
+<li>CUDA : 11.0</li>
+<li>CUDAToolkit : 8.0.2</li>
+</ul>
+<p>首先新建一个conda环境</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda create -n GBC python=3.7</span><br><span class="line">conda activate GBC</span><br></pre></td></tr></table></figure>
+<p>然后用Pycharm打开其项目，并把Pycharm的环境也切换到<code>GBC</code></p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-24%20093507.png" alt="屏幕截图 2023-06-24 093507"></p>
+<p>下面就是安装环境了，根据作者的md文件，需要装一个Pytorch1.1版本</p>
+<p>从官网找见下载链接，并把<code>-c pytorch</code>去掉，以便使用清华源</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda install pytorch==1.1.0 torchvision==0.3.0 cudatoolkit=10.0</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-24%20095053.png" alt="屏幕截图 2023-06-24 095053"></p>
+<p>看来这种方法不太行，换一种方法！</p>
+<p>打开Pytorch官网的<a href="https://download.pytorch.org/whl/torch_stable.html">下载源</a>，搜索<code>cu100/torch-1.1.0</code>，下载如下的包</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-24%20095456-1687571797951-11.png" alt="屏幕截图 2023-06-24 095456"></p>
+<p>ちょっと待って，我好像已经发现了问题，我的<code>CUDA11.0</code>肯定和这个不匹配，装了也没用，那就用<code>CPU</code>版本的<code>torch</code>跑一跑试试吧</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">CPU Only</span></span><br><span class="line">conda install pytorch-cpu==1.1.0 torchvision-cpu==0.3.0 cpuonly</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20124226.png" alt="屏幕截图 2023-06-25 124226"></p>
+<p>应该是<code>numpy</code>版本不对？重装一下试试</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pip install numpy -U</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20130608.png" alt="屏幕截图 2023-06-25 130608"></p>
+<p>那就卸载了重装一下吧</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip uninstall numpy</span><br><span class="line">pip install numpy</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20130928.png" alt="屏幕截图 2023-06-25 130928"></p>
+<p>咦？我不是卸载了吗？根据之前的经验，可以试试强制升级<code>numpy</code>版本</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install numpy --ignore-installed numpy</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20131310.png" alt="屏幕截图 2023-06-25 131310"></p>
+<p>再跑一次试试</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20131408.png" alt="屏幕截图 2023-06-25 131408"></p>
+<p>刚刚那个错解决了！这个应该是没有装<code>nltk</code>的包，装一下试试</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install nltk</span><br></pre></td></tr></table></figure>
+<p>再跑一次</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20131544.png" alt="屏幕截图 2023-06-25 131544"></p>
+<p>能跑起来一点点了，这应该是我还没有改地址的问题，改一下去，先全局搜索一下这个地址哪用到了（第52行）</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/image-20230625131832793.png" alt="image-20230625131832793"></p>
+<p>出现大问题了，作者并没有提供数据集，但是他提供了数据集的格式</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">Input is in CoNLL format (We use BIO tag scheme), where each character and its label are in one line. Sentences are split with a null line.</span><br></pre></td></tr></table></figure>
+<p>翻译一下</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">输入是CoNLL格式（我们使用BIO标签方案），其中每个字符和它的标签都在一行。句子用空行分割。</span><br></pre></td></tr></table></figure>
+<p>那就先自己找一个数据集康康能不能跑吧，数据集就用我<a href="https://raw.githubusercontent.com/SophonPlus/ChineseNlpCorpus/master/datasets/ChnSentiCorp_htl_all/ChnSentiCorp_htl_all.csv">之前的找的</a>试试</p>
+<p>按照作者的地址和文件夹创建一下</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20133501.png" alt="屏幕截图 2023-06-25 133501"></p>
+<p>先跑一下试试吧</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20133550.png" alt="屏幕截图 2023-06-25 133550"></p>
+<p>可恶啊，可能就是数据集的格式不对了。但是感觉有戏</p>
+<p>换一个有一个标注的数据集试试，经过一番搜索，找到了一个<a href="https://bj.bcebos.com/paddlehub-dataset/msra_ner.tar.gz">数据集</a></p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20135200.png" alt="屏幕截图 2023-06-25 135200"></p>
+<p>复制到项目中并修改一下路径试试</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20140111.png" alt="屏幕截图 2023-06-25 140111"></p>
+<p>跑一下试试</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20140224.png" alt="屏幕截图 2023-06-25 140224"></p>
+<p>可恶啊，还是数据集读的方式不对</p>
+<p>找师兄<del>borrow</del>了一个数据集，这个配置后的样子</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20142415.png" alt="屏幕截图 2023-06-25 142415"></p>
+<p>运行走起！</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20142455.png" alt="屏幕截图 2023-06-25 142455"></p>
+<p>又报错了，搜了一下，试试在最前面导入一个包</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> tqdm <span class="keyword">import</span> tqdm_notebook <span class="keyword">as</span> tqdm</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/image-20230625142708124.png" alt="image-20230625142708124"></p>
+<p>emmmm再换一个别的包试试？</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> tqdm <span class="keyword">import</span> tqdm</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20142851.png" alt="屏幕截图 2023-06-25 142851"></p>
+<p>又回到了格式问题,一直说是gdk编码不能识别，但我看了一下自己的数据集是<code>utf-8</code>编码的</p>
+<p>要不试试把打开文件的编码改一下？找到打开文件的编码，加上<code>encoding</code>属性（19行）</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20190447.png" alt="屏幕截图 2023-06-25 190447"></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">in_lines = <span class="built_in">open</span>(input_file, <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>).readlines()</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20191202.png" alt="屏幕截图 2023-06-25 191202"></p>
+<p>啊？越界了！调试一下康康</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20191742.png" alt="屏幕截图 2023-06-25 191742"></p>
+<p>我猜，这个label应该就是标注，可能他的数据集中，标签在<code>pairs[-5]</code>的这个位置。但我的理论上貌似应该大概也许在<code>pairs[1]</code>的位置吧。改一下试试</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">label = pairs[<span class="number">1</span>]</span><br></pre></td></tr></table></figure>
+<p>再跑一次！</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20192031.png" alt="屏幕截图 2023-06-25 192031"></p>
+<p>emmmmmm为什么————</p>
+<p>我肯定的一点是，我应该是改对了，难道是数据太大了吗</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20192521.png" alt="屏幕截图 2023-06-25 192521"></p>
+<p>查了一下网上的方法，试试加入一个判断条件防止越界</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20192811.png" alt="屏幕截图 2023-06-25 192811"></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> idx <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(in_lines)):</span><br><span class="line">    <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20193334.png" alt="屏幕截图 2023-06-25 193334"></p>
+<p>跑一下试试</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20193411.png" alt="屏幕截图 2023-06-25 193411"></p>
+<p>纳尼？还可以越界的吗</p>
+<p>最后一招！我试试把数据集弄小一点</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20193916.png" alt="屏幕截图 2023-06-25 193916"></p>
+<p>其他的数据集也差不多这么大，就一句话！我不信这也可以越界了，把地址改完重跑一次</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20194043.png" alt="屏幕截图 2023-06-25 194043"></p>
+<p>emm确实不越界了，这个错误可能是之前没注释干净，继续注释试试</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/image-20230625194305060.png" alt="image-20230625194305060"></p>
+<p>再跑一次</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20194334.png" alt="屏幕截图 2023-06-25 194334"></p>
+<p>我猜想，我是安装的是<code>CPU</code>版本的<code>torch</code>，而他程序里要求的是带<code>GPU</code>的<code>torch</code>。我康康能不能把程序改一下吧</p>
+<p>网上搜索了一下，试试这么改</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20194942.png" alt="屏幕截图 2023-06-25 194942"></p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20195143.png" alt="屏幕截图 2023-06-25 195143"></p>
+<p>感觉这是一条不归路啊，要不先试试<code>torch1.7</code>版本（电脑这个版本可以调用GPU）能不能跑，如果不行再用cpu吧。</p>
+<p>从<a href="https://pytorch.org/get-started/previous-versions/">官网</a>找的链接</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda install pytorch==1.7.0 torchvision==0.8.0 torchaudio==0.7.0 cudatoolkit=11.0</span><br></pre></td></tr></table></figure>
+<p>安装完了</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20195937.png" alt="屏幕截图 2023-06-25 195937"></p>
+<p>跑跑试试（希望兼容希望兼容！）</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/image-20230625200042482.png" alt="image-20230625200042482"></p>
+<p>NO————————————！！！！！！！</p>
+<p>看了一下好像是自己的torch安装乱了，果然还得是先卸载再安装啊，不会自动卸载的</p>
+<p>先卸载</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip uninstall torch</span><br><span class="line">pip uninstall torchvision</span><br></pre></td></tr></table></figure>
+<p>然后看一下有没有卸载干净</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip list</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20232346.png" alt="屏幕截图 2023-06-25 232346"></p>
+<p>像这样就可以了，再重装一下吧</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda install pytorch==1.7.0 torchvision==0.8.0 torchaudio==0.7.0 cudatoolkit=11.0</span><br></pre></td></tr></table></figure>
+<p>安装完再检查一下</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20232540.png" alt="屏幕截图 2023-06-25 232540"></p>
+<p>好的，现在就可以跑一下试试了！</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20232647.png" alt="屏幕截图 2023-06-25 232647"></p>
+<p>啊嘞？！我用<code>python</code>命令行试试能不能调用GPU</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">python</span><br><span class="line"><span class="keyword">import</span> torch</span><br><span class="line">torch.cuda.is_available()</span><br><span class="line">torch.cuda.get_device_name(<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20232835.png" alt="屏幕截图 2023-06-25 232835"></p>
+<p>emmm好吧，看来确实不能，再卸载了重装一下吧</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip uninstall torch</span><br><span class="line">pip uninstall torchvision</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install torch==1.7.0+cu110 torchvision==0.8.0+cu110 torchaudio==0.7.0 -f https://download.pytorch.org/whl/torch_stable.html</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20235355.png" alt="屏幕截图 2023-06-25 235355"></p>
+<p>又是什么情况？！那还是用<code>conda</code>装吧</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda install pytorch==1.7.0 torchvision==0.8.0 torchaudio==0.7.0 cudatoolkit=11.0</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20235505-1687708623463-21.png" alt="屏幕截图 2023-06-25 235505"></p>
+<p>为什么是CPU版本的啊，换<code>torch1.7.1</code>试试？</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install torch==1.7.1+cu110 torchvision==0.8.2+cu110 torchaudio==0.7.2 -f https://download.pytorch.org/whl/torch_stable.html</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-25%20235744.png" alt="屏幕截图 2023-06-25 235744"></p>
+<p>这也太艰难了吧，网上查了一下</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20000009.png" alt="屏幕截图 2023-06-26 000009"></p>
+<p>按照他说的找到文件夹并且删除</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20000302.png" alt="屏幕截图 2023-06-26 000302"></p>
+<p>再重装一下</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install numpy</span><br></pre></td></tr></table></figure>
+<p>然后再装一下<code>torch</code>试试</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install torch==1.7.1+cu110 torchvision==0.8.2+cu110 torchaudio==0.7.2 -f https://download.pytorch.org/whl/torch_stable.html</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20000557.png" alt="屏幕截图 2023-06-26 000557"></p>
+<p>感天动地，终于装好了。跑一下试试！</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20000741.png" alt="屏幕截图 2023-06-26 000741"></p>
+<p>是不是我数据量太少的原因，先改回原来的数据集</p>
+<p>然后我发现了设定数据集大小的位置，修改成比自己数据集大的大小</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20001114.png" alt="屏幕截图 2023-06-26 001114"></p>
+<p>走起试试！</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20001202.png" alt="屏幕截图 2023-06-26 001202"></p>
+<p>突然又发现了一个参数，可能是不是没改全的原因，改完跑一下试试</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20220112.png" alt="屏幕截图 2023-06-26 220112"></p>
+<p>走起</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20220233.png" alt="屏幕截图 2023-06-26 220233"></p>
+<p>emmmm好神秘啊！换成只有800行左右试试</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20002211.png" alt="屏幕截图 2023-06-26 002211"></p>
+<p>这又是什么诡异的错误…网上查了一下</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20220622.png" alt="屏幕截图 2023-06-26 220622"></p>
+<p>好像比较好改，直接看报错信息，找到最后一个代码里的报错</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20002211-1687788699344-4.png" alt="屏幕截图 2023-06-26 002211"></p>
+<p>点进去，会自动跳到报错那一行，然后用网上的方法修改一下</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">embeds_pack = pack_padded_sequence(embeds, batch_len.to(<span class="string">&#x27;cpu&#x27;</span>), batch_first=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20221334.png" alt="屏幕截图 2023-06-26 221334"></p>
+<p>再跑试试！</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/image-20230626221422520.png" alt="image-20230626221422520"></p>
+<p>跑了但没完全跑起来，是哪除0的情况没有考虑到应该，点进去代码里加一个判断条件试试</p>
+<p>把原本这段代码</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">epoch_cost = epoch_finish - epoch_start</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Epoch: %s training finished. Time: %.2fs, speed: %.2fst/s,  total loss: %s&quot;</span> % (</span><br><span class="line">idx, epoch_cost, train_num / epoch_cost, total_loss))</span><br></pre></td></tr></table></figure>
+<p>修改为这段</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">epoch_cost = epoch_finish - epoch_start</span><br><span class="line">train_speed = null</span><br><span class="line"><span class="keyword">if</span> epoch_cost != <span class="number">0</span>:</span><br><span class="line">    train_speed = train_num / epoch_cost</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Epoch: %s training finished. Time: %.2fs, speed: %.2fst/s,  total loss: %s&quot;</span> % (</span><br><span class="line">    idx, epoch_cost, train_speed, total_loss))</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20222314.png" alt="屏幕截图 2023-06-26 222314"></p>
+<p>在试试吧</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20222500.png" alt="屏幕截图 2023-06-26 222500"></p>
+<p>emmm这样吗，网上一查</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-26%20222529.png" alt="屏幕截图 2023-06-26 222529"></p>
+<p>那就把<code>null</code>改成<code>none</code>试试</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/image-20230626222633707.png" alt="image-20230626222633707"></p>
+<p>emmm行吧，那就直接改一个数字算了（114514<code>/doge</code>）</p>
+<p>woc跑起来！？</p>
+<p><img src="https://gitee.com/Ruvikm/pic/raw/master/img/image-20230626222825231.png" alt="image-20230626222825231"></p>
+<p>所以这是成功了？！但是为什么好多0，总感觉不太对的样子</p>
 ]]></content>
       <categories>
         <category>论文复现</category>
