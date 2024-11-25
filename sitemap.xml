@@ -137,15 +137,6 @@
   </url>
   
   <url>
-    <loc>https://ruvikm.gitee.io/posts/aa711198.html</loc>
-    
-    <lastmod>2024-05-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://ruvikm.gitee.io/posts/752b7aad.html</loc>
     
     <lastmod>2024-05-03</lastmod>
@@ -164,7 +155,7 @@
   </url>
   
   <url>
-    <loc>https://ruvikm.gitee.io/posts/cbda1d27.html</loc>
+    <loc>https://ruvikm.gitee.io/posts/aa711198.html</loc>
     
     <lastmod>2024-05-03</lastmod>
     
@@ -174,6 +165,15 @@
   
   <url>
     <loc>https://ruvikm.gitee.io/posts/7cdb8e03.html</loc>
+    
+    <lastmod>2024-05-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ruvikm.gitee.io/posts/cbda1d27.html</loc>
     
     <lastmod>2024-05-03</lastmod>
     
@@ -200,7 +200,7 @@
   </url>
   
   <url>
-    <loc>https://ruvikm.gitee.io/posts/4b1680ce.html</loc>
+    <loc>https://ruvikm.gitee.io/posts/5f716ad1.html</loc>
     
     <lastmod>2024-05-03</lastmod>
     
@@ -209,7 +209,7 @@
   </url>
   
   <url>
-    <loc>https://ruvikm.gitee.io/posts/5f716ad1.html</loc>
+    <loc>https://ruvikm.gitee.io/posts/4b1680ce.html</loc>
     
     <lastmod>2024-05-03</lastmod>
     
@@ -254,7 +254,7 @@
   </url>
   
   <url>
-    <loc>https://ruvikm.gitee.io/posts/f74700a5.html</loc>
+    <loc>https://ruvikm.gitee.io/posts/9a5cd7a6.html</loc>
     
     <lastmod>2024-05-03</lastmod>
     
@@ -263,7 +263,7 @@
   </url>
   
   <url>
-    <loc>https://ruvikm.gitee.io/posts/9a5cd7a6.html</loc>
+    <loc>https://ruvikm.gitee.io/posts/f74700a5.html</loc>
     
     <lastmod>2024-05-03</lastmod>
     
@@ -335,7 +335,7 @@
   </url>
   
   <url>
-    <loc>https://ruvikm.gitee.io/posts/46127e37.html</loc>
+    <loc>https://ruvikm.gitee.io/posts/113808dc.html</loc>
     
     <lastmod>2024-05-03</lastmod>
     
@@ -344,7 +344,7 @@
   </url>
   
   <url>
-    <loc>https://ruvikm.gitee.io/posts/113808dc.html</loc>
+    <loc>https://ruvikm.gitee.io/posts/46127e37.html</loc>
     
     <lastmod>2024-05-03</lastmod>
     
@@ -535,7 +535,7 @@
 
   <url>
     <loc>https://ruvikm.gitee.io/</loc>
-    <lastmod>2024-11-22</lastmod>
+    <lastmod>2024-11-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -543,63 +543,63 @@
   
   <url>
     <loc>https://ruvikm.gitee.io/tags/%E7%AE%97%E6%B3%95/</loc>
-    <lastmod>2024-11-22</lastmod>
+    <lastmod>2024-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://ruvikm.gitee.io/tags/java/</loc>
-    <lastmod>2024-11-22</lastmod>
+    <lastmod>2024-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://ruvikm.gitee.io/tags/Linux/</loc>
-    <lastmod>2024-11-22</lastmod>
+    <lastmod>2024-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://ruvikm.gitee.io/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</loc>
-    <lastmod>2024-11-22</lastmod>
+    <lastmod>2024-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://ruvikm.gitee.io/tags/%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2024-11-22</lastmod>
+    <lastmod>2024-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://ruvikm.gitee.io/tags/Python/</loc>
-    <lastmod>2024-11-22</lastmod>
+    <lastmod>2024-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://ruvikm.gitee.io/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/</loc>
-    <lastmod>2024-11-22</lastmod>
+    <lastmod>2024-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://ruvikm.gitee.io/tags/C-socket%E9%A1%B9%E7%9B%AE/</loc>
-    <lastmod>2024-11-22</lastmod>
+    <lastmod>2024-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://ruvikm.gitee.io/tags/%E5%85%B6%E4%BB%96/</loc>
-    <lastmod>2024-11-22</lastmod>
+    <lastmod>2024-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -607,43 +607,43 @@
 
   
   <url>
-    <loc>https://ruvikm.gitee.io/categories/%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2024-11-22</lastmod>
+    <loc>https://ruvikm.gitee.io/categories/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2024-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://ruvikm.gitee.io/categories/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2024-11-22</lastmod>
+    <loc>https://ruvikm.gitee.io/categories/%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2024-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://ruvikm.gitee.io/categories/%E4%B8%AA%E4%BA%BA%E9%A1%B9%E7%9B%AE/</loc>
-    <lastmod>2024-11-22</lastmod>
+    <lastmod>2024-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://ruvikm.gitee.io/categories/%E6%AF%95%E8%AE%BE%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2024-11-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://ruvikm.gitee.io/categories/%E8%AE%BA%E6%96%87%E5%A4%8D%E7%8E%B0/</loc>
-    <lastmod>2024-11-22</lastmod>
+    <lastmod>2024-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://ruvikm.gitee.io/categories/%E4%BA%BA%E7%94%9F%E8%A7%84%E5%88%92/</loc>
-    <lastmod>2024-11-22</lastmod>
+    <lastmod>2024-11-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://ruvikm.gitee.io/categories/%E8%AE%BA%E6%96%87%E5%A4%8D%E7%8E%B0/</loc>
+    <lastmod>2024-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
