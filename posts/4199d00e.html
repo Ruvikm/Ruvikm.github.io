@@ -1,0 +1,362 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>复现论文ChineseBERT(ONTONOTES数据集) | Ruvikm</title><meta name="author" content="Ruvikm,ruvikm@126.com"><meta name="copyright" content="Ruvikm"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="referrer" content="no-referrer"><meta name="description" content="记录一下自己复现论文《ChineseBERT: Chinese Pretraining Enhanced by Glyph and Pinyin Information》的过程，最近感觉老在调包，一天下来感觉什么也没干，就直播记录一下跑模型的过程吧 自己电脑环境如下：  显卡：3060TI CUDA : 11.0 CUDAToolkit : 8.0.2 tensorflow : 2.4.0 pyt">
+<meta property="og:type" content="article">
+<meta property="og:title" content="复现论文ChineseBERT(ONTONOTES数据集)">
+<meta property="og:url" content="https://ruvikm.gitee.io/posts/4199d00e.html">
+<meta property="og:site_name" content="Ruvikm">
+<meta property="og:description" content="记录一下自己复现论文《ChineseBERT: Chinese Pretraining Enhanced by Glyph and Pinyin Information》的过程，最近感觉老在调包，一天下来感觉什么也没干，就直播记录一下跑模型的过程吧 自己电脑环境如下：  显卡：3060TI CUDA : 11.0 CUDAToolkit : 8.0.2 tensorflow : 2.4.0 pyt">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s21.ax1x.com/2024/05/03/pkACVk4.jpg">
+<meta property="article:published_time" content="2023-06-08T01:28:09.000Z">
+<meta property="article:modified_time" content="2024-05-03T12:52:03.997Z">
+<meta property="article:author" content="Ruvikm">
+<meta property="article:tag" content="Ruvikm">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s21.ax1x.com/2024/05/03/pkACVk4.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://ruvikm.gitee.io/posts/4199d00e.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.clarity.ms"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="9JkfNskqFG_GoNoENeuOURgnZ0spBRJTNd61jHEmT_Q"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>(function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "h7z0eb1l6d");</script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":200},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '复现论文ChineseBERT(ONTONOTES数据集)',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2024-05-03 20:52:03'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><script src="/live2d-widget/autoload.js"></script><meta name="generator" content="Hexo 7.0.0-rc1"><link rel="alternate" href="/atom.xml" title="Ruvikm" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s1.ax1x.com/2020/04/16/JkFykT.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">56</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg fixed" id="page-header" style="background-image: url('https://s21.ax1x.com/2024/05/03/pkACVk4.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="Ruvikm"><span class="site-name">Ruvikm</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">复现论文ChineseBERT(ONTONOTES数据集)</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-06-08T01:28:09.000Z" title="发表于 2023-06-08 09:28:09">2023-06-08</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-05-03T12:52:03.997Z" title="更新于 2024-05-03 20:52:03">2024-05-03</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E8%AE%BA%E6%96%87%E5%A4%8D%E7%8E%B0/">论文复现</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.6k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>6分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="复现论文ChineseBERT(ONTONOTES数据集)"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>记录一下自己复现论文<strong><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2106.16038.pdf">《ChineseBERT: Chinese Pretraining Enhanced by Glyph and Pinyin Information》</a></strong>的过程，最近感觉老在调包，一天下来感觉什么也没干，就直播记录一下跑模型的过程吧</p>
+<p>自己电脑环境如下：</p>
+<ul>
+<li>显卡：3060TI</li>
+<li>CUDA : 11.0</li>
+<li>CUDAToolkit : 8.0.2</li>
+<li>tensorflow : 2.4.0</li>
+<li>pytorch : 1.7.0</li>
+</ul>
+<p>首先使用<code>Conda</code>创建一下项目的虚拟环境</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda create -n ChineseBERT python=3.8</span><br></pre></td></tr></table></figure>
+<p>进入环境</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda activate ChineseBERT</span><br></pre></td></tr></table></figure>
+<p>用<code>Pycharm</code>打开项目并切换到刚刚新建的环境</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-08%20093431.png" alt="屏幕截图 2023-06-08 093431"></p>
+<p>找到<code>requirements.txt</code>文件，在环境中一个一个安装</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-08%20094729.png" alt="屏幕截图 2023-06-08 094729"></p>
+<p>安装的时候，发现<code>torch</code>版本装不到这么低的</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-08%20101810.png" alt="屏幕截图 2023-06-08 101810"></p>
+<p>然后就装了项目简介中的版本，（发现自己要跑的<code>OntoNotes 4.0</code>数据集正好也需要装这个版本，nice）</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-08%20102015.png" alt="屏幕截图 2023-06-08 102015"></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install torch==1.7.1+cu101 torchvision==0.8.2+cu101 torchaudio==0.7.2 -f https://download.pytorch.org/whl/torch_stable.html</span><br></pre></td></tr></table></figure>
+<p>然后打开作者的文档<a target="_blank" rel="noopener" href="https://github.com/ShannonAI/ChineseBert/blob/main/tasks/OntoNotes/README.md">OntoNotes NER task</a>，下载对应的<a target="_blank" rel="noopener" href="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-11%20084906.png">数据集</a></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-11%20084906.png" alt="屏幕截图 2023-06-11 084906"></p>
+<p>然后新建一个名为<code>ONTONOTES_DATA_PATH</code>的文件夹，把解压后的文件放进去</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-11%20085550.png" alt="屏幕截图 2023-06-11 085550"></p>
+<p>找到<code>tasks/OntoNotes/OntoNotes_trainer.py</code>文件，尝试第一次运行</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-11%20085821.png" alt="屏幕截图 2023-06-11 085821"></p>
+<p>果不其然会报错，好像是<code>numpy</code>版本不匹配的问题，搜一下</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-11%20090052.png" alt="屏幕截图 2023-06-11 090052"></p>
+<p>看了一眼自己装的<code>numpy</code>版本，果然高一点</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-11%20090154.png" alt="屏幕截图 2023-06-11 090154"></p>
+<p>然后直接</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pip uninstall numpy</span><br><span class="line">pip install numpy==1.23.4</span><br></pre></td></tr></table></figure>
+<p>再跑一次！</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-11%20090605.png" alt="屏幕截图 2023-06-11 090605"></p>
+<p>好消息，刚刚的错误解决了。新的错误好像是路径格式的问题？难道是我刚刚路径那没配好？</p>
+<p>又看了一遍文档，好像是我<strong><code>ChineseBERT-base</code></strong>模型没下，赶紧去<a target="_blank" rel="noopener" href="https://drive.google.com/file/d/1CseJzc58W4s8U_eIuAnshHQmnmi7Sr5-/view">下载</a>一下</p>
+<p>然后按照文档中说的，也把模型文件都放在<code>CHINESEBERT_PATH</code>这个文件夹中（我猜的</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-11%20092103.png" alt="屏幕截图 2023-06-11 092103"></p>
+<p>配置完如下</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-11%20092339.png" alt="屏幕截图 2023-06-11 092339"></p>
+<p>再跑一次试试！</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-11%20092443.png" alt="屏幕截图 2023-06-11 092443"></p>
+<p>emmm待我研究一下…又看了眼文档，好像是跑错文件了？</p>
+<p>应该是要运行<code>chinesebert_base.sh</code>文件，再运行之前需要修改两个个参数，把这两个位置的地址换成自己的。（啊我终于理解作者的意思了，不是要新建一个<code>ONTONOTES_DATA_PATH</code>的文件夹啊，是要把这个地址修改成自己的…）</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-11%20210900.png" alt="屏幕截图 2023-06-11 210900"></p>
+<p>改到一半的时候发现，好像这其他路径也得该啊，而且这个是在<code>Linux</code>的环境下运行的,不管了先用<code>git</code>跑试试，改完路径后结果如下</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-11%20212135.png" alt="屏幕截图 2023-06-11 212135"></p>
+<p>配置一下<code>Pycharm</code>，让其可以直接用<code>git</code></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-11%20214248.png" alt="屏幕截图 2023-06-11 214248"></p>
+<p>走起！</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-11%20214750.png" alt="屏幕截图 2023-06-11 214750"></p>
+<p>emmm闪一下就没了，什么情况</p>
+<p>在<code>chinesebert_base.sh</code>脚本最后加入以下代码以便查看运行情况</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#  使用read命令达到类似bat中的pause命令效果</span></span><br><span class="line"><span class="built_in">echo</span> 按任意键继续</span><br><span class="line"><span class="built_in">read</span> -n 1</span><br><span class="line"><span class="built_in">echo</span> 继续运行</span><br></pre></td></tr></table></figure>
+<p>运行情况如下</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-11%20214624.png" alt="屏幕截图 2023-06-11 214624"></p>
+<p>啊？没东西输出吗？看了一下路径，好像是<code>Windows</code>和<code>Linux</code>的路径不一样，Linux下路径是<code>/</code>，Win下应该是<code>\\</code></p>
+<p>再跑一次！</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-11%20215427.png" alt="屏幕截图 2023-06-11 215427"></p>
+<p>啊？？？（黑人问号.jpg)</p>
+<p>试试把.sh文件转成.bat的，搜了一下网上居然还有一键自动转换的<a target="_blank" rel="noopener" href="https://daniel-sc.github.io/bash-shell-to-bat-converter/">网址</a>，太赞了</p>
+<p>转换完的<code>.bat</code>脚本如下</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"></span><br><span class="line">SET <span class="string">&quot;TIME=0711&quot;</span></span><br><span class="line">SET <span class="string">&quot;FILE_NAME=ontonotes_glyce_base&quot;</span></span><br><span class="line">SET <span class="string">&quot;REPO_PATH=D:\code\ChineseBert&quot;</span></span><br><span class="line">SET <span class="string">&quot;BERT_PATH=..\..\CHINESEBERT_PATH&quot;</span></span><br><span class="line">SET <span class="string">&quot;DATA_DIR=..\..\ONTONOTES_DATA_PATH&quot;</span></span><br><span class="line">SET <span class="string">&quot;SAVE_TOPK=20&quot;</span></span><br><span class="line">SET <span class="string">&quot;TRAIN_BATCH_SIZE=26&quot;</span></span><br><span class="line">SET <span class="string">&quot;LR=3e-5&quot;</span></span><br><span class="line">SET <span class="string">&quot;WEIGHT_DECAY=0.001&quot;</span></span><br><span class="line">SET <span class="string">&quot;WARMUP_PROPORTION=0.1&quot;</span></span><br><span class="line">SET <span class="string">&quot;MAX_LEN=275&quot;</span></span><br><span class="line">SET <span class="string">&quot;MAX_EPOCH=5&quot;</span></span><br><span class="line">SET <span class="string">&quot;DROPOUT=0.2&quot;</span></span><br><span class="line">SET <span class="string">&quot;ACC_GRAD=1&quot;</span></span><br><span class="line">SET <span class="string">&quot;VAL_CHECK_INTERVAL=0.25&quot;</span></span><br><span class="line">SET <span class="string">&quot;OPTIMIZER=torch.adam&quot;</span></span><br><span class="line">SET <span class="string">&quot;CLASSIFIER=multi&quot;</span></span><br><span class="line"></span><br><span class="line">SET <span class="string">&quot;OUTPUT_DIR=..\\..\\outputs/chinesebert\\%TIME%\\%FILE_NAME%_%MAX_EPOCH%_%TRAIN_BATCH_SIZE%_%LR%_%WEIGHT_DECAY%_%WARMUP_PROPORTION%_%MAX_LEN%_%DROPOUT%_%ACC_GRAD%_%VAL_CHECK_INTERVAL%&quot;</span></span><br><span class="line"><span class="built_in">mkdir</span> <span class="string">&quot;-p&quot;</span> <span class="string">&quot;%OUTPUT_DIR%&quot;</span></span><br><span class="line"><span class="built_in">export</span> <span class="string">&quot;PYTHONPATH=&quot;</span>%PYTHONPATH%:%REPO_PATH%<span class="string">&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">python3 <span class="string">&quot;%REPO_PATH%\\tasks\\OntoNotes\\OntoNotes_trainer.py&quot;</span> </span><br><span class="line">    <span class="string">&quot;--lr&quot;</span> <span class="string">&quot;%LR%&quot;</span> </span><br><span class="line">    <span class="string">&quot;--max_epochs&quot;</span> <span class="string">&quot;%MAX_EPOCH%&quot;</span> </span><br><span class="line">    <span class="string">&quot;--max_length&quot;</span> <span class="string">&quot;%MAX_LEN%&quot;</span> </span><br><span class="line">    <span class="string">&quot;--weight_decay&quot;</span> <span class="string">&quot;%WEIGHT_DECAY%&quot;</span> </span><br><span class="line">    <span class="string">&quot;--hidden_dropout_prob&quot;</span> <span class="string">&quot;%DROPOUT%&quot;</span> </span><br><span class="line">    <span class="string">&quot;--warmup_proportion&quot;</span> <span class="string">&quot;%WARMUP_PROPORTION%&quot;</span> </span><br><span class="line">    <span class="string">&quot;--train_batch_size&quot;</span> <span class="string">&quot;%TRAIN_BATCH_SIZE%&quot;</span> </span><br><span class="line">    <span class="string">&quot;--accumulate_grad_batches&quot;</span> <span class="string">&quot;%ACC_GRAD%&quot;</span> </span><br><span class="line">    <span class="string">&quot;--save_topk&quot;</span> <span class="string">&quot;%SAVE_TOPK%&quot;</span> </span><br><span class="line">    <span class="string">&quot;--bert_path&quot;</span> <span class="string">&quot;%BERT_PATH%&quot;</span> </span><br><span class="line">    <span class="string">&quot;--data_dir&quot;</span> <span class="string">&quot;%DATA_DIR%&quot;</span> </span><br><span class="line">    <span class="string">&quot;--save_path&quot;</span> <span class="string">&quot;%OUTPUT_DIR%&quot;</span> </span><br><span class="line">    <span class="string">&quot;--val_check_interval&quot;</span> <span class="string">&quot;%VAL_CHECK_INTERVAL%&quot;</span> </span><br><span class="line">    <span class="string">&quot;--gpus=1&quot;</span> </span><br><span class="line">    <span class="string">&quot;--precision=16&quot;</span> </span><br><span class="line">    <span class="string">&quot;--optimizer&quot;</span> <span class="string">&quot;%OPTIMIZER%&quot;</span> </span><br><span class="line">    <span class="string">&quot;--classifier&quot;</span> <span class="string">&quot;%CLASSIFIER%&quot;</span></span><br><span class="line">    </span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;按任意键继续&quot;</span></span><br><span class="line"><span class="built_in">read</span> <span class="string">&quot;-n&quot;</span> <span class="string">&quot;1&quot;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;继续运行&quot;</span></span><br></pre></td></tr></table></figure>
+<p>运行一下试试！</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-12%20205940.png" alt="屏幕截图 2023-06-12 205940"></p>
+<p>太痛了！好像又是路径的问题？检查了一下确实是路径的错误</p>
+<p>把上述<code>OUTPUT_DIR</code>的地址换成下面的</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">SET <span class="string">&quot;OUTPUT_DIR=..\..\outputs\chinesebert\%TIME%\%FILE_NAME%_%MAX_EPOCH%_%TRAIN_BATCH_SIZE%_%LR%_%WEIGHT_DECAY%_%WARMUP_PROPORTION%_%MAX_LEN%_%DROPOUT%_%ACC_GRAD%_%VAL_CHECK_INTERVAL%&quot;</span></span><br></pre></td></tr></table></figure>
+<p>再跑亿次！</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-12%20210918.png" alt="屏幕截图 2023-06-12 210918"></p>
+<p>我再康康…好像那个网站转换的有问题</p>
+<p>我用chatGPT转换了一下</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="built_in">set</span> TIME=0711</span><br><span class="line"><span class="built_in">set</span> FILE_NAME=ontonotes_glyce_base</span><br><span class="line"><span class="built_in">set</span> REPO_PATH=D:\code\ChineseBert</span><br><span class="line"><span class="built_in">set</span> BERT_PATH=..\..\CHINESEBERT_PATH</span><br><span class="line"><span class="built_in">set</span> DATA_DIR=..\..\ONTONOTES_DATA_PATH</span><br><span class="line"></span><br><span class="line"><span class="built_in">set</span> SAVE_TOPK=20</span><br><span class="line"><span class="built_in">set</span> TRAIN_BATCH_SIZE=26</span><br><span class="line"><span class="built_in">set</span> LR=3e-5</span><br><span class="line"><span class="built_in">set</span> WEIGHT_DECAY=0.001</span><br><span class="line"><span class="built_in">set</span> WARMUP_PROPORTION=0.1</span><br><span class="line"><span class="built_in">set</span> MAX_LEN=275</span><br><span class="line"><span class="built_in">set</span> MAX_EPOCH=5</span><br><span class="line"><span class="built_in">set</span> DROPOUT=0.2</span><br><span class="line"><span class="built_in">set</span> ACC_GRAD=1</span><br><span class="line"><span class="built_in">set</span> VAL_CHECK_INTERVAL=0.25</span><br><span class="line"><span class="built_in">set</span> OPTIMIZER=torch.adam</span><br><span class="line"><span class="built_in">set</span> CLASSIFIER=multi</span><br><span class="line"></span><br><span class="line"><span class="built_in">set</span> OUTPUT_DIR=..\..\outputs\chinesebert\%TIME%\%FILE_NAME%_%MAX_EPOCH%_%TRAIN_BATCH_SIZE%_%LR%_%WEIGHT_DECAY%_%WARMUP_PROPORTION%_%MAX_LEN%_%DROPOUT%_%ACC_GRAD%_%VAL_CHECK_INTERVAL%</span><br><span class="line"><span class="built_in">mkdir</span> %OUTPUT_DIR%</span><br><span class="line"><span class="built_in">set</span> PYTHONPATH=%PYTHONPATH%;%REPO_PATH%</span><br><span class="line"></span><br><span class="line">python %REPO_PATH%\tasks\OntoNotes\OntoNotes_trainer.py ^</span><br><span class="line">    --lr %LR% ^</span><br><span class="line">    --max_epochs %MAX_EPOCH% ^</span><br><span class="line">    --max_length %MAX_LEN% ^</span><br><span class="line">    --weight_decay %WEIGHT_DECAY% ^</span><br><span class="line">    --hidden_dropout_prob %DROPOUT% ^</span><br><span class="line">    --warmup_proportion %WARMUP_PROPORTION% ^</span><br><span class="line">    --train_batch_size %TRAIN_BATCH_SIZE% ^</span><br><span class="line">    --accumulate_grad_batches %ACC_GRAD% ^</span><br><span class="line">    --save_topk %SAVE_TOPK% ^</span><br><span class="line">    --bert_path %BERT_PATH% ^</span><br><span class="line">    --data_dir %DATA_DIR% ^</span><br><span class="line">    --save_path %OUTPUT_DIR% ^</span><br><span class="line">    --val_check_interval %VAL_CHECK_INTERVAL% ^</span><br><span class="line">    --gpus=<span class="string">&quot;1&quot;</span> ^</span><br><span class="line">    --precision=16 ^</span><br><span class="line">    --optimizer %OPTIMIZER% ^</span><br><span class="line">    --classifier %CLASSIFIER%</span><br><span class="line"></span><br><span class="line">pause</span><br></pre></td></tr></table></figure>
+<p>重新跑一下！</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-12%20214704.png" alt="屏幕截图 2023-06-12 214704"></p>
+<p>chatGPT牛逼！看来格式是转换对了，下面就是调包的问题了</p>
+<p>看这个错应该是这个<code>pypinyin</code>包没装，装一下试试</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install pypinyin</span><br></pre></td></tr></table></figure>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-12%20215157.png" alt="屏幕截图 2023-06-12 215157"></p>
+<p>但是环境里应该有了鸭，难道是跑的时候不在这个环境吗</p>
+<p>单独跑了一下这个文件，并没有报错！</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-12%20215537.png" alt="屏幕截图 2023-06-12 215537"></p>
+<p>感觉我的推理是正确的，查了一下如何在<code>bat</code>文件中选择环境</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">%切换到ChineseBert环境%</span><br><span class="line">CALL activate ChineseBert</span><br></pre></td></tr></table></figure>
+<p>将这段代码放在执行<code>Python</code>文件前面</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-13%20092124.png" alt="屏幕截图 2023-06-13 092124"></p>
+<p>然后走起！</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-13%20092200.png" alt="屏幕截图 2023-06-13 092200"></p>
+<p>这？？？这是跑起来了？？？有戏有戏</p>
+<p>等了一会也没反应，看了下说明，好像说是模型没训练初始化？</p>
+<p>又等了一会</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-13%20093055.png" alt="屏幕截图 2023-06-13 093055"></p>
+<p>难…难道再等等？好像又说CUDA和Pytorch不匹配？（但我之前专门按照官网装的鸭</p>
+<p>还说我什么<code>model.example_input_array</code>或者<code>input_array</code>属性没设置</p>
+<p>首先解决一下CUDA和Pytorch的版本匹配问题，再次检查一下作者提供的Pytorch安装代码，发现和我CUDA版本是不匹配的，看来这个需要自己修改一下，不能无脑复制</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-13%20094404.png" alt="屏幕截图 2023-06-13 094404"></p>
+<p>我自己的CUDA</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-13%20094832.png" alt="屏幕截图 2023-06-13 094832"></p>
+<p>于是直接重装吧</p>
+<p>先卸载</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip uninstall torch</span><br></pre></td></tr></table></figure>
+<p>再安装</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip3 install torch==1.7.1+cu110 torchvision==0.8.2+cu110 torchaudio==0.7.2 -f https://download.pytorch.org/whl/cu110/torch_stable.html</span><br></pre></td></tr></table></figure>
+<p>在跑一次试试！</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-13%20145951.png" alt="屏幕截图 2023-06-13 145951"></p>
+<p>跑起来了？！！！！！Ohhhhhhhh</p>
+<p>等了一下午，终于跑出了结果了</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Ruvikm/pic/raw/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-23%20185801.png" alt="屏幕截图 2023-06-23 185801"></p>
+<p>作者的结果如下</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Test Precision</th>
+<th>Test Recall</th>
+<th>Test F1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BERT</td>
+<td>79.69</td>
+<td>82.09</td>
+<td>80.87</td>
+</tr>
+<tr>
+<td>RoBERTa</td>
+<td>80.43</td>
+<td>80.30</td>
+<td>80.37</td>
+</tr>
+<tr>
+<td>ChineseBERT</td>
+<td>80.03</td>
+<td>83.33</td>
+<td>81.65</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>不知道为什么<code>test_precision</code>这一项结果略低一点，其他结果相差不是很大</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://ruvikm.gitee.io">Ruvikm</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://ruvikm.gitee.io/posts/4199d00e.html">https://ruvikm.gitee.io/posts/4199d00e.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://ruvikm.gitee.io" target="_blank">Ruvikm</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://s21.ax1x.com/2024/05/03/pkACVk4.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/74c3e798.html" title="复现论文《SPIKING CONVOLUTIONAL NEURAL NETWORKS FOR TEXT CLASSIFICATION》"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s21.ax1x.com/2024/05/03/pkACVk4.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">复现论文《SPIKING CONVOLUTIONAL NEURAL NETWORKS FOR TEXT CLASSIFICATION》</div></div></a></div><div class="next-post pull-right"><a href="/posts/8c838a1f.html" title="Win11+3060Ti配置Anaconda+Cuda+Pytorch+Tenserflow环境"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s21.ax1x.com/2024/05/03/pkACVk4.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Win11+3060Ti配置Anaconda+Cuda+Pytorch+Tenserflow环境</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s1.ax1x.com/2020/04/16/JkFykT.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Ruvikm</div><div class="author-info__description">Today's accomplishments were yesterday's impossibilities</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">56</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Ruvikm"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到我的博客鸭~</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/d09fb790.html" title="SFC不了一点">SFC不了一点</a><time datetime="2024-11-22T09:10:47.000Z" title="发表于 2024-11-22 17:10:47">2024-11-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/8a1a7618.html" title="开题自问自答">开题自问自答</a><time datetime="2024-11-13T02:04:03.000Z" title="发表于 2024-11-13 10:04:03">2024-11-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/853ae6f7.html" title="搭建Rasa机器人">搭建Rasa机器人</a><time datetime="2024-10-31T08:52:34.000Z" title="发表于 2024-10-31 16:52:34">2024-10-31</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/638298f2.html" title="日本出行攻略">日本出行攻略</a><time datetime="2024-06-26T13:31:11.000Z" title="发表于 2024-06-26 21:31:11">2024-06-26</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/ab78dc44.html" title="分布式数据库期末复习">分布式数据库期末复习</a><time datetime="2024-06-24T14:12:57.000Z" title="发表于 2024-06-24 22:12:57">2024-06-24</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Ruvikm</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">去把这个不完美的世界，变成你所期望的样子吧！</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">简</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container').forEach(node => {
+            if (node.hasAttribute('display')) {
+              btf.wrap(node, 'div', { class: 'mathjax-overflow' })
+            } else {
+              btf.wrap(node, 'span', { class: 'mathjax-overflow' })
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex/dist/contrib/copy-tex.min.js"></script><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
