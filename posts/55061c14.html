@@ -1,0 +1,229 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>CrewAI+LangChain智能体协作 | Ruvikm</title><meta name="author" content="Ruvikm,ruvikm@126.com"><meta name="copyright" content="Ruvikm"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="referrer" content="no-referrer"><meta name="description" content="Here&#39;s something encrypted, password is required to continue reading.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CrewAI+LangChain智能体协作">
+<meta property="og:url" content="https://ruvikm.gitee.io/posts/55061c14.html">
+<meta property="og:site_name" content="Ruvikm">
+<meta property="og:description" content="Here&#39;s something encrypted, password is required to continue reading.">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s21.ax1x.com/2024/05/03/pkACVk4.jpg">
+<meta property="article:published_time" content="2024-12-25T02:42:14.000Z">
+<meta property="article:modified_time" content="2024-12-25T02:47:06.797Z">
+<meta property="article:author" content="Ruvikm">
+<meta property="article:tag" content="Ruvikm">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s21.ax1x.com/2024/05/03/pkACVk4.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://ruvikm.gitee.io/posts/55061c14.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.clarity.ms"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="9JkfNskqFG_GoNoENeuOURgnZ0spBRJTNd61jHEmT_Q"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>(function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "h7z0eb1l6d");</script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":200},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'CrewAI+LangChain智能体协作',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-12-25 10:47:06'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><script src="/live2d-widget/autoload.js"></script><meta name="generator" content="Hexo 7.0.0-rc1"><link rel="alternate" href="/atom.xml" title="Ruvikm" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s1.ax1x.com/2020/04/16/JkFykT.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">57</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg fixed" id="page-header" style="background-image: url('https://s21.ax1x.com/2024/05/03/pkACVk4.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="Ruvikm"><span class="site-name">Ruvikm</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">CrewAI+LangChain智能体协作</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-12-25T02:42:14.000Z" title="发表于 2024-12-25 10:42:14">2024-12-25</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-12-25T02:47:06.797Z" title="更新于 2024-12-25 10:47:06">2024-12-25</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%AF%95%E8%AE%BE%E7%AC%94%E8%AE%B0/">毕设笔记</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">6</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>1分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="CrewAI+LangChain智能体协作"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="d9e8e010c6dc8f0ae8fc8d8327d5a5e51da0baf4716423dfedbf4e57b942ae54">f666a1e82130d441cf5f17739ffab407f813f0533f867bd730ba02ab40064ec8dfee8ef87b30583174daf26d2aee1219a313079053a316f72b91a890466df18f3697410c4e01f367f8d4973f2781a744a84a37d0804805c36c1cbb4c92e38120791a713c0ea51614b9d6e75bad72e194565dcd5290fa4d4eab203e04e6ea33bc717bb83389f1456b438478dc5d4d36c7e1012b58cf2c92ddd2023326b45c76bd67639e02253d581e2c382953ada1ef5300b22c520a694d610fbc4e1cb20fbe65b57b86027c5ac29109ab492b5f23ce3ff9a46002c712736d093e4032e00780e76cfcff09dd99421ca34026486e56307d2f043ed49a34aaea10b8594b606eb61365d2e41fb18592e9a6d99a690ef44e250420a8a83e8ada154d0dae53653c3d28a7c02e27bfb157a846fd7b6f5ab84b4df03b0eddc9c704e251e4952f1fa32e1e3a167b1339dab253a1ab72947a3767b288259a9ee7648cd6900e85a63ba5348898b7567461ebeb0aa81f499748d10df79cd0dd6b2b775f4ab3154a2cf50fc101c485d4d8f51e050d69aa447122911b9feb4ff46be7284340af3b6051f2ca69a5d22fc1e43d43aa4b785e948ceb698f4e02710848e4780c3716c649b3b67ce458391021644a3d1287d28e38891b0a002881f6e056537d7697d08ce69c28f4111a50d4c064357fefca1f1e5472e3000b5802d28bc2ee02580b4bc632b3b7b6a027c7e1cca3407af4d61df90329443077ab9074cc369e6d5d053a738af13d528bef029d47883be11d936e41a285bf7cb1172a8fa045c21ea454d5056bfb577dc4e89692545ff8de40b2ad918927ea7f68c4a47a0623f5b7f255292069576270456db734e507d94ce488e12ce96a91b89e4a5eba17f4e4285cf423a3b71cfb33a85573f57355b8a63280173ae4e7ba990a2092575105e4e9c10161c39d05fe6d9e1bbddd79b69acb6b656ef4147c5af19d0d9e902cc755b1b7bbe398ab7da6a0504cb005e270ca7e66f6d61e7fc5199cc9c382fa49a39ef569b055b2e9373ac792c26aecba47577065e213d1d85ea6dec0c9125e8fc656ee8ec9c67a52f6b870ab58d92284c1c3dfc4b16207ca0c95bd50957af7800102d0b80b5fcaac06dd46b96452f4d1fa464a0725681ac7e946f941dc2e20391d22095ed196d6f2fd88463308b4679ef59f939a95a3cc0ac9ccd1e2b831cd9e05ca07c464f97e6ba35fb7482e0b579eb4b0e1328b4e2533fba953a15063545b35a8ab5285c435fe5cdf246f0ae3bb5f48f0cc6e3e09747b5de0acbe17927451631bd8cdbbf06e737be07f080cac1973e66cc6af5c4489fc4459a9a25adb4092102dadfa6eff2a4887794cfda3edd63001ddbaa7006a86935010d32d0500e433fa1195692e6ba3c91d49375d68241cf3749dd173d367926a2b9424c416debcf840b8dd935c89796f3e5d7c606319d902091d19fb692de0a7669cf17e4c42ccc996ffbbc893ea8e1eea0ecf4fd7e7577f6693a39f707743cb2c327b9f37c39971b4fab93e1015409a3c41fb79d31dae84935122f030b0bda662a1cc4537d30f40ec0f4ab7c39a7ea9626331807a05e927fc71f07ab2de373631a6c5933f86cc59c7d4d8a8da464a049803f2ffa3a8ee06da41e2386c1edb63d8daec75e6b1874f10f12113cd096414c05a838c7ff3add9f09e719a827e48e4985762cc9f5b472c0376295dc725408a1c38be6c8512c76992be9e408c2b8ea0b2c12984a4082487df5839eecccfb3b344dd00264e0624c1b7bf9bee3f7cfb061a0f77035eb22e0f978a6f37e737698ab50fe74b8c046d38ea8a04c327d1ffab375283bbad8f25f2639e6368ea71ee57e38073638c2b2efc863e826be7cccdf64658e4429960f94f132184908272fd1b3cf32482c8f0dd9e631e3bc420a2b65f5ae35c288bac297f3c618e7a3ef40e994cc64ccf6bbf0d5cf46d88a6b537ebc6c8aec866d30ae59f3d1c5a8f6f9d451822534051ec79565637133c37f1044329af8c68dd4568fbb53b2403fa3e5aebcd8ba5f65158bc419b8fdc187d4492a97a54b143dc96316ab1ec24dae87cee5099ddcf3eee5b368439747d090133f12f6104beaecb2590829a548a5b67798f03dcb2e71032cda4f749a522a2c5ea1b554bf88091c648306c89a5011fcdc7ae0351c8328bf3de42a17a43a2558873de32aab8f832911d08958989f5d0e8aacf8c4e33cd936f02c116eb46fd89fdb9a48e0ee306830e0977f8ed0e07dc18e9e6f73e6295cfc4f3fc56d2439065a900aa470850478fbab1c109a8d6b69b37ae3a9d1e1f995ed6133df91850ab242005e5da7dd000d60e208e23485041423fd37091db511ca9d0eeeb9ef9f34376070c94a1eaa8ebee230609d5c495a179b2bf99f9e0432f092848251025fb04b7b408c3ce32aa1443cc1389f2908499fbbb3dc9c436d342936271ca6f9053798a995fe922e85d66529ea84e18fdf8dd06da3e8417a8226aa4c8dfad725c52bcbaafa619de11db5bcb58fa1a6c41544493a5e88a9000e54bd140325ee0abad4e0642323e022768e1cdd485b966389cda53384123b3e4cf8f9ff81a42505e47077d5eb446ea1653e9f66a5c91d0b3854c37578a2504efa83498c2c040ffae9fdb8ad69860dc6be590bde526b7b520cc9fb928e2f16255bb90459f4c39b0ec39ad100f6b4d7b0e3372f1094ef3f344fa2c367aea10c0685adfe21937e6a065d11eee347b7b64f3505496ded2e4df10062965b4f19a53d46d5b9f7dfb631459b8e39c99f566553481784a641e6ae5e3d9f679ef05f529d4a0a76397f9c0deb80c0a2967c3111035a5b37edb92906d6f14b433fc2d100673b7162334bf830bab9548b3e9919484541c3c1c3cb06856491ed55fde7347ee595e3f873688b45dca504156e37abac92b63e3242c987469e7d03b6c11516d86663a697465e65c12c2ac3832b59967e0eca3e1d3e479d49a0ee37e3ec2b3d9c6505bbcb09cde3bf9ff7a34630149ddbed5057d10d44f53fdfc63b055ca5cd205a25da495a913ab6a6da9c70ac12e5d8e623cef0f8978f4b4ec16f229d4b7cea5c7240ce9258b51e3986c77e161bdc237e46864a33f5fc8c1bfc14d1501782482ff16417faba23a30bea2aa17b7c6297c5d29cc47bd7f09b2fd89454ea96753b448b27224f5580794161428283508a249036ee7d5693277a9128b1fce19d37f70499773dcc49f1367f1ea9c4ff6fb96ab41715302d84030d466693315b983f38e823333cf95cc6ebdf249fdc3f5f999cd34ee71128b53d052b74888aa2bbdea295813df2f25c7da04af3d22d306b2292aadaa2a25c7898f6ac655dbe5e19f484403575708e136d3d307f4906d459565418facab470bcefe7404615eccd67a34f9b03d991b00a27282f5f94e481584ecd9fc492c532ae4deb8ea27ac129e162f4536452edddd7c383f7e718901eb1d89c7af6018b279fab1953aa426a2f5a1b0e6f39ad4e5fc62</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">Hey, password is required here.</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css"></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://ruvikm.gitee.io">Ruvikm</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://ruvikm.gitee.io/posts/55061c14.html">https://ruvikm.gitee.io/posts/55061c14.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://ruvikm.gitee.io" target="_blank">Ruvikm</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://s21.ax1x.com/2024/05/03/pkACVk4.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/posts/d09fb790.html" title="SFC不了一点"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s21.ax1x.com/2024/05/03/pkACVk4.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">SFC不了一点</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s1.ax1x.com/2020/04/16/JkFykT.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Ruvikm</div><div class="author-info__description">Today's accomplishments were yesterday's impossibilities</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">57</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Ruvikm"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到我的博客鸭~</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content toc-div-class" style="display:none"></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/55061c14.html" title="CrewAI+LangChain智能体协作">CrewAI+LangChain智能体协作</a><time datetime="2024-12-25T02:42:14.000Z" title="发表于 2024-12-25 10:42:14">2024-12-25</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/d09fb790.html" title="SFC不了一点">SFC不了一点</a><time datetime="2024-11-22T09:10:47.000Z" title="发表于 2024-11-22 17:10:47">2024-11-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/8a1a7618.html" title="开题自问自答">开题自问自答</a><time datetime="2024-11-13T02:04:03.000Z" title="发表于 2024-11-13 10:04:03">2024-11-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/853ae6f7.html" title="搭建Rasa机器人">搭建Rasa机器人</a><time datetime="2024-10-31T08:52:34.000Z" title="发表于 2024-10-31 16:52:34">2024-10-31</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/638298f2.html" title="日本出行攻略">日本出行攻略</a><time datetime="2024-06-26T13:31:11.000Z" title="发表于 2024-06-26 21:31:11">2024-06-26</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Ruvikm</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">去把这个不完美的世界，变成你所期望的样子吧！</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">简</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container').forEach(node => {
+            if (node.hasAttribute('display')) {
+              btf.wrap(node, 'div', { class: 'mathjax-overflow' })
+            } else {
+              btf.wrap(node, 'span', { class: 'mathjax-overflow' })
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex/dist/contrib/copy-tex.min.js"></script><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
