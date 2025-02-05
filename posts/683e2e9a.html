@@ -1,0 +1,234 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>crewai框架第三方API使用官方RAG工具(pdf，csv，json) | Ruvikm</title><meta name="author" content="Ruvikm,ruvikm@126.com"><meta name="copyright" content="Ruvikm"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="referrer" content="no-referrer"><meta name="description" content="最近在研究调用官方的工具，但官方文档的说明是在是太少了，后来在一个视频里看到了如何配置，记录一下 以PDF RAG Search工具举例，官方文档对于自定义模型的说明如下： 默认情况下，该工具使用 OpenAI 进行嵌入和总结。要自定义模型，可以使用配置字典，如下所示： tool &#x3D; PDFSearchTool(    config&#x3D;dict(        llm&#x3D;dict(">
+<meta property="og:type" content="article">
+<meta property="og:title" content="crewai框架第三方API使用官方RAG工具(pdf，csv，json)">
+<meta property="og:url" content="https://ruvikm.gitee.io/posts/683e2e9a.html">
+<meta property="og:site_name" content="Ruvikm">
+<meta property="og:description" content="最近在研究调用官方的工具，但官方文档的说明是在是太少了，后来在一个视频里看到了如何配置，记录一下 以PDF RAG Search工具举例，官方文档对于自定义模型的说明如下： 默认情况下，该工具使用 OpenAI 进行嵌入和总结。要自定义模型，可以使用配置字典，如下所示： tool &#x3D; PDFSearchTool(    config&#x3D;dict(        llm&#x3D;dict(">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s21.ax1x.com/2024/05/03/pkACVk4.jpg">
+<meta property="article:published_time" content="2025-02-04T13:26:09.000Z">
+<meta property="article:modified_time" content="2025-02-05T03:10:54.498Z">
+<meta property="article:author" content="Ruvikm">
+<meta property="article:tag" content="Ruvikm">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s21.ax1x.com/2024/05/03/pkACVk4.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://ruvikm.gitee.io/posts/683e2e9a.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.clarity.ms"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="9JkfNskqFG_GoNoENeuOURgnZ0spBRJTNd61jHEmT_Q"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>(function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "h7z0eb1l6d");</script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":200},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'crewai框架第三方API使用官方RAG工具(pdf，csv，json)',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2025-02-05 11:10:54'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><script src="/live2d-widget/autoload.js"></script><meta name="generator" content="Hexo 7.0.0-rc1"><link rel="alternate" href="/atom.xml" title="Ruvikm" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s1.ax1x.com/2020/04/16/JkFykT.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">61</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg fixed" id="page-header" style="background-image: url('https://s21.ax1x.com/2024/05/03/pkACVk4.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="Ruvikm"><span class="site-name">Ruvikm</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">crewai框架第三方API使用官方RAG工具(pdf，csv，json)</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-02-04T13:26:09.000Z" title="发表于 2025-02-04 21:26:09">2025-02-04</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-02-05T03:10:54.498Z" title="更新于 2025-02-05 11:10:54">2025-02-05</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%AF%95%E8%AE%BE%E7%AC%94%E8%AE%B0/">毕设笔记</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.4k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>4分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="crewai框架第三方API使用官方RAG工具(pdf，csv，json)"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p> 最近在研究调用官方的工具，但官方文档的说明是在是太少了，后来在一个视频里看到了如何配置，记录一下</p>
+<p>以PDF RAG Search工具举例，<a target="_blank" rel="noopener" href="https://docs.crewai.com/tools/pdfsearchtool">官方文档</a>对于自定义模型的说明如下：</p>
+<p>默认情况下，该工具使用 OpenAI 进行嵌入和总结。要自定义模型，可以使用配置字典，如下所示：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">tool = PDFSearchTool(</span><br><span class="line">    config=<span class="built_in">dict</span>(</span><br><span class="line">        llm=<span class="built_in">dict</span>(</span><br><span class="line">            provider=<span class="string">&quot;ollama&quot;</span>, <span class="comment"># or google, openai, anthropic, llama2, ...</span></span><br><span class="line">            config=<span class="built_in">dict</span>(</span><br><span class="line">                model=<span class="string">&quot;llama2&quot;</span>,</span><br><span class="line">                <span class="comment"># temperature=0.5,</span></span><br><span class="line">                <span class="comment"># top_p=1,</span></span><br><span class="line">                <span class="comment"># stream=true,</span></span><br><span class="line">            ),</span><br><span class="line">        ),</span><br><span class="line">        embedder=<span class="built_in">dict</span>(</span><br><span class="line">            provider=<span class="string">&quot;google&quot;</span>, <span class="comment"># or openai, ollama, ...</span></span><br><span class="line">            config=<span class="built_in">dict</span>(</span><br><span class="line">                model=<span class="string">&quot;models/embedding-001&quot;</span>,</span><br><span class="line">                task_type=<span class="string">&quot;retrieval_document&quot;</span>,</span><br><span class="line">                <span class="comment"># title=&quot;Embeddings&quot;,</span></span><br><span class="line">            ),</span><br><span class="line">        ),</span><br><span class="line">    )</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>但是这个的前提是使用的官方<code>openai</code>的API，如果要改成第三方API的，配置应该如下：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> crewai_tools <span class="keyword">import</span> PDFSearchTool</span><br><span class="line"></span><br><span class="line"><span class="comment"># 自定义大模型配置</span></span><br><span class="line">pdf_tool = PDFSearchTool(</span><br><span class="line">    config=<span class="built_in">dict</span>(</span><br><span class="line">        llm=<span class="built_in">dict</span>(</span><br><span class="line">            provider=<span class="string">&quot;openai&quot;</span>,</span><br><span class="line">            config=<span class="built_in">dict</span>(</span><br><span class="line">                base_url=<span class="string">&quot;https://xxxxxxx/v1&quot;</span>,</span><br><span class="line">                api_key=<span class="string">&quot;sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&quot;</span>,</span><br><span class="line">                model=<span class="string">&quot;gpt-4o&quot;</span></span><br><span class="line">            ),</span><br><span class="line">        ),</span><br><span class="line">        embedder=<span class="built_in">dict</span>(</span><br><span class="line">            provider=<span class="string">&quot;openai&quot;</span>,</span><br><span class="line">            config=<span class="built_in">dict</span>(</span><br><span class="line">                api_base=<span class="string">&quot;https://xxxxxxx/v1&quot;</span>,</span><br><span class="line">                api_key=<span class="string">&quot;sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&quot;</span>,</span><br><span class="line">                model=<span class="string">&quot;text-embedding-3-small&quot;</span></span><br><span class="line">            ),</span><br><span class="line">        ),</span><br><span class="line">    )</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>其中，<code>gpt-4o</code>和<code>text-embedding-3-small</code>都是购买的第三方API里的模型名称</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s21.ax1x.com/2025/02/05/pEemKTU.png" alt="image-20250205104904492"></p>
+<p>下面是一个可以跑通的例子：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> crewai_tools <span class="keyword">import</span> PDFSearchTool</span><br><span class="line"><span class="keyword">from</span> dotenv <span class="keyword">import</span> load_dotenv</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line">load_dotenv() <span class="comment"># 加载环境变量</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 自定义大模型配置</span></span><br><span class="line">tool = PDFSearchTool(</span><br><span class="line">    config=<span class="built_in">dict</span>(</span><br><span class="line">        llm=<span class="built_in">dict</span>(</span><br><span class="line">            provider=<span class="string">&quot;openai&quot;</span>,</span><br><span class="line">            config=<span class="built_in">dict</span>(</span><br><span class="line">                base_url=os.getenv(<span class="string">&quot;OPENAI_API_BASE&quot;</span>),</span><br><span class="line">                api_key=os.getenv(<span class="string">&quot;OPENAI_API_KEY&quot;</span>),</span><br><span class="line">                model=os.getenv(<span class="string">&quot;OPENAI_MODEL_NAME&quot;</span>)</span><br><span class="line">            ),</span><br><span class="line">        ),</span><br><span class="line">        embedder=<span class="built_in">dict</span>(</span><br><span class="line">            provider=<span class="string">&quot;openai&quot;</span>,</span><br><span class="line">            config=<span class="built_in">dict</span>(</span><br><span class="line">                api_base=os.getenv(<span class="string">&quot;OPENAI_API_BASE&quot;</span>),</span><br><span class="line">                api_key=os.getenv(<span class="string">&quot;OPENAI_API_KEY&quot;</span>),</span><br><span class="line">                model=<span class="string">&quot;text-embedding-3-small&quot;</span></span><br><span class="line">            ),</span><br><span class="line">        ),</span><br><span class="line">    )</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 运行工具，调用工具解析文件并检索内容</span></span><br><span class="line">result = tool.run(</span><br><span class="line">    pdf=<span class="string">&#x27;../data/deepseek.pdf&#x27;</span>,</span><br><span class="line">    <span class="comment"># 其他工具使用的参数基本都是search_query</span></span><br><span class="line">    query=<span class="string">&quot;介绍一下deepseek的核心驱技为优势&quot;</span></span><br><span class="line">)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;result:&quot;</span>,result)</span><br></pre></td></tr></table></figure>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s21.ax1x.com/2025/02/05/pEemU0K.png" alt="image-20250205111049172"></p>
+<p>注：</p>
+<p>deepseek.pdf内容如下</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">DeepSeek：专注人工智能前沿的创新科技企业</span><br><span class="line">一、企业概况</span><br><span class="line">DeepSeek（深度求索）是一一以人人工智能技为核心驱动力的的创新科科技司，成立于 2023年成总部位 中国。司，聚焦 大模科研发、自然语言处理深NLP是、机器学习等前沿领域成致的 通过技为突破推力AI的普惠化应用。DeepSeek人&quot;探）智能本质成赋能人类未来&quot;核使命成专注 核企业和开发者提供高效、可靠的人工智能解决方案成覆盖金融、医疗、教育、智能制造等多个行业。立于人来成司，凭借技为实的和场景化落地能的成迅速立核AI赛道的新锐的量。</span><br><span class="line">二、心驱技为优势</span><br><span class="line">DeepSeek的心驱竞争的源 其自主研发的多模态大模科体系。司，构建了千亿参数规模的预训练模科框架成支持文本、图像、语音等多模态数据的融合分析与生立。在自然语言理解深NLU是领域成其模科在语义推理、长文本处理、多语言交互等任务中达到行业领先水平。此外成DeepSeek创新性地提出了力态知识蒸馏技为成能够在保证模科性能的前提下成显著降低算的消耗成使AI服务更易 部署在边缘设备中。通过持续优化算法架构与训练方法成司，技为团队已申请百余项国内外专利。</span><br><span class="line">三、应用场景与产品生态</span><br><span class="line">DeepSeek的技为已实现多维求商业化落地：</span><br><span class="line">智能客服系统：核企业提供24小时多轮对话服务成理解准确率达95%人上；</span><br><span class="line">行业知识引擎：赋能金融研报自力生立、医疗影像辅助诊断等垂直场景；</span><br><span class="line">开发者平台：开放API接口与工具链成支持快速构建定制化AI应用；</span><br><span class="line">教育解决方案：通过个性化学习路径推荐成提升教育资源配置效率。</span><br><span class="line">司，采用&quot;基础研究+场景度耕&quot;的双轮动力模式成已与200+企业建于合作成日均处理数据量超10亿条。</span><br><span class="line">四、发展愿景与社会责任</span><br><span class="line">DeepSeek始终秉持**&quot;技为向善&quot;**的发展理念成在追索商业价值的同时成积极参与AI伦理治理。司，牵头制定了行业首个《生立式AI内容溯源标准》成通过区块链技为实现内容可追溯成防范技为滥用风险。未来三年成DeepSeek计划投入5亿元用 通用人工智能深AGI是的基础研究成并设于开放实验室支持学为机构的前沿探）。司，目标一通过持续创新成打造安全、可信、易用的人工智能基础设施成助的全球数字化转科。</span><br><span class="line">五、团队与文化基因</span><br><span class="line">创始团队由顶尖AI科学以与资度产业专以组立成立员多来自国际知名高校与科技企业。司，构建了**&quot;极客精神+务实创新&quot;**的文化体系成推行扁平化管理与跨学科协作机制成鼓励技为人才在宽松环境中实现突破。通过&quot;星火计划&quot;人才培养项目成DeepSeek已建于起覆盖算法、工程、产品等多领域的千人团队成研发人员占比超过80%成持续核行业发展输送高端人才。</span><br></pre></td></tr></table></figure>
+<p>.env文件内容，需要替换成自己的API配置</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># ChatGPT</span><br><span class="line">OPENAI_API_BASE=&quot;https://xxxxxxxxxxxxx/v1&quot;</span><br><span class="line">OPENAI_API_KEY=&quot;sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&quot;</span><br><span class="line">OPENAI_MODEL_NAME=&quot;gpt-4o&quot;</span><br></pre></td></tr></table></figure>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://ruvikm.gitee.io">Ruvikm</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://ruvikm.gitee.io/posts/683e2e9a.html">https://ruvikm.gitee.io/posts/683e2e9a.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://ruvikm.gitee.io" target="_blank">Ruvikm</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://s21.ax1x.com/2024/05/03/pkACVk4.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/posts/a827c834.html" title="Crewai框架添加日志功能"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s21.ax1x.com/2024/05/03/pkACVk4.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Crewai框架添加日志功能</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s1.ax1x.com/2020/04/16/JkFykT.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Ruvikm</div><div class="author-info__description">Today's accomplishments were yesterday's impossibilities</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">61</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Ruvikm"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到我的博客鸭~</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/683e2e9a.html" title="crewai框架第三方API使用官方RAG工具(pdf，csv，json)">crewai框架第三方API使用官方RAG工具(pdf，csv，json)</a><time datetime="2025-02-04T13:26:09.000Z" title="发表于 2025-02-04 21:26:09">2025-02-04</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/a827c834.html" title="Crewai框架添加日志功能">Crewai框架添加日志功能</a><time datetime="2025-01-26T13:51:20.000Z" title="发表于 2025-01-26 21:51:20">2025-01-26</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/cfd0c246.html" title="Crewai框架配置第三方大模型API">Crewai框架配置第三方大模型API</a><time datetime="2025-01-19T13:02:05.000Z" title="发表于 2025-01-19 21:02:05">2025-01-19</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/27458af6.html" title="知识图谱考试复习资料">知识图谱考试复习资料</a><time datetime="2024-12-29T10:05:15.000Z" title="发表于 2024-12-29 18:05:15">2024-12-29</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/55061c14.html" title="CrewAI+LangChain智能体协作">CrewAI+LangChain智能体协作</a><time datetime="2024-12-25T02:42:14.000Z" title="发表于 2024-12-25 10:42:14">2024-12-25</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2025 By Ruvikm</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">去把这个不完美的世界，变成你所期望的样子吧！</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">简</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container').forEach(node => {
+            if (node.hasAttribute('display')) {
+              btf.wrap(node, 'div', { class: 'mathjax-overflow' })
+            } else {
+              btf.wrap(node, 'span', { class: 'mathjax-overflow' })
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex/dist/contrib/copy-tex.min.js"></script><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
