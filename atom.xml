@@ -6,7 +6,7 @@
   <link href="https://ruvikm.gitee.io/atom.xml" rel="self"/>
   
   <link href="https://ruvikm.gitee.io/"/>
-  <updated>2025-02-06T14:23:45.972Z</updated>
+  <updated>2025-02-06T14:28:12.004Z</updated>
   <id>https://ruvikm.gitee.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://ruvikm.gitee.io/posts/a0c963f0.html"/>
     <id>https://ruvikm.gitee.io/posts/a0c963f0.html</id>
     <published>2025-02-06T14:18:36.000Z</published>
-    <updated>2025-02-06T14:23:45.972Z</updated>
+    <updated>2025-02-06T14:28:12.004Z</updated>
     
     <content type="html"><![CDATA[<p><a href="https://docs.crewai.com/concepts/tasks">官方文档</a>里只指提了一句</p><p><img src="https://s21.ax1x.com/2025/02/06/pEeLXeP.png" alt="ee21b95b-4607-4ea2-8bb4-cf3c8bbc7fef"></p><p>不过不太难，在<code>crew.py</code>文件里配置一下就行了，下面是一个demo，这个函数会在<code>research_task</code>任务执行完触发（配置LLM这里请看我<a href="https://ruvikm.github.io/posts/cfd0c246.html">这篇博客</a>）</p><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> crewai <span class="keyword">import</span> Crew, Process, Agent, Task</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> src.sfc_intent.tools.LLMS <span class="keyword">import</span> my_llm</span><br><span class="line"></span><br><span class="line">openai_llm = my_llm(<span class="string">&quot;openai&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">my_callback</span>(<span class="params">*args, **kwargs</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;任务执行完毕&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义您的代理</span></span><br><span class="line">researcher = Agent(</span><br><span class="line">    role=<span class="string">&#x27;研究员&#x27;</span>,</span><br><span class="line">    goal=<span class="string">&#x27;进行基础研究&#x27;</span>,</span><br><span class="line">    backstory=<span class="string">&#x27;一位经验丰富的研究员，热衷于发现见解&#x27;</span>,</span><br><span class="line">    llm=openai_llm,</span><br><span class="line">    verbose=<span class="literal">True</span>,</span><br><span class="line">)</span><br><span class="line">analyst = Agent(</span><br><span class="line">    role=<span class="string">&#x27;数据分析师&#x27;</span>,</span><br><span class="line">    goal=<span class="string">&#x27;分析研究结果&#x27;</span>,</span><br><span class="line">    backstory=<span class="string">&#x27;一位细致的分析师，善于发现规律&#x27;</span>,</span><br><span class="line">    llm=openai_llm,</span><br><span class="line">    verbose=<span class="literal">True</span>,</span><br><span class="line">)</span><br><span class="line">writer = Agent(</span><br><span class="line">    role=<span class="string">&#x27;作家&#x27;</span>,</span><br><span class="line">    goal=<span class="string">&#x27;起草最终报告&#x27;</span>,</span><br><span class="line">    backstory=<span class="string">&#x27;一位熟练的作家，具有撰写引人入胜的叙述的天赋&#x27;</span>,</span><br><span class="line">    llm=openai_llm,</span><br><span class="line">    verbose=<span class="literal">True</span>,</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">research_task = Task(description=<span class="string">&#x27;收集相关数据...&#x27;</span>, agent=researcher, expected_output=<span class="string">&#x27;原始数据&#x27;</span>,callback=my_callback)</span><br><span class="line">analysis_task = Task(description=<span class="string">&#x27;分析数据...&#x27;</span>, agent=analyst, expected_output=<span class="string">&#x27;数据见解&#x27;</span>)</span><br><span class="line">writing_task = Task(description=<span class="string">&#x27;撰写报告...&#x27;</span>, agent=writer, expected_output=<span class="string">&#x27;最终报告&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用顺序流程组建团队</span></span><br><span class="line">report_crew = Crew(</span><br><span class="line">    agents=[researcher, analyst, writer],</span><br><span class="line">    tasks=[research_task, analysis_task, writing_task],</span><br><span class="line">    process=Process.sequential,</span><br><span class="line">    verbose=<span class="literal">True</span>,</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 执行团队</span></span><br><span class="line">result = report_crew.kickoff()</span><br><span class="line"></span><br></pre></td></tr></table></figure><p><img src="https://s21.ax1x.com/2025/02/06/pEeLzFS.png" alt="image-20250206222203292"></p>]]></content>
     
@@ -40,11 +40,11 @@
   </entry>
   
   <entry>
-    <title></title>
+    <title>TOSCA-Simple-Profile-YAML-v1.3整理版</title>
     <link href="https://ruvikm.gitee.io/posts/0.html"/>
     <id>https://ruvikm.gitee.io/posts/0.html</id>
     <published>2025-02-06T02:50:21.000Z</published>
-    <updated>2025-02-06T03:15:01.197Z</updated>
+    <updated>2025-02-06T14:33:34.961Z</updated>
     
     <content type="html"><![CDATA[<p>将TOSCA-Simple-Profile-YAML-v1.3 里面关于SF配置的信息提取出来，方便大模型进行信息抽取</p><p><img src="https://s21.ax1x.com/2025/02/06/pEeDJgA.png" alt="image-20241120201641170"></p><p>在SDN中的服务功能链（SFC）是将多个网络服务功能按特定顺序组合起来，以便流量可以依次经过这些服务功能。服务功能（Service Function, SF）通常代表网络中的一个特定服务，下面是一些常见的服务功能类型（SF Type）：</p><ol><li><strong>防火墙（Firewall）</strong><ul><li>用于过滤流量，基于特定的规则来允许或阻止流量的通过。</li></ul></li><li><strong>负载均衡（Load Balancer）</strong><ul><li>用于分配流量到多个服务器或资源池，以优化性能和资源利用。</li></ul></li><li><strong>入侵检测/防御系统（IDS/IPS）</strong><ul><li>IDS用于监测网络流量中的可疑活动，IPS则是在检测到攻击时主动阻止或响应。</li></ul></li><li><strong>网络地址转换（NAT）</strong><ul><li>用于改变IP地址的映射，常用于私有网络与公网之间的通信。</li></ul></li></ol><p><strong>下面是具体的yaml配置信息，查找优先级</strong></p><ol><li>文档提供模板优先找模板</li><li>如果没有模板请找找有没有提到需要配置哪些参数</li><li>如果都没有找到请找找有没有自定义组件是如何编写的，有yaml模板示例最好</li></ol><h2 id="防火墙"><a href="#防火墙" class="headerlink" title="防火墙"></a>防火墙</h2><h2 id="负载均衡"><a href="#负载均衡" class="headerlink" title="负载均衡"></a>负载均衡</h2><h2 id="入侵检测-防御系统"><a href="#入侵检测-防御系统" class="headerlink" title="入侵检测/防御系统"></a>入侵检测/防御系统</h2><h2 id="网络地址转换"><a href="#网络地址转换" class="headerlink" title="网络地址转换"></a>网络地址转换</h2><h2 id="模板示例"><a href="#模板示例" class="headerlink" title="模板示例"></a>模板示例</h2><p>请找在文档的第二部分找一些关于服务器配置这些的模板~</p>]]></content>
     
