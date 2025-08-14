@@ -6,7 +6,7 @@
   <link href="https://ruvikm.gitee.io/atom.xml" rel="self"/>
   
   <link href="https://ruvikm.gitee.io/"/>
-  <updated>2025-08-14T03:07:44.706Z</updated>
+  <updated>2025-08-14T03:12:44.771Z</updated>
   <id>https://ruvikm.gitee.io/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://ruvikm.gitee.io/posts/1ca45dcf.html"/>
     <id>https://ruvikm.gitee.io/posts/1ca45dcf.html</id>
     <published>2025-08-14T02:42:06.000Z</published>
-    <updated>2025-08-14T03:07:44.706Z</updated>
+    <updated>2025-08-14T03:12:44.771Z</updated>
     
-    <content type="html"><![CDATA[<p>具体的安装过程可以参考下面这篇博客</p><figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">https://bbs.huaweicloud.com/blogs/422935</span><br></pre></td></tr></table></figure><p>我的系统信息如下：</p><p><img src="/posts/Users\Arona\AppData\Roaming\Typora\typora-user-images\image-20250814104636393.png" alt="image-20250814104636393"></p><p>软件版本如下</p><p><strong>eNSP</strong><img src="/posts/Users\Arona\AppData\Roaming\Typora\typora-user-images\image-20250814104747583.png" alt="image-20250814104747583"></p><p><strong>VirtualBox</strong></p><p><img src="/posts/Users\Arona\AppData\Roaming\Typora\typora-user-images\image-20250814104827233.png" alt="image-20250814104827233"></p><p><strong>Wireshark</strong></p><p><img src="/posts/Users\Arona\AppData\Roaming\Typora\typora-user-images\image-20250814104917147.png" alt="image-20250814104917147"></p><p>主要介绍一下我遇到的问题，一开始也是遇到了AR报错40的错误，尝试了官方文档的解决方案没有用，检查了防火墙允许应用列表，也发现自动已经配置好了，然后本机也没有安装VMware。</p><p><strong>网上查到的信息是：</strong></p><p>Windows 11中的<code>eNSP</code> AR设备报错40核心原因是：系统底层开启了虚拟化，且无法关闭，跟<code>eNSP</code>配套的<code>Virtualbox</code>冲突，导致报错。</p><p>但是看另一篇博客，好像是可以关闭虚拟化内核的，在<code>cmd</code>的管理员模式下，输入，回车，然后必须重启</p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">bcdedit /set hypervisorlaunchtype off</span><br></pre></td></tr></table></figure><p>问题解决：</p><p><img src="/posts/Users\Arona\AppData\Roaming\Typora\typora-user-images\image-20250814110603067.png" alt="image-20250814110603067"></p><p>参考资料：</p><ul><li><a href="https://zhuanlan.zhihu.com/p/1936605691570787732">Win11 24H2 <code>eNSP</code>中AR报错40 完美解决</a></li><li><a href="https://zhuanlan.zhihu.com/p/611862322">win11关于<code>eNSP</code>启动失败报错40的一个结局方案</a></li></ul>]]></content>
+    <content type="html"><![CDATA[<p>具体的安装过程可以参考下面这篇博客</p><figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">https://bbs.huaweicloud.com/blogs/422935</span><br></pre></td></tr></table></figure><p>我的系统信息如下：</p><p><img src="https://s21.ax1x.com/2025/08/14/pVw6hCT.png" alt="image-20250814104636393"></p><p>软件版本如下</p><p><strong>eNSP</strong><img src="https://s21.ax1x.com/2025/08/14/pVw648U.png" alt="image-20250814104747583"></p><p><strong>VirtualBox</strong></p><p><img src="https://s21.ax1x.com/2025/08/14/pVw6TKJ.png" alt="image-20250814104827233"></p><p><strong>Wireshark</strong></p><p><img src="https://s21.ax1x.com/2025/08/14/pVw67r9.png" alt="image-20250814104917147"></p><p>主要介绍一下我遇到的问题，一开始也是遇到了AR报错40的错误，尝试了官方文档的解决方案没有用，检查了防火墙允许应用列表，也发现自动已经配置好了，然后本机也没有安装VMware。</p><p><strong>网上查到的信息是：</strong></p><p>Windows 11中的<code>eNSP</code> AR设备报错40核心原因是：系统底层开启了虚拟化，且无法关闭，跟<code>eNSP</code>配套的<code>Virtualbox</code>冲突，导致报错。</p><p>但是看另一篇博客，好像是可以关闭虚拟化内核的，在<code>cmd</code>的管理员模式下，输入，回车，然后必须重启</p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">bcdedit /set hypervisorlaunchtype off</span><br></pre></td></tr></table></figure><p>问题解决：</p><p><img src="https://s21.ax1x.com/2025/08/14/pVw6HbR.png" alt="image-20250814110603067"></p><p>参考资料：</p><ul><li><a href="https://zhuanlan.zhihu.com/p/1936605691570787732">Win11 24H2 <code>eNSP</code>中AR报错40 完美解决</a></li><li><a href="https://zhuanlan.zhihu.com/p/611862322">win11关于<code>eNSP</code>启动失败报错40的一个结局方案</a></li></ul>]]></content>
     
     
       
