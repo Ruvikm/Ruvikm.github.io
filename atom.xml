@@ -6,7 +6,7 @@
   <link href="https://ruvikm.gitee.io/atom.xml" rel="self"/>
   
   <link href="https://ruvikm.gitee.io/"/>
-  <updated>2025-08-30T10:04:18.964Z</updated>
+  <updated>2025-08-30T10:04:34.219Z</updated>
   <id>https://ruvikm.gitee.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://ruvikm.gitee.io/posts/250a217f.html"/>
     <id>https://ruvikm.gitee.io/posts/250a217f.html</id>
     <published>2025-08-30T09:21:07.000Z</published>
-    <updated>2025-08-30T10:04:18.964Z</updated>
+    <updated>2025-08-30T10:04:34.219Z</updated>
     
     <content type="html"><![CDATA[<p>复制完虚拟机，发现直接用用不了，网络配置不对，记录一下要做什么操作，以免再踩坑</p><p>因为是想保留尽量保留虚拟机原本的设置，拿来即用，所以尽量不对虚拟机自身的配置做一些改动</p><p>首先查看虚拟机的网卡信息，也有的可能网卡信息是<code>ifcfg-ens33</code></p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vim /etc/sysconfig/network-scripts/ifcfg-eth0</span><br></pre></td></tr></table></figure><p>记住上面的信息</p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">IPADDR=192.168.10.100</span><br><span class="line">GATEWAY=192.168.10.2</span><br></pre></td></tr></table></figure><p>然后打开VMware Workstation网络配置，对照这把网关，子网IP写上去</p><p><img src="https://s21.ax1x.com/2025/08/30/pVcMvVS.png" alt="image-20250830175835745"></p><p>然后虚拟机就可以连上网了</p><p><img src="https://s21.ax1x.com/2025/08/30/pVcMxUg.png" alt="image-20250830175923539"></p><p>主机可以连接到虚拟机</p><p><img src="https://s21.ax1x.com/2025/08/30/pVcMz5Q.png" alt="image-20250830180018230"></p><p>虚拟机可以连接到主机了</p><p><img src="https://s21.ax1x.com/2025/08/30/pVcQpCj.png" alt="image-20250830180148201"></p>]]></content>
     
