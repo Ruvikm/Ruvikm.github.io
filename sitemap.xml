@@ -2,18 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://ruvikm.gitee.io/posts/8e14516.html</loc>
-    
-    <lastmod>2025-11-16</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://ruvikm.gitee.io/posts/74390f03.html</loc>
     
-    <lastmod>2025-11-14</lastmod>
+    <lastmod>2025-11-22</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -22,7 +13,16 @@
   <url>
     <loc>https://ruvikm.gitee.io/posts/55bcbbec.html</loc>
     
-    <lastmod>2025-11-13</lastmod>
+    <lastmod>2025-11-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ruvikm.gitee.io/posts/8e14516.html</loc>
+    
+    <lastmod>2025-11-22</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -470,15 +470,6 @@
   </url>
   
   <url>
-    <loc>https://ruvikm.gitee.io/posts/4b1680ce.html</loc>
-    
-    <lastmod>2024-05-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://ruvikm.gitee.io/posts/5f716ad1.html</loc>
     
     <lastmod>2024-05-03</lastmod>
@@ -488,7 +479,7 @@
   </url>
   
   <url>
-    <loc>https://ruvikm.gitee.io/posts/74c3e798.html</loc>
+    <loc>https://ruvikm.gitee.io/posts/4b1680ce.html</loc>
     
     <lastmod>2024-05-03</lastmod>
     
@@ -498,6 +489,15 @@
   
   <url>
     <loc>https://ruvikm.gitee.io/posts/7c8e228e.html</loc>
+    
+    <lastmod>2024-05-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ruvikm.gitee.io/posts/74c3e798.html</loc>
     
     <lastmod>2024-05-03</lastmod>
     
@@ -524,15 +524,6 @@
   </url>
   
   <url>
-    <loc>https://ruvikm.gitee.io/posts/f74700a5.html</loc>
-    
-    <lastmod>2024-05-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://ruvikm.gitee.io/posts/fc5075a5.html</loc>
     
     <lastmod>2024-05-03</lastmod>
@@ -542,7 +533,7 @@
   </url>
   
   <url>
-    <loc>https://ruvikm.gitee.io/posts/4199d00e.html</loc>
+    <loc>https://ruvikm.gitee.io/posts/f74700a5.html</loc>
     
     <lastmod>2024-05-03</lastmod>
     
@@ -552,6 +543,15 @@
   
   <url>
     <loc>https://ruvikm.gitee.io/posts/c8399eaa.html</loc>
+    
+    <lastmod>2024-05-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ruvikm.gitee.io/posts/4199d00e.html</loc>
     
     <lastmod>2024-05-03</lastmod>
     
@@ -578,15 +578,6 @@
   </url>
   
   <url>
-    <loc>https://ruvikm.gitee.io/posts/6eba8ea2.html</loc>
-    
-    <lastmod>2024-05-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://ruvikm.gitee.io/posts/5ac6a0d9.html</loc>
     
     <lastmod>2024-05-03</lastmod>
@@ -596,7 +587,7 @@
   </url>
   
   <url>
-    <loc>https://ruvikm.gitee.io/posts/113808dc.html</loc>
+    <loc>https://ruvikm.gitee.io/posts/6eba8ea2.html</loc>
     
     <lastmod>2024-05-03</lastmod>
     
@@ -614,6 +605,15 @@
   </url>
   
   <url>
+    <loc>https://ruvikm.gitee.io/posts/113808dc.html</loc>
+    
+    <lastmod>2024-05-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://ruvikm.gitee.io/posts/c87ee886.html</loc>
     
     <lastmod>2024-05-03</lastmod>
@@ -623,7 +623,7 @@
   </url>
   
   <url>
-    <loc>https://ruvikm.gitee.io/posts/3ff7a4fb.html</loc>
+    <loc>https://ruvikm.gitee.io/posts/548bc04a.html</loc>
     
     <lastmod>2024-05-03</lastmod>
     
@@ -632,7 +632,7 @@
   </url>
   
   <url>
-    <loc>https://ruvikm.gitee.io/posts/548bc04a.html</loc>
+    <loc>https://ruvikm.gitee.io/posts/3ff7a4fb.html</loc>
     
     <lastmod>2024-05-03</lastmod>
     
@@ -822,14 +822,14 @@
   </url>
   
   <url>
-    <loc>https://ruvikm.gitee.io/tags/Python/</loc>
+    <loc>https://ruvikm.gitee.io/tags/%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2025-11-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://ruvikm.gitee.io/tags/%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/</loc>
+    <loc>https://ruvikm.gitee.io/tags/Python/</loc>
     <lastmod>2025-11-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -859,7 +859,7 @@
 
   
   <url>
-    <loc>https://ruvikm.gitee.io/categories/%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/</loc>
+    <loc>https://ruvikm.gitee.io/categories/%E6%AF%95%E8%AE%BE%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2025-11-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -873,7 +873,7 @@
   </url>
   
   <url>
-    <loc>https://ruvikm.gitee.io/categories/%E6%AF%95%E8%AE%BE%E7%AC%94%E8%AE%B0/</loc>
+    <loc>https://ruvikm.gitee.io/categories/%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2025-11-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -887,7 +887,7 @@
   </url>
   
   <url>
-    <loc>https://ruvikm.gitee.io/categories/%E8%AE%BA%E6%96%87%E5%A4%8D%E7%8E%B0/</loc>
+    <loc>https://ruvikm.gitee.io/categories/%E8%81%8C%E5%9C%BA%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2025-11-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -901,7 +901,7 @@
   </url>
   
   <url>
-    <loc>https://ruvikm.gitee.io/categories/%E8%81%8C%E5%9C%BA%E7%AC%94%E8%AE%B0/</loc>
+    <loc>https://ruvikm.gitee.io/categories/%E8%AE%BA%E6%96%87%E5%A4%8D%E7%8E%B0/</loc>
     <lastmod>2025-11-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
