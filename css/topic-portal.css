@@ -87,3 +87,16 @@
 @media (prefers-reduced-motion: reduce) { .topic-card { transition: none; } .topic-card:hover { transform: none; } }
 @media (max-width: 768px) { #waifu, #waifu-toggle { display: none !important; } }
 @media (max-width: 600px) { .topic-heading { align-items: center; gap: 12px; } #page .topic-heading h2 { font-size: 23px; } .topic-grid { gap: 0; } .topic-card { padding: 15px 0; } .topic-home-header { height: 240px !important; } .topic-reading-card { align-items: flex-start; flex-direction: column; gap: 2px; } }
+
+/* Keep the complete cover visible instead of cropping it into a fixed banner. */
+#page-header.has-full-cover { height: auto !important; min-height: 0; background-image: none !important; background-color: #183247; }
+#page-header.has-full-cover .page-cover-image { display: block; width: 100%; height: auto; max-height: 75vh; object-fit: contain; }
+#page-header.has-full-cover::before { z-index: 1; pointer-events: none; }
+#page-header.has-full-cover #site-info, #page-header.has-full-cover #page-site-info { top: 50% !important; transform: translateY(-50%) !important; z-index: 2; }
+#page-header.has-full-cover #post-info { bottom: 28px; z-index: 2; }
+@media (max-width: 768px) {
+  #page-header.has-full-cover #site-info, #page-header.has-full-cover #page-site-info, #page-header.has-full-cover #post-info { position: relative; top: auto !important; bottom: auto; transform: none !important; padding: 20px 18px; text-align: center; }
+  #page-header.has-full-cover #post-info .post-title { font-size: 1.65em; overflow-wrap: anywhere; }
+  #page-header.has-full-cover #site-title { font-size: 1.85em; }
+  #page-header.has-full-cover::before { background: rgba(0, 0, 0, .15); }
+}
