@@ -346,6 +346,7 @@ window.addEventListener('load', () => {
     const $loadDataItem = document.getElementById('loading-database')
     $loadDataItem.nextElementSibling.style.display = 'block'
     $loadDataItem.remove()
+    if (input.value.trim()) inputEventFunction()
   })
 
   searchClickFn()
