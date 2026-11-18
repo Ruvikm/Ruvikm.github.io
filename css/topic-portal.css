@@ -1,4 +1,6 @@
 .topic-heading { display: flex; align-items: center; justify-content: space-between; gap: 22px; margin: 0 0 24px; }
+#nav .menus_item:focus-within .menus_item_child { display: block; }
+.site-page:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
 .topic-eyebrow { color: #49b1f5; font-size: 12px; letter-spacing: 2px; }
 #page .topic-heading h2 { margin: 8px 0; font-size: 27px; }
 .topic-heading p { margin: 0; color: var(--font-color); opacity: .7; }
